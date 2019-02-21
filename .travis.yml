@@ -2,9 +2,8 @@ language: python
 
 env:
   global:
-    - CONDA_CHANNELS='astropy-ci-extras astropy http://ssb.stsci.edu/astroconda'
+    - CONDA_CHANNELS='astropy-ci-extras astropy http://ssb.stsci.edu/astroconda-dev'
     - CONDA_DEPENDENCIES="astropy scipy matplotlib jupyter pandas"
-    - PIP_DEPENDENCIES="git+https://github.com/spacetelescope/jwst.git"
     - PYTHON_VERSION=3.6
 
 jobs:
