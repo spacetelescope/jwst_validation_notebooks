@@ -2,10 +2,10 @@ language: python
 
 env:
   global:
+    - PYTHON_VERSION=3.6
     - CONDA_CHANNELS='astropy-ci-extras astropy'
     - CONDA_DEPENDENCIES="astropy scipy matplotlib jupyter pandas"
     - PIP_DEPENDENCIES="git+https://github.com/spacetelescope/jwst.git"
-    - PYTHON_VERSION=3.6
   
 jobs:
   include:
