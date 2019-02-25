@@ -2,15 +2,21 @@ language: python
 
 env:
   global:
-    - PYTHON_VERSION=3.5
     - CONDA_CHANNELS='astropy-ci-extras astropy'
     - CONDA_DEPENDENCIES="astropy scipy matplotlib jupyter pandas"
     - PIP_DEPENDENCIES="git+https://github.com/spacetelescope/jwst.git"
-  
+    - PYTHON_VERSION=3.5
+
 before_install:
-  - export PATH="$HOME/anaconda3/bin:$PATH"
-  - chmod +x ci/install_conda.sh
-  - chmod +x ci/setup_conda_env.sh
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then MC_INST=Miniconda3-4.4.10-Linux-x86_64.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then MC_INST=Miniconda3-4.4.10-MacOSX-x86_64.sh; fi
+  - curl -LO "$MC_URL/$MC_INST"
+  - bash $MC_INST -b -p $HOME/miniconda
+  - export PATH=$HOME/miniconda/bin:$PATH
+  - conda config --set always_yes yes --set changeps1 no
+  - conda config --set auto_update_conda false
+  - for channel in $CONDA_CHANNELS; do conda config --add channels "$channel"; done
+  - conda create -n test -q python=$PYTHON_VERSION numpy 
 
 jobs:
   include:
