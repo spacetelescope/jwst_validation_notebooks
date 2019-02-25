@@ -2,11 +2,16 @@ language: python
 
 env:
   global:
-    - PYTHON_VERSION=3.6
+    - PYTHON_VERSION=3.5
     - CONDA_CHANNELS='astropy-ci-extras astropy'
     - CONDA_DEPENDENCIES="astropy scipy matplotlib jupyter pandas"
     - PIP_DEPENDENCIES="git+https://github.com/spacetelescope/jwst.git"
   
+before_install:
+  - export PATH="$HOME/anaconda3/bin:$PATH"
+  - chmod +x ci/install_conda.sh
+  - chmod +x ci/setup_conda_env.sh
+
 jobs:
   include:
     - name: run/convert notebooks
