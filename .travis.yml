@@ -2,10 +2,13 @@ language: python
 
 env:
   global:
-    - CONDA_CHANNELS='astropy-ci-extras astropy http://ssb.stsci.edu/astroconda'
-    - CONDA_DEPENDENCIES="astropy scipy astroquery matplotlib jupyter pandas drizzlepac crds ccdproc acstools photutils regions pyregion"
-    - PIP_DEPENDENCIES="k2flix"
-    - PYTHON_VERSION=3.6
+    - CONDA_CHANNELS='astropy-ci-extras astropy'
+    - CONDA_DEPENDENCIES="astropy scipy matplotlib jupyter pandas"
+    - PIP_DEPENDENCIES="git+https://github.com/spacetelescope/jwst.git"
+    - MC_URL=https://repo.continuum.io/miniconda
+    - CRDS_SERVER_URL='https://jwst-crds.stsci.edu'
+    - CRDS_PATH='/tmp/crds_cache'
+    - PYTHON_VERSION="3.5"
 
 jobs:
   include:
@@ -26,4 +29,3 @@ install:
     - git clone git://github.com/astropy/ci-helpers.git
     - source ci-helpers/travis/setup_conda.sh
     - pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
-    - pip install --pre astroquery
