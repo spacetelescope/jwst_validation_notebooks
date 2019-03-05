@@ -20,7 +20,7 @@ This repository holds the notebooks themselves, but in a harder-to-read unexecut
 ## Executing Notebooks Locally
 
 ### Installing the JWST Calibration Pipeline ###
-To execute the notebooks locally, you must install the JWST Pipeline via Anaconda:
+To execute the notebooks locally, you must install the JWST Pipeline using [conda](https://conda.io/docs/index.html):
 
     conda create -n jwst --file <URL>
     source activate jwst
@@ -54,11 +54,7 @@ This will open the your web browser, here you can access the notebooks by select
 
 ![Notebook Home](docs/static/notebook_home.png)
 
-and from here you can select the specific notebook inside of the following folders.
-
-Note
-----
-Jupyter Notebooks have extension `.ipynb`.
+from here you can select the specific testing directory and notebook. Jupyter Notebooks have extension `.ipynb`.
 
 For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion.
 Here is a useful [cheat sheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands. 
