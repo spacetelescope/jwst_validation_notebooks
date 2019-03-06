@@ -44,9 +44,7 @@ To activate and use your JWST conda environment in the notebook setting you will
     conda install nb_conda
     conda install ipykernel
 
-To change the kernel, use the Kernel drop down in the top left corner of the notebook and select your JWST conda environment.
-
-![Select Kernel](docs/static/kernel.png)
+Later, we will show how to change between the different kernels.
 
 ### Getting the Notebooks ###
 
