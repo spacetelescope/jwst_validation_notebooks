@@ -37,17 +37,28 @@ Inside the STScI network, the pipeline works with default CRDS setup with no mod
     export CRDS_PATH=$HOME/crds_cache
     export CRDS_SERVER_URL=https://jwst-crds.stsci.edu
 
+### Setting up Notebook Kernel ###
+
+To activate and use your JWST conda environment in the notebook setting you will need to install `nb_conda` and `ipykernel`
+
+    conda install nb_conda
+    conda install ipykernel
+
+To change the kernel, use the Kernel drop down in the top left corner of the notebook and select your JWST conda environment.
+
+![Select Kernel](docs/static/kernel.png)
+
 ### Getting the Notebooks ###
 
 Clone the repository:
 
     git clone https://github.com/spacetelescope/jwst_validation_notebooks.git
+    cd jwst_validation_notebooks
 
 ### Opening and Running Notebooks ###
 
-To open the jupyter notebooks enter:
-    
-    cd jwst_validation_notebooks
+To start the jupyter enter:
+
     jupyter notebook
 
 This will open the your web browser, here you can access the notebooks by selecting the `jwst_validation_notebooks` folder
@@ -56,5 +67,16 @@ This will open the your web browser, here you can access the notebooks by select
 
 from here you can select the specific testing directory and notebook. Jupyter Notebooks have extension `.ipynb`.
 
+### Selecting Kernel ###
+
+To change the kernel, use the Kernel drop down in the top left corner of the notebook and hover over "Change Kernel".
+
+![Select Kernel](docs/static/kernel.png)
+
+From here, you can select the conda environment kernel that has the JWST pipeline installed.
+
+### Running Notebooks ###
+
+Now that you have the notebook of your choice open with the proper kernel selected, you will want to execute the cells to perform your own tests. 
 For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion.
 Here is a useful [cheat sheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands. 
