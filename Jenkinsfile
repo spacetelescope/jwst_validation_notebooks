@@ -33,14 +33,14 @@ pipeline {
             dir('../pages') {
               sshagent (credentials: ['jenkins-ghpages-deploy']) {
                 // TODO: Update url (ssh url for repo)
-                sh("git clone -b ${deploy_branch} --single-branch git@github.com:obviousrebel/notebooks.git")
+                sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git")
                 dir('./notebooks') {
                   sh("""cp -aR ${env.WORKSPACE}/* .
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
-                    git add .""")
-                    //git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
-                    //git push origin ${deploy_branch}""")
+                    git add .
+                    git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
+                    git push origin ${deploy_branch}""")
                 }
               }
               deleteDir()
