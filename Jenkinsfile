@@ -7,17 +7,19 @@ pipeline {
     CRDS_SERVER_URL = "https://jwst-crds.stsci.edu"
     CRDS_PATH = "/tmp/crds_cache"
     PATH ="${WORKSPACE}/miniconda3/bin:${PATH}"
+    TMPDIR="${WORKSPACE}/tmp"
   }
 
   stages {
     stage('Setup') {
       steps {
         checkout scm
+        sh("mkdir -p tmp")
         sh("curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o installer.sh")
         sh("bash installer.sh -b -p ${WORKSPACE}/miniconda3")
         sh("curl -LO https://raw.githubusercontent.com/astroconda/docker-buildsys/master/with_env")
         sh("chmod +x with_env")
-        sh("conda env create -f environment.yml -n ${env_name} python=3.5")
+        sh("conda env create -q -f environment.yml -n ${env_name} python=3.5")
       }
     }
 
