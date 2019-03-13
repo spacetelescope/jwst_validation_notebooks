@@ -56,5 +56,11 @@ pipeline {
       } // end of deploy steps
     } // end of deploy stage
 
+    post {
+        cleanup { 
+            cleanWs()
+        } //end of cleanup
+    } //end of post
+
   } // end of stages
 } // end of pipeline
