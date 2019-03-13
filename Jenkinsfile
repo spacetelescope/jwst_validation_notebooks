@@ -57,8 +57,8 @@ pipeline {
     } // end of deploy stage
   } // end of stages
   post {
-        cleanup { 
+        always { 
             cleanWs()
         } //end of cleanup
-    } //end of post
+  } //end of post
 } // end of pipeline
