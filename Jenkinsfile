@@ -55,12 +55,10 @@ pipeline {
         } // end of script
       } // end of deploy steps
     } // end of deploy stage
-
-    post {
+  } // end of stages
+  post {
         cleanup { 
             cleanWs()
         } //end of cleanup
     } //end of post
-
-  } // end of stages
 } // end of pipeline
