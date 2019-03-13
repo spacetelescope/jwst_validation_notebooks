@@ -57,8 +57,8 @@ pipeline {
     } // end of deploy stage
   } // end of stages
   post {
-        always { 
-            cleanWs()
+        cleanup { 
+            deleteDir()
         } //end of cleanup
   } //end of post
 } // end of pipeline
