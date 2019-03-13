@@ -2,17 +2,21 @@ pipeline {
   agent { label 'linux' }
 
   environment {
-    env_name = 'jwst_validation_notebooks'
-    deploy_branch = 'gh-pages'
-    CRDS_SERVER_URL = 'https://jwst-crds.stsci.edu'
-    CRDS_PATH = '/tmp/crds_cache'
+    env_name = "jwst_validation_notebooks"
+    deploy_branch = "gh-pages"
+    CRDS_SERVER_URL = "https://jwst-crds.stsci.edu"
+    CRDS_PATH = "/tmp/crds_cache"
+    PATH ="${WORKSPACE}/miniconda3/bin:${PATH}"
   }
 
   stages {
     stage('Setup') {
       steps {
         checkout scm
-        sh("conda env update --file=environment.yml")
+        sh("sh curl -L https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh > installer.sh")
+        sh("bash installer.sh -b -p ${WORKSPACE}/miniconda3")
+        sh("curl -LO https://raw.githubusercontent.com/astroconda/docker-buildsys/master/with_env")
+        sh("conda env create -f environment.yml -n ${env_name}")
       }
     }
 
