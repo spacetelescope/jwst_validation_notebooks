@@ -8,6 +8,7 @@ pipeline {
     CRDS_PATH = "/tmp/crds_cache"
     PATH ="${WORKSPACE}/miniconda3/bin:${PATH}"
     TMPDIR="${WORKSPACE}/tmp"
+    XDG_CACHE_HOME="${WORKSPACE}/tmp/.cache"
   }
 
   stages {
