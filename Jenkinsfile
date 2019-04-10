@@ -21,6 +21,7 @@ pipeline {
         sh("curl -LO https://raw.githubusercontent.com/astroconda/docker-buildsys/master/with_env")
         sh("chmod +x with_env")
         sh("conda install -y git")
+        sh("conda install -y stsci.imagestats")
         sh("conda env create -q -f environment.yml -n ${env_name} python=3.6")
       }
     }
