@@ -29,7 +29,7 @@ pipeline {
     stage('Convert/Check') {
       steps {
         sh("./with_env -n ${env_name} python convert.py")
-        sh("./with_env -n ${env_name} python -m 'nbpages.check_nbs'")
+        sh("./with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks")
       }
     }
 
