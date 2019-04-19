@@ -5,6 +5,7 @@ pipeline {
     env_name = "jwst_validation_notebooks"
     deploy_branch = "gh-pages"
     HOME="${WORKSPACE}"
+    TEST_BIGDATA="https://bytesalad.stsci.edu/artifactory"
     CRDS_SERVER_URL = "https://jwst-crds.stsci.edu"
     CRDS_PATH = "/tmp/crds_cache"
     PATH ="${WORKSPACE}/miniconda3/bin:${PATH}"
