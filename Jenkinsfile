@@ -41,11 +41,10 @@ pipeline {
             echo "Pull Request, Not deploying..."
           } else {
             echo "Deploying to Github Pages"
-            dir('../pages') {
               sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git")
-                dir('./notebooks') {
+                dir('./jwst_validation_notebooks') {
                   sh("""cp -aR ${env.WORKSPACE}/* .
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
@@ -55,7 +54,7 @@ pipeline {
                 }
               }
               deleteDir()
-            }
+            
             archiveArtifacts artifacts: '**/*.html', onlyIfSuccessful: true, allowEmptyArchive: true
           }
         } // end of script
