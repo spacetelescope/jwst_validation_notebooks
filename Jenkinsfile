@@ -15,8 +15,8 @@ pipeline {
 
   stages {
     stage('Setup') {
-      deleteDir()
       steps {
+        deleteDir()
         checkout scm
         sh("mkdir -p tmp")
         sh("curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o installer.sh")
