@@ -15,6 +15,7 @@ pipeline {
 
   stages {
     stage('Setup') {
+      deleteDir()
       steps {
         checkout scm
         sh("mkdir -p tmp")
