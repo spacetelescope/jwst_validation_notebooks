@@ -44,7 +44,7 @@ pipeline {
             echo "Deploying to Github Pages"
               sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
-                sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git")
+                sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./jwst_validation_notebooks') {
                   sh("""cp -aR ${env.WORKSPACE}/* .
                     git config --global user.email jenkins-deploy@stsci.edu
