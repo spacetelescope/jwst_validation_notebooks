@@ -42,7 +42,7 @@ pipeline {
           } else {
             echo "Deploying to Github Pages"
             dir('../pages') {
-              sshagent (credentials: ['mfixstsci-jwst_validation_notebooks_2']) {
+              sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git")
                 dir('./notebooks') {
