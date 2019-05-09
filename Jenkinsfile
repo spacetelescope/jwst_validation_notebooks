@@ -45,8 +45,8 @@ pipeline {
               sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
-                sh("pwd")
-                dir('./notebooks_clone') {
+                sh("ls")
+                dir('./jwst_validation_notebooks') {
                   sh("""cp -aR ${env.WORKSPACE}/* .
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
