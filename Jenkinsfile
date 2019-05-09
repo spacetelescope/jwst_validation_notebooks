@@ -28,13 +28,6 @@ pipeline {
       }
     }
 
-    stage('Convert/Check') {
-      steps {
-        sh("./with_env -n ${env_name} python convert.py")
-        sh("./with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks")
-      }
-    }
-
     stage('Deploy') {
       steps {
         script {
@@ -47,7 +40,7 @@ pipeline {
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./notebooks_clone') {
                   sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
-                    {env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
+                    ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git add .
