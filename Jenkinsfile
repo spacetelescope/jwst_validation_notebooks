@@ -41,11 +41,11 @@ pipeline {
                 dir('./notebooks_clone') {
                   sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
                     ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
-                    git checkout ${deploy_branch}
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
                     git add .
+                    git checkout -b ${deploy_branch}
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git push origin ${deploy_branch}""")
                 }
