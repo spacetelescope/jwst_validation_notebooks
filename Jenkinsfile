@@ -43,6 +43,7 @@ pipeline {
                     ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
+                    git status
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git push origin ${deploy_branch}""")
