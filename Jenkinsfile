@@ -37,17 +37,15 @@ pipeline {
             echo "Deploying to Github Pages"
               sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
-                sh("git clone git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
-                dir('./notebooks_clone') {
-                  sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
-                    ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
-                    git config --global user.email jenkins-deploy@stsci.edu
-                    git config --global user.name jenkins-deploy
-                    git status
-                    git add .
-                    git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
-                    git push origin ${deploy_branch}""")
-                }
+                sh("git clone git@github.com:mfixstsci/jwst_validation_notebooks.git")
+                sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
+                  ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
+                  git config --global user.email jenkins-deploy@stsci.edu
+                  git config --global user.name jenkins-deploy
+                  git status
+                  git add .
+                  git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
+                  git push origin ${deploy_branch}""")
               }
               deleteDir()            
           }
