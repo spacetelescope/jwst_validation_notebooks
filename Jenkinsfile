@@ -37,8 +37,10 @@ pipeline {
             echo "Deploying to Github Pages"
               sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
-                // sh("git clone git@github.com:mfixstsci/jwst_validation_notebooks.git")
-                sh("cd jwst_validation_notebooks")
+                sh("git clone git@github.com:mfixstsci/jwst_validation_notebooks.git notebook_clone")
+                sh("cd notebook_clone")
+                sh("""ls
+                      pwd""")
                 sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
                   ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
                   git config --global user.email jenkins-deploy@stsci.edu
