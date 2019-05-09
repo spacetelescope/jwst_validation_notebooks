@@ -41,7 +41,7 @@ pipeline {
                 dir('./notebooks_clone') {
                   sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
                     ${env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
-                    git checkout -b gh-pages
+                    git checkout ${deploy_branch}
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
