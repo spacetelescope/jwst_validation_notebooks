@@ -47,6 +47,7 @@ pipeline {
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./notebooks_clone') {
                   sh("""${env.WORKSPACE}/with_env -n ${env_name} python convert.py
+                    {env.WORKSPACE}/with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook_path jwst_validation_notebooks
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git add .
@@ -54,9 +55,7 @@ pipeline {
                     git push origin ${deploy_branch}""")
                 }
               }
-              deleteDir()
-            
-            archiveArtifacts artifacts: '**/*.html', onlyIfSuccessful: true, allowEmptyArchive: true
+              deleteDir()            
           }
         } // end of script
       } // end of deploy steps
