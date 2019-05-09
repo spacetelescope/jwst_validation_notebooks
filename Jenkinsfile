@@ -46,9 +46,7 @@ pipeline {
                 // TODO: Update url (ssh url for repo)
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./jwst_validation_notebooks') {
-                  sh("pwd")
-                  sh("ls ${env.WORKSPACE}/*")
-                  sh("""cp -aR ${env.WORKSPACE}/* .
+                  sh("""./with_env -n ${env_name} python convert.py
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git add .
