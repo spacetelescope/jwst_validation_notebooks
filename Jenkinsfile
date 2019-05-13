@@ -47,7 +47,7 @@ pipeline {
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./notebooks_clone') {
                   sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
-                    cp ${env.WORKSPACE}/index.html ./jwst_validation_notebooks/index.html
+                    cp ${env.WORKSPACE}/index.html ./index.html
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
