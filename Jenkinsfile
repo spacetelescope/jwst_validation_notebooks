@@ -46,7 +46,7 @@ pipeline {
                 // TODO: Update url (ssh url for repo)
                 sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
                 dir('./notebooks_clone') {
-                  sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/jwst_validation_notebooks/* .jwst_validation_notebooks/jwst_validation_notebooks
+                  sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/jwst_validation_notebooks/* ./jwst_validation_notebooks/jwst_validation_notebooks
                     cp ${env.WORKSPACE}/jwst_validation_notebooks/index.html .jwst_validation_notebooks/index.html
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
