@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>exec_jwst_dark_quality_test</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>exec_validation_test_template</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11779,25 +11779,12 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="title_ID"></a></p>
-<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-Dark-Quality-Test">JWST Pipeline Validation Testing Notebook: Dark Quality Test<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-Dark-Quality-Test">&#182;</a></h1><h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left"> 
+<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-Descriptive-Name-of-Test-You-Are-Performing">JWST Pipeline Validation Testing Notebook: Descriptive Name of Test You Are Performing<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-Descriptive-Name-of-Test-You-Are-Performing">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: FGS, MIRI, NIRCam, NIRISS, NIRSpec</p>
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left"> 
 
-<br> [Introduction](#intro_ID) <br> [Imports](#imports_ID) <br> [Getting the Data](#data_ID) <br> [Run Dark Correction Pipeline Step](#pipeline_ID) <br> [Check the slope of the median ramp for the detector](#slope_ID) <br> 
+<br> [Introduction](#intro_ID) <br> [Imports](#imports_ID) <br> [Loading Data](#data_ID) <br> [Run JWST Pipeline](#pipeline_ID) <br> [Create Figure or Print Output](#residual_ID) <br> [About This Notebook](#about_ID) <br>
 
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="intro_ID"></a></p>
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>The dark current step removes dark current from a JWST exposure by subtracting dark current data stored in a dark reference file.</p>
-<p>For more details, visit the documentation here: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/dark_current/description.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/dark_current/description.html</a></p>
-<h3 id="Defining-Term">Defining Term<a class="anchor-link" href="#Defining-Term">&#182;</a></h3><p>JWST: James Webb Space Telescope</p>
-<p>OUT: Other Useful Terms</p>
-<p><a href="#title_ID">Top of Page</a></p>
-
 </div>
 </div>
 </div>
@@ -11806,15 +11793,12 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="imports_ID"></a></p>
-<h1 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h1><ul>
+<h1 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h1><p>List the library imports and why they are relevant to this notebook.</p>
+<ul>
+<li>astropy.io for opening fits files</li>
 <li>jwst.datamodels for building model for JWST Pipeline</li>
-<li>jwst.dark_current.dark_sub.do_correction to perform the dark correction</li>
+<li>jwst.module.PipelineStep is the pipeline step being tested</li>
 <li>matplotlib.pyplot.plt to generate plot</li>
-<li>numpy for array parsing and masking</li>
-<li><p>os for operating system commands.</p>
-</li>
-<li><p>matplotlib inline for plot rendering in notebook</p>
-</li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -11826,35 +11810,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %matplotlib inline</span>
-
-<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="k">import</span> <span class="n">DarkMIRIModel</span><span class="p">,</span> <span class="n">MIRIRampModel</span>
-<span class="kn">from</span> <span class="nn">jwst.dark_current.dark_sub</span> <span class="k">import</span> <span class="n">do_correction</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from astropy.io import fits</span>
+<span class="c1"># from jwst.datamodels import MIRIRampModel</span>
+<span class="c1"># from jwst.module import PipelineStep</span>
 <span class="c1"># import matplotlib.pyplot as plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/mfix/anaconda3/envs/jwst/lib/python3.5/site-packages/asdf/asdftypes.py:14: AsdfDeprecationWarning: The module asdf.asdftypes has been deprecated and will be removed in 3.0. Use asdf.types instead.
-  &#34;Use asdf.types instead.&#34;, AsdfDeprecationWarning)
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -11863,9 +11825,26 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="intro_ID"></a></p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>Give a short introduction explaining the purpose for this notebook. Here is an example:</p>
+<p>For this test we are using the source catalog step. This step creates a final catalog of source photometry and morphologies. Here we are testing the step for this that and the other. For more information on the pipeline step visit the links below.</p>
+<p>Step description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html</a></p>
+<p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/source_catalog">https://github.com/spacetelescope/jwst/tree/master/jwst/source_catalog</a></p>
+<h3 id="Calibration-WG-Requested-Algorithm:">Calibration WG Requested Algorithm:<a class="anchor-link" href="#Calibration-WG-Requested-Algorithm:">&#182;</a></h3><p>A short description and link to the page: <a href="https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Point+Source+Catalog">https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Point+Source+Catalog</a> </p>
+<h3 id="Defining-Term">Defining Term<a class="anchor-link" href="#Defining-Term">&#182;</a></h3><p>Here is where you will define terms or acronymns that may not be known a general audience (ie a new employee to the institute or an external user). For example</p>
+<p>JWST: James Webb Space Telescope</p>
+<p>NIRSpec: Near-Infrared Spectrogragh</p>
+<p><a href="#title_ID">Top of Page</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="data_ID"></a></p>
-<h1 id="Getting-the-Data">Getting the Data<a class="anchor-link" href="#Getting-the-Data">&#182;</a></h1><p>We are constructing a fake MIRI/Dark model dataset using the datamodels library in JWST.</p>
-<p>Mention something about artifactory... Or how or where we store and access data.</p>
+<h1 id="Loading-Data">Loading Data<a class="anchor-link" href="#Loading-Data">&#182;</a></h1><p>Describe the data that is required for testing and why you chose it. Also mention whether it is Fake, Ground Test, Simulated Data, or on orbit data (when launched)</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
@@ -11876,61 +11855,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># size of integration</span>
-<span class="n">nints</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">ngroups</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">xsize</span> <span class="o">=</span> <span class="mi">1032</span>
-<span class="n">ysize</span> <span class="o">=</span> <span class="mi">1024</span>
-
-<span class="c1"># Define data&#39;s shape</span>
-<span class="n">csize</span> <span class="o">=</span> <span class="p">(</span><span class="n">nints</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">xsize</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">nints</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">xsize</span><span class="p">)</span><span class="o">*</span><span class="mf">1e6</span>
-
-<span class="c1"># create a JWST MIRI rampmodel</span>
-<span class="n">dm_ramp</span> <span class="o">=</span> <span class="n">MIRIRampModel</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MIRI&#39;</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">observation</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2018-01-01&#39;</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">observation</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="s1">&#39;00:00:00&#39;</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">xstart</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">xsize</span> <span class="o">=</span> <span class="n">xsize</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">ystart</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">ysize</span> <span class="o">=</span> <span class="n">ysize</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Fake data.&#39;</span>
-
-
-<span class="c1"># Define shape of dark model</span>
-<span class="n">csize</span> <span class="o">=</span> <span class="p">(</span><span class="n">nints</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">xsize</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">nints</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">,</span> <span class="n">ysize</span><span class="p">,</span> <span class="n">xsize</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span>
-
-<span class="c1"># Create dark datamodel</span>
-<span class="n">dark</span> <span class="o">=</span> <span class="n">DarkMIRIModel</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MIRI&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2018-01-01&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="s1">&#39;00:00:00&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">xstart</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">xsize</span> <span class="o">=</span> <span class="n">xsize</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">ystart</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">subarray</span><span class="o">.</span><span class="n">ysize</span> <span class="o">=</span> <span class="n">ysize</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">nframes</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">groupgap</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Fake data.&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">reftype</span> <span class="o">=</span> <span class="s1">&#39;DarkModel&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">pedigree</span> <span class="o">=</span> <span class="s1">&#39;Dummy&#39;</span>
-<span class="n">dark</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">useafter</span> <span class="o">=</span> <span class="s1">&#39;2015-10-01T00:00:00&#39;</span>
-
-<span class="c1"># create raw input data for step</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">nframes</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dm_ramp</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">groupgap</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># populate data array of science cube</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">):</span>
-    <span class="n">dm_ramp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-
-<span class="c1"># populate data array of reference file</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ngroups</span><span class="p">):</span>
-    <span class="n">dark</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Some code to get data</span>
+<span class="c1"># hdu = fits.open(data_file)</span>
+<span class="c1"># dm = some code to create datamodel</span>
 </pre></div>
 
 </div>
@@ -11943,7 +11870,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="pipeline_ID"></a></p>
-<h1 id="Run-Dark-Correction-Pipeline-Step">Run Dark Correction Pipeline Step<a class="anchor-link" href="#Run-Dark-Correction-Pipeline-Step">&#182;</a></h1><p>Define the output file and run the linearity correction step of the pipeline.</p>
+<h1 id="Run-JWST-Pipeline">Run JWST Pipeline<a class="anchor-link" href="#Run-JWST-Pipeline">&#182;</a></h1><p>Run the JWST pipeline step you are interested in testing</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
@@ -11954,30 +11881,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run pipeline</span>
-<span class="n">outfile</span> <span class="o">=</span> <span class="n">do_correction</span><span class="p">(</span><span class="n">dm_ramp</span><span class="p">,</span> <span class="n">dark</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#output = PipelineStep.call(dm)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2019-04-11 10:51:26,331 - stpipe - INFO - Science data nints=1, ngroups=7, nframes=1, groupgap=0
-2019-04-11 10:51:26,332 - stpipe - INFO - Dark data nints=1, ngroups=7, nframes=1, groupgap=0
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -11986,8 +11893,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="slope_ID"></a></p>
-<h1 id="Check-the-slope-of-the-median-ramp-for-the-detector">Check the slope of the median ramp for the detector<a class="anchor-link" href="#Check-the-slope-of-the-median-ramp-for-the-detector">&#182;</a></h1><p>The count rate of the dark subtracted ramp should be small (&lt; 0.1?)</p>
+<p><a id="residual_ID"></a></p>
+<h1 id="Create-Figure-or-Print-Output">Create Figure or Print Output<a class="anchor-link" href="#Create-Figure-or-Print-Output">&#182;</a></h1><p>Explain what type of data analysis you will do.</p>
+<ol>
+<li>Reshaping arrays</li>
+<li>Scale counts relative to highest pixel value</li>
+<li>plot data</li>
+</ol>
+<p>Also mention the tests Pass/Fail Criteria and what you should expect.</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
@@ -11998,57 +11911,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">med_in</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">dm_ramp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">med_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">outfile</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:,],</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="n">groups</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">med_in</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="n">slope_in</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">med_in</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">slope_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">med_out</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span>
-<span class="s2">&quot;Slope of median ramp before dark subtraction: </span><span class="si">{}</span><span class="s2"> counts/group&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-    <span class="n">slope_in</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span>
-<span class="s2">&quot;Slope of median ramp after dark subtraction: </span><span class="si">{}</span><span class="s2"> counts/group&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-    <span class="n">slope_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-
-<span class="c1"># Set plot params</span>
-<span class="c1"># plt.rc(&#39;font&#39;, weight=&#39;bold&#39;)</span>
-<span class="c1"># plt.rc(&#39;xtick.major&#39;, size=5, pad=7)</span>
-<span class="c1"># plt.rc(&#39;xtick&#39;, labelsize=15)</span>
-<span class="c1"># plt.rc(&#39;ytick&#39;, labelsize=15)</span>
-
-<span class="c1"># plt.figure(figsize=(20,10))</span>
-<span class="c1"># plt.grid(True, ls=&#39;--&#39;)</span>
-<span class="c1"># plt.title(&#39;Random Data&#39;, fontsize=20, fontweight=&#39;bold&#39;)</span>
-<span class="c1"># plt.plot(med_in, c=&#39;k&#39;, label= &#39;Ramp PreDarkCorr&#39;)</span>
-<span class="c1"># plt.plot(med_out,c=&#39;r&#39;, label=&#39;Ramp PostDarkCorr&#39;)</span>
-<span class="c1"># plt.xlabel(&#39;Group Number&#39;, fontsize=20, fontweight=&#39;bold&#39;)</span>
-<span class="c1"># plt.ylabel(&#39;Counts&#39;, fontsize=20, fontweight=&#39;bold&#39;)</span>
-<span class="c1"># plt.legend(fontsize=&#39;xx-large&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># data = output.reshape(x,y,z)</span>
+<span class="c1"># data = data.counts/np.max(data.counts)</span>
+<span class="c1"># plt.plot(data.counts[&#39;x&#39;], data.counts[y])</span>
+<span class="c1"># plt.show()</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Slope of median ramp before dark subtraction: 1.0 counts/group
-Slope of median ramp after dark subtraction: 0.9000000102179391 counts/group
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12058,8 +11927,8 @@ Slope of median ramp after dark subtraction: 0.9000000102179391 counts/group
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="about_ID"></a></p>
-<h2 id="About-this-Notebook">About this Notebook<a class="anchor-link" href="#About-this-Notebook">&#182;</a></h2><p><strong>Author:</strong> Mees Fix, RIA MESA Branch
-<br><strong>Updated On:</strong> 03/01/2019</p>
+<h2 id="About-this-Notebook">About this Notebook<a class="anchor-link" href="#About-this-Notebook">&#182;</a></h2><p><strong>Author:</strong> Author Name, Job Title, Branch Name
+<br><strong>Updated On:</strong> MM/DD/YYYY</p>
 
 </div>
 </div>
