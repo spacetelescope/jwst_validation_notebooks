@@ -78,3 +78,33 @@ From here, you can select the conda environment kernel that has the JWST pipelin
 Now that you have the notebook of your choice open with the proper kernel selected, you will want to execute the cells to perform your own tests. 
 For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion.
 Here is a useful [cheat sheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands. 
+
+### Contributing New Notebooks ###
+
+This repository operates using the standard [fork and pull request](https://gist.github.com/Chaser324/ce0505fbed06b947d962) github workflow.
+First you will want to fork the repository
+
+![Fork Button](docs/static/fork_repo.png)
+
+When the forking process is done, you can look at the repositories under your username and will see a copy of the forked repository. Think "
+I am forking a copy of `jwst_validation_notebooks` from `spacetelescope` to `my_user_name`".
+
+![Forked Repo](docs/static/forked_repo.png)
+
+Next, you will want to clone the newly forked repository
+
+![Cloning Forked Repo](docs/static/cloning_forked_repo.png)
+
+    Note: Look at the two circled areas of the github website, notice that we are cloning the repo under your username, not Space Telescope's
+
+This forked repository is the where we will be commiting changes to, but we don't want to fully forget the Space Telescope repository.
+While we are making changes to our local forked version, other developers can be submitting pull requests and merging code into the Space Telescope
+
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
