@@ -87,7 +87,7 @@ First you will want to fork the repository
 ![Fork Button](docs/static/fork_repo.png)
 
 When the forking process is done, you can look at the repositories under your username and will see a copy of the forked repository. Think "
-I am forking a copy of `jwst_validation_notebooks` from `spacetelescope` to `my_user_name`".
+I am forking a copy of the `jwst_validation_notebooks` repository from the `spacetelescope` profile to the `my_user_name`" profile.
 
 ![Forked Repo](docs/static/forked_repo.png)
 
@@ -99,12 +99,23 @@ Next, you will want to clone the newly forked repository
 
 This forked repository is the where we will be commiting changes to, but we don't want to fully forget the Space Telescope repository.
 While we are making changes to our local forked version, other developers can be submitting pull requests and merging code into the Space Telescope
+validation notebook repository. We will link our forked by adding a new remote called `upstream`.
 
+    git remote add upstream git@github.com:spacetelescope/jwst_validation_notebooks.git
 
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
+Now, in your terminal enter
+
+    git remote -v
+
+and you should see your current remotes.
+
+    origin	git@github.com:your_username/jwst_validation_notebooks.git (fetch)
+    origin	git@github.com:your_username/jwst_validation_notebooks.git (push)
+    upstream	git@github.com:spacetelescope/jwst_validation_notebooks.git (fetch)
+    upstream	git@github.com:spacetelescope/jwst_validation_notebooks.git (push)
+
+Next we will want to create a new branch, you will want to name it something clever like the name of the step you are contributing the notebook to or the name of the notebook. To make sure we practice what we preach, first we will fetch any possible changes before creating our new branch.
+
+    git checkout master
+    git fetch upstream
+    git checkout -b my_new_branch_that_has_a_clever_name
