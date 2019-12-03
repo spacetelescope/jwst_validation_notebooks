@@ -119,3 +119,26 @@ Next we will want to create a new branch, you will want to name it something cle
     git checkout master
     git fetch upstream
     git checkout -b my_new_branch_that_has_a_clever_name
+
+Next you will want to change directories into `jwst_validation_notebooks` and then list the available contenet
+using `ls`. If there is a directory named after the step you are interested in testing, move into that directory,
+otherwise make the directory and name it after the step you are writing the test for using the `mkdir` command. 
+Next, you will want to copy the notebook template from the template directory into your current directory and 
+rename it.
+
+    cp ../template/validation_test_template.ipynb
+    mv validation_test_template.ipynb jwst_step_test.ipynb
+    jupyter notebook jwst_step_test.ipynb
+
+After you are finished writing your new notebook (following our style guide in the template) you will want
+to commit your changes and create a pull request. First add and commit you changes.
+
+    git status (to see changes)
+    git add jwst_step_test.ipynb
+    git add ...
+    git commit -m 'Adding a new notebook that is really cool'
+    git push origin my_new_branch_that_has_a_clever_name
+
+Now that the changes are pushed to your `origin` repository you will want to create a `pull request` against the
+`upstream` repository.
+    
