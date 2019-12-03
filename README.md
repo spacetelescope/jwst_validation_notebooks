@@ -131,7 +131,7 @@ rename it.
     jupyter notebook jwst_step_test.ipynb
 
 After you are finished writing your new notebook (following our style guide in the template) you will want
-to commit your changes and create a pull request. First add and commit you changes.
+to commit your changes and create a pull request (PR). First add and commit you changes.
 
     git status (to see changes)
     git add jwst_step_test.ipynb
@@ -140,5 +140,14 @@ to commit your changes and create a pull request. First add and commit you chang
     git push origin my_new_branch_that_has_a_clever_name
 
 Now that the changes are pushed to your `origin` repository you will want to create a `pull request` against the
-`upstream` repository.
-    
+`upstream` repository. If you go to your forked copy of `jwst_validation_notebooks` you should seee a button
+above the `clone & download` button that says `create a pull request`, click that button.
+
+![Create Pull](docs/static/create_pull.png)
+
+New you will need to add the title and a description of what you are contributing. Once you are done writing your
+description, click `create pull request` and congratulations, you have just submitted your PR.
+
+![Create Pull](docs/static/new_notebook_pull.png)
+
+From here the maintainers of the repository can review your changes, 
