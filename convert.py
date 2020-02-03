@@ -22,7 +22,7 @@ if args.exclude is None:
     if to_exclude:
         args.exclude = ','.join(to_exclude)
 
-converted = run_parsed('.', output_type='HTML', args=args)
+converted = run_parsed('jwst_validation_notebooks', output_type='HTML', args=args)
 
 logging.getLogger('nbpages').info('Generating index.html')
 make_html_index(converted, './index.tpl')
