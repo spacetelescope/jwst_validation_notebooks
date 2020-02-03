@@ -79,15 +79,15 @@ Now that you have the notebook of your choice open with the proper kernel select
 For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion.
 Here is a useful [cheat sheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands. 
 
-### Contributing New Notebooks ###
+### Contributing New Notebooks & Data ###
 
 This repository operates using the standard [fork and pull request](https://gist.github.com/Chaser324/ce0505fbed06b947d962) github workflow.
 First you will want to fork the repository
 
 ![Fork Button](docs/static/fork_repo.png)
 
-When the forking process is done, you can look at the repositories under your username and will see a copy of the forked repository. Think "
-I am forking a copy of the `jwst_validation_notebooks` repository from the `spacetelescope` profile to the `my_user_name`" profile.
+When the forking process is done, you can look at the repositories under your user profile and will see a copy of the forked repository there. Think "
+I am forking a copy of the `jwst_validation_notebooks` repository from the `spacetelescope`'s profile to the `my_user_name`'s profile".
 
 ![Forked Repo](docs/static/forked_repo.png)
 
@@ -95,7 +95,7 @@ Next, you will want to clone the newly forked repository
 
 ![Cloning Forked Repo](docs/static/cloning_forked_repo.png)
 
-    Note: Look at the two circled areas of the github website, notice that we are cloning the repo under your username, not Space Telescope's
+    Note: Look at the two circled areas of the github website, notice that we are cloning the repo under your user profile, not Space Telescope's
 
 This forked repository is the where we will be commiting changes to, but we don't want to fully forget the Space Telescope repository.
 While we are making changes to our local forked version, other developers can be submitting pull requests and merging code into the Space Telescope
