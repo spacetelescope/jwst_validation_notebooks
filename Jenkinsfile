@@ -23,8 +23,7 @@ pipeline {
         sh("bash installer.sh -b -p ${WORKSPACE}/miniconda3")
         sh("curl -LO https://raw.githubusercontent.com/astroconda/docker-buildsys/master/with_env")
         sh("chmod +x with_env")
-        sh("conda install -q -y git")
-        sh("conda create -n ${env_name} python=3.7 -y")
+        sh("conda create -n ${env_name} python=3.7 git -y")
         sh("./with_env -n ${env_name} pip install -r requirements.txt")
       }
     }
