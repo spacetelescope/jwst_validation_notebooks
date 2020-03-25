@@ -42,9 +42,9 @@ pipeline {
             echo "Pull Request, Not deploying..."
           } else {
             echo "Deploying to Github Pages"
-              sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
+              sshagent (credentials: ['spacetelescope-jwst_validation_notebooks']) {
                 // TODO: Update url (ssh url for repo)
-                sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
+                sh("git clone -b ${deploy_branch} --single-branch git@github.com:spacetelescope/jwst_validation_notebooks.git notebooks_clone")
                 dir('./notebooks_clone') {
                   sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
@@ -58,7 +58,7 @@ pipeline {
                     )
                 }
               }
-              deleteDir()            
+              deleteDir()
           }
         } // end of script
       } // end of deploy steps
