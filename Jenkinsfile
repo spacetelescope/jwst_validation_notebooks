@@ -25,8 +25,8 @@ pipeline {
         sh("chmod +x with_env")
         sh("conda create -n ${env_name} python=3.7 git -y")
         sh("./with_env -n ${env_name} pip install -r requirements.txt")
-        sh("jupyter contrib nbextension install --user")
-        sh("jupyter nbextension enable python-markdown/main")
+        sh("./with_env -n ${env_name} jupyter contrib nbextension install --user")
+        sh("./with_env -n ${env_name} jupyter nbextension enable python-markdown/main")
       }
     }
 
