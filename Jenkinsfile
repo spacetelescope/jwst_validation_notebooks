@@ -42,22 +42,16 @@ pipeline {
             echo "Pull Request, Not deploying..."
           } else {
             echo "Deploying to Github Pages"
-              sshagent (credentials: ['spacetelescope-jwst_validation_notebooks']) {
-                // TODO: Update url (ssh url for repo)
-                sh("git clone -b ${deploy_branch} --single-branch git@github.com:spacetelescope/jwst_validation_notebooks.git notebooks_clone")
-                dir('./notebooks_clone') {
-                  sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
+              sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
-                    git push origin ${deploy_branch}
-                    """
-                    )
-                }
-              }
+                    git remote add deploy ssh://git@github.com:spacetelescope/jwst_validation_notebooks.git
+                    git push deploy ${deploy_branch}
+                    """)
               deleteDir()
           }
         } // end of script
