@@ -25,8 +25,6 @@ pipeline {
         sh("chmod +x with_env")
         sh("conda create -n ${env_name} python=3.7 git -y")
         sh("./with_env -n ${env_name} pip install -r requirements.txt")
-        sh("./with_env -n ${env_name} jupyter contrib nbextension install --user")
-        sh("./with_env -n ${env_name} jupyter nbextension enable python-markdown/main")
       }
     }
 
@@ -44,16 +42,23 @@ pipeline {
             echo "Pull Request, Not deploying..."
           } else {
             echo "Deploying to Github Pages"
-              sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
+              sshagent (credentials: ['mfixstsci-jwst_validation_notebooks']) {
+                // TODO: Update url (ssh url for repo)
+                sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
+                dir('./notebooks_clone') {
+                  sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
-                    git remote add deploy ssh://git@github.com:spacetelescope/jwst_validation_notebooks.git
-                    git push deploy ${deploy_branch}
-                    """)
+                    git push origin ${deploy_branch}
+                    rsync -avzHR ./jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
+                    """
+                    )
+                }
+              }
               deleteDir()
           }
         } // end of script
