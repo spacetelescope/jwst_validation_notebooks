@@ -7,28 +7,12 @@ This repository contains notebook that are used to validate the output of the JW
 These notebooks follow a consistent [style guide](https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md) in terms of layout/structure, coding conventions etc.
 
 ## Contents
-
-This repository holds the notebooks themselves, but in a harder-to-read unexecuted form. If you want to view the notebooks online, you should view [the rendered versions](https://spacetelescope.github.io/jwst_validation_notebooks/).  At present this includes:
-
-
-
-* CALDETECTOR 1
-    * [Linearity Correction Residuals](https://spacetelescope.github.io/jwst_validation_notebooks/jwst_validation_notebooks/jwst_linearity_residuals_test/jwst_linearity_validation_testing.html)
-    * [Dark Correction Quality](https://spacetelescope.github.io/jwst_validation_notebooks/jwst_validation_notebooks/jwst_dark_quality_test/jwst_dark_quality_test.html)
-
+To see the current notebook suite visit our [website](https://jwst-validation-notebooks.stsci.edu/).
 
 ## Executing Notebooks Locally
 
 ### Installing the JWST Calibration Pipeline ###
-To execute the notebooks locally, you must install the JWST Pipeline using [conda](https://conda.io/docs/index.html):
-
-    conda create -n jwst --file <URL>
-    source activate jwst
-
-where `<URL>` is of the form:
-
-    Linux: http://ssb.stsci.edu/releases/jwstdp/0.12.2/latest-linux
-    OS X: http://ssb.stsci.edu/releases/jwstdp/0.12.2/latest-osx
+Visit the [JWST Pipeline Software](https://github.com/spacetelescope/jwst) for installation instructions.
 
 ### CRDS Setup ###
 
@@ -71,10 +55,17 @@ To change the kernel, use the Kernel drop down in the top left corner of the not
 
 ![Select Kernel](docs/static/kernel.png)
 
-From here, you can select the conda environment kernel that has the JWST pipeline installed.
+From here, you can select the conda environment kernel that has the JWST pipeline installed. Now you can execute the notebook
+regularly. For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion. Here is a useful [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
 
-### Running Notebooks ###
+### Running Notebooks with nbpages###
+First make sure you are in the `jwst-validation-notebooks` repository and execute the following commands:
 
-Now that you have the notebook of your choice open with the proper kernel selected, you will want to execute the cells to perform your own tests. 
-For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion.
-Here is a useful [cheat sheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands. 
+    pip install nbpages
+    python convert.py
+
+This will generate the html output locally.
+
+### Contributing New Notebooks & Data ###
+
+This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/template/jwst_validation_test_template/validation_test_template.ipynb).
