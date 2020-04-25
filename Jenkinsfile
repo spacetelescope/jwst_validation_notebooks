@@ -54,9 +54,8 @@ pipeline {
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git push origin ${deploy_branch}
-                    cd ./jwst_validation_notebooks
-                    rsync -avzH index.html ${env.WEBPAGE_DIR}
-                    rsync -avzHR jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
+                    rsync ${env.WORKSPACE}/index.html ${env.WEBPAGE_DIR}
+                    rsync -R ${env.WORKSPACE}/jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
                     """
                     )
                 }
