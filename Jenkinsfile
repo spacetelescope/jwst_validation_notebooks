@@ -42,6 +42,8 @@ pipeline {
             echo "Pull Request, Not deploying..."
           } else {
             echo "Deploying to Github Pages"
+            sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
+            dir('./notebooks_clone') {
               sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
                     git config --global user.email jenkins-deploy@stsci.edu
@@ -51,6 +53,11 @@ pipeline {
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git remote add deploy ssh://git@github.com:spacetelescope/jwst_validation_notebooks.git
                     git push deploy ${deploy_branch}
+                    cd ${env.WORKSPACE}
+                    chmod ug=rw index.html 
+                    chmod -R ug=rw jwst_validation_notebooks/*
+                    rsync -vH index.html ${env.WEBPAGE_DIR}
+                    rsync -vHR jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
           }
