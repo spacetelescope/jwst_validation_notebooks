@@ -43,7 +43,7 @@ pipeline {
           } else {
             echo "Deploying to Github Pages"
             sh("git clone -b ${deploy_branch} --single-branch git@github.com:mfixstsci/jwst_validation_notebooks.git notebooks_clone")
-            dir('./notebooks_clone') {
+            dir('./notebooks_clone'){
               sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
                     git config --global user.email jenkins-deploy@stsci.edu
@@ -60,6 +60,7 @@ pipeline {
                     rsync -vHR jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
+            }
           }
         } // end of script
       } // end of deploy steps
