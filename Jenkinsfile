@@ -51,7 +51,7 @@ pipeline {
                     git status
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
-                    git remote add deploy ssh://git@github.com:spacetelescope/jwst_validation_notebooks.git
+                    git remote add deploy ssh://git@github.com/spacetelescope/jwst_validation_notebooks.git
                     git push deploy ${deploy_branch}
                     cd ${env.WORKSPACE}
                     chmod ug=rw index.html 
