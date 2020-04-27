@@ -48,14 +48,16 @@ pipeline {
                 dir('./notebooks_clone') {
                   sh("""cp -aR ${env.WORKSPACE}/jwst_validation_notebooks/* ./jwst_validation_notebooks/
                     cp ${env.WORKSPACE}/index.html ./index.html
+                    ls ./jwst_validation_notebooks/
+                    
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
                     git status
                     git add .
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git push origin ${deploy_branch}
-                    rsync ${env.WORKSPACE}/index.html ${env.WEBPAGE_DIR}
-                    rsync -R ${env.WORKSPACE}/jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
+                    rsync -avzH ${env.WORKSPACE}/index.html ${env.WEBPAGE_DIR}
+                    rsync -avzHR ${env.WORKSPACE}/jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
                     """
                     )
                 }
