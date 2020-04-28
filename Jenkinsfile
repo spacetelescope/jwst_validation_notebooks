@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'linux' }
+  agent { label 'RHEL7' }
 
   environment {
     env_name = "jwst_validation_notebooks"
