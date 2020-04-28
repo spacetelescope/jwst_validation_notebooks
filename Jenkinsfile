@@ -31,6 +31,7 @@ pipeline {
     stage('Convert/Check') {
       steps {
         sh("./with_env -n ${env_name} python convert.py --report report.txt")
+        sh("./with_env -n ${env_name} python prepend_date.py --reportfile report.xml")
         sh("./with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook-path jwst_validation_notebooks")
       }
     }
@@ -54,9 +55,11 @@ pipeline {
                     git remote add deploy ssh://git@github.com/spacetelescope/jwst_validation_notebooks.git
                     git push deploy ${deploy_branch}
                     cd ${env.WORKSPACE}
-                    chmod ug=rw index.html 
-                    chmod -R ug=rw jwst_validation_notebooks/*
+                    chmod ug=rwx index.html 
+                    chmod ug=rwx report*.xml
+                    chmod ug=rwx jwst_validation_notebooks/*/*/*.html
                     rsync -vH index.html ${env.WEBPAGE_DIR}
+                    rsync -v report*.xml ${env.WEBPAGE_DIR}reports
                     rsync -vHR jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
