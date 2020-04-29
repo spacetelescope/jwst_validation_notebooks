@@ -13278,230 +13278,230 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-04-28 20:03:23,018 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
-2020-04-28 20:03:23,021 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
-2020-04-28 20:03:23,023 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
-2020-04-28 20:03:23,026 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2020-04-28 20:03:23,028 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
-2020-04-28 20:03:23,030 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
-2020-04-28 20:03:23,140 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test/starfield_74_asnfile.json&#39;,).
-2020-04-28 20:03:23,148 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 250, &#39;brightest&#39;: 100, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 5, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: False, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;shift&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: 6, &#39;scale_detection&#39;: False}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;good_bits&#39;: 6, &#39;single&#39;: False, &#39;blendheaders&#39;: True}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.ecsv&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;kernel_fwhm&#39;: 2.0, &#39;kernel_xsize&#39;: 5.0, &#39;kernel_ysize&#39;: 5.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5.0, &#39;deblend&#39;: False}}}
-2020-04-28 20:03:25,882 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
-2020-04-28 20:03:26,100 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2020-04-28 20:03:26,101 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
-2020-04-28 20:03:26,104 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2020-04-28 20:03:26,105 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
-2020-04-28 20:03:26,108 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2020-04-28 20:03:26,109 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
-2020-04-28 20:03:26,112 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2020-04-28 20:03:26,113 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
-2020-04-28 20:03:27,986 - stpipe.Image3Pipeline - INFO - Aligning input images...
-2020-04-28 20:03:28,145 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
-2020-04-28 20:03:28,148 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 250, &#39;brightest&#39;: 100, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 5, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: False, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;shift&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3}
-2020-04-28 20:03:28,514 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits.
-2020-04-28 20:03:28,852 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits.
-2020-04-28 20:03:29,189 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 49 sources in det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits.
-2020-04-28 20:03:29,533 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits.
-2020-04-28 20:03:29,541 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2020-04-28 20:03:29,542 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 4.
-2020-04-28 20:03:29,542 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
-2020-04-28 20:03:29,591 - stpipe.Image3Pipeline.tweakreg - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+<pre>2020-04-28 20:08:50,879 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
+2020-04-28 20:08:50,882 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
+2020-04-28 20:08:50,884 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
+2020-04-28 20:08:50,887 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2020-04-28 20:08:50,889 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
+2020-04-28 20:08:50,891 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
+2020-04-28 20:08:51,019 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test/starfield_74_asnfile.json&#39;,).
+2020-04-28 20:08:51,028 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 250, &#39;brightest&#39;: 100, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 5, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: False, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;shift&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: 6, &#39;scale_detection&#39;: False}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;good_bits&#39;: 6, &#39;single&#39;: False, &#39;blendheaders&#39;: True}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.ecsv&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;kernel_fwhm&#39;: 2.0, &#39;kernel_xsize&#39;: 5.0, &#39;kernel_ysize&#39;: 5.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5.0, &#39;deblend&#39;: False}}}
+2020-04-28 20:08:53,744 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
+2020-04-28 20:08:54,022 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2020-04-28 20:08:54,024 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
+2020-04-28 20:08:54,027 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2020-04-28 20:08:54,028 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
+2020-04-28 20:08:54,030 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2020-04-28 20:08:54,031 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits&#39; reftypes = [&#39;drizpars&#39;]
+2020-04-28 20:08:54,034 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2020-04-28 20:08:54,034 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
+2020-04-28 20:08:55,976 - stpipe.Image3Pipeline - INFO - Aligning input images...
+2020-04-28 20:08:56,146 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
+2020-04-28 20:08:56,149 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 250, &#39;brightest&#39;: 100, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 5, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: False, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;shift&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3}
+2020-04-28 20:08:56,528 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits.
+2020-04-28 20:08:56,879 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits.
+2020-04-28 20:08:57,240 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 49 sources in det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits.
+2020-04-28 20:08:57,596 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 50 sources in det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits.
+2020-04-28 20:08:57,603 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2020-04-28 20:08:57,604 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 4.
+2020-04-28 20:08:57,605 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
+2020-04-28 20:08:57,655 - stpipe.Image3Pipeline.tweakreg - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:29,592 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39;:
-2020-04-28 20:03:29,593 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal
-2020-04-28 20:03:29,637 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39;:
-2020-04-28 20:03:29,638 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal
-2020-04-28 20:03:29,683 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39;:
-2020-04-28 20:03:29,683 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal
-2020-04-28 20:03:29,727 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39;:
-2020-04-28 20:03:29,728 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal
-2020-04-28 20:03:29,728 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2020-04-28 20:03:29,729 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2020-04-28 20:03:29,730 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2020-04-28 20:03:29.729380
-2020-04-28 20:03:29,730 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.5.3
-2020-04-28 20:03:29,731 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2020-04-28 20:03:29,861 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; as reference image
-2020-04-28 20:03:29,868 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39; to the reference catalog.
-2020-04-28 20:03:30,089 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
-2020-04-28 20:03:30,092 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39;...
-2020-04-28 20:03:30,094 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
-2020-04-28 20:03:30,097 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal:
-2020-04-28 20:03:30,098 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -6.58944e-07  YSH: -1.44021e-05
-2020-04-28 20:03:30,098 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2020-04-28 20:03:30,099 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.000302863   FIT MAE: 0.000262083
-2020-04-28 20:03:30,100 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 49 objects.
-2020-04-28 20:03:30,164 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39; to the reference catalog.
-2020-04-28 20:03:30,361 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
-2020-04-28 20:03:30,363 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39;...
-2020-04-28 20:03:30,364 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
-2020-04-28 20:03:30,367 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal:
-2020-04-28 20:03:30,368 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000511129  YSH: 0.000423463
-2020-04-28 20:03:30,369 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2020-04-28 20:03:30,369 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.0033229   FIT MAE: 0.00257355
-2020-04-28 20:03:30,370 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 48 objects.
-2020-04-28 20:03:30,432 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39; to the reference catalog.
-2020-04-28 20:03:30,630 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
-2020-04-28 20:03:30,632 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39;...
-2020-04-28 20:03:30,633 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
-2020-04-28 20:03:30,636 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal:
-2020-04-28 20:03:30,637 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000665744  YSH: 0.000422398
-2020-04-28 20:03:30,637 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2020-04-28 20:03:30,638 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00331562   FIT MAE: 0.00258955
-2020-04-28 20:03:30,639 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 48 objects.
-2020-04-28 20:03:30,700 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2020-04-28 20:03:30,700 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2020-04-28 20:03:30.700242
-2020-04-28 20:03:30,701 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.970862
-2020-04-28 20:03:30,702 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2020-04-28 20:03:30,943 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
-2020-04-28 20:03:30,944 - stpipe.Image3Pipeline - INFO - Matching sky values across all input images...
-2020-04-28 20:03:31,048 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
-2020-04-28 20:03:31,051 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2020-04-28 20:03:31,101 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:31,102 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2020-04-28 20:03:31.101360
-2020-04-28 20:03:31,102 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:31,103 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
-2020-04-28 20:03:31,104 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
-2020-04-28 20:03:31,104 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
-2020-04-28 20:03:31,105 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:31,106 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
-2020-04-28 20:03:34,405 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 0.0303561
-2020-04-28 20:03:34,406 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 0
-2020-04-28 20:03:34,407 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 0.0603457
-2020-04-28 20:03:34,407 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 0.0584788
-2020-04-28 20:03:34,408 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:34,409 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2020-04-28 20:03:34,530 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:34,532 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 10.932765660646014 [not converted]
-2020-04-28 20:03:34,532 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:34,533 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
-2020-04-28 20:03:34,534 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 10.9631 (old=0.0303561, delta=10.9328)
-2020-04-28 20:03:34,535 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 10.9328 (old=0, delta=10.9328)
-2020-04-28 20:03:34,535 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 10.9931 (old=0.0603457, delta=10.9328)
-2020-04-28 20:03:34,536 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 10.9912 (old=0.0584788, delta=10.9328)
-2020-04-28 20:03:34,537 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:34,537 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2020-04-28 20:03:34.537030
-2020-04-28 20:03:34,538 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:03.435670
-2020-04-28 20:03:34,538 - stpipe.Image3Pipeline.skymatch - INFO -  
-2020-04-28 20:03:34,554 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
-2020-04-28 20:03:34,555 - stpipe.Image3Pipeline - INFO - Performing outlier detection on input images...
-2020-04-28 20:03:34,673 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
-2020-04-28 20:03:34,676 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: 6, &#39;scale_detection&#39;: False}
-2020-04-28 20:03:34,682 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 4 inputs
-2020-04-28 20:03:35,661 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:36,429 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:08:57,656 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39;:
+2020-04-28 20:08:57,657 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal
+2020-04-28 20:08:57,703 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39;:
+2020-04-28 20:08:57,704 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal
+2020-04-28 20:08:57,750 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39;:
+2020-04-28 20:08:57,751 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal
+2020-04-28 20:08:57,798 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39;:
+2020-04-28 20:08:57,799 - stpipe.Image3Pipeline.tweakreg - INFO -      det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal
+2020-04-28 20:08:57,799 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2020-04-28 20:08:57,800 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2020-04-28 20:08:57,800 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2020-04-28 20:08:57.800351
+2020-04-28 20:08:57,801 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.5.3
+2020-04-28 20:08:57,802 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2020-04-28 20:08:57,932 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; as reference image
+2020-04-28 20:08:57,938 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39; to the reference catalog.
+2020-04-28 20:08:58,137 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
+2020-04-28 20:08:58,140 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal&#39;...
+2020-04-28 20:08:58,140 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
+2020-04-28 20:08:58,143 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal:
+2020-04-28 20:08:58,144 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -6.58944e-07  YSH: -1.44021e-05
+2020-04-28 20:08:58,145 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2020-04-28 20:08:58,146 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.000302863   FIT MAE: 0.000262083
+2020-04-28 20:08:58,146 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 49 objects.
+2020-04-28 20:08:58,210 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39; to the reference catalog.
+2020-04-28 20:08:58,399 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
+2020-04-28 20:08:58,401 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal&#39;...
+2020-04-28 20:08:58,403 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
+2020-04-28 20:08:58,405 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal:
+2020-04-28 20:08:58,406 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000511129  YSH: 0.000423463
+2020-04-28 20:08:58,407 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2020-04-28 20:08:58,407 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.0033229   FIT MAE: 0.00257355
+2020-04-28 20:08:58,408 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 48 objects.
+2020-04-28 20:08:58,473 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39; to the reference catalog.
+2020-04-28 20:08:58,677 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39; catalog with sources from the reference &#39;det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal&#39; catalog.
+2020-04-28 20:08:58,680 - stpipe.Image3Pipeline.tweakreg - INFO - Found 49 matches for &#39;GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal&#39;...
+2020-04-28 20:08:58,681 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;shift&#39; fit
+2020-04-28 20:08:58,685 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;shift&#39; fit for GROUP ID: det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal:
+2020-04-28 20:08:58,686 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000665744  YSH: 0.000422398
+2020-04-28 20:08:58,687 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2020-04-28 20:08:58,687 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00331562   FIT MAE: 0.00258955
+2020-04-28 20:08:58,688 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 48 objects.
+2020-04-28 20:08:58,751 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2020-04-28 20:08:58,752 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2020-04-28 20:08:58.751504
+2020-04-28 20:08:58,753 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.951153
+2020-04-28 20:08:58,753 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2020-04-28 20:08:59,034 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
+2020-04-28 20:08:59,035 - stpipe.Image3Pipeline - INFO - Matching sky values across all input images...
+2020-04-28 20:08:59,217 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
+2020-04-28 20:08:59,220 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2020-04-28 20:08:59,274 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:08:59,275 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2020-04-28 20:08:59.274279
+2020-04-28 20:08:59,276 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:08:59,276 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
+2020-04-28 20:08:59,278 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
+2020-04-28 20:08:59,278 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
+2020-04-28 20:08:59,279 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:08:59,280 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
+2020-04-28 20:09:02,604 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 0.0303561
+2020-04-28 20:09:02,606 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 0
+2020-04-28 20:09:02,606 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 0.0603457
+2020-04-28 20:09:02,607 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 0.0584788
+2020-04-28 20:09:02,608 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:09:02,608 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2020-04-28 20:09:02,734 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:09:02,736 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 10.932765660646014 [not converted]
+2020-04-28 20:09:02,736 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:09:02,737 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
+2020-04-28 20:09:02,738 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 10.9631 (old=0.0303561, delta=10.9328)
+2020-04-28 20:09:02,739 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 10.9328 (old=0, delta=10.9328)
+2020-04-28 20:09:02,740 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp1_74test_cal.fits. Sky background: 10.9931 (old=0.0603457, delta=10.9328)
+2020-04-28 20:09:02,740 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F1130Wexp2_74test_cal.fits. Sky background: 10.9912 (old=0.0584788, delta=10.9328)
+2020-04-28 20:09:02,741 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:09:02,742 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2020-04-28 20:09:02.741443
+2020-04-28 20:09:02,742 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:03.467164
+2020-04-28 20:09:02,743 - stpipe.Image3Pipeline.skymatch - INFO -  
+2020-04-28 20:09:02,761 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
+2020-04-28 20:09:02,762 - stpipe.Image3Pipeline - INFO - Performing outlier detection on input images...
+2020-04-28 20:09:02,973 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
+2020-04-28 20:09:02,976 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: 6, &#39;scale_detection&#39;: False}
+2020-04-28 20:09:02,981 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 4 inputs
+2020-04-28 20:09:04,010 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:04,801 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:37,438 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:38,209 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:05,848 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:06,620 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:39,211 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:39,991 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:07,682 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:08,642 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:41,015 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:42,114 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
-2020-04-28 20:03:43,070 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
-2020-04-28 20:03:43,442 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:09,736 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:10,892 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
+2020-04-28 20:09:11,838 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
+2020-04-28 20:09:12,201 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:44,435 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
-2020-04-28 20:03:44,814 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:13,232 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
+2020-04-28 20:09:13,623 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:45,943 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
-2020-04-28 20:03:46,306 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:14,687 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
+2020-04-28 20:09:15,072 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:47,296 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
-2020-04-28 20:03:47,538 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/outlier_detection/outlier_detection.py:418: RuntimeWarning: overflow encountered in square
+2020-04-28 20:09:16,108 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1138, 1119)
+2020-04-28 20:09:16,374 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/outlier_detection/outlier_detection.py:418: RuntimeWarning: overflow encountered in square
   ta = np.sqrt(np.abs(blot_data + subtracted_background) + err_data ** 2)
 
-2020-04-28 20:03:48,196 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2020-04-28 20:03:48,197 - stpipe.Image3Pipeline - INFO - Writing Level 2c images with updated DQ arrays...
-2020-04-28 20:03:48,555 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_74test_a3001_crf.fits
-2020-04-28 20:03:48,900 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp2_74test_a3001_crf.fits
-2020-04-28 20:03:49,245 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq2_MIRIMAGE_F1130Wexp1_74test_a3001_crf.fits
-2020-04-28 20:03:49,591 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq2_MIRIMAGE_F1130Wexp2_74test_a3001_crf.fits
-2020-04-28 20:03:49,592 - stpipe.Image3Pipeline - INFO - Resampling images to final result...
-2020-04-28 20:03:49,793 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2020-04-28 20:03:49,795 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;good_bits&#39;: 6, &#39;single&#39;: False, &#39;blendheaders&#39;: True}
-2020-04-28 20:03:49,804 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
-2020-04-28 20:03:49,854 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:17,032 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2020-04-28 20:09:17,033 - stpipe.Image3Pipeline - INFO - Writing Level 2c images with updated DQ arrays...
+2020-04-28 20:09:17,401 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_74test_a3001_crf.fits
+2020-04-28 20:09:17,745 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp2_74test_a3001_crf.fits
+2020-04-28 20:09:18,086 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq2_MIRIMAGE_F1130Wexp1_74test_a3001_crf.fits
+2020-04-28 20:09:18,427 - stpipe.Image3Pipeline - INFO - Saved model in det_image_seq2_MIRIMAGE_F1130Wexp2_74test_a3001_crf.fits
+2020-04-28 20:09:18,429 - stpipe.Image3Pipeline - INFO - Resampling images to final result...
+2020-04-28 20:09:18,653 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2020-04-28 20:09:18,656 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;good_bits&#39;: 6, &#39;single&#39;: False, &#39;blendheaders&#39;: True}
+2020-04-28 20:09:18,664 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /tmp/crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
+2020-04-28 20:09:18,713 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:49,991 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /ifs/jwst/wit/miri/pipelinetests/20190906_131730_jumpsteptest_mirisim/starfield_74_combined.fits
-2020-04-28 20:03:51,856 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:52,584 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:18,844 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /ifs/jwst/wit/miri/pipelinetests/20190906_131730_jumpsteptest_mirisim/starfield_74_combined.fits
+2020-04-28 20:09:20,671 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:21,410 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:53,585 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:54,373 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:22,388 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:23,105 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:55,443 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:56,177 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
+2020-04-28 20:09:24,087 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:24,808 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/modeling/core.py:729: AstropyDeprecationWarning: Class TPCorr defines class attributes ``inputs``.
                 This has been deprecated in v4.0 and support will be removed in v4.1.
                 Starting with v4.0 classes must define a class attribute ``n_inputs``.
                 Please consult the documentation for details.
                 
   &#34;&#34;&#34;, AstropyDeprecationWarning)
 
-2020-04-28 20:03:57,241 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
-2020-04-28 20:03:57,990 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.022701233 -0.018447636 0.022701233 0.016630839 359.988208424 0.016630839 359.988208424 -0.018447636
-2020-04-28 20:03:57,997 - stpipe.Image3Pipeline.resample - INFO - Step resample done
-2020-04-28 20:03:58,856 - stpipe.Image3Pipeline - INFO - Saved model in starfield_74_combined_i2d.fits
-2020-04-28 20:03:58,858 - stpipe.Image3Pipeline - INFO - Creating source catalog...
-2020-04-28 20:03:59,101 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;DrizProductModel(1138, 1119) from starfield_74_combined_i2d.fits&gt;,).
-2020-04-28 20:03:59,104 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.ecsv&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;kernel_fwhm&#39;: 2.0, &#39;kernel_xsize&#39;: 5.0, &#39;kernel_ysize&#39;: 5.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5.0, &#39;deblend&#39;: False}
-2020-04-28 20:03:59,529 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/io/fits/card.py:1003: VerifyWarning: Card is too long, comment will be truncated.
+2020-04-28 20:09:25,849 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1138, 1119)
+2020-04-28 20:09:26,574 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.022701233 -0.018447636 0.022701233 0.016630839 359.988208424 0.016630839 359.988208424 -0.018447636
+2020-04-28 20:09:26,580 - stpipe.Image3Pipeline.resample - INFO - Step resample done
+2020-04-28 20:09:27,435 - stpipe.Image3Pipeline - INFO - Saved model in starfield_74_combined_i2d.fits
+2020-04-28 20:09:27,436 - stpipe.Image3Pipeline - INFO - Creating source catalog...
+2020-04-28 20:09:27,609 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;DrizProductModel(1138, 1119) from starfield_74_combined_i2d.fits&gt;,).
+2020-04-28 20:09:27,611 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.ecsv&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/resample/jwst_resample_miri_test&#39;, &#39;kernel_fwhm&#39;: 2.0, &#39;kernel_xsize&#39;: 5.0, &#39;kernel_ysize&#39;: 5.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5.0, &#39;deblend&#39;: False}
+2020-04-28 20:09:28,027 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/astropy/io/fits/card.py:1003: VerifyWarning: Card is too long, comment will be truncated.
   VerifyWarning)
 
-2020-04-28 20:04:07,273 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 644 sources
-2020-04-28 20:04:07,357 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: starfield_74_combined_cat.ecsv
-2020-04-28 20:04:07,360 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
-2020-04-28 20:04:07,360 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
+2020-04-28 20:09:35,577 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 644 sources
+2020-04-28 20:09:35,657 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: starfield_74_combined_cat.ecsv
+2020-04-28 20:09:35,660 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
+2020-04-28 20:09:35,660 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
 </pre>
 </div>
 </div>
@@ -13632,7 +13632,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-04-28 20:04:08,755 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/photutils/aperture/attributes.py:75: AstropyDeprecationWarning: Inputing positions shaped as 2xN is deprecated and will be removed in v0.8.  Positions should be a (x, y) pixel position or a list or array of (x, y) pixel positions, e.g. [(x1, y1), (x2, y2), (x3, y3)].
+<pre>2020-04-28 20:09:36,979 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/photutils/aperture/attributes.py:75: AstropyDeprecationWarning: Inputing positions shaped as 2xN is deprecated and will be removed in v0.8.  Positions should be a (x, y) pixel position or a list or array of (x, y) pixel positions, e.g. [(x1, y1), (x2, y2), (x3, y3)].
   &#39;(x2, y2), (x3, y3)].&#39;, AstropyDeprecationWarning)
 
 </pre>
