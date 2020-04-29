@@ -6,13 +6,15 @@ This repository contains notebook that are used to validate the output of the JW
 
 These notebooks follow a consistent [style guide](https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md) in terms of layout/structure, coding conventions etc.
 
+To see most recent [Jenkins build](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/) status
+
 ## Contents
 To see the current notebook suite visit our [website](https://jwst-validation-notebooks.stsci.edu/).
 
 ## Executing Notebooks Locally
 
 ### Installing the JWST Calibration Pipeline ###
-Visit the [JWST Pipeline Software](https://github.com/spacetelescope/jwst) for installation instructions.
+Visit the [JWST Pipeline Software](https://github.com/spacetelescope/jwst#installation) for installation instructions.
 
 ### CRDS Setup ###
 
@@ -58,7 +60,7 @@ To change the kernel, use the Kernel drop down in the top left corner of the not
 From here, you can select the conda environment kernel that has the JWST pipeline installed. Now you can execute the notebook
 regularly. For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion. Here is a useful [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
 
-### Running Notebooks with nbpages###
+### Running Notebooks with nbpages ###
 First make sure you are in the `jwst-validation-notebooks` repository and execute the following commands:
 
     pip install nbpages
@@ -68,4 +70,4 @@ This will generate the html output locally.
 
 ### Contributing New Notebooks & Data ###
 
-This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/template/jwst_validation_test_template/validation_test_template.ipynb).
+This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/validation_test_template.ipynb).

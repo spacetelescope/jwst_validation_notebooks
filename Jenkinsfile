@@ -30,7 +30,7 @@ pipeline {
 
     stage('Convert/Check') {
       steps {
-        sh("./with_env -n ${env_name} python convert.py --report report.txt")
+        sh("./with_env -n ${env_name} python convert.py --notebook-path jwst_validation_notebooks --report report.txt")
         sh("./with_env -n ${env_name} python prepend_date.py --reportfile report.xml")
         sh("./with_env -n ${env_name} python -m 'nbpages.check_nbs' --notebook-path jwst_validation_notebooks")
       }
