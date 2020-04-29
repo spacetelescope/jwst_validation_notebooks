@@ -14,7 +14,7 @@ To see the current notebook suite visit our [website](https://jwst-validation-no
 ## Executing Notebooks Locally
 
 ### Installing the JWST Calibration Pipeline ###
-Visit the [JWST Pipeline Software](https://github.com/spacetelescope/jwst) for installation instructions.
+Visit the [JWST Pipeline Software](https://github.com/spacetelescope/jwst#installation) for installation instructions.
 
 ### CRDS Setup ###
 
