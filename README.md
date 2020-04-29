@@ -6,6 +6,8 @@ This repository contains notebook that are used to validate the output of the JW
 
 These notebooks follow a consistent [style guide](https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md) in terms of layout/structure, coding conventions etc.
 
+To see most recent [Jenkins build](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/) status
+
 ## Contents
 To see the current notebook suite visit our [website](https://jwst-validation-notebooks.stsci.edu/).
 
