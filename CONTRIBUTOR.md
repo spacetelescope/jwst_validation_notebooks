@@ -55,7 +55,7 @@ You will see a webpage that looks like the following with a panel of icons that 
 
 Once you select the artifacts icon, you will want to scroll down the panel on the left-hand side of the webpage until you reach the `jwst_validation_notebooks` repository. Once located, click the drop-down icon just to the left of the repository which will expose the child folders of the repository and click the `validation_data` folder which is circled in red below.
 
-![Select Artifacts](docs/static/artifacts_icon.png)
+![Select Artifacts](docs/static/validation_data_folder.png)
 
 Next if you will need to locate the deploy button in the upper right-hand corner of the webpage. The icon is a wrench, use the figure above to locate it or locate it on your web browser and click it. Next, a dialog will appear that looks like the following
 
