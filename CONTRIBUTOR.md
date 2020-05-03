@@ -89,3 +89,4 @@ This will download all of the files including the association and assign the ass
 
 ![Imports](docs/static/pipelinecall.png)
 
+Now that you have seen an example of how to make calls to artifactory, add these calls to your notebook where appropriate and make sure change the arguments of your calls to parse the files to the variable name you selected. Artifactory will download the files to the directory where the conversion is occurring.
