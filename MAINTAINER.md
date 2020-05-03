@@ -16,3 +16,4 @@ When a user contributes a notebooks to the repository, what should you look for?
     4. Do they need you to contribute data for them?
     5. When data is contributed to artifactory, did they test the notebook to use verify it's working?
 
+If the user requests that you add the data for them, you can follow the outline for contributing data in the `CONTRIBUTOR.md` file if you are unfamiliar with the process.
