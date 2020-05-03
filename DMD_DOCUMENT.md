@@ -23,8 +23,8 @@ The notebooks are executed cell by cell using the [`nbpages` package](https://gi
 The executed notebooks and `html` output is captured in the `gh-pages` branch of the repository. The reasoning for naming the branch `gh-pages` comes from the [STScI Notebooks](https://github.com/spacetelescope/notebooks) effort. The `notebooks` repository provides a very similar service to that of the `jwst_validation_notebooks` so why not synergize our efforts and consolidate into one place. Here are the main reasons why:
 
     1. The notebooks rely on data and information being publically accessable, which the JWST data and pipeline are not at the moment.
-    2. The notebooks currently rely on `CIRCLECI` and `Travis` to perform their regression builds. These systems can not peform the task to get data behind the STScI firewall.
-    3. The `html` output is served through the `github pages` (github.io) page that is associated with the repository. These pages are publically accessable regardless of the permissions set on the repository itself.
+    2. The notebooks currently rely on CIRCLECI and Travis to perform their regression builds. These systems can not peform the task to get data behind the STScI firewall.
+    3. The `html` output is served through the github pages (github.io) page that is associated with the repository. These pages are publically accessable regardless of the permissions set on the repository itself.
 
 The main take away is, since there is ITAR sensitive material associated with the notebooks, we need to protect and keep all of the input and output of the notebooks internal facing. The `notebooks` repository is where the majority of the notebooks that will be contributed to this project should be maintained when possible (pipeline and data are public). These notebooks serve as good benchmarks of how the pipeline is performing and future JWST users might be curious about the this as well as the notebooks that are teaching them how to use `drizzlepac` or how to produce a light curve from Kepler data.
 
