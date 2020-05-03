@@ -85,7 +85,7 @@ If you are looking to retrieve all of the files in an association, we will use `
 
 ![Imports](docs/static/regtestdata.png)
 
-This will download all of the files including the association and assign the association to the variable `rtdata`. You can then pass `rtdata.input` to the pipeline like below
+This will download all of the files including the association and assign the association to the variable `rtdata`. Below is an example of how to pass `rtdata` to the `Image3` pipeline.
 
 ![Imports](docs/static/pipelinecall.png)
 
