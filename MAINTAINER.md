@@ -12,7 +12,7 @@ When a user contributes a notebooks to the repository, what should you look for?
 
     1. Did the user follow the suggested notebook outline in the template?
     2. Did the contribute a notebook that has unexecuted cells?
-    3. Have the requested access or do they have access to data on artifactory
+    3. Have they requested access or do they have access to data on artifactory?
     4. Do they need you to contribute data for them?
     5. When data is contributed to artifactory, did they test the notebook to use verify it's working?
 
