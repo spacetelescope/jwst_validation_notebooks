@@ -61,7 +61,7 @@ From here, you can select the conda environment kernel that has the JWST pipelin
 regularly. For commands on how to execute the cells look at the [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) documentaion. Here is a useful [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
 
 ### Running Notebooks with nbpages ###
-First make sure you are in the `jwst-validation-notebooks` repository and execute the following commands:
+First make sure you are in the `jwst_validation_notebooks` repository and execute the following commands:
 
     pip install nbpages
     python convert.py
