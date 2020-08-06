@@ -1,0 +1,46 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.4.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0 {author: Space Telescope Science Institute, homepage: 'http://github.com/spacetelescope/asdf',
+  name: asdf, version: 2.5.2}
+history:
+  entries:
+  - !core/history_entry-1.0.0 {description: File data provided by Kevin Volk in February
+      2020. Errors are at the 3-6% level., time: ! '2020-04-17 17:40:03'}
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension.BuiltinExtension
+    software: {name: asdf, version: 2.5.2}
+  - !core/extension_metadata-1.0.0
+    extension_class: astropy.io.misc.asdf.extension.AstropyExtension
+    software: {name: astropy, version: 4.0.1.post1}
+abvega_offset: !<tag:astropy.org:astropy/table/table-1.0.0>
+  colnames: [filter, abvega_offset]
+  columns:
+  - !core/column-1.0.0
+    data: !core/ndarray-1.0.0
+      data: [F560W, F770W, F1000W, F1130W, F1280W, F1500W, F1800W, F2100W, F2550W]
+      datatype: [ucs4, 6]
+      shape: [9]
+    name: filter
+  - !core/column-1.0.0
+    data: !core/ndarray-1.0.0
+      data: [3.76065993309021, 4.383979797363281, 4.955510139465332, 5.493490219116211,
+        5.240560054779053, 5.839290142059326, 6.227519989013672, 6.532670021057129,
+        6.968050003051758]
+      datatype: float32
+      shape: [9]
+    name: abvega_offset
+meta:
+  author: Space Telescope Science Institute
+  description: Offset from AB to Vega magnitudes
+  instrument: {name: MIRI}
+  model_type: ABVegaOffsetModel
+  pedigree: GROUND
+  reftype: abvegaoffset
+  telescope: JWST
+  title: AB to Vega magnitude offset reference file
+  useafter: '2015-01-01T00:00:00'
+...

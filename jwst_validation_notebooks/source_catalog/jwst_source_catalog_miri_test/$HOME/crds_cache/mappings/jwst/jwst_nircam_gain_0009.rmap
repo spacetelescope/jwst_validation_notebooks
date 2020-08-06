@@ -1,0 +1,69 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_gain_0008.rmap',
+    'filekind' : 'GAIN',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_gain_0009.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '1b6a5b7e0218ea02db858b63f1f964a6c230d514',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('NRCA1', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0019.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0045.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0050.fits',
+    }),
+    ('NRCA2', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0001.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0043.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0052.fits',
+    }),
+    ('NRCA3', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0020.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0046.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0048.fits',
+    }),
+    ('NRCA4', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0021.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0039.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0055.fits',
+    }),
+    ('NRCALONG', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0022.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0041.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0056.fits',
+    }),
+    ('NRCB1', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0023.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0038.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0053.fits',
+    }),
+    ('NRCB2', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0024.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0042.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0049.fits',
+    }),
+    ('NRCB3', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0025.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0047.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0051.fits',
+    }),
+    ('NRCB4', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0026.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0040.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0057.fits',
+    }),
+    ('NRCBLONG', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_gain_0027.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_gain_0044.fits',
+        '2015-10-01 00:00:01' : 'jwst_nircam_gain_0054.fits',
+    }),
+})

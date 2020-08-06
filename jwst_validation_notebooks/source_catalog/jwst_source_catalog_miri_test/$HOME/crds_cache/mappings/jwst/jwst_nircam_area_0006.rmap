@@ -1,0 +1,112 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_area_0005.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'AREA',
+    'filetype' : 'AREA',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_area_0006.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '7436897b5628f7321f221d441080d99081f7ec3f',
+    'suffix' : 'area',
+    'text_descr' : 'Pixel-Area Map',
+}
+
+selector = Match({
+    ('N/A', 'N/A', 'N/A', 'NOT NRC_IMAGE') : 'N/A',
+    ('N/A', 'N/A', 'N/A', 'NRC_IMAGE') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_area_0001.fits',
+    }),
+    ('NRCA1', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0004.fits',
+    }),
+    ('NRCA1', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0017.fits',
+    }),
+    ('NRCA1', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0005.fits',
+    }),
+    ('NRCA2', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0028.fits',
+    }),
+    ('NRCA2', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0010.fits',
+    }),
+    ('NRCA2', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0012.fits',
+    }),
+    ('NRCA3', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0009.fits',
+    }),
+    ('NRCA3', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0007.fits',
+    }),
+    ('NRCA3', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0031.fits',
+    }),
+    ('NRCA4', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0003.fits',
+    }),
+    ('NRCA4', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0022.fits',
+    }),
+    ('NRCA4', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0008.fits',
+    }),
+    ('NRCALONG', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0014.fits',
+    }),
+    ('NRCALONG', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0015.fits',
+    }),
+    ('NRCALONG', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0006.fits',
+    }),
+    ('NRCB1', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0018.fits',
+    }),
+    ('NRCB1', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0021.fits',
+    }),
+    ('NRCB1', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0025.fits',
+    }),
+    ('NRCB2', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0027.fits',
+    }),
+    ('NRCB2', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0029.fits',
+    }),
+    ('NRCB2', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0013.fits',
+    }),
+    ('NRCB3', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0019.fits',
+    }),
+    ('NRCB3', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0023.fits',
+    }),
+    ('NRCB3', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0002.fits',
+    }),
+    ('NRCB4', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0016.fits',
+    }),
+    ('NRCB4', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0020.fits',
+    }),
+    ('NRCB4', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0011.fits',
+    }),
+    ('NRCBLONG', 'ANY', 'ANY', 'NRC_CORON') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0024.fits',
+    }),
+    ('NRCBLONG', 'ANY', 'ANY', 'NRC_IMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0026.fits',
+    }),
+    ('NRCBLONG', 'ANY', 'ANY', 'NRC_TSIMAGE') : UseAfter({
+        '2015-07-04 00:00:00' : 'jwst_nircam_area_0030.fits',
+    }),
+})

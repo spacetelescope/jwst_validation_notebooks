@@ -1,0 +1,54 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_specwcs_0024.rmap',
+    'filekind' : 'SPECWCS',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_specwcs_0025.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.CHANNEL', 'META.INSTRUMENT.BAND', 'META.SUBARRAY.NAME', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'BAND' : 'META.INSTRUMENT.BAND',
+        'CHANNEL' : 'META.INSTRUMENT.CHANNEL',
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+        'SUBARRAY' : 'META.SUBARRAY.NAME',
+    },
+    'sha1sum' : '140181a2a830c9018bd73c8ee18141fc4687d827',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_4QPM') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_CORONCAL') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_IMAGE') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_LYOT') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_TACQ') : 'N/A',
+    ('MIRIFULONG', '34', 'LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0019.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0023.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0020.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0022.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0021.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0024.asdf',
+    }),
+    ('MIRIMAGE', 'N/A', 'N/A', 'GENERIC', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0003.fits',
+    }),
+})

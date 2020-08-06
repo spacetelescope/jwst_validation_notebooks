@@ -1,0 +1,53 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.4.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0 {author: Space Telescope Science Institute, homepage: 'http://github.com/spacetelescope/asdf',
+  name: asdf, version: 2.5.1}
+history:
+  entries:
+  - !core/history_entry-1.0.0
+    description: New version created from CDP-7 with updated filter offset format
+    software: !core/software-1.0.0 {author: D.Law, homepage: 'https://github.com/STScI-MIRI/miricoord',
+      name: miricoord, version: master}
+    time: 2020-05-18 14:30:31.648154
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension.BuiltinExtension
+    software: {name: asdf, version: 2.5.1}
+  - !core/extension_metadata-1.0.0
+    extension_class: astropy.io.misc.asdf.extension.AstropyAsdfExtension
+    software: {name: astropy, version: '4.0'}
+filters:
+- {column_offset: -0.08, filter: F560W, pupil: N/A, row_offset: -0.06}
+- {column_offset: -0.0, filter: F770W, pupil: N/A, row_offset: -0.0}
+- {column_offset: -0.14, filter: F1000W, pupil: N/A, row_offset: -0.62}
+- {column_offset: 0.15, filter: F1130W, pupil: N/A, row_offset: -0.59}
+- {column_offset: -0.08, filter: F1280W, pupil: N/A, row_offset: -0.7}
+- {column_offset: -0.36, filter: F1500W, pupil: N/A, row_offset: -0.74}
+- {column_offset: 0.39, filter: F1800W, pupil: N/A, row_offset: -0.73}
+- {column_offset: -0.02, filter: F2100W, pupil: N/A, row_offset: -0.27}
+- {column_offset: -0.27, filter: F2550WR, pupil: N/A, row_offset: -1.45}
+- {column_offset: -0.15, filter: F2550W, pupil: N/A, row_offset: -0.55}
+- {column_offset: -0.6, filter: F1065C, pupil: N/A, row_offset: -2.15}
+- {column_offset: -0.42, filter: F1140C, pupil: N/A, row_offset: -1.56}
+- {column_offset: -1.17, filter: F1550C, pupil: N/A, row_offset: -1.47}
+- {column_offset: 1.35, filter: F2300C, pupil: N/A, row_offset: -2.11}
+- {column_offset: -0.07, filter: FND, pupil: N/A, row_offset: -0.26}
+meta:
+  author: Alistair Glasse, David R. Law
+  date: '2020-05-18T10:30:31.671'
+  description: CDP7 delivery
+  exposure: {p_exptype: MIR_IMAGE|MIR_TACQ|MIR_LYOT|MIR_4QPM|MIR_CORONCAL|MIR_TACONFIRM|,
+    type: MIR_IMAGE}
+  filename: jwst_miri_filteroffset_cdp7.asdf
+  input_units: pixels
+  instrument: {band: N/A, channel: N/A, detector: MIRIMAGE, name: MIRI}
+  model_type: FilteroffsetModel
+  pedigree: GROUND
+  reftype: filteroffset
+  telescope: JWST
+  title: MIRI imager filter offset - CDP7
+  useafter: '2000-01-01T00:00:00'
+...

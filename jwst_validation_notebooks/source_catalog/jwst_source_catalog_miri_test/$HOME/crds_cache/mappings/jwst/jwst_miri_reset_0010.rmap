@@ -1,0 +1,56 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_reset_0009.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'RESET',
+    'filetype' : 'RESET',
+    'instrument' : 'MIRI',
+    'ld_tpn' : 'miri_reset_ld.tpn',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_reset_0010.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME', 'META.EXPOSURE.READPATT'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'cc04ec45012dc8adb4258fe91a51f7f3cf39332c',
+    'suffix' : 'reset',
+    'text_descr' : 'Reset Correction',
+    'tpn' : 'miri_reset.tpn',
+}
+
+selector = Match({
+    ('MIRIFULONG', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0034.fits',
+    }),
+    ('MIRIFUSHORT', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0044.fits',
+    }),
+    ('MIRIMAGE', 'BRIGHTSKY', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0037.fits',
+    }),
+    ('MIRIMAGE', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0042.fits',
+    }),
+    ('MIRIMAGE', 'MASK1065', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0041.fits',
+    }),
+    ('MIRIMAGE', 'MASK1140', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0038.fits',
+    }),
+    ('MIRIMAGE', 'MASK1550', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0039.fits',
+    }),
+    ('MIRIMAGE', 'MASKLYOT', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0040.fits',
+    }),
+    ('MIRIMAGE', 'SLITLESSPRISM', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0043.fits',
+    }),
+    ('MIRIMAGE', 'SUB128', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0036.fits',
+    }),
+    ('MIRIMAGE', 'SUB256', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0045.fits',
+    }),
+    ('MIRIMAGE', 'SUB64', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_reset_0035.fits',
+    }),
+})

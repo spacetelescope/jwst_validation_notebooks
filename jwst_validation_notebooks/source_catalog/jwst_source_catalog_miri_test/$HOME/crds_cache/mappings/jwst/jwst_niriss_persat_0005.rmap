@@ -1,0 +1,22 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_persat_0004.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'persat',
+    'filetype' : 'PERSAT',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_persat_0005.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '827a93541b10629bc9a49ef972d0318b6e7b675d',
+    'suffix' : 'persat',
+    'text_descr' : 'Persistence Saturation Threshold',
+}
+
+selector = Match({
+    'NIS' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_persat_0001.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_persat_0003.fits',
+    }),
+})

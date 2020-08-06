@@ -1,0 +1,30 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_area_0011.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'AREA',
+    'filetype' : 'AREA',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_area_0012.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'af1fa0fd2a94a2f722c0e4afa77aad2e044e0709',
+    'suffix' : 'area',
+    'text_descr' : 'Pixel-Area Map',
+}
+
+comment = """
+May 3 2016 comment: removed old reffile with later useafter date that the 
+one delivered and that was not rejected with the new file. Also removed old 
+clear and clearp reference file as N/A parameter should cover these cases 
+for now.
+"""
+
+selector = Match({
+    ('N/A', 'N/A', 'N/A', 'NOT NIS_IMAGE') : 'N/A',
+    ('NIS', 'N/A', 'N/A', 'NIS_IMAGE') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_niriss_area_0004.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_area_0011.fits',
+    }),
+})

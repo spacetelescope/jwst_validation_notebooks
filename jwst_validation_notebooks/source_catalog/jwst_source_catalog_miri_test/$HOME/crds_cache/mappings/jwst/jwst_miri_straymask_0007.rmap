@@ -1,0 +1,25 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_straymask_0006.rmap',
+    'filekind' : 'STRAYMASK',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_straymask_0007.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.BAND'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'aca0472fa4f47642f2d9da5db27490b96a52a054',
+}
+
+selector = Match({
+    ('MIRIFULONG', 'N/A') : 'N/A',
+    ('MIRIFUSHORT', 'LONG') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_straymask_0004.fits',
+    }),
+    ('MIRIFUSHORT', 'MEDIUM') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_straymask_0005.fits',
+    }),
+    ('MIRIFUSHORT', 'SHORT') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_straymask_0006.fits',
+    }),
+    ('MIRIMAGE', 'N/A') : 'N/A',
+})
