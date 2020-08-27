@@ -6,15 +6,15 @@
 
 This repository contains *jupyter* notebooks that are used to perform validation testing of the [JWST Calibration Pipeline](https://jwst-pipeline.readthedocs.io/en/latest/jwst/introduction.html) (hereafter referred to as the calibration pipeline). These notebooks are structured to capture documentation, code, tests, figures, and other outputs that JWST instrument teams use to validate data from the calibration pipeline.
 
-This repository is integrated with the [jwst software repo](https://github.com/spacetelescope/jwst) and the Jenkins automation server. To see most recent build status, go [here](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/).
+This repository is integrated with the [JWST pipeline software repository](https://github.com/spacetelescope/jwst) and the Jenkins automation server. To see most recent build status, go [here](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/).
 
 ## Current Validation Suite
-To see the current suite of validation notebooks, visit our [website](https://jwst-validation-notebooks.stsci.edu/). Please note that the website is currently only available to internal STScI staff who are on the VPN. Contact Misty Cracraft [@cracraft](https://github.com/cracraft) or Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe) for questions or access issues.
+To see the current suite of validation notebooks, visit our [website](https://jwst-validation-notebooks.stsci.edu/). Please note that the website is currently only available to internal STScI staff who are on the VPN. Contact Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) for questions or access issues.
 
 ## Executing Validation Notebooks Locally
 
 ### Install the JWST Calibration Pipeline ###
-If you have not installed the calibration pipeline software, visit the [JWST Pipeline Software repository](https://github.com/spacetelescope/jwst#installation) for the most up-to-date installation instructions.
+If you have not installed the calibration pipeline software, visit the [JWST pipeline software repository](https://github.com/spacetelescope/jwst#installation) for the most up-to-date installation instructions.
 
 ### CRDS Set-Up ###
 Inside the STScI network, the pipeline works with the default CRDS setup with no modifications. To run it outside the network, CRDS must be configured according to the instructions [provided in the repository](https://github.com/spacetelescope/jwst#crds-setup).
@@ -53,9 +53,9 @@ To change the kernel you are using, select the *Kernel* drop down button in the 
 
 ![Select Kernel](docs/static/kernel.png)
 
-From there, you can select the *conda* environment kernel that includes your JWST pipeline installation. Now you should be able to execute the notebook. For more information about *jupyter* notebooks, see the [Jupyter Notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/). There is also a handy [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
+From there, you can select the *conda* environment kernel that includes your JWST pipeline installation. Then, you should be able to execute the notebook. For more information about *jupyter* notebooks, see the [Jupyter Notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/). There is also a handy [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
 
-### Running Notebooks with nbpages ###
+### Running Notebooks with *nbpages* ###
 If you would like to generate HTML outputs locally, make sure you are in the `jwst_validation_notebooks` repository and execute the following commands:
 
 ```
@@ -66,9 +66,9 @@ python convert.py
 ## Contributing ##
 
 ### New Notebooks ###
-Prior to contributing to `jwst_validation_notebooks` development, please review our [style guide](https://github.com/spacetelescope/mirage/blob/master/style_guide/style_guide.md).
+Prior to contributing to `jwst_validation_notebooks` development, please review our [style guide](https://github.com/spacetelescope/mirage/blob/master/style_guide/style_guide.md). Note that **notebook cell outputs must be cleared prior to submission**.
 
-Make sure to follow the appropriate template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/validation_test_template.ipynb), depending on whether you prefer to store your data in Box (externally available) or Artifactory (internal access only). More about linking to data stored in Box or Artifactory is in the next section below.
+Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/validation_test_template.ipynb). More information about storing test data is included below.
 
 This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. The following is a bare bones example of this work flow for contributing to the project:
 
@@ -76,7 +76,7 @@ This repository operates using the standard [fork and pull request github](https
 2. Make a local clone of your fork.
 3. Ensure your personal fork is pointing `upstream` properly.
 4. Create a branch on that personal fork.
-5. Make your software changes.
+5. Make your notebook changes and **be sure to clear the outputs from the cells**.
 6. Push that branch to your personal GitHub repository (i.e. `origin`).
 7. On the `spacetelescope` `jwst_validation_notebooks` repository, create a pull request that merges the branch into `spacetelescope:master`.
 8. Assign a reviewer from the team for the pull request ([@cracraft](https://github.com/cracraft) or Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe)).
@@ -87,10 +87,10 @@ This repository operates using the standard [fork and pull request github](https
 ### New Test Data ###
 If you have a notebook that uses updated test data or new test data, follow the steps below to request a data update.
 
-#### Artifactory Workflow
+#### Artifactory Workflow ####
 Artifactory should be used for data that is for internal use only.
 
-1. Create a [github Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, [@cracraft](https://github.com/cracraft) or Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe) will resolve the issue and notify you that your data is ready to be used.
+1. Create a [github Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
 
 2. Make sure you have the proper OS environmental variable set to access STScI's instance of Artifactory. This can be done via command line or put into a setup file like a ```.bash_profile``` file.
 
@@ -109,7 +109,7 @@ pip install ci_watson
 from ci_watson.artifactory_helpers import get_bigdata
 ```
 
-5. Read in each file stored in Artifactory (the full path will be provided by the person who notified you that your data was ingested successfully).
+5. Read in each file stored in Artifactory (the full path should have been provided by the person who ingested the data).
 
 ```
 satfile = get_bigdata('jwst_validation_notebooks',
@@ -121,7 +121,7 @@ satfile = get_bigdata('jwst_validation_notebooks',
 
 6. Follow the normal workflow for contributing a notebook once you have confirmed that your notebook is running successfully.
 
-#### Box Folder Workflow
+#### Box Folder Workflow ####
 Artifactory is only accessible to internal users on the STScI network. If you would like to contribute a test notebook that uses externally available data, this test data should be stored in a Box folder instead. The final workflow using Box is still in discussion, but for now you can use a Box folder with the correct permissions set up:
 
 ```
@@ -159,5 +159,5 @@ For any questions about the `jwst_validation_notebooks` project or its software 
 ## Current Core Development Team
 - Misty Cracraft [@cracraft](https://github.com/cracraft)
 - Mees Fix [@mfixstsci](https://github.com/mfixstsci)
-- Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe)
 - Maria Pena-Guerrero [@penaguerrero](https://github.com/penaguerrero)
+- Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe)
