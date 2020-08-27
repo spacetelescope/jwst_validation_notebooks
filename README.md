@@ -4,7 +4,7 @@
 [![STScI](https://img.shields.io/badge/powered%20by-STScI-blue.svg?colorA=707170&colorB=3e8ddd&style=flat)](http://www.stsci.edu)
 
 
-This repository contains *jupyter* notebooks that are used to perform validation testing of the [JWST Calibration Pipeline](https://jwst-pipeline.readthedocs.io/en/latest/jwst/introduction.html) (hereafter referred to as the calibration pipeline). These notebooks are structured to capture documentation, code, tests, figures, and other outputs that JWST instrument teams use to validate the outputs from the calibration pipeline.
+This repository contains *jupyter* notebooks that are used to perform validation testing of the [JWST Calibration Pipeline](https://jwst-pipeline.readthedocs.io/en/latest/jwst/introduction.html) (hereafter referred to as the calibration pipeline). These notebooks are structured to capture documentation, code, tests, figures, and other outputs that JWST instrument teams use to validate data from the calibration pipeline.
 
 This repository is integrated with the [jwst software repo](https://github.com/spacetelescope/jwst) and the Jenkins automation server. To see most recent build status, go [here](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/).
 
