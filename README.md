@@ -90,7 +90,7 @@ If you have a notebook that uses updated test data or new test data, follow the 
 #### Artifactory Workflow ####
 Artifactory should be used for data that is for internal use only.
 
-1. Create a [github Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
+1. Create a [Jira "Task" Issue in the JWST Pipeline project](https://jira.stsci.edu/issues/?jql=project%20%3D%20JP%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
 
 2. Make sure you have the proper OS environmental variable set to access STScI's instance of Artifactory. This can be done via command line or put into a setup file like a ```.bash_profile``` file.
 
