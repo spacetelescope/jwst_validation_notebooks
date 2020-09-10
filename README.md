@@ -68,7 +68,7 @@ python convert.py
 ### New Notebooks ###
 Prior to contributing to `jwst_validation_notebooks` development, please review our [style guide](https://github.com/spacetelescope/mirage/blob/master/style_guide/style_guide.md). Note that **notebook cell outputs must be cleared prior to submission**.
 
-Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/validation_test_template.ipynb). More information about storing test data is included below.
+Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb). More information about storing test data is included below.
 
 This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. The following is a bare bones example of this work flow for contributing to the project:
 
@@ -90,7 +90,7 @@ If you have a notebook that uses updated test data or new test data, follow the 
 #### Artifactory Workflow ####
 Artifactory should be used for data that is for internal use only.
 
-1. Create a [github Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
+1. Create a [Jira "Task" Issue in the JWST Pipeline project](https://jira.stsci.edu/issues/?jql=project%20%3D%20JP%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC) requesting to have your data added to Artifactory, along with the pipeline step and location of the data. Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
 
 2. Make sure you have the proper OS environmental variable set to access STScI's instance of Artifactory. This can be done via command line or put into a setup file like a ```.bash_profile``` file.
 
