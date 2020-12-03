@@ -9,6 +9,8 @@ env:
     - CRDS_SERVER_URL='https://jwst-crds.stsci.edu'
     - CRDS_PATH='/tmp/crds_cache'
     - PYTHON_VERSION="3.6"
+    - MINICONDA_VERSION="4.5.4"
+    - CONDA_OS="Linux"
 
 jobs:
   include:
@@ -16,7 +18,20 @@ jobs:
       script: python -m "nbpages.check_nbs" --commit-range="${TRAVIS_COMMIT_RANGE/.../..}"  # see https://github.com/travis-ci/travis-ci/issues/4596 for why this bit in TRAVIS_COMMIT_RANGE is necessary
 
 install:
-    - git clone git://github.com/astropy/ci-helpers.git
-    - source ci-helpers/travis/setup_conda.sh
+    # Now trying to do this with miniconda directly instead of via ci-helpers
+
+    # We do this conditionally because it saves us some downloading if the
+    # version is the same.
+    - wget https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VERSION-$CONDA_OS-x86_64.sh -O miniconda.sh;
+    - bash miniconda.sh -b -p $HOME/miniconda
+    - source "$HOME/miniconda/etc/profile.d/conda.sh"
+    - hash -r
+    - conda config --set always_yes yes --set changeps1 no
+    - conda update -q conda
+    # Useful for debugging any issues with conda
+    - conda info -a
+    - git clone git://github.com/spacetelescope/jwst_validation_notebooks.git
+    - conda env create -n env -f jwst_validation_notebooks/environment.yml
+    - conda activate env
     - pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
-    - pip install ci-watson
+    - echo "Finished Conda Install"
