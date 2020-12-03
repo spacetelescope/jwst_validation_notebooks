@@ -1,12 +1,123 @@
-# Byte-compiled / optimized / DLL files
+###################
+##    AstroPy    ##
+###################
+
+# Compiled files
+*.py[cod]
+*.a
+*.o
+*.so
+__pycache__
+
+# Ignore .c files by default to avoid including generated code. If you want to
+# add a non-generated .c extension, use `git add -f filename.c`.
+*.c
+
+# Other generated files
+*/version.py
+*/cython_version.py
+htmlcov
+.coverage
+MANIFEST
+.ipynb_checkpoints
+
+# Sphinx
+docs/api
+docs/_build
+
+# Eclipse editor project files
+.project
+.pydevproject
+.settings
+
+# Pycharm editor project files
+.idea
+
+# Floobits project files
+.floo
+.flooignore
+
+# Packages/installer info
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+distribute-*.tar.gz
+
+# Other
+.cache
+.tox
+.*.sw[op]
+*~
+.project
+.pydevproject
+.settings
+
+# Mac OSX
+.DS_Store
+
+
+###################
+##    Custom     ##
+###################
+
+# Notebook outputs
+*.fits
+*.html
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Byte-compiled / optimized / DLL files #
+#########################################
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
-# Distribution / packaging
+# Distribution / packaging #
+############################
 .Python
 build/
 develop-eggs/
@@ -23,19 +134,21 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+# PyInstaller                                                                   #
+#  Usually these files are written by a python script from a template           #
+#  before PyInstaller builds the exe, so as to inject date/other infos into it. #
+#################################################################################
 *.manifest
 *.spec
 
-# Installer logs
+# Installer logs #
+##################
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit test / coverage reports #
+################################
 htmlcov/
 .tox/
 .coverage
@@ -45,64 +158,71 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-.pytest_cache/
 
-# Translations
+# Translations #
+################
 *.mo
 *.pot
 
-# Django stuff:
+# Django stuff: #
+#################
 *.log
 local_settings.py
-db.sqlite3
 
-# Flask stuff:
+# Flask stuff: #
+################
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy stuff: #
+#################
 .scrapy
 
-# Sphinx documentation
+# Sphinx documentation #
+########################
 docs/_build/
 
-# PyBuilder
+# PyBuilder #
+#############
 target/
 
-# Jupyter Notebook
+# Jupyter Notebook #
+####################
 .ipynb_checkpoints
 
-# pyenv
+# pyenv #
+#########
 .python-version
 
-# celery beat schedule file
+# celery beat schedule file #
+#############################
 celerybeat-schedule
 
-# SageMath parsed files
+# SageMath parsed files #
+#########################
 *.sage.py
 
-# Environments
+# Environments #
+################
 .env
 .venv
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
 
-# Spyder project settings
+# Spyder project settings #
+###########################
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project settings #
+#########################
 .ropeproject
 
-# mkdocs documentation
+# mkdocs documentation #
+########################
 /site
 
-# mypy
+# mypy #
+########
 .mypy_cache/
-
-# Data
-*.fits
-*.profaw
