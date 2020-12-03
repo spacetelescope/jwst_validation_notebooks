@@ -29,8 +29,8 @@ install:
     - conda update -q conda
     # Useful for debugging any issues with conda
     - conda info -a
-    - git clone git://github.com/spacetelescope/jwst_validation_notebooks.git ./validation
-    - conda env create -n validation_env -f ./validation/environment.yml
-    - conda activate validation_env
+#    - git clone git://github.com/spacetelescope/jwst_validation_notebooks.git ./validation
+    - conda env create -f spacetelescope/jwst_validation_notebooks/environment.yml
+    - conda activate jwst_validation_notebooks
     - pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
     - echo "Finished Conda Install"
