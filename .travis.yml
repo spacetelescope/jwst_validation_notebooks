@@ -30,7 +30,7 @@ install:
     # Useful for debugging any issues with conda
     - conda info -a
     - git clone git://github.com/spacetelescope/jwst_validation_notebooks.git validation
-    - conda env create -n env -f ./validation/environment.yml
-    - conda activate env
+    - conda env create -n validation_env -f ./validation/environment.yml
+    - conda activate validation_env
     - pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
     - echo "Finished Conda Install"
