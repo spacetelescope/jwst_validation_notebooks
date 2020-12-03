@@ -1,0 +1,29 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_camera_0015.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'camera',
+    'filetype' : 'CAMERA',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_camera_0016.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : 'aca0aacaa0b86e689d91d877df0e41a408b1714b',
+    'suffix' : 'camera',
+    'text_descr' : 'Camera Model',
+}
+
+selector = Match({
+    'N/A' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_camera_0002.asdf',
+    }),
+    'NRS_AUTOFLAT' : 'N/A',
+    'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ' : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_nirspec_camera_0004.asdf',
+    }),
+    'NRS_DARK' : 'N/A',
+})

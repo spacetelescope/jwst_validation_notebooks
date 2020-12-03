@@ -1,0 +1,43 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_distortion_0030.rmap',
+    'filekind' : 'DISTORTION',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_distortion_0031.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.CHANNEL', 'META.INSTRUMENT.BAND', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'BAND' : 'META.INSTRUMENT.BAND',
+        'CHANNEL' : 'META.INSTRUMENT.CHANNEL',
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : '8a73a92aaa79136e054589823c0e25d79c01e25c',
+}
+
+selector = Match({
+    ('ANY', 'ANY', 'ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS') : 'N/A',
+    ('MIRIFULONG', '34', 'LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0032.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0033.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0034.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0029.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0030.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0031.asdf',
+    }),
+    ('MIRIMAGE', 'N/A', 'N/A', 'MIR_IMAGE|MIR_TACQ|MIR_LYOT|MIR_4QPM|MIR_CORONCAL|MIR_LRS-FIXEDSLIT|MIR_LRS-SLITLESS|MIR_TACONFIRM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_distortion_0028.asdf',
+    }),
+})

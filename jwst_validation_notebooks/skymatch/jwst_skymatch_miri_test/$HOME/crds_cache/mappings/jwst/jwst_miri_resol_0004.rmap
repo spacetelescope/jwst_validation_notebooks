@@ -1,0 +1,22 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_resol_0003.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'RESOL',
+    'filetype' : 'RESOL',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_resol_0004.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.CHANNEL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '45b558ea97f8298eaf8e21cc01b561cc0dfc98a6',
+    'suffix' : 'resol',
+    'text_descr' : 'MRS Spectral Resolution File',
+}
+
+selector = Match({
+    ('MIRIFUSHORT|MIRIFULONG|', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_resol_0003.fits',
+    }),
+    ('N/A', 'N/A') : 'N/A',
+})

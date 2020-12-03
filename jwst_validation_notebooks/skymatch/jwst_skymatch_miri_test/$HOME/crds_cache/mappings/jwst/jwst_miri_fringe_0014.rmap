@@ -1,0 +1,48 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_fringe_0013.rmap',
+    'filekind' : 'FRINGE',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_fringe_0014.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.BAND'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '7a48719bfdbe5d556ed4776e0eb668f65c1b895c',
+}
+
+selector = Match({
+    ('MIRIFULONG', 'LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0045.fits',
+    }),
+    ('MIRIFULONG', 'MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0044.fits',
+    }),
+    ('MIRIFULONG', 'SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0042.fits',
+    }),
+    ('MIRIFUSHORT', 'LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0043.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0038.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0050.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0047.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0041.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0049.fits',
+    }),
+    ('MIRIFUSHORT', 'MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0052.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0053.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0037.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0048.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0035.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0034.fits',
+    }),
+    ('MIRIFUSHORT', 'SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0051.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0036.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0039.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0054.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0040.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0046.fits',
+    }),
+    ('MIRIMAGE', 'N/A') : 'N/A',
+})

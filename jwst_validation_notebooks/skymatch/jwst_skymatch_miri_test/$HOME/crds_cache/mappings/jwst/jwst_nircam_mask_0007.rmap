@@ -1,0 +1,59 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_mask_0006.rmap',
+    'filekind' : 'MASK',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_mask_0007.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'ec069c733caf0de35ccc5386743e07bd9772c43c',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('NRCA1', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0010.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0033.fits',
+    }),
+    ('NRCA2', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0011.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0031.fits',
+    }),
+    ('NRCA3', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0012.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0030.fits',
+    }),
+    ('NRCA4', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0013.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0035.fits',
+    }),
+    ('NRCALONG', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_mask_0014.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0038.fits',
+    }),
+    ('NRCB1', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0015.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0036.fits',
+    }),
+    ('NRCB2', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0016.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0039.fits',
+    }),
+    ('NRCB3', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0017.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0034.fits',
+    }),
+    ('NRCB4', 'GENERIC') : UseAfter({
+        '2013-04-01 00:00:00' : 'jwst_nircam_mask_0018.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0037.fits',
+    }),
+    ('NRCBLONG', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nircam_mask_0019.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_mask_0032.fits',
+    }),
+})
