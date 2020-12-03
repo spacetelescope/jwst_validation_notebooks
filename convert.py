@@ -10,7 +10,7 @@ args.add_argument("--notebook-path", default='.', dest='nb_path',
 args = args.parse_args()
 
 if args.template_file is None and os.path.exists('nb_html.tpl'):
-    args.template_file = os.path.abspath('nb_html.tpl')
+    args.template_file = 'nb_html.tpl'
 
 if args.exclude is None:
     # If there is an "exclude_notebooks" file, use that to find which ones to
