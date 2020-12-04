@@ -50,22 +50,22 @@ pipeline {
                     ls ./jwst_validation_notebooks/
                     git config --global user.email jenkins-deploy@stsci.edu
                     git config --global user.name jenkins-deploy
+                    echo "Status before adding current directory"
                     git status
                     git add .
+                    echo "Status after adding current directory"
                     git status
                     git commit -m 'Automated deployment to GitHub Pages: ${env.BUILD_TAG}' --allow-empty
                     git remote add deploy ssh://git@github.com/spacetelescope/jwst_validation_notebooks.git
                     git push deploy ${deploy_branch}
                     cd ${env.WORKSPACE}
-                    pwd
-                    ls
-                    ls jwst_validation_notebooks
                     chmod ug=rwx index.html 
                     chmod ug=rwx report*.xml
-                    chmod ug=rwx jwst_validation_notebooks/*/*/*.html
+                    find . -name "*.html" | xargs chmod ug=rwx
                     rsync -vH index.html ${env.WEBPAGE_DIR}
                     rsync -v report*.xml ${env.WEBPAGE_DIR}reports
-                    rsync -vHR jwst_validation_notebooks/*/*/*.html ${env.WEBPAGE_DIR}
+                    find . -name "*.html" -print >html_files
+                    rsync -vHR --files-from=html_files . ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
             }
