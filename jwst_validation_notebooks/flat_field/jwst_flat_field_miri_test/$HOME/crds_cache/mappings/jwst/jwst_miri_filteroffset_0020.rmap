@@ -1,0 +1,30 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_filteroffset_0019.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'filteroffset',
+    'filetype' : 'FILTEROFFSET',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_filteroffset_0020.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : 'f28aa3ad3f5b8712d14f96e99b006e18fb769ee8',
+    'suffix' : 'filteroffset',
+    'text_descr' : 'MIRI Imager Filter Offset',
+}
+
+selector = Match({
+    ('ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS') : 'N/A',
+    ('ANY', 'MIR_LRS-FIXEDSLIT') : 'N/A',
+    ('ANY', 'MIR_LRS-SLITLESS') : 'N/A',
+    ('ANY', 'MIR_MRS') : 'N/A',
+    ('MIRIMAGE', 'MIR_IMAGE|MIR_TACQ|MIR_LYOT|MIR_4QPM|MIR_CORONCAL|MIR_TACONFIRM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_filteroffset_0005.asdf',
+    }),
+})

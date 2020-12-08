@@ -1,0 +1,103 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_area_0012.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'AREA',
+    'filetype' : 'AREA',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_area_0013.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.GRATING'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '604174444482d3dd022996fce1e1dd4c9c3e5d5f',
+    'suffix' : 'area',
+    'text_descr' : 'Pixel-Area Map',
+}
+
+selector = Match({
+    ('NRS_AUTOWAVE|NRS_CONFIRM|NRS_FOCUS|NRS_MIMF|NRS_TACONFIRM|NRS_WATA|NRS_MSATA', 'N/A', 'N/A', 'N/A') : 'N/A',
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'CLEAR', 'PRISM') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0020.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F070LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0021.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F070LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0022.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F100LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0023.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F100LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0024.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F170LP', 'G235H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0025.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F170LP', 'G235M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0026.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F290LP', 'G395H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0027.fits',
+    }),
+    ('NRS_FIXEDSLIT|NRS_BRIGHTOBJ', 'N/A', 'F290LP', 'G395M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0028.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'CLEAR', 'PRISM') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0002.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F070LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0003.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F070LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0004.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F100LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0005.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F100LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0006.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F170LP', 'G235H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0007.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F170LP', 'G235M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0008.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F290LP', 'G395H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0009.fits',
+    }),
+    ('NRS_IFU', 'N/A', 'F290LP', 'G395M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0010.fits',
+    }),
+    ('NRS_IMAGE', 'N/A', 'N/A', 'N/A') : UseAfter({
+        '2014-07-01 00:00:00' : 'jwst_nirspec_area_0001.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'CLEAR', 'PRISM') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0011.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F070LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0012.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F070LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0013.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F100LP', 'G140H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0014.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F100LP', 'G140M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0015.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F170LP', 'G235H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0016.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F170LP', 'G235M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0017.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F290LP', 'G395H') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0018.fits',
+    }),
+    ('NRS_MSASPEC', 'N/A', 'F290LP', 'G395M') : UseAfter({
+        '2013-01-01 00:00:00' : 'jwst_nirspec_area_0019.fits',
+    }),
+})

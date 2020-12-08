@@ -1,0 +1,48 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_linearity_0011.rmap',
+    'filekind' : 'LINEARITY',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_linearity_0013.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME', 'META.INSTRUMENT.BAND', 'META.INSTRUMENT.FILTER'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'a531e5d740b41d2b9c651c5570b3c97abab243c2',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('MIRIFULONG', 'GENERIC', 'LONG', 'N/A') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0022.fits',
+    }),
+    ('MIRIFULONG', 'GENERIC', 'MEDIUM', 'N/A') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0027.fits',
+    }),
+    ('MIRIFULONG', 'GENERIC', 'N/A', 'N/A') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_linearity_0012.fits',
+    }),
+    ('MIRIFULONG', 'GENERIC', 'SHORT', 'N/A') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0026.fits',
+    }),
+    ('MIRIFUSHORT', 'GENERIC', 'N/A', 'N/A') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_linearity_0013.fits',
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0023.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC', 'N/A', 'F2100W') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0021.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC', 'N/A', 'F2300C') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0020.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC', 'N/A', 'F2550W') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0025.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC', 'N/A', 'N/A') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_linearity_0014.fits',
+        '2015-08-01 00:00:00' : 'jwst_miri_linearity_0024.fits',
+    }),
+})

@@ -1,0 +1,27 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_linearity_0012.rmap',
+    'filekind' : 'LINEARITY',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_linearity_0013.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '1adf66e15d516540829eab343e35b485b86f1137',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('GUIDER1', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_linearity_0006.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_linearity_0014.fits',
+    }),
+    ('GUIDER2', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_linearity_0007.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_linearity_0015.fits',
+    }),
+})

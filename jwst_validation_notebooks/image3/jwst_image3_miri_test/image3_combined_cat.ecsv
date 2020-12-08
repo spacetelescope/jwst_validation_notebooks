@@ -1,0 +1,343 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: id, datatype: int64, description: Unique source identification number}
+# - {name: xcentroid, unit: pix, datatype: float64, format: .4f, description: X pixel value of the source centroid}
+# - {name: ycentroid, unit: pix, datatype: float64, format: .4f, description: Y pixel value of the source centroid}
+# - {name: sky_centroid.ra, unit: deg, datatype: float64}
+# - {name: sky_centroid.dec, unit: deg, datatype: float64}
+# - {name: aper_bkg_flux, unit: Jy, datatype: float64, format: .6e, description: The local background value calculated as the sigma-clipped
+#     median value in the background annulus aperture}
+# - {name: aper_bkg_flux_err, unit: Jy, datatype: float64, format: .6e, description: The standard error of the sigma-clipped median background
+#     value}
+# - {name: aper30_flux, unit: Jy, datatype: float64, format: .6e, description: Flux within the 30% encircled energy circular aperture}
+# - {name: aper30_flux_err, unit: Jy, datatype: float64, format: .6e, description: Flux error within the 30% encircled energy circular
+#     aperture}
+# - {name: aper50_flux, unit: Jy, datatype: float64, format: .6e, description: Flux within the 50% encircled energy circular aperture}
+# - {name: aper50_flux_err, unit: Jy, datatype: float64, format: .6e, description: Flux error within the 50% encircled energy circular
+#     aperture}
+# - {name: aper70_flux, unit: Jy, datatype: float64, format: .6e, description: Flux within the 70% encircled energy circular aperture}
+# - {name: aper70_flux_err, unit: Jy, datatype: float64, format: .6e, description: Flux error within the 70% encircled energy circular
+#     aperture}
+# - {name: aper_total_flux, unit: Jy, datatype: float64, format: .6e, description: Total aperture-corrected flux based on the 70% encircled
+#     energy circular aperture; calculated only for stars}
+# - {name: aper_total_flux_err, unit: Jy, datatype: float64, format: .6e, description: Total aperture-corrected flux error based on the
+#     70% encircled energy circular aperture; calculated only for stars}
+# - {name: aper30_abmag, datatype: float64, format: .6f, description: AB magnitude within the 30% encircled energy circular aperture}
+# - {name: aper30_abmag_err, datatype: float64, format: .6f, description: AB magnitude error within the 30% encircled energy circular
+#     aperture}
+# - {name: aper50_abmag, datatype: float64, format: .6f, description: AB magnitude within the 50% encircled energy circular aperture}
+# - {name: aper50_abmag_err, datatype: float64, format: .6f, description: AB magnitude error within the 50% encircled energy circular
+#     aperture}
+# - {name: aper70_abmag, datatype: float64, format: .6f, description: AB magnitude within the 70% encircled energy circular aperture}
+# - {name: aper70_abmag_err, datatype: float64, format: .6f, description: AB magnitude error within the 70% encircled energy circular
+#     aperture}
+# - {name: aper_total_abmag, datatype: float64, format: .6f, description: Total aperture-corrected AB magnitude based on the 70% encircled
+#     energy circular aperture; calculated only for stars}
+# - {name: aper_total_abmag_err, datatype: float64, format: .6f, description: Total aperture-corrected AB magnitude error based on the
+#     70% encircled energy circular aperture; calculated only for stars}
+# - {name: aper30_vegamag, datatype: float64, format: .6f, description: Vega magnitude within the 30% encircled energy circular aperture}
+# - {name: aper30_vegamag_err, datatype: float64, format: .6f, description: Vega magnitude error within the 30% encircled energy circular
+#     aperture}
+# - {name: aper50_vegamag, datatype: float64, format: .6f, description: Vega magnitude within the 50% encircled energy circular aperture}
+# - {name: aper50_vegamag_err, datatype: float64, format: .6f, description: Vega magnitude error within the 50% encircled energy circular
+#     aperture}
+# - {name: aper70_vegamag, datatype: float64, format: .6f, description: Vega magnitude within the 70% encircled energy circular aperture}
+# - {name: aper70_vegamag_err, datatype: float64, format: .6f, description: Vega magnitude error within the 70% encircled energy circular
+#     aperture}
+# - {name: aper_total_vegamag, datatype: float64, format: .6f, description: Total aperture-corrected Vega magnitude based on the 70% encircled
+#     energy circular aperture; calculated only for stars}
+# - {name: aper_total_vegamag_err, datatype: float64, format: .6f, description: Total aperture-corrected Vega magnitude error based on
+#     the 70% encircled energy circular aperture; calculated only for stars}
+# - {name: CI_30_50, datatype: float64, format: .4f, description: Concentration index calculated as aper30_abmag - aper50_abmag}
+# - {name: CI_50_70, datatype: float64, format: .4f, description: Concentration index calculated as aper50_abmag - aper70_abmag}
+# - {name: CI_30_70, datatype: float64, format: .4f, description: Concentration index calculated as aper30_abmag - aper70_abmag}
+# - {name: is_star, datatype: bool, description: Flag indicating whether the source is a star}
+# - {name: sharpness, datatype: float64, format: .6f, description: The DAOFind source sharpness statistic}
+# - {name: roundness, datatype: float32, format: .6f, description: The DAOFind source roundness statistic}
+# - {name: nn_dist, unit: pix, datatype: float64, format: .6f, description: The distance in pixels to the nearest neighbor}
+# - {name: nn_abmag, datatype: float64, format: .6f, description: 'The AB magnitude of the nearest neighbor.  If the object is a star
+#     it is the total aperture-corrected AB magnitude, otherwise it is the isophotal AB magnitude.'}
+# - {name: isophotal_flux, unit: Jy, datatype: float64, format: .6e, description: Isophotal flux}
+# - {name: isophotal_flux_err, unit: Jy, datatype: float32, format: .6e, description: Isophotal flux error}
+# - {name: isophotal_abmag, datatype: float64, format: .6f, description: Isophotal AB magnitude}
+# - {name: isophotal_abmag_err, datatype: float64, format: .6f, description: Isophotal AB magnitude error}
+# - {name: isophotal_vegamag, datatype: float64, format: .6f, description: Isophotal Vega magnitude}
+# - {name: isophotal_vegamag_err, datatype: float64, format: .6f, description: Isophotal Vega magnitude error}
+# - {name: isophotal_area, unit: pix2, datatype: float64, description: Isophotal area}
+# - {name: semimajor_sigma, unit: pix, datatype: float64, format: .6f, description: 1-sigma standard deviation along the semimajor axis
+#     of the 2D Gaussian function that has the same second-order central moments as the source}
+# - {name: semiminor_sigma, unit: pix, datatype: float64, format: .6f, description: 1-sigma standard deviation along the semiminor axis
+#     of the 2D Gaussian function that has the same second-order central moments as the source}
+# - {name: ellipticity, datatype: float64, format: .6f, description: 1 minus the ratio of the 1-sigma lengths of the semimajor and semiminor
+#     axes}
+# - {name: orientation, unit: deg, datatype: float64, format: .6f, description: The angle (degrees) between the positive X axis and the
+#     major axis (increases counter-clockwise)}
+# - {name: sky_orientation, unit: deg, datatype: float64, format: .6f, description: The position angle (degrees) from North of the major
+#     axis}
+# - {name: sky_bbox_ll.ra, unit: deg, datatype: float64}
+# - {name: sky_bbox_ll.dec, unit: deg, datatype: float64}
+# - {name: sky_bbox_ul.ra, unit: deg, datatype: float64}
+# - {name: sky_bbox_ul.dec, unit: deg, datatype: float64}
+# - {name: sky_bbox_lr.ra, unit: deg, datatype: float64}
+# - {name: sky_bbox_lr.dec, unit: deg, datatype: float64}
+# - {name: sky_bbox_ur.ra, unit: deg, datatype: float64}
+# - {name: sky_bbox_ur.dec, unit: deg, datatype: float64}
+# meta: !!omap
+# - {jwst version: 0.17.1}
+# - {numpy version: 1.19.4}
+# - {scipy version: 1.5.4}
+# - {astropy version: '4.2'}
+# - {photutils version: 1.0.1}
+# - aperture_params:
+#     aperture_corrections: !numpy.ndarray
+#       buffer: !!binary |
+#         WGtkWVFLNHNBa0I5QmNNLw==
+#       dtype: float32
+#       order: C
+#       shape: !!python/tuple [3]
+#     aperture_ee: !numpy.ndarray
+#       buffer: !!binary |
+#         SGdBQUFBQUFBQUF5QUFBQUFBQUFBRVlBQUFBQUFBQUE=
+#       dtype: int64
+#       order: C
+#       shape: !!python/tuple [3]
+#     aperture_radii: !numpy.ndarray
+#       buffer: !!binary |
+#         M0J1K1A3SG9CMEIyWHB0QQ==
+#       dtype: float32
+#       order: C
+#       shape: !!python/tuple [3]
+#     bkg_aperture_inner_radius: 6.4158564
+#     bkg_aperture_outer_radius: 8.255846
+# - {abvega_offset: 5.49349}
+# - __serialized_columns__:
+#     aper30_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux within the 30% encircled energy circular aperture, format: .6e}
+#       unit: &id001 !astropy.units.Unit {unit: Jy}
+#       value: !astropy.table.SerializedColumn {name: aper30_flux}
+#     aper30_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux error within the 30% encircled energy circular aperture, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper30_flux_err}
+#     aper50_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux within the 50% encircled energy circular aperture, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper50_flux}
+#     aper50_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux error within the 50% encircled energy circular aperture, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper50_flux_err}
+#     aper70_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux within the 70% encircled energy circular aperture, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper70_flux}
+#     aper70_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Flux error within the 70% encircled energy circular aperture, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper70_flux_err}
+#     aper_bkg_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: The local background value calculated as the sigma-clipped median value in the background annulus aperture,
+#         format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper_bkg_flux}
+#     aper_bkg_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: The standard error of the sigma-clipped median background value, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper_bkg_flux_err}
+#     aper_total_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Total aperture-corrected flux based on the 70% encircled energy circular aperture; calculated only for
+#           stars, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper_total_flux}
+#     aper_total_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Total aperture-corrected flux error based on the 70% encircled energy circular aperture; calculated only
+#           for stars, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: aper_total_flux_err}
+#     ellipticity:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: 1 minus the ratio of the 1-sigma lengths of the semimajor and semiminor axes, format: .6f}
+#       unit: !astropy.units.Unit {unit: ''}
+#       value: !astropy.table.SerializedColumn {name: ellipticity}
+#     isophotal_area:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Isophotal area}
+#       unit: !astropy.units.Unit {unit: pix2}
+#       value: !astropy.table.SerializedColumn {name: isophotal_area}
+#     isophotal_flux:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Isophotal flux, format: .6e}
+#       unit: *id001
+#       value: !astropy.table.SerializedColumn {name: isophotal_flux}
+#     isophotal_flux_err:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Isophotal flux error, format: .6e}
+#       unit: !astropy.units.Unit {unit: Jy}
+#       value: !astropy.table.SerializedColumn {name: isophotal_flux_err}
+#     nn_dist:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: The distance in pixels to the nearest neighbor, format: .6f}
+#       unit: &id004 !astropy.units.Unit {unit: pix}
+#       value: !astropy.table.SerializedColumn {name: nn_dist}
+#     orientation:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: The angle (degrees) between the positive X axis and the major axis (increases counter-clockwise), format: .6f}
+#       unit: &id002 !astropy.units.Unit {unit: deg}
+#       value: !astropy.table.SerializedColumn {name: orientation}
+#     semimajor_sigma:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: 1-sigma standard deviation along the semimajor axis of the 2D Gaussian function that has the same second-order
+#           central moments as the source, format: .6f}
+#       unit: !astropy.units.Unit {unit: pix}
+#       value: !astropy.table.SerializedColumn {name: semimajor_sigma}
+#     semiminor_sigma:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: 1-sigma standard deviation along the semiminor axis of the 2D Gaussian function that has the same second-order
+#           central moments as the source, format: .6f}
+#       unit: !astropy.units.Unit {unit: pix}
+#       value: !astropy.table.SerializedColumn {name: semiminor_sigma}
+#     sky_bbox_ll:
+#       __class__: astropy.coordinates.sky_coordinate.SkyCoord
+#       __info__: {description: Sky coordinate of the lower-left vertex of the minimal bounding box of the source}
+#       dec: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Latitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ll.dec}
+#       frame: icrs
+#       ra: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Longitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ll.ra}
+#         wrap_angle: &id003 !astropy.coordinates.Angle
+#           unit: *id002
+#           value: 360.0
+#       representation_type: spherical
+#     sky_bbox_lr:
+#       __class__: astropy.coordinates.sky_coordinate.SkyCoord
+#       __info__: {description: Sky coordinate of the lower-right vertex of the minimal bounding box of the source}
+#       dec: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Latitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_lr.dec}
+#       frame: icrs
+#       ra: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Longitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_lr.ra}
+#         wrap_angle: *id003
+#       representation_type: spherical
+#     sky_bbox_ul:
+#       __class__: astropy.coordinates.sky_coordinate.SkyCoord
+#       __info__: {description: Sky coordinate of the upper-left vertex of the minimal bounding box of the source}
+#       dec: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Latitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ul.dec}
+#       frame: icrs
+#       ra: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Longitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ul.ra}
+#         wrap_angle: *id003
+#       representation_type: spherical
+#     sky_bbox_ur:
+#       __class__: astropy.coordinates.sky_coordinate.SkyCoord
+#       __info__: {description: Sky coordinate of the upper-right vertex of the minimal bounding box of the source}
+#       dec: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Latitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ur.dec}
+#       frame: icrs
+#       ra: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Longitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_bbox_ur.ra}
+#         wrap_angle: *id003
+#       representation_type: spherical
+#     sky_centroid:
+#       __class__: astropy.coordinates.sky_coordinate.SkyCoord
+#       __info__: {description: Sky coordinate of the source centroid}
+#       dec: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Latitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_centroid.dec}
+#       frame: icrs
+#       ra: !astropy.table.SerializedColumn
+#         __class__: astropy.coordinates.angles.Longitude
+#         unit: *id002
+#         value: !astropy.table.SerializedColumn {name: sky_centroid.ra}
+#         wrap_angle: *id003
+#       representation_type: spherical
+#     sky_orientation:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: The position angle (degrees) from North of the major axis, format: .6f}
+#       unit: *id002
+#       value: !astropy.table.SerializedColumn {name: sky_orientation}
+#     xcentroid:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: X pixel value of the source centroid, format: .4f}
+#       unit: *id004
+#       value: !astropy.table.SerializedColumn {name: xcentroid}
+#     ycentroid:
+#       __class__: astropy.units.quantity.Quantity
+#       __info__: {description: Y pixel value of the source centroid, format: .4f}
+#       unit: *id004
+#       value: !astropy.table.SerializedColumn {name: ycentroid}
+# schema: astropy-2.0
+id xcentroid ycentroid sky_centroid.ra sky_centroid.dec aper_bkg_flux aper_bkg_flux_err aper30_flux aper30_flux_err aper50_flux aper50_flux_err aper70_flux aper70_flux_err aper_total_flux aper_total_flux_err aper30_abmag aper30_abmag_err aper50_abmag aper50_abmag_err aper70_abmag aper70_abmag_err aper_total_abmag aper_total_abmag_err aper30_vegamag aper30_vegamag_err aper50_vegamag aper50_vegamag_err aper70_vegamag aper70_vegamag_err aper_total_vegamag aper_total_vegamag_err CI_30_50 CI_50_70 CI_30_70 is_star sharpness roundness nn_dist nn_abmag isophotal_flux isophotal_flux_err isophotal_abmag isophotal_abmag_err isophotal_vegamag isophotal_vegamag_err isophotal_area semimajor_sigma semiminor_sigma ellipticity orientation sky_orientation sky_bbox_ll.ra sky_bbox_ll.dec sky_bbox_ul.ra sky_bbox_ul.dec sky_bbox_lr.ra sky_bbox_lr.dec sky_bbox_ur.ra sky_bbox_ur.dec
+1 683.4337 132.3176 0.0008767517592719786 -0.014611586265346246 1.754078e-06 nan 6.309190e-04 nan 1.179713e-03 nan 1.916836e-03 nan 2.920501e-03 nan 16.900066 nan 16.220559 nan 15.693538 nan 15.236357 nan 11.406576 nan 10.727069 nan 10.200048 nan 9.742867 nan 0.6795 0.5270 1.2065 True 0.675753 0.023297 77.100374 14.828187 2.502809e-03 nan 15.403931 nan 9.910440 nan 180.0 2.491678 2.354349 0.055115 -29.513098 65.502102 0.0010989998019135265 -0.014872660894373701 0.001142056241947963 -0.014382022747208088 0.0005776967411190569 -0.014826913418368814 0.0006207531811879656 -0.014336275271532683
+2 760.4590 135.7193 359.99852393404944 -0.014299995491064215 1.878621e-06 nan 1.143104e-03 nan 1.887131e-03 nan 2.791597e-03 nan 4.253291e-03 nan 16.254786 nan 15.710495 nan 15.285368 nan 14.828187 nan 10.761295 nan 10.217005 nan 9.791878 nan 9.334697 nan 0.5443 0.4251 0.9694 True 0.581770 -0.104130 69.843249 14.789714 3.412039e-03 nan 15.067465 nan 9.573975 nan 182.0 2.303509 2.143747 0.069356 -8.338872 86.676328 359.9987458766758 -0.01457345707705425 359.9987916241435 -0.014052154047097858 359.9982245736199 -0.014527709595969107 359.99827032108755 -0.014006406566544711
+3 961.2174 160.8225 359.9924352540656 -0.01298996229878619 1.755790e-06 nan 1.169484e-03 nan 1.894800e-03 nan 2.816771e-03 nan 4.291646e-03 nan 16.230015 nan 15.706092 nan 15.275621 nan 14.818440 nan 10.736524 nan 10.212602 nan 9.782131 nan 9.324950 nan 0.5239 0.4305 0.9544 True 0.549267 0.016540 67.488301 14.906861 3.421722e-03 nan 15.064388 nan 9.570898 nan 181.0 2.278562 2.146926 0.057772 5.501021 100.516221 359.9926495104506 -0.01326593823019883 359.99269525791783 -0.012744635206099957 359.99215887229985 -0.013222881767251098 359.99220461976705 -0.012701578744140136
+4 1028.5705 165.0926 359.990381370712 -0.012677771000553797 1.524811e-06 nan 1.106779e-03 nan 1.781897e-03 nan 2.596468e-03 nan 3.955992e-03 nan 16.289848 nan 15.772793 nan 15.364042 nan 14.906861 nan 10.796358 nan 10.279303 nan 9.870552 nan 9.413371 nan 0.5171 0.4088 0.9258 True 0.545366 0.531110 67.488301 14.818440 3.210839e-03 nan 15.133454 nan 9.639964 nan 204.0 2.650832 2.234595 0.157021 52.687052 147.702252 359.99060303629096 -0.012993644635922553 359.99065416581277 -0.012411011848603439 359.9900817332655 -0.01294789714071452 359.9901328627872 -0.01236526435475149
+5 519.7325 192.2185 0.006057824895012406 -0.013215256185724026 1.467760e-06 nan 1.119129e-03 nan 1.806610e-03 nan 2.631717e-03 nan 4.009698e-03 nan 16.277800 nan 15.757839 nan 15.349402 nan 14.892221 nan 10.784310 nan 10.264349 nan 9.855912 nan 9.398731 nan 0.5200 0.4084 0.9284 True 0.580068 -0.401908 37.716733 14.883629 3.211051e-03 nan 15.133382 nan 9.639892 nan 177.0 2.293688 2.136874 0.068367 -22.787455 72.227745 0.006258837885465402 -0.013471405331399147 0.00630189432469285 -0.0129807671762117 0.005768199706794284 -0.013428348894237432 0.005811256146125484 -0.012937710738998192
+6 783.6400 201.6034 359.9979903872872 -0.012217285067795567 1.843065e-06 nan 1.193458e-03 nan 1.988873e-03 nan 2.892291e-03 nan 4.406709e-03 nan 16.207982 nan 15.653483 nan 15.246895 nan 14.789714 nan 10.714492 nan 10.159992 nan 9.753405 nan 9.296224 nan 0.5545 0.4066 0.9611 True 0.563061 0.027956 69.843249 14.828187 3.571519e-03 nan 15.017868 nan 9.524377 nan 186.0 2.326817 2.191611 0.058108 -10.512776 84.502424 359.99821819212195 -0.01248768106511637 359.99826393958955 -0.01196637802782628 359.9976968890678 -0.012441933584830471 359.9977426365354 -0.011920630548121227
+7 449.1182 213.1551 0.008279543745942024 -0.0127632615519483 1.515935e-06 nan 1.091905e-03 nan 1.740806e-03 nan 2.571253e-03 nan 3.917573e-03 nan 16.304538 nan 15.798124 nan 15.374638 nan 14.917457 nan 10.811047 nan 10.304634 nan 9.881148 nan 9.423967 nan 0.5064 0.4235 0.9299 True 0.624193 -0.304095 57.130827 14.883629 3.138284e-03 nan 15.158269 nan 9.664779 nan 180.0 2.292101 2.145973 0.063753 -35.517939 59.497261 0.008492556377886458 -0.013018505680948358 0.008535612816551514 -0.012527867524298316 0.008001918200013112 -0.01297544924800922 0.008044974638812291 -0.01248481109114301
+8 504.6036 226.7680 0.006614725132995546 -0.012196512180405256 1.681724e-06 nan 1.111521e-03 nan 1.816417e-03 nan 2.652625e-03 nan 4.041553e-03 nan 16.285206 nan 15.751961 nan 15.340810 nan 14.883629 nan 10.791715 nan 10.258471 nan 9.847320 nan 9.390139 nan 0.5332 0.4112 0.9444 True 0.573967 -0.207454 37.716733 14.892221 3.251786e-03 nan 15.119695 nan 9.626205 nan 181.0 2.290786 2.174718 0.050667 -42.477189 52.538011 0.006810306111070963 -0.012469164658725405 0.006856053577596985 -0.01194786161515583 0.00631966793264885 -0.01242610822230926 0.0063654153992928975 -0.011904805178637661
+9 561.7414 240.3713 0.004899206580788247 -0.011625607032766067 1.783250e-06 nan 1.134963e-03 nan 1.855500e-03 nan 2.691172e-03 nan 4.100284e-03 nan 16.262546 nan 15.728848 nan 15.325146 nan 14.867965 nan 10.769055 nan 10.235358 nan 9.831656 nan 9.374475 nan 0.5337 0.4037 0.9374 True 0.563862 -0.387367 58.734872 14.883629 3.317887e-03 nan 15.097846 nan 9.604356 nan 180.0 2.303213 2.170016 0.057831 -31.119130 63.896070 0.005100081985009828 -0.011886467710871351 0.005145829451906036 -0.011365164665682492 0.0046094438068951735 -0.011843411271226269 0.004655191273888727 -0.01132210822603222
+10 888.0169 262.4595 359.9949534460281 -0.010070261035681623 1.855116e-06 nan 1.170056e-03 nan 1.934748e-03 nan 2.940723e-03 nan 4.480500e-03 nan 16.229484 nan 15.683439 nan 15.228865 nan 14.771684 nan 10.735994 nan 10.189949 nan 9.735375 nan 9.278194 nan 0.5460 0.4546 1.0006 True 0.556902 -0.065088 51.873770 14.774609 3.599553e-03 nan 15.009378 nan 9.515888 nan 201.0 2.527927 2.290087 0.094085 59.916980 154.932180 359.9951571497872 -0.010395894903152878 359.9952082793097 -0.009813262094681604 359.9946358467429 -0.010350147420314475 359.9946869762653 -0.009767514612818317
+11 625.6724 271.3554 0.0030221480198909965 -0.010503443619300206 2.195367e-06 nan 1.131544e-03 nan 1.877587e-03 nan 2.761230e-03 nan 4.207024e-03 nan 16.265821 nan 15.716000 nan 15.297243 nan 14.840062 nan 10.772331 nan 10.222510 nan 9.803753 nan 9.346572 nan 0.5498 0.4188 0.9686 True 0.567409 -0.099764 71.043572 14.867965 3.438123e-03 nan 15.059196 nan 9.565706 nan 193.0 2.550719 2.269387 0.110295 86.851869 181.867069 0.003215569071231737 -0.010824960281281208 0.0032666985933976047 -0.01024232746321544 0.0027249308945586736 -0.010781903838544856 0.002776060416807356 -0.010199271020661252
+12 931.8715 290.1662 359.99368321031557 -0.009102622514244837 1.931320e-06 nan 1.191538e-03 nan 1.937619e-03 nan 2.932809e-03 nan 4.468443e-03 nan 16.209730 nan 15.681829 nan 15.231790 nan 14.774609 nan 10.716240 nan 10.188339 nan 9.738300 nan 9.281119 nan 0.5279 0.4500 0.9779 True 0.553890 -0.021516 51.873770 14.771684 3.613947e-03 nan 15.005045 nan 9.511555 nan 201.0 2.582259 2.279014 0.117434 62.795808 157.811008 359.9939165995349 -0.009390899028574382 359.9939650380297 -0.008838931104439814 359.99339529649546 -0.009345151545635312 359.99344373499025 -0.00879318362252768
+13 1018.7069 290.9488 359.9910225175097 -0.00884494824102219 1.702195e-06 nan 1.103410e-03 nan 1.779130e-03 nan 2.637755e-03 nan 4.018897e-03 nan 16.293158 nan 15.774481 nan 15.346914 nan 14.889733 nan 10.799668 nan 10.280990 nan 9.853423 nan 9.396243 nan 0.5187 0.4276 0.9462 True 0.534009 0.219945 86.838967 14.774609 3.196758e-03 nan 15.138226 nan 9.644735 nan 186.0 2.256269 2.211022 0.020054 39.776861 134.792061 359.9912487545916 -0.00915677955089736 359.99129719308604 -0.008604811632498025 359.9907274515639 -0.009111032065022303 359.9907758900582 -0.008559064147870547
+14 460.8648 307.9198 0.008174351132933792 -0.009825703226450653 4.498559e-06 nan 4.588941e-05 nan 6.795735e-05 nan 3.927363e-04 nan 5.983750e-04 nan 19.745719 nan 19.319409 nan 17.414747 nan 16.957566 nan 14.252228 nan 13.825919 nan 11.921257 nan 11.464076 nan 0.4263 1.9047 2.3310 True 0.582511 -0.333185 85.350791 15.073398 6.596397e-03 nan 14.351733 nan 8.858243 nan 388.0 7.035560 2.508823 0.643408 30.191257 125.206457 0.0085480685013019 -0.010273184752568245 0.008618035214011336 -0.009475897734249982 0.007689451690924709 -0.010197835991701269 0.00775941840400624 -0.009400548972810594
+15 543.7463 329.6773 0.005691348699642841 -0.008935475457040307 3.137428e-06 nan -6.017870e-06 nan -3.685031e-06 nan 7.667845e-05 nan 1.168277e-04 nan nan nan nan nan 19.188317 nan 18.731136 nan nan nan nan nan 13.694826 nan 13.237645 nan nan nan nan True 0.550445 -0.323840 85.689765 16.957566 6.779597e-03 nan 14.321990 nan 8.828500 nan 385.0 8.243294 2.316940 0.718930 66.821460 161.836660 0.005995373731380164 -0.009431149728450657 0.006078795582331608 -0.008480538278987662 0.0052900813508188335 -0.009369256097791314 0.005373503202045879 -0.008418644648271429
+16 781.9434 332.4325 359.99839447648304 -0.008209991788154939 2.114670e-06 nan 1.203925e-03 nan 1.976779e-03 nan 2.943034e-03 nan 4.484022e-03 nan 16.198502 nan 15.660105 nan 15.228012 nan 14.770831 nan 10.705011 nan 10.166615 nan 9.734521 nan 9.277340 nan 0.5384 0.4321 0.9705 True 0.547164 -0.034391 34.854940 14.761068 3.622394e-03 nan 15.002511 nan 9.509020 nan 188.0 2.284540 2.216240 0.029897 -26.069354 68.945846 359.99860138161074 -0.00847327217352113 359.9986471290783 -0.007951969124043123 359.99811074344206 -0.008430215725815822 359.9981564909096 -0.007908912676908172
+17 923.9738 350.9813 359.99408904588125 -0.007258989080878938 1.873047e-06 nan 1.247845e-03 nan 2.001514e-03 nan 3.023920e-03 nan 4.607260e-03 nan 16.159599 nan 15.646603 nan 15.198574 nan 14.741393 nan 10.666108 nan 10.153113 nan 9.705084 nan 9.247903 nan 0.5130 0.4480 0.9610 True 0.548950 0.001686 61.325706 14.774609 3.706437e-03 nan 14.977609 nan 9.484118 nan 199.0 2.344445 2.254812 0.038232 29.932745 124.947945 359.99432607129 -0.0075418692827326035 359.9943745097849 -0.00698990135319327 359.9938047682494 -0.007496121803490715 359.99385320674423 -0.006944153874956757
+18 792.8313 365.5432 359.9981497014455 -0.007165355551450164 2.014814e-06 nan 1.194152e-03 nan 1.978018e-03 nan 2.969617e-03 nan 4.524523e-03 nan 16.207351 nan 15.659425 nan 15.218249 nan 14.761068 nan 10.713861 nan 10.165934 nan 9.724759 nan 9.267578 nan 0.5479 0.4412 0.9891 True 0.552652 0.079198 34.854940 14.770831 3.641704e-03 nan 14.996738 nan 9.503248 nan 188.0 2.292494 2.213003 0.034675 -24.500619 70.514581 359.99835287177723 -0.007431729651774511 359.99839861924477 -0.006910426600449334 359.99786223360934 -0.007388673204838901 359.9979079810769 -0.006867370154095474
+19 432.0963 388.2761 0.009272775733597385 -0.007439004495407181 8.688986e-07 nan 1.116714e-03 nan 1.628245e-03 nan 2.227246e-03 nan 3.393444e-03 nan 16.280145 nan 15.870701 nan 15.530579 nan 15.073398 nan 10.786655 nan 10.377211 nan 10.037089 nan 9.579908 nan 0.4094 0.3401 0.7496 True 2.005373 0.609492 85.350791 16.957566 5.183250e-04 nan 17.113495 nan 11.620004 nan 102.0 2.556498 2.383474 0.067680 89.385856 184.401056 0.009456815377992473 -0.007664542316385295 0.009491798734104008 -0.007265898803307322 0.009027506974044601 -0.007626867935950494 0.009062490330264081 -0.007228224422693293
+20 716.5933 414.5011 0.0006192806686673517 -0.005869225999429128 5.416170e-06 nan 2.176440e-03 nan 3.694098e-03 nan 5.788830e-03 nan 8.819890e-03 nan 15.555633 nan 14.981229 nan 14.493523 nan 14.036342 nan 10.062143 nan 9.487739 nan 9.000033 nan 8.542852 nan 0.5744 0.4877 1.0621 True 0.567181 -0.052235 60.518279 14.765754 7.420413e-03 nan 14.223930 nan 8.730440 nan 252.0 2.560024 2.462585 0.038062 21.901575 116.916775 0.0008712111530323767 -0.006200380202641137 0.0009250317028897576 -0.005587082489366739 0.0002885783230457219 -0.0061492506759023334 0.00034239887296108563 -0.0055359529631757035
+21 772.3195 438.1030 359.9989739541901 -0.004995518357464279 2.090914e-06 nan 1.181544e-03 nan 1.946669e-03 nan 2.956828e-03 nan 4.505038e-03 nan 16.218875 nan 15.676769 nan 15.222935 nan 14.765754 nan 10.725385 nan 10.183279 nan 9.729445 nan 9.272264 nan 0.5421 0.4538 0.9959 True 0.547829 0.056003 60.518279 14.036342 3.625180e-03 nan 15.001676 nan 9.508186 nan 202.0 2.419532 2.274806 0.059816 71.691712 166.706912 359.9991878973268 -0.0053110343669727 359.99923902684924 -0.004728401539946837 359.9986665942719 -0.005265286895083936 359.9987177237944 -0.0046826540686879204
+22 610.6573 478.2388 0.004039313091115273 -0.004199795791376725 1.683400e-06 nan 1.209422e-03 nan 1.977327e-03 nan 2.864911e-03 nan 4.364993e-03 nan 16.193556 nan 15.659804 nan 15.257222 nan 14.800041 nan 10.700065 nan 10.166313 nan 9.763732 nan 9.306551 nan 0.5338 0.4026 0.9363 True 0.552145 -0.303817 122.857371 14.847627 3.540481e-03 nan 15.027344 nan 9.533854 nan 190.0 2.306982 2.284194 0.009878 -68.354838 26.660362 0.004232585049101142 -0.0045176943834531235 0.004283714570937708 -0.003935061551295831 0.0037419468729752627 -0.004474637943200744 0.0037930763949126007 -0.0038920051111911665
+23 508.8235 546.9687 0.0073469898809609665 -0.0023662373481670917 1.765382e-06 nan 1.152899e-03 nan 1.832711e-03 nan 2.742058e-03 nan 4.177813e-03 nan 16.245522 nan 15.742265 nan 15.304808 nan 14.847627 nan 10.752032 nan 10.248775 nan 9.811318 nan 9.354137 nan 0.5033 0.4375 0.9407 True 0.563787 -0.288695 50.637067 14.833988 3.325050e-03 nan 15.095505 nan 9.602014 nan 181.0 2.257338 2.159271 0.043443 -45.105308 49.909892 0.007548775345033712 -0.002645637166605919 0.007594522811176205 -0.002124334104932665 0.007058137168891423 -0.0026025807280955484 0.007103884635157043 -0.002081277666319035
+24 741.3025 571.3426 0.000283639622189804 -0.000993207643187145 2.184158e-06 nan 1.202941e-03 nan 2.003858e-03 nan 2.980554e-03 nan 4.541187e-03 nan 16.199389 nan 15.645333 nan 15.214257 nan 14.757076 nan 10.705899 nan 10.151842 nan 9.720767 nan 9.263586 nan 0.5541 0.4311 0.9851 True 0.551767 0.086369 24.961605 14.738061 3.674805e-03 nan 14.986914 nan 9.493424 nan 192.0 2.292358 2.232919 0.025929 -25.034216 69.980984 0.0004991064667629704 -0.0012853615315818446 0.0005475449615711147 -0.000733393586261815 359.9999778034101 -0.0012396140641639925 2.624190491791909e-05 -0.0006876461193576892
+25 780.6576 581.4973 359.9991041458109 -0.0005759075769948372 2.630543e-06 nan 1.206226e-03 nan 2.028080e-03 nan 2.958843e-03 nan 4.508108e-03 nan 16.196428 nan 15.632287 nan 15.222195 nan 14.765014 nan 10.702938 nan 10.138797 nan 9.728705 nan 9.271524 nan 0.5641 0.4101 0.9742 True 0.544996 0.201211 37.213155 14.738061 3.717745e-03 nan 14.974301 nan 9.480811 nan 193.0 2.293732 2.275536 0.007933 65.132518 160.147718 359.9993327772289 -0.0008430977156519196 359.9993785246963 -0.00032179465736880417 359.9988114741747 -0.0007973502485964227 359.9988572216421 -0.00027604719089844014
+26 474.2230 583.9406 0.008507502263762488 -0.0013256102696357825 1.735753e-06 nan 1.206324e-03 nan 1.921540e-03 nan 2.776722e-03 nan 4.230628e-03 nan 16.196340 nan 15.690876 nan 15.291169 nan 14.833988 nan 10.702850 nan 10.197386 nan 9.797679 nan 9.340498 nan 0.5055 0.3997 0.9052 True 0.551612 -0.059466 50.637067 14.847627 3.416346e-03 nan 15.066095 nan 9.572605 nan 185.0 2.279561 2.188513 0.039941 -43.226675 51.788525 0.008721614368398113 -0.0016052223444488563 0.008767361834182107 -0.0010839192830258727 0.008230976193098628 -0.0015621659060196561 0.008276723659041774 -0.001040862844414028
+27 746.3021 595.7984 0.00019613734218960462 -0.00022981969543746714 2.011536e-06 nan 1.220344e-03 nan 2.014240e-03 nan 3.033215e-03 nan 4.621422e-03 nan 16.183795 nan 15.639722 nan 15.195242 nan 14.738061 nan 10.690304 nan 10.146232 nan 9.701752 nan 9.244571 nan 0.5441 0.4445 0.9886 True 0.550034 -0.026254 24.961605 14.757076 3.711426e-03 nan 14.976148 nan 9.482658 nan 195.0 2.294885 2.240878 0.023533 -8.579054 86.436146 0.00041305772546470967 -0.0005052842480375205 0.0004588051927874604 1.6018811217473466e-05 359.99989175466914 -0.00045953678134880746 359.99993750213645 6.176627741090973e-05
+28 932.0964 680.5359 359.99472680911765 0.0028686229695103716 2.278268e-06 nan 1.239625e-03 nan 2.034013e-03 nan 2.980223e-03 nan 4.540683e-03 nan 16.166774 nan 15.629115 nan 15.214378 nan 14.757197 nan 10.673284 nan 10.135625 nan 9.720888 nan 9.263707 nan 0.5377 0.4147 0.9524 True 0.543979 -0.049326 34.994179 14.753158 3.757207e-03 nan 14.962837 nan 9.469347 nan 206.0 2.434607 2.337207 0.040006 61.292369 156.307569 359.99493274434275 0.002540432337658658 359.9949838738649 0.0031230651580574005 359.9944114413022 0.0025861797984160152 359.9944625708243 0.0031688126177326415
+29 965.7870 689.9980 359.99371915200857 0.0032494412898688954 2.043327e-06 nan 1.238710e-03 nan 2.001890e-03 nan 2.991330e-03 nan 4.557606e-03 nan 16.167576 nan 15.646399 nan 15.210339 nan 14.753158 nan 10.674086 nan 10.152909 nan 9.716849 nan 9.259668 nan 0.5212 0.4361 0.9572 True 0.551824 0.042845 34.994179 14.757197 3.709838e-03 nan 14.976613 nan 9.483122 nan 196.0 2.325208 2.256320 0.029627 -2.870130 92.145070 359.99395040445035 0.0029665499686819035 359.9939988429449 0.0035185179013872306 359.99342910141354 0.003012297427997755 359.9934775399081 0.0035642653595798508
+30 1046.1581 705.5552 359.99129644637037 0.003942782213443639 1.858117e-06 nan 1.105625e-03 nan 1.815353e-03 nan 2.720024e-03 nan 4.144242e-03 nan 16.290980 nan 15.752597 nan 15.313568 nan 14.856387 nan 10.797490 nan 10.259107 nan 9.820078 nan 9.362897 nan 0.5384 0.4390 0.9774 True 0.556798 0.303909 81.862939 14.753158 3.307925e-03 nan 15.101111 nan 9.607621 nan 196.0 2.358138 2.215647 0.060425 70.022434 165.037634 359.9915348880925 0.003611140514018219 359.9915860176141 0.004193773325302705 359.99101358506624 0.0036568879701323748 359.9910647145878 0.004239520780007179
+31 845.2730 714.2483 359.9974799603892 0.003668767544835834 2.203924e-06 nan 1.230274e-03 nan 2.027756e-03 nan 3.013957e-03 nan 4.592080e-03 nan 16.174996 nan 15.632461 nan 15.202157 nan 14.744976 nan 10.681505 nan 10.138971 nan 9.708667 nan 9.251486 nan 0.5425 0.4303 0.9728 True 0.548839 0.086032 56.565714 14.767978 3.745356e-03 nan 14.966267 nan 9.472777 nan 194.0 2.299403 2.266448 0.014332 -34.516173 60.499027 359.99769477530447 0.003379583967222056 359.9977432137993 0.003931551905507331 359.99717347225527 0.0034253314282495016 359.9972219107501 0.003977299365735091
+32 890.5782 748.1175 359.9961818244589 0.004829278502393923 2.264427e-06 nan 1.200241e-03 nan 1.987648e-03 nan 2.950777e-03 nan 4.495819e-03 nan 16.201829 nan 15.654152 nan 15.225159 nan 14.767978 nan 10.708339 nan 10.160661 nan 9.731669 nan 9.274488 nan 0.5477 0.4290 0.9767 True 0.544479 -0.133813 56.565714 14.744976 3.634225e-03 nan 14.998970 nan 9.505480 nan 198.0 2.335900 2.275609 0.025811 49.817567 144.832767 359.99640365937876 0.004512621402172705 359.99645478890096 0.0050952542218403825 359.9958823563336 0.00455836886038623 359.9959334858558 0.005141001679083728
+33 535.0496 824.8742 0.007290620518853659 0.006226277812113496 1.567008e-06 nan 1.127290e-03 nan 1.805401e-03 nan 2.757604e-03 nan 4.201499e-03 nan 16.269911 nan 15.758566 nan 15.298670 nan 14.841489 nan 10.776421 nan 10.265076 nan 9.805180 nan 9.347999 nan 0.5113 0.4599 0.9712 True 0.559940 -0.185404 93.387326 14.794817 3.329104e-03 nan 15.094182 nan 9.600691 nan 185.0 2.264608 2.185009 0.035149 -39.607937 55.407263 0.007499593932090491 0.005949167810578185 0.007545341398077013 0.006470470863000939 0.007008955757747513 0.005992224250015273 0.007054703223859241 0.006513527302465632
+34 739.9177 855.7233 0.0010913802083537955 0.007723566547815431 1.976164e-06 nan 1.256951e-03 nan 2.038811e-03 nan 3.007621e-03 nan 4.582426e-03 nan 16.151704 nan 15.626558 nan 15.204442 nan 14.747261 nan 10.658214 nan 10.133068 nan 9.710952 nan 9.253771 nan 0.5251 0.4221 0.9473 True 0.553043 0.019932 97.942672 14.771160 3.716950e-03 nan 14.974533 nan 9.481043 nan 191.0 2.299687 2.231296 0.029739 -37.437543 57.577657 0.0012967141850268897 0.007451439848397769 0.0013424616521026474 0.007972742895881828 0.0008060760145687043 0.007494496280704359 0.0008518234816823489 0.008015799327741515
+35 1030.1677 857.4982 359.9921956723275 0.008559064763379741 2.001912e-06 nan 1.205137e-03 nan 1.961539e-03 nan 2.828760e-03 nan 4.309913e-03 nan 16.197409 nan 15.668508 nan 15.271010 nan 14.813829 nan 10.703918 nan 10.175017 nan 9.777519 nan 9.320338 nan 0.5289 0.3975 0.9264 True 0.581272 0.161288 152.782045 14.856387 3.548712e-03 nan 15.024823 nan 9.531333 nan 203.0 2.591796 2.287215 0.117517 60.563957 155.579157 359.9924345624109 0.00822914655262928 359.99248569193264 0.008811779354549904 359.9918825944976 0.008277585024541931 359.99193372401925 0.008860217825024512
+36 837.3654 865.5580 359.9981296248741 0.008287383084529138 2.474219e-06 nan 1.220400e-03 nan 2.046881e-03 nan 2.942141e-03 nan 4.482660e-03 nan 16.183744 nan 15.622269 nan 15.228341 nan 14.771160 nan 10.690254 nan 10.128778 nan 9.734851 nan 9.277670 nan 0.5615 0.3939 0.9554 True 0.545666 -0.207770 97.942672 14.747261 3.693861e-03 nan 14.981299 nan 9.487808 nan 193.0 2.322202 2.231713 0.038967 -9.219558 85.795642 359.9983491305649 0.008019118309151531 359.9983948780322 0.008540421352423822 359.99782782751504 0.008064865763855537 359.9978735749823 0.008586168806378257
+37 553.7719 916.3655 0.006962708701567163 0.009082231903465998 1.943115e-06 nan 1.174321e-03 nan 1.942124e-03 nan 2.878729e-03 nan 4.386045e-03 nan 16.225533 nan 15.679308 nan 15.251998 nan 14.794817 nan 10.732043 nan 10.185818 nan 9.758508 nan 9.301327 nan 0.5462 0.4273 0.9735 True 0.531319 -0.038684 93.387326 14.841489 3.512503e-03 nan 15.035958 nan 9.542468 nan 182.0 2.249117 2.181809 0.029926 -44.293206 50.721994 0.007164535622391437 0.008821466775596412 0.0072102830884046365 0.009342769819770842 0.006673897448554944 0.00886452321445918 0.006719644914693981 0.009385826258660905
+38 895.4673 980.8395 359.99665816014067 0.011978829552838398 4.159058e-06 nan 9.149415e-06 nan 1.655781e-05 nan 6.859062e-05 nan 1.045050e-04 nan 21.496517 nan 20.852493 nan 19.309338 nan 18.852157 nan 16.003026 nan 15.359003 nan 13.815848 nan 13.358667 nan 0.6440 1.5432 2.1872 True 0.549206 0.006570 45.167007 14.761186 7.440737e-03 nan 14.220960 nan 8.727470 nan 400.0 7.895776 2.379359 0.698654 87.173225 182.188425 359.9968611981921 0.011487005380818451 359.99694731107144 0.012468281669554918 359.9963398951471 0.011532752827159237 359.99642600802645 0.012514029114248313
+39 850.3167 979.6218 359.9980394209482 0.011819987919676908 2.334506e-06 nan 1.225503e-03 nan 2.041028e-03 nan 2.969293e-03 nan 4.524030e-03 nan 16.179214 nan 15.625378 nan 15.218367 nan 14.761186 nan 10.685724 nan 10.131888 nan 9.724877 nan 9.267696 nan 0.5538 0.4070 0.9608 True 0.548594 -0.125988 45.167007 18.852157 3.724975e-03 nan 14.972192 nan 9.478701 nan 192.0 2.349500 2.224071 0.053385 -12.240425 82.774775 359.9982572641891 0.01154989849948479 359.9983030116562 0.012071201530180238 359.9977359611402 0.011595645948436093 359.99778170860736 0.012116948978382579
+40 1052.9159 1032.8769 359.9919700528976 0.013998248728843971 2.088241e-06 nan 1.247768e-03 nan 2.009882e-03 nan 3.049256e-03 nan 4.645861e-03 nan 16.159666 nan 15.642074 nan 15.189515 nan 14.732334 nan 10.666175 nan 10.148584 nan 9.696025 nan 9.238844 nan 0.5176 0.4526 0.9702 True 0.550890 -0.053207 86.873191 14.733137 3.780094e-03 nan 14.956244 nan 9.462753 nan 192.0 2.344870 2.224290 0.051423 -8.982186 86.033014 359.9921749170527 0.013721415602569556 359.9922233555468 0.014273383497382042 359.9916842789097 0.013764472008367681 359.9917327174037 0.014316439901911405
+41 879.8098 1038.5938 359.9972937158605 0.01370772471229632 3.645277e-06 nan -5.752524e-07 nan 5.466345e-06 nan 4.600073e-05 nan 7.008694e-05 nan nan nan 22.055757 nan 19.743088 nan 19.285907 nan nan nan 16.562267 nan 14.249598 nan 13.792417 nan nan 2.3127 nan True 0.550778 -0.053224 47.845501 14.846445 7.534027e-03 nan 14.207432 nan 8.713942 nan 409.0 8.446107 2.319531 0.725373 -40.953187 54.062013 359.9976972873131 0.013267695840406699 359.9977726360824 0.01412631258224039 359.9968080056456 0.013345735598553184 359.99688335441493 0.014204352338018188
+42 832.5055 1045.7703 359.99876360675387 0.013800493146284227 2.129445e-06 nan 1.145471e-03 nan 1.852316e-03 nan 2.745046e-03 nan 4.182365e-03 nan 16.252539 nan 15.730712 nan 15.303626 nan 14.846445 nan 10.759049 nan 10.237222 nan 9.810136 nan 9.352955 nan 0.5218 0.4271 0.9489 True 0.622417 -0.439749 47.845501 19.285907 3.447405e-03 nan 15.056269 nan 9.562779 nan 194.0 2.337755 2.296530 0.017635 -33.824866 61.190334 359.9989868399381 0.013525342368141173 359.99903527843264 0.014077310274467998 359.9984655368879 0.01357108981545874 359.99851397538254 0.01412305772102029
+43 971.0533 1061.9540 359.99455860495056 0.014669601187304777 2.043077e-06 nan 1.253526e-03 nan 2.006839e-03 nan 3.047003e-03 nan 4.642429e-03 nan 16.154667 nan 15.643718 nan 15.190318 nan 14.733137 nan 10.661176 nan 10.150228 nan 9.696828 nan 9.239647 nan 0.5109 0.4534 0.9643 True 0.551033 -0.057518 86.873191 14.732334 3.791813e-03 nan 14.952883 nan 9.459393 nan 194.0 2.355489 2.249360 0.045056 -10.684985 84.330215 359.99476747736276 0.0143900331206165 359.99481591585715 0.01494200101691843 359.99427683920993 0.014433089530767317 359.9943252777043 0.01498505742600381
+44 704.7358 1102.1108 0.0028332656041631875 0.015184337267325331 1.558869e-06 nan 1.224721e-03 nan 1.999033e-03 nan 3.058470e-03 nan 4.659901e-03 nan 16.179907 nan 15.647950 nan 15.186239 nan 14.729058 nan 10.686417 nan 10.154460 nan 9.692749 nan 9.235568 nan 0.5320 0.4617 0.9937 True 0.550623 -0.097356 139.640131 14.846445 3.609037e-03 nan 15.006522 nan 9.513031 nan 166.0 2.307600 1.989461 0.137866 -3.465573 91.549627 0.0030653338540720036 0.014928789334812865 0.0031030082384282905 0.015358097702868001 0.002544030797332776 0.014974536789885334 0.002581705181747623 0.015403845157612337
+45 534.9387 1116.0902 0.00807769369481274 0.015156083161543939 2.243744e-06 nan 1.209044e-03 nan 1.951427e-03 nan 3.009200e-03 nan 4.584832e-03 nan 16.193894 nan 15.674119 nan 15.203873 nan 14.746692 nan 10.700404 nan 10.180629 nan 9.710382 nan 9.253201 nan 0.5198 0.4702 0.9900 True 0.551162 0.001473 170.371606 14.729058 3.624991e-03 nan 15.001733 nan 9.508243 nan 184.0 2.299955 2.106941 0.083921 -2.258904 92.756296 0.008288064960269376 0.0149339789948487 0.008331121398471428 0.015424617128801393 0.007797426788201273 0.014977035434887888 0.007840483226532654 0.015467673568874034

@@ -1,0 +1,32 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_extract1d_0010.rmap',
+    'file_ext' : '.json',
+    'filekind' : 'EXTRACT1D',
+    'filetype' : 'EXTRACT1D',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_extract1d_0011.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : '3ea2584a21a5cba1034358b95e7fb90347f35c1a',
+    'suffix' : 'extract1d',
+    'text_descr' : '1-D Spectral Extraction',
+}
+
+selector = Match({
+    'MIR_CORONCAL' : 'N/A',
+    'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS' : 'N/A',
+    'MIR_IMAGE' : 'N/A',
+    'MIR_LRS-FIXEDSLIT|MIR_LRS-SLITLESS' : UseAfter({
+        '2001-01-01 00:00:00' : 'jwst_miri_extract1d_0004.json',
+    }),
+    'MIR_LYOT' : 'N/A',
+    'MIR_MRS' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_miri_extract1d_0003.json',
+    }),
+    'MIR_TACQ' : 'N/A',
+})

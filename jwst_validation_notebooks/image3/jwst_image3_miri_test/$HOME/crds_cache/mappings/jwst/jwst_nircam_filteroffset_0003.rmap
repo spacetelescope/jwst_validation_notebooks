@@ -1,0 +1,33 @@
+header = {
+    'derived_from' : 'jwst_nircam_filteroffset_0002.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'filteroffset',
+    'filetype' : 'FILTEROFFSET',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_filteroffset_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.CHANNEL', 'META.INSTRUMENT.MODULE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'CHANNEL' : 'META.INSTRUMENT.CHANNEL',
+        'MODULE' : 'META.INSTRUMENT.MODULE',
+    },
+    'sha1sum' : 'b6c18ea895a1f8d9b32583992aca5debe6976b02',
+    'suffix' : 'filteroffset',
+    'text_descr' : 'Filter Offset',
+}
+
+selector = Match({
+    ('LONG', 'A') : UseAfter({
+        '2015-06-01 00:00:00' : 'jwst_nircam_filteroffset_0002.asdf',
+    }),
+    ('LONG', 'B') : UseAfter({
+        '2015-06-01 00:00:00' : 'jwst_nircam_filteroffset_0001.asdf',
+    }),
+    ('SHORT', 'A') : UseAfter({
+        '2015-06-01 00:00:00' : 'jwst_nircam_filteroffset_0004.asdf',
+    }),
+    ('SHORT', 'B') : UseAfter({
+        '2015-06-01 00:00:00' : 'jwst_nircam_filteroffset_0003.asdf',
+    }),
+})

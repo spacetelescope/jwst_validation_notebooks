@@ -1,0 +1,26 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_persat_0003.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'persat',
+    'filetype' : 'PERSAT',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_persat_0004.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'd1e94ab0bf3d7b5cecc405fef7a7edaab0b41d64',
+    'suffix' : 'persat',
+    'text_descr' : 'Persistence Saturation Threshold',
+}
+
+selector = Match({
+    'GUIDER1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_fgs_persat_0001.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_persat_0003.fits',
+    }),
+    'GUIDER2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_fgs_persat_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_persat_0004.fits',
+    }),
+})

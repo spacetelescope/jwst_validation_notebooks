@@ -1,0 +1,28 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_mask_0014.rmap',
+    'filekind' : 'MASK',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_mask_0015.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '30be9d83c9d2382760bb11a82054d4d2b56a583f',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('MIRIFULONG', 'GENERIC') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_mask_0021.fits',
+    }),
+    ('MIRIFUSHORT', 'GENERIC') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_mask_0022.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_mask_0023.fits',
+    }),
+})

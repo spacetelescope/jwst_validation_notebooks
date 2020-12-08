@@ -1,0 +1,105 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_readnoise_0013.rmap',
+    'filekind' : 'READNOISE',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_readnoise_0014.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME', 'META.EXPOSURE.READPATT'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '0a2cfc00610676bca1565ae0b60e3475d608ab30',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('MIRIFULONG', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0075.fits',
+    }),
+    ('MIRIFULONG', 'FULL', 'FASTGRPAVG') : UseAfter({
+        '2001-01-01 00:00:00' : 'jwst_miri_readnoise_0058.fits',
+    }),
+    ('MIRIFULONG', 'FULL', 'SLOW') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0064.fits',
+    }),
+    ('MIRIFUSHORT', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0060.fits',
+    }),
+    ('MIRIFUSHORT', 'FULL', 'FASTGRPAVG') : UseAfter({
+        '2001-01-01 00:00:00' : 'jwst_miri_readnoise_0069.fits',
+    }),
+    ('MIRIFUSHORT', 'FULL', 'SLOW') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0050.fits',
+    }),
+    ('MIRIMAGE', 'BRIGHTSKY', 'FAST') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_readnoise_0007.fits',
+        '2015-08-01 00:00:00' : 'jwst_miri_readnoise_0051.fits',
+    }),
+    ('MIRIMAGE', 'BRIGHTSKY', 'FASTGRPAVG') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_readnoise_0073.fits',
+    }),
+    ('MIRIMAGE', 'FULL', 'FAST') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0057.fits',
+    }),
+    ('MIRIMAGE', 'FULL', 'FASTGRPAVG') : UseAfter({
+        '2001-01-01 00:00:00' : 'jwst_miri_readnoise_0071.fits',
+    }),
+    ('MIRIMAGE', 'FULL', 'SLOW') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_readnoise_0059.fits',
+    }),
+    ('MIRIMAGE', 'MASK1065', 'FAST') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_readnoise_0008.fits',
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0052.fits',
+    }),
+    ('MIRIMAGE', 'MASK1065', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0054.fits',
+    }),
+    ('MIRIMAGE', 'MASK1140', 'FAST') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_readnoise_0009.fits',
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0072.fits',
+    }),
+    ('MIRIMAGE', 'MASK1140', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0063.fits',
+    }),
+    ('MIRIMAGE', 'MASK1550', 'FAST') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_readnoise_0010.fits',
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0055.fits',
+    }),
+    ('MIRIMAGE', 'MASK1550', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0056.fits',
+    }),
+    ('MIRIMAGE', 'MASKLYOT', 'FAST') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_readnoise_0011.fits',
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0062.fits',
+    }),
+    ('MIRIMAGE', 'MASKLYOT', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0067.fits',
+    }),
+    ('MIRIMAGE', 'SLITLESSPRISM', 'FAST') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0070.fits',
+    }),
+    ('MIRIMAGE', 'SLITLESSPRISM', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0066.fits',
+    }),
+    ('MIRIMAGE', 'SUB128', 'FAST') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0049.fits',
+    }),
+    ('MIRIMAGE', 'SUB128', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0061.fits',
+    }),
+    ('MIRIMAGE', 'SUB256', 'FAST') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_readnoise_0074.fits',
+    }),
+    ('MIRIMAGE', 'SUB256', 'FASTGRPAVG') : UseAfter({
+        '2015-08-01 00:00:00' : 'jwst_miri_readnoise_0065.fits',
+    }),
+    ('MIRIMAGE', 'SUB64', 'FAST') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0053.fits',
+    }),
+    ('MIRIMAGE', 'SUB64', 'FASTGRPAVG') : UseAfter({
+        '2013-09-26 05:00:00' : 'jwst_miri_readnoise_0068.fits',
+    }),
+})

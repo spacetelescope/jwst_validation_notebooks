@@ -1,0 +1,45 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_readnoise_0014.rmap',
+    'filekind' : 'READNOISE',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_readnoise_0015.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.READPATT', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'b632c3743d406892d0b867bb9e84f6f0df0ad5b6',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('NRS1', 'N/A', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nirspec_readnoise_0000.fits',
+        '2017-04-01 00:00:00' : 'jwst_nirspec_readnoise_0014.fits',
+    }),
+    ('NRS1', 'NRSIRS2|NRSIRS2RAPID', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_readnoise_0018.fits',
+    }),
+    ('NRS1', 'NRSRAPID', 'GENERIC') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_readnoise_0006.fits',
+    }),
+    ('NRS1', 'NRSRAPID|NRS|NRSRAPIDD1|NRSRAPIDD2|NRSRAPIDD6', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_readnoise_0019.fits',
+    }),
+    ('NRS2', 'N/A', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nirspec_readnoise_0001.fits',
+        '2017-04-01 00:00:00' : 'jwst_nirspec_readnoise_0015.fits',
+    }),
+    ('NRS2', 'NRSIRS2|NRSIRS2RAPID', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_readnoise_0017.fits',
+    }),
+    ('NRS2', 'NRSRAPID', 'GENERIC') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_readnoise_0007.fits',
+    }),
+    ('NRS2', 'NRSRAPID|NRS|NRSRAPIDD1|NRSRAPIDD2|NRSRAPIDD6', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_readnoise_0016.fits',
+    }),
+})

@@ -1,0 +1,23 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_cubepar_0004.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'CUBEPAR',
+    'filetype' : 'CUBEPAR',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_cubepar_0005.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '883eac4d9520f4be66f050449c2ebde6085e60d9',
+    'suffix' : 'cubepar',
+    'text_descr' : 'IFU Cube defaults',
+    'unique_rowkeys' : ('GRATING', 'FILTER'),
+}
+
+selector = Match({
+    'NOT NRS_IFU' : 'N/A',
+    'NRS_IFU' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_cubepar_0002.fits',
+    }),
+})

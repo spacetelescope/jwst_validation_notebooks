@@ -1,0 +1,33 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_readnoise_0009.rmap',
+    'filekind' : 'READNOISE',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_readnoise_0011.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.READPATT', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'bc196cb607c46f8947ee88b8e1ca6f8b8a475be8',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('GUIDER1', 'FGS', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_fgs_readnoise_0000.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID|FGS60|FGS840|FGS8370', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_readnoise_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_readnoise_0010.fits',
+    }),
+    ('GUIDER2', 'FGS', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_fgs_readnoise_0001.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID|FGS60|FGS840|FGS8370', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_readnoise_0003.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_readnoise_0011.fits',
+    }),
+})

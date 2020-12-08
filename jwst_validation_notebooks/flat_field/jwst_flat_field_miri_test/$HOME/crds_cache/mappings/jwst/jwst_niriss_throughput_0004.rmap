@@ -1,0 +1,30 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_throughput_0003.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'THROUGHPUT',
+    'filetype' : 'THROUGHPUT',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_throughput_0004.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.FILTER',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '0710ce4ab457ab10a3316a2fef939b5784ab2d27',
+    'suffix' : 'throughput',
+    'text_descr' : 'Throughput',
+}
+
+selector = Match({
+    'F277W' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_niriss_throughput_0005.fits',
+    }),
+    'F380M' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_niriss_throughput_0006.fits',
+    }),
+    'F430M' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_niriss_throughput_0007.fits',
+    }),
+    'F480M' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_niriss_throughput_0008.fits',
+    }),
+})

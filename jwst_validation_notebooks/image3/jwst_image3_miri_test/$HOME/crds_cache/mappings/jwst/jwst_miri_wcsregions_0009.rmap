@@ -1,0 +1,31 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_wcsregions_0008.rmap',
+    'filekind' : 'WCSREGIONS',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_wcsregions_0009.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : 'c5a7d7fff1eb0ac3f0bd9b1dc7ae0411d4a1dcea',
+}
+
+selector = Match({
+    ('ANY', 'MIR_4QPM') : 'N/A',
+    ('ANY', 'MIR_CORONCAL') : 'N/A',
+    ('ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'MIR_FLAT-IMAGE|MIR_FLATIMAGE') : 'N/A',
+    ('ANY', 'MIR_FLAT-MRS|MIR_FLATMRS') : 'N/A',
+    ('ANY', 'MIR_IMAGE') : 'N/A',
+    ('ANY', 'MIR_LRS-FIXEDSLIT') : 'N/A',
+    ('ANY', 'MIR_LRS-SLITLESS') : 'N/A',
+    ('ANY', 'MIR_LYOT') : 'N/A',
+    ('ANY', 'MIR_TACQ') : 'N/A',
+    ('MIRIFUSHORT|MIRIFULONG', 'N/A') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_wcsregions_0001.json',
+    }),
+})
