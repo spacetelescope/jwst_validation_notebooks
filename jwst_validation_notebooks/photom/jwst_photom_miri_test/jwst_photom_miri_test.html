@@ -14291,30 +14291,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">jwst</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span><span class="p">,</span> <span class="n">ascii</span>
-<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span>
-<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span><span class="p">,</span> <span class="n">unique</span>
-<span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clip</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">Detector1Pipeline</span><span class="p">,</span> <span class="n">Image2Pipeline</span><span class="p">,</span> <span class="n">Image3Pipeline</span>
-<span class="kn">from</span> <span class="nn">jwst.associations</span> <span class="kn">import</span> <span class="n">asn_from_list</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">associations</span>
-<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">RampModel</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">jwst</span>
+<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">Detector1Pipeline</span><span class="p">,</span> <span class="n">Image2Pipeline</span>
 <span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">jwst.associations.lib.rules_level3_base</span> <span class="kn">import</span> <span class="n">DMS_Level3_Base</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_image3</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_image2</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_detector1</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">ImageModel</span>
-<span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">datamodels</span>
+<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">RampModel</span><span class="p">,</span> <span class="n">ImageModel</span><span class="p">,</span> <span class="n">MirImgPhotomModel</span>
 <span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">get_pkg_data_filename</span>
 <span class="kn">from</span> <span class="nn">ci_watson.artifactory_helpers</span> <span class="kn">import</span> <span class="n">get_bigdata</span>
 <span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">table</span>
@@ -14332,11 +14313,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;$HOME/crds_cache&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_SERVER_URL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://jwst-crds.stsci.edu&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CONTEXT&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;jwst_0619.pmap&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TEST_BIGDATA&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;https://bytesalad.stsci.edu/artifactory/&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import os</span>
+<span class="c1">#os.environ[&#39;CRDS_PATH&#39;]=&#39;$HOME/crds_cache&#39;</span>
+<span class="c1">#os.environ[&#39;CRDS_SERVER_URL&#39;] = &#39;https://jwst-crds.stsci.edu&#39;</span>
+<span class="c1">#os.environ[&#39;CRDS_CONTEXT&#39;]=&#39;jwst_0619.pmap&#39;</span>
+<span class="c1">#os.environ[&#39;TEST_BIGDATA&#39;]=&#39;https://bytesalad.stsci.edu/artifactory/&#39;</span>
 <span class="c1">#export CRDS_SERVER_URL=https://jwst-crds.stsci.edu</span>
 <span class="c1">#export CRDS_PATH=$HOME/crds_cache</span>
 <span class="c1">#export CRDS_CONTEXT=&#39;jwst_0619.pmap&#39;</span>
@@ -14425,9 +14406,8 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">datamodels</span>
-<span class="k">with</span> <span class="n">datamodels</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">im</span><span class="p">:</span>
-    <span class="c1"># raises exception if myimage.fits is not an image file</span>
-    <span class="k">pass</span>
+
+<span class="n">im</span> <span class="o">=</span> <span class="n">ImageModel</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14537,11 +14517,6 @@ a.anchor-link {
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">cunit3</span>
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">pc3_1</span>
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">pc3_2</span>
-<span class="c1">#del im.meta.wcsinfo.cdelt4</span>
-<span class="c1">#del im.meta.wcsinfo.crpix4</span>
-<span class="c1">#del im.meta.wcsinfo.crval4</span>
-<span class="c1">#del im.meta.wcsinfo.ctype4</span>
-<span class="c1">#del im.meta.wcsinfo.cunit4</span>
 </pre></div>
 
      </div>
@@ -14554,15 +14529,58 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Run-input-data-through-calwebb_detector1">Run input data through calwebb_detector1<a class="anchor-link" href="#Run-input-data-through-calwebb_detector1">&#182;</a></h3>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The data read in is an image file already processed through Detector1. This step should only be run </span>
+<span class="c1">#if we&#39;re starting with a ramp file.</span>
+
+<span class="c1">#det1 = Detector1Pipeline()</span>
+<span class="c1">#det1.save_results = True</span>
+<span class="c1">#det1.run(im)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Run-output-of-calwebb_detector1-through-calwebb_image2">Run output of calwebb_detector1 through calwebb_image2<a class="anchor-link" href="#Run-output-of-calwebb_detector1-through-calwebb_image2">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#input_file = input_file.replace(&#39;rateint.fits&#39;, &#39;rate.fits&#39;)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">det1</span> <span class="o">=</span> <span class="n">calwebb_detector1</span><span class="o">.</span><span class="n">Detector1Pipeline</span><span class="p">()</span>
-<span class="n">det1</span><span class="o">.</span><span class="n">save_results</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">det1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">im2</span> <span class="o">=</span> <span class="n">Image2Pipeline</span><span class="p">()</span>
+<span class="c1">#im2.background.skip = True</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">assign_wcs</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">flat_field</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">photom</span><span class="o">.</span><span class="n">skip</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">resample</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">save_results</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">im2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14582,182 +14600,50 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2020-12-09 14:10:00,574 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
-2020-12-09 14:10:00,576 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
-2020-12-09 14:10:00,578 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
-2020-12-09 14:10:00,579 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
-2020-12-09 14:10:00,581 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
-2020-12-09 14:10:00,583 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
-2020-12-09 14:10:00,584 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
-2020-12-09 14:10:00,586 - stpipe.Detector1Pipeline.rscd - INFO - RSCD_Step instance created.
-2020-12-09 14:10:00,588 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
-2020-12-09 14:10:00,589 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
-2020-12-09 14:10:00,591 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
-2020-12-09 14:10:00,593 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
-2020-12-09 14:10:00,594 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
-2020-12-09 14:10:00,596 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
-2020-12-09 14:10:00,598 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
-2020-12-09 14:10:00,600 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
-2020-12-09 14:10:00,709 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2020-12-09 14:10:00,726 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 200.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
-2020-12-09 14:10:00,737 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;ipc&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;rscd&#39;, &#39;saturation&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
-2020-12-09 14:10:00,859 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_system_datalvl_0002.rmap      694 bytes  (1 / 135 files) (0 / 335.8 K bytes)
-2020-12-09 14:10:00,918 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_system_calver_0022.rmap    2.4 K bytes  (2 / 135 files) (694 / 335.8 K bytes)
-2020-12-09 14:10:00,954 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_system_0021.imap         385 bytes  (3 / 135 files) (3.1 K / 335.8 K bytes)
-2020-12-09 14:10:00,991 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_wavelengthrange_0016.rmap    1.1 K bytes  (4 / 135 files) (3.5 K / 335.8 K bytes)
-2020-12-09 14:10:01,036 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_wavecorr_0003.rmap      833 bytes  (5 / 135 files) (4.6 K / 335.8 K bytes)
-2020-12-09 14:10:01,073 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_superbias_0038.rmap   15.8 K bytes  (6 / 135 files) (5.5 K / 335.8 K bytes)
-2020-12-09 14:10:01,110 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_sflat_0009.rmap    8.5 K bytes  (7 / 135 files) (21.2 K / 335.8 K bytes)
-2020-12-09 14:10:01,151 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_saturation_0017.rmap    2.0 K bytes  (8 / 135 files) (29.7 K / 335.8 K bytes)
-2020-12-09 14:10:01,193 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_refpix_0014.rmap    1.5 K bytes  (9 / 135 files) (31.7 K / 335.8 K bytes)
-2020-12-09 14:10:01,227 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_readnoise_0015.rmap    1.8 K bytes  (10 / 135 files) (33.2 K / 335.8 K bytes)
-2020-12-09 14:10:01,264 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_photom_0012.rmap      907 bytes  (11 / 135 files) (35.0 K / 335.8 K bytes)
-2020-12-09 14:10:01,298 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_pathloss_0003.rmap      932 bytes  (12 / 135 files) (36.0 K / 335.8 K bytes)
-2020-12-09 14:10:01,338 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_ote_0019.rmap    1.0 K bytes  (13 / 135 files) (36.9 K / 335.8 K bytes)
-2020-12-09 14:10:01,379 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_msaoper_0003.rmap      783 bytes  (14 / 135 files) (37.9 K / 335.8 K bytes)
-2020-12-09 14:10:01,417 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_msa_0017.rmap    1.0 K bytes  (15 / 135 files) (38.7 K / 335.8 K bytes)
-2020-12-09 14:10:01,460 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_mask_0021.rmap    1.5 K bytes  (16 / 135 files) (39.7 K / 335.8 K bytes)
-2020-12-09 14:10:01,500 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_linearity_0017.rmap    1.6 K bytes  (17 / 135 files) (41.2 K / 335.8 K bytes)
-2020-12-09 14:10:01,529 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_ipc_0006.rmap      876 bytes  (18 / 135 files) (42.8 K / 335.8 K bytes)
-2020-12-09 14:10:01,569 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_ifuslicer_0007.rmap      733 bytes  (19 / 135 files) (43.6 K / 335.8 K bytes)
-2020-12-09 14:10:01,608 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_ifupost_0009.rmap      719 bytes  (20 / 135 files) (44.4 K / 335.8 K bytes)
-2020-12-09 14:10:01,642 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_ifufore_0007.rmap      719 bytes  (21 / 135 files) (45.1 K / 335.8 K bytes)
-2020-12-09 14:10:01,680 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_gain_0019.rmap    1.8 K bytes  (22 / 135 files) (45.8 K / 335.8 K bytes)
-2020-12-09 14:10:01,715 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_fpa_0017.rmap    1.0 K bytes  (23 / 135 files) (47.6 K / 335.8 K bytes)
-2020-12-09 14:10:01,752 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_fore_0016.rmap    3.4 K bytes  (24 / 135 files) (48.6 K / 335.8 K bytes)
-2020-12-09 14:10:01,785 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_flat_0012.rmap    3.6 K bytes  (25 / 135 files) (52.0 K / 335.8 K bytes)
-2020-12-09 14:10:01,822 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_fflat_0007.rmap    3.3 K bytes  (26 / 135 files) (55.6 K / 335.8 K bytes)
-2020-12-09 14:10:01,867 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_extract1d_0010.rmap    1.2 K bytes  (27 / 135 files) (58.9 K / 335.8 K bytes)
-2020-12-09 14:10:01,902 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_disperser_0018.rmap    3.9 K bytes  (28 / 135 files) (60.1 K / 335.8 K bytes)
-2020-12-09 14:10:01,942 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_dflat_0004.rmap    1.0 K bytes  (29 / 135 files) (64.0 K / 335.8 K bytes)
-2020-12-09 14:10:01,980 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_dark_0031.rmap   14.4 K bytes  (30 / 135 files) (65.0 K / 335.8 K bytes)
-2020-12-09 14:10:02,014 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_cubepar_0005.rmap      740 bytes  (31 / 135 files) (79.4 K / 335.8 K bytes)
-2020-12-09 14:10:02,045 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_collimator_0016.rmap    1.1 K bytes  (32 / 135 files) (80.1 K / 335.8 K bytes)
-2020-12-09 14:10:02,081 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_camera_0016.rmap    1.0 K bytes  (33 / 135 files) (81.2 K / 335.8 K bytes)
-2020-12-09 14:10:02,150 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_barshadow_0003.rmap      877 bytes  (34 / 135 files) (82.3 K / 335.8 K bytes)
-2020-12-09 14:10:02,195 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_area_0013.rmap    4.5 K bytes  (35 / 135 files) (83.1 K / 335.8 K bytes)
-2020-12-09 14:10:02,234 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_apcorr_0002.rmap    4.2 K bytes  (36 / 135 files) (87.6 K / 335.8 K bytes)
-2020-12-09 14:10:02,326 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nirspec_0201.imap      2.4 K bytes  (37 / 135 files) (91.8 K / 335.8 K bytes)
-2020-12-09 14:10:02,359 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_wfssbkg_0002.rmap    2.3 K bytes  (38 / 135 files) (94.1 K / 335.8 K bytes)
-2020-12-09 14:10:02,392 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_wavelengthrange_0005.rmap      811 bytes  (39 / 135 files) (96.4 K / 335.8 K bytes)
-2020-12-09 14:10:02,428 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_trappars_0004.rmap      753 bytes  (40 / 135 files) (97.2 K / 335.8 K bytes)
-2020-12-09 14:10:02,468 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_trapdensity_0004.rmap      774 bytes  (41 / 135 files) (98.0 K / 335.8 K bytes)
-2020-12-09 14:10:02,506 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_throughput_0004.rmap      979 bytes  (42 / 135 files) (98.7 K / 335.8 K bytes)
-2020-12-09 14:10:02,538 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_superbias_0022.rmap    4.6 K bytes  (43 / 135 files) (99.7 K / 335.8 K bytes)
-2020-12-09 14:10:02,570 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_specwcs_0005.rmap    2.3 K bytes  (44 / 135 files) (104.3 K / 335.8 K bytes)
-2020-12-09 14:10:02,603 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_saturation_0010.rmap      625 bytes  (45 / 135 files) (106.6 K / 335.8 K bytes)
-2020-12-09 14:10:02,636 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_readnoise_0008.rmap      969 bytes  (46 / 135 files) (107.2 K / 335.8 K bytes)
-2020-12-09 14:10:02,676 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_photom_0026.rmap      996 bytes  (47 / 135 files) (108.2 K / 335.8 K bytes)
-2020-12-09 14:10:02,717 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_persat_0005.rmap      738 bytes  (48 / 135 files) (109.2 K / 335.8 K bytes)
-2020-12-09 14:10:02,746 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_pathloss_0002.rmap      707 bytes  (49 / 135 files) (109.9 K / 335.8 K bytes)
-2020-12-09 14:10:02,781 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_mask_0016.rmap      735 bytes  (50 / 135 files) (110.6 K / 335.8 K bytes)
-2020-12-09 14:10:02,816 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_linearity_0015.rmap      760 bytes  (51 / 135 files) (111.4 K / 335.8 K bytes)
-2020-12-09 14:10:02,862 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_ipc_0006.rmap      590 bytes  (52 / 135 files) (112.1 K / 335.8 K bytes)
-2020-12-09 14:10:02,901 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_gain_0009.rmap      838 bytes  (53 / 135 files) (112.7 K / 335.8 K bytes)
-2020-12-09 14:10:02,951 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_flat_0016.rmap    4.1 K bytes  (54 / 135 files) (113.6 K / 335.8 K bytes)
-2020-12-09 14:10:03,006 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_extract1d_0006.rmap      854 bytes  (55 / 135 files) (117.7 K / 335.8 K bytes)
-2020-12-09 14:10:03,059 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_drizpars_0004.rmap      519 bytes  (56 / 135 files) (118.5 K / 335.8 K bytes)
-2020-12-09 14:10:03,100 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_distortion_0017.rmap      899 bytes  (57 / 135 files) (119.1 K / 335.8 K bytes)
-2020-12-09 14:10:03,155 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_dark_0027.rmap    4.0 K bytes  (58 / 135 files) (120.0 K / 335.8 K bytes)
-2020-12-09 14:10:03,192 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_area_0012.rmap    1.1 K bytes  (59 / 135 files) (123.9 K / 335.8 K bytes)
-2020-12-09 14:10:03,225 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_apcorr_0003.rmap    4.1 K bytes  (60 / 135 files) (125.0 K / 335.8 K bytes)
-2020-12-09 14:10:03,269 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_abvegaoffset_0002.rmap    1.3 K bytes  (61 / 135 files) (129.2 K / 335.8 K bytes)
-2020-12-09 14:10:03,305 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_niriss_0128.imap       2.2 K bytes  (62 / 135 files) (130.4 K / 335.8 K bytes)
-2020-12-09 14:10:03,339 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_wfssbkg_0003.rmap    7.2 K bytes  (63 / 135 files) (132.6 K / 335.8 K bytes)
-2020-12-09 14:10:03,380 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_wavelengthrange_0009.rmap      945 bytes  (64 / 135 files) (139.7 K / 335.8 K bytes)
-2020-12-09 14:10:03,436 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_tsophot_0002.rmap      794 bytes  (65 / 135 files) (140.7 K / 335.8 K bytes)
-2020-12-09 14:10:03,484 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_trappars_0003.rmap    1.6 K bytes  (66 / 135 files) (141.5 K / 335.8 K bytes)
-2020-12-09 14:10:03,520 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_trapdensity_0003.rmap    1.6 K bytes  (67 / 135 files) (143.1 K / 335.8 K bytes)
-2020-12-09 14:10:03,552 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_superbias_0006.rmap    2.6 K bytes  (68 / 135 files) (144.7 K / 335.8 K bytes)
-2020-12-09 14:10:03,588 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_specwcs_0008.rmap    1.7 K bytes  (69 / 135 files) (147.3 K / 335.8 K bytes)
-2020-12-09 14:10:03,621 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_saturation_0006.rmap    2.2 K bytes  (70 / 135 files) (149.0 K / 335.8 K bytes)
-2020-12-09 14:10:03,660 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_readnoise_0006.rmap    5.6 K bytes  (71 / 135 files) (151.1 K / 335.8 K bytes)
-2020-12-09 14:10:03,698 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_psfmask_0005.rmap   10.7 K bytes  (72 / 135 files) (156.7 K / 335.8 K bytes)
-2020-12-09 14:10:03,737 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_photom_0010.rmap    4.3 K bytes  (73 / 135 files) (167.4 K / 335.8 K bytes)
-2020-12-09 14:10:03,770 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_persat_0004.rmap    1.6 K bytes  (74 / 135 files) (171.8 K / 335.8 K bytes)
-2020-12-09 14:10:03,809 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_mask_0007.rmap    2.3 K bytes  (75 / 135 files) (173.3 K / 335.8 K bytes)
-2020-12-09 14:10:03,843 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_linearity_0011.rmap    2.4 K bytes  (76 / 135 files) (175.6 K / 335.8 K bytes)
-2020-12-09 14:10:03,873 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_ipc_0003.rmap    2.0 K bytes  (77 / 135 files) (178.0 K / 335.8 K bytes)
-2020-12-09 14:10:03,904 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_gain_0009.rmap    2.9 K bytes  (78 / 135 files) (180.0 K / 335.8 K bytes)
-2020-12-09 14:10:03,936 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_flat_0014.rmap   21.5 K bytes  (79 / 135 files) (182.9 K / 335.8 K bytes)
-2020-12-09 14:10:03,971 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_filteroffset_0003.rmap    1.1 K bytes  (80 / 135 files) (204.4 K / 335.8 K bytes)
-2020-12-09 14:10:04,011 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_drizpars_0001.rmap      519 bytes  (81 / 135 files) (205.5 K / 335.8 K bytes)
-2020-12-09 14:10:04,046 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_distortion_0022.rmap    9.1 K bytes  (82 / 135 files) (206.1 K / 335.8 K bytes)
-2020-12-09 14:10:04,079 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_dark_0018.rmap   14.1 K bytes  (83 / 135 files) (215.2 K / 335.8 K bytes)
-2020-12-09 14:10:04,114 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_area_0006.rmap    4.6 K bytes  (84 / 135 files) (229.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,150 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_apcorr_0003.rmap    4.2 K bytes  (85 / 135 files) (233.9 K / 335.8 K bytes)
-2020-12-09 14:10:04,183 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_abvegaoffset_0002.rmap    1.3 K bytes  (86 / 135 files) (238.1 K / 335.8 K bytes)
-2020-12-09 14:10:04,211 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_nircam_0138.imap       2.2 K bytes  (87 / 135 files) (239.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,244 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_wcsregions_0009.rmap    1.1 K bytes  (88 / 135 files) (241.5 K / 335.8 K bytes)
-2020-12-09 14:10:04,278 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_wavelengthrange_0019.rmap    1.1 K bytes  (89 / 135 files) (242.6 K / 335.8 K bytes)
-2020-12-09 14:10:04,310 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_tsophot_0002.rmap      780 bytes  (90 / 135 files) (243.7 K / 335.8 K bytes)
-2020-12-09 14:10:04,341 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_straymask_0007.rmap      885 bytes  (91 / 135 files) (244.5 K / 335.8 K bytes)
-2020-12-09 14:10:04,372 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_specwcs_0025.rmap    2.3 K bytes  (92 / 135 files) (245.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,403 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_saturation_0011.rmap      961 bytes  (93 / 135 files) (247.6 K / 335.8 K bytes)
-2020-12-09 14:10:04,435 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_rscd_0006.rmap      860 bytes  (94 / 135 files) (248.6 K / 335.8 K bytes)
-2020-12-09 14:10:04,469 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_resol_0004.rmap      739 bytes  (95 / 135 files) (249.4 K / 335.8 K bytes)
-2020-12-09 14:10:04,499 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_reset_0010.rmap    2.1 K bytes  (96 / 135 files) (250.2 K / 335.8 K bytes)
-2020-12-09 14:10:04,532 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_regions_0025.rmap    2.0 K bytes  (97 / 135 files) (252.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,576 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_readnoise_0014.rmap    4.3 K bytes  (98 / 135 files) (254.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,618 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_psfmask_0003.rmap    1.3 K bytes  (99 / 135 files) (258.6 K / 335.8 K bytes)
-2020-12-09 14:10:04,653 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_photom_0028.rmap    5.5 K bytes  (100 / 135 files) (259.8 K / 335.8 K bytes)
-2020-12-09 14:10:04,693 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_mask_0015.rmap      893 bytes  (101 / 135 files) (265.3 K / 335.8 K bytes)
-2020-12-09 14:10:04,733 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_linearity_0013.rmap    1.9 K bytes  (102 / 135 files) (266.2 K / 335.8 K bytes)
-2020-12-09 14:10:04,769 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_ipc_0005.rmap       721 bytes  (103 / 135 files) (268.2 K / 335.8 K bytes)
-2020-12-09 14:10:04,806 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_gain_0007.rmap      893 bytes  (104 / 135 files) (268.9 K / 335.8 K bytes)
-2020-12-09 14:10:04,842 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_fringe_0014.rmap    2.1 K bytes  (105 / 135 files) (269.8 K / 335.8 K bytes)
-2020-12-09 14:10:04,879 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_flat_0046.rmap   19.1 K bytes  (106 / 135 files) (271.9 K / 335.8 K bytes)
-2020-12-09 14:10:04,916 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_filteroffset_0020.rmap    1.1 K bytes  (107 / 135 files) (290.9 K / 335.8 K bytes)
-2020-12-09 14:10:04,951 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_extract1d_0011.rmap    1.1 K bytes  (108 / 135 files) (292.1 K / 335.8 K bytes)
-2020-12-09 14:10:04,990 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_drizpars_0002.rmap      511 bytes  (109 / 135 files) (293.1 K / 335.8 K bytes)
-2020-12-09 14:10:05,027 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_distortion_0031.rmap    1.9 K bytes  (110 / 135 files) (293.7 K / 335.8 K bytes)
-2020-12-09 14:10:05,056 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_dark_0020.rmap    3.5 K bytes  (111 / 135 files) (295.5 K / 335.8 K bytes)
-2020-12-09 14:10:05,088 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_cubepar_0006.rmap      686 bytes  (112 / 135 files) (299.0 K / 335.8 K bytes)
-2020-12-09 14:10:05,128 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_area_0011.rmap      755 bytes  (113 / 135 files) (299.7 K / 335.8 K bytes)
-2020-12-09 14:10:05,169 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_apcorr_0004.rmap    4.3 K bytes  (114 / 135 files) (300.4 K / 335.8 K bytes)
-2020-12-09 14:10:05,210 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_abvegaoffset_0002.rmap    1.3 K bytes  (115 / 135 files) (304.7 K / 335.8 K bytes)
-2020-12-09 14:10:05,242 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_miri_0204.imap         2.2 K bytes  (116 / 135 files) (306.0 K / 335.8 K bytes)
-2020-12-09 14:10:05,282 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_trappars_0004.rmap      903 bytes  (117 / 135 files) (308.2 K / 335.8 K bytes)
-2020-12-09 14:10:05,327 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_trapdensity_0004.rmap      930 bytes  (118 / 135 files) (309.1 K / 335.8 K bytes)
-2020-12-09 14:10:05,360 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_superbias_0015.rmap    3.8 K bytes  (119 / 135 files) (310.0 K / 335.8 K bytes)
-2020-12-09 14:10:05,395 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_saturation_0009.rmap      779 bytes  (120 / 135 files) (313.8 K / 335.8 K bytes)
-2020-12-09 14:10:05,431 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_readnoise_0011.rmap    1.3 K bytes  (121 / 135 files) (314.6 K / 335.8 K bytes)
-2020-12-09 14:10:05,469 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_photom_0011.rmap    1.0 K bytes  (122 / 135 files) (315.9 K / 335.8 K bytes)
-2020-12-09 14:10:05,511 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_persat_0004.rmap      884 bytes  (123 / 135 files) (316.9 K / 335.8 K bytes)
-2020-12-09 14:10:05,546 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_mask_0018.rmap     1.2 K bytes  (124 / 135 files) (317.8 K / 335.8 K bytes)
-2020-12-09 14:10:05,581 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_linearity_0013.rmap      925 bytes  (125 / 135 files) (319.0 K / 335.8 K bytes)
-2020-12-09 14:10:05,616 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_ipc_0003.rmap        614 bytes  (126 / 135 files) (319.9 K / 335.8 K bytes)
-2020-12-09 14:10:05,651 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_gain_0010.rmap       890 bytes  (127 / 135 files) (320.5 K / 335.8 K bytes)
-2020-12-09 14:10:05,685 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_flat_0009.rmap     1.1 K bytes  (128 / 135 files) (321.4 K / 335.8 K bytes)
-2020-12-09 14:10:05,724 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_distortion_0007.rmap    1.1 K bytes  (129 / 135 files) (322.5 K / 335.8 K bytes)
-2020-12-09 14:10:05,759 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_dark_0011.rmap     3.3 K bytes  (130 / 135 files) (323.6 K / 335.8 K bytes)
-2020-12-09 14:10:05,799 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_area_0009.rmap     1.0 K bytes  (131 / 135 files) (326.9 K / 335.8 K bytes)
-2020-12-09 14:10:05,839 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_apcorr_0002.rmap    4.1 K bytes  (132 / 135 files) (327.9 K / 335.8 K bytes)
-2020-12-09 14:10:05,881 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_abvegaoffset_0002.rmap    1.3 K bytes  (133 / 135 files) (332.0 K / 335.8 K bytes)
-2020-12-09 14:10:05,920 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_fgs_0082.imap          1.9 K bytes  (134 / 135 files) (333.3 K / 335.8 K bytes)
-2020-12-09 14:10:05,957 - CRDS - INFO -  Fetching  $HOME/crds_cache/mappings/jwst/jwst_0619.pmap                615 bytes  (135 / 135 files) (335.2 K / 335.8 K bytes)
-2020-12-09 14:10:06,248 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_dark_0058.fits    3.4 G bytes  (1 / 8 files) (0 / 3.5 G bytes)
-2020-12-09 14:10:27,887 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_gain_0008.fits    4.2 M bytes  (2 / 8 files) (3.4 G / 3.5 G bytes)
-2020-12-09 14:10:28,058 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_ipc_0009.fits   14.4 K bytes  (3 / 8 files) (3.4 G / 3.5 G bytes)
-2020-12-09 14:10:28,133 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_linearity_0024.fits   46.5 M bytes  (4 / 8 files) (3.4 G / 3.5 G bytes)
-2020-12-09 14:10:28,758 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_mask_0023.fits    4.2 M bytes  (5 / 8 files) (3.4 G / 3.5 G bytes)
-2020-12-09 14:10:28,879 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_readnoise_0057.fits    4.2 M bytes  (6 / 8 files) (3.4 G / 3.5 G bytes)
-2020-12-09 14:10:28,982 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_rscd_0010.fits   37.4 K bytes  (7 / 8 files) (3.5 G / 3.5 G bytes)
-2020-12-09 14:10:29,044 - CRDS - INFO -  Fetching  $HOME/crds_cache/references/jwst/miri/jwst_miri_saturation_0022.fits    9.5 M bytes  (8 / 8 files) (3.5 G / 3.5 G bytes)
-2020-12-09 14:10:29,224 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_dark_0058.fits&#39;.
-2020-12-09 14:10:29,225 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_gain_0008.fits&#39;.
-2020-12-09 14:10:29,226 - stpipe.Detector1Pipeline - INFO - Prefetch for IPC reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_ipc_0009.fits&#39;.
-2020-12-09 14:10:29,227 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_linearity_0024.fits&#39;.
-2020-12-09 14:10:29,229 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_mask_0023.fits&#39;.
-2020-12-09 14:10:29,229 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
-2020-12-09 14:10:29,230 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_readnoise_0057.fits&#39;.
-2020-12-09 14:10:29,231 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;N/A&#39;.
-2020-12-09 14:10:29,232 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_rscd_0010.fits&#39;.
-2020-12-09 14:10:29,233 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;$HOME/crds_cache/references/jwst/miri/jwst_miri_saturation_0022.fits&#39;.
-2020-12-09 14:10:29,233 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;N/A&#39;.
-2020-12-09 14:10:29,234 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
-2020-12-09 14:10:29,235 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
-2020-12-09 14:10:29,237 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+<pre>2020-12-09 17:15:54,384 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2020-12-09 17:15:54,386 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2020-12-09 17:15:54,388 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2020-12-09 17:15:54,390 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2020-12-09 17:15:54,391 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2020-12-09 17:15:54,394 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2020-12-09 17:15:54,469 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2020-12-09 17:15:54,475 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;single&#39;: False, &#39;blendheaders&#39;: True}}}
+2020-12-09 17:15:54,485 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;photom&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2020-12-09 17:15:54,779 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_area_0004.fits&#39;.
+2020-12-09 17:15:54,781 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits&#39;.
+2020-12-09 17:15:54,782 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2020-12-09 17:15:54,783 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2020-12-09 17:15:54,784 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2020-12-09 17:15:54,830 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2020-12-09 17:15:54,831 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
+2020-12-09 17:15:54,905 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2020-12-09 17:15:54,908 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2020-12-09 17:15:54,909 - stpipe.Image2Pipeline.assign_wcs - INFO - Step skipped.
+2020-12-09 17:15:54,910 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2020-12-09 17:15:54,965 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2020-12-09 17:15:54,967 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2020-12-09 17:15:54,968 - stpipe.Image2Pipeline.flat_field - INFO - Step skipped.
+2020-12-09 17:15:54,969 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2020-12-09 17:15:55,081 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2020-12-09 17:15:55,086 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2020-12-09 17:15:55,103 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /tmp/crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits
+2020-12-09 17:15:55,104 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /tmp/crds_cache/references/jwst/miri/jwst_miri_area_0004.fits
+2020-12-09 17:15:55,144 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
+2020-12-09 17:15:55,145 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
+2020-12-09 17:15:55,145 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
+2020-12-09 17:15:55,146 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
+2020-12-09 17:15:55,239 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2020-12-09 17:15:55,241 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
+2020-12-09 17:15:55,242 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.02701
+2020-12-09 17:15:55,258 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2020-12-09 17:15:55,360 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2020-12-09 17:15:55,363 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: True, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;single&#39;: False, &#39;blendheaders&#39;: True}
+2020-12-09 17:15:55,363 - stpipe.Image2Pipeline.resample - INFO - Step skipped.
+2020-12-09 17:15:55,365 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2020-12-09 17:15:55,366 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2020-12-09 17:15:55,368 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2020-12-09 17:15:55,504 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2020-12-09 17:15:55,505 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -14765,112 +14651,25 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-00906ee3120a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> det1 <span class="ansi-blue-fg">=</span> calwebb_detector1<span class="ansi-blue-fg">.</span>Detector1Pipeline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> det1<span class="ansi-blue-fg">.</span>save_results <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>det1<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span>im<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/stpipe/step.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">    397</span>                     self<span class="ansi-blue-fg">.</span>prefetch<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    398</span>                 <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 399</span><span class="ansi-red-fg">                     </span>step_result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>process<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    400</span>                 <span class="ansi-green-fg">except</span> TypeError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    401</span>                     <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#34;process() takes exactly&#34;</span> <span class="ansi-green-fg">in</span> str<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/pipeline/calwebb_detector1.py</span> in <span class="ansi-cyan-fg">process</span><span class="ansi-blue-fg">(self, input)</span>
-<span class="ansi-green-intense-fg ansi-bold">     65</span> 
-<span class="ansi-green-intense-fg ansi-bold">     66</span>         <span class="ansi-red-fg"># open the input as a RampModel</span>
-<span class="ansi-green-fg">---&gt; 67</span><span class="ansi-red-fg">         </span>input <span class="ansi-blue-fg">=</span> datamodels<span class="ansi-blue-fg">.</span>RampModel<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     68</span> 
-<span class="ansi-green-intense-fg ansi-bold">     69</span>         <span class="ansi-red-fg"># propagate output_dir to steps that might need it</span>
-
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/datamodels/ramp.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, init, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     42</span>         <span class="ansi-red-fg"># Implicitly create arrays</span>
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         self<span class="ansi-blue-fg">.</span>pixeldq <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>pixeldq
-<span class="ansi-green-fg">---&gt; 44</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>groupdq <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>groupdq
-<span class="ansi-green-intense-fg ansi-bold">     45</span>         self<span class="ansi-blue-fg">.</span>err <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>err
-<span class="ansi-green-intense-fg ansi-bold">     46</span> 
-
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/datamodels/model_base.py</span> in <span class="ansi-cyan-fg">__setattr__</span><span class="ansi-blue-fg">(self, attr, value)</span>
-<span class="ansi-green-intense-fg ansi-bold">    612</span>             ndmodel<span class="ansi-blue-fg">.</span>NDModel<span class="ansi-blue-fg">.</span>__setattr__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> attr<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    613</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 614</span><span class="ansi-red-fg">             </span>properties<span class="ansi-blue-fg">.</span>ObjectNode<span class="ansi-blue-fg">.</span>__setattr__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> attr<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    615</span> 
-<span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-green-fg">def</span> extend_schema<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> new_schema<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/datamodels/properties.py</span> in <span class="ansi-cyan-fg">__setattr__</span><span class="ansi-blue-fg">(self, attr, val)</span>
-<span class="ansi-green-intense-fg ansi-bold">    316</span>             <span class="ansi-green-fg">if</span> val <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    317</span>                 val <span class="ansi-blue-fg">=</span> _make_default<span class="ansi-blue-fg">(</span>attr<span class="ansi-blue-fg">,</span> schema<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>_ctx<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 318</span><span class="ansi-red-fg">             </span>val <span class="ansi-blue-fg">=</span> _cast<span class="ansi-blue-fg">(</span>val<span class="ansi-blue-fg">,</span> schema<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    319</span> 
-<span class="ansi-green-intense-fg ansi-bold">    320</span>             node <span class="ansi-blue-fg">=</span> ObjectNode<span class="ansi-blue-fg">(</span>attr<span class="ansi-blue-fg">,</span> val<span class="ansi-blue-fg">,</span> schema<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>_ctx<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/jwst/datamodels/properties.py</span> in <span class="ansi-cyan-fg">_cast</span><span class="ansi-blue-fg">(val, schema)</span>
-<span class="ansi-green-intense-fg ansi-bold">     91</span>         raise ValueError(
-<span class="ansi-green-intense-fg ansi-bold">     92</span>             <span class="ansi-blue-fg">&#34;Array has wrong number of dimensions.  Expected {}, got {}&#34;</span>
-<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">             .format(schema[&#39;ndim&#39;], len(val.shape)))
-</span><span class="ansi-green-intense-fg ansi-bold">     94</span> 
-<span class="ansi-green-intense-fg ansi-bold">     95</span>     <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;max_ndim&#39;</span> <span class="ansi-green-fg">in</span> schema <span class="ansi-green-fg">and</span> len<span class="ansi-blue-fg">(</span>val<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> schema<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;max_ndim&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">ValueError</span>: Array has wrong number of dimensions.  Expected 4, got 2</pre>
-</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits&gt;]</pre>
 </div>
 
 </div>
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Run-output-of-calwebb_detector1-through-calwebb_image2">Run output of calwebb_detector1 through calwebb_image2<a class="anchor-link" href="#Run-output-of-calwebb_detector1-through-calwebb_image2">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#input_file = input_file.replace(&#39;rateint.fits&#39;, &#39;rate.fits&#39;)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">im2</span> <span class="o">=</span> <span class="n">calwebb_image2</span><span class="o">.</span><span class="n">Image2Pipeline</span><span class="p">()</span>
-<span class="c1">#im2.background.skip = True</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">assign_wcs</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">flat_field</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">photom</span><span class="o">.</span><span class="n">skip</span><span class="o">=</span><span class="kc">False</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">resample</span><span class="o">.</span><span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">save_results</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">im2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;rate.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;cal.fits&#39;</span><span class="p">)</span>
@@ -14884,12 +14683,11 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">datamodels</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">im_cal</span><span class="p">:</span>
-    <span class="c1"># raises exception if myimage.fits is not an image file</span>
-    <span class="k">pass</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in the calibrated file</span>
+<span class="n">im_cal</span> <span class="o">=</span> <span class="n">ImageModel</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14902,10 +14700,10 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Calculate-the-rate/cal-image-ratio">Calculate the rate/cal image ratio<a class="anchor-link" href="#Calculate-the-rate/cal-image-ratio">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ratio_im</span><span class="o">=</span><span class="n">im_cal</span><span class="o">.</span><span class="n">data</span><span class="o">/</span><span class="n">im</span><span class="o">.</span><span class="n">data</span>
@@ -14916,10 +14714,33 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2020-12-09 17:15:55,617 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.7/site-packages/asdf/tags/core/ndarray.py:519: RuntimeWarning: invalid value encountered in true_divide
+  return getattr(self._make_array(), name)(*args)
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ratio_im</span><span class="p">)</span>
@@ -14930,15 +14751,42 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[[1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
+ [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
+ [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
+ ...
+ [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
+ [    nan     nan     nan ... 1.02701 1.02701 1.02701]
+ [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Get-photom-reference-file">Get photom reference file<a class="anchor-link" href="#Get-photom-reference-file">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">photomreffile</span> <span class="o">=</span> <span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">ref_file</span><span class="o">.</span><span class="n">photom</span><span class="o">.</span><span class="n">name</span>
@@ -14947,9 +14795,8 @@ a.anchor-link {
 <span class="n">basename</span> <span class="o">=</span> <span class="n">crds</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">pop_crds_uri</span><span class="p">(</span><span class="n">photomreffile</span><span class="p">)</span>
 <span class="n">path</span> <span class="o">=</span> <span class="n">crds</span><span class="o">.</span><span class="n">locate_file</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="s2">&quot;jwst&quot;</span><span class="p">)</span>
 <span class="c1"># open reference file</span>
-<span class="k">with</span> <span class="n">datamodels</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">photom_file</span><span class="p">:</span>
-    <span class="c1"># raises exception if myimage.fits is not an image file</span>
-    <span class="k">pass</span>
+
+<span class="n">photom_file</span> <span class="o">=</span> <span class="n">MirImgPhotomModel</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14957,10 +14804,31 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Photom reference file crds://jwst_miri_photom_0044.fits
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">photom_file</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_steradians</span>
@@ -14971,15 +14839,38 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>8.4403609523084e-14</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Print-photom-calibration-conversion-factor-for-image">Print photom calibration conversion factor for image<a class="anchor-link" href="#Print-photom-calibration-conversion-factor-for-image">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">photom_file</span><span class="o">.</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;photmjsr&#39;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">photom_file</span><span class="o">.</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;filter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">filter</span><span class="p">)][</span><span class="mi">0</span><span class="p">])</span>
@@ -14990,15 +14881,36 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1.02701
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Check-that-same-value-has-been-applied-to-cal-image-(three-values-should-be-the-same)">Check that same value has been applied to cal image (three values should be the same)<a class="anchor-link" href="#Check-that-same-value-has-been-applied-to-cal-image-(three-values-should-be-the-same)">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;image min&#39;</span><span class="p">,</span><span class="s1">&#39;image max&#39;</span><span class="p">,</span><span class="s1">&#39;ref file&#39;</span><span class="p">)</span>
@@ -15010,15 +14922,37 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>image min image max ref file
+1.0270098 1.0270101 1.02701
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Check-that-pixel-area-information-has-been-attached">Check that pixel area information has been attached<a class="anchor-link" href="#Check-that-pixel-area-information-has-been-attached">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_cal</span><span class="o">.</span><span class="n">area</span>
@@ -15031,24 +14965,33 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>1.0159259</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pix_area_min&#39;</span><span class="p">,</span> <span class="s1">&#39;pix_area_max&#39;</span><span class="p">,</span><span class="s1">&#39;pix_area_mean&#39;</span><span class="p">)</span>
@@ -15060,15 +15003,37 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>pix_area_min pix_area_max pix_area_mean
+0.97582465 1.0159259 1.0058197
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Check-that-PIXAR_SR-and-PIXAR_A2-keywords-have-been-populated">Check that PIXAR_SR and PIXAR_A2 keywords have been populated<a class="anchor-link" href="#Check-that-PIXAR_SR-and-PIXAR_A2-keywords-have-been-populated">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_cal</span><span class="o">.</span><span class="n">find_fits_keyword</span><span class="p">(</span><span class="s1">&#39;PIXAR_SR&#39;</span><span class="p">)</span>
@@ -15079,10 +15044,33 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;meta.photometry.pixelarea_steradians&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">photom_file</span><span class="o">.</span><span class="n">find_fits_keyword</span><span class="p">(</span><span class="s1">&#39;PIXAR_SR&#39;</span><span class="p">)</span>
@@ -15093,15 +15081,38 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;meta.photometry.pixelarea_steradians&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Two-values-should-be-identical">Two values should be identical<a class="anchor-link" href="#Two-values-should-be-identical">&#182;</a></h4>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">photom_file</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_steradians</span><span class="p">,</span><span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_steradians</span><span class="p">)</span>
@@ -15112,15 +15123,36 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>8.4403609523084e-14 8.4403609523084e-14
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Two-values-should-be-identical">Two values should be identical<a class="anchor-link" href="#Two-values-should-be-identical">&#182;</a></h4>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">photom_file</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_arcsecsq</span><span class="p">,</span> <span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_arcsecsq</span><span class="p">)</span>
@@ -15131,15 +15163,36 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0.0121 0.0121
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Verify-that-pixel-area-in-steradians-is-correct-(values-should-be-the-same)">Verify that pixel area in steradians is correct (values should be the same)<a class="anchor-link" href="#Verify-that-pixel-area-in-steradians-is-correct-(values-should-be-the-same)">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_arcsecsq</span><span class="o">/</span><span class="p">(</span><span class="mf">206265.0</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">photometry</span><span class="o">.</span><span class="n">pixelarea_steradians</span><span class="p">)</span>
@@ -15150,15 +15203,36 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>2.844030752201317e-13 8.4403609523084e-14
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Check-that-bunit-information-has-been-added-to-image-('MJy/sr')">Check that bunit information has been added to image ('MJy/sr')<a class="anchor-link" href="#Check-that-bunit-information-has-been-added-to-image-('MJy/sr')">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_cal</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">bunit_data</span>
@@ -15169,10 +15243,33 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;MJy/sr&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#photom_file.meta.author</span>
