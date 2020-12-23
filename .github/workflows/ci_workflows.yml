@@ -1,0 +1,115 @@
+# GitHub Actions workflow for testing and continuous integration.
+#
+# This file performs testing using tox and tox.ini to define and configure the test environments.
+
+name: CI
+
+on:
+  push:
+# **UNCOMMENT TO RESTRICT TO PUSH ON SPECIFIC BRANCHES
+#    branches:
+#    - master  # GitHub now defaults to 'main' but jwst_validation_notebooks uses 'master'
+  #  tags: # run CI if specific tags are pushed
+  pull_request:
+  #  branches: # only build on PRs against 'main' if you need to further limit when CI is run.
+  #  - main
+
+jobs:
+  # Github Actions supports ubuntu, windows, and macos virtual environments:
+  # https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners
+  ci_tests:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+        # This github package is a notebook repository. Code style checks don't work
+        # on notebooks. Nor do style checks.
+#          - name: Code style checks
+#            os: ubuntu-latest
+#            python: 3.x
+#            toxenv: codestyle
+
+#          - name: PEP 517
+#            os: ubuntu-latest
+#            python: 3.x
+#            toxenv: pep517
+
+        # This github package is intended only to be run internally to generate a website.
+        # Security audit is thus not needed.
+#          - name: Security audit
+#            os: ubuntu-latest
+#            python: 3.x
+#            toxenv: securityaudit
+
+          - name: Python 3.7 with oldest supported dependencies
+            os: ubuntu-latest
+            python: 3.7
+#            toxenv: py37-test-oldestdeps
+
+        # Because the necessary data files are internal, this is strictly a
+        # does-this-import check, so coverage is kind of a null issue.
+#          - name: Python 3.9 with coverage checking
+#            os: ubuntu-latest
+#            python: 3.9
+#            toxenv: py39-test-cov
+
+          - name: Linux - Python 3.8
+            os: ubunty-latest
+            python: 3.8
+#            toxenv: py38-test
+
+          - name: OS X - Python 3.8
+            os: macos-latest
+            python: 3.8
+#            toxenv: py38-test
+
+        #   Apparently conda setup on windows takes a different job.
+#          - name: Windows - Python 3.8
+#            os: windows-latest
+#            python: 3.8
+#            toxenv: py38-test
+
+          - name: Python 3.9 with latest dev versions of key dependencies
+            os: ubuntu-latest
+            python: 3.9
+#            toxenv: py39-test-devdeps
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Set up python ${{ matrix.python }} on ${{ matrix.os }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+
+    #   Below $CONDA is an environment variable pointing to the root of the (automatically
+    # included) miniconda directory.
+    #   Unfortunately environment variables don't persist between steps in a workflow, so
+    # the way to get things to work in conda is to install the environment.yml packages
+    # into 'base'
+    - name: Install base dependencies
+      run: |
+        $CONDA/bin/conda env update --file environment.yml --name base
+        python -m pip install --upgrade pip
+        python -m pip install tox codecov
+    - name: Test with pytest
+      run: |
+        pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
+        python -m "nbpages.check_nbs"
+#   This repository (for reasons mentioned above) doesn't use pytest.
+#        conda install pytest
+#        $CONDA/bin/pytest
+    #   Tox isn't used on this repository currently.
+#    - name: Test with tox
+#      run: |
+#        tox -e ${{ matrix.toxenv }}
+    # Activate your repo on codecov.io first.
+    #   Code Coverage also isn't used (see above)
+#    - name: Upload coverage to codecov
+#      if: "contains(matrix.toxenv, '-cov')"
+#      uses: codecov/codecov-action@v1
+#      with:
+#        file: ./coverage.xml
