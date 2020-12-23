@@ -88,10 +88,10 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Set up python ${{ matrix.python }} on ${{ matrix.os }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python }}
+#    - name: Set up python ${{ matrix.python }} on ${{ matrix.os }}
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: ${{ matrix.python }}
 
     #   Below $CONDA is an environment variable pointing to the root of the (automatically
     # included) miniconda directory.
