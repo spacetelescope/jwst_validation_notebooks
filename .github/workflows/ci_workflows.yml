@@ -98,10 +98,14 @@ jobs:
     #   Unfortunately environment variables don't persist between steps in a workflow, so
     # the way to get things to work in conda is to install the environment.yml packages
     # into 'base'
+
+#   Temporarily removed because this particular thing doesn't work.
+#        $CONDA/bin/conda install python=3.6
+#        $CONDA/bin/conda remove python=3.7
+
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda install python=3.6
-        $CONDA/bin/conda remove python=3.7
+        $CONDA/bin/conda env update python=3.6
         $CONDA/bin/conda env update --file environment.yml
     - name: Test with nbpages
       run: |
