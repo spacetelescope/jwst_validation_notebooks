@@ -101,10 +101,9 @@ jobs:
     - name: Install base dependencies
       run: |
         $CONDA/bin/conda env create --file environment.yml
-    - name: Test with pytest
+    - name: Test with nbpages
       run: |
-        $CONDA/bin/conda init bash
-        source /home/runner/.bashrc
+        $CONDA/bin/conda env create --file environment.yml
         $CONDA/bin/conda activate jwst_validation_notebooks
         pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
         python -m "nbpages.check_nbs"
