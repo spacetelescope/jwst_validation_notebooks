@@ -100,11 +100,10 @@ jobs:
     # into 'base'
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda env update --file environment.yml --name base
-        python -m pip install --upgrade pip
-        python -m pip install tox codecov
+        $CONDA/bin/conda env create --file environment.yml
     - name: Test with pytest
       run: |
+        $CONDA/bin/conda activate jwst_validation_notebooks
         pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
         python -m "nbpages.check_nbs"
 #   This repository (for reasons mentioned above) doesn't use pytest.
