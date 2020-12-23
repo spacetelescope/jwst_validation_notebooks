@@ -42,9 +42,13 @@ jobs:
 #            python: 3.x
 #            toxenv: securityaudit
 
-          - name: Python 3.7 with oldest supported dependencies
+          - name: Python 3.6 because jwst package requires <3.7
             os: ubuntu-latest
-            python: 3.7
+            python: 3.6
+
+#          - name: Python 3.7 with oldest supported dependencies
+#            os: ubuntu-latest
+#            python: 3.7
 #            toxenv: py37-test-oldestdeps
 
         # Because the necessary data files are internal, this is strictly a
@@ -54,11 +58,14 @@ jobs:
 #            python: 3.9
 #            toxenv: py39-test-cov
 
-          - name: Linux - Python 3.8
-            os: ubuntu-latest
-            python: 3.8
+#   Commented out because the jwst package seems to require python 3.6 NOT 3.7
+#          - name: Linux - Python 3.8
+#            os: ubuntu-latest
+#            python: 3.8
 #            toxenv: py38-test
 
+#   Commented out because the jwst package seems to require python 3.6 NOT 3.7. Also,
+# OSX seems to not give you permission to update the 'base' conda environment.
 #          - name: OS X - Python 3.8
 #            os: macos-latest
 #            python: 3.8
@@ -70,9 +77,10 @@ jobs:
 #            python: 3.8
 #            toxenv: py38-test
 
-          - name: Python 3.9 with latest dev versions of key dependencies
-            os: ubuntu-latest
-            python: 3.9
+#   Commented out because the jwst package seems to require python 3.6 NOT 3.7
+#          - name: Python 3.9 with latest dev versions of key dependencies
+#            os: ubuntu-latest
+#            python: 3.9
 #            toxenv: py39-test-devdeps
 
     steps:
