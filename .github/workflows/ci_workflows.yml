@@ -108,10 +108,9 @@ jobs:
       run: |
         $CONDA/bin/conda env update python=3.6 --name base
         $CONDA/bin/conda env update --file environment.yml --name base
-        $CONDA/bin/python -m "nbpages.check_nbs"
     - name: Test with nbpages
       run: |
-        python -m "nbpages.check_nbs"
+        $CONDA/bin/python -m "nbpages.check_nbs"
 #   This repository (for reasons mentioned above) doesn't use pytest.
 #        conda install pytest
 #        $CONDA/bin/pytest
