@@ -98,9 +98,9 @@ jobs:
     #   Unfortunately environment variables don't persist between steps in a workflow, so
     # the way to get things to work in conda is to install the environment.yml packages
     # into 'base'
-    - name: Install base dependencies
-      run: |
-        $CONDA/bin/conda env create --file environment.yml
+#    - name: Install base dependencies
+#      run: |
+#        $CONDA/bin/conda env create --file environment.yml
     - name: Test with nbpages
       run: |
         $CONDA/bin/conda env create --file environment.yml
