@@ -105,11 +105,11 @@ jobs:
 
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda env update python=3.6
+        $CONDA/bin/conda env update python=3.6 --name base
         $CONDA/bin/conda env update --file environment.yml --name base
     - name: Test with nbpages
       run: |
-        pip install git+https://github.com/eteq/nbpages.git#egg=nbpages
+        pip3 install git+https://github.com/eteq/nbpages.git#egg=nbpages
         python -m "nbpages.check_nbs"
 #   This repository (for reasons mentioned above) doesn't use pytest.
 #        conda install pytest
