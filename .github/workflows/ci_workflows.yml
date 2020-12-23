@@ -100,8 +100,8 @@ jobs:
     # into 'base'
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda remove python
         $CONDA/bin/conda install python=3.6
+        $CONDA/bin/conda remove python=3.7
         $CONDA/bin/conda env update --file environment.yml
     - name: Test with nbpages
       run: |
