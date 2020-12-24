@@ -68,7 +68,7 @@ jobs:
 
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda env update python={{ matrix.python }} --name base
+        $CONDA/bin/conda env update python=${{ matrix.python }} --name base
         $CONDA/bin/conda env update --file environment.yml --name base
     - name: Test with nbpages
       run: |
