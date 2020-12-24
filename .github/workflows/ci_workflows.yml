@@ -6,13 +6,7 @@ name: CI
 
 on:
   push:
-# **UNCOMMENT TO RESTRICT TO PUSH ON SPECIFIC BRANCHES
-#    branches:
-#    - master  # GitHub now defaults to 'main' but jwst_validation_notebooks uses 'master'
-  #  tags: # run CI if specific tags are pushed
   pull_request:
-  #  branches: # only build on PRs against 'main' if you need to further limit when CI is run.
-  #  - main
 
 jobs:
   # Github Actions supports ubuntu, windows, and macos virtual environments:
@@ -23,40 +17,14 @@ jobs:
     strategy:
       matrix:
         include:
-        # This github package is a notebook repository. Code style checks don't work
-        # on notebooks. Nor do style checks.
-#          - name: Code style checks
-#            os: ubuntu-latest
-#            python: 3.x
-#            toxenv: codestyle
 
-#          - name: PEP 517
-#            os: ubuntu-latest
-#            python: 3.x
-#            toxenv: pep517
-
-        # This github package is intended only to be run internally to generate a website.
-        # Security audit is thus not needed.
-#          - name: Security audit
-#            os: ubuntu-latest
-#            python: 3.x
-#            toxenv: securityaudit
-
-          - name: Python 3.6 because jwst package requires <3.7
+          - name: Python 3.6
             os: ubuntu-latest
             python: 3.6
 
-#          - name: Python 3.7 with oldest supported dependencies
-#            os: ubuntu-latest
-#            python: 3.7
-#            toxenv: py37-test-oldestdeps
-
-        # Because the necessary data files are internal, this is strictly a
-        # does-this-import check, so coverage is kind of a null issue.
-#          - name: Python 3.9 with coverage checking
-#            os: ubuntu-latest
-#            python: 3.9
-#            toxenv: py39-test-cov
+          - name: Python 3.7
+            os: ubuntu-latest
+            python: 3.7
 
 #   Commented out because the jwst package seems to require python 3.6 NOT 3.7
 #          - name: Linux - Python 3.8
@@ -76,12 +44,6 @@ jobs:
 #            os: windows-latest
 #            python: 3.8
 #            toxenv: py38-test
-
-#   Commented out because the jwst package seems to require python 3.6 NOT 3.7
-#          - name: Python 3.9 with latest dev versions of key dependencies
-#            os: ubuntu-latest
-#            python: 3.9
-#            toxenv: py39-test-devdeps
 
     steps:
     - name: Checkout code
@@ -106,7 +68,7 @@ jobs:
 
     - name: Install base dependencies
       run: |
-        $CONDA/bin/conda env update python=3.6 --name base
+        $CONDA/bin/conda env update python={{ matrix.python }} --name base
         $CONDA/bin/conda env update --file environment.yml --name base
     - name: Test with nbpages
       run: |
