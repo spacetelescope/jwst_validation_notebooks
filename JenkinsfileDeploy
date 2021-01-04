@@ -24,7 +24,6 @@ pipeline {
         sh("curl -LO https://raw.githubusercontent.com/astroconda/docker-buildsys/master/with_env")
         sh("chmod +x with_env")
         sh("conda create -n ${env_name} python=3.7 git -y")
-        sh("./with_env -n ${env_name} pip install -r requirements.txt")
       }
     }
 
@@ -59,7 +58,7 @@ pipeline {
                     git remote add deploy ssh://git@github.com/spacetelescope/jwst_validation_notebooks.git
                     git push deploy ${deploy_branch}
                     cd ${env.WORKSPACE}
-                    chmod ug=rwx index.html 
+                    chmod ug=rwx index.html
                     chmod ug=rwx report*.xml
                     find . -name "*.html" | xargs chmod ug=rwx
                     rsync -vH index.html ${env.WEBPAGE_DIR}
@@ -75,7 +74,7 @@ pipeline {
     } // end of deploy stage
   } // end of stages
   post {
-        cleanup { 
+        cleanup {
             deleteDir()
         } //end of cleanup
   } //end of post
