@@ -4,125 +4,177 @@
 [![STScI](https://img.shields.io/badge/powered%20by-STScI-blue.svg?colorA=707170&colorB=3e8ddd&style=flat)](http://www.stsci.edu)
 
 
-This repository contains *jupyter* notebooks that are used to perform validation testing of the [JWST Calibration Pipeline](https://jwst-pipeline.readthedocs.io/en/latest/jwst/introduction.html) (hereafter referred to as the calibration pipeline). These notebooks are structured to capture documentation, code, tests, figures, and other outputs that JWST instrument teams use to validate data from the calibration pipeline.
+This repository contains [*jupyter*][jupyter] notebooks that are used to 
+perform validation testing of the 
+[JWST Calibration Pipeline](https://jwst-pipeline.readthedocs.io/en/latest/jwst/introduction.html) 
+(hereafter referred to as the calibration pipeline). These notebooks are structured to 
+capture documentation, code, tests, figures, and other outputs that JWST instrument teams 
+use to validate data from the calibration pipeline.
 
-This repository is integrated with the [JWST pipeline software repository](https://github.com/spacetelescope/jwst) and the Jenkins automation server. To see most recent build status, go [here](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/).
+This repository is integrated with the 
+[JWST pipeline software repository](https://github.com/spacetelescope/jwst) and the 
+Jenkins automation server. To see most recent build status, go to the 
+[STScI Jenkins server](https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/).
 
 ## Current Validation Suite
-To see the current suite of validation notebooks, visit our [website](https://jwst-validation-notebooks.stsci.edu/). Please note that the website is currently only available to internal STScI staff who are on the VPN. Contact Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) for questions or access issues.
+
+To see the current suite of validation notebooks, visit our 
+[website](https://jwst-validation-notebooks.stsci.edu/). Please note that the website is 
+currently only available to internal STScI staff who are on the VPN. Contact Misty 
+Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe 
+([@aliciacanipe](https://github.com/aliciacanipe)) for questions or access issues.
 
 ## Executing Validation Notebooks Locally
 
-### Install the JWST Calibration Pipeline ###
-If you have not installed the calibration pipeline software, visit the [JWST pipeline software repository](https://github.com/spacetelescope/jwst#installation) for the most up-to-date installation instructions.
+You must be an internal user in order to execute the Validation Notebooks locally, because
+the test data is only available internally. In order to execute the notebooks or test a 
+new notebook, you can use the following setup:
 
-### CRDS Set-Up ###
-Inside the STScI network, the pipeline works with the default CRDS setup with no modifications. To run it outside the network, CRDS must be configured according to the instructions [provided in the repository](https://github.com/spacetelescope/jwst#crds-setup).
+1. Clone the validation notebooks repository: `git clone https://github.com/spacetelescope/jwst_validation_notebooks.git`
+2. Open a terminal window into the newly created directory
+3. Create the Validation Notebooks conda environment: `conda env create -f environment.yml`
+4. Activate the environment: `conda activate jwst_validation_notebooks`
+5. Set up ipykernel for Jupyter: `python -m ipykernel install --user --name=jwst_validation_notebooks`
 
-### Notebook Kernel Set-Up ###
-To activate and use your JWST conda environment in the notebook setting, you will need to install `nb_conda` and `ipykernel`:
+You should now be able to run the notebooks with jupyter (type `jupyter notebook`), or 
+test the creation and running of the test suite by typing `python convert.py`.
 
-```
-conda install nb_conda
-conda install ipykernel
-```
+## Opening and Running the Notebooks ##
 
-### Obtaining a Local Copy of the Notebooks ###
-Clone the repository:
+### Starting the Jupyter server ###
 
-```
-git clone https://github.com/spacetelescope/jwst_validation_notebooks.git
-cd jwst_validation_notebooks
-```
-
-### Opening and Running the Notebooks ###
-Start *jupyter* with:
+Start [*jupyter*][jupyter] with:
 
 ```
 jupyter notebook
 ```    
 
-This will open a *jupyter* instance in your web browser, where you can access the notebooks by selecting the `jwst_validation_notebooks` folder.
+This will open a [*jupyter*][jupyter] instance in your web browser, where you can access 
+the notebooks by selecting the `jwst_validation_notebooks` folder.
 
 ![Notebook Home](docs/static/notebook_home.png)
 
-From there, you can select the specific testing directory and notebook. *jupyter* notebooks have an `.ipynb` extension.
+From there, you can select the specific testing directory and notebook. 
+[*jupyter*][jupyter] notebooks have an `.ipynb` extension.
 
 ### Selecting a Kernel ###
-To change the kernel you are using, select the *Kernel* drop down button in the top left corner of the notebook and hover over "Change Kernel".
+
+To change the kernel you are using, select the *Kernel* drop down button in the top left 
+corner of the notebook and hover over "Change Kernel".
 
 ![Select Kernel](docs/static/kernel.png)
 
-From there, you can select the *conda* environment kernel that includes your JWST pipeline installation. Then, you should be able to execute the notebook. For more information about *jupyter* notebooks, see the [Jupyter Notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/). There is also a handy [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) with shortcuts and commands.
+From there, you can select the [*conda*][conda] environment kernel that includes your 
+JWST pipeline installation. Then, you should be able to execute the notebook. For more 
+information about [*jupyter*][jupyter] notebooks, see the 
+[Jupyter Notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/). 
+There is also a handy [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/) 
+with shortcuts and commands.
 
 ### Running Notebooks with *nbpages* ###
-If you would like to generate HTML outputs locally, make sure you are in the `jwst_validation_notebooks` repository and execute the following commands:
+
+If you would like to generate HTML outputs locally, make sure you are in the 
+`jwst_validation_notebooks` repository and execute the following commands:
 
 ```
-pip install nbpages
 python convert.py
 ```
 
 ## Contributing ##
 
 ### New Notebooks ###
-Prior to contributing to `jwst_validation_notebooks` development, please review our [style guide](https://github.com/spacetelescope/mirage/blob/master/style_guide/style_guide.md). Note that **notebook cell outputs must be cleared prior to submission**.
 
-Make sure to follow the template outlined in our repository [here](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb). More information about storing test data is included below.
+Prior to contributing to `jwst_validation_notebooks` development, please review our 
+[style guide](https://github.com/spacetelescope/mirage/blob/master/style_guide/style_guide.md). 
+Note that **notebook cell outputs must be cleared prior to submission**.
 
-This repository operates using the standard [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) workflow. The following is a bare bones example of this work flow for contributing to the project:
+Make sure to follow the template outlined in 
+[our repository](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb). 
+More information about storing test data is included below.
 
-1. Create a fork off of the `spacetelescope` `jwst_validation_notebooks` repository.
-2. Make a local clone of your fork.
-3. Ensure your personal fork is pointing `upstream` properly.
-4. Create a branch on that personal fork.
-5. Make your notebook changes and **be sure to clear the outputs from the cells**.
-6. Push that branch to your personal GitHub repository (i.e. `origin`).
-7. On the `spacetelescope` `jwst_validation_notebooks` repository, create a pull request that merges the branch into `spacetelescope:master`.
-8. Assign a reviewer from the team for the pull request ([@cracraft](https://github.com/cracraft) or Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe)).
-9. Iterate with the reviewer over any needed changes until the reviewer accepts and merges your branch.
-10. Iterate with the reviewer over copying your test data into either Box or Artifactory.
-10. Delete your local copy of your branch.
+This repository operates using the standard 
+[fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962) 
+workflow. The following is a bare bones example of this work flow for contributing to the 
+project:
+
+1.  [Create a fork][github_fork] off of the `spacetelescope` `jwst_validation_notebooks` 
+    repository.
+2.  Make a local clone of your fork.
+3.  Ensure your personal fork [is pointing `upstream` properly][github_upstream].
+4.  [Create a branch][github_branch] on that personal fork.
+5.  Make your notebook changes and **be sure to clear the outputs from the cells**.
+6.  Push that branch to your personal GitHub repository (i.e. `origin`).
+7.  On the `spacetelescope` `jwst_validation_notebooks` repository, create a pull request 
+    that merges the branch into `spacetelescope:master`.
+8.  Ensure that the pull request passes the continuous integration check.
+9.  Assign a reviewer from the team for the pull request 
+    (Misty Cracraft [@cracraft](https://github.com/cracraft) or Alicia Canipe 
+    [@aliciacanipe](https://github.com/aliciacanipe)).
+10. Iterate with the reviewer over any needed changes until the reviewer accepts and 
+    merges your branch.
+11. Iterate with the reviewer over copying your test data into either Box or Artifactory.
+12. Delete your local copy of your branch.
 
 ### New Test Data ###
-If you have a notebook that uses updated test data or new test data, follow the steps below to request a data update.
+
+If you have a notebook that uses updated test data or new test data, follow the steps 
+below to request a data update.
 
 #### Artifactory Workflow ####
+
 Artifactory should be used for data that is for internal use only.
 
-1. Create a [Jira "Task" Issue in the JWST Simulations Jira project](https://jira.stsci.edu/issues/?jql=project%20%3D%20JWSTSIMS%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC) requesting to have your data added to Artifactory. Assign the ticket to Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)), and provide more information about the data: simulation information, data location, and pipeline step(s). Once your data has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the issue and notify you that your data is ready to be used (the full path to the data will be provided by the person who notified you that your data was ingested successfully).
+1. Create a [Jira "Task" Issue in the JWST Simulations Jira project][jira_task] requesting 
+   to have your data added to Artifactory. Assign the ticket to Misty Cracraft 
+   ([@cracraft](https://github.com/cracraft)) or Alicia Canipe 
+   ([@aliciacanipe](https://github.com/aliciacanipe)), and provide more information about 
+   the data: simulation information, data location, and pipeline step(s). Once your data 
+   has been added to Artifactory, Misty Cracraft ([@cracraft](https://github.com/cracraft)) 
+   or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the 
+   issue and notify you that your data is ready to be used (the full path to the data will 
+   be provided by the person who notified you that your data was ingested successfully).
+2. Make sure you have the proper OS environmental variable set to access STScI's instance 
+   of Artifactory. This can be done via command line or put into a setup file like a 
+   ```.bash_profile``` file. If you are working in the `jwst_validation_notebooks`
+   environment, your environment will be set up automatically.
 
-2. Make sure you have the proper OS environmental variable set to access STScI's instance of Artifactory. This can be done via command line or put into a setup file like a ```.bash_profile``` file.
+   ```
+   export TEST_BIGDATA=https://bytesalad.stsci.edu/artifactory/
+   ```
 
-```
-export TEST_BIGDATA=https://bytesalad.stsci.edu/artifactory/
-```
+3. Make sure your environment has ```ci_watson``` installed. This is done automatically by 
+   the `jwst_validation_notebooks` environment.
 
-3. Make sure your environment has ```ci_watson``` installed.
-```
-pip install ci_watson
-```
+   ```
+   pip install ci_watson
+   ```
 
 4. In your notebook, import the ```ci_watson``` package needed.
 
-```
-from ci_watson.artifactory_helpers import get_bigdata
-```
+   ```
+   from ci_watson.artifactory_helpers import get_bigdata
+   ```
 
-5. Read in each file stored in Artifactory (the full path should have been provided by the person who ingested the data).
+5. Read in each file stored in Artifactory (the full path should have been provided by the 
+   person who ingested the data).
 
-```
-satfile = get_bigdata('jwst_validation_notebooks',
-                                     'validation_data',
-                                     'jump',
-                                    'jump_miri_test',
-                                    'miri_sat_55k.fits')
-```
+   ```
+   satfile = get_bigdata('jwst_validation_notebooks',
+                         'validation_data',
+                         'jump',
+                         'jump_miri_test',
+                         'miri_sat_55k.fits')
+   ```
 
-6. Follow the normal workflow for contributing a notebook once you have confirmed that your notebook is running successfully.
+6. Follow the normal workflow for contributing a notebook once you have confirmed that 
+   your notebook is running successfully.
 
 #### Box Folder Workflow ####
-Artifactory is only accessible to internal users on the STScI network. If you would like to contribute a test notebook that uses externally available data, this test data should be stored in a Box folder instead. The final workflow using Box is still in discussion, but for now you can use a Box folder with the correct permissions set up:
+
+Artifactory is only accessible to internal users on the STScI network. If you would like 
+to contribute a test notebook that uses externally available data, this test data should 
+be stored in a Box folder instead. The final workflow using Box is still in discussion, 
+but for now you can use a Box folder with the correct permissions set up:
 
 ```
 from astropy.utils.data import download_file
@@ -132,7 +184,9 @@ filename = 'pipetest_miri_imtso_FULL_10g10i_F770W.fits'
 file = download_file(mainurl+filename)
 ```
 
-Box assigns a default alpha-numerical string as the filename, so you may want to update the filename before processing, or verify that the format is correct. Depending on the data, you can try:
+Box assigns a default alphanumerical string as the filename, so you may want to update the 
+filename before processing, or verify that the format is correct. Depending on the data, 
+you can try:
 
 ```
 # open file into correct format and write to local disk for processing
@@ -149,15 +203,29 @@ model.save(filename)
 ```
 
 ## Code of Conduct
-Users and contributors to the `jwst_validation_notebooks` repository should adhere to the [Code of Conduct](https://github.com/spacetelescope/mirage/blob/master/CODE_OF_CONDUCT.md).  Any issues or violations pertaining to the Code of Conduct should be brought to the attention of a `jwst_validation_notebooks` team member or to `conduct@stsci.edu`.
+Users and contributors to the `jwst_validation_notebooks` repository should adhere to the 
+[Code of Conduct](https://github.com/spacetelescope/mirage/blob/master/CODE_OF_CONDUCT.md).  
+Any issues or violations pertaining to the Code of Conduct should be brought to the 
+attention of a `jwst_validation_notebooks` team member or to `conduct@stsci.edu`.
 
 
 ## Questions
-For any questions about the `jwst_validation_notebooks` project or its software or documentation, please [open an Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues).
+
+For any questions about the `jwst_validation_notebooks` project or its software or 
+documentation, please 
+[open an Issue](https://github.com/spacetelescope/jwst_validation_notebooks/issues).
 
 
 ## Current Core Development Team
-- Misty Cracraft [@cracraft](https://github.com/cracraft)
-- Mees Fix [@mfixstsci](https://github.com/mfixstsci)
-- Maria Pena-Guerrero [@penaguerrero](https://github.com/penaguerrero)
 - Alicia Canipe [@aliciacanipe](https://github.com/aliciacanipe)
+- Misty Cracraft [@cracraft](https://github.com/cracraft)
+- Maria Pena-Guerrero [@penaguerrero](https://github.com/penaguerrero)
+- Brian York [@york_stsci](https://github.com/york_stsci)
+
+
+[conda]: https://docs.anaconda.com/anaconda/ "Anaconda Individual Edition Documentation"
+[github_branch]: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch "Creating a github branch"
+[github_fork]: https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo "Creating a fork"
+[github_upstream]: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork "Github configuring remote for a fork"
+[jira_task]: https://jira.stsci.edu/issues/?jql=project%20%3D%20JWSTSIMS%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC
+[jupyter]: https://jupyter.org "The Jupyter Project"
