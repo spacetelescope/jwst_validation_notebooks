@@ -66,13 +66,17 @@ jobs:
 #        $CONDA/bin/conda remove python=3.7
 #        pip3 install git+https://github.com/eteq/nbpages.git#egg=nbpages
 
-    - name: Install base dependencies
-      run: |
-        $CONDA/bin/conda env update python=${{ matrix.python }} --name base
-        $CONDA/bin/conda env update --file environment.yml --name base
+    - name: Set up environment
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        activate-environment: jwst_validation_notebooks
+        environment-file: environment.yml
+        python-version: ${{ matrix.python }}
+        auto-activate-base: false
     - name: Test with nbpages
+      shell: bash -l {0}
       run: |
-        $CONDA/bin/python -m "nbpages.check_nbs"
+        python -m "nbpages.check_nbs"
 #   This repository (for reasons mentioned above) doesn't use pytest.
 #        conda install pytest
 #        $CONDA/bin/pytest
