@@ -25,7 +25,15 @@ if args.exclude is None:
     if to_exclude:
         args.exclude = ','.join(to_exclude)
 
-converted = run_parsed(args.nb_path, output_type='HTML', args=args)
+if args.report_file is None:
+    args.report_file = "junit_report.xml"
+
+try:
+    converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=18000)
+except Exception as e:
+    print("ERROR: {}".format(e))
+    print("args={}".format(args))
+    raise e
 
 logging.getLogger('nbpages').info('Generating index.html')
 make_html_index(converted, './index.tpl')
