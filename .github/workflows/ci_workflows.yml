@@ -26,46 +26,19 @@ jobs:
             os: ubuntu-latest
             python: 3.7
 
-#   Commented out because the jwst package seems to require python 3.6 NOT 3.7
-#          - name: Linux - Python 3.8
-#            os: ubuntu-latest
-#            python: 3.8
-#            toxenv: py38-test
+          - name: Python 3.8
+            os: ubuntu-latest
+            python: 3.8
 
-#   Commented out because the jwst package seems to require python 3.6 NOT 3.7. Also,
-# OSX seems to not give you permission to update the 'base' conda environment.
-#          - name: OS X - Python 3.8
-#            os: macos-latest
-#            python: 3.8
-#            toxenv: py38-test
-
-        #   Apparently conda setup on windows takes a different job.
-#          - name: Windows - Python 3.8
-#            os: windows-latest
-#            python: 3.8
-#            toxenv: py38-test
+          - name: OS X - Python 3.8
+            os: macos-latest
+            python: 3.8
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-#    - name: Set up python ${{ matrix.python }} on ${{ matrix.os }}
-#      uses: actions/setup-python@v2
-#      with:
-#        python-version: ${{ matrix.python }}
-
-    #   Below $CONDA is an environment variable pointing to the root of the (automatically
-    # included) miniconda directory.
-    #   Unfortunately environment variables don't persist between steps in a workflow, so
-    # the way to get things to work in conda is to install the environment.yml packages
-    # into 'base'
-
-#   Temporarily removed because this particular thing doesn't work.
-#        $CONDA/bin/conda install python=3.6
-#        $CONDA/bin/conda remove python=3.7
-#        pip3 install git+https://github.com/eteq/nbpages.git#egg=nbpages
-
     - name: Set up environment
       uses: conda-incubator/setup-miniconda@v2
       with:
@@ -77,17 +50,3 @@ jobs:
       shell: bash -l {0}
       run: |
         python -m "nbpages.check_nbs"
-#   This repository (for reasons mentioned above) doesn't use pytest.
-#        conda install pytest
-#        $CONDA/bin/pytest
-    #   Tox isn't used on this repository currently.
-#    - name: Test with tox
-#      run: |
-#        tox -e ${{ matrix.toxenv }}
-    # Activate your repo on codecov.io first.
-    #   Code Coverage also isn't used (see above)
-#    - name: Upload coverage to codecov
-#      if: "contains(matrix.toxenv, '-cov')"
-#      uses: codecov/codecov-action@v1
-#      with:
-#        file: ./coverage.xml
