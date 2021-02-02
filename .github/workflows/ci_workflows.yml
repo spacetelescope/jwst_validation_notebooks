@@ -49,4 +49,5 @@ jobs:
     - name: Test with nbpages
       shell: bash -l {0}
       run: |
+        cd jwst_validation_notebooks
         python -m "nbpages.check_nbs"
