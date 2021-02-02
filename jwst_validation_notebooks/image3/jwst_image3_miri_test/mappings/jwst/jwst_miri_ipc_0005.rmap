@@ -1,0 +1,23 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_ipc_0004.rmap',
+    'filekind' : 'IPC',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_ipc_0005.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '64aa5e64682cad8a5963abb240b4d398e41dc9f6',
+}
+
+selector = Match({
+    'MIRIFULONG' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_ipc_0007.fits',
+    }),
+    'MIRIFUSHORT' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_ipc_0008.fits',
+    }),
+    'MIRIMAGE' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_ipc_0009.fits',
+    }),
+})

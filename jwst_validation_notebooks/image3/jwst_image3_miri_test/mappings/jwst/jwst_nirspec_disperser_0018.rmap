@@ -1,0 +1,72 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_disperser_0017.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'disperser',
+    'filetype' : 'DISPERSER',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_disperser_0018.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.GRATING', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+        'GRATING' : 'META.INSTRUMENT.GRATING',
+    },
+    'sha1sum' : '61d4446fe3ee8c75412ab826b5b5904e01029b85',
+    'suffix' : 'disperser',
+    'text_descr' : 'NIRSPEC Disperser Description',
+}
+
+selector = Match({
+    ('ANY', 'NRS_AUTOFLAT') : 'N/A',
+    ('ANY', 'NRS_DARK') : 'N/A',
+    ('G140H', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0017.asdf',
+    }),
+    ('G140H', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_nirspec_disperser_0033.asdf',
+    }),
+    ('G140M', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0015.asdf',
+    }),
+    ('G140M', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 09:04:40' : 'jwst_nirspec_disperser_0032.asdf',
+    }),
+    ('G235H', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0016.asdf',
+    }),
+    ('G235H', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 15:45:25' : 'jwst_nirspec_disperser_0031.asdf',
+    }),
+    ('G235M', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0019.asdf',
+    }),
+    ('G235M', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 09:04:40' : 'jwst_nirspec_disperser_0037.asdf',
+    }),
+    ('G395H', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0021.asdf',
+    }),
+    ('G395H', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 09:04:40' : 'jwst_nirspec_disperser_0035.asdf',
+    }),
+    ('G395M', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0018.asdf',
+    }),
+    ('G395M', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_nirspec_disperser_0036.asdf',
+    }),
+    ('MIRROR', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0020.asdf',
+    }),
+    ('MIRROR', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_nirspec_disperser_0038.asdf',
+    }),
+    ('PRISM', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_disperser_0022.asdf',
+    }),
+    ('PRISM', 'NRS_AUTOWAVE|NRS_TACQ|NRS_TASLIT|NRS_TACONFIRM|NRS_CONFIRM|NRS_FIXEDSLIT|NRS_IFU|NRS_MSASPEC|NRS_IMAGE|NRS_FOCUS|NRS_MIMF|NRS_MSATA|NRS_WATA|NRS_LAMP|NRS_BRIGHTOBJ') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_nirspec_disperser_0034.asdf',
+    }),
+})

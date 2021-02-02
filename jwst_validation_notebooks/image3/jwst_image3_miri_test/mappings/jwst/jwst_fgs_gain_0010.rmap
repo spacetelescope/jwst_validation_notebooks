@@ -1,0 +1,27 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_gain_0009.rmap',
+    'filekind' : 'GAIN',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_gain_0010.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'fa121fdd1dc546e0dcfe4b10e6814468a0f68b67',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('GUIDER1', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_gain_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_gain_0010.fits',
+    }),
+    ('GUIDER2', 'GENERIC') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_gain_0003.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_gain_0011.fits',
+    }),
+})

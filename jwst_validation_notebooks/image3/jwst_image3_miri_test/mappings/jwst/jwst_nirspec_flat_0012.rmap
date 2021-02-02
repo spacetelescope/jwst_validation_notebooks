@@ -1,0 +1,57 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_flat_0011.rmap',
+    'filekind' : 'FLAT',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_flat_0012.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.GRATING', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '132ce75d7b7736763e459a5447f1a637326c8257',
+}
+
+selector = Match({
+    ('ANY', 'ANY', 'ANY', 'NRS_AUTOWAVE|NRS_BRIGHTOBJ|NRS_FIXEDSLIT|NRS_MSASPEC|NRS_IFU') : 'N/A',
+    ('NRS1', 'CLEAR', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0059.fits',
+    }),
+    ('NRS1', 'F070LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0055.fits',
+    }),
+    ('NRS1', 'F100LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0067.fits',
+    }),
+    ('NRS1', 'F110W', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0064.fits',
+    }),
+    ('NRS1', 'F140X', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0061.fits',
+    }),
+    ('NRS1', 'F170LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0062.fits',
+    }),
+    ('NRS1', 'F290LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0065.fits',
+    }),
+    ('NRS2', 'CLEAR', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0056.fits',
+    }),
+    ('NRS2', 'F070LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0060.fits',
+    }),
+    ('NRS2', 'F100LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0066.fits',
+    }),
+    ('NRS2', 'F110W', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0063.fits',
+    }),
+    ('NRS2', 'F140X', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0054.fits',
+    }),
+    ('NRS2', 'F170LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0058.fits',
+    }),
+    ('NRS2', 'F290LP', 'MIRROR', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_flat_0057.fits',
+    }),
+})

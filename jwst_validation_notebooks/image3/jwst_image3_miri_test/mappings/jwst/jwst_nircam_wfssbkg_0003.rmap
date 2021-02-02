@@ -1,0 +1,163 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_wfssbkg_0002.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'WFSSBKG',
+    'filetype' : 'WFSSBKG',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_wfssbkg_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'bc2d28db9ab7dba8814bd50a92eee9bd05a2fa2f',
+    'suffix' : 'wfssbkg',
+    'text_descr' : 'WFSS master background reference images',
+}
+
+selector = Match({
+    ('NOT NRC_WFSS', 'ANY', 'ANY', 'ANY') : 'N/A',
+    ('NRC_WFSS', 'NRCALONG', 'F250M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0038.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F250M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0021.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F277W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0004.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F277W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0026.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F300M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0048.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F300M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0013.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F322W2', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0036.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F322W2', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0041.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F335M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0001.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F335M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0019.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F356W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0040.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F356W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0012.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F360M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0029.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F360M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0047.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F410M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0003.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F410M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0016.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F430M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0009.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F430M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0046.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F444W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0005.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F444W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0032.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F460M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0002.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F460M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0006.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F480M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0043.fits',
+    }),
+    ('NRC_WFSS', 'NRCALONG', 'F480M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0015.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F250M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0023.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F250M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0007.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F277W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0027.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F277W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0018.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F300M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0014.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F300M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0025.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F322W2', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0020.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F322W2', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0028.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F335M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0033.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F335M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0034.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F356W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0010.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F356W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0045.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F360M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0042.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F360M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0030.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F410M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0011.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F410M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0017.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F430M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0044.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F430M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0039.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F444W', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0035.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F444W', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0022.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F460M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0008.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F460M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0031.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F480M', 'GRISMC') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0037.fits',
+    }),
+    ('NRC_WFSS', 'NRCBLONG', 'F480M', 'GRISMR') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_nircam_wfssbkg_0024.fits',
+    }),
+})

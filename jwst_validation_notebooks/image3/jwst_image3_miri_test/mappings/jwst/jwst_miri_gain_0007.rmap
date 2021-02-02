@@ -1,0 +1,28 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_gain_0006.rmap',
+    'filekind' : 'GAIN',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_gain_0007.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '1c27f48893f1663bd40b74bcd01162b0c9055ac4',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('MIRIFULONG', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_gain_0006.fits',
+    }),
+    ('MIRIFUSHORT', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_gain_0007.fits',
+    }),
+    ('MIRIMAGE', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_miri_gain_0008.fits',
+    }),
+})

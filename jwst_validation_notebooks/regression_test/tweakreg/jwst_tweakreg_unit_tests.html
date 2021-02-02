@@ -14358,6 +14358,7 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">jwst</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 </pre></div>
 
      </div>
@@ -14376,13 +14377,10 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_report</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Convenience function to display pytest report.&#39;&#39;&#39;</span>
-    
-    <span class="k">return</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">fname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -14401,10 +14399,12 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jwst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+
+<span class="n">jwst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
 <span class="n">tweakreg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;tweakreg&#39;</span><span class="p">)</span>
 <span class="n">associations</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;associations&#39;</span><span class="p">)</span>
 <span class="n">datamodels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;datamodels&#39;</span><span class="p">)</span>
@@ -14412,8 +14412,10 @@ a.anchor-link {
 <span class="n">regtest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;regtest&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
-    <span class="o">!</span>pytest <span class="o">{</span>tweakreg<span class="o">}</span> -v --ignore<span class="o">={</span>associations<span class="o">}</span> --ignore<span class="o">={</span>datamodels<span class="o">}</span> --ignore<span class="o">={</span>stpipe<span class="o">}</span> --ignore<span class="o">={</span>regtest<span class="o">}</span> --html<span class="o">=</span>tmpdir/unit_report.html --self-contained-html
-    <span class="n">report</span> <span class="o">=</span> <span class="n">display_report</span><span class="p">(</span><span class="s1">&#39;tmpdir/unit_report.html&#39;</span><span class="p">)</span>
+    <span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">&#39;regtest_report.html&#39;</span><span class="p">)</span>
+    <span class="o">!</span>pytest <span class="o">{</span>tweakreg<span class="o">}</span> -v --ignore<span class="o">={</span>associations<span class="o">}</span> --ignore<span class="o">={</span>datamodels<span class="o">}</span> --ignore<span class="o">={</span>stpipe<span class="o">}</span> --ignore<span class="o">={</span>regtest<span class="o">}</span> --html<span class="o">={</span>outdir<span class="o">}</span> --self-contained-html
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">&quot;regtest_report.html&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">report_file</span><span class="p">:</span>
+        <span class="n">html_report</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -14433,20 +14435,21 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.9.1, pytest-6.2.2, py-1.10.0, pluggy-0.13.1 -- /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
+<pre>Testing JWST Pipeline 0.18.3
+<span class="ansi-bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.8.6, pytest-6.2.2, py-1.10.0, pluggy-0.13.1 -- /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.9.1&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.11.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;6.2.2&#39;, &#39;py&#39;: &#39;1.10.0&#39;, &#39;pluggy&#39;: &#39;0.13.1&#39;}, &#39;Plugins&#39;: {&#39;metadata&#39;: &#39;1.11.0&#39;, &#39;asdf&#39;: &#39;2.7.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;forked&#39;: &#39;1.3.0&#39;, &#39;xdist&#39;: &#39;2.2.0&#39;, &#39;ci-watson&#39;: &#39;0.5&#39;}, &#39;BUILD_NUMBER&#39;: &#39;52&#39;, &#39;BUILD_ID&#39;: &#39;52&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/52/&#39;, &#39;NODE_NAME&#39;: &#39;jwcalibdev.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-52&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;29&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;f6ea8bc553cb5ba6998fd20927d8e020dec1e853&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
+metadata: {&#39;Python&#39;: &#39;3.8.6&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.11.1.el7.x86_64-x86_64-with-glibc2.10&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;6.2.2&#39;, &#39;py&#39;: &#39;1.10.0&#39;, &#39;pluggy&#39;: &#39;0.13.1&#39;}, &#39;Plugins&#39;: {&#39;asdf&#39;: &#39;2.7.2&#39;, &#39;metadata&#39;: &#39;1.11.0&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;forked&#39;: &#39;1.3.0&#39;, &#39;xdist&#39;: &#39;2.2.0&#39;, &#39;ci-watson&#39;: &#39;0.5&#39;}, &#39;BUILD_NUMBER&#39;: &#39;53&#39;, &#39;BUILD_ID&#39;: &#39;53&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/53/&#39;, &#39;NODE_NAME&#39;: &#39;jwcalibdev.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-53&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;12&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;fa55b4e6d264a8ef02ecf8e863c426480df9d025&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
 rootdir: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
-plugins: metadata-1.11.0, asdf-2.7.2, html-3.1.1, forked-1.3.0, xdist-2.2.0, ci-watson-0.5
+plugins: asdf-2.7.2, metadata-1.11.0, html-3.1.1, forked-1.3.0, xdist-2.2.0, ci-watson-0.5
 collected 3 items                                                              
 
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_radius <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 33%]</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_get_catalog <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 66%]</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_create_catalog <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [100%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_radius <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 33%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_get_catalog <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 66%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_create_catalog <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [100%]</span>
 
-- generated html file: file:///data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/regression_test/tweakreg/tmpdir/unit_report.html -
-<span class="ansi-green-fg">============================== </span><span class="ansi-green-intense-fg ansi-bold">3 passed</span><span class="ansi-green-fg"> in 4.79s</span><span class="ansi-green-fg"> ===============================</span>
+- generated html file: file:///data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp9ugj064w/regtest_report.html -
+<span class="ansi-green-fg">============================== </span><span class="ansi-green-intense-fg ansi-bold">3 passed</span><span class="ansi-green-fg"> in 4.86s</span><span class="ansi-green-fg"> ===============================</span>
 </pre>
 </div>
 </div>
@@ -14458,10 +14461,10 @@ collected 3 items
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">report</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html_report</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14477,20 +14480,533 @@ collected 3 items
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  /* do not increase min-width as some may use split screens */
+  min-width: 800px;
+  color: #999;
+}
 
-        <iframe
-            width="700"
-            height="600"
-            src="tmpdir/unit_report.html"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        
+h1 {
+  font-size: 24px;
+  color: black;
+}
+
+h2 {
+  font-size: 16px;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: #999;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+#environment td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+}
+#environment tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed,
+.passed .col-result {
+  color: green;
+}
+
+span.skipped,
+span.xfailed,
+span.rerun,
+.skipped .col-result,
+.xfailed .col-result,
+.rerun .col-result {
+  color: orange;
+}
+
+span.error,
+span.failed,
+span.xpassed,
+.error .col-result,
+.failed .col-result,
+.xpassed .col-result {
+  color: red;
+}
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+#results-table {
+  border: 1px solid #e6e6e6;
+  color: #999;
+  font-size: 12px;
+  width: 100%;
+}
+#results-table th,
+#results-table td {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+  text-align: left;
+}
+#results-table th {
+  font-weight: bold;
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+.log {
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  color: black;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  height: 230px;
+  overflow-y: scroll;
+  padding: 5px;
+  white-space: pre-wrap;
+}
+.log:only-child {
+  height: inherit;
+}
+
+div.image {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.image img {
+  width: 320px;
+}
+
+div.video {
+  border: 1px solid #e6e6e6;
+  float: right;
+  height: 240px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 320px;
+}
+div.video video {
+  overflow: hidden;
+  width: 320px;
+  height: 240px;
+}
+
+.collapsed {
+  display: none;
+}
+
+.expander::after {
+  content: " (show details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.collapser::after {
+  content: " (hide details)";
+  color: #BBB;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+  cursor: pointer;
+}
+
+.sort-icon {
+  font-size: 0px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  /*triangle*/
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+.inactive .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #E6E6E6;
+}
+.asc.active .sort-icon {
+  /*finish triangle*/
+  border-bottom: 8px solid #999;
+}
+.desc.active .sort-icon {
+  /*finish triangle*/
+  border-top: 8px solid #999;
+}
+</style></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>regtest_report.html</h1>
+    <p>Report generated on 02-Feb-2021 at 15:52:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>BUILD_ID</td>
+        <td>53</td></tr>
+      <tr>
+        <td>BUILD_NUMBER</td>
+        <td>53</td></tr>
+      <tr>
+        <td>BUILD_TAG</td>
+        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-53</td></tr>
+      <tr>
+        <td>BUILD_URL</td>
+        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/53/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/53/</a></td></tr>
+      <tr>
+        <td>EXECUTOR_NUMBER</td>
+        <td>12</td></tr>
+      <tr>
+        <td>GIT_BRANCH</td>
+        <td>origin/master</td></tr>
+      <tr>
+        <td>GIT_COMMIT</td>
+        <td>fa55b4e6d264a8ef02ecf8e863c426480df9d025</td></tr>
+      <tr>
+        <td>GIT_URL</td>
+        <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
+      <tr>
+        <td>JENKINS_URL</td>
+        <td><a href="https://plwishmaster.stsci.edu:8081/" target="_blank">https://plwishmaster.stsci.edu:8081/</a></td></tr>
+      <tr>
+        <td>JOB_NAME</td>
+        <td>Notebooks/jwst_validation_notebooks_spacetelescope</td></tr>
+      <tr>
+        <td>NODE_NAME</td>
+        <td>jwcalibdev.stsci.edu</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "0.13.1", "py": "1.10.0", "pytest": "6.2.2"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Linux-3.10.0-1160.11.1.el7.x86_64-x86_64-with-glibc2.10</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"asdf": "2.7.2", "ci-watson": "0.5", "forked": "1.3.0", "html": "3.1.1", "metadata": "1.11.0", "xdist": "2.2.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.8.6</td></tr>
+      <tr>
+        <td>WORKSPACE</td>
+        <td>/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
+    <h2>Summary</h2>
+    <p>3 tests ran in 4.85 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_radius</td>
+          <td class="col-duration">0.24</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_get_catalog</td>
+          <td class="col-duration">0.48</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/tweakreg/tests/test_amutils.py::test_create_catalog</td>
+          <td class="col-duration">3.72</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
 </div>
 
 </div>

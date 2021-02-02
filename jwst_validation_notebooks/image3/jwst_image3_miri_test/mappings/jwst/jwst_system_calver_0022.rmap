@@ -1,0 +1,60 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_system_calver_0021.rmap',
+    'file_ext' : '.json',
+    'filekind' : 'CALVER',
+    'filetype' : 'CALVER',
+    'instrument' : 'SYSTEM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_system_calver_0022.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.CALIBRATION_SOFTWARE_VERSION',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'CAL_VER' : 'META.CALIBRATION_SOFTWARE_VERSION',
+    },
+    'sha1sum' : '45629d357b60f04c74ad9164a45f7023d55b2713',
+    'suffix' : 'calver',
+    'text_descr' : 'Calibration Software Component Versions',
+}
+
+selector = Match({
+    '0.12.0|0.12.1|0.12.2|0.12.3|0.12.4|0.12.5|0.12.6|0.12.7|0.12.8|0.12.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0009.json',
+    }),
+    '0.13.0|0.13.1|0.13.2|0.13.3|0.13.4|0.13.5|0.13.6|0.13.7|0.13.8|0.13.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0010.json',
+    }),
+    '0.14.0|0.14.1|0.14.2|0.14.3|0.14.4|0.14.5|0.14.6|0.14.7|0.14.8|0.14.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0011.json',
+    }),
+    '0.15.0|0.15.1|0.15.2|0.15.3|0.15.4|0.15.5|0.15.6|0.15.7|0.15.8|0.15.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0012.json',
+    }),
+    '0.16.0|0.16.1|0.16.2|0.16.3|0.16.4|0.16.5|0.16.6|0.16.7|0.16.8|0.16.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0013.json',
+    }),
+    '0.6.0' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0001.json',
+    }),
+    '0.6.0noop.dev331' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0001.json',
+    }),
+    '0.7.0rc2|0.7.0rc3' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0004.json',
+    }),
+    '0.7.0rc4|0.7.0rc5' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0005.json',
+    }),
+    '0.7.0rc6|0.7.0rc7|0.7.0rc8|0.7.0rc9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0005.json',
+    }),
+    '0.7.8rc1|0.7.8rc2|0.7.8rc3|0.7.8rc4' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0006.json',
+    }),
+    '0.7.8rc6|0.7.8rc7|0.7.8rc8|0.7.8rc9' : UseAfter({
+        '2017-10-27 00:00:00' : 'jwst_system_calver_0007.json',
+    }),
+    '0.9.3|0.9.4|0.9.5|0.9.6|0.9.7|0.9.8|0.9.9' : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_system_calver_0008.json',
+    }),
+})
