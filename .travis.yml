@@ -14,7 +14,7 @@ env:
 jobs:
   include:
     - name: check notebooks
-      script: python -m "nbpages.check_nbs" --commit-range="${TRAVIS_COMMIT_RANGE/.../..}"  # see https://github.com/travis-ci/travis-ci/issues/4596 for why this bit in TRAVIS_COMMIT_RANGE is necessary
+      script: cd jwst_validation_notebooks; python -m "nbpages.check_nbs" --commit-range="${TRAVIS_COMMIT_RANGE/.../..}"  # see https://github.com/travis-ci/travis-ci/issues/4596 for why this bit in TRAVIS_COMMIT_RANGE is necessary
 
 install:
     # Now trying to do this with miniconda directly instead of via ci-helpers
