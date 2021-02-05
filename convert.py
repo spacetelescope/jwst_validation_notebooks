@@ -29,7 +29,7 @@ if args.report_file is None:
     args.report_file = "junit_report.xml"
 
 try:
-    converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=18000)
+    converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=36000)
 except Exception as e:
     print("ERROR: {}".format(e))
     print("args={}".format(args))
