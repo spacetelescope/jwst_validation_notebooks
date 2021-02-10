@@ -8,6 +8,7 @@ if __name__ == "__main__":
         os.remove(path)
     for path in Path('jwst_validation_notebooks').rglob('*.html'):
         print(path)
+        os.remove(path)
     if os.path.exists("index.html"):
         print("Removing index.html")
         os.remove("index.html")
