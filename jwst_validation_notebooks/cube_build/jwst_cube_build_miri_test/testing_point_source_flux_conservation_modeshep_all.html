@@ -14277,10 +14277,28 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Author:-Isha-Nayak">Author: Isha Nayak<a class="anchor-link" href="#Author:-Isha-Nayak">&#182;</a></h2><h2 id="Last-Modified:-September-15">Last Modified: September 15<a class="anchor-link" href="#Last-Modified:-September-15">&#182;</a></h2><h2 id="The-purpose-of-this-notebook-is-to-check-if-you-input-either-a-flat-point-source-or-flat-extended-source,-then-the-output-is-also-flat.-We-check-the-flatness-of-a-source-by-inputting-a-known-flat-source,-then-checking-the-output-three-different-ways:-(1)-our-own-code-which-sums-up-the-total-flux,-(2)-the-cube-build-algorithm,-and-(3)-extract-1D-algorithm.-We-want-to-make-sure-nothing-strange-is-happening-during-the-cube-build-and-extract-1D-steps.">The purpose of this notebook is to check if you input either a flat point source or flat extended source, then the output is also flat. We check the flatness of a source by inputting a known flat source, then checking the output three different ways: (1) our own code which sums up the total flux, (2) the cube build algorithm, and (3) extract 1D algorithm. We want to make sure nothing strange is happening during the cube build and extract 1D steps.<a class="anchor-link" href="#The-purpose-of-this-notebook-is-to-check-if-you-input-either-a-flat-point-source-or-flat-extended-source,-then-the-output-is-also-flat.-We-check-the-flatness-of-a-source-by-inputting-a-known-flat-source,-then-checking-the-output-three-different-ways:-(1)-our-own-code-which-sums-up-the-total-flux,-(2)-the-cube-build-algorithm,-and-(3)-extract-1D-algorithm.-We-want-to-make-sure-nothing-strange-is-happening-during-the-cube-build-and-extract-1D-steps.">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a temporary directory to hold notebook output, and change the working directory to that directory.</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check jwst pipeline version</span>
@@ -14301,7 +14319,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14319,7 +14337,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import inject psf</span>
@@ -14363,7 +14381,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read association file in from artifactory</span>
@@ -14383,7 +14401,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Define band and channels</span>
@@ -14412,7 +14430,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
@@ -14542,28 +14560,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 13:04:01,595 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 13:04:01,772 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12A-0.fits&#39;,).
-2021-02-08 13:04:01,774 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 13:04:06,619 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 13:04:08,866 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 16:51:14,643 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 16:51:14,780 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12A-0.fits&#39;,).
+2021-02-09 16:51:14,782 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 16:51:20,239 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 16:51:22,162 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 13:04:08,925 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
-2021-02-08 13:04:08,926 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 13:04:09,864 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
-2021-02-08 13:04:09,865 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 13:04:10,973 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 13:04:11,221 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12A-1.fits&#39;,).
-2021-02-08 13:04:11,223 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 13:04:14,954 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 13:04:17,123 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 16:51:22,220 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
+2021-02-09 16:51:22,221 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 16:51:23,091 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
+2021-02-09 16:51:23,092 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 16:51:24,123 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 16:51:24,350 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12A-1.fits&#39;,).
+2021-02-09 16:51:24,352 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 16:51:27,871 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 16:51:29,866 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 13:04:17,181 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999682286 -0.000601394 45.000884151 -0.000601394 45.000884151 0.000650036 44.999682286 0.000650036
-2021-02-08 13:04:17,182 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 13:04:17,853 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-1_assignwcsstep.fits
-2021-02-08 13:04:17,854 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 16:51:29,922 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999682286 -0.000601394 45.000884151 -0.000601394 45.000884151 0.000650036 44.999682286 0.000650036
+2021-02-09 16:51:29,923 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 16:51:30,569 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-1_assignwcsstep.fits
+2021-02-09 16:51:30,569 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -14675,28 +14693,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 13:52:55,141 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 13:52:55,313 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34A-0.fits&#39;,).
-2021-02-08 13:52:55,316 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 13:52:59,339 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 13:53:01,078 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 17:38:33,926 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 17:38:34,080 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34A-0.fits&#39;,).
+2021-02-09 17:38:34,082 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 17:38:38,451 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 17:38:40,020 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 13:53:01,132 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
-2021-02-08 13:53:01,133 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 13:53:01,656 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
-2021-02-08 13:53:01,657 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 13:53:02,642 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 13:53:02,800 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34A-1.fits&#39;,).
-2021-02-08 13:53:02,802 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 13:53:05,312 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 13:53:07,333 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 17:38:40,073 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
+2021-02-09 17:38:40,074 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 17:38:40,579 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
+2021-02-09 17:38:40,579 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 17:38:41,515 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 17:38:41,659 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34A-1.fits&#39;,).
+2021-02-09 17:38:41,660 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 17:38:44,060 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 17:38:45,598 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 13:53:07,415 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999213107 -0.001085976 45.001435606 -0.001085976 45.001435606 0.000959162 44.999213107 0.000959162
-2021-02-08 13:53:07,417 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 13:53:08,576 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-1_assignwcsstep.fits
-2021-02-08 13:53:08,578 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 17:38:45,650 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999213107 -0.001085976 45.001435606 -0.001085976 45.001435606 0.000959162 44.999213107 0.000959162
+2021-02-09 17:38:45,650 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 17:38:46,368 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-1_assignwcsstep.fits
+2021-02-09 17:38:46,369 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -14809,28 +14827,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 14:43:12,358 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 14:43:12,534 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12B-0.fits&#39;,).
-2021-02-08 14:43:12,536 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 14:43:17,637 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 14:43:20,504 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 18:27:24,715 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 18:27:24,909 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12B-0.fits&#39;,).
+2021-02-09 18:27:24,911 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 18:27:28,393 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 18:27:30,694 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 14:43:20,591 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
-2021-02-08 14:43:20,592 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 14:43:22,065 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
-2021-02-08 14:43:22,067 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 14:43:23,796 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 14:43:24,248 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12B-1.fits&#39;,).
-2021-02-08 14:43:24,253 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 14:43:29,395 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 14:43:32,378 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 18:27:30,750 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
+2021-02-09 18:27:30,751 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 18:27:31,688 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
+2021-02-09 18:27:31,689 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 18:27:32,944 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 18:27:33,142 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12B-1.fits&#39;,).
+2021-02-09 18:27:33,144 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 18:27:36,550 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 18:27:38,628 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 14:43:32,465 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999652524 -0.000676133 45.000855824 -0.000676133 45.000855824 0.000576491 44.999652524 0.000576491
-2021-02-08 14:43:32,466 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 14:43:33,285 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-1_assignwcsstep.fits
-2021-02-08 14:43:33,287 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 18:27:38,683 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999652524 -0.000676133 45.000855824 -0.000676133 45.000855824 0.000576491 44.999652524 0.000576491
+2021-02-09 18:27:38,683 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 18:27:39,464 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-1_assignwcsstep.fits
+2021-02-09 18:27:39,464 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -14943,28 +14961,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 15:33:37,043 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 15:33:37,394 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34B-0.fits&#39;,).
-2021-02-08 15:33:37,395 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 15:33:42,184 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 15:33:44,328 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 19:11:41,717 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 19:11:42,040 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34B-0.fits&#39;,).
+2021-02-09 19:11:42,042 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 19:11:46,785 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 19:11:48,710 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 15:33:44,386 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
-2021-02-08 15:33:44,387 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 15:33:44,926 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
-2021-02-08 15:33:44,927 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 15:33:46,197 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 15:33:46,501 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34B-1.fits&#39;,).
-2021-02-08 15:33:46,503 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 15:33:49,457 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 15:33:51,370 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 19:11:48,768 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
+2021-02-09 19:11:48,768 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 19:11:49,303 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
+2021-02-09 19:11:49,304 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 19:11:50,534 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 19:11:50,812 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34B-1.fits&#39;,).
+2021-02-09 19:11:50,814 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 19:11:53,700 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 19:11:55,541 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 15:33:51,427 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999273159 -0.001072917 45.001422996 -0.001072917 45.001422996 0.000975055 44.999273159 0.000975055
-2021-02-08 15:33:51,428 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 15:33:52,481 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-1_assignwcsstep.fits
-2021-02-08 15:33:52,482 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 19:11:55,598 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999273159 -0.001072917 45.001422996 -0.001072917 45.001422996 0.000975055 44.999273159 0.000975055
+2021-02-09 19:11:55,599 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 19:11:56,529 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-1_assignwcsstep.fits
+2021-02-09 19:11:56,530 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -15076,28 +15094,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 16:26:27,632 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 16:26:27,817 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12C-0.fits&#39;,).
-2021-02-08 16:26:27,819 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 16:26:31,169 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 16:26:33,093 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 19:59:25,944 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 19:59:26,107 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12C-0.fits&#39;,).
+2021-02-09 19:59:26,109 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 19:59:31,708 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 19:59:33,685 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 16:26:33,161 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
-2021-02-08 16:26:33,162 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 16:26:34,403 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
-2021-02-08 16:26:34,405 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 16:26:35,796 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 16:26:36,019 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12C-1.fits&#39;,).
-2021-02-08 16:26:36,021 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 16:26:39,398 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 16:26:41,294 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 19:59:33,737 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
+2021-02-09 19:59:33,738 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 19:59:34,628 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
+2021-02-09 19:59:34,628 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 19:59:35,723 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 19:59:35,896 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock12C-1.fits&#39;,).
+2021-02-09 19:59:35,898 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 19:59:39,188 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 19:59:41,097 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 16:26:41,343 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999715340 -0.000650671 45.000906468 -0.000650671 45.000906468 0.000658053 44.999715340 0.000658053
-2021-02-08 16:26:41,344 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 16:26:41,966 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-1_assignwcsstep.fits
-2021-02-08 16:26:41,967 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 19:59:41,149 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999715340 -0.000650671 45.000906468 -0.000650671 45.000906468 0.000658053 44.999715340 0.000658053
+2021-02-09 19:59:41,150 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 19:59:41,784 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-1_assignwcsstep.fits
+2021-02-09 19:59:41,785 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -15210,28 +15228,28 @@ Done!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 17:21:27,729 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 17:21:27,894 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34C-0.fits&#39;,).
-2021-02-08 17:21:27,896 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 17:21:31,823 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 17:21:33,429 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 20:55:47,605 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 20:55:47,767 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34C-0.fits&#39;,).
+2021-02-09 20:55:47,769 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 20:55:53,476 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 20:55:55,095 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 17:21:33,483 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
-2021-02-08 17:21:33,484 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 17:21:33,984 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
-2021-02-08 17:21:33,984 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-02-08 17:21:34,934 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-02-08 17:21:35,085 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34C-1.fits&#39;,).
-2021-02-08 17:21:35,087 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-08 17:21:37,473 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-08 17:21:39,006 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+2021-02-09 20:55:55,146 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
+2021-02-09 20:55:55,147 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 20:55:55,650 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
+2021-02-09 20:55:55,650 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 20:55:56,602 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2021-02-09 20:55:56,751 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;mock34C-1.fits&#39;,).
+2021-02-09 20:55:56,753 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-09 20:55:59,124 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-09 20:56:00,708 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 17:21:39,059 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999272606 -0.001032351 45.001417436 -0.001032351 45.001417436 0.000993150 44.999272606 0.000993150
-2021-02-08 17:21:39,059 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-02-08 17:21:39,776 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-1_assignwcsstep.fits
-2021-02-08 17:21:39,776 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2021-02-09 20:56:00,759 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999272606 -0.001032351 45.001417436 -0.001032351 45.001417436 0.000993150 44.999272606 0.000993150
+2021-02-09 20:56:00,759 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2021-02-09 20:56:01,489 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-1_assignwcsstep.fits
+2021-02-09 20:56:01,490 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -15337,7 +15355,7 @@ Constructing cube:  95 % complete
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#The output should be 12 files: det_image_ch1-short_s3d.fits, det_image_ch1-medium_s3d.fits, etc.</span>
@@ -15361,251 +15379,251 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 17:58:24,297 - stpipe.CubeBuildStep - INFO - CubeBuildStep instance created.
-2021-02-08 17:58:24,851 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep running with args (&#39;cube_testing.json&#39;,).
-2021-02-08 17:58:24,853 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;channel&#39;: &#39;all&#39;, &#39;band&#39;: &#39;all&#39;, &#39;grating&#39;: &#39;all&#39;, &#39;filter&#39;: &#39;all&#39;, &#39;output_type&#39;: &#39;band&#39;, &#39;scale1&#39;: 0.0, &#39;scale2&#39;: 0.0, &#39;scalew&#39;: 0.0, &#39;weighting&#39;: &#39;emsm&#39;, &#39;coord_system&#39;: &#39;skyalign&#39;, &#39;rois&#39;: 0.0, &#39;roiw&#39;: 0.0, &#39;weight_power&#39;: 2.0, &#39;wavemin&#39;: None, &#39;wavemax&#39;: None, &#39;single&#39;: False, &#39;xdebug&#39;: None, &#39;ydebug&#39;: None, &#39;zdebug&#39;: None, &#39;skip_dqflagging&#39;: False}
-2021-02-08 17:58:24,853 - stpipe.CubeBuildStep - INFO - Starting IFU Cube Building Step
-2021-02-08 17:58:24,854 - stpipe.CubeBuildStep - INFO - Input interpolation: pointcloud
-2021-02-08 17:58:24,854 - stpipe.CubeBuildStep - INFO - Coordinate system to use: skyalign
-2021-02-08 17:58:24,854 - stpipe.CubeBuildStep - INFO - Weighting method for point cloud: emsm
-2021-02-08 17:58:24,854 - stpipe.CubeBuildStep - INFO - Power weighting distance: 2.0
-2021-02-08 17:58:36,355 - stpipe.CubeBuildStep - INFO - The desired cubes cover the MIRI Channels: [&#39;1&#39;, &#39;1&#39;, &#39;1&#39;, &#39;2&#39;, &#39;2&#39;, &#39;2&#39;, &#39;3&#39;, &#39;3&#39;, &#39;3&#39;, &#39;4&#39;, &#39;4&#39;, &#39;4&#39;]
-2021-02-08 17:58:36,356 - stpipe.CubeBuildStep - INFO - The desired cubes cover the MIRI subchannels: [&#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;]
-2021-02-08 17:58:36,356 - stpipe.CubeBuildStep - INFO - Reading cube parameter file /grp/crds/cache/references/jwst/jwst_miri_cubepar_0004.fits
-2021-02-08 17:58:37,308 - stpipe.CubeBuildStep - INFO - Output Cubes are single channel, single sub-channel IFU Cubes
-2021-02-08 17:58:37,309 - stpipe.CubeBuildStep - INFO - Number of IFU cubes produced by this run = 12
-2021-02-08 17:58:37,595 - stpipe.CubeBuildStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
+<pre>2021-02-09 21:31:24,314 - stpipe.CubeBuildStep - INFO - CubeBuildStep instance created.
+2021-02-09 21:31:24,877 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep running with args (&#39;cube_testing.json&#39;,).
+2021-02-09 21:31:24,879 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;channel&#39;: &#39;all&#39;, &#39;band&#39;: &#39;all&#39;, &#39;grating&#39;: &#39;all&#39;, &#39;filter&#39;: &#39;all&#39;, &#39;output_type&#39;: &#39;band&#39;, &#39;scale1&#39;: 0.0, &#39;scale2&#39;: 0.0, &#39;scalew&#39;: 0.0, &#39;weighting&#39;: &#39;emsm&#39;, &#39;coord_system&#39;: &#39;skyalign&#39;, &#39;rois&#39;: 0.0, &#39;roiw&#39;: 0.0, &#39;weight_power&#39;: 2.0, &#39;wavemin&#39;: None, &#39;wavemax&#39;: None, &#39;single&#39;: False, &#39;xdebug&#39;: None, &#39;ydebug&#39;: None, &#39;zdebug&#39;: None, &#39;skip_dqflagging&#39;: False}
+2021-02-09 21:31:24,879 - stpipe.CubeBuildStep - INFO - Starting IFU Cube Building Step
+2021-02-09 21:31:24,880 - stpipe.CubeBuildStep - INFO - Input interpolation: pointcloud
+2021-02-09 21:31:24,880 - stpipe.CubeBuildStep - INFO - Coordinate system to use: skyalign
+2021-02-09 21:31:24,880 - stpipe.CubeBuildStep - INFO - Weighting method for point cloud: emsm
+2021-02-09 21:31:24,881 - stpipe.CubeBuildStep - INFO - Power weighting distance: 2.0
+2021-02-09 21:31:36,451 - stpipe.CubeBuildStep - INFO - The desired cubes cover the MIRI Channels: [&#39;1&#39;, &#39;1&#39;, &#39;1&#39;, &#39;2&#39;, &#39;2&#39;, &#39;2&#39;, &#39;3&#39;, &#39;3&#39;, &#39;3&#39;, &#39;4&#39;, &#39;4&#39;, &#39;4&#39;]
+2021-02-09 21:31:36,451 - stpipe.CubeBuildStep - INFO - The desired cubes cover the MIRI subchannels: [&#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;, &#39;short&#39;, &#39;medium&#39;, &#39;long&#39;]
+2021-02-09 21:31:36,452 - stpipe.CubeBuildStep - INFO - Reading cube parameter file /grp/crds/cache/references/jwst/jwst_miri_cubepar_0004.fits
+2021-02-09 21:31:37,398 - stpipe.CubeBuildStep - INFO - Output Cubes are single channel, single sub-channel IFU Cubes
+2021-02-09 21:31:37,398 - stpipe.CubeBuildStep - INFO - Number of IFU cubes produced by this run = 12
+2021-02-09 21:31:37,681 - stpipe.CubeBuildStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
   lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
 
-2021-02-08 17:58:37,897 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 17:58:37,897 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 17:58:37,898 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99998961   0.13000000  -3.05499989   3.05499989
-2021-02-08 17:58:37,898 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00001393   0.13000000  -2.53499991   2.53499991
-2021-02-08 17:58:37,898 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 17:58:37,899 - stpipe.CubeBuildStep - INFO - Axis 3   850   1.00   4.89049987   0.00100000   4.88999987   5.73999991
-2021-02-08 17:58:37,899 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, short
-2021-02-08 17:58:37,899 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-short_s3d.fits
-2021-02-08 17:58:38,270 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5864 with wavelength below 4.887499866541475
-2021-02-08 17:58:38,271 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10865 with wavelength above 5.74249990680255
-2021-02-08 17:59:42,549 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 39.0 s
-2021-02-08 17:59:42,928 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5864 with wavelength below 4.887499866541475
-2021-02-08 17:59:42,929 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10865 with wavelength above 5.74249990680255
-2021-02-08 18:00:46,010 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.7 s
-2021-02-08 18:00:46,095 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:00:46,096 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:00:46,096 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:00:48,107 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:00:48,108 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:00:48,108 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99999829   0.13000000  -3.05499989   3.05499989
-2021-02-08 18:00:48,108 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00005758   0.13000000  -2.53499991   2.53499991
-2021-02-08 18:00:48,108 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:00:48,109 - stpipe.CubeBuildStep - INFO - Axis 3   980   1.00   5.64049987   0.00100000   5.63999987   6.61999991
-2021-02-08 18:00:48,109 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, medium
-2021-02-08 18:00:48,109 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-medium_s3d.fits
-2021-02-08 18:00:48,457 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5760 with wavelength below 5.637499866541475
-2021-02-08 18:00:48,457 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10519 with wavelength above 6.622499912977219
-2021-02-08 18:01:56,113 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.9 s
-2021-02-08 18:01:56,488 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5760 with wavelength below 5.637499866541475
-2021-02-08 18:01:56,489 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10519 with wavelength above 6.622499912977219
-2021-02-08 18:03:03,128 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.8 s
-2021-02-08 18:03:03,193 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:03:03,194 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:03:03,194 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:03:05,778 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:03:05,778 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:03:05,779 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99999712   0.13000000  -2.92499989   2.92499989
-2021-02-08 18:03:05,779 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00   0.00002680   0.13000000  -2.53499991   2.53499991
-2021-02-08 18:03:05,779 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:03:05,780 - stpipe.CubeBuildStep - INFO - Axis 3  1091   1.00   6.42050008   0.00100000   6.42000008   7.51100013
-2021-02-08 18:03:05,780 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, long
-2021-02-08 18:03:05,781 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-long_s3d.fits
-2021-02-08 18:03:06,142 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7150 with wavelength below 6.417500076349825
-2021-02-08 18:03:06,143 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10399 with wavelength above 7.513500128057785
-2021-02-08 18:04:15,862 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.5 s
-2021-02-08 18:04:16,233 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7150 with wavelength below 6.417500076349825
-2021-02-08 18:04:16,233 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10399 with wavelength above 7.513500128057785
-2021-02-08 18:05:24,468 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.5 s
-2021-02-08 18:05:24,541 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:05:24,541 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:05:24,542 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:05:26,449 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:05:26,450 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:05:26,451 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  45.00000773   0.17000000  -3.48500004   3.48500004
-2021-02-08 18:05:26,451 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00011236   0.17000000  -3.14500003   3.14500003
-2021-02-08 18:05:26,451 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:05:26,452 - stpipe.CubeBuildStep - INFO - Axis 3   631   1.00   7.49099977   0.00200000   7.48999977   8.75199983
-2021-02-08 18:05:26,452 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, short
-2021-02-08 18:05:26,452 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-short_s3d.fits
-2021-02-08 18:05:26,782 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 8363 with wavelength below 7.484999771229923
-2021-02-08 18:05:26,783 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12444 with wavelength above 8.756999830948189
-2021-02-08 18:06:13,029 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 30.8 s
-2021-02-08 18:06:13,397 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 8363 with wavelength below 7.484999771229923
-2021-02-08 18:06:13,398 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12444 with wavelength above 8.756999830948189
-2021-02-08 18:06:59,695 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 31.2 s
-2021-02-08 18:06:59,732 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:06:59,733 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:06:59,733 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
-2021-02-08 18:07:02,372 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:07:02,373 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:07:02,373 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  44.99997868   0.17000000  -3.48500004   3.48500004
-2021-02-08 18:07:02,373 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00018650   0.17000000  -3.14500003   3.14500003
-2021-02-08 18:07:02,374 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:07:02,374 - stpipe.CubeBuildStep - INFO - Axis 3   745   1.00   8.72100027   0.00200000   8.72000027  10.21000034
-2021-02-08 18:07:02,374 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, medium
-2021-02-08 18:07:02,374 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-medium_s3d.fits
-2021-02-08 18:07:02,696 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7081 with wavelength below 8.715000267140567
-2021-02-08 18:07:02,697 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 13388 with wavelength above 10.215000337688252
-2021-02-08 18:07:57,538 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 34.9 s
-2021-02-08 18:07:57,879 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7081 with wavelength below 8.715000267140567
-2021-02-08 18:07:57,879 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 13388 with wavelength above 10.215000337688252
-2021-02-08 18:08:52,392 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 34.9 s
-2021-02-08 18:08:52,441 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:08:52,441 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:08:52,442 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
-2021-02-08 18:08:54,358 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:08:54,359 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:08:54,359 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  45.00003541   0.17000000  -3.48500004   3.48500004
-2021-02-08 18:08:54,359 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00016185   0.17000000  -3.14500003   3.14500003
-2021-02-08 18:08:54,360 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:08:54,360 - stpipe.CubeBuildStep - INFO - Axis 3   855   1.00  10.03099973   0.00200000  10.02999973  11.73999981
-2021-02-08 18:08:54,360 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, long
-2021-02-08 18:08:54,360 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-long_s3d.fits
-2021-02-08 18:08:54,697 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7678 with wavelength below 10.02499973308295
-2021-02-08 18:08:54,697 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11501 with wavelength above 11.744999814080074
-2021-02-08 18:09:53,986 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.6 s
-2021-02-08 18:09:54,347 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7678 with wavelength below 10.02499973308295
-2021-02-08 18:09:54,348 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11501 with wavelength above 11.744999814080074
-2021-02-08 18:10:53,647 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.8 s
-2021-02-08 18:10:53,703 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:10:53,704 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:10:53,704 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:10:56,429 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:10:56,430 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:10:56,430 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99983061   0.20000000  -4.70000007   4.70000007
-2021-02-08 18:10:56,431 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00005064   0.20000000  -3.90000006   3.90000006
-2021-02-08 18:10:56,431 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:10:56,431 - stpipe.CubeBuildStep - INFO - Axis 3   647   1.00  11.53149973   0.00300000  11.52999973  13.47099975
-2021-02-08 18:10:56,431 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, short
-2021-02-08 18:10:56,432 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-short_s3d.fits
-2021-02-08 18:10:56,756 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6906 with wavelength below 11.522999732755125
-2021-02-08 18:10:56,757 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12522 with wavelength above 13.477999750059098
-2021-02-08 18:11:59,576 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 41.0 s
-2021-02-08 18:11:59,991 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6906 with wavelength below 11.522999732755125
-2021-02-08 18:11:59,992 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12522 with wavelength above 13.477999750059098
-2021-02-08 18:13:03,352 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 41.0 s
-2021-02-08 18:13:03,404 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:13:03,405 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:13:03,406 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:13:05,664 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:13:05,683 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:13:05,692 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99990298   0.20000000  -4.50000007   4.50000007
-2021-02-08 18:13:05,704 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00010378   0.20000000  -3.90000006   3.90000006
-2021-02-08 18:13:05,714 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:13:05,718 - stpipe.CubeBuildStep - INFO - Axis 3   754   1.00  13.37149989   0.00300000  13.36999989  15.63199991
-2021-02-08 18:13:05,718 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, medium
-2021-02-08 18:13:05,718 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-medium_s3d.fits
-2021-02-08 18:13:06,162 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6213 with wavelength below 13.362999885343015
-2021-02-08 18:13:06,163 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11885 with wavelength above 15.638999905437231
-2021-02-08 18:14:23,775 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 49.7 s
-2021-02-08 18:14:24,279 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6213 with wavelength below 13.362999885343015
-2021-02-08 18:14:24,280 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11885 with wavelength above 15.638999905437231
-2021-02-08 18:15:44,521 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 49.8 s
-2021-02-08 18:15:44,676 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:15:44,689 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:15:44,711 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.2 s
-2021-02-08 18:15:47,273 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:15:47,274 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:15:47,275 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99987711   0.20000000  -4.50000007   4.50000007
-2021-02-08 18:15:47,275 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00010090   0.20000000  -3.90000006   3.90000006
-2021-02-08 18:15:47,275 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:15:47,276 - stpipe.CubeBuildStep - INFO - Axis 3   870   1.00  15.44149958   0.00300000  15.43999958  18.04999960
-2021-02-08 18:15:47,276 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, long
-2021-02-08 18:15:47,276 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-long_s3d.fits
-2021-02-08 18:15:47,744 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6375 with wavelength below 15.432999580167234
-2021-02-08 18:15:47,744 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12083 with wavelength above 18.056999603286386
-2021-02-08 18:17:11,673 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 54.1 s
-2021-02-08 18:17:12,055 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6375 with wavelength below 15.432999580167234
-2021-02-08 18:17:12,056 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12083 with wavelength above 18.056999603286386
-2021-02-08 18:18:36,022 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 53.0 s
-2021-02-08 18:18:36,096 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:18:36,097 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:18:36,097 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
-2021-02-08 18:18:38,916 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:18:38,917 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:18:38,918 - stpipe.CubeBuildStep - INFO - Axis 1    33  17.00  45.00007295   0.34999999  -5.77499990   5.77499990
-2021-02-08 18:18:38,918 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00020009   0.34999999  -4.72499992   4.72499992
-2021-02-08 18:18:38,918 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:18:38,918 - stpipe.CubeBuildStep - INFO - Axis 3   544   1.00  17.66299985   0.00600000  17.65999985  20.92399988
-2021-02-08 18:18:38,919 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, short
-2021-02-08 18:18:38,919 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-short_s3d.fits
-2021-02-08 18:18:39,247 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4801 with wavelength below 17.645999846979976
-2021-02-08 18:18:39,247 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5823 with wavelength above 20.937999876216054
-2021-02-08 18:19:20,141 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 31.3 s
-2021-02-08 18:19:20,464 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4801 with wavelength below 17.645999846979976
-2021-02-08 18:19:20,465 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5823 with wavelength above 20.937999876216054
-2021-02-08 18:19:59,569 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 29.7 s
-2021-02-08 18:19:59,588 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:19:59,589 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:19:59,589 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
-2021-02-08 18:20:01,472 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:20:01,472 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:20:01,473 - stpipe.CubeBuildStep - INFO - Axis 1    31  16.00  45.00007259   0.34999999  -5.42499991   5.42499991
-2021-02-08 18:20:01,473 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00018561   0.34999999  -4.72499992   4.72499992
-2021-02-08 18:20:01,473 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:20:01,474 - stpipe.CubeBuildStep - INFO - Axis 3   631   1.00  20.42300008   0.00600000  20.42000008  24.20600011
-2021-02-08 18:20:01,474 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, medium
-2021-02-08 18:20:01,475 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-medium_s3d.fits
-2021-02-08 18:20:01,775 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 3753 with wavelength below 20.40600007586181
-2021-02-08 18:20:01,786 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5807 with wavelength above 24.220000109635293
-2021-02-08 18:20:45,682 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 33.1 s
-2021-02-08 18:20:45,980 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 3753 with wavelength below 20.40600007586181
-2021-02-08 18:20:45,981 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5807 with wavelength above 24.220000109635293
-2021-02-08 18:21:30,566 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 34.2 s
-2021-02-08 18:21:30,587 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:21:30,587 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:21:30,588 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
-2021-02-08 18:21:33,249 - stpipe.CubeBuildStep - INFO - Cube Geometry:
-2021-02-08 18:21:33,251 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
-2021-02-08 18:21:33,251 - stpipe.CubeBuildStep - INFO - Axis 1    31  16.00  45.00006953   0.34999999  -5.42499991   5.42499991
-2021-02-08 18:21:33,252 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00015628   0.34999999  -4.72499992   4.72499992
-2021-02-08 18:21:33,252 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
-2021-02-08 18:21:33,252 - stpipe.CubeBuildStep - INFO - Axis 3   737   1.00  23.89299939   0.00600000  23.88999939  28.31199943
-2021-02-08 18:21:33,253 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, long
-2021-02-08 18:21:33,253 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-long_s3d.fits
-2021-02-08 18:21:33,712 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4329 with wavelength below 23.875999389216304
-2021-02-08 18:21:33,714 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6241 with wavelength above 28.325999428518116
-2021-02-08 18:22:24,542 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.6 s
-2021-02-08 18:22:24,883 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4329 with wavelength below 23.875999389216304
-2021-02-08 18:22:24,883 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6241 with wavelength above 28.325999428518116
-2021-02-08 18:23:15,533 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.3 s
-2021-02-08 18:23:15,554 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
-2021-02-08 18:23:15,557 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
-2021-02-08 18:23:15,568 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
-2021-02-08 18:23:17,033 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999159056 -0.000700041 44.999159056 0.000672181 45.000820167 0.000672181 45.000820167 -0.000700041
-2021-02-08 18:23:17,035 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999167732 -0.000743688 44.999167732 0.000628535 45.000828843 0.000628535 45.000828843 -0.000743688
-2021-02-08 18:23:17,037 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999202676 -0.000659312 44.999202676 0.000712910 45.000791565 0.000712910 45.000791565 -0.000659312
-2021-02-08 18:23:17,039 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999063284 -0.000962359 44.999063284 0.000737641 45.000952173 0.000737641 45.000952173 -0.000962359
-2021-02-08 18:23:17,041 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999034240 -0.001036502 44.999034240 0.000663498 45.000923129 0.000663498 45.000923129 -0.001036502
-2021-02-08 18:23:17,043 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999090969 -0.001011846 44.999090969 0.000688154 45.000979858 0.000688154 45.000979858 -0.001011846
-2021-02-08 18:23:17,044 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998552834 -0.001106196 44.998552834 0.001004915 45.001108390 0.001004915 45.001108390 -0.001106196
-2021-02-08 18:23:17,046 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998680759 -0.001159337 44.998680759 0.000951774 45.001125203 0.000951774 45.001125203 -0.001159337
-2021-02-08 18:23:17,048 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998654887 -0.001156454 44.998654887 0.000954657 45.001099332 0.000954657 45.001099332 -0.001156454
-2021-02-08 18:23:17,049 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998517394 -0.001463977 44.998517394 0.001063801 45.001628505 0.001063801 45.001628505 -0.001463977
-2021-02-08 18:23:17,051 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998614255 -0.001449501 44.998614255 0.001078277 45.001530921 0.001078277 45.001530921 -0.001449501
-2021-02-08 18:23:17,053 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998611198 -0.001420170 44.998611198 0.001107608 45.001527865 0.001107608 45.001527865 -0.001420170
-2021-02-08 18:23:17,426 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-short_s3d.fits
-2021-02-08 18:23:17,779 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-medium_s3d.fits
-2021-02-08 18:23:18,138 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-long_s3d.fits
-2021-02-08 18:23:18,484 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-short_s3d.fits
-2021-02-08 18:23:18,827 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-medium_s3d.fits
-2021-02-08 18:23:19,169 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-long_s3d.fits
-2021-02-08 18:23:19,510 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-short_s3d.fits
-2021-02-08 18:23:19,852 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-medium_s3d.fits
-2021-02-08 18:23:20,201 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-long_s3d.fits
-2021-02-08 18:23:20,533 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-short_s3d.fits
-2021-02-08 18:23:20,866 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-medium_s3d.fits
-2021-02-08 18:23:21,197 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-long_s3d.fits
-2021-02-08 18:23:21,198 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep done
+2021-02-09 21:31:38,021 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:31:38,022 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:31:38,022 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99998961   0.13000000  -3.05499989   3.05499989
+2021-02-09 21:31:38,023 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00001393   0.13000000  -2.53499991   2.53499991
+2021-02-09 21:31:38,023 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:31:38,023 - stpipe.CubeBuildStep - INFO - Axis 3   850   1.00   4.89049987   0.00100000   4.88999987   5.73999991
+2021-02-09 21:31:38,024 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, short
+2021-02-09 21:31:38,024 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-short_s3d.fits
+2021-02-09 21:31:38,402 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5864 with wavelength below 4.887499866541475
+2021-02-09 21:31:38,403 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10865 with wavelength above 5.74249990680255
+2021-02-09 21:32:41,582 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.4 s
+2021-02-09 21:32:41,930 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5864 with wavelength below 4.887499866541475
+2021-02-09 21:32:41,930 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10865 with wavelength above 5.74249990680255
+2021-02-09 21:33:44,384 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.3 s
+2021-02-09 21:33:44,444 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:33:44,445 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:33:44,445 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:33:46,393 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:33:46,394 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:33:46,394 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99999829   0.13000000  -3.05499989   3.05499989
+2021-02-09 21:33:46,394 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00005758   0.13000000  -2.53499991   2.53499991
+2021-02-09 21:33:46,395 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:33:46,395 - stpipe.CubeBuildStep - INFO - Axis 3   980   1.00   5.64049987   0.00100000   5.63999987   6.61999991
+2021-02-09 21:33:46,395 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, medium
+2021-02-09 21:33:46,396 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-medium_s3d.fits
+2021-02-09 21:33:46,742 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5760 with wavelength below 5.637499866541475
+2021-02-09 21:33:46,743 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10519 with wavelength above 6.622499912977219
+2021-02-09 21:34:53,656 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.5 s
+2021-02-09 21:34:54,031 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5760 with wavelength below 5.637499866541475
+2021-02-09 21:34:54,032 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10519 with wavelength above 6.622499912977219
+2021-02-09 21:36:03,800 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 42.2 s
+2021-02-09 21:36:03,877 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:36:03,877 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:36:03,878 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:36:06,520 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:36:06,520 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:36:06,521 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99999712   0.13000000  -2.92499989   2.92499989
+2021-02-09 21:36:06,521 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00   0.00002680   0.13000000  -2.53499991   2.53499991
+2021-02-09 21:36:06,521 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:36:06,522 - stpipe.CubeBuildStep - INFO - Axis 3  1091   1.00   6.42050008   0.00100000   6.42000008   7.51100013
+2021-02-09 21:36:06,522 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 1, long
+2021-02-09 21:36:06,522 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch1-long_s3d.fits
+2021-02-09 21:36:06,872 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7150 with wavelength below 6.417500076349825
+2021-02-09 21:36:06,873 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10399 with wavelength above 7.513500128057785
+2021-02-09 21:37:15,640 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.2 s
+2021-02-09 21:37:16,004 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7150 with wavelength below 6.417500076349825
+2021-02-09 21:37:16,005 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 10399 with wavelength above 7.513500128057785
+2021-02-09 21:38:23,902 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.1 s
+2021-02-09 21:38:23,985 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:38:23,986 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:38:23,986 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:38:25,900 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:38:25,901 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:38:25,901 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  45.00000773   0.17000000  -3.48500004   3.48500004
+2021-02-09 21:38:25,902 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00011236   0.17000000  -3.14500003   3.14500003
+2021-02-09 21:38:25,902 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:38:25,902 - stpipe.CubeBuildStep - INFO - Axis 3   631   1.00   7.49099977   0.00200000   7.48999977   8.75199983
+2021-02-09 21:38:25,902 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, short
+2021-02-09 21:38:25,903 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-short_s3d.fits
+2021-02-09 21:38:26,251 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 8363 with wavelength below 7.484999771229923
+2021-02-09 21:38:26,252 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12444 with wavelength above 8.756999830948189
+2021-02-09 21:39:12,259 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 30.8 s
+2021-02-09 21:39:12,594 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 8363 with wavelength below 7.484999771229923
+2021-02-09 21:39:12,594 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12444 with wavelength above 8.756999830948189
+2021-02-09 21:39:58,256 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 30.7 s
+2021-02-09 21:39:58,291 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:39:58,292 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:39:58,292 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:40:00,904 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:40:00,905 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:40:00,905 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  44.99997868   0.17000000  -3.48500004   3.48500004
+2021-02-09 21:40:00,906 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00018650   0.17000000  -3.14500003   3.14500003
+2021-02-09 21:40:00,906 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:40:00,906 - stpipe.CubeBuildStep - INFO - Axis 3   745   1.00   8.72100027   0.00200000   8.72000027  10.21000034
+2021-02-09 21:40:00,906 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, medium
+2021-02-09 21:40:00,907 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-medium_s3d.fits
+2021-02-09 21:40:01,227 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7081 with wavelength below 8.715000267140567
+2021-02-09 21:40:01,228 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 13388 with wavelength above 10.215000337688252
+2021-02-09 21:40:55,403 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 34.5 s
+2021-02-09 21:40:55,747 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7081 with wavelength below 8.715000267140567
+2021-02-09 21:40:55,748 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 13388 with wavelength above 10.215000337688252
+2021-02-09 21:41:49,567 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 34.4 s
+2021-02-09 21:41:49,604 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:41:49,605 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:41:49,605 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:41:51,512 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:41:51,513 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:41:51,514 - stpipe.CubeBuildStep - INFO - Axis 1    41  21.00  45.00003541   0.17000000  -3.48500004   3.48500004
+2021-02-09 21:41:51,514 - stpipe.CubeBuildStep - INFO - Axis 2    37  19.00  -0.00016185   0.17000000  -3.14500003   3.14500003
+2021-02-09 21:41:51,514 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:41:51,515 - stpipe.CubeBuildStep - INFO - Axis 3   855   1.00  10.03099973   0.00200000  10.02999973  11.73999981
+2021-02-09 21:41:51,515 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 2, long
+2021-02-09 21:41:51,515 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch2-long_s3d.fits
+2021-02-09 21:41:51,841 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7678 with wavelength below 10.02499973308295
+2021-02-09 21:41:51,842 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11501 with wavelength above 11.744999814080074
+2021-02-09 21:42:53,330 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 41.0 s
+2021-02-09 21:42:53,685 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 7678 with wavelength below 10.02499973308295
+2021-02-09 21:42:53,686 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11501 with wavelength above 11.744999814080074
+2021-02-09 21:43:55,317 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 41.5 s
+2021-02-09 21:43:55,368 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:43:55,368 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:43:55,369 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:43:58,021 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:43:58,022 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:43:58,022 - stpipe.CubeBuildStep - INFO - Axis 1    47  24.00  44.99983061   0.20000000  -4.70000007   4.70000007
+2021-02-09 21:43:58,022 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00005064   0.20000000  -3.90000006   3.90000006
+2021-02-09 21:43:58,023 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:43:58,023 - stpipe.CubeBuildStep - INFO - Axis 3   647   1.00  11.53149973   0.00300000  11.52999973  13.47099975
+2021-02-09 21:43:58,023 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, short
+2021-02-09 21:43:58,023 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-short_s3d.fits
+2021-02-09 21:43:58,344 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6906 with wavelength below 11.522999732755125
+2021-02-09 21:43:58,345 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12522 with wavelength above 13.477999750059098
+2021-02-09 21:44:58,121 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.3 s
+2021-02-09 21:44:58,467 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6906 with wavelength below 11.522999732755125
+2021-02-09 21:44:58,468 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12522 with wavelength above 13.477999750059098
+2021-02-09 21:45:57,947 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 38.1 s
+2021-02-09 21:45:57,992 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:45:57,992 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:45:57,993 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:45:59,901 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:45:59,902 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:45:59,902 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99990298   0.20000000  -4.50000007   4.50000007
+2021-02-09 21:45:59,903 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00010378   0.20000000  -3.90000006   3.90000006
+2021-02-09 21:45:59,903 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:45:59,903 - stpipe.CubeBuildStep - INFO - Axis 3   754   1.00  13.37149989   0.00300000  13.36999989  15.63199991
+2021-02-09 21:45:59,904 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, medium
+2021-02-09 21:45:59,904 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-medium_s3d.fits
+2021-02-09 21:46:00,232 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6213 with wavelength below 13.362999885343015
+2021-02-09 21:46:00,233 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11885 with wavelength above 15.638999905437231
+2021-02-09 21:47:09,331 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 44.5 s
+2021-02-09 21:47:09,679 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6213 with wavelength below 13.362999885343015
+2021-02-09 21:47:09,680 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 11885 with wavelength above 15.638999905437231
+2021-02-09 21:48:18,170 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 44.6 s
+2021-02-09 21:48:18,226 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:48:18,227 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:48:18,227 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:48:20,120 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:48:20,121 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:48:20,121 - stpipe.CubeBuildStep - INFO - Axis 1    45  23.00  44.99987711   0.20000000  -4.50000007   4.50000007
+2021-02-09 21:48:20,122 - stpipe.CubeBuildStep - INFO - Axis 2    39  20.00  -0.00010090   0.20000000  -3.90000006   3.90000006
+2021-02-09 21:48:20,122 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:48:20,122 - stpipe.CubeBuildStep - INFO - Axis 3   870   1.00  15.44149958   0.00300000  15.43999958  18.04999960
+2021-02-09 21:48:20,122 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 3, long
+2021-02-09 21:48:20,123 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch3-long_s3d.fits
+2021-02-09 21:48:20,451 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6375 with wavelength below 15.432999580167234
+2021-02-09 21:48:20,452 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12083 with wavelength above 18.056999603286386
+2021-02-09 21:49:38,266 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 50.2 s
+2021-02-09 21:49:38,619 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6375 with wavelength below 15.432999580167234
+2021-02-09 21:49:38,620 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 12083 with wavelength above 18.056999603286386
+2021-02-09 21:50:56,548 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 50.8 s
+2021-02-09 21:50:56,616 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:50:56,617 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:50:56,617 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.1 s
+2021-02-09 21:50:59,313 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:50:59,314 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:50:59,314 - stpipe.CubeBuildStep - INFO - Axis 1    33  17.00  45.00007295   0.34999999  -5.77499990   5.77499990
+2021-02-09 21:50:59,314 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00020009   0.34999999  -4.72499992   4.72499992
+2021-02-09 21:50:59,315 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:50:59,315 - stpipe.CubeBuildStep - INFO - Axis 3   544   1.00  17.66299985   0.00600000  17.65999985  20.92399988
+2021-02-09 21:50:59,315 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, short
+2021-02-09 21:50:59,315 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-short_s3d.fits
+2021-02-09 21:50:59,597 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4801 with wavelength below 17.645999846979976
+2021-02-09 21:50:59,597 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5823 with wavelength above 20.937999876216054
+2021-02-09 21:51:40,819 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 32.1 s
+2021-02-09 21:51:41,131 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4801 with wavelength below 17.645999846979976
+2021-02-09 21:51:41,131 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5823 with wavelength above 20.937999876216054
+2021-02-09 21:52:22,256 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 32.1 s
+2021-02-09 21:52:22,271 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:52:22,272 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:52:22,272 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:52:24,133 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:52:24,133 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:52:24,134 - stpipe.CubeBuildStep - INFO - Axis 1    31  16.00  45.00007259   0.34999999  -5.42499991   5.42499991
+2021-02-09 21:52:24,134 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00018561   0.34999999  -4.72499992   4.72499992
+2021-02-09 21:52:24,134 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:52:24,135 - stpipe.CubeBuildStep - INFO - Axis 3   631   1.00  20.42300008   0.00600000  20.42000008  24.20600011
+2021-02-09 21:52:24,135 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, medium
+2021-02-09 21:52:24,135 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-medium_s3d.fits
+2021-02-09 21:52:24,416 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 3753 with wavelength below 20.40600007586181
+2021-02-09 21:52:24,417 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5807 with wavelength above 24.220000109635293
+2021-02-09 21:53:10,441 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 35.8 s
+2021-02-09 21:53:10,747 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 3753 with wavelength below 20.40600007586181
+2021-02-09 21:53:10,748 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 5807 with wavelength above 24.220000109635293
+2021-02-09 21:53:56,918 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 36.1 s
+2021-02-09 21:53:56,940 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:53:56,941 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:53:56,941 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:53:59,584 - stpipe.CubeBuildStep - INFO - Cube Geometry:
+2021-02-09 21:53:59,585 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(arcsec)  Min &amp; Max (xi, eta arcsec)
+2021-02-09 21:53:59,585 - stpipe.CubeBuildStep - INFO - Axis 1    31  16.00  45.00006953   0.34999999  -5.42499991   5.42499991
+2021-02-09 21:53:59,586 - stpipe.CubeBuildStep - INFO - Axis 2    27  14.00  -0.00015628   0.34999999  -4.72499992   4.72499992
+2021-02-09 21:53:59,586 - stpipe.CubeBuildStep - INFO - axis#  Naxis  CRPIX    CRVAL      CDELT(microns)  Min &amp; Max (microns)
+2021-02-09 21:53:59,586 - stpipe.CubeBuildStep - INFO - Axis 3   737   1.00  23.89299939   0.00600000  23.88999939  28.31199943
+2021-02-09 21:53:59,587 - stpipe.CubeBuildStep - INFO - Cube covers channel, subchannel: 4, long
+2021-02-09 21:53:59,587 - stpipe.CubeBuildStep - INFO - Output Name: det_image_ch4-long_s3d.fits
+2021-02-09 21:53:59,861 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4329 with wavelength below 23.875999389216304
+2021-02-09 21:53:59,862 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6241 with wavelength above 28.325999428518116
+2021-02-09 21:54:48,907 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 37.3 s
+2021-02-09 21:54:49,199 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 4329 with wavelength below 23.875999389216304
+2021-02-09 21:54:49,200 - stpipe.CubeBuildStep - INFO - # of detector pixels not mapped to output plane: 6241 with wavelength above 28.325999428518116
+2021-02-09 21:55:38,269 - stpipe.CubeBuildStep - INFO - Time to match file to ifucube = 37.4 s
+2021-02-09 21:55:38,291 - stpipe.CubeBuildStep - INFO - Average # of holes/wavelength plane is &lt; 1
+2021-02-09 21:55:38,291 - stpipe.CubeBuildStep - INFO - Total # of holes for IFU cube is : 0
+2021-02-09 21:55:38,292 - stpipe.CubeBuildStep - INFO - Time to find Cube Flux = 0.0 s
+2021-02-09 21:55:39,660 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999159056 -0.000700041 44.999159056 0.000672181 45.000820167 0.000672181 45.000820167 -0.000700041
+2021-02-09 21:55:39,662 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999167732 -0.000743688 44.999167732 0.000628535 45.000828843 0.000628535 45.000828843 -0.000743688
+2021-02-09 21:55:39,663 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999202676 -0.000659312 44.999202676 0.000712910 45.000791565 0.000712910 45.000791565 -0.000659312
+2021-02-09 21:55:39,665 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999063284 -0.000962359 44.999063284 0.000737641 45.000952173 0.000737641 45.000952173 -0.000962359
+2021-02-09 21:55:39,667 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999034240 -0.001036502 44.999034240 0.000663498 45.000923129 0.000663498 45.000923129 -0.001036502
+2021-02-09 21:55:39,668 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.999090969 -0.001011846 44.999090969 0.000688154 45.000979858 0.000688154 45.000979858 -0.001011846
+2021-02-09 21:55:39,670 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998552834 -0.001106196 44.998552834 0.001004915 45.001108390 0.001004915 45.001108390 -0.001106196
+2021-02-09 21:55:39,671 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998680759 -0.001159337 44.998680759 0.000951774 45.001125203 0.000951774 45.001125203 -0.001159337
+2021-02-09 21:55:39,673 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998654887 -0.001156454 44.998654887 0.000954657 45.001099332 0.000954657 45.001099332 -0.001156454
+2021-02-09 21:55:39,675 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998517394 -0.001463977 44.998517394 0.001063801 45.001628505 0.001063801 45.001628505 -0.001463977
+2021-02-09 21:55:39,676 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998614255 -0.001449501 44.998614255 0.001078277 45.001530921 0.001078277 45.001530921 -0.001449501
+2021-02-09 21:55:39,678 - stpipe.CubeBuildStep - INFO - Update S_REGION to POLYGON ICRS  44.998611198 -0.001420170 44.998611198 0.001107608 45.001527865 0.001107608 45.001527865 -0.001420170
+2021-02-09 21:55:40,035 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-short_s3d.fits
+2021-02-09 21:55:40,387 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-medium_s3d.fits
+2021-02-09 21:55:40,742 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch1-long_s3d.fits
+2021-02-09 21:55:41,081 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-short_s3d.fits
+2021-02-09 21:55:41,419 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-medium_s3d.fits
+2021-02-09 21:55:41,762 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch2-long_s3d.fits
+2021-02-09 21:55:42,102 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-short_s3d.fits
+2021-02-09 21:55:42,444 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-medium_s3d.fits
+2021-02-09 21:55:42,790 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch3-long_s3d.fits
+2021-02-09 21:55:43,121 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-short_s3d.fits
+2021-02-09 21:55:43,449 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-medium_s3d.fits
+2021-02-09 21:55:43,776 - stpipe.CubeBuildStep - INFO - Saved model in det_image_ch4-long_s3d.fits
+2021-02-09 21:55:43,776 - stpipe.CubeBuildStep - INFO - Step CubeBuildStep done
 </pre>
 </div>
 </div>
@@ -15617,7 +15635,7 @@ Constructing cube:  95 % complete
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Define band and channels</span>
@@ -15752,7 +15770,7 @@ Constructing cube:  95 % complete
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Do Band A things</span>
@@ -15776,7 +15794,6 @@ Constructing cube:  95 % complete
     <span class="n">temppath1</span><span class="o">=</span><span class="s1">&#39;det_image_&#39;</span><span class="o">+</span><span class="n">band_chan</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;_s3d.fits&#39;</span>
     <span class="n">result</span><span class="o">=</span><span class="n">Extract1dStep</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">temppath1</span><span class="p">)</span> 
     <span class="n">result</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">band_chan</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;_output_file_from_extract1d.fits&quot;</span><span class="p">)</span>
-    
 </pre></div>
 
      </div>
@@ -15796,7 +15813,7 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 18:23:46,202 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+<pre>2021-02-09 21:56:07,329 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
 </pre>
 </div>
 </div>
@@ -15820,14 +15837,15 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 18:23:47,209 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-short_s3d.fits&#39;,).
-2021-02-08 18:23:47,211 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:23:47,361 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:23:47,364 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:23:48,566 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:23:48,567 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:23:48,567 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:23:50,019 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+<pre>2021-02-09 21:56:08,263 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-short_s3d.fits&#39;,).
+2021-02-09 21:56:08,264 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:08,413 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:08,418 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:09,423 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:09,424 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:09,424 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:10,870 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:11,063 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
 </pre>
 </div>
 </div>
@@ -15851,16 +15869,15 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 18:23:50,293 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:23:51,236 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-short_s3d.fits&#39;,).
-2021-02-08 18:23:51,238 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:23:51,374 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:23:51,376 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:23:52,691 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:23:52,692 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:23:52,692 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:23:53,679 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:23:53,869 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+<pre>2021-02-09 21:56:11,979 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-short_s3d.fits&#39;,).
+2021-02-09 21:56:11,981 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:12,118 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:12,120 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:13,218 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:13,219 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:13,219 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:14,204 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:14,391 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
 </pre>
 </div>
 </div>
@@ -15884,16 +15901,15 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 18:23:53,945 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-short_s3d.fits&#39;,).
-2021-02-08 18:23:53,947 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:23:54,082 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:23:54,084 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:23:55,205 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:23:55,207 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:23:55,207 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:23:56,483 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:23:56,668 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:23:56,751 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-short_s3d.fits&#39;,).
+<pre>2021-02-09 21:56:14,465 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-short_s3d.fits&#39;,).
+2021-02-09 21:56:14,466 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:14,601 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:14,604 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:15,694 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:15,694 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:15,695 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:16,773 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:16,953 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
 </pre>
 </div>
 </div>
@@ -15917,85 +15933,86 @@ Constructing cube:  95 % complete
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-08 18:23:56,753 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:23:56,885 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:23:56,887 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:23:58,005 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:23:58,005 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:23:58,006 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:23:58,856 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:23:59,047 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:23:59,123 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-medium_s3d.fits&#39;,).
-2021-02-08 18:23:59,125 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:23:59,270 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:23:59,272 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:00,465 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:00,466 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:00,466 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:02,089 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:02,282 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:02,366 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-medium_s3d.fits&#39;,).
-2021-02-08 18:24:02,368 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:02,505 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:02,508 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:03,634 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:03,634 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:03,635 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:04,923 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:05,112 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:05,193 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-medium_s3d.fits&#39;,).
-2021-02-08 18:24:05,194 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:05,329 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:05,332 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:06,754 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:06,755 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:06,755 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:07,989 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:08,171 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:08,247 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-medium_s3d.fits&#39;,).
-2021-02-08 18:24:08,249 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:08,382 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:08,384 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:09,499 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:09,500 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:09,500 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:10,336 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:10,532 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:10,616 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-long_s3d.fits&#39;,).
-2021-02-08 18:24:10,617 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:10,760 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:10,762 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:12,039 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:12,039 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:12,040 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:13,820 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:14,007 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:14,084 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-long_s3d.fits&#39;,).
-2021-02-08 18:24:14,085 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:14,220 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:14,222 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:15,452 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:15,453 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:15,453 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:16,774 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:16,964 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:17,040 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-long_s3d.fits&#39;,).
-2021-02-08 18:24:17,042 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:17,182 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:17,185 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:18,301 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:18,302 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:18,302 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:19,868 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
-2021-02-08 18:24:20,055 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
-2021-02-08 18:24:20,133 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-long_s3d.fits&#39;,).
-2021-02-08 18:24:20,134 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
-2021-02-08 18:24:20,267 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
-2021-02-08 18:24:20,269 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
-2021-02-08 18:24:21,387 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
-2021-02-08 18:24:21,387 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
-2021-02-08 18:24:21,388 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
-2021-02-08 18:24:22,463 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+<pre>2021-02-09 21:56:17,024 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-short_s3d.fits&#39;,).
+2021-02-09 21:56:17,026 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:17,155 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:17,157 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:18,268 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:18,269 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:18,269 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:19,001 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:19,193 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:19,265 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-medium_s3d.fits&#39;,).
+2021-02-09 21:56:19,266 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:19,403 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:19,405 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:20,497 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:20,497 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:20,498 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:22,114 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:22,297 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:22,369 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-medium_s3d.fits&#39;,).
+2021-02-09 21:56:22,370 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:22,503 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:22,506 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:23,595 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:23,596 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:23,596 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:24,750 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:24,936 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:25,012 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-medium_s3d.fits&#39;,).
+2021-02-09 21:56:25,014 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:25,148 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:25,151 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:26,240 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:26,241 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:26,241 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:27,476 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:27,655 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:27,727 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-medium_s3d.fits&#39;,).
+2021-02-09 21:56:27,729 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:27,859 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:27,861 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:28,952 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:28,953 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:28,953 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:29,796 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:29,985 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:30,057 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch1-long_s3d.fits&#39;,).
+2021-02-09 21:56:30,059 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:30,198 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:30,200 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:31,296 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:31,297 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:31,297 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:33,085 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:33,271 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:33,343 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch2-long_s3d.fits&#39;,).
+2021-02-09 21:56:33,345 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:33,487 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:33,489 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:34,597 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:34,597 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:34,598 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:35,913 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:36,102 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:36,173 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch3-long_s3d.fits&#39;,).
+2021-02-09 21:56:36,175 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:36,311 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:36,314 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:37,410 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:37,410 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:37,411 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:38,829 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
+2021-02-09 21:56:39,011 - stpipe.Extract1dStep - INFO - Extract1dStep instance created.
+2021-02-09 21:56:39,085 - stpipe.Extract1dStep - INFO - Step Extract1dStep running with args (&#39;det_image_ch4-long_s3d.fits&#39;,).
+2021-02-09 21:56:39,086 - stpipe.Extract1dStep - INFO - Step Extract1dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;smoothing_length&#39;: None, &#39;bkg_fit&#39;: &#39;poly&#39;, &#39;bkg_order&#39;: None, &#39;log_increment&#39;: 50, &#39;subtract_background&#39;: None, &#39;use_source_posn&#39;: None, &#39;apply_apcorr&#39;: True}
+2021-02-09 21:56:39,217 - stpipe.Extract1dStep - INFO - Using EXTRACT1D reference file /grp/crds/cache/references/jwst/jwst_miri_extract1d_0001.asdf
+2021-02-09 21:56:39,219 - stpipe.Extract1dStep - INFO - Using APCORR file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0001.asdf
+2021-02-09 21:56:40,314 - stpipe.Extract1dStep - INFO - Turning on source position correction for exp_type = MIR_MRS
+2021-02-09 21:56:40,315 - stpipe.Extract1dStep - INFO - Setting use_source_posn to False for source type EXTENDED
+2021-02-09 21:56:40,315 - stpipe.Extract1dStep - INFO - Source type = EXTENDED
+2021-02-09 21:56:41,286 - stpipe.Extract1dStep - INFO - Step Extract1dStep done
 </pre>
 </div>
 </div>
@@ -16007,7 +16024,7 @@ Constructing cube:  95 % complete
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Plot Band A</span>
@@ -16076,20 +16093,6 @@ Constructing cube:  95 % complete
 <p>A successful test shows that the source is flat within 2%.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
