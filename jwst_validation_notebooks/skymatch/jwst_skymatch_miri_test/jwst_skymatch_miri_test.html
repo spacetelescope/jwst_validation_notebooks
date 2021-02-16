@@ -10,9 +10,9 @@ None<!DOCTYPE html>
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14692,10 +14692,10 @@ Mean: 0.93216574 0.16481434
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.9995139 0.40048808
-3.000412 0.5997983
-5.0002847 0.99952644
-1.9995139 0.40048808
+<pre>2.0000513 0.39928916
+2.9993608 0.60059834
+5.000281 0.9999221
+2.0000513 0.39928916
 </pre>
 </div>
 </div>
@@ -14778,30 +14778,30 @@ Mean: 0.93216574 0.16481434
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:02,774 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:02,776 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:02,889 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:02,891 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:03,255 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:03,256 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:03.254953
-2021-02-12 20:29:03,256 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:03,256 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
-2021-02-12 20:29:03,256 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: OFF
-2021-02-12 20:29:03,257 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:03,258 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
-2021-02-12 20:29:03,333 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944
-2021-02-12 20:29:03,334 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 3.00242
-2021-02-12 20:29:03,334 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.88171
-2021-02-12 20:29:03,335 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944
-2021-02-12 20:29:03,335 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:03,335 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:03.335306
-2021-02-12 20:29:03,335 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.080353
-2021-02-12 20:29:03,336 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:03,542 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:03,778 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:03,970 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:04,161 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:04,162 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:05,146 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:05,148 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:05,251 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:05,254 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:05,587 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:05,588 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:05.587849
+2021-02-16 04:22:05,588 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:05,589 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
+2021-02-16 04:22:05,589 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: OFF
+2021-02-16 04:22:05,589 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:05,590 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
+2021-02-16 04:22:05,666 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199
+2021-02-16 04:22:05,666 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.97106
+2021-02-16 04:22:05,667 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.91162
+2021-02-16 04:22:05,667 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199
+2021-02-16 04:22:05,667 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:05,668 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:05.667957
+2021-02-16 04:22:05,668 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.080108
+2021-02-16 04:22:05,668 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:05,874 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:06,107 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:06,301 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:06,494 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:06,495 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -14860,10 +14860,10 @@ Mean: 0.93216574 0.16481434
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (local)
-Mean: 1.9995139 , 1.9995139
-Mean: 3.000412 , 3.000412
-Mean: 5.0002847 , 5.0002847
-Mean: 1.9995139 , 1.9995139
+Mean: 2.0000513 , 2.0000513
+Mean: 2.9993608 , 2.9993608
+Mean: 5.000281 , 5.000281
+Mean: 2.0000513 , 2.0000513
 </pre>
 </div>
 </div>
@@ -14899,30 +14899,30 @@ Mean: 1.9995139 , 1.9995139
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:05,145 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:05,147 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:05,265 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:05,267 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:05,596 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:05,596 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:05.596239
-2021-02-12 20:29:05,597 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:05,597 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
-2021-02-12 20:29:05,597 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
-2021-02-12 20:29:05,598 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:05,598 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
-2021-02-12 20:29:05,676 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:05,678 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 3.00242 (old=0, delta=3.00242)
-2021-02-12 20:29:05,679 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.88171 (old=0, delta=4.88171)
-2021-02-12 20:29:05,681 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:05,681 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:05,681 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:05.681511
-2021-02-12 20:29:05,682 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.085272
-2021-02-12 20:29:05,682 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:05,901 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:06,145 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:06,341 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:06,534 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:06,534 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:07,438 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:07,440 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:07,559 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:07,561 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:07,884 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:07,884 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:07.884241
+2021-02-16 04:22:07,885 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:07,885 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
+2021-02-16 04:22:07,885 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
+2021-02-16 04:22:07,886 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:07,886 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
+2021-02-16 04:22:07,965 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:07,966 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.97106 (old=0, delta=2.97106)
+2021-02-16 04:22:07,968 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.91162 (old=0, delta=4.91162)
+2021-02-16 04:22:07,969 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:07,969 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:07,970 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:07.969989
+2021-02-16 04:22:07,970 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.085748
+2021-02-16 04:22:07,970 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:08,181 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:08,418 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:08,618 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:08,817 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:08,818 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -14981,10 +14981,10 @@ Mean: 1.9995139 , 1.9995139
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (local)
-Mean: 1.9995139 , 0.020078652
-Mean: 3.000412 , -0.0020054728
-Mean: 5.0002847 , 0.11857425
-Mean: 1.9995139 , 0.020078652
+Mean: 2.0000513 , 0.018057818
+Mean: 2.9993608 , 0.028302632
+Mean: 5.000281 , 0.08865726
+Mean: 2.0000513 , 0.018057818
 </pre>
 </div>
 </div>
@@ -15030,30 +15030,30 @@ Mean: 1.9995139 , 0.020078652
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:07,521 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:07,523 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:07,633 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:07,634 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:07,959 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:07,960 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:07.959593
-2021-02-12 20:29:07,960 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:07,960 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
-2021-02-12 20:29:07,961 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: OFF
-2021-02-12 20:29:07,961 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:07,962 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
-2021-02-12 20:29:08,037 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944
-2021-02-12 20:29:08,038 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 3.00242
-2021-02-12 20:29:08,038 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.88171
-2021-02-12 20:29:08,039 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944
-2021-02-12 20:29:08,039 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:08,039 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:08.039369
-2021-02-12 20:29:08,039 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.079776
-2021-02-12 20:29:08,040 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:08,239 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:08,421 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:08,606 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:08,789 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:08,790 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:09,799 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:09,801 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:09,935 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:09,937 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;local&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:10,257 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:10,257 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:10.257057
+2021-02-16 04:22:10,258 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:10,258 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;local&#39;
+2021-02-16 04:22:10,258 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: OFF
+2021-02-16 04:22:10,259 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:10,259 - stpipe.SkyMatchStep - INFO - ----  Sky values computed per image and/or image groups.
+2021-02-16 04:22:10,333 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199
+2021-02-16 04:22:10,334 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.97106
+2021-02-16 04:22:10,334 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.91162
+2021-02-16 04:22:10,334 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199
+2021-02-16 04:22:10,334 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:10,335 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:10.334904
+2021-02-16 04:22:10,335 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.077847
+2021-02-16 04:22:10,336 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:10,512 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:10,708 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:10,895 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:11,072 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:11,073 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -15112,10 +15112,10 @@ Mean: 1.9995139 , 0.020078652
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (local)
-Mean: 1.9995139 , 1.9995139
-Mean: 3.000412 , 3.000412
-Mean: 5.0002847 , 5.0002847
-Mean: 1.9995139 , 1.9995139
+Mean: 2.0000513 , 2.0000513
+Mean: 2.9993608 , 2.9993608
+Mean: 5.000281 , 5.000281
+Mean: 2.0000513 , 2.0000513
 </pre>
 </div>
 </div>
@@ -15166,32 +15166,32 @@ Mean: 1.9995139 , 1.9995139
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:09,754 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:09,756 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:09,877 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:09,879 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:10,200 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,201 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:10.200354
-2021-02-12 20:29:10,201 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,201 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;global&#39;
-2021-02-12 20:29:10,202 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
-2021-02-12 20:29:10,202 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,202 - stpipe.SkyMatchStep - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2021-02-12 20:29:10,279 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,279 - stpipe.SkyMatchStep - INFO -    &#34;Global&#34; sky value correction: 1.9794352241631215 [not converted]
-2021-02-12 20:29:10,281 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:10,282 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:10,284 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:10,285 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0, delta=1.97944)
-2021-02-12 20:29:10,286 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,286 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:10.286090
-2021-02-12 20:29:10,286 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.085736
-2021-02-12 20:29:10,286 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:10,471 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:10,660 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:10,835 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:11,012 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:11,012 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:12,025 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:12,026 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:12,171 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:12,172 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:12,493 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,494 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:12.493831
+2021-02-16 04:22:12,494 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,495 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;global&#39;
+2021-02-16 04:22:12,495 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
+2021-02-16 04:22:12,496 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,496 - stpipe.SkyMatchStep - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2021-02-16 04:22:12,570 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,570 - stpipe.SkyMatchStep - INFO -    &#34;Global&#34; sky value correction: 1.9819932027265084 [not converted]
+2021-02-16 04:22:12,572 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:12,573 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:12,575 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:12,576 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.98199 (old=0, delta=1.98199)
+2021-02-16 04:22:12,576 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,577 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:12.576862
+2021-02-16 04:22:12,577 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.083031
+2021-02-16 04:22:12,577 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:12,751 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:12,945 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:13,120 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:13,299 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:13,299 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -15250,10 +15250,10 @@ Mean: 1.9995139 , 1.9995139
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (global)
-Mean: 1.9995139 , 0.020078652
-Mean: 3.000412 , 1.020977
-Mean: 5.0002847 , 3.0208492
-Mean: 1.9995139 , 0.020078652
+Mean: 2.0000513 , 0.018057818
+Mean: 2.9993608 , 1.0173669
+Mean: 5.000281 , 3.0182862
+Mean: 2.0000513 , 0.018057818
 </pre>
 </div>
 </div>
@@ -15304,31 +15304,31 @@ Mean: 1.9995139 , 0.020078652
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:11,976 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:11,977 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:12,083 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:12,085 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:12,415 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:12,416 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:12.415318
-2021-02-12 20:29:12,416 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:12,416 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;match&#39;
-2021-02-12 20:29:12,416 - stpipe.SkyMatchStep - INFO - Sky matching direction: DOWN
-2021-02-12 20:29:12,417 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
-2021-02-12 20:29:12,417 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:12,417 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-02-12 20:29:13,895 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
-2021-02-12 20:29:13,896 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.01703 (old=0, delta=1.01703)
-2021-02-12 20:29:13,898 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.90263 (old=0, delta=2.90263)
-2021-02-12 20:29:13,899 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.00664259 (old=0, delta=0.00664259)
-2021-02-12 20:29:13,900 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:13,900 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:13.900143
-2021-02-12 20:29:13,900 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.484825
-2021-02-12 20:29:13,900 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:14,104 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:14,287 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:14,482 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:14,665 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:14,665 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:14,271 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:14,273 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:14,408 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:14,410 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:14,736 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:14,737 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:14.736612
+2021-02-16 04:22:14,737 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:14,738 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;match&#39;
+2021-02-16 04:22:14,738 - stpipe.SkyMatchStep - INFO - Sky matching direction: DOWN
+2021-02-16 04:22:14,738 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
+2021-02-16 04:22:14,738 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:14,739 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-02-16 04:22:16,231 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.00836812 (old=0, delta=0.00836812)
+2021-02-16 04:22:16,233 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.979744 (old=0, delta=0.979744)
+2021-02-16 04:22:16,234 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.95818 (old=0, delta=2.95818)
+2021-02-16 04:22:16,236 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
+2021-02-16 04:22:16,236 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:16,236 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:16.236423
+2021-02-16 04:22:16,236 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.499811
+2021-02-16 04:22:16,237 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:16,441 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:16,616 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:16,800 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:16,985 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:16,986 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -15387,10 +15387,10 @@ Mean: 1.9995139 , 0.020078652
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (match down)
-Mean: 1.9995139 , 1.9995139
-Mean: 3.000412 , 1.9833848
-Mean: 5.0002847 , 2.097658
-Mean: 1.9995139 , 1.9928709
+Mean: 2.0000513 , 1.9916829
+Mean: 2.9993608 , 2.0196157
+Mean: 5.000281 , 2.0421035
+Mean: 2.0000513 , 2.0000513
 </pre>
 </div>
 </div>
@@ -15441,31 +15441,31 @@ Mean: 1.9995139 , 1.9928709
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:15,609 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:15,611 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:15,730 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:15,731 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;match&#39;, &#39;match_down&#39;: False, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:16,056 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:16,056 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:16.056212
-2021-02-12 20:29:16,057 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:16,057 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;match&#39;
-2021-02-12 20:29:16,058 - stpipe.SkyMatchStep - INFO - Sky matching direction: UP
-2021-02-12 20:29:16,058 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
-2021-02-12 20:29:16,058 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:16,059 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-02-12 20:29:17,531 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -2.90263 (old=0, delta=-2.90263)
-2021-02-12 20:29:17,532 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -1.8856 (old=0, delta=-1.8856)
-2021-02-12 20:29:17,534 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
-2021-02-12 20:29:17,535 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -2.89599 (old=0, delta=-2.89599)
-2021-02-12 20:29:17,536 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:17,536 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:17.536183
-2021-02-12 20:29:17,536 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.479971
-2021-02-12 20:29:17,537 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:17,735 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:17,911 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:18,108 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:18,289 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:18,290 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:17,961 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:17,963 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:18,111 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:18,113 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;match&#39;, &#39;match_down&#39;: False, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:18,439 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:18,440 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:18.439276
+2021-02-16 04:22:18,440 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:18,440 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;match&#39;
+2021-02-16 04:22:18,440 - stpipe.SkyMatchStep - INFO - Sky matching direction: UP
+2021-02-16 04:22:18,441 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
+2021-02-16 04:22:18,441 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:18,441 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-02-16 04:22:19,934 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -2.94981 (old=0, delta=-2.94981)
+2021-02-16 04:22:19,936 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -1.97843 (old=0, delta=-1.97843)
+2021-02-16 04:22:19,938 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
+2021-02-16 04:22:19,939 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: -2.95818 (old=0, delta=-2.95818)
+2021-02-16 04:22:19,939 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:19,940 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:19.939897
+2021-02-16 04:22:19,940 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.500621
+2021-02-16 04:22:19,940 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:20,135 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:20,310 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:20,499 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:20,674 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:20,675 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -15524,10 +15524,10 @@ Mean: 1.9995139 , 1.9928709
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (match up)
-Mean: 1.9995139 , 4.9021425
-Mean: 3.000412 , 4.886011
-Mean: 5.0002847 , 5.0002847
-Mean: 1.9995139 , 4.895498
+Mean: 2.0000513 , 4.9498606
+Mean: 2.9993608 , 4.977792
+Mean: 5.000281 , 5.000281
+Mean: 2.0000513 , 4.958228
 </pre>
 </div>
 </div>
@@ -15578,41 +15578,41 @@ Mean: 1.9995139 , 4.895498
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:29:19,206 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
-2021-02-12 20:29:19,208 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
-2021-02-12 20:29:19,328 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
-2021-02-12 20:29:19,330 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmprr_rsfbx/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-12 20:29:19,659 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:19,660 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-12 20:29:19.659487
-2021-02-12 20:29:19,660 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:19,660 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;global+match&#39;
-2021-02-12 20:29:19,661 - stpipe.SkyMatchStep - INFO - Sky matching direction: DOWN
-2021-02-12 20:29:19,661 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
-2021-02-12 20:29:19,661 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:19,662 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-02-12 20:29:21,134 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
-2021-02-12 20:29:21,136 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.01703 (old=0, delta=1.01703)
-2021-02-12 20:29:21,139 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.90263 (old=0, delta=2.90263)
-2021-02-12 20:29:21,140 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.00664259 (old=0, delta=0.00664259)
-2021-02-12 20:29:21,140 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:21,141 - stpipe.SkyMatchStep - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2021-02-12 20:29:21,213 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:21,214 - stpipe.SkyMatchStep - INFO -    &#34;Global&#34; sky value correction: 1.9727926441307728 [not converted]
-2021-02-12 20:29:21,214 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:21,214 - stpipe.SkyMatchStep - INFO - ----  Final (match+global) sky for:
-2021-02-12 20:29:21,216 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97279 (old=0, delta=1.97279)
-2021-02-12 20:29:21,217 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.98982 (old=1.01703, delta=1.97279)
-2021-02-12 20:29:21,218 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.87542 (old=2.90263, delta=1.97279)
-2021-02-12 20:29:21,220 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.97944 (old=0.00664259, delta=1.97279)
-2021-02-12 20:29:21,220 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:21,220 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-12 20:29:21.220601
-2021-02-12 20:29:21,221 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.561114
-2021-02-12 20:29:21,221 - stpipe.SkyMatchStep - INFO -  
-2021-02-12 20:29:21,430 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
-2021-02-12 20:29:21,607 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
-2021-02-12 20:29:21,797 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
-2021-02-12 20:29:21,981 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
-2021-02-12 20:29:21,981 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
+<pre>2021-02-16 04:22:21,616 - CRDS - ERROR -  Error determining best reference for &#39;pars-skymatchstep&#39;  =   Unknown reference type &#39;pars-skymatchstep&#39;
+2021-02-16 04:22:21,618 - stpipe.SkyMatchStep - INFO - SkyMatchStep instance created.
+2021-02-16 04:22:21,754 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep running with args (&#39;skymatch_asnfile2.json&#39;,).
+2021-02-16 04:22:21,756 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpib30zu49/MIRI&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: True, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-16 04:22:22,077 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:22,078 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-16 04:22:22.077276
+2021-02-16 04:22:22,078 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:22,078 - stpipe.SkyMatchStep - INFO - Sky computation method: &#39;global+match&#39;
+2021-02-16 04:22:22,079 - stpipe.SkyMatchStep - INFO - Sky matching direction: DOWN
+2021-02-16 04:22:22,079 - stpipe.SkyMatchStep - INFO - Sky subtraction from image data: ON
+2021-02-16 04:22:22,079 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:22,079 - stpipe.SkyMatchStep - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-02-16 04:22:23,560 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.00836812 (old=0, delta=0.00836812)
+2021-02-16 04:22:23,562 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0.979744 (old=0, delta=0.979744)
+2021-02-16 04:22:23,563 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.95818 (old=0, delta=2.95818)
+2021-02-16 04:22:23,565 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 0 (old=0, delta=0)
+2021-02-16 04:22:23,565 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:23,565 - stpipe.SkyMatchStep - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2021-02-16 04:22:23,638 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:23,638 - stpipe.SkyMatchStep - INFO -    &#34;Global&#34; sky value correction: 1.9534461680218564 [not converted]
+2021-02-16 04:22:23,638 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:23,639 - stpipe.SkyMatchStep - INFO - ----  Final (match+global) sky for:
+2021-02-16 04:22:23,640 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.96181 (old=0.00836812, delta=1.95345)
+2021-02-16 04:22:23,641 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq2_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 2.93319 (old=0.979744, delta=1.95345)
+2021-02-16 04:22:23,643 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq3_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 4.91162 (old=2.95818, delta=1.95345)
+2021-02-16 04:22:23,644 - stpipe.SkyMatchStep - INFO -    *  Image ID=det_image_seq4_MIRIMAGE_F560Wexp1_cal_skymatch.fits. Sky background: 1.95345 (old=0, delta=1.95345)
+2021-02-16 04:22:23,644 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:23,645 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-16 04:22:23.644950
+2021-02-16 04:22:23,645 - stpipe.SkyMatchStep - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:01.567674
+2021-02-16 04:22:23,645 - stpipe.SkyMatchStep - INFO -  
+2021-02-16 04:22:23,835 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_0_skymatchstep.fits
+2021-02-16 04:22:24,009 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_1_skymatchstep.fits
+2021-02-16 04:22:24,196 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_2_skymatchstep.fits
+2021-02-16 04:22:24,376 - stpipe.SkyMatchStep - INFO - Saved model in MIRI_3_skymatchstep.fits
+2021-02-16 04:22:24,377 - stpipe.SkyMatchStep - INFO - Step SkyMatchStep done
 </pre>
 </div>
 </div>
@@ -15671,10 +15671,10 @@ Mean: 1.9995139 , 4.895498
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Mean: original, new (global+match)
-Mean: 1.9995139 , 0.026721232
-Mean: 3.000412 , 0.010591848
-Mean: 5.0002847 , 0.12486489
-Mean: 1.9995139 , 0.020078652
+Mean: 2.0000513 , 0.0382368
+Mean: 2.9993608 , 0.066169456
+Mean: 5.000281 , 0.08865726
+Mean: 2.0000513 , 0.04660488
 </pre>
 </div>
 </div>

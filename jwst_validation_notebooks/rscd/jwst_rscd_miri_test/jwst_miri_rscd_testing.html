@@ -10,9 +10,9 @@ None<!DOCTYPE html>
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14519,63 +14519,63 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-12 20:28:42,334 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-02-12 20:28:42,397 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:42,398 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-02-12 20:28:42,423 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
-2021-02-12 20:28:42,701 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-02-12 20:28:42,714 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-02-12 20:28:42,779 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:42,781 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp6uj0ciha/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-02-12 20:28:42,878 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-02-12 20:28:43,389 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-02-12 20:28:43,389 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-02-12 20:28:43,810 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-02-12 20:28:43,921 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:43,922 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-02-12 20:28:43,934 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
-2021-02-12 20:28:44,524 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-02-12 20:28:44,536 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-02-12 20:28:44,630 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:44,631 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp6uj0ciha/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-02-12 20:28:44,643 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-02-12 20:28:45,611 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-02-12 20:28:45,611 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-02-12 20:28:45,757 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-02-12 20:28:45,919 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2021-02-12 20:28:45,920 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-02-12 20:28:45,953 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
-2021-02-12 20:28:46,134 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
-2021-02-12 20:28:46,139 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-02-12 20:28:46,152 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-02-12 20:28:46,281 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2021-02-12 20:28:46,282 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp6uj0ciha/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-02-12 20:28:46,304 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-02-12 20:28:46,603 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
-2021-02-12 20:28:46,603 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-02-12 20:28:47,049 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-02-12 20:28:47,192 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:47,193 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-02-12 20:28:47,206 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
-2021-02-12 20:28:47,765 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-02-12 20:28:47,777 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-02-12 20:28:47,856 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-02-12 20:28:47,857 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp6uj0ciha/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-02-12 20:28:47,868 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-02-12 20:28:47,912 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
-2021-02-12 20:28:48,241 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-02-12 20:28:48,241 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-02-12 20:28:49,004 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-02-12 20:28:49,158 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2021-02-12 20:28:49,160 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-02-12 20:28:49,215 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0021.fits
-2021-02-12 20:28:50,021 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-02-12 20:28:50,033 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-02-12 20:28:50,102 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2021-02-12 20:28:50,103 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp6uj0ciha/jw04193001001_01101_00001_MIRIFULONG&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-02-12 20:28:50,143 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0011.fits
-2021-02-12 20:28:51,503 - stpipe.RscdStep - INFO - Saved model in jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
-2021-02-12 20:28:51,503 - stpipe.RscdStep - INFO - Step RscdStep done
+<pre>2021-02-16 04:21:45,209 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2021-02-16 04:21:45,293 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:45,294 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-02-16 04:21:45,306 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
+2021-02-16 04:21:45,587 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2021-02-16 04:21:45,601 - stpipe.RscdStep - INFO - RscdStep instance created.
+2021-02-16 04:21:45,690 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:45,691 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvuc8jm78/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-02-16 04:21:45,701 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2021-02-16 04:21:46,220 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2021-02-16 04:21:46,221 - stpipe.RscdStep - INFO - Step RscdStep done
+2021-02-16 04:21:46,655 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2021-02-16 04:21:46,793 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:46,794 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-02-16 04:21:46,804 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
+2021-02-16 04:21:47,424 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2021-02-16 04:21:47,439 - stpipe.RscdStep - INFO - RscdStep instance created.
+2021-02-16 04:21:47,573 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:47,574 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvuc8jm78/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-02-16 04:21:47,584 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2021-02-16 04:21:48,563 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2021-02-16 04:21:48,564 - stpipe.RscdStep - INFO - Step RscdStep done
+2021-02-16 04:21:48,710 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2021-02-16 04:21:48,904 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2021-02-16 04:21:48,906 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-02-16 04:21:48,916 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
+2021-02-16 04:21:49,084 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
+2021-02-16 04:21:49,090 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2021-02-16 04:21:49,103 - stpipe.RscdStep - INFO - RscdStep instance created.
+2021-02-16 04:21:49,266 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2021-02-16 04:21:49,268 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvuc8jm78/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-02-16 04:21:49,278 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2021-02-16 04:21:49,580 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
+2021-02-16 04:21:49,581 - stpipe.RscdStep - INFO - Step RscdStep done
+2021-02-16 04:21:50,100 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2021-02-16 04:21:50,276 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:50,277 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-02-16 04:21:50,289 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0023.fits
+2021-02-16 04:21:50,814 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2021-02-16 04:21:50,826 - stpipe.RscdStep - INFO - RscdStep instance created.
+2021-02-16 04:21:50,934 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2021-02-16 04:21:50,936 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvuc8jm78/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-02-16 04:21:50,945 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2021-02-16 04:21:50,982 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
+2021-02-16 04:21:51,400 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2021-02-16 04:21:51,400 - stpipe.RscdStep - INFO - Step RscdStep done
+2021-02-16 04:21:52,155 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2021-02-16 04:21:52,365 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
+2021-02-16 04:21:52,367 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-02-16 04:21:52,379 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0021.fits
+2021-02-16 04:21:53,142 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2021-02-16 04:21:53,155 - stpipe.RscdStep - INFO - RscdStep instance created.
+2021-02-16 04:21:53,216 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
+2021-02-16 04:21:53,217 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvuc8jm78/jw04193001001_01101_00001_MIRIFULONG&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-02-16 04:21:53,228 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0011.fits
+2021-02-16 04:21:54,523 - stpipe.RscdStep - INFO - Saved model in jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
+2021-02-16 04:21:54,524 - stpipe.RscdStep - INFO - Step RscdStep done
 </pre>
 </div>
 </div>
