@@ -14632,236 +14632,236 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:14:42,988 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
-2021-02-18 20:14:42,989 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
-2021-02-18 20:14:42,991 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
-2021-02-18 20:14:42,991 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
-2021-02-18 20:14:42,992 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
-2021-02-18 20:14:42,993 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
-2021-02-18 20:14:43,080 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-02-18 20:14:43,084 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-02-18 20:14:43,091 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
-2021-02-18 20:14:43,176 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_datalvl_0002.rmap       694 bytes  (1 / 141 files) (0 / 390.2 K bytes)
-2021-02-18 20:14:43,210 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_calver_0024.rmap      2.8 K bytes  (2 / 141 files) (694 / 390.2 K bytes)
-2021-02-18 20:14:43,239 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_0023.imap               385 bytes  (3 / 141 files) (3.4 K / 390.2 K bytes)
-2021-02-18 20:14:43,269 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_wavelengthrange_0017.rmap    1.1 K bytes  (4 / 141 files) (3.8 K / 390.2 K bytes)
-2021-02-18 20:14:43,300 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_wavecorr_0003.rmap      833 bytes  (5 / 141 files) (4.9 K / 390.2 K bytes)
-2021-02-18 20:14:43,332 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_superbias_0039.rmap   15.9 K bytes  (6 / 141 files) (5.8 K / 390.2 K bytes)
-2021-02-18 20:14:43,364 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_sflat_0011.rmap     19.3 K bytes  (7 / 141 files) (21.7 K / 390.2 K bytes)
-2021-02-18 20:14:43,394 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_saturation_0017.rmap    2.0 K bytes  (8 / 141 files) (40.9 K / 390.2 K bytes)
-2021-02-18 20:14:43,424 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_refpix_0014.rmap     1.5 K bytes  (9 / 141 files) (42.9 K / 390.2 K bytes)
-2021-02-18 20:14:43,455 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_readnoise_0020.rmap    2.3 K bytes  (10 / 141 files) (44.5 K / 390.2 K bytes)
-2021-02-18 20:14:43,485 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_photom_0012.rmap       907 bytes  (11 / 141 files) (46.8 K / 390.2 K bytes)
-2021-02-18 20:14:43,515 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_pathloss_0003.rmap      932 bytes  (12 / 141 files) (47.7 K / 390.2 K bytes)
-2021-02-18 20:14:43,545 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_pars-spec2pipeline_0004.rmap    1.8 K bytes  (13 / 141 files) (48.6 K / 390.2 K bytes)
-2021-02-18 20:14:43,575 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ote_0020.rmap        1.0 K bytes  (14 / 141 files) (50.5 K / 390.2 K bytes)
-2021-02-18 20:14:43,606 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_msaoper_0003.rmap      783 bytes  (15 / 141 files) (51.5 K / 390.2 K bytes)
-2021-02-18 20:14:43,633 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_msa_0018.rmap        1.0 K bytes  (16 / 141 files) (52.3 K / 390.2 K bytes)
-2021-02-18 20:14:43,661 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_mask_0021.rmap       1.5 K bytes  (17 / 141 files) (53.3 K / 390.2 K bytes)
-2021-02-18 20:14:43,692 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_linearity_0017.rmap    1.6 K bytes  (18 / 141 files) (54.7 K / 390.2 K bytes)
-2021-02-18 20:14:43,722 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ipc_0006.rmap          876 bytes  (19 / 141 files) (56.3 K / 390.2 K bytes)
-2021-02-18 20:14:43,750 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifuslicer_0008.rmap    1.0 K bytes  (20 / 141 files) (57.2 K / 390.2 K bytes)
-2021-02-18 20:14:43,777 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifupost_0010.rmap      991 bytes  (21 / 141 files) (58.2 K / 390.2 K bytes)
-2021-02-18 20:14:43,806 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifufore_0008.rmap      991 bytes  (22 / 141 files) (59.2 K / 390.2 K bytes)
-2021-02-18 20:14:43,836 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_gain_0019.rmap       1.8 K bytes  (23 / 141 files) (60.2 K / 390.2 K bytes)
-2021-02-18 20:14:43,865 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fpa_0019.rmap        1.0 K bytes  (24 / 141 files) (61.9 K / 390.2 K bytes)
-2021-02-18 20:14:43,894 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fore_0017.rmap       3.4 K bytes  (25 / 141 files) (63.0 K / 390.2 K bytes)
-2021-02-18 20:14:43,924 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_flat_0014.rmap       3.8 K bytes  (26 / 141 files) (66.4 K / 390.2 K bytes)
-2021-02-18 20:14:43,953 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fflat_0009.rmap      3.3 K bytes  (27 / 141 files) (70.2 K / 390.2 K bytes)
-2021-02-18 20:14:43,984 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_extract1d_0012.rmap    1.2 K bytes  (28 / 141 files) (73.5 K / 390.2 K bytes)
-2021-02-18 20:14:44,014 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_disperser_0019.rmap    3.9 K bytes  (29 / 141 files) (74.7 K / 390.2 K bytes)
-2021-02-18 20:14:44,045 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_dflat_0006.rmap      1.1 K bytes  (30 / 141 files) (78.7 K / 390.2 K bytes)
-2021-02-18 20:14:44,075 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_dark_0032.rmap      14.5 K bytes  (31 / 141 files) (79.7 K / 390.2 K bytes)
-2021-02-18 20:14:44,106 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_cubepar_0007.rmap      915 bytes  (32 / 141 files) (94.3 K / 390.2 K bytes)
-2021-02-18 20:14:44,136 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_collimator_0017.rmap    1.1 K bytes  (33 / 141 files) (95.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,166 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_camera_0017.rmap     1.0 K bytes  (34 / 141 files) (96.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,195 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_barshadow_0003.rmap      877 bytes  (35 / 141 files) (97.3 K / 390.2 K bytes)
-2021-02-18 20:14:44,224 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_area_0014.rmap       4.5 K bytes  (36 / 141 files) (98.1 K / 390.2 K bytes)
-2021-02-18 20:14:44,251 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_apcorr_0005.rmap     5.3 K bytes  (37 / 141 files) (102.6 K / 390.2 K bytes)
-2021-02-18 20:14:44,281 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_0217.imap            4.8 K bytes  (38 / 141 files) (107.9 K / 390.2 K bytes)
-2021-02-18 20:14:44,309 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_wfssbkg_0002.rmap     2.3 K bytes  (39 / 141 files) (112.7 K / 390.2 K bytes)
-2021-02-18 20:14:44,339 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_wavelengthrange_0005.rmap      811 bytes  (40 / 141 files) (115.0 K / 390.2 K bytes)
-2021-02-18 20:14:44,369 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_trappars_0004.rmap      753 bytes  (41 / 141 files) (115.8 K / 390.2 K bytes)
-2021-02-18 20:14:44,398 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_trapdensity_0004.rmap      774 bytes  (42 / 141 files) (116.5 K / 390.2 K bytes)
-2021-02-18 20:14:44,428 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_throughput_0004.rmap      979 bytes  (43 / 141 files) (117.3 K / 390.2 K bytes)
-2021-02-18 20:14:44,458 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_superbias_0022.rmap    4.6 K bytes  (44 / 141 files) (118.3 K / 390.2 K bytes)
-2021-02-18 20:14:44,490 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_specwcs_0005.rmap     2.3 K bytes  (45 / 141 files) (122.9 K / 390.2 K bytes)
-2021-02-18 20:14:44,515 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_saturation_0011.rmap      693 bytes  (46 / 141 files) (125.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,538 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_readnoise_0008.rmap      969 bytes  (47 / 141 files) (125.9 K / 390.2 K bytes)
-2021-02-18 20:14:44,563 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_photom_0026.rmap        996 bytes  (48 / 141 files) (126.8 K / 390.2 K bytes)
-2021-02-18 20:14:44,590 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_persat_0005.rmap        738 bytes  (49 / 141 files) (127.8 K / 390.2 K bytes)
-2021-02-18 20:14:44,620 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pathloss_0002.rmap      707 bytes  (50 / 141 files) (128.6 K / 390.2 K bytes)
-2021-02-18 20:14:44,650 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pars-tweakregstep_0003.rmap    2.2 K bytes  (51 / 141 files) (129.3 K / 390.2 K bytes)
-2021-02-18 20:14:44,680 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pars-image2pipeline_0002.rmap      712 bytes  (52 / 141 files) (131.5 K / 390.2 K bytes)
-2021-02-18 20:14:44,710 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_mask_0017.rmap          735 bytes  (53 / 141 files) (132.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,740 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_linearity_0016.rmap      827 bytes  (54 / 141 files) (133.0 K / 390.2 K bytes)
-2021-02-18 20:14:44,769 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_ipc_0006.rmap           590 bytes  (55 / 141 files) (133.8 K / 390.2 K bytes)
-2021-02-18 20:14:44,799 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_gain_0010.rmap          838 bytes  (56 / 141 files) (134.4 K / 390.2 K bytes)
-2021-02-18 20:14:44,830 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_flat_0019.rmap        4.1 K bytes  (57 / 141 files) (135.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,854 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_extract1d_0006.rmap      854 bytes  (58 / 141 files) (139.4 K / 390.2 K bytes)
-2021-02-18 20:14:44,882 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_drizpars_0004.rmap      519 bytes  (59 / 141 files) (140.2 K / 390.2 K bytes)
-2021-02-18 20:14:44,912 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_distortion_0017.rmap      899 bytes  (60 / 141 files) (140.7 K / 390.2 K bytes)
-2021-02-18 20:14:44,940 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_dark_0027.rmap        4.0 K bytes  (61 / 141 files) (141.6 K / 390.2 K bytes)
-2021-02-18 20:14:44,971 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_area_0012.rmap        1.1 K bytes  (62 / 141 files) (145.6 K / 390.2 K bytes)
-2021-02-18 20:14:45,000 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_apcorr_0004.rmap      4.1 K bytes  (63 / 141 files) (146.7 K / 390.2 K bytes)
-2021-02-18 20:14:45,031 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_abvegaoffset_0002.rmap    1.3 K bytes  (64 / 141 files) (150.8 K / 390.2 K bytes)
-2021-02-18 20:14:45,061 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_0139.imap             4.6 K bytes  (65 / 141 files) (152.1 K / 390.2 K bytes)
-2021-02-18 20:14:45,089 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_wfssbkg_0003.rmap     7.2 K bytes  (66 / 141 files) (156.7 K / 390.2 K bytes)
-2021-02-18 20:14:45,118 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_wavelengthrange_0009.rmap      945 bytes  (67 / 141 files) (163.9 K / 390.2 K bytes)
-2021-02-18 20:14:45,149 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_tsophot_0002.rmap       794 bytes  (68 / 141 files) (164.8 K / 390.2 K bytes)
-2021-02-18 20:14:45,179 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_trappars_0003.rmap    1.6 K bytes  (69 / 141 files) (165.6 K / 390.2 K bytes)
-2021-02-18 20:14:45,211 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_trapdensity_0003.rmap    1.6 K bytes  (70 / 141 files) (167.2 K / 390.2 K bytes)
-2021-02-18 20:14:45,240 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_superbias_0006.rmap    2.6 K bytes  (71 / 141 files) (168.8 K / 390.2 K bytes)
-2021-02-18 20:14:45,270 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_specwcs_0008.rmap     1.7 K bytes  (72 / 141 files) (171.4 K / 390.2 K bytes)
-2021-02-18 20:14:45,298 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_saturation_0006.rmap    2.2 K bytes  (73 / 141 files) (173.1 K / 390.2 K bytes)
-2021-02-18 20:14:45,330 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_readnoise_0006.rmap    5.6 K bytes  (74 / 141 files) (175.2 K / 390.2 K bytes)
-2021-02-18 20:14:45,359 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_psfmask_0005.rmap    10.7 K bytes  (75 / 141 files) (180.8 K / 390.2 K bytes)
-2021-02-18 20:14:45,390 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_photom_0010.rmap      4.3 K bytes  (76 / 141 files) (191.6 K / 390.2 K bytes)
-2021-02-18 20:14:45,417 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_persat_0004.rmap      1.6 K bytes  (77 / 141 files) (195.9 K / 390.2 K bytes)
-2021-02-18 20:14:45,442 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_pars-tweakregstep_0002.rmap    4.5 K bytes  (78 / 141 files) (197.5 K / 390.2 K bytes)
-2021-02-18 20:14:45,464 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_mask_0007.rmap        2.3 K bytes  (79 / 141 files) (201.9 K / 390.2 K bytes)
-2021-02-18 20:14:45,487 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_linearity_0011.rmap    2.4 K bytes  (80 / 141 files) (204.2 K / 390.2 K bytes)
-2021-02-18 20:14:45,514 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_ipc_0003.rmap         2.0 K bytes  (81 / 141 files) (206.6 K / 390.2 K bytes)
-2021-02-18 20:14:45,547 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_gain_0010.rmap        2.3 K bytes  (82 / 141 files) (208.6 K / 390.2 K bytes)
-2021-02-18 20:14:45,581 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_flat_0016.rmap       28.9 K bytes  (83 / 141 files) (210.9 K / 390.2 K bytes)
-2021-02-18 20:14:45,612 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_filteroffset_0003.rmap    1.1 K bytes  (84 / 141 files) (239.7 K / 390.2 K bytes)
-2021-02-18 20:14:45,641 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_drizpars_0001.rmap      519 bytes  (85 / 141 files) (240.9 K / 390.2 K bytes)
-2021-02-18 20:14:45,673 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_distortion_0022.rmap    9.1 K bytes  (86 / 141 files) (241.4 K / 390.2 K bytes)
-2021-02-18 20:14:45,702 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_dark_0021.rmap       14.2 K bytes  (87 / 141 files) (250.5 K / 390.2 K bytes)
-2021-02-18 20:14:45,730 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_area_0006.rmap        4.6 K bytes  (88 / 141 files) (264.7 K / 390.2 K bytes)
-2021-02-18 20:14:45,759 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_apcorr_0007.rmap      4.2 K bytes  (89 / 141 files) (269.3 K / 390.2 K bytes)
-2021-02-18 20:14:45,789 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_abvegaoffset_0002.rmap    1.3 K bytes  (90 / 141 files) (273.5 K / 390.2 K bytes)
-2021-02-18 20:14:45,815 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_0149.imap             4.5 K bytes  (91 / 141 files) (274.8 K / 390.2 K bytes)
-2021-02-18 20:14:45,845 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_wcsregions_0009.rmap    1.1 K bytes  (92 / 141 files) (279.3 K / 390.2 K bytes)
-2021-02-18 20:14:45,874 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_wavelengthrange_0020.rmap    1.1 K bytes  (93 / 141 files) (280.4 K / 390.2 K bytes)
-2021-02-18 20:14:45,905 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_tsophot_0002.rmap         780 bytes  (94 / 141 files) (281.5 K / 390.2 K bytes)
-2021-02-18 20:14:45,935 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_straymask_0007.rmap       885 bytes  (95 / 141 files) (282.3 K / 390.2 K bytes)
-2021-02-18 20:14:45,962 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_specwcs_0026.rmap       4.0 K bytes  (96 / 141 files) (283.2 K / 390.2 K bytes)
-2021-02-18 20:14:45,985 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_saturation_0012.rmap      961 bytes  (97 / 141 files) (287.1 K / 390.2 K bytes)
-2021-02-18 20:14:46,013 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_rscd_0006.rmap            860 bytes  (98 / 141 files) (288.1 K / 390.2 K bytes)
-2021-02-18 20:14:46,042 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_resol_0004.rmap           739 bytes  (99 / 141 files) (289.0 K / 390.2 K bytes)
-2021-02-18 20:14:46,072 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_reset_0012.rmap         2.2 K bytes  (100 / 141 files) (289.7 K / 390.2 K bytes)
-2021-02-18 20:14:46,101 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_regions_0026.rmap       3.6 K bytes  (101 / 141 files) (291.9 K / 390.2 K bytes)
-2021-02-18 20:14:46,132 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_readnoise_0015.rmap     3.3 K bytes  (102 / 141 files) (295.5 K / 390.2 K bytes)
-2021-02-18 20:14:46,161 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_psfmask_0003.rmap       1.3 K bytes  (103 / 141 files) (298.8 K / 390.2 K bytes)
-2021-02-18 20:14:46,190 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_photom_0030.rmap        5.5 K bytes  (104 / 141 files) (300.0 K / 390.2 K bytes)
-2021-02-18 20:14:46,219 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_pars-tweakregstep_0002.rmap    1.8 K bytes  (105 / 141 files) (305.5 K / 390.2 K bytes)
-2021-02-18 20:14:46,249 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_mask_0015.rmap            893 bytes  (106 / 141 files) (307.4 K / 390.2 K bytes)
-2021-02-18 20:14:46,278 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_linearity_0013.rmap     1.9 K bytes  (107 / 141 files) (308.3 K / 390.2 K bytes)
-2021-02-18 20:14:46,310 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_ipc_0005.rmap             721 bytes  (108 / 141 files) (310.2 K / 390.2 K bytes)
-2021-02-18 20:14:46,339 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_gain_0007.rmap            893 bytes  (109 / 141 files) (310.9 K / 390.2 K bytes)
-2021-02-18 20:14:46,369 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_fringe_0015.rmap        3.5 K bytes  (110 / 141 files) (311.8 K / 390.2 K bytes)
-2021-02-18 20:14:46,408 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_flat_0048.rmap         21.9 K bytes  (111 / 141 files) (315.3 K / 390.2 K bytes)
-2021-02-18 20:14:46,439 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_filteroffset_0020.rmap    1.1 K bytes  (112 / 141 files) (337.3 K / 390.2 K bytes)
-2021-02-18 20:14:46,470 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_extract1d_0013.rmap     1.1 K bytes  (113 / 141 files) (338.4 K / 390.2 K bytes)
-2021-02-18 20:14:46,500 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_drizpars_0002.rmap        511 bytes  (114 / 141 files) (339.5 K / 390.2 K bytes)
-2021-02-18 20:14:46,530 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_distortion_0032.rmap    3.6 K bytes  (115 / 141 files) (340.0 K / 390.2 K bytes)
-2021-02-18 20:14:46,558 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_dark_0021.rmap          3.2 K bytes  (116 / 141 files) (343.5 K / 390.2 K bytes)
-2021-02-18 20:14:46,582 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_cubepar_0008.rmap         686 bytes  (117 / 141 files) (346.7 K / 390.2 K bytes)
-2021-02-18 20:14:46,606 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_area_0011.rmap            755 bytes  (118 / 141 files) (347.4 K / 390.2 K bytes)
-2021-02-18 20:14:46,632 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_apcorr_0007.rmap        4.3 K bytes  (119 / 141 files) (348.2 K / 390.2 K bytes)
-2021-02-18 20:14:46,663 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_abvegaoffset_0002.rmap    1.3 K bytes  (120 / 141 files) (352.5 K / 390.2 K bytes)
-2021-02-18 20:14:46,693 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_0219.imap               4.6 K bytes  (121 / 141 files) (353.7 K / 390.2 K bytes)
-2021-02-18 20:14:46,724 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_trappars_0004.rmap         903 bytes  (122 / 141 files) (358.3 K / 390.2 K bytes)
-2021-02-18 20:14:46,752 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_trapdensity_0004.rmap      930 bytes  (123 / 141 files) (359.2 K / 390.2 K bytes)
-2021-02-18 20:14:46,781 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_superbias_0015.rmap      3.8 K bytes  (124 / 141 files) (360.1 K / 390.2 K bytes)
-2021-02-18 20:14:46,811 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_saturation_0009.rmap       779 bytes  (125 / 141 files) (363.9 K / 390.2 K bytes)
-2021-02-18 20:14:46,842 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_readnoise_0011.rmap      1.3 K bytes  (126 / 141 files) (364.7 K / 390.2 K bytes)
-2021-02-18 20:14:46,871 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_photom_0013.rmap         1.1 K bytes  (127 / 141 files) (366.0 K / 390.2 K bytes)
-2021-02-18 20:14:46,903 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_persat_0004.rmap           884 bytes  (128 / 141 files) (367.1 K / 390.2 K bytes)
-2021-02-18 20:14:46,933 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_pars-tweakregstep_0002.rmap      850 bytes  (129 / 141 files) (368.0 K / 390.2 K bytes)
-2021-02-18 20:14:46,964 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_mask_0018.rmap           1.2 K bytes  (130 / 141 files) (368.8 K / 390.2 K bytes)
-2021-02-18 20:14:46,993 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_linearity_0013.rmap        925 bytes  (131 / 141 files) (370.0 K / 390.2 K bytes)
-2021-02-18 20:14:47,021 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_ipc_0003.rmap              614 bytes  (132 / 141 files) (370.9 K / 390.2 K bytes)
-2021-02-18 20:14:47,050 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_gain_0010.rmap             890 bytes  (133 / 141 files) (371.5 K / 390.2 K bytes)
-2021-02-18 20:14:47,081 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_flat_0009.rmap           1.1 K bytes  (134 / 141 files) (372.4 K / 390.2 K bytes)
-2021-02-18 20:14:47,105 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_distortion_0007.rmap     1.1 K bytes  (135 / 141 files) (373.5 K / 390.2 K bytes)
-2021-02-18 20:14:47,132 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_dark_0013.rmap           4.3 K bytes  (136 / 141 files) (374.6 K / 390.2 K bytes)
-2021-02-18 20:14:47,164 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_area_0009.rmap           1.0 K bytes  (137 / 141 files) (378.9 K / 390.2 K bytes)
-2021-02-18 20:14:47,194 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_apcorr_0002.rmap         4.1 K bytes  (138 / 141 files) (380.0 K / 390.2 K bytes)
-2021-02-18 20:14:47,227 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_abvegaoffset_0002.rmap    1.3 K bytes  (139 / 141 files) (384.1 K / 390.2 K bytes)
-2021-02-18 20:14:47,255 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_0088.imap                4.3 K bytes  (140 / 141 files) (385.3 K / 390.2 K bytes)
-2021-02-18 20:14:47,285 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_0676.pmap                      580 bytes  (141 / 141 files) (389.6 K / 390.2 K bytes)
-2021-02-18 20:14:47,456 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_area_0004.fits    4.2 M bytes  (1 / 6 files) (0 / 21.2 M bytes)
-2021-02-18 20:14:47,516 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf    9.9 K bytes  (2 / 6 files) (4.2 M / 21.2 M bytes)
-2021-02-18 20:14:47,543 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits    8.6 K bytes  (3 / 6 files) (4.2 M / 21.2 M bytes)
-2021-02-18 20:14:47,572 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf    2.5 K bytes  (4 / 6 files) (4.3 M / 21.2 M bytes)
-2021-02-18 20:14:47,623 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_flat_0507.fits   16.9 M bytes  (5 / 6 files) (4.3 M / 21.2 M bytes)
-2021-02-18 20:14:47,852 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits   11.5 K bytes  (6 / 6 files) (21.2 M / 21.2 M bytes)
-2021-02-18 20:14:47,885 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_area_0004.fits&#39;.
-2021-02-18 20:14:47,885 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,886 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,886 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,886 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,886 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf&#39;.
-2021-02-18 20:14:47,887 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2021-02-18 20:14:47,887 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,887 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf&#39;.
-2021-02-18 20:14:47,888 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_flat_0507.fits&#39;.
-2021-02-18 20:14:47,888 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,888 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,888 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,889 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,889 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,889 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,889 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,890 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits&#39;.
-2021-02-18 20:14:47,891 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,891 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,892 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,892 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,892 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
-2021-02-18 20:14:47,892 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
-2021-02-18 20:14:47,917 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-02-18 20:14:47,917 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
-2021-02-18 20:14:48,020 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-02-18 20:14:48,022 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-02-18 20:14:48,107 - stpipe.Image2Pipeline.assign_wcs - INFO - Created a MIRI mir_image pipeline with references {&#39;distortion&#39;: &#39;crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf&#39;, &#39;filteroffset&#39;: &#39;crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf&#39;, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: None, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-02-18 20:14:48,153 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
-2021-02-18 20:14:48,153 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
-2021-02-18 20:14:48,153 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
-2021-02-18 20:14:48,186 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/astropy/modeling/fitting.py:780: AstropyUserWarning: The fit may be poorly conditioned
+<pre>2021-02-19 05:58:46,239 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2021-02-19 05:58:46,240 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2021-02-19 05:58:46,242 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2021-02-19 05:58:46,243 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2021-02-19 05:58:46,244 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2021-02-19 05:58:46,245 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2021-02-19 05:58:46,308 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-02-19 05:58:46,312 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-02-19 05:58:46,319 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2021-02-19 05:58:46,406 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_datalvl_0002.rmap       694 bytes  (1 / 141 files) (0 / 390.2 K bytes)
+2021-02-19 05:58:46,439 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_calver_0024.rmap      2.8 K bytes  (2 / 141 files) (694 / 390.2 K bytes)
+2021-02-19 05:58:46,471 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_system_0023.imap               385 bytes  (3 / 141 files) (3.4 K / 390.2 K bytes)
+2021-02-19 05:58:46,504 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_wavelengthrange_0017.rmap    1.1 K bytes  (4 / 141 files) (3.8 K / 390.2 K bytes)
+2021-02-19 05:58:46,542 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_wavecorr_0003.rmap      833 bytes  (5 / 141 files) (4.9 K / 390.2 K bytes)
+2021-02-19 05:58:46,569 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_superbias_0039.rmap   15.9 K bytes  (6 / 141 files) (5.8 K / 390.2 K bytes)
+2021-02-19 05:58:46,601 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_sflat_0011.rmap     19.3 K bytes  (7 / 141 files) (21.7 K / 390.2 K bytes)
+2021-02-19 05:58:46,631 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_saturation_0017.rmap    2.0 K bytes  (8 / 141 files) (40.9 K / 390.2 K bytes)
+2021-02-19 05:58:46,662 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_refpix_0014.rmap     1.5 K bytes  (9 / 141 files) (42.9 K / 390.2 K bytes)
+2021-02-19 05:58:46,692 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_readnoise_0020.rmap    2.3 K bytes  (10 / 141 files) (44.5 K / 390.2 K bytes)
+2021-02-19 05:58:46,723 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_photom_0012.rmap       907 bytes  (11 / 141 files) (46.8 K / 390.2 K bytes)
+2021-02-19 05:58:46,750 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_pathloss_0003.rmap      932 bytes  (12 / 141 files) (47.7 K / 390.2 K bytes)
+2021-02-19 05:58:46,777 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_pars-spec2pipeline_0004.rmap    1.8 K bytes  (13 / 141 files) (48.6 K / 390.2 K bytes)
+2021-02-19 05:58:46,807 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ote_0020.rmap        1.0 K bytes  (14 / 141 files) (50.5 K / 390.2 K bytes)
+2021-02-19 05:58:46,838 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_msaoper_0003.rmap      783 bytes  (15 / 141 files) (51.5 K / 390.2 K bytes)
+2021-02-19 05:58:46,867 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_msa_0018.rmap        1.0 K bytes  (16 / 141 files) (52.3 K / 390.2 K bytes)
+2021-02-19 05:58:46,895 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_mask_0021.rmap       1.5 K bytes  (17 / 141 files) (53.3 K / 390.2 K bytes)
+2021-02-19 05:58:46,918 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_linearity_0017.rmap    1.6 K bytes  (18 / 141 files) (54.7 K / 390.2 K bytes)
+2021-02-19 05:58:46,942 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ipc_0006.rmap          876 bytes  (19 / 141 files) (56.3 K / 390.2 K bytes)
+2021-02-19 05:58:46,970 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifuslicer_0008.rmap    1.0 K bytes  (20 / 141 files) (57.2 K / 390.2 K bytes)
+2021-02-19 05:58:46,998 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifupost_0010.rmap      991 bytes  (21 / 141 files) (58.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,023 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_ifufore_0008.rmap      991 bytes  (22 / 141 files) (59.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,052 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_gain_0019.rmap       1.8 K bytes  (23 / 141 files) (60.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,082 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fpa_0019.rmap        1.0 K bytes  (24 / 141 files) (61.9 K / 390.2 K bytes)
+2021-02-19 05:58:47,114 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fore_0017.rmap       3.4 K bytes  (25 / 141 files) (63.0 K / 390.2 K bytes)
+2021-02-19 05:58:47,144 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_flat_0014.rmap       3.8 K bytes  (26 / 141 files) (66.4 K / 390.2 K bytes)
+2021-02-19 05:58:47,175 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_fflat_0009.rmap      3.3 K bytes  (27 / 141 files) (70.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,205 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_extract1d_0012.rmap    1.2 K bytes  (28 / 141 files) (73.5 K / 390.2 K bytes)
+2021-02-19 05:58:47,235 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_disperser_0019.rmap    3.9 K bytes  (29 / 141 files) (74.7 K / 390.2 K bytes)
+2021-02-19 05:58:47,265 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_dflat_0006.rmap      1.1 K bytes  (30 / 141 files) (78.7 K / 390.2 K bytes)
+2021-02-19 05:58:47,296 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_dark_0032.rmap      14.5 K bytes  (31 / 141 files) (79.7 K / 390.2 K bytes)
+2021-02-19 05:58:47,327 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_cubepar_0007.rmap      915 bytes  (32 / 141 files) (94.3 K / 390.2 K bytes)
+2021-02-19 05:58:47,357 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_collimator_0017.rmap    1.1 K bytes  (33 / 141 files) (95.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,387 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_camera_0017.rmap     1.0 K bytes  (34 / 141 files) (96.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,419 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_barshadow_0003.rmap      877 bytes  (35 / 141 files) (97.3 K / 390.2 K bytes)
+2021-02-19 05:58:47,449 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_area_0014.rmap       4.5 K bytes  (36 / 141 files) (98.1 K / 390.2 K bytes)
+2021-02-19 05:58:47,476 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_apcorr_0005.rmap     5.3 K bytes  (37 / 141 files) (102.6 K / 390.2 K bytes)
+2021-02-19 05:58:47,497 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nirspec_0217.imap            4.8 K bytes  (38 / 141 files) (107.9 K / 390.2 K bytes)
+2021-02-19 05:58:47,524 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_wfssbkg_0002.rmap     2.3 K bytes  (39 / 141 files) (112.7 K / 390.2 K bytes)
+2021-02-19 05:58:47,554 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_wavelengthrange_0005.rmap      811 bytes  (40 / 141 files) (115.0 K / 390.2 K bytes)
+2021-02-19 05:58:47,584 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_trappars_0004.rmap      753 bytes  (41 / 141 files) (115.8 K / 390.2 K bytes)
+2021-02-19 05:58:47,612 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_trapdensity_0004.rmap      774 bytes  (42 / 141 files) (116.5 K / 390.2 K bytes)
+2021-02-19 05:58:47,642 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_throughput_0004.rmap      979 bytes  (43 / 141 files) (117.3 K / 390.2 K bytes)
+2021-02-19 05:58:47,671 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_superbias_0022.rmap    4.6 K bytes  (44 / 141 files) (118.3 K / 390.2 K bytes)
+2021-02-19 05:58:47,700 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_specwcs_0005.rmap     2.3 K bytes  (45 / 141 files) (122.9 K / 390.2 K bytes)
+2021-02-19 05:58:47,730 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_saturation_0011.rmap      693 bytes  (46 / 141 files) (125.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,761 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_readnoise_0008.rmap      969 bytes  (47 / 141 files) (125.9 K / 390.2 K bytes)
+2021-02-19 05:58:47,790 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_photom_0026.rmap        996 bytes  (48 / 141 files) (126.8 K / 390.2 K bytes)
+2021-02-19 05:58:47,819 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_persat_0005.rmap        738 bytes  (49 / 141 files) (127.8 K / 390.2 K bytes)
+2021-02-19 05:58:47,848 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pathloss_0002.rmap      707 bytes  (50 / 141 files) (128.6 K / 390.2 K bytes)
+2021-02-19 05:58:47,876 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pars-tweakregstep_0003.rmap    2.2 K bytes  (51 / 141 files) (129.3 K / 390.2 K bytes)
+2021-02-19 05:58:47,906 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_pars-image2pipeline_0002.rmap      712 bytes  (52 / 141 files) (131.5 K / 390.2 K bytes)
+2021-02-19 05:58:47,935 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_mask_0017.rmap          735 bytes  (53 / 141 files) (132.2 K / 390.2 K bytes)
+2021-02-19 05:58:47,962 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_linearity_0016.rmap      827 bytes  (54 / 141 files) (133.0 K / 390.2 K bytes)
+2021-02-19 05:58:47,990 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_ipc_0006.rmap           590 bytes  (55 / 141 files) (133.8 K / 390.2 K bytes)
+2021-02-19 05:58:48,012 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_gain_0010.rmap          838 bytes  (56 / 141 files) (134.4 K / 390.2 K bytes)
+2021-02-19 05:58:48,034 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_flat_0019.rmap        4.1 K bytes  (57 / 141 files) (135.2 K / 390.2 K bytes)
+2021-02-19 05:58:48,055 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_extract1d_0006.rmap      854 bytes  (58 / 141 files) (139.4 K / 390.2 K bytes)
+2021-02-19 05:58:48,084 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_drizpars_0004.rmap      519 bytes  (59 / 141 files) (140.2 K / 390.2 K bytes)
+2021-02-19 05:58:48,114 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_distortion_0017.rmap      899 bytes  (60 / 141 files) (140.7 K / 390.2 K bytes)
+2021-02-19 05:58:48,142 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_dark_0027.rmap        4.0 K bytes  (61 / 141 files) (141.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,171 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_area_0012.rmap        1.1 K bytes  (62 / 141 files) (145.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,201 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_apcorr_0004.rmap      4.1 K bytes  (63 / 141 files) (146.7 K / 390.2 K bytes)
+2021-02-19 05:58:48,230 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_abvegaoffset_0002.rmap    1.3 K bytes  (64 / 141 files) (150.8 K / 390.2 K bytes)
+2021-02-19 05:58:48,259 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_niriss_0139.imap             4.6 K bytes  (65 / 141 files) (152.1 K / 390.2 K bytes)
+2021-02-19 05:58:48,289 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_wfssbkg_0003.rmap     7.2 K bytes  (66 / 141 files) (156.7 K / 390.2 K bytes)
+2021-02-19 05:58:48,320 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_wavelengthrange_0009.rmap      945 bytes  (67 / 141 files) (163.9 K / 390.2 K bytes)
+2021-02-19 05:58:48,350 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_tsophot_0002.rmap       794 bytes  (68 / 141 files) (164.8 K / 390.2 K bytes)
+2021-02-19 05:58:48,381 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_trappars_0003.rmap    1.6 K bytes  (69 / 141 files) (165.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,407 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_trapdensity_0003.rmap    1.6 K bytes  (70 / 141 files) (167.2 K / 390.2 K bytes)
+2021-02-19 05:58:48,432 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_superbias_0006.rmap    2.6 K bytes  (71 / 141 files) (168.8 K / 390.2 K bytes)
+2021-02-19 05:58:48,458 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_specwcs_0008.rmap     1.7 K bytes  (72 / 141 files) (171.4 K / 390.2 K bytes)
+2021-02-19 05:58:48,488 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_saturation_0006.rmap    2.2 K bytes  (73 / 141 files) (173.1 K / 390.2 K bytes)
+2021-02-19 05:58:48,517 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_readnoise_0006.rmap    5.6 K bytes  (74 / 141 files) (175.2 K / 390.2 K bytes)
+2021-02-19 05:58:48,548 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_psfmask_0005.rmap    10.7 K bytes  (75 / 141 files) (180.8 K / 390.2 K bytes)
+2021-02-19 05:58:48,578 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_photom_0010.rmap      4.3 K bytes  (76 / 141 files) (191.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,606 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_persat_0004.rmap      1.6 K bytes  (77 / 141 files) (195.9 K / 390.2 K bytes)
+2021-02-19 05:58:48,635 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_pars-tweakregstep_0002.rmap    4.5 K bytes  (78 / 141 files) (197.5 K / 390.2 K bytes)
+2021-02-19 05:58:48,666 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_mask_0007.rmap        2.3 K bytes  (79 / 141 files) (201.9 K / 390.2 K bytes)
+2021-02-19 05:58:48,696 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_linearity_0011.rmap    2.4 K bytes  (80 / 141 files) (204.2 K / 390.2 K bytes)
+2021-02-19 05:58:48,727 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_ipc_0003.rmap         2.0 K bytes  (81 / 141 files) (206.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,756 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_gain_0010.rmap        2.3 K bytes  (82 / 141 files) (208.6 K / 390.2 K bytes)
+2021-02-19 05:58:48,785 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_flat_0016.rmap       28.9 K bytes  (83 / 141 files) (210.9 K / 390.2 K bytes)
+2021-02-19 05:58:48,815 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_filteroffset_0003.rmap    1.1 K bytes  (84 / 141 files) (239.7 K / 390.2 K bytes)
+2021-02-19 05:58:48,845 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_drizpars_0001.rmap      519 bytes  (85 / 141 files) (240.9 K / 390.2 K bytes)
+2021-02-19 05:58:48,875 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_distortion_0022.rmap    9.1 K bytes  (86 / 141 files) (241.4 K / 390.2 K bytes)
+2021-02-19 05:58:48,905 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_dark_0021.rmap       14.2 K bytes  (87 / 141 files) (250.5 K / 390.2 K bytes)
+2021-02-19 05:58:48,934 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_area_0006.rmap        4.6 K bytes  (88 / 141 files) (264.7 K / 390.2 K bytes)
+2021-02-19 05:58:48,964 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_apcorr_0007.rmap      4.2 K bytes  (89 / 141 files) (269.3 K / 390.2 K bytes)
+2021-02-19 05:58:48,993 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_abvegaoffset_0002.rmap    1.3 K bytes  (90 / 141 files) (273.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,021 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_nircam_0149.imap             4.5 K bytes  (91 / 141 files) (274.8 K / 390.2 K bytes)
+2021-02-19 05:58:49,046 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_wcsregions_0009.rmap    1.1 K bytes  (92 / 141 files) (279.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,074 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_wavelengthrange_0020.rmap    1.1 K bytes  (93 / 141 files) (280.4 K / 390.2 K bytes)
+2021-02-19 05:58:49,100 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_tsophot_0002.rmap         780 bytes  (94 / 141 files) (281.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,127 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_straymask_0007.rmap       885 bytes  (95 / 141 files) (282.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,153 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_specwcs_0026.rmap       4.0 K bytes  (96 / 141 files) (283.2 K / 390.2 K bytes)
+2021-02-19 05:58:49,183 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_saturation_0012.rmap      961 bytes  (97 / 141 files) (287.1 K / 390.2 K bytes)
+2021-02-19 05:58:49,212 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_rscd_0006.rmap            860 bytes  (98 / 141 files) (288.1 K / 390.2 K bytes)
+2021-02-19 05:58:49,244 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_resol_0004.rmap           739 bytes  (99 / 141 files) (289.0 K / 390.2 K bytes)
+2021-02-19 05:58:49,273 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_reset_0012.rmap         2.2 K bytes  (100 / 141 files) (289.7 K / 390.2 K bytes)
+2021-02-19 05:58:49,302 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_regions_0026.rmap       3.6 K bytes  (101 / 141 files) (291.9 K / 390.2 K bytes)
+2021-02-19 05:58:49,331 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_readnoise_0015.rmap     3.3 K bytes  (102 / 141 files) (295.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,361 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_psfmask_0003.rmap       1.3 K bytes  (103 / 141 files) (298.8 K / 390.2 K bytes)
+2021-02-19 05:58:49,390 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_photom_0030.rmap        5.5 K bytes  (104 / 141 files) (300.0 K / 390.2 K bytes)
+2021-02-19 05:58:49,420 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_pars-tweakregstep_0002.rmap    1.8 K bytes  (105 / 141 files) (305.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,450 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_mask_0015.rmap            893 bytes  (106 / 141 files) (307.4 K / 390.2 K bytes)
+2021-02-19 05:58:49,483 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_linearity_0013.rmap     1.9 K bytes  (107 / 141 files) (308.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,516 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_ipc_0005.rmap             721 bytes  (108 / 141 files) (310.2 K / 390.2 K bytes)
+2021-02-19 05:58:49,547 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_gain_0007.rmap            893 bytes  (109 / 141 files) (310.9 K / 390.2 K bytes)
+2021-02-19 05:58:49,576 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_fringe_0015.rmap        3.5 K bytes  (110 / 141 files) (311.8 K / 390.2 K bytes)
+2021-02-19 05:58:49,607 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_flat_0048.rmap         21.9 K bytes  (111 / 141 files) (315.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,637 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_filteroffset_0020.rmap    1.1 K bytes  (112 / 141 files) (337.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,667 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_extract1d_0013.rmap     1.1 K bytes  (113 / 141 files) (338.4 K / 390.2 K bytes)
+2021-02-19 05:58:49,697 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_drizpars_0002.rmap        511 bytes  (114 / 141 files) (339.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,728 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_distortion_0032.rmap    3.6 K bytes  (115 / 141 files) (340.0 K / 390.2 K bytes)
+2021-02-19 05:58:49,758 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_dark_0021.rmap          3.2 K bytes  (116 / 141 files) (343.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,784 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_cubepar_0008.rmap         686 bytes  (117 / 141 files) (346.7 K / 390.2 K bytes)
+2021-02-19 05:58:49,813 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_area_0011.rmap            755 bytes  (118 / 141 files) (347.4 K / 390.2 K bytes)
+2021-02-19 05:58:49,843 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_apcorr_0007.rmap        4.3 K bytes  (119 / 141 files) (348.2 K / 390.2 K bytes)
+2021-02-19 05:58:49,872 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_abvegaoffset_0002.rmap    1.3 K bytes  (120 / 141 files) (352.5 K / 390.2 K bytes)
+2021-02-19 05:58:49,902 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_miri_0219.imap               4.6 K bytes  (121 / 141 files) (353.7 K / 390.2 K bytes)
+2021-02-19 05:58:49,932 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_trappars_0004.rmap         903 bytes  (122 / 141 files) (358.3 K / 390.2 K bytes)
+2021-02-19 05:58:49,962 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_trapdensity_0004.rmap      930 bytes  (123 / 141 files) (359.2 K / 390.2 K bytes)
+2021-02-19 05:58:49,990 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_superbias_0015.rmap      3.8 K bytes  (124 / 141 files) (360.1 K / 390.2 K bytes)
+2021-02-19 05:58:50,021 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_saturation_0009.rmap       779 bytes  (125 / 141 files) (363.9 K / 390.2 K bytes)
+2021-02-19 05:58:50,050 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_readnoise_0011.rmap      1.3 K bytes  (126 / 141 files) (364.7 K / 390.2 K bytes)
+2021-02-19 05:58:50,080 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_photom_0013.rmap         1.1 K bytes  (127 / 141 files) (366.0 K / 390.2 K bytes)
+2021-02-19 05:58:50,109 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_persat_0004.rmap           884 bytes  (128 / 141 files) (367.1 K / 390.2 K bytes)
+2021-02-19 05:58:50,139 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_pars-tweakregstep_0002.rmap      850 bytes  (129 / 141 files) (368.0 K / 390.2 K bytes)
+2021-02-19 05:58:50,169 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_mask_0018.rmap           1.2 K bytes  (130 / 141 files) (368.8 K / 390.2 K bytes)
+2021-02-19 05:58:50,200 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_linearity_0013.rmap        925 bytes  (131 / 141 files) (370.0 K / 390.2 K bytes)
+2021-02-19 05:58:50,229 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_ipc_0003.rmap              614 bytes  (132 / 141 files) (370.9 K / 390.2 K bytes)
+2021-02-19 05:58:50,258 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_gain_0010.rmap             890 bytes  (133 / 141 files) (371.5 K / 390.2 K bytes)
+2021-02-19 05:58:50,290 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_flat_0009.rmap           1.1 K bytes  (134 / 141 files) (372.4 K / 390.2 K bytes)
+2021-02-19 05:58:50,318 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_distortion_0007.rmap     1.1 K bytes  (135 / 141 files) (373.5 K / 390.2 K bytes)
+2021-02-19 05:58:50,341 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_dark_0013.rmap           4.3 K bytes  (136 / 141 files) (374.6 K / 390.2 K bytes)
+2021-02-19 05:58:50,365 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_area_0009.rmap           1.0 K bytes  (137 / 141 files) (378.9 K / 390.2 K bytes)
+2021-02-19 05:58:50,394 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_apcorr_0002.rmap         4.1 K bytes  (138 / 141 files) (380.0 K / 390.2 K bytes)
+2021-02-19 05:58:50,426 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_abvegaoffset_0002.rmap    1.3 K bytes  (139 / 141 files) (384.1 K / 390.2 K bytes)
+2021-02-19 05:58:50,456 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_fgs_0088.imap                4.3 K bytes  (140 / 141 files) (385.3 K / 390.2 K bytes)
+2021-02-19 05:58:50,485 - CRDS - INFO -  Fetching  crds_cache/mappings/jwst/jwst_0676.pmap                      580 bytes  (141 / 141 files) (389.6 K / 390.2 K bytes)
+2021-02-19 05:58:50,658 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_area_0004.fits    4.2 M bytes  (1 / 6 files) (0 / 21.2 M bytes)
+2021-02-19 05:58:50,725 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf    9.9 K bytes  (2 / 6 files) (4.2 M / 21.2 M bytes)
+2021-02-19 05:58:50,756 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits    8.6 K bytes  (3 / 6 files) (4.2 M / 21.2 M bytes)
+2021-02-19 05:58:50,787 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf    2.5 K bytes  (4 / 6 files) (4.3 M / 21.2 M bytes)
+2021-02-19 05:58:50,817 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_flat_0507.fits   16.9 M bytes  (5 / 6 files) (4.3 M / 21.2 M bytes)
+2021-02-19 05:58:50,942 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits   11.5 K bytes  (6 / 6 files) (21.2 M / 21.2 M bytes)
+2021-02-19 05:58:50,973 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_area_0004.fits&#39;.
+2021-02-19 05:58:50,974 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,974 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,974 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,975 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,975 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf&#39;.
+2021-02-19 05:58:50,975 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2021-02-19 05:58:50,976 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,976 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf&#39;.
+2021-02-19 05:58:50,977 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_flat_0507.fits&#39;.
+2021-02-19 05:58:50,977 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,978 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,978 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,978 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,979 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,979 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,979 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,980 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits&#39;.
+2021-02-19 05:58:50,980 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,981 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,981 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,981 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,982 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2021-02-19 05:58:50,983 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2021-02-19 05:58:51,005 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-02-19 05:58:51,006 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
+2021-02-19 05:58:51,095 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-02-19 05:58:51,096 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-02-19 05:58:51,180 - stpipe.Image2Pipeline.assign_wcs - INFO - Created a MIRI mir_image pipeline with references {&#39;distortion&#39;: &#39;crds_cache/references/jwst/miri/jwst_miri_distortion_0028.asdf&#39;, &#39;filteroffset&#39;: &#39;crds_cache/references/jwst/miri/jwst_miri_filteroffset_0005.asdf&#39;, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: None, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-02-19 05:58:51,225 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
+2021-02-19 05:58:51,226 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
+2021-02-19 05:58:51,226 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
+2021-02-19 05:58:51,258 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/astropy/modeling/fitting.py:780: AstropyUserWarning: The fit may be poorly conditioned
 
   warnings.warn(&#34;The fit may be poorly conditioned\n&#34;,
 
-2021-02-18 20:14:48,232 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-02-18 20:14:48,308 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-02-18 20:14:48,309 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-02-18 20:14:48,377 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
-2021-02-18 20:14:48,378 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
-2021-02-18 20:14:48,378 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
-2021-02-18 20:14:48,384 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
-2021-02-18 20:14:48,463 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
+2021-02-19 05:58:51,303 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-02-19 05:58:51,379 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-02-19 05:58:51,380 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-02-19 05:58:51,446 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
+2021-02-19 05:58:51,447 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
+2021-02-19 05:58:51,447 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
+2021-02-19 05:58:51,454 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
+2021-02-19 05:58:51,532 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
   science.var_flat = science.data**2 / flat_data_squared * flat_err**2
 
-2021-02-18 20:14:48,475 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-02-18 20:14:48,556 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-02-18 20:14:48,557 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-02-18 20:14:48,568 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits
-2021-02-18 20:14:48,568 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: crds_cache/references/jwst/miri/jwst_miri_area_0004.fits
-2021-02-18 20:14:48,617 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
-2021-02-18 20:14:48,617 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
-2021-02-18 20:14:48,618 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
-2021-02-18 20:14:48,618 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
-2021-02-18 20:14:48,641 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-02-18 20:14:48,641 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
-2021-02-18 20:14:48,642 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.02701
-2021-02-18 20:14:48,650 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-02-18 20:14:48,721 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-02-18 20:14:48,723 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-02-18 20:14:48,738 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
-2021-02-18 20:14:49,448 - stpipe.Image2Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
-2021-02-18 20:14:49,856 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-02-19 05:58:51,544 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-02-19 05:58:51,627 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-02-19 05:58:51,628 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-02-19 05:58:51,638 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: crds_cache/references/jwst/miri/jwst_miri_photom_0044.fits
+2021-02-19 05:58:51,639 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: crds_cache/references/jwst/miri/jwst_miri_area_0004.fits
+2021-02-19 05:58:51,687 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
+2021-02-19 05:58:51,688 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
+2021-02-19 05:58:51,688 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
+2021-02-19 05:58:51,688 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
+2021-02-19 05:58:51,711 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-02-19 05:58:51,711 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
+2021-02-19 05:58:51,712 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.02701
+2021-02-19 05:58:51,720 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-02-19 05:58:51,791 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-02-19 05:58:51,793 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-02-19 05:58:51,808 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
+2021-02-19 05:58:52,535 - stpipe.Image2Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
+2021-02-19 05:58:52,948 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-02-18 20:14:49,857 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
-2021-02-18 20:14:49,914 - stpipe.Image2Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
-2021-02-18 20:14:49,914 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-02-18 20:14:49,914 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-02-18 20:14:49,915 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
-2021-02-18 20:14:50,027 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-02-18 20:14:50,028 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
+2021-02-19 05:58:52,950 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
+2021-02-19 05:58:53,012 - stpipe.Image2Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
+2021-02-19 05:58:53,012 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-02-19 05:58:53,012 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-02-19 05:58:53,013 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2021-02-19 05:58:53,129 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-02-19 05:58:53,130 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -14915,7 +14915,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:14:50,033 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-02-19 05:58:53,136 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -14984,94 +14984,94 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:14:50,109 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-02-19 05:58:53,214 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
-2021-02-18 20:14:50,115 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
-2021-02-18 20:14:50,115 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
-2021-02-18 20:14:50,117 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
-2021-02-18 20:14:50,118 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
-2021-02-18 20:14:50,119 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2021-02-18 20:14:50,120 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
-2021-02-18 20:14:50,122 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
-2021-02-18 20:14:50,204 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;resampled_image.json&#39;,).
-2021-02-18 20:14:50,209 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
-2021-02-18 20:14:50,289 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
-2021-02-18 20:14:50,293 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf    1.7 K bytes  (1 / 2 files) (0 / 24.7 K bytes)
-2021-02-18 20:14:50,326 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits   23.0 K bytes  (2 / 2 files) (1.7 K / 24.7 K bytes)
-2021-02-18 20:14:50,358 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf&#39;.
-2021-02-18 20:14:50,358 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits&#39;.
-2021-02-18 20:14:50,359 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2021-02-18 20:14:50,359 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
-2021-02-18 20:14:50,577 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
-2021-02-18 20:14:50,579 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-02-18 20:14:50,591 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:125: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+2021-02-19 05:58:53,219 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
+2021-02-19 05:58:53,220 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
+2021-02-19 05:58:53,222 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
+2021-02-19 05:58:53,223 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
+2021-02-19 05:58:53,224 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2021-02-19 05:58:53,225 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
+2021-02-19 05:58:53,227 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
+2021-02-19 05:58:53,363 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;resampled_image.json&#39;,).
+2021-02-19 05:58:53,369 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
+2021-02-19 05:58:53,450 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
+2021-02-19 05:58:53,454 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf    1.7 K bytes  (1 / 2 files) (0 / 24.7 K bytes)
+2021-02-19 05:58:53,487 - CRDS - INFO -  Fetching  crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits   23.0 K bytes  (2 / 2 files) (1.7 K / 24.7 K bytes)
+2021-02-19 05:58:53,515 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf&#39;.
+2021-02-19 05:58:53,516 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits&#39;.
+2021-02-19 05:58:53,516 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2021-02-19 05:58:53,517 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
+2021-02-19 05:58:53,698 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
+2021-02-19 05:58:53,700 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-02-19 05:58:53,710 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:125: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   self.mask = np.asanyarray(mask, dtype=np.bool)
 
-2021-02-18 20:14:50,592 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:257: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+2021-02-19 05:58:53,711 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:257: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   xs = np.linspace(-0.5, nx - 0.5, nintx, dtype=np.float)
 
-2021-02-18 20:14:50,592 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:258: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+2021-02-19 05:58:53,711 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:258: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   ys = np.linspace(-0.5, ny - 0.5, ninty, dtype=np.float)[1:-1]
 
-2021-02-18 20:14:50,593 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:264: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+2021-02-19 05:58:53,712 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:264: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   borderx = np.empty((npts + 1,), dtype=np.float)
 
-2021-02-18 20:14:50,593 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:265: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+2021-02-19 05:58:53,712 - stpipe.Image3Pipeline.skymatch - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/skymatch/skyimage.py:265: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   bordery = np.empty((npts + 1,), dtype=np.float)
 
-2021-02-18 20:14:50,597 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,598 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-18 20:14:50.597928
-2021-02-18 20:14:50,598 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,599 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
-2021-02-18 20:14:50,599 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
-2021-02-18 20:14:50,599 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
-2021-02-18 20:14:50,600 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,600 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-02-18 20:14:50,601 - stpipe.Image3Pipeline.skymatch - WARNING -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits: Unable to compute sky value
-2021-02-18 20:14:50,601 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0
-2021-02-18 20:14:50,601 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,602 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2021-02-18 20:14:50,623 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,623 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.9110505636229976 [not converted]
-2021-02-18 20:14:50,623 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,624 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
-2021-02-18 20:14:50,624 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0.911051 (old=0, delta=0.911051)
-2021-02-18 20:14:50,625 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,625 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-18 20:14:50.625107
-2021-02-18 20:14:50,625 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.027179
-2021-02-18 20:14:50,626 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-02-18 20:14:50,627 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
-2021-02-18 20:14:50,767 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2021-02-18 20:14:50,769 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-02-18 20:14:50,774 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
-2021-02-18 20:14:50,850 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpxwq3gvgg/det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-02-18 20:14:51,950 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
-2021-02-18 20:14:52,384 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-02-19 05:58:53,717 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,717 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-02-19 05:58:53.717261
+2021-02-19 05:58:53,718 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,718 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
+2021-02-19 05:58:53,718 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
+2021-02-19 05:58:53,719 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
+2021-02-19 05:58:53,719 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,719 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-02-19 05:58:53,720 - stpipe.Image3Pipeline.skymatch - WARNING -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits: Unable to compute sky value
+2021-02-19 05:58:53,720 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0
+2021-02-19 05:58:53,720 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,721 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2021-02-19 05:58:53,740 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,741 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.9110505636229976 [not converted]
+2021-02-19 05:58:53,741 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,742 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
+2021-02-19 05:58:53,742 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0.911051 (old=0, delta=0.911051)
+2021-02-19 05:58:53,742 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,743 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-02-19 05:58:53.742694
+2021-02-19 05:58:53,743 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.025433
+2021-02-19 05:58:53,743 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-02-19 05:58:53,744 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
+2021-02-19 05:58:53,826 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2021-02-19 05:58:53,827 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;exptime&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-02-19 05:58:53,832 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: crds_cache/references/jwst/miri/jwst_miri_drizpars_0001.fits
+2021-02-19 05:58:53,906 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpyccsz2_u/det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-02-19 05:58:55,028 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
+2021-02-19 05:58:55,443 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-02-18 20:14:52,386 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
-2021-02-18 20:14:52,710 - stpipe.Image3Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
-2021-02-18 20:14:52,711 - stpipe.Image3Pipeline.resample - INFO - Step resample done
-2021-02-18 20:14:52,837 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1023, 1023) from det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits&gt;,).
-2021-02-18 20:14:52,838 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
-2021-02-18 20:14:52,845 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits
-2021-02-18 20:14:52,847 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf
-2021-02-18 20:14:52,847 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
-2021-02-18 20:14:52,848 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
-2021-02-18 20:14:52,848 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F560W
-2021-02-18 20:14:52,848 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
-2021-02-18 20:14:52,872 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.76066
-2021-02-18 20:14:53,294 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 1611 sources
-2021-02-18 20:15:05,794 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: det_image_seq1_MIRIMAGE_F560Wexp1_cat.ecsv
-2021-02-18 20:15:05,803 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
-2021-02-18 20:15:05,804 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
+2021-02-19 05:58:55,445 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
+2021-02-19 05:58:55,770 - stpipe.Image3Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
+2021-02-19 05:58:55,771 - stpipe.Image3Pipeline.resample - INFO - Step resample done
+2021-02-19 05:58:55,875 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1023, 1023) from det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits&gt;,).
+2021-02-19 05:58:55,876 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2021-02-19 05:58:55,883 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file crds_cache/references/jwst/miri/jwst_miri_apcorr_0005.fits
+2021-02-19 05:58:55,885 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file crds_cache/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf
+2021-02-19 05:58:55,886 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
+2021-02-19 05:58:55,886 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
+2021-02-19 05:58:55,886 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F560W
+2021-02-19 05:58:55,887 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
+2021-02-19 05:58:55,911 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.76066
+2021-02-19 05:58:56,323 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 1611 sources
+2021-02-19 05:59:08,486 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: det_image_seq1_MIRIMAGE_F560Wexp1_cat.ecsv
+2021-02-19 05:59:08,495 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
+2021-02-19 05:59:08,496 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
 </pre>
 </div>
 </div>
@@ -15114,7 +15114,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:15:05,809 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-02-19 05:59:08,502 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -15239,7 +15239,7 @@ Length = 1611 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:15:06,092 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-02-19 05:59:08,783 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -15255,7 +15255,7 @@ Length = 1611 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7fb4c1c83fa0&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x7f5dfbd35940&gt;</pre>
 </div>
 
 </div>
@@ -15334,10 +15334,10 @@ Length = 1611 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-02-18 20:15:06,493 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:1: RuntimeWarning: invalid value encountered in log10
+<pre>2021-02-19 05:59:09,179 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:1: RuntimeWarning: invalid value encountered in log10
   xaxis= -2.5*np.log10(data[&#39;aper30_flux&#39;]/data[&#39;aper50_flux&#39;])
 
-2021-02-18 20:15:06,494 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:2: RuntimeWarning: invalid value encountered in log10
+2021-02-19 05:59:09,180 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:2: RuntimeWarning: invalid value encountered in log10
   yaxis= -2.5*np.log10(data[&#39;aper50_flux&#39;]/data[&#39;aper70_flux&#39;])
 
 </pre>
