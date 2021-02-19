@@ -1,0 +1,22 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_barshadow_0002.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'BARSHADOW',
+    'filetype' : 'BARSHADOW',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_barshadow_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'b4f55daea6c153755999d47a20df5caed7586fd4',
+    'suffix' : 'barshadow',
+    'text_descr' : ' Bar Shadow Correction',
+}
+
+selector = Match({
+    'NRS_AUTOFLAT|NRS_AUTOWAVE|NRS_MSATA|NRS_WATA|NRS_BRIGHTOBJ|NRS_CONFIRM|NRS_DARK|NRS_FIXEDSLIT|NRS_FOCUS|NRS_IFU|NRS_IMAGE|NRS_LAMP|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT' : 'N/A',
+    'NRS_MSASPEC' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_barshadow_0001.fits',
+    }),
+})

@@ -1,0 +1,26 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_trapdensity_0003.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'trapdensity',
+    'filetype' : 'TRAPDENSITY',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_trapdensity_0004.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'bc2e254fc97961d991ab422ff5f70ba354f5d9f9',
+    'suffix' : 'trapdensity',
+    'text_descr' : 'Trap Density For Persistence Step',
+}
+
+selector = Match({
+    'GUIDER1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_fgs_trapdensity_0001.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_trapdensity_0004.fits',
+    }),
+    'GUIDER2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_fgs_trapdensity_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_trapdensity_0003.fits',
+    }),
+})

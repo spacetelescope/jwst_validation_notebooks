@@ -1,0 +1,18 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_ipc_0005.rmap',
+    'filekind' : 'IPC',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_ipc_0006.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '77cbaa72f718a2db3520427b2388c888b660a388',
+}
+
+selector = Match({
+    'NIS' : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_niriss_ipc_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_ipc_0008.fits',
+    }),
+})

@@ -1,0 +1,24 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_ipc_0003.rmap',
+    'filekind' : 'IPC',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_ipc_0006.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'd21b26dbd899cacc0cde59858cfeff420152679f',
+}
+
+selector = Match({
+    'NRS1' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_ipc_0005.fits',
+        '2014-01-01 00:00:00' : 'jwst_nirspec_ipc_0001.fits',
+        '2015-01-01 00:00:00' : 'jwst_nirspec_ipc_0011.fits',
+    }),
+    'NRS2' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nirspec_ipc_0006.fits',
+        '2014-01-01 00:00:00' : 'jwst_nirspec_ipc_0002.fits',
+        '2015-01-01 00:00:00' : 'jwst_nirspec_ipc_0012.fits',
+    }),
+})

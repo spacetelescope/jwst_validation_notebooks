@@ -1,0 +1,17 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_drizpars_0000.rmap',
+    'filekind' : 'DRIZPARS',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_drizpars_0001.rmap',
+    'observatory' : 'JWST',
+    'parkey' : ((), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'fbe781aa53d43f83b68919d840333be1cc899004',
+}
+
+selector = Match({
+    () : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_drizpars_0001.fits',
+    }),
+})

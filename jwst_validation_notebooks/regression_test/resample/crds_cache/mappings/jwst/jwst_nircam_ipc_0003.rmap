@@ -1,0 +1,54 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_ipc_0002.rmap',
+    'filekind' : 'IPC',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_ipc_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '1c27a28d53ca7d07d8822327d68673d9868b7ca4',
+}
+
+selector = Match({
+    'NRCA1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0011.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0026.fits',
+    }),
+    'NRCA2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0012.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0025.fits',
+    }),
+    'NRCA3' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0013.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0030.fits',
+    }),
+    'NRCA4' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0014.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0021.fits',
+    }),
+    'NRCALONG' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0015.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0028.fits',
+    }),
+    'NRCB1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0016.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0029.fits',
+    }),
+    'NRCB2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0017.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0024.fits',
+    }),
+    'NRCB3' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0018.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0022.fits',
+    }),
+    'NRCB4' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0019.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0027.fits',
+    }),
+    'NRCBLONG' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_ipc_0020.fits',
+        '2015-10-01 00:00:00' : 'jwst_nircam_ipc_0023.fits',
+    }),
+})

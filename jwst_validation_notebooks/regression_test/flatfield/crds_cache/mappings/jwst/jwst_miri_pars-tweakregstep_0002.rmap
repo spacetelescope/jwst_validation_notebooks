@@ -1,0 +1,47 @@
+header = {
+    'derived_from' : 'jwst_miri_pars-tweakregstep_0001.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'pars-tweakregstep',
+    'filetype' : 'pars-tweakregstep',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_pars-tweakregstep_0002.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.FILTER'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'bcb8eeef24205cde07715c63b5ca279f78cfd396',
+    'suffix' : 'pars-tweakregstep',
+    'text_descr' : 'TweakRegStep runtime parameters',
+}
+
+selector = Match({
+    ('MIR_IMAGE', 'F1000W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0003.asdf',
+    }),
+    ('MIR_IMAGE', 'F1130W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0006.asdf',
+    }),
+    ('MIR_IMAGE', 'F1280W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0005.asdf',
+    }),
+    ('MIR_IMAGE', 'F1500W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0001.asdf',
+    }),
+    ('MIR_IMAGE', 'F1800W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0009.asdf',
+    }),
+    ('MIR_IMAGE', 'F2100W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0002.asdf',
+    }),
+    ('MIR_IMAGE', 'F2550W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0010.asdf',
+    }),
+    ('MIR_IMAGE', 'F2550WR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0004.asdf',
+    }),
+    ('MIR_IMAGE', 'F560W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0008.asdf',
+    }),
+    ('MIR_IMAGE', 'F770W') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_pars-tweakregstep_0007.asdf',
+    }),
+})

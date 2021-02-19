@@ -1,0 +1,20 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_ipc_0002.rmap',
+    'filekind' : 'IPC',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_ipc_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '247bec9109a2ecee4aaed295fb27d1ae27703672',
+}
+
+selector = Match({
+    'GUIDER1' : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_ipc_0003.fits',
+    }),
+    'GUIDER2' : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_ipc_0004.fits',
+    }),
+})

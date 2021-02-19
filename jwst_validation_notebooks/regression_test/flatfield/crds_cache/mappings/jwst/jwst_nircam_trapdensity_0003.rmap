@@ -1,0 +1,48 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nircam_trapdensity_0002.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'trapdensity',
+    'filetype' : 'TRAPDENSITY',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_trapdensity_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '77a5847148a3e294feb79c782447d69cc2337cc1',
+    'suffix' : 'trapdensity',
+    'text_descr' : 'Trap Density For Persistence Step',
+}
+
+selector = Match({
+    'NRCA1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0010.fits',
+    }),
+    'NRCA2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0006.fits',
+    }),
+    'NRCA3' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0008.fits',
+    }),
+    'NRCA4' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0002.fits',
+    }),
+    'NRCALONG' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0004.fits',
+    }),
+    'NRCB1' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0001.fits',
+    }),
+    'NRCB2' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0005.fits',
+    }),
+    'NRCB3' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0007.fits',
+    }),
+    'NRCB4' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0009.fits',
+    }),
+    'NRCBLONG' : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_nircam_trapdensity_0003.fits',
+    }),
+})

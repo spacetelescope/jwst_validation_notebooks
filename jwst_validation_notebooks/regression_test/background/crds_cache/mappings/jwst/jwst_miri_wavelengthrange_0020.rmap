@@ -1,0 +1,32 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_wavelengthrange_0019.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'wavelengthrange',
+    'filetype' : 'WAVELENGTHRANGE',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_wavelengthrange_0020.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : '67b5a365284d738070d9e7835742035afb93d3a9',
+    'suffix' : 'wavelengthrange',
+    'text_descr' : 'MIRI wavelength range',
+}
+
+selector = Match({
+    'MIR_4QPM' : 'N/A',
+    'MIR_CORONCAL' : 'N/A',
+    'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS' : 'N/A',
+    'MIR_IMAGE' : 'N/A',
+    'MIR_LRS-FIXEDSLIT' : 'N/A',
+    'MIR_LRS-SLITLESS' : 'N/A',
+    'MIR_LYOT' : 'N/A',
+    'MIR_MRS' : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_wavelengthrange_0005.asdf',
+    }),
+    'MIR_TACQ|MIR_TACONFIRM' : 'N/A',
+})

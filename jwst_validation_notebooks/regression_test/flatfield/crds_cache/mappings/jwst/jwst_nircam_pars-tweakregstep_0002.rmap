@@ -1,0 +1,104 @@
+header = {
+    'derived_from' : 'jwst_nircam_pars-tweakregstep_0001.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'pars-tweakregstep',
+    'filetype' : 'pars-tweakregstep',
+    'instrument' : 'NIRCAM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nircam_pars-tweakregstep_0002.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '2085ff7adbf4ed63bae8da36ba66b09bc7830d4a',
+    'suffix' : 'pars-tweakregstep',
+    'text_descr' : 'TweakRegStep runtime parameters',
+}
+
+selector = Match({
+    ('NRC_IMAGE', 'F070W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0002.asdf',
+    }),
+    ('NRC_IMAGE', 'F090W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0004.asdf',
+    }),
+    ('NRC_IMAGE', 'F115W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0001.asdf',
+    }),
+    ('NRC_IMAGE', 'F140M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0015.asdf',
+    }),
+    ('NRC_IMAGE', 'F150W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0016.asdf',
+    }),
+    ('NRC_IMAGE', 'F150W2', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0027.asdf',
+    }),
+    ('NRC_IMAGE', 'F150W2', 'F162M') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0003.asdf',
+    }),
+    ('NRC_IMAGE', 'F150W2', 'F164N') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0024.asdf',
+    }),
+    ('NRC_IMAGE', 'F182M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0017.asdf',
+    }),
+    ('NRC_IMAGE', 'F187N', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0014.asdf',
+    }),
+    ('NRC_IMAGE', 'F200W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0022.asdf',
+    }),
+    ('NRC_IMAGE', 'F210M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0028.asdf',
+    }),
+    ('NRC_IMAGE', 'F212N', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0023.asdf',
+    }),
+    ('NRC_IMAGE', 'F250M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0007.asdf',
+    }),
+    ('NRC_IMAGE', 'F277W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0018.asdf',
+    }),
+    ('NRC_IMAGE', 'F300M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0010.asdf',
+    }),
+    ('NRC_IMAGE', 'F322W2', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0026.asdf',
+    }),
+    ('NRC_IMAGE', 'F322W2', 'F323N') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0012.asdf',
+    }),
+    ('NRC_IMAGE', 'F335M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0021.asdf',
+    }),
+    ('NRC_IMAGE', 'F356W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0011.asdf',
+    }),
+    ('NRC_IMAGE', 'F360M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0029.asdf',
+    }),
+    ('NRC_IMAGE', 'F410M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0025.asdf',
+    }),
+    ('NRC_IMAGE', 'F430M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0020.asdf',
+    }),
+    ('NRC_IMAGE', 'F444W', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0006.asdf',
+    }),
+    ('NRC_IMAGE', 'F444W', 'F405N') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0013.asdf',
+    }),
+    ('NRC_IMAGE', 'F444W', 'F466N') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0005.asdf',
+    }),
+    ('NRC_IMAGE', 'F444W', 'F470N') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0008.asdf',
+    }),
+    ('NRC_IMAGE', 'F460M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0019.asdf',
+    }),
+    ('NRC_IMAGE', 'F480M', 'CLEAR') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_nircam_pars-tweakregstep_0009.asdf',
+    }),
+})

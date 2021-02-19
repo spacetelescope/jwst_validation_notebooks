@@ -1,0 +1,110 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_dark_0012.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'DARK',
+    'filetype' : 'DARK',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_dark_0013.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.READPATT', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'f3165d25e58a24cee573922648475354aeb74f63',
+    'suffix' : 'dark',
+    'text_descr' : 'Dark Frame',
+}
+
+selector = Match({
+    ('GUIDER1', 'FGS', 'FULL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0025.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0026.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0015.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0017.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0010.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0030.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0028.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0021.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0023.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0018.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'FULL') : UseAfter({
+        '2014-11-04 09:06:48' : 'jwst_fgs_dark_0001.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0013.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'SUBIDSTRIPCENTER') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0041.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'SUBIDSTRIPLL') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0040.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'SUBTUNE32CENTERG1') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0042.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'SUBTUNE32LLG1') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0046.fits',
+    }),
+    ('GUIDER2', 'FGS', 'FULL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0009.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0020.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0022.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0011.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0029.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0024.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0012.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0027.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0014.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0016.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'FULL') : UseAfter({
+        '2014-11-04 09:06:48' : 'jwst_fgs_dark_0002.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_dark_0019.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'SUBIDSTRIPCENTER') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0043.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'SUBIDSTRIPLL') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0045.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'SUBTUNE32CENTERG2') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0044.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'SUBTUNE32LLG2') : UseAfter({
+        '2020-12-01 00:00:00' : 'jwst_fgs_dark_0039.fits',
+    }),
+})

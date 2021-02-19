@@ -1,0 +1,90 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.2.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0 {author: Space Telescope Science Institute, homepage: 'http://github.com/spacetelescope/asdf',
+  name: asdf, version: 2.1.0.dev1466}
+history:
+  entries:
+  - !core/history_entry-1.0.0
+    description: Ground NIRCAM Grism wavelengthrange
+    software: !core/software-1.0.0 {author: STScI, homepage: 'https://github.com/spacetelescope/jwreftools',
+      name: nircam_reftools.py, version: 0.7.1}
+    time: 2018-08-30 22:59:39.399367
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: astropy.io.misc.asdf.extension.AstropyAsdfExtension
+    software: {name: astropy, version: 3.1.dev22382}
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension.BuiltinExtension
+    software: {name: asdf, version: 2.1.0.dev1466}
+extract_orders:
+- - F250M
+  - [1, 2]
+- - F277W
+  - [1, 2]
+- - F300M
+  - [1, 2]
+- - F322W2
+  - [1, 2]
+- - F335M
+  - [1, 2]
+- - F356W
+  - [1, 2]
+- - F360M
+  - [1, 2]
+- - F410M
+  - [1, 2]
+- - F430M
+  - [1, 2]
+- - F444W
+  - [1, 2]
+- - F460M
+  - [1, 2]
+- - F480M
+  - [1, 2]
+meta:
+  author: STScI
+  date: '2018-08-30T18:59:39.389'
+  description: NIRCAM Grism-Filter Wavelength Ranges
+  exposure: {p_exptype: NRC_WFSS, type: NRC_WFSS}
+  filename: nircam_wfss_wavelengthrange.asdf
+  input_units: !unit/unit-1.0.0 um
+  instrument: {name: NIRCAM, pupil: ANY}
+  model_type: WavelengthrangeModel
+  output_units: !unit/unit-1.0.0 um
+  pedigree: ground
+  reftype: wavelengthrange
+  telescope: JWST
+  title: NIRCAM WFSS reference file
+  useafter: '2014-01-01T00:00:00'
+order: [1, 2]
+wavelengthrange:
+- [1, F250M, 2.500411072, 4.800260833]
+- [1, F277W, 2.500411072, 3.807062006]
+- [1, F300M, 2.684896869, 4.025318456]
+- [1, F322W2, 2.5011293930000003, 4.215842089]
+- [1, F335M, 3.01459734, 4.260432726]
+- [1, F356W, 3.001085025, 4.302320901]
+- [1, F360M, 3.178096344, 4.00099629]
+- [1, F410M, 3.6267051809999997, 4.5644598]
+- [1, F430M, 4.04828939, 4.511761774]
+- [1, F444W, 3.696969216, 4.899565197]
+- [1, F460M, 3.103778615, 4.881999188]
+- [1, F480M, 4.5158154679999996, 4.899565197]
+- [2, F250M, 2.500411072, 2.667345336]
+- [2, F277W, 2.500411072, 3.2642254050000004]
+- [2, F300M, 2.6659796289999997, 3.2997071729999994]
+- [2, F322W2, 2.5011293930000003, 4.136119434]
+- [2, F335M, 2.54572003, 3.6780519760000003]
+- [2, F356W, 2.529505253, 4.133416971]
+- [2, F360M, 2.557881113, 4.83740855]
+- [2, F410M, 2.5186954019999996, 4.759037127]
+- [2, F430M, 2.5362614100000003, 4.541488865]
+- [2, F444W, 2.5011293930000003, 4.899565197]
+- [2, F460M, 2.575447122, 4.883350419]
+- [2, F480M, 2.549773725, 4.899565197]
+waverange_selector: [F250M, F277W, F300M, F322W2, F335M, F356W, F360M, F410M, F430M,
+  F444W, F460M, F480M]
+...

@@ -1,0 +1,20 @@
+header = {
+    'derived_from' : 'jwst_niriss_pars-image2pipeline_0001.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'pars-image2pipeline',
+    'filetype' : 'PARS-IMAGE2PIPELINE',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_pars-image2pipeline_0002.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '57b0c705d6c820c38991c0fc3907a0a43279ed5c',
+    'suffix' : 'pars-image2pipeline',
+    'text_descr' : 'Image2Pipeline runtime parameters',
+}
+
+selector = Match({
+    'NIS_AMI' : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_niriss_pars-image2pipeline_0001.asdf',
+    }),
+})

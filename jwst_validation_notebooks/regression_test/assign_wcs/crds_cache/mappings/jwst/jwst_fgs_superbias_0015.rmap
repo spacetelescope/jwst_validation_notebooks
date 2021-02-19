@@ -1,0 +1,97 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_superbias_0013.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'superbias',
+    'filetype' : 'SUPERBIAS',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_superbias_0015.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.READPATT', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '59aeee82f5313707c887d684ffe36cdc71d8f08a',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+    'suffix' : 'sbias',
+    'text_descr' : 'Super Bias',
+}
+
+selector = Match({
+    ('GUIDER1', 'FGS', 'GENERIC') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0033.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0028.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0017.fits',
+    }),
+    ('GUIDER1', 'FGS60', 'SUB128LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0018.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0022.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0020.fits',
+    }),
+    ('GUIDER1', 'FGS8370', 'SUB8LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0023.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0014.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0024.fits',
+    }),
+    ('GUIDER1', 'FGS840', 'SUB32LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0013.fits',
+    }),
+    ('GUIDER1', 'FGSRAPID', 'GENERIC') : UseAfter({
+        '2014-11-04 09:06:48' : 'jwst_fgs_superbias_0004.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0026.fits',
+    }),
+    ('GUIDER1', 'N/A', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_fgs_superbias_0002.fits',
+    }),
+    ('GUIDER2', 'FGS', 'GENERIC') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0032.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0027.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0025.fits',
+    }),
+    ('GUIDER2', 'FGS60', 'SUB128LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0016.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0030.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0021.fits',
+    }),
+    ('GUIDER2', 'FGS8370', 'SUB8LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0031.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32CNTR') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0034.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32DIAG') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0029.fits',
+    }),
+    ('GUIDER2', 'FGS840', 'SUB32LL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0019.fits',
+    }),
+    ('GUIDER2', 'FGSRAPID', 'GENERIC') : UseAfter({
+        '2014-11-04 09:06:48' : 'jwst_fgs_superbias_0005.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_superbias_0015.fits',
+    }),
+    ('GUIDER2', 'N/A', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_fgs_superbias_0003.fits',
+    }),
+})

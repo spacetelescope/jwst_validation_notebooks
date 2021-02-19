@@ -1,0 +1,90 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_specwcs_0025.rmap',
+    'filekind' : 'SPECWCS',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_specwcs_0026.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.CHANNEL', 'META.INSTRUMENT.BAND', 'META.SUBARRAY.NAME', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'BAND' : 'META.INSTRUMENT.BAND',
+        'CHANNEL' : 'META.INSTRUMENT.CHANNEL',
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+        'SUBARRAY' : 'META.SUBARRAY.NAME',
+    },
+    'sha1sum' : '7cfe15c3493f5c5cef28e9a8e4b8c8d0f591f463',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_4QPM') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_CORONCAL') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_IMAGE') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_LYOT') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'ANY', 'MIR_TACQ') : 'N/A',
+    ('MIRIFULONG', '34', 'LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0019.asdf',
+    }),
+    ('MIRIFULONG', '34', 'LONG-MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0034.asdf',
+    }),
+    ('MIRIFULONG', '34', 'LONG-SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0027.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0023.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM-LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0028.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM-SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0032.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0020.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT-LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0035.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT-MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0031.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0022.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG-MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0029.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG-SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0030.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0021.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM-LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0033.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM-SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0036.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0024.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT-LONG', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0025.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT-MEDIUM', 'N/A', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0026.asdf',
+    }),
+    ('MIRIMAGE', 'N/A', 'N/A', 'GENERIC', 'N/A') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_specwcs_0003.fits',
+    }),
+})

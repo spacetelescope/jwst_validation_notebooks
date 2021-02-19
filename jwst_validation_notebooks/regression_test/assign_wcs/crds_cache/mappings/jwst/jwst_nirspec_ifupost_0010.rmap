@@ -1,0 +1,30 @@
+header = {
+    'derived_from' : 'jwst_nirspec_ifupost_0010.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'ifupost',
+    'filetype' : 'IFUPOST',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_ifupost_0010.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.LAMP_MODE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : 'c6d2313fbfc4bf90a6db43d105d87ec81e2fb818',
+    'suffix' : 'ifupost',
+    'text_descr' : 'IFU post',
+}
+
+selector = Match({
+    ('N/A', 'N/A') : 'N/A',
+    ('NRS_AUTOWAVE', 'IFU') : UseAfter({
+        '2015-11-01 07:05:42' : 'jwst_nirspec_ifupost_0004.asdf',
+    }),
+    ('NRS_IFU', 'N/A') : UseAfter({
+        '2015-11-01 07:05:42' : 'jwst_nirspec_ifupost_0004.asdf',
+    }),
+    ('NRS_LAMP', 'IFU') : UseAfter({
+        '2015-11-01 07:05:42' : 'jwst_nirspec_ifupost_0004.asdf',
+    }),
+})

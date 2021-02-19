@@ -1,0 +1,32 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_area_0008.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'AREA',
+    'filetype' : 'AREA',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_area_0009.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'ef76479a0dc8811c686c8c4f025955f2ae6d2b48',
+    'suffix' : 'area',
+    'text_descr' : 'Pixel-Area Map',
+}
+
+comment = """
+May 3 2016 Comment : Removed files 0001 and 0002 which had useafter date 
+2015-01-01 and hence not rejected by the new delivery. These files should 
+not be used with any data. 
+"""
+
+selector = Match({
+    'GUIDER1' : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_fgs_area_0003.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_area_0010.fits',
+    }),
+    'GUIDER2' : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_fgs_area_0004.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_area_0012.fits',
+    }),
+})

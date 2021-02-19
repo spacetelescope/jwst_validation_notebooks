@@ -1,0 +1,101 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_superbias_0021.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'superbias',
+    'filetype' : 'SUPERBIAS',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_superbias_0022.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.READPATT', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '770010293503f8f03b56677762132d3ef10bc3df',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+    'suffix' : 'sbias',
+    'text_descr' : 'Super Bias',
+}
+
+selector = Match({
+    ('NIS', 'N/A', 'GENERIC') : UseAfter({
+        '2014-11-04 09:06:48' : 'jwst_niriss_superbias_0003.fits',
+    }),
+    ('NIS', 'NIS', 'FULL') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0014.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0029.fits',
+    }),
+    ('NIS', 'NIS', 'GENERIC') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0135.fits',
+    }),
+    ('NIS', 'NISRAPID', 'FULL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0017.fits',
+    }),
+    ('NIS', 'NISRAPID', 'GENERIC') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0137.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUB128') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0004.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0131.fits',
+        '2016-01-06 15:48:56' : 'jwst_niriss_superbias_0117.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUB256') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0009.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0138.fits',
+        '2016-01-06 15:49:48' : 'jwst_niriss_superbias_0123.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUB64') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0011.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0133.fits',
+        '2016-01-06 15:47:39' : 'jwst_niriss_superbias_0119.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUB80') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0012.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0136.fits',
+        '2016-01-06 15:45:58' : 'jwst_niriss_superbias_0122.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUBAMPCAL') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0125.fits',
+        '2017-09-14 13:30:08' : 'jwst_niriss_superbias_0112.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUBSTRIP256') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0008.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0134.fits',
+        '2016-01-06 15:37:39' : 'jwst_niriss_superbias_0120.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUBSTRIP96') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0013.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0124.fits',
+        '2016-01-06 10:14:06' : 'jwst_niriss_superbias_0111.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUBTAAMI') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0126.fits',
+        '2017-09-16 17:10:43' : 'jwst_niriss_superbias_0121.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'SUBTASOSS') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0129.fits',
+        '2017-09-16 17:09:52' : 'jwst_niriss_superbias_0115.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'WFSS128C') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0005.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0132.fits',
+        '2016-01-06 17:45:06' : 'jwst_niriss_superbias_0118.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'WFSS128R') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0006.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0139.fits',
+        '2016-01-06 15:53:42' : 'jwst_niriss_superbias_0116.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'WFSS64C') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0010.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0127.fits',
+        '2016-01-06 15:56:35' : 'jwst_niriss_superbias_0113.fits',
+    }),
+    ('NIS', 'NIS|NISRAPID', 'WFSS64R') : UseAfter({
+        '2015-10-01 00:00:00' : 'jwst_niriss_superbias_0007.fits',
+        '2015-11-01 00:00:00' : 'jwst_niriss_superbias_0128.fits',
+        '2016-01-06 15:49:49' : 'jwst_niriss_superbias_0114.fits',
+    }),
+})

@@ -1,0 +1,38 @@
+header = {
+    'derived_from' : 'jwst_nirspec_pars-spec2pipeline_0003.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'pars-spec2pipeline',
+    'filetype' : 'PARS-SPEC2PIPELINE',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_pars-spec2pipeline_0004.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.LAMP_MODE', 'META.INSTRUMENT.LAMP_STATE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '1db906a0af326c4a0c3b50a6b98bae724d48643a',
+    'suffix' : 'pars-spec2pipeline',
+    'text_descr' : 'Spec2Pipeline runtime parameters',
+}
+
+selector = Match({
+    ('NRS_AUTOFLAT', 'MSASPEC', 'FLAT1|FLAT2|FLAT3|FLAT4|FLAT5') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0001.asdf',
+    }),
+    ('NRS_AUTOWAVE|NRS_LAMP', 'BRIGHTOBJ|FIXEDSLIT', 'LINE1|LINE2|LINE3|LINE4|REF') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0009.asdf',
+    }),
+    ('NRS_AUTOWAVE|NRS_LAMP', 'IFU', 'LINE1|LINE2|LINE3|LINE4|REF') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0010.asdf',
+    }),
+    ('NRS_AUTOWAVE|NRS_LAMP', 'MSASPEC', 'LINE1|LINE2|LINE3|LINE4|REF') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0008.asdf',
+    }),
+    ('NRS_LAMP', 'BRIGHTOBJ|FIXEDSLIT', 'FLAT1|FLAT2|FLAT3|FLAT4|FLAT5') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0004.asdf',
+    }),
+    ('NRS_LAMP', 'IFU', 'FLAT1|FLAT2|FLAT3|FLAT4|FLAT5') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0002.asdf',
+    }),
+    ('NRS_LAMP', 'MSASPEC', 'FLAT1|FLAT2|FLAT3|FLAT4|FLAT5') : UseAfter({
+        '2010-01-01 00:00:00' : 'jwst_nirspec_pars-spec2pipeline_0007.asdf',
+    }),
+})

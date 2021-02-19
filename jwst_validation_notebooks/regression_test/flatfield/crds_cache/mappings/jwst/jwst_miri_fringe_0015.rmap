@@ -1,0 +1,84 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_fringe_0014.rmap',
+    'filekind' : 'FRINGE',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_fringe_0015.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.BAND'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '4dbee3bd1f2465d21f6937ef0063d0b042cc085c',
+}
+
+selector = Match({
+    ('MIRIFULONG', 'LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0045.fits',
+    }),
+    ('MIRIFULONG', 'LONG-MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0056.fits',
+    }),
+    ('MIRIFULONG', 'LONG-SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0061.fits',
+    }),
+    ('MIRIFULONG', 'MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0044.fits',
+    }),
+    ('MIRIFULONG', 'MEDIUM-LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0058.fits',
+    }),
+    ('MIRIFULONG', 'MEDIUM-SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0065.fits',
+    }),
+    ('MIRIFULONG', 'SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0042.fits',
+    }),
+    ('MIRIFULONG', 'SHORT-LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0059.fits',
+    }),
+    ('MIRIFULONG', 'SHORT-MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0064.fits',
+    }),
+    ('MIRIFUSHORT', 'LONG') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0043.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0038.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0050.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0047.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0041.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0049.fits',
+    }),
+    ('MIRIFUSHORT', 'LONG-MEDIUM') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0055.fits',
+    }),
+    ('MIRIFUSHORT', 'LONG-SHORT') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0063.fits',
+    }),
+    ('MIRIFUSHORT', 'MEDIUM') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0052.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0053.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0037.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0048.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0035.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0034.fits',
+    }),
+    ('MIRIFUSHORT', 'MEDIUM-LONG') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0066.fits',
+    }),
+    ('MIRIFUSHORT', 'MEDIUM-SHORT') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0062.fits',
+    }),
+    ('MIRIFUSHORT', 'SHORT') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_fringe_0051.fits',
+        '2013-01-01 00:00:00' : 'jwst_miri_fringe_0036.fits',
+        '2014-01-01 00:00:00' : 'jwst_miri_fringe_0039.fits',
+        '2015-01-01 00:00:00' : 'jwst_miri_fringe_0054.fits',
+        '2017-01-01 00:00:00' : 'jwst_miri_fringe_0040.fits',
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0046.fits',
+    }),
+    ('MIRIFUSHORT', 'SHORT-LONG') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0060.fits',
+    }),
+    ('MIRIFUSHORT', 'SHORT-MEDIUM') : UseAfter({
+        '2018-01-01 00:00:00' : 'jwst_miri_fringe_0057.fits',
+    }),
+    ('MIRIMAGE', 'N/A') : 'N/A',
+})

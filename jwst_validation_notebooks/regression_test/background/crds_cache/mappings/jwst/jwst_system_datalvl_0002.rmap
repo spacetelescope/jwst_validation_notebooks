@@ -1,0 +1,22 @@
+header = {
+    'classes' : ('VersionAfter',),
+    'derived_from' : 'jwst_system_datalvl_0001.rmap',
+    'file_ext' : '.json',
+    'filekind' : 'DATALVL',
+    'filetype' : 'DATALVL',
+    'instrument' : 'SYSTEM',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_system_datalvl_0002.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.CALIBRATION_SOFTWARE_VERSION',),),
+    'reference_to_dataset' : {
+        'CAL_VER' : 'META.CALIBRATION_SOFTWARE_VERSION',
+    },
+    'sha1sum' : '1ece6bff7c1816cf37b9d85b257acece5352a235',
+    'suffix' : 'datalvl',
+    'text_descr' : 'Reference Type to Processing Data Level',
+}
+
+selector = VersionAfter({
+    '0.6.0' : 'jwst_system_datalvl_0001.json',
+})

@@ -1,0 +1,58 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_specwcs_0004.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'SPECWCS',
+    'filetype' : 'SPECWCS',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_specwcs_0005.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '00abe7d18155d06033e0de6cca2d2242b839f1d4',
+    'suffix' : 'specwcs',
+    'text_descr' : 'Spectral World Coordinate System',
+}
+
+selector = Match({
+    ('NIS_AMI|NIS_DARK|NIS_FOCUS|NIS_IMAGE|NIS_LAMP|NIS_TACONFIRM|NIS_TACQ', 'N/A', 'N/A') : 'N/A',
+    ('NIS_SOSS', 'N/A', 'N/A') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_specwcs_0002.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F090W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0008.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F115W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0006.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F140M') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0009.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F150W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0010.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F158M') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0013.asdf',
+    }),
+    ('NIS_WFSS', 'GR150C', 'F200W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0014.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F090W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0011.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F115W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0005.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F140M') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0007.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F150W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0003.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F158M') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0004.asdf',
+    }),
+    ('NIS_WFSS', 'GR150R', 'F200W') : UseAfter({
+        '2014-01-01 00:00:00' : 'jwst_niriss_specwcs_0012.asdf',
+    }),
+})

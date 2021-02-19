@@ -1,0 +1,53 @@
+header = {
+    'derived_from' : 'jwst_niriss_pars-tweakregstep_0002.rmap',
+    'file_ext' : '.asdf',
+    'filekind' : 'pars-tweakregstep',
+    'filetype' : 'pars-tweakregstep',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_pars-tweakregstep_0003.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'c3b705bd1ed5cd815d7aef31842c79b7c99e81f0',
+    'suffix' : 'pars-tweakregstep',
+    'text_descr' : 'TweakRegStep runtime parameters',
+}
+
+selector = Match({
+    ('NIS_IMAGE', 'CLEAR', 'F090W') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0008.asdf',
+    }),
+    ('NIS_IMAGE', 'CLEAR', 'F115W') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0010.asdf',
+    }),
+    ('NIS_IMAGE', 'CLEAR', 'F140M') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0003.asdf',
+    }),
+    ('NIS_IMAGE', 'CLEAR', 'F150W') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0007.asdf',
+    }),
+    ('NIS_IMAGE', 'CLEAR', 'F158M') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0004.asdf',
+    }),
+    ('NIS_IMAGE', 'CLEAR', 'F200W') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0001.asdf',
+    }),
+    ('NIS_IMAGE', 'F277W', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0006.asdf',
+    }),
+    ('NIS_IMAGE', 'F356W', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0002.asdf',
+    }),
+    ('NIS_IMAGE', 'F380M', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0012.asdf',
+    }),
+    ('NIS_IMAGE', 'F430M', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0009.asdf',
+    }),
+    ('NIS_IMAGE', 'F444W', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0005.asdf',
+    }),
+    ('NIS_IMAGE', 'F480M', 'CLEARP') : UseAfter({
+        '2020-01-01 00:00:00' : 'jwst_niriss_pars-tweakregstep_0011.asdf',
+    }),
+})

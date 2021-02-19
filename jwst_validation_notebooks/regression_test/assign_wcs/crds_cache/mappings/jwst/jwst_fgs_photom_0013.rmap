@@ -1,0 +1,33 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_photom_0011.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'PHOTOM',
+    'filetype' : 'PHOTOMETRIC CALIBRATION',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_photom_0013.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'eeab483bd0e3e2d3d41eb7586c1a16138a20e97b',
+    'suffix' : 'photom',
+    'text_descr' : 'Absolute Calibration',
+}
+
+comment = """
+May 3 2016 Comment: Delivered to remove files 0001 and 0002 which had useafter 
+date 2015-01-01 and hence not rejected by the latest delivery. These 
+files should not be used with any data.
+"""
+
+selector = Match({
+    ('GUIDER1', 'FGS_IMAGE') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_photom_0012.fits',
+    }),
+    ('GUIDER1|GUIDER2', 'FGS_FOCUS') : UseAfter({
+        '2015-11-01 00:00:00' : 'N/A',
+    }),
+    ('GUIDER2', 'FGS_IMAGE') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_fgs_photom_0013.fits',
+    }),
+})

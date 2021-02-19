@@ -1,0 +1,83 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_miri_regions_0025.rmap',
+    'filekind' : 'REGIONS',
+    'instrument' : 'MIRI',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_miri_regions_0026.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.CHANNEL', 'META.INSTRUMENT.BAND', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'reference_to_dataset' : {
+        'BAND' : 'META.INSTRUMENT.BAND',
+        'CHANNEL' : 'META.INSTRUMENT.CHANNEL',
+        'DETECTOR' : 'META.INSTRUMENT.DETECTOR',
+        'EXP_TYPE' : 'META.EXPOSURE.TYPE',
+    },
+    'sha1sum' : 'c5d8bb5f24bfdc2a580b9511787245c1addbb9b0',
+}
+
+selector = Match({
+    ('ANY', 'ANY', 'ANY', 'MIR_4QPM') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_CORONCAL') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_DARK') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_FLATIMAGE|MIR_FLAT-IMAGE|MIR_FLATMRS|MIR_FLAT-MRS') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_IMAGE') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_LRS-FIXEDSLIT') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_LRS-SLITLESS') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_LYOT') : 'N/A',
+    ('ANY', 'ANY', 'ANY', 'MIR_TACQ|MIR_TACONFIRM') : 'N/A',
+    ('MIRIFULONG', '34', 'LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0025.asdf',
+    }),
+    ('MIRIFULONG', '34', 'LONG-MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0032.asdf',
+    }),
+    ('MIRIFULONG', '34', 'LONG-SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0033.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0030.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM-LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0035.asdf',
+    }),
+    ('MIRIFULONG', '34', 'MEDIUM-SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0040.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0029.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT-LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0037.asdf',
+    }),
+    ('MIRIFULONG', '34', 'SHORT-MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0038.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0028.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG-MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0036.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'LONG-SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0041.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0026.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM-LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0042.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'MEDIUM-SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0039.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0027.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT-LONG', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0031.asdf',
+    }),
+    ('MIRIFUSHORT', '12', 'SHORT-MEDIUM', 'MIR_MRS') : UseAfter({
+        '2000-01-01 00:00:00' : 'jwst_miri_regions_0034.asdf',
+    }),
+})

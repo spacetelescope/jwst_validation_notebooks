@@ -1,0 +1,25 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_dflat_0005.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'DFLAT',
+    'filetype' : 'DETECTOR FLATFIELD',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_dflat_0006.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.EXPOSURE.TYPE'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'a808ccc2467e8cda5b7f31ad6d2a7671827f4be0',
+    'suffix' : 'dflat',
+    'text_descr' : 'Detector Flat Field',
+}
+
+selector = Match({
+    ('ANY', 'NRS_MSATA|NRS_WATA|NRS_CONFIRM|NRS_FOCUS|NRS_IMAGE|NRS_VERIFY|NRS_MIMF|NRS_TACONFIRM|NRS_TACQ|NRS_TASLIT|NRS_AUTOFLAT') : 'N/A',
+    ('NRS1', 'NRS_AUTOWAVE|NRS_BRIGHTOBJ|NRS_FIXEDSLIT|NRS_MSASPEC|NRS_IFU|NRS_LAMP') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_dflat_0001.fits',
+    }),
+    ('NRS2', 'NRS_AUTOWAVE|NRS_BRIGHTOBJ|NRS_FIXEDSLIT|NRS_MSASPEC|NRS_IFU|NRS_LAMP') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_dflat_0002.fits',
+    }),
+})

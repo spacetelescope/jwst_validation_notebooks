@@ -1,0 +1,43 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_nirspec_gain_0018.rmap',
+    'filekind' : 'GAIN',
+    'instrument' : 'NIRSPEC',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_nirspec_gain_0019.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR', 'META.SUBARRAY.NAME'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'fccd758f44029e236b7b0e0a0383754c5bfd5d54',
+    'substitutions' : {
+        'META.SUBARRAY.NAME' : {
+            'GENERIC' : 'N/A',
+        },
+    },
+}
+
+selector = Match({
+    ('NRS1', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_gain_0019.fits',
+        '2017-07-01 00:00:00' : 'jwst_nirspec_gain_0023.fits',
+    }),
+    ('NRS1', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nirspec_gain_0002.fits',
+        '1999-01-01 00:00:00' : 'jwst_nirspec_gain_0000.fits',
+        '2013-01-01 00:00:00' : 'jwst_nirspec_gain_0008.fits',
+        '2015-01-01 00:00:00' : 'jwst_nirspec_gain_0019.fits',
+        '2017-04-01 00:00:00' : 'jwst_nirspec_gain_0017.fits',
+        '2017-09-04 00:00:00' : 'jwst_nirspec_gain_0021.fits',
+    }),
+    ('NRS2', 'FULL') : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_nirspec_gain_0018.fits',
+        '2017-07-01 00:00:00' : 'jwst_nirspec_gain_0020.fits',
+    }),
+    ('NRS2', 'GENERIC') : UseAfter({
+        '1900-01-01 00:00:00' : 'jwst_nirspec_gain_0003.fits',
+        '1999-01-01 00:00:00' : 'jwst_nirspec_gain_0001.fits',
+        '2013-01-01 00:00:00' : 'jwst_nirspec_gain_0009.fits',
+        '2015-01-01 00:00:00' : 'jwst_nirspec_gain_0018.fits',
+        '2017-04-01 00:00:00' : 'jwst_nirspec_gain_0016.fits',
+        '2017-09-04 00:00:00' : 'jwst_nirspec_gain_0022.fits',
+    }),
+})

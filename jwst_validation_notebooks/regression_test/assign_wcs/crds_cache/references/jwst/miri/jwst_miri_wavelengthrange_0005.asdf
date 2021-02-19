@@ -1,0 +1,79 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.5.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0 {author: Space Telescope Science Institute, homepage: 'http://github.com/spacetelescope/asdf',
+  name: asdf, version: 2.7.1}
+history:
+  entries:
+  - !core/history_entry-1.0.0
+    description: 'DOCUMENT: MIRI-TN-00001-ETH_Iss2-1_Calibrationproduct_MRS_d2c.  Updated
+      regions file from CDP-8B.05.01'
+    software: !core/software-1.0.0 {author: D.Law, homepage: 'https://github.com/STScI-MIRI/miricoord',
+      name: miricoord, version: master}
+    time: 2021-02-04 20:19:46.092035
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension.BuiltinExtension
+    software: !core/software-1.0.0 {name: asdf, version: 2.7.1}
+  - !core/extension_metadata-1.0.0
+    extension_class: astropy.io.misc.asdf.extension.AstropyAsdfExtension
+    software: !core/software-1.0.0 {name: astropy, version: '4.1'}
+meta:
+  author: David R. Law, Polychronis Patapis, Adrian M. Glauser
+  date: '2021-02-04T15:19:46.090'
+  description: MIRI MRS CDP8b (8B.05.01) distortion reference data.
+  exposure: {type: MIR_MRS}
+  filename: jwst_miri_mrs_wavelengthrange_cdp8b.asdf
+  instrument: {band: N/A, channel: N/A, detector: N/A, name: MIRI}
+  model_type: WavelengthrangeModel
+  pedigree: GROUND
+  reftype: wavelengthrange
+  telescope: JWST
+  useafter: '2000-01-01T00:00:00'
+  wavelength_units: !unit/unit-1.0.0 'um'
+wavelengthrange:
+- &id001 [4.68, 5.97]
+- &id002 [5.24, 6.87]
+- &id003 [6.2, 7.9]
+- &id006 [7.27, 9.03]
+- &id004 [8.43, 10.39]
+- &id005 [9.76, 11.97]
+- &id009 [11.29, 13.75]
+- &id007 [13.08, 15.86]
+- &id008 [15.14, 18.29]
+- &id010 [17.4, 21.2]
+- &id011 [20.31, 24.68]
+- &id012 [23.72, 28.75]
+- *id001
+- *id001
+- *id002
+- *id002
+- *id003
+- *id003
+- *id004
+- *id005
+- *id006
+- *id005
+- *id006
+- *id004
+- *id007
+- *id008
+- *id009
+- *id008
+- *id009
+- *id007
+- *id010
+- *id010
+- *id011
+- *id011
+- *id012
+- *id012
+waverange_selector: [1SHORT, 1MEDIUM, 1LONG, 2SHORT, 2MEDIUM, 2LONG, 3SHORT, 3MEDIUM,
+  3LONG, 4SHORT, 4MEDIUM, 4LONG, 1SHORT-MEDIUM, 1SHORT-LONG, 1MEDIUM-SHORT, 1MEDIUM-LONG,
+  1LONG-SHORT, 1LONG-MEDIUM, 2SHORT-MEDIUM, 2SHORT-LONG, 2MEDIUM-SHORT, 2MEDIUM-LONG,
+  2LONG-SHORT, 2LONG-MEDIUM, 3SHORT-MEDIUM, 3SHORT-LONG, 3MEDIUM-SHORT, 3MEDIUM-LONG,
+  3LONG-SHORT, 3LONG-MEDIUM, 4SHORT-MEDIUM, 4SHORT-LONG, 4MEDIUM-SHORT, 4MEDIUM-LONG,
+  4LONG-SHORT, 4LONG-MEDIUM]
+...

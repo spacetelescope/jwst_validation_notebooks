@@ -1,0 +1,22 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_fgs_saturation_0008.rmap',
+    'filekind' : 'SATURATION',
+    'instrument' : 'FGS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_fgs_saturation_0009.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.INSTRUMENT.DETECTOR',), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : 'cb1b37082dc843b094a3b93d90ddbf1a3ae736de',
+}
+
+selector = Match({
+    'GUIDER1' : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_saturation_0008.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_saturation_0018.fits',
+    }),
+    'GUIDER2' : UseAfter({
+        '2015-01-01 00:00:00' : 'jwst_fgs_saturation_0009.fits',
+        '2015-11-01 00:00:00' : 'jwst_fgs_saturation_0019.fits',
+    }),
+})

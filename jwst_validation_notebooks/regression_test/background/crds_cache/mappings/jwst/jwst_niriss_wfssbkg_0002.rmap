@@ -1,0 +1,55 @@
+header = {
+    'classes' : ('Match', 'UseAfter'),
+    'derived_from' : 'jwst_niriss_wfssbkg_0001.rmap',
+    'file_ext' : '.fits',
+    'filekind' : 'WFSSBKG',
+    'filetype' : 'WFSSBKG',
+    'instrument' : 'NIRISS',
+    'mapping' : 'REFERENCE',
+    'name' : 'jwst_niriss_wfssbkg_0002.rmap',
+    'observatory' : 'JWST',
+    'parkey' : (('META.EXPOSURE.TYPE', 'META.INSTRUMENT.DETECTOR', 'META.INSTRUMENT.FILTER', 'META.INSTRUMENT.PUPIL'), ('META.OBSERVATION.DATE', 'META.OBSERVATION.TIME')),
+    'sha1sum' : '2cc6d2fa314f82752d89dcc9696d2bdc47253067',
+    'suffix' : 'wfssbkg',
+    'text_descr' : 'WFSS master background reference images',
+}
+
+selector = Match({
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F090W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0011.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F115W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0002.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F140M') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0001.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F150W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0009.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F158M') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0006.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150C', 'F200W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0012.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F090W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0005.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F115W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0004.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F140M') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0008.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F150W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0003.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F158M') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0010.fits',
+    }),
+    ('NIS_WFSS', 'NIS', 'GR150R', 'F200W') : UseAfter({
+        '2015-11-01 00:00:00' : 'jwst_niriss_wfssbkg_0007.fits',
+    }),
+    ('NOT NIS_WFSS', 'ANY', 'ANY', 'ANY') : 'N/A',
+})
