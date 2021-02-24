@@ -115,6 +115,23 @@ project:
 11. Iterate with the reviewer over copying your test data into either Box or Artifactory.
 12. Delete your local copy of your branch.
 
+### Temporary Directory ###
+
+In order to avoid conflicts between multiple notebooks in the same directory (especially
+when being run by an automated process), the template notebook contains a cell that sets
+up a temporary directory and moves the notebook execution into that directory. Even if
+you don't start your notebook as a copy of the template, you should copy this cell. For
+development purposes, you may wish to set the `use_tempdir` variable to False, but when
+you are ready to submit the notebook in a pull request, please change it to True.
+
+### CRDS Cache Location ###
+
+The Jenkins instance is running on a virtual machine inside STScI, so it works best with
+its CRDS cache set to "/grp/crds/cache", but especially when working over the VPN this
+location may not work best for you. This cell in the template notebook allows for multiple
+options as to where to put the CRDS cache directory, so please include it. Again, when
+submitting the notebook, please set `use_local_crds_cache` to False.
+
 ### New Test Data ###
 
 If you have a notebook that uses updated test data or new test data, follow the steps
