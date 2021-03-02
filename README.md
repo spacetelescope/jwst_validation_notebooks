@@ -71,7 +71,7 @@ information about [*jupyter*][jupyter] notebooks, see the
 There is also a handy [cheat sheet](https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/)
 with shortcuts and commands.
 
-### Running Notebooks with *nbpages* ###
+### Running Notebooks with *nbpages* and `convert.py` ###
 
 If you would like to generate HTML outputs locally, make sure you are in the
 `jwst_validation_notebooks` repository and execute the following commands:
@@ -79,6 +79,23 @@ If you would like to generate HTML outputs locally, make sure you are in the
 ```
 python convert.py
 ```
+
+In order to get a full list of run instructions, run
+
+```
+python convert.py --help
+```
+
+There are, however, a few flags that could be especially useful, and a few notes about
+`convert.py` which need to be kept in mind.
+
+* In the main notebook directory is a file named `exclude_notebooks`. This file is
+  currently passed to the `--exclude` flag if that flag is not set at the command line.
+  As such, it is not currently possible to use the `--include` flag when running from the
+  main notebook directory.
+* To run a subset of notebooks, use some combination of the `--notebook-path` command-line
+  option to only run the notebooks in a particular directory and the `--exclude` option to
+  avoid running particular individual notebooks.
 
 ## Contributing ##
 
