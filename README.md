@@ -109,6 +109,10 @@ Make sure to follow the template outlined in
 [our repository](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb).
 More information about storing test data is included below.
 
+Before your notebook will be accepted, you must test it in the proper environment 
+described in the [Executing Validation Notebooks Locally](https://github.com/spacetelescope/jwst_validation_notebooks#executing-validation-notebooks-locally)
+section above. This will help ensure a smoother delivery of new tests. 
+
 This repository operates using the standard
 [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
 workflow. The following is a bare bones example of this work flow for contributing to the
