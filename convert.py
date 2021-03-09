@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-import os
 import logging
+import os
+import platform
+import resource
+
+if platform.system() == 'Darwin':
+    # Raise the rather small default 256-open-files-only limit to 1024
+    no_files = 1024
+    resource.setrlimit(resource.RLIMIT_NOFILE, (no_files, no_files))
 
 from nbpages import make_parser, run_parsed, make_html_index
 
