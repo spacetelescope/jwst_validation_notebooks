@@ -14347,26 +14347,116 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a temporary directory to hold notebook output, and change the working directory to that directory.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#****</span>
+<span class="c1">#</span>
+<span class="c1"># Set this variable to False to not use the temporary directory</span>
+<span class="c1">#</span>
+<span class="c1">#****</span>
+<span class="n">use_tempdir</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Create a temporary directory to hold notebook output, and change the working directory to that directory.</span>
 <span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">shutil</span>
-<span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 
-<span class="c1"># If you have files that are in the notebook&#39;s directory, but that the notebook will need to use while</span>
-<span class="c1"># running, copy them into the temporary directory here.</span>
-<span class="c1">#</span>
-<span class="c1"># files = [&#39;name_of_file&#39;]</span>
-<span class="c1"># for file_name in files:</span>
-<span class="c1">#     shutil.copy(file_name, os.path.join(data_dir.name, file_name))</span>
+<span class="k">if</span> <span class="n">use_tempdir</span><span class="p">:</span>
+    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="c1"># If you have files that are in the notebook&#39;s directory, but that the notebook will need to use while</span>
+    <span class="c1"># running, copy them into the temporary directory here.</span>
+    <span class="c1">#</span>
+    <span class="c1"># files = [&#39;name_of_file&#39;]</span>
+    <span class="c1"># for file_name in files:</span>
+    <span class="c1">#     shutil.copy(file_name, os.path.join(data_dir.name, file_name))</span>
+
+    <span class="c1"># Save original directory</span>
+    <span class="n">orig_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="c1"># Move to new directory</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># For info, print out where the script is running</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmps09ijy7u
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="If-Desired,-set-up-CRDS-to-use-a-local-cache">If Desired, set up CRDS to use a local cache<a class="anchor-link" href="#If-Desired,-set-up-CRDS-to-use-a-local-cache">&#182;</a></h2><p>By default, the notebook template environment sets up its CRDS cache (the "CRDS_PATH" environment variable) in /grp/crds/cache. However, if the notebook is running on a local machine without a fast and reliable connection to central storage, it makes more sense to put the CRDS cache locally. Currently, the cell below offers several options, and will check the supplied boolean variables one at a time until one matches.</p>
+<ul>
+<li>if <code>use_local_crds_cache</code> is False, then the CRDS cache will be kept in /grp/crds/cache</li>
+<li>if <code>use_local_crds_cache</code> is True, the CRDS cache will be kept locally<ul>
+<li>if <code>crds_cache_tempdir</code> is True, the CRDS cache will be kept in the temporary directory</li>
+<li>if <code>crds_cache_notebook_dir</code> is True, the CRDS cache will be kept in the same directory as the notebook.</li>
+<li>if <code>crds_cache_home</code> is True, the CRDS cache will be kept in $HOME/crds/cache</li>
+<li>if <code>crds_cache_custom_dir</code> is True, the CRDS cache will be kept in whatever is stored in the 
+<code>crds_cache_dir_name</code> variable.</li>
+</ul>
+</li>
+</ul>
+<p>If the above cell (creating a temporary directory) is not run, then setting <code>crds_cache_tempdir</code> to True will store the CRDS cache in the notebook's directory (the same as setting <code>crds_cache_notebook_dir</code> to True).</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Choose CRDS cache location</span>
+<span class="n">use_local_crds_cache</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">crds_cache_tempdir</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">crds_cache_notebook_dir</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">crds_cache_home</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">crds_cache_custom_dir</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">crds_cache_dir_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">if</span> <span class="n">use_local_crds_cache</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">crds_cache_tempdir</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;crds&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">crds_cache_notebook_dir</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">orig_dir</span><span class="p">,</span> <span class="s2">&quot;crds&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;crds&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">crds_cache_home</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">crds_cache_custom_dir</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crds_cache_dir_name</span>
 </pre></div>
 
      </div>
@@ -14393,7 +14483,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import inspect</span>
