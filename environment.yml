@@ -46,7 +46,7 @@ dependencies:
     - requests>=2.22
     - scipy>=1.1.0
     - spherical-geometry>=1.2.18
-    - stdatamodels~=0.1.0
+    - stdatamodels>=0.2.0,<1.0
     - stsci.image>=2.3.3
     - tweakwcs>=0.7.0
     - matplotlib
@@ -67,12 +67,13 @@ dependencies:
     # This repository has tags, but selecting them doesn't seem to work.
     - git+https://github.com/spacetelescope/pysiaf
     - git+https://github.com/spacetelescope/stsci.imagestats@1.6.2
-    - git+https://github.com/spacetelescope/nirspec_pipe_testing_tool@1.1.3
-    - git+https://github.com/spacetelescope/jwst@0.18.3
+    - git+https://github.com/spacetelescope/nirspec_pipe_testing_tool@1.1.11
+    - git+https://github.com/spacetelescope/jwst@1.1.0
 
 variables:
   TEST_BIGDATA: "https://bytesalad.stsci.edu/artifactory"
   CRDS_SERVER_URL: "https://jwst-crds.stsci.edu"
+#  CRDS_PATH: "crds_cache"
   CRDS_PATH: "/grp/crds/cache"
   WIT4_PATH: "/grp/jwst/wit4"
 

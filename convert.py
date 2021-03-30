@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-import os
 import logging
+import os
+import platform
+import resource
+
+if platform.system() == 'Darwin':
+    # Raise the rather small default 256-open-files-only limit to 1024
+    no_files = 1024
+    resource.setrlimit(resource.RLIMIT_NOFILE, (no_files, no_files))
 
 from nbpages import make_parser, run_parsed, make_html_index
 
@@ -29,7 +36,7 @@ if args.report_file is None:
     args.report_file = "junit_report.xml"
 
 try:
-    converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=18000)
+    converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=36000)
 except Exception as e:
     print("ERROR: {}".format(e))
     print("args={}".format(args))
