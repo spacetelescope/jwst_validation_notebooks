@@ -14303,7 +14303,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Set-up-import-statements">Set up import statements<a class="anchor-link" href="#Set-up-import-statements">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
@@ -14323,6 +14323,29 @@ a.anchor-link {
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2021-04-02 19:51:28,438 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
+  warnings.warn(f&#39;{name} was moved to the {deprecated[name]} module. &#39;
+
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14618,50 +14641,50 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-03-16 20:48:27,507 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
-2021-03-16 20:48:27,508 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
-2021-03-16 20:48:27,509 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
-2021-03-16 20:48:27,510 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
-2021-03-16 20:48:27,511 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
-2021-03-16 20:48:27,513 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
-2021-03-16 20:48:27,590 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:48:27,594 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-03-16 20:48:27,601 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;photom&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
-2021-03-16 20:48:28,994 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_area_0004.fits&#39;.
-2021-03-16 20:48:28,996 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_photom_0044.fits&#39;.
-2021-03-16 20:48:28,997 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
-2021-03-16 20:48:28,997 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
-2021-03-16 20:48:28,997 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
-2021-03-16 20:48:29,028 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-03-16 20:48:29,029 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
-2021-03-16 20:48:29,118 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:48:29,120 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-03-16 20:48:29,120 - stpipe.Image2Pipeline.assign_wcs - INFO - Step skipped.
-2021-03-16 20:48:29,121 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-03-16 20:48:29,203 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:48:29,204 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-03-16 20:48:29,204 - stpipe.Image2Pipeline.flat_field - INFO - Step skipped.
-2021-03-16 20:48:29,205 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-03-16 20:48:29,287 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:48:29,288 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-03-16 20:48:29,311 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_miri_photom_0044.fits
-2021-03-16 20:48:29,312 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_miri_area_0004.fits
-2021-03-16 20:48:29,338 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
-2021-03-16 20:48:29,339 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
-2021-03-16 20:48:29,339 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
-2021-03-16 20:48:29,340 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
-2021-03-16 20:48:29,372 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-03-16 20:48:29,373 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
-2021-03-16 20:48:29,374 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.02701
-2021-03-16 20:48:29,385 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-03-16 20:48:29,468 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:48:29,470 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: True, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-03-16 20:48:29,471 - stpipe.Image2Pipeline.resample - INFO - Step skipped.
-2021-03-16 20:48:29,471 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-03-16 20:48:29,472 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-03-16 20:48:29,473 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
-2021-03-16 20:48:29,543 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-03-16 20:48:29,543 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
+<pre>2021-04-02 19:51:29,019 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2021-04-02 19:51:29,020 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2021-04-02 19:51:29,022 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2021-04-02 19:51:29,023 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2021-04-02 19:51:29,024 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2021-04-02 19:51:29,025 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2021-04-02 19:51:29,131 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:51:29,136 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-04-02 19:51:29,142 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;photom&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2021-04-02 19:51:30,421 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_area_0004.fits&#39;.
+2021-04-02 19:51:30,423 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits&#39;.
+2021-04-02 19:51:30,424 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2021-04-02 19:51:30,424 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2021-04-02 19:51:30,425 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2021-04-02 19:51:30,458 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-02 19:51:30,458 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
+2021-04-02 19:51:30,566 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:51:30,568 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-04-02 19:51:30,568 - stpipe.Image2Pipeline.assign_wcs - INFO - Step skipped.
+2021-04-02 19:51:30,569 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-04-02 19:51:30,652 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:51:30,654 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-04-02 19:51:30,654 - stpipe.Image2Pipeline.flat_field - INFO - Step skipped.
+2021-04-02 19:51:30,655 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-04-02 19:51:30,745 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:51:30,746 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-04-02 19:51:30,770 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits
+2021-04-02 19:51:30,770 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_miri_area_0004.fits
+2021-04-02 19:51:30,799 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
+2021-04-02 19:51:30,799 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
+2021-04-02 19:51:30,800 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
+2021-04-02 19:51:30,800 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
+2021-04-02 19:51:30,831 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-04-02 19:51:30,832 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
+2021-04-02 19:51:30,833 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.12701
+2021-04-02 19:51:30,843 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-04-02 19:51:30,936 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:51:30,937 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: True, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-04-02 19:51:30,938 - stpipe.Image2Pipeline.resample - INFO - Step skipped.
+2021-04-02 19:51:30,938 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-04-02 19:51:30,939 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-02 19:51:30,940 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2021-04-02 19:51:31,015 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-04-02 19:51:31,016 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -14744,7 +14767,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-03-16 20:48:29,587 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/asdf/tags/core/ndarray.py:556: RuntimeWarning: invalid value encountered in true_divide
+<pre>2021-04-02 19:51:31,078 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/asdf/tags/core/ndarray.py:556: RuntimeWarning: invalid value encountered in true_divide
   return getattr(self._make_array(), name)(*args)
 
 </pre>
@@ -14781,13 +14804,13 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[[1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
- [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
- [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
+<pre>[[1.12701   1.12701   1.12701   ... 1.12701   1.12701   1.12701  ]
+ [1.12701   1.12701   1.12701   ... 1.12701   1.12701   1.12701  ]
+ [1.12701   1.12701   1.12701   ... 1.1270099 1.12701   1.12701  ]
  ...
- [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]
- [    nan     nan     nan ... 1.02701 1.02701 1.02701]
- [1.02701 1.02701 1.02701 ... 1.02701 1.02701 1.02701]]
+ [1.12701   1.12701   1.12701   ... 1.12701   1.12701   1.12701  ]
+ [      nan       nan       nan ... 1.12701   1.12701   1.12701  ]
+ [1.12701   1.12701   1.12701   ... 1.12701   1.12701   1.12701  ]]
 </pre>
 </div>
 </div>
@@ -14834,7 +14857,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Photom reference file crds://jwst_miri_photom_0044.fits
+<pre>Photom reference file crds://jwst_miri_photom_0073.fits
 </pre>
 </div>
 </div>
@@ -14871,7 +14894,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>8.4403609523084e-14</pre>
+<pre>2.84403609523084e-13</pre>
 </div>
 
 </div>
@@ -14911,7 +14934,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.02701
+<pre>1.12701
 </pre>
 </div>
 </div>
@@ -14953,7 +14976,7 @@ a.anchor-link {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>image min image max ref file
-1.0270098 1.0270101 1.02701
+1.1270099 1.1270101 1.12701
 </pre>
 </div>
 </div>
@@ -15153,7 +15176,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>8.4403609523084e-14 8.4403609523084e-14
+<pre>2.84403609523084e-13 2.84403609523084e-13
 </pre>
 </div>
 </div>
@@ -15233,7 +15256,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2.844030752201317e-13 8.4403609523084e-14
+<pre>2.844030752201317e-13 2.84403609523084e-13
 </pre>
 </div>
 </div>

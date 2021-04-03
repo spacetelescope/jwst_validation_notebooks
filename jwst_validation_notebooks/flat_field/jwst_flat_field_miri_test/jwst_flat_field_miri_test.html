@@ -14262,24 +14262,26 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Testing-flat_field-step-with-MIRI-simulated-data">Testing flat_field step with MIRI simulated data<a class="anchor-link" href="#Testing-flat_field-step-with-MIRI-simulated-data">&#182;</a></h1>
+<h1 id="JWST-Pipeline-Validation-Testing-notebook:-flat_field-step-with-MIRI-Imaging">JWST Pipeline Validation Testing notebook: flat_field step with MIRI Imaging<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-notebook:-flat_field-step-with-MIRI-Imaging">&#182;</a></h1><p>Instruments Affected: NIRCam, NIRSpec, NIRISS, MIRI, FGS</p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>This notebook processes an image through calwebb_image2 and calwebb_image3 (calwebb_detector1 is optional) and examines the output table of the source_catalog step. The steps are as follow:</p>
+<h2 id="Introduction-and-summary-of-test-being-run">Introduction and summary of test being run<a class="anchor-link" href="#Introduction-and-summary-of-test-being-run">&#182;</a></h2><p>This notebook processes an image through calwebb_image2 (calwebb_detector1 is optional) and examines the output of the flat_field step. The steps are as follow:</p>
 <p>1) Set up data path and directory and image file name.</p>
 <p>2) Modify header information of input simulations (if needed).</p>
-<p>3) Run input data through calwebb_detector1.</p>
+<p>3) Run input data through calwebb_detector1. (Can be done prior to running this notebook.)</p>
 <p>4) Run output of calwebb_detector1 through the flat_field step in calwebb_image2.</p>
 <p>5) Get flat field reference file.</p>
 <p>6) Compare the flat field reference file with the rate/cal image ratio and check that they are the same.</p>
-<p>The pipeline documentation can be found here: <a href="https://jwst-pipeline.readthedocs.io/en/latest/">https://jwst-pipeline.readthedocs.io/en/latest/</a></p>
+<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h2><p>The pipeline documentation can be found here: <a href="https://jwst-pipeline.readthedocs.io/en/latest/">https://jwst-pipeline.readthedocs.io/en/latest/</a></p>
 <p>The pipeline code is available on GitHub: <a href="https://github.com/spacetelescope/jwst">https://github.com/spacetelescope/jwst</a></p>
+<h2 id="Data-used">Data used<a class="anchor-link" href="#Data-used">&#182;</a></h2><p>The data used in this test is a simulated MIRI image created using MIRISim. The documentation for MIRISim can be found here: <a href="https://wiki.miricle.org/bin/view/Public/MIRISim_Public">https://wiki.miricle.org/bin/view/Public/MIRISim_Public</a></p>
 <p>Author: T. Temim</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
@@ -14290,11 +14292,33 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;TemporaryDirectory &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpprp99qsi&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14302,45 +14326,52 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Set-up-import-statements">Set up import statements<a class="anchor-link" href="#Set-up-import-statements">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span><span class="p">,</span> <span class="n">ascii</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-<span class="kn">import</span> <span class="nn">json</span>
+
 <span class="kn">import</span> <span class="nn">jwst</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span><span class="p">,</span> <span class="n">ascii</span>
-<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span>
-<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span><span class="p">,</span> <span class="n">unique</span>
-<span class="kn">from</span> <span class="nn">astropy.stats</span> <span class="kn">import</span> <span class="n">sigma_clip</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">Detector1Pipeline</span><span class="p">,</span> <span class="n">Image2Pipeline</span><span class="p">,</span> <span class="n">Image3Pipeline</span>
-<span class="kn">from</span> <span class="nn">jwst.associations</span> <span class="kn">import</span> <span class="n">asn_from_list</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">associations</span>
-<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">RampModel</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">jwst.associations.lib.rules_level3_base</span> <span class="kn">import</span> <span class="n">DMS_Level3_Base</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_image3</span>
+<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">Detector1Pipeline</span><span class="p">,</span> <span class="n">Image2Pipeline</span>
+<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">RampModel</span><span class="p">,</span> <span class="n">ImageModel</span><span class="p">,</span> <span class="n">dqflags</span>
 <span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_image2</span>
-<span class="kn">from</span> <span class="nn">jwst.pipeline</span> <span class="kn">import</span> <span class="n">calwebb_detector1</span>
-<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
-<span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">ImageModel</span>
-<span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">datamodels</span>
-<span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">get_pkg_data_filename</span>
+
 <span class="kn">from</span> <span class="nn">ci_watson.artifactory_helpers</span> <span class="kn">import</span> <span class="n">get_bigdata</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">table</span>
 <span class="kn">import</span> <span class="nn">crds</span>
+<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>2021-04-02 19:35:05,795 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
+  warnings.warn(f&#39;{name} was moved to the {deprecated[name]} module. &#39;
+
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14349,7 +14380,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Specify CRDS locations and pmap</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_SERVER_URL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://jwst-crds.stsci.edu&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CONTEXT&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;jwst_0619.pmap&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TEST_BIGDATA&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;https://bytesalad.stsci.edu/artifactory/&#39;</span>
@@ -14418,6 +14449,13 @@ a.anchor-link {
                      <span class="s1">&#39;source_catalog&#39;</span><span class="p">,</span>
                      <span class="s1">&#39;source_catalog_miri_test&#39;</span><span class="p">,</span> 
                      <span class="s1">&#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39;</span><span class="p">)</span>
+
+<span class="c1"># Put in new simulation once we&#39;re sure MIRISim and the pipeline are using the same input flats.</span>
+<span class="c1">#input_file = get_bigdata(&#39;jwst_validation_notebooks&#39;,</span>
+<span class="c1">#                     &#39;validation_data&#39;,</span>
+<span class="c1">#                     &#39;flat_field&#39;,</span>
+<span class="c1">#                     &#39;flat_field_miri_test&#39;, </span>
+<span class="c1">#                     &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_rate.fits&#39;)</span>
 </pre></div>
 
      </div>
@@ -14436,8 +14474,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">jwst</span> <span class="kn">import</span> <span class="n">datamodels</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ImageModel</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span> <span class="o">=</span> <span class="n">ImageModel</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14547,11 +14584,6 @@ a.anchor-link {
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">cunit3</span>
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">pc3_1</span>
 <span class="k">del</span> <span class="n">im</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcsinfo</span><span class="o">.</span><span class="n">pc3_2</span>
-<span class="c1">#del im.meta.wcsinfo.cdelt4</span>
-<span class="c1">#del im.meta.wcsinfo.crpix4</span>
-<span class="c1">#del im.meta.wcsinfo.crval4</span>
-<span class="c1">#del im.meta.wcsinfo.ctype4</span>
-<span class="c1">#del im.meta.wcsinfo.cunit4</span>
 </pre></div>
 
      </div>
@@ -14591,7 +14623,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;rateint.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;rate.fits&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#input_file = input_file.replace(&#39;rateint.fits&#39;, &#39;rate.fits&#39;)</span>
 </pre></div>
 
      </div>
@@ -14632,50 +14664,50 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-03-16 20:31:25,823 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
-2021-03-16 20:31:25,825 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
-2021-03-16 20:31:25,826 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
-2021-03-16 20:31:25,827 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
-2021-03-16 20:31:25,828 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
-2021-03-16 20:31:25,829 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
-2021-03-16 20:31:25,970 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:31:25,975 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-03-16 20:31:25,982 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;dflat&#39;, &#39;fflat&#39;, &#39;flat&#39;, &#39;sflat&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
-2021-03-16 20:31:27,407 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
-2021-03-16 20:31:27,408 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
-2021-03-16 20:31:27,408 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_flat_0507.fits&#39;.
-2021-03-16 20:31:27,410 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
-2021-03-16 20:31:27,410 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
-2021-03-16 20:31:27,410 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
-2021-03-16 20:31:27,411 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
-2021-03-16 20:31:27,444 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-03-16 20:31:27,445 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
-2021-03-16 20:31:27,544 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:31:27,545 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-03-16 20:31:27,546 - stpipe.Image2Pipeline.assign_wcs - INFO - Step skipped.
-2021-03-16 20:31:27,546 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-03-16 20:31:27,620 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:31:27,622 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-03-16 20:31:28,113 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
-2021-03-16 20:31:28,116 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
-2021-03-16 20:31:28,117 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
-2021-03-16 20:31:28,124 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
-2021-03-16 20:31:28,197 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
+<pre>2021-04-02 19:35:06,715 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2021-04-02 19:35:06,717 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2021-04-02 19:35:06,718 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2021-04-02 19:35:06,719 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2021-04-02 19:35:06,720 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2021-04-02 19:35:06,722 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2021-04-02 19:35:06,844 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:35:06,848 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-04-02 19:35:06,855 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;dflat&#39;, &#39;fflat&#39;, &#39;flat&#39;, &#39;sflat&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2021-04-02 19:35:08,252 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
+2021-04-02 19:35:08,253 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
+2021-04-02 19:35:08,254 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_flat_0507.fits&#39;.
+2021-04-02 19:35:08,255 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
+2021-04-02 19:35:08,255 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2021-04-02 19:35:08,255 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2021-04-02 19:35:08,256 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2021-04-02 19:35:08,287 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-02 19:35:08,287 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
+2021-04-02 19:35:08,391 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:35:08,392 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-04-02 19:35:08,392 - stpipe.Image2Pipeline.assign_wcs - INFO - Step skipped.
+2021-04-02 19:35:08,393 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-04-02 19:35:08,465 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:35:08,466 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-04-02 19:35:09,132 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-02 19:35:09,134 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-02 19:35:09,134 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-02 19:35:09,140 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-02 19:35:09,215 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
   science.var_flat = science.data**2 / flat_data_squared * flat_err**2
 
-2021-03-16 20:31:28,211 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-03-16 20:31:28,301 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:31:28,302 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-03-16 20:31:28,303 - stpipe.Image2Pipeline.photom - INFO - Step skipped.
-2021-03-16 20:31:28,303 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-03-16 20:31:28,377 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-03-16 20:31:28,379 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: True, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-03-16 20:31:28,379 - stpipe.Image2Pipeline.resample - INFO - Step skipped.
-2021-03-16 20:31:28,380 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-03-16 20:31:28,380 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-03-16 20:31:28,381 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
-2021-03-16 20:31:28,441 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-03-16 20:31:28,442 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
+2021-04-02 19:35:09,227 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-04-02 19:35:09,321 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:35:09,322 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-04-02 19:35:09,323 - stpipe.Image2Pipeline.photom - INFO - Step skipped.
+2021-04-02 19:35:09,324 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-04-02 19:35:09,403 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-02 19:35:09,405 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: True, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-04-02 19:35:09,405 - stpipe.Image2Pipeline.resample - INFO - Step skipped.
+2021-04-02 19:35:09,406 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-04-02 19:35:09,406 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-02 19:35:09,407 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2021-04-02 19:35:09,465 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-04-02 19:35:09,466 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -14757,7 +14789,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-03-16 20:31:28,483 - stpipe - WARNING - &lt;ipython-input-1-13a01c86caeb&gt;:1: RuntimeWarning: invalid value encountered in true_divide
+<pre>2021-04-02 19:35:09,506 - stpipe - WARNING - &lt;ipython-input-1-13a01c86caeb&gt;:1: RuntimeWarning: invalid value encountered in true_divide
   ratio_im=im.data/im_cal.data
 
 </pre>
@@ -14873,6 +14905,51 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Both-values-above-should-equal-to-1.0">Both values above should equal to 1.0<a class="anchor-link" href="#Both-values-above-should-equal-to-1.0">&#182;</a></h3>
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Check-DQ-flagging">Check DQ flagging<a class="anchor-link" href="#Check-DQ-flagging">&#182;</a></h3><p>Any pixel flagged as NON_SCIENCE should also be flagged as DO_NOT_USE. Check if this is in place in both the input reference file and for the output science file of the calwebb_image2 pipeline. If there are no assert errors, the test below passes.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check if the output cal file is flagged properly</span>
+
+<span class="c1"># Test that all pixels flagged with NON_SCIENCE are also flagged as DO_NOT_USE</span>
+<span class="n">nonsciencearray</span> <span class="o">=</span> <span class="p">(</span><span class="n">im_cal</span><span class="o">.</span><span class="n">dq</span> <span class="o">&amp;</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">pixel</span><span class="p">[</span><span class="s1">&#39;NON_SCIENCE&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">badarray</span> <span class="o">=</span> <span class="p">(</span><span class="n">im_cal</span><span class="o">.</span><span class="n">dq</span> <span class="o">&amp;</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">pixel</span><span class="p">[</span><span class="s1">&#39;DO_NOT_USE&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">nonsciencearray</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="o">==</span> <span class="n">badarray</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Test if the input reference file had the flags all set the same way</span>
+
+<span class="n">nonsciencearray</span> <span class="o">=</span> <span class="p">(</span><span class="n">flat_im</span><span class="o">.</span><span class="n">dq</span> <span class="o">&amp;</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">pixel</span><span class="p">[</span><span class="s1">&#39;NON_SCIENCE&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">badarray</span> <span class="o">=</span> <span class="p">(</span><span class="n">flat_im</span><span class="o">.</span><span class="n">dq</span> <span class="o">&amp;</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">pixel</span><span class="p">[</span><span class="s1">&#39;DO_NOT_USE&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">nonsciencearray</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="o">==</span> <span class="n">badarray</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
