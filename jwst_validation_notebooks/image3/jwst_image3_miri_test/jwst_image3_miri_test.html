@@ -14344,7 +14344,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-02 19:35:12,132 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
+<pre>2021-04-10 04:25:17,288 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
   warnings.warn(f&#39;{name} was moved to the {deprecated[name]} module. &#39;
 
 </pre>
@@ -14584,385 +14584,385 @@ Finished Downloads
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-02 19:35:15,901 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
-2021-04-02 19:35:15,903 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
-2021-04-02 19:35:15,904 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
-2021-04-02 19:35:15,906 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
-2021-04-02 19:35:15,907 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2021-04-02 19:35:15,908 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
-2021-04-02 19:35:15,910 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
-2021-04-02 19:35:15,983 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;image3_asnfile.json&#39;,).
-2021-04-02 19:35:15,992 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
-2021-04-02 19:35:16,366 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
-2021-04-02 19:35:17,702 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_system_datalvl_0002.rmap      694 bytes  (1 / 135 files) (0 / 335.8 K bytes)
-2021-04-02 19:35:17,730 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_system_calver_0022.rmap    2.4 K bytes  (2 / 135 files) (694 / 335.8 K bytes)
-2021-04-02 19:35:17,749 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_system_0021.imap      385 bytes  (3 / 135 files) (3.1 K / 335.8 K bytes)
-2021-04-02 19:35:17,769 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_wavelengthrange_0016.rmap    1.1 K bytes  (4 / 135 files) (3.5 K / 335.8 K bytes)
-2021-04-02 19:35:17,790 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_wavecorr_0003.rmap      833 bytes  (5 / 135 files) (4.6 K / 335.8 K bytes)
-2021-04-02 19:35:17,808 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_superbias_0038.rmap   15.8 K bytes  (6 / 135 files) (5.5 K / 335.8 K bytes)
-2021-04-02 19:35:17,829 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_sflat_0009.rmap    8.5 K bytes  (7 / 135 files) (21.2 K / 335.8 K bytes)
-2021-04-02 19:35:17,848 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_saturation_0017.rmap    2.0 K bytes  (8 / 135 files) (29.7 K / 335.8 K bytes)
-2021-04-02 19:35:17,867 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_refpix_0014.rmap    1.5 K bytes  (9 / 135 files) (31.7 K / 335.8 K bytes)
-2021-04-02 19:35:17,885 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_readnoise_0015.rmap    1.8 K bytes  (10 / 135 files) (33.2 K / 335.8 K bytes)
-2021-04-02 19:35:17,906 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_photom_0012.rmap      907 bytes  (11 / 135 files) (35.0 K / 335.8 K bytes)
-2021-04-02 19:35:17,926 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_pathloss_0003.rmap      932 bytes  (12 / 135 files) (36.0 K / 335.8 K bytes)
-2021-04-02 19:35:17,944 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_ote_0019.rmap    1.0 K bytes  (13 / 135 files) (36.9 K / 335.8 K bytes)
-2021-04-02 19:35:17,963 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_msaoper_0003.rmap      783 bytes  (14 / 135 files) (37.9 K / 335.8 K bytes)
-2021-04-02 19:35:17,984 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_msa_0017.rmap    1.0 K bytes  (15 / 135 files) (38.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,004 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_mask_0021.rmap    1.5 K bytes  (16 / 135 files) (39.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,024 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_linearity_0017.rmap    1.6 K bytes  (17 / 135 files) (41.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,044 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_ipc_0006.rmap      876 bytes  (18 / 135 files) (42.8 K / 335.8 K bytes)
-2021-04-02 19:35:18,063 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_ifuslicer_0007.rmap      733 bytes  (19 / 135 files) (43.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,082 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_ifupost_0009.rmap      719 bytes  (20 / 135 files) (44.4 K / 335.8 K bytes)
-2021-04-02 19:35:18,101 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_ifufore_0007.rmap      719 bytes  (21 / 135 files) (45.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,121 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_gain_0019.rmap    1.8 K bytes  (22 / 135 files) (45.8 K / 335.8 K bytes)
-2021-04-02 19:35:18,140 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_fpa_0017.rmap    1.0 K bytes  (23 / 135 files) (47.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,158 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_fore_0016.rmap    3.4 K bytes  (24 / 135 files) (48.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,176 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_flat_0012.rmap    3.6 K bytes  (25 / 135 files) (52.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,194 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_fflat_0007.rmap    3.3 K bytes  (26 / 135 files) (55.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,214 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_extract1d_0010.rmap    1.2 K bytes  (27 / 135 files) (58.9 K / 335.8 K bytes)
-2021-04-02 19:35:18,234 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_disperser_0018.rmap    3.9 K bytes  (28 / 135 files) (60.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,253 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_dflat_0004.rmap    1.0 K bytes  (29 / 135 files) (64.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,272 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_dark_0031.rmap   14.4 K bytes  (30 / 135 files) (65.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,291 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_cubepar_0005.rmap      740 bytes  (31 / 135 files) (79.4 K / 335.8 K bytes)
-2021-04-02 19:35:18,310 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_collimator_0016.rmap    1.1 K bytes  (32 / 135 files) (80.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,331 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_camera_0016.rmap    1.0 K bytes  (33 / 135 files) (81.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,351 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_barshadow_0003.rmap      877 bytes  (34 / 135 files) (82.3 K / 335.8 K bytes)
-2021-04-02 19:35:18,371 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_area_0013.rmap    4.5 K bytes  (35 / 135 files) (83.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,390 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_apcorr_0002.rmap    4.2 K bytes  (36 / 135 files) (87.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,410 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nirspec_0201.imap    2.4 K bytes  (37 / 135 files) (91.8 K / 335.8 K bytes)
-2021-04-02 19:35:18,430 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_wfssbkg_0002.rmap    2.3 K bytes  (38 / 135 files) (94.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,450 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_wavelengthrange_0005.rmap      811 bytes  (39 / 135 files) (96.4 K / 335.8 K bytes)
-2021-04-02 19:35:18,469 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_trappars_0004.rmap      753 bytes  (40 / 135 files) (97.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,488 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_trapdensity_0004.rmap      774 bytes  (41 / 135 files) (98.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,507 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_throughput_0004.rmap      979 bytes  (42 / 135 files) (98.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,527 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_superbias_0022.rmap    4.6 K bytes  (43 / 135 files) (99.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,546 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_specwcs_0005.rmap    2.3 K bytes  (44 / 135 files) (104.3 K / 335.8 K bytes)
-2021-04-02 19:35:18,565 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_saturation_0010.rmap      625 bytes  (45 / 135 files) (106.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,584 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_readnoise_0008.rmap      969 bytes  (46 / 135 files) (107.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,604 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_photom_0026.rmap      996 bytes  (47 / 135 files) (108.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,623 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_persat_0005.rmap      738 bytes  (48 / 135 files) (109.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,642 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_pathloss_0002.rmap      707 bytes  (49 / 135 files) (109.9 K / 335.8 K bytes)
-2021-04-02 19:35:18,662 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_mask_0016.rmap      735 bytes  (50 / 135 files) (110.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,682 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_linearity_0015.rmap      760 bytes  (51 / 135 files) (111.4 K / 335.8 K bytes)
-2021-04-02 19:35:18,701 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_ipc_0006.rmap      590 bytes  (52 / 135 files) (112.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,721 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_gain_0009.rmap      838 bytes  (53 / 135 files) (112.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,741 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_flat_0016.rmap    4.1 K bytes  (54 / 135 files) (113.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,760 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_extract1d_0006.rmap      854 bytes  (55 / 135 files) (117.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,778 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_drizpars_0004.rmap      519 bytes  (56 / 135 files) (118.5 K / 335.8 K bytes)
-2021-04-02 19:35:18,798 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_distortion_0017.rmap      899 bytes  (57 / 135 files) (119.1 K / 335.8 K bytes)
-2021-04-02 19:35:18,816 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_dark_0027.rmap    4.0 K bytes  (58 / 135 files) (120.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,834 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_area_0012.rmap    1.1 K bytes  (59 / 135 files) (123.9 K / 335.8 K bytes)
-2021-04-02 19:35:18,853 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_apcorr_0003.rmap    4.1 K bytes  (60 / 135 files) (125.0 K / 335.8 K bytes)
-2021-04-02 19:35:18,873 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_abvegaoffset_0002.rmap    1.3 K bytes  (61 / 135 files) (129.2 K / 335.8 K bytes)
-2021-04-02 19:35:18,892 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_niriss_0128.imap    2.2 K bytes  (62 / 135 files) (130.4 K / 335.8 K bytes)
-2021-04-02 19:35:18,912 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_wfssbkg_0003.rmap    7.2 K bytes  (63 / 135 files) (132.6 K / 335.8 K bytes)
-2021-04-02 19:35:18,932 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_wavelengthrange_0009.rmap      945 bytes  (64 / 135 files) (139.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,952 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_tsophot_0002.rmap      794 bytes  (65 / 135 files) (140.7 K / 335.8 K bytes)
-2021-04-02 19:35:18,972 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_trappars_0003.rmap    1.6 K bytes  (66 / 135 files) (141.5 K / 335.8 K bytes)
-2021-04-02 19:35:18,992 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_trapdensity_0003.rmap    1.6 K bytes  (67 / 135 files) (143.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,011 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_superbias_0006.rmap    2.6 K bytes  (68 / 135 files) (144.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,031 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_specwcs_0008.rmap    1.7 K bytes  (69 / 135 files) (147.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,051 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_saturation_0006.rmap    2.2 K bytes  (70 / 135 files) (149.0 K / 335.8 K bytes)
-2021-04-02 19:35:19,072 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_readnoise_0006.rmap    5.6 K bytes  (71 / 135 files) (151.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,091 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_psfmask_0005.rmap   10.7 K bytes  (72 / 135 files) (156.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,112 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_photom_0010.rmap    4.3 K bytes  (73 / 135 files) (167.4 K / 335.8 K bytes)
-2021-04-02 19:35:19,132 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_persat_0004.rmap    1.6 K bytes  (74 / 135 files) (171.8 K / 335.8 K bytes)
-2021-04-02 19:35:19,151 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_mask_0007.rmap    2.3 K bytes  (75 / 135 files) (173.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,170 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_linearity_0011.rmap    2.4 K bytes  (76 / 135 files) (175.6 K / 335.8 K bytes)
-2021-04-02 19:35:19,190 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_ipc_0003.rmap    2.0 K bytes  (77 / 135 files) (178.0 K / 335.8 K bytes)
-2021-04-02 19:35:19,209 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_gain_0009.rmap    2.9 K bytes  (78 / 135 files) (180.0 K / 335.8 K bytes)
-2021-04-02 19:35:19,229 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_flat_0014.rmap   21.5 K bytes  (79 / 135 files) (182.9 K / 335.8 K bytes)
-2021-04-02 19:35:19,249 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_filteroffset_0003.rmap    1.1 K bytes  (80 / 135 files) (204.4 K / 335.8 K bytes)
-2021-04-02 19:35:19,267 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_drizpars_0001.rmap      519 bytes  (81 / 135 files) (205.5 K / 335.8 K bytes)
-2021-04-02 19:35:19,286 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_distortion_0022.rmap    9.1 K bytes  (82 / 135 files) (206.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,305 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_dark_0018.rmap   14.1 K bytes  (83 / 135 files) (215.2 K / 335.8 K bytes)
-2021-04-02 19:35:19,325 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_area_0006.rmap    4.6 K bytes  (84 / 135 files) (229.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,343 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_apcorr_0003.rmap    4.2 K bytes  (85 / 135 files) (233.9 K / 335.8 K bytes)
-2021-04-02 19:35:19,361 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_abvegaoffset_0002.rmap    1.3 K bytes  (86 / 135 files) (238.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,380 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_nircam_0138.imap    2.2 K bytes  (87 / 135 files) (239.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,400 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_wcsregions_0009.rmap    1.1 K bytes  (88 / 135 files) (241.5 K / 335.8 K bytes)
-2021-04-02 19:35:19,419 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_wavelengthrange_0019.rmap    1.1 K bytes  (89 / 135 files) (242.6 K / 335.8 K bytes)
-2021-04-02 19:35:19,439 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_tsophot_0002.rmap      780 bytes  (90 / 135 files) (243.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,458 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_straymask_0007.rmap      885 bytes  (91 / 135 files) (244.5 K / 335.8 K bytes)
-2021-04-02 19:35:19,477 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_specwcs_0025.rmap    2.3 K bytes  (92 / 135 files) (245.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,496 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_saturation_0011.rmap      961 bytes  (93 / 135 files) (247.6 K / 335.8 K bytes)
-2021-04-02 19:35:19,517 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_rscd_0006.rmap      860 bytes  (94 / 135 files) (248.6 K / 335.8 K bytes)
-2021-04-02 19:35:19,536 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_resol_0004.rmap      739 bytes  (95 / 135 files) (249.4 K / 335.8 K bytes)
-2021-04-02 19:35:19,554 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_reset_0010.rmap    2.1 K bytes  (96 / 135 files) (250.2 K / 335.8 K bytes)
-2021-04-02 19:35:19,574 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_regions_0025.rmap    2.0 K bytes  (97 / 135 files) (252.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,593 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_readnoise_0014.rmap    4.3 K bytes  (98 / 135 files) (254.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,614 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_psfmask_0003.rmap    1.3 K bytes  (99 / 135 files) (258.6 K / 335.8 K bytes)
-2021-04-02 19:35:19,633 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_photom_0028.rmap    5.5 K bytes  (100 / 135 files) (259.8 K / 335.8 K bytes)
-2021-04-02 19:35:19,652 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_mask_0015.rmap      893 bytes  (101 / 135 files) (265.3 K / 335.8 K bytes)
-2021-04-02 19:35:19,670 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_linearity_0013.rmap    1.9 K bytes  (102 / 135 files) (266.2 K / 335.8 K bytes)
-2021-04-02 19:35:19,690 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_ipc_0005.rmap      721 bytes  (103 / 135 files) (268.2 K / 335.8 K bytes)
-2021-04-02 19:35:19,709 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_gain_0007.rmap      893 bytes  (104 / 135 files) (268.9 K / 335.8 K bytes)
-2021-04-02 19:35:19,728 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_fringe_0014.rmap    2.1 K bytes  (105 / 135 files) (269.8 K / 335.8 K bytes)
-2021-04-02 19:35:19,748 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_flat_0046.rmap   19.1 K bytes  (106 / 135 files) (271.9 K / 335.8 K bytes)
-2021-04-02 19:35:19,768 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_filteroffset_0020.rmap    1.1 K bytes  (107 / 135 files) (290.9 K / 335.8 K bytes)
-2021-04-02 19:35:19,787 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_extract1d_0011.rmap    1.1 K bytes  (108 / 135 files) (292.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,809 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_drizpars_0002.rmap      511 bytes  (109 / 135 files) (293.1 K / 335.8 K bytes)
-2021-04-02 19:35:19,829 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_distortion_0031.rmap    1.9 K bytes  (110 / 135 files) (293.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,850 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_dark_0020.rmap    3.5 K bytes  (111 / 135 files) (295.5 K / 335.8 K bytes)
-2021-04-02 19:35:19,870 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_cubepar_0006.rmap      686 bytes  (112 / 135 files) (299.0 K / 335.8 K bytes)
-2021-04-02 19:35:19,889 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_area_0011.rmap      755 bytes  (113 / 135 files) (299.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,907 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_apcorr_0004.rmap    4.3 K bytes  (114 / 135 files) (300.4 K / 335.8 K bytes)
-2021-04-02 19:35:19,925 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_abvegaoffset_0002.rmap    1.3 K bytes  (115 / 135 files) (304.7 K / 335.8 K bytes)
-2021-04-02 19:35:19,945 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_miri_0204.imap    2.2 K bytes  (116 / 135 files) (306.0 K / 335.8 K bytes)
-2021-04-02 19:35:19,964 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_trappars_0004.rmap      903 bytes  (117 / 135 files) (308.2 K / 335.8 K bytes)
-2021-04-02 19:35:19,982 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_trapdensity_0004.rmap      930 bytes  (118 / 135 files) (309.1 K / 335.8 K bytes)
-2021-04-02 19:35:20,001 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_superbias_0015.rmap    3.8 K bytes  (119 / 135 files) (310.0 K / 335.8 K bytes)
-2021-04-02 19:35:20,024 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_saturation_0009.rmap      779 bytes  (120 / 135 files) (313.8 K / 335.8 K bytes)
-2021-04-02 19:35:20,044 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_readnoise_0011.rmap    1.3 K bytes  (121 / 135 files) (314.6 K / 335.8 K bytes)
-2021-04-02 19:35:20,063 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_photom_0011.rmap    1.0 K bytes  (122 / 135 files) (315.9 K / 335.8 K bytes)
-2021-04-02 19:35:20,086 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_persat_0004.rmap      884 bytes  (123 / 135 files) (316.9 K / 335.8 K bytes)
-2021-04-02 19:35:20,104 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_mask_0018.rmap    1.2 K bytes  (124 / 135 files) (317.8 K / 335.8 K bytes)
-2021-04-02 19:35:20,125 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_linearity_0013.rmap      925 bytes  (125 / 135 files) (319.0 K / 335.8 K bytes)
-2021-04-02 19:35:20,148 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_ipc_0003.rmap      614 bytes  (126 / 135 files) (319.9 K / 335.8 K bytes)
-2021-04-02 19:35:20,167 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_gain_0010.rmap      890 bytes  (127 / 135 files) (320.5 K / 335.8 K bytes)
-2021-04-02 19:35:20,186 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_flat_0009.rmap    1.1 K bytes  (128 / 135 files) (321.4 K / 335.8 K bytes)
-2021-04-02 19:35:20,204 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_distortion_0007.rmap    1.1 K bytes  (129 / 135 files) (322.5 K / 335.8 K bytes)
-2021-04-02 19:35:20,224 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_dark_0011.rmap    3.3 K bytes  (130 / 135 files) (323.6 K / 335.8 K bytes)
-2021-04-02 19:35:20,245 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_area_0009.rmap    1.0 K bytes  (131 / 135 files) (326.9 K / 335.8 K bytes)
-2021-04-02 19:35:20,264 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_apcorr_0002.rmap    4.1 K bytes  (132 / 135 files) (327.9 K / 335.8 K bytes)
-2021-04-02 19:35:20,283 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_abvegaoffset_0002.rmap    1.3 K bytes  (133 / 135 files) (332.0 K / 335.8 K bytes)
-2021-04-02 19:35:20,304 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_fgs_0082.imap    1.9 K bytes  (134 / 135 files) (333.3 K / 335.8 K bytes)
-2021-04-02 19:35:20,325 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/mappings/jwst/jwst_0619.pmap      615 bytes  (135 / 135 files) (335.2 K / 335.8 K bytes)
-2021-04-02 19:35:20,518 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf    1.7 K bytes  (1 / 3 files) (0 / 33.3 K bytes)
-2021-04-02 19:35:20,550 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_apcorr_0005.fits   23.0 K bytes  (2 / 3 files) (1.7 K / 33.3 K bytes)
-2021-04-02 19:35:20,586 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_drizpars_0001.fits    8.6 K bytes  (3 / 3 files) (24.7 K / 33.3 K bytes)
-2021-04-02 19:35:20,606 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf&#39;.
-2021-04-02 19:35:20,607 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_apcorr_0005.fits&#39;.
-2021-04-02 19:35:20,607 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
-2021-04-02 19:35:20,608 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
-2021-04-02 19:35:21,724 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
-2021-04-02 19:35:21,726 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}
-2021-04-02 19:35:22,047 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 107 sources in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits.
-2021-04-02 19:35:22,355 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 105 sources in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:22,655 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 107 sources in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits.
-2021-04-02 19:35:22,955 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 105 sources in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:23,243 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 92 sources in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:23,529 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 92 sources in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:23,817 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 89 sources in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:24,102 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 89 sources in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits.
-2021-04-02 19:35:24,106 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:24,106 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 6.
-2021-04-02 19:35:24,107 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
-2021-04-02 19:35:24,129 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39;:
-2021-04-02 19:35:24,130 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal
-2021-04-02 19:35:24,150 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
-2021-04-02 19:35:24,151 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,172 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39;:
-2021-04-02 19:35:24,172 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal
-2021-04-02 19:35:24,193 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
-2021-04-02 19:35:24,194 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,235 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
-2021-04-02 19:35:24,235 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,236 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,276 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
-2021-04-02 19:35:24,277 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,277 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal
-2021-04-02 19:35:24,277 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:24,278 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2021-04-02 19:35:24,278 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2021-04-02 19:35:24.278218
-2021-04-02 19:35:24,279 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.7.1
-2021-04-02 19:35:24,279 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2021-04-02 19:35:24,458 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; as reference image
-2021-04-02 19:35:24,462 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
-2021-04-02 19:35:24,560 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
-2021-04-02 19:35:24,561 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2021-04-02 19:35:24,562 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.002616, 0.000327 with significance of 22.88 and 261 matches.
-2021-04-02 19:35:24,563 - stpipe.Image3Pipeline.tweakreg - INFO - Found 104 matches for &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
-2021-04-02 19:35:24,564 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2021-04-02 19:35:24,566 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal:
-2021-04-02 19:35:24,567 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 2.21519e-05  YSH: -2.61292e-05    PROPER ROT: 0.000263681    
-2021-04-02 19:35:24,567 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.000263681  SKEW: 0.000271493    ROT_X: 0.000127935  ROT_Y: 0.000399428
-2021-04-02 19:35:24,568 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 1  SCALE_X: 1.00001  SCALE_Y: 1
-2021-04-02 19:35:24,568 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:24,568 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00120963   FIT MAE: 0.000845105
-2021-04-02 19:35:24,568 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 102 objects.
-2021-04-02 19:35:24,601 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39; to the reference catalog.
-2021-04-02 19:35:24,698 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
-2021-04-02 19:35:24,699 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2021-04-02 19:35:24,700 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.004122, -0.07769 with significance of 16.84 and 239 matches.
-2021-04-02 19:35:24,701 - stpipe.Image3Pipeline.tweakreg - INFO - Found 103 matches for &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39;...
-2021-04-02 19:35:24,701 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2021-04-02 19:35:24,703 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal:
-2021-04-02 19:35:24,703 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.0148375  YSH: 0.0332348    PROPER ROT: 0.0086123    
-2021-04-02 19:35:24,704 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.0086123  SKEW: -0.00400414    ROT_X: 0.0106144  ROT_Y: 0.00661022
-2021-04-02 19:35:24,704 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.999037  SCALE_X: 0.998302  SCALE_Y: 0.999773
-2021-04-02 19:35:24,704 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:24,704 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.319394   FIT MAE: 0.199609
-2021-04-02 19:35:24,705 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 103 objects.
-2021-04-02 19:35:24,738 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
-2021-04-02 19:35:24,837 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
-2021-04-02 19:35:24,838 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2021-04-02 19:35:24,839 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.004479, -0.06403 with significance of 16.5 and 235 matches.
-2021-04-02 19:35:24,840 - stpipe.Image3Pipeline.tweakreg - INFO - Found 103 matches for &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
-2021-04-02 19:35:24,841 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2021-04-02 19:35:24,842 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal:
-2021-04-02 19:35:24,843 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.015163  YSH: 0.0211069    PROPER ROT: 0.00464944    
-2021-04-02 19:35:24,843 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.00464944  SKEW: 0.00350628    ROT_X: 0.00289629  ROT_Y: 0.00640258
-2021-04-02 19:35:24,843 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.998993  SCALE_X: 0.998306  SCALE_Y: 0.999681
-2021-04-02 19:35:24,844 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:24,844 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.331953   FIT MAE: 0.206074
-2021-04-02 19:35:24,844 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 103 objects.
-2021-04-02 19:35:25,077 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
-2021-04-02 19:35:25,176 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
-2021-04-02 19:35:25,177 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2021-04-02 19:35:25,178 - stpipe.Image3Pipeline.tweakreg - INFO - Found peak in the 2D histogram lies at the edge of the histogram. Try increasing &#39;searchrad&#39; for improved results.
-2021-04-02 19:35:25,178 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 1 with significance of 17.73 and 406 matches.
-2021-04-02 19:35:25,179 - stpipe.Image3Pipeline.tweakreg - INFO - Found 64 matches for &#39;GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
-2021-04-02 19:35:25,180 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2021-04-02 19:35:25,182 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal:
-2021-04-02 19:35:25,182 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 0.0268896  YSH: -0.73293    PROPER ROT: 0.0682397    
-2021-04-02 19:35:25,182 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.0682397  SKEW: -0.197233    ROT_X: 0.166856  ROT_Y: -0.0303768
-2021-04-02 19:35:25,183 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.998175  SCALE_X: 0.996148  SCALE_Y: 1.00021
-2021-04-02 19:35:25,183 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:25,183 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.475774   FIT MAE: 0.392832
-2021-04-02 19:35:25,183 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 64 objects.
-2021-04-02 19:35:25,250 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
-2021-04-02 19:35:25,347 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
-2021-04-02 19:35:25,347 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2021-04-02 19:35:25,348 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0.01661, -0.02249 with significance of 21.56 and 410 matches.
-2021-04-02 19:35:25,349 - stpipe.Image3Pipeline.tweakreg - INFO - Found 88 matches for &#39;GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
-2021-04-02 19:35:25,350 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2021-04-02 19:35:25,352 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal:
-2021-04-02 19:35:25,352 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.0320895  YSH: 0.04614    PROPER ROT: -0.0135637    
-2021-04-02 19:35:25,352 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.0135637  SKEW: 0.0510582    ROT_X: -0.0390928  ROT_Y: 0.0119654
-2021-04-02 19:35:25,353 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.999116  SCALE_X: 0.999021  SCALE_Y: 0.999211
-2021-04-02 19:35:25,353 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2021-04-02 19:35:25,353 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.31811   FIT MAE: 0.204258
-2021-04-02 19:35:25,353 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 88 objects.
-2021-04-02 19:35:25,419 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2021-04-02 19:35:25,420 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2021-04-02 19:35:25.419722
-2021-04-02 19:35:25,420 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:01.141504
-2021-04-02 19:35:25,420 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2021-04-02 19:35:25,578 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
-2021-04-02 19:35:25,793 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
-2021-04-02 19:35:25,795 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-04-02 19:35:25,856 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:25,856 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-04-02 19:35:25.856181
-2021-04-02 19:35:25,857 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:25,857 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
-2021-04-02 19:35:25,857 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
-2021-04-02 19:35:25,857 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
-2021-04-02 19:35:25,858 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:25,858 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-04-02 19:35:32,330 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 0.0218283
-2021-04-02 19:35:32,332 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.024467
-2021-04-02 19:35:32,333 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 0.00529277
-2021-04-02 19:35:32,333 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.0120402
-2021-04-02 19:35:32,334 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=1. Sky background of component images:
-2021-04-02 19:35:32,334 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.00705707
-2021-04-02 19:35:32,335 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.00705707
-2021-04-02 19:35:32,335 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=2. Sky background of component images:
-2021-04-02 19:35:32,336 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0
-2021-04-02 19:35:32,336 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0
-2021-04-02 19:35:32,337 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:32,337 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2021-04-02 19:35:32,488 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:32,489 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 10.720815592806472 [not converted]
-2021-04-02 19:35:32,490 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:32,490 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
-2021-04-02 19:35:32,490 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 10.7426 (old=0.0218283, delta=10.7208)
-2021-04-02 19:35:32,491 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7453 (old=0.024467, delta=10.7208)
-2021-04-02 19:35:32,491 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 10.7261 (old=0.00529277, delta=10.7208)
-2021-04-02 19:35:32,491 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7329 (old=0.0120402, delta=10.7208)
-2021-04-02 19:35:32,492 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=1. Sky background of component images:
-2021-04-02 19:35:32,492 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7279 (old=0.00705707, delta=10.7208)
-2021-04-02 19:35:32,492 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7279 (old=0.00705707, delta=10.7208)
-2021-04-02 19:35:32,493 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=2. Sky background of component images:
-2021-04-02 19:35:32,493 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7208 (old=0, delta=10.7208)
-2021-04-02 19:35:32,493 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7208 (old=0, delta=10.7208)
-2021-04-02 19:35:32,494 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:32,494 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-04-02 19:35:32.494173
-2021-04-02 19:35:32,494 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:06.637992
-2021-04-02 19:35:32,495 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-02 19:35:32,501 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
-2021-04-02 19:35:32,687 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
-2021-04-02 19:35:32,689 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;crf&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-04-02 19:35:32,692 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 8 inputs
-2021-04-02 19:35:33,506 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:34,934 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:36,384 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:37,820 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:39,262 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:40,676 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:42,123 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:43,680 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:44,783 - stpipe.Image3Pipeline.outlier_detection - INFO - Generating median from 6 images
-2021-04-02 19:35:45,231 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+<pre>2021-04-10 04:25:20,919 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
+2021-04-10 04:25:20,920 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
+2021-04-10 04:25:20,922 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
+2021-04-10 04:25:20,923 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
+2021-04-10 04:25:20,925 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2021-04-10 04:25:20,926 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
+2021-04-10 04:25:20,927 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
+2021-04-10 04:25:21,041 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;image3_asnfile.json&#39;,).
+2021-04-10 04:25:21,047 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
+2021-04-10 04:25:21,418 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
+2021-04-10 04:25:23,172 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_system_datalvl_0002.rmap      694 bytes  (1 / 135 files) (0 / 335.8 K bytes)
+2021-04-10 04:25:23,198 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_system_calver_0022.rmap    2.4 K bytes  (2 / 135 files) (694 / 335.8 K bytes)
+2021-04-10 04:25:23,219 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_system_0021.imap      385 bytes  (3 / 135 files) (3.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,240 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_wavelengthrange_0016.rmap    1.1 K bytes  (4 / 135 files) (3.5 K / 335.8 K bytes)
+2021-04-10 04:25:23,260 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_wavecorr_0003.rmap      833 bytes  (5 / 135 files) (4.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,281 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_superbias_0038.rmap   15.8 K bytes  (6 / 135 files) (5.5 K / 335.8 K bytes)
+2021-04-10 04:25:23,301 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_sflat_0009.rmap    8.5 K bytes  (7 / 135 files) (21.2 K / 335.8 K bytes)
+2021-04-10 04:25:23,320 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_saturation_0017.rmap    2.0 K bytes  (8 / 135 files) (29.7 K / 335.8 K bytes)
+2021-04-10 04:25:23,340 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_refpix_0014.rmap    1.5 K bytes  (9 / 135 files) (31.7 K / 335.8 K bytes)
+2021-04-10 04:25:23,362 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_readnoise_0015.rmap    1.8 K bytes  (10 / 135 files) (33.2 K / 335.8 K bytes)
+2021-04-10 04:25:23,383 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_photom_0012.rmap      907 bytes  (11 / 135 files) (35.0 K / 335.8 K bytes)
+2021-04-10 04:25:23,404 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_pathloss_0003.rmap      932 bytes  (12 / 135 files) (36.0 K / 335.8 K bytes)
+2021-04-10 04:25:23,425 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_ote_0019.rmap    1.0 K bytes  (13 / 135 files) (36.9 K / 335.8 K bytes)
+2021-04-10 04:25:23,446 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_msaoper_0003.rmap      783 bytes  (14 / 135 files) (37.9 K / 335.8 K bytes)
+2021-04-10 04:25:23,466 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_msa_0017.rmap    1.0 K bytes  (15 / 135 files) (38.7 K / 335.8 K bytes)
+2021-04-10 04:25:23,486 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_mask_0021.rmap    1.5 K bytes  (16 / 135 files) (39.7 K / 335.8 K bytes)
+2021-04-10 04:25:23,507 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_linearity_0017.rmap    1.6 K bytes  (17 / 135 files) (41.2 K / 335.8 K bytes)
+2021-04-10 04:25:23,526 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_ipc_0006.rmap      876 bytes  (18 / 135 files) (42.8 K / 335.8 K bytes)
+2021-04-10 04:25:23,546 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_ifuslicer_0007.rmap      733 bytes  (19 / 135 files) (43.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,566 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_ifupost_0009.rmap      719 bytes  (20 / 135 files) (44.4 K / 335.8 K bytes)
+2021-04-10 04:25:23,586 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_ifufore_0007.rmap      719 bytes  (21 / 135 files) (45.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,606 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_gain_0019.rmap    1.8 K bytes  (22 / 135 files) (45.8 K / 335.8 K bytes)
+2021-04-10 04:25:23,628 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_fpa_0017.rmap    1.0 K bytes  (23 / 135 files) (47.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,649 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_fore_0016.rmap    3.4 K bytes  (24 / 135 files) (48.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,670 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_flat_0012.rmap    3.6 K bytes  (25 / 135 files) (52.0 K / 335.8 K bytes)
+2021-04-10 04:25:23,690 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_fflat_0007.rmap    3.3 K bytes  (26 / 135 files) (55.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,710 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_extract1d_0010.rmap    1.2 K bytes  (27 / 135 files) (58.9 K / 335.8 K bytes)
+2021-04-10 04:25:23,728 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_disperser_0018.rmap    3.9 K bytes  (28 / 135 files) (60.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,749 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_dflat_0004.rmap    1.0 K bytes  (29 / 135 files) (64.0 K / 335.8 K bytes)
+2021-04-10 04:25:23,769 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_dark_0031.rmap   14.4 K bytes  (30 / 135 files) (65.0 K / 335.8 K bytes)
+2021-04-10 04:25:23,790 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_cubepar_0005.rmap      740 bytes  (31 / 135 files) (79.4 K / 335.8 K bytes)
+2021-04-10 04:25:23,825 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_collimator_0016.rmap    1.1 K bytes  (32 / 135 files) (80.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,846 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_camera_0016.rmap    1.0 K bytes  (33 / 135 files) (81.2 K / 335.8 K bytes)
+2021-04-10 04:25:23,865 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_barshadow_0003.rmap      877 bytes  (34 / 135 files) (82.3 K / 335.8 K bytes)
+2021-04-10 04:25:23,885 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_area_0013.rmap    4.5 K bytes  (35 / 135 files) (83.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,904 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_apcorr_0002.rmap    4.2 K bytes  (36 / 135 files) (87.6 K / 335.8 K bytes)
+2021-04-10 04:25:23,923 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nirspec_0201.imap    2.4 K bytes  (37 / 135 files) (91.8 K / 335.8 K bytes)
+2021-04-10 04:25:23,942 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_wfssbkg_0002.rmap    2.3 K bytes  (38 / 135 files) (94.1 K / 335.8 K bytes)
+2021-04-10 04:25:23,961 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_wavelengthrange_0005.rmap      811 bytes  (39 / 135 files) (96.4 K / 335.8 K bytes)
+2021-04-10 04:25:23,981 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_trappars_0004.rmap      753 bytes  (40 / 135 files) (97.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,001 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_trapdensity_0004.rmap      774 bytes  (41 / 135 files) (98.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,020 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_throughput_0004.rmap      979 bytes  (42 / 135 files) (98.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,039 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_superbias_0022.rmap    4.6 K bytes  (43 / 135 files) (99.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,059 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_specwcs_0005.rmap    2.3 K bytes  (44 / 135 files) (104.3 K / 335.8 K bytes)
+2021-04-10 04:25:24,078 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_saturation_0010.rmap      625 bytes  (45 / 135 files) (106.6 K / 335.8 K bytes)
+2021-04-10 04:25:24,097 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_readnoise_0008.rmap      969 bytes  (46 / 135 files) (107.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,116 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_photom_0026.rmap      996 bytes  (47 / 135 files) (108.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,135 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_persat_0005.rmap      738 bytes  (48 / 135 files) (109.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,156 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_pathloss_0002.rmap      707 bytes  (49 / 135 files) (109.9 K / 335.8 K bytes)
+2021-04-10 04:25:24,177 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_mask_0016.rmap      735 bytes  (50 / 135 files) (110.6 K / 335.8 K bytes)
+2021-04-10 04:25:24,199 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_linearity_0015.rmap      760 bytes  (51 / 135 files) (111.4 K / 335.8 K bytes)
+2021-04-10 04:25:24,219 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_ipc_0006.rmap      590 bytes  (52 / 135 files) (112.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,247 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_gain_0009.rmap      838 bytes  (53 / 135 files) (112.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,269 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_flat_0016.rmap    4.1 K bytes  (54 / 135 files) (113.6 K / 335.8 K bytes)
+2021-04-10 04:25:24,291 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_extract1d_0006.rmap      854 bytes  (55 / 135 files) (117.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,312 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_drizpars_0004.rmap      519 bytes  (56 / 135 files) (118.5 K / 335.8 K bytes)
+2021-04-10 04:25:24,332 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_distortion_0017.rmap      899 bytes  (57 / 135 files) (119.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,351 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_dark_0027.rmap    4.0 K bytes  (58 / 135 files) (120.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,371 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_area_0012.rmap    1.1 K bytes  (59 / 135 files) (123.9 K / 335.8 K bytes)
+2021-04-10 04:25:24,391 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_apcorr_0003.rmap    4.1 K bytes  (60 / 135 files) (125.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,411 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_abvegaoffset_0002.rmap    1.3 K bytes  (61 / 135 files) (129.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,432 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_niriss_0128.imap    2.2 K bytes  (62 / 135 files) (130.4 K / 335.8 K bytes)
+2021-04-10 04:25:24,452 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_wfssbkg_0003.rmap    7.2 K bytes  (63 / 135 files) (132.6 K / 335.8 K bytes)
+2021-04-10 04:25:24,471 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_wavelengthrange_0009.rmap      945 bytes  (64 / 135 files) (139.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,492 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_tsophot_0002.rmap      794 bytes  (65 / 135 files) (140.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,516 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_trappars_0003.rmap    1.6 K bytes  (66 / 135 files) (141.5 K / 335.8 K bytes)
+2021-04-10 04:25:24,537 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_trapdensity_0003.rmap    1.6 K bytes  (67 / 135 files) (143.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,557 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_superbias_0006.rmap    2.6 K bytes  (68 / 135 files) (144.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,577 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_specwcs_0008.rmap    1.7 K bytes  (69 / 135 files) (147.3 K / 335.8 K bytes)
+2021-04-10 04:25:24,598 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_saturation_0006.rmap    2.2 K bytes  (70 / 135 files) (149.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,617 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_readnoise_0006.rmap    5.6 K bytes  (71 / 135 files) (151.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,636 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_psfmask_0005.rmap   10.7 K bytes  (72 / 135 files) (156.7 K / 335.8 K bytes)
+2021-04-10 04:25:24,655 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_photom_0010.rmap    4.3 K bytes  (73 / 135 files) (167.4 K / 335.8 K bytes)
+2021-04-10 04:25:24,675 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_persat_0004.rmap    1.6 K bytes  (74 / 135 files) (171.8 K / 335.8 K bytes)
+2021-04-10 04:25:24,699 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_mask_0007.rmap    2.3 K bytes  (75 / 135 files) (173.3 K / 335.8 K bytes)
+2021-04-10 04:25:24,718 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_linearity_0011.rmap    2.4 K bytes  (76 / 135 files) (175.6 K / 335.8 K bytes)
+2021-04-10 04:25:24,740 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_ipc_0003.rmap    2.0 K bytes  (77 / 135 files) (178.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,763 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_gain_0009.rmap    2.9 K bytes  (78 / 135 files) (180.0 K / 335.8 K bytes)
+2021-04-10 04:25:24,784 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_flat_0014.rmap   21.5 K bytes  (79 / 135 files) (182.9 K / 335.8 K bytes)
+2021-04-10 04:25:24,805 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_filteroffset_0003.rmap    1.1 K bytes  (80 / 135 files) (204.4 K / 335.8 K bytes)
+2021-04-10 04:25:24,826 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_drizpars_0001.rmap      519 bytes  (81 / 135 files) (205.5 K / 335.8 K bytes)
+2021-04-10 04:25:24,849 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_distortion_0022.rmap    9.1 K bytes  (82 / 135 files) (206.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,870 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_dark_0018.rmap   14.1 K bytes  (83 / 135 files) (215.2 K / 335.8 K bytes)
+2021-04-10 04:25:24,890 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_area_0006.rmap    4.6 K bytes  (84 / 135 files) (229.3 K / 335.8 K bytes)
+2021-04-10 04:25:24,910 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_apcorr_0003.rmap    4.2 K bytes  (85 / 135 files) (233.9 K / 335.8 K bytes)
+2021-04-10 04:25:24,929 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_abvegaoffset_0002.rmap    1.3 K bytes  (86 / 135 files) (238.1 K / 335.8 K bytes)
+2021-04-10 04:25:24,949 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_nircam_0138.imap    2.2 K bytes  (87 / 135 files) (239.3 K / 335.8 K bytes)
+2021-04-10 04:25:24,968 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_wcsregions_0009.rmap    1.1 K bytes  (88 / 135 files) (241.5 K / 335.8 K bytes)
+2021-04-10 04:25:24,987 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_wavelengthrange_0019.rmap    1.1 K bytes  (89 / 135 files) (242.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,007 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_tsophot_0002.rmap      780 bytes  (90 / 135 files) (243.7 K / 335.8 K bytes)
+2021-04-10 04:25:25,028 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_straymask_0007.rmap      885 bytes  (91 / 135 files) (244.5 K / 335.8 K bytes)
+2021-04-10 04:25:25,048 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_specwcs_0025.rmap    2.3 K bytes  (92 / 135 files) (245.3 K / 335.8 K bytes)
+2021-04-10 04:25:25,071 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_saturation_0011.rmap      961 bytes  (93 / 135 files) (247.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,093 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_rscd_0006.rmap      860 bytes  (94 / 135 files) (248.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,114 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_resol_0004.rmap      739 bytes  (95 / 135 files) (249.4 K / 335.8 K bytes)
+2021-04-10 04:25:25,133 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_reset_0010.rmap    2.1 K bytes  (96 / 135 files) (250.2 K / 335.8 K bytes)
+2021-04-10 04:25:25,155 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_regions_0025.rmap    2.0 K bytes  (97 / 135 files) (252.3 K / 335.8 K bytes)
+2021-04-10 04:25:25,175 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_readnoise_0014.rmap    4.3 K bytes  (98 / 135 files) (254.3 K / 335.8 K bytes)
+2021-04-10 04:25:25,196 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_psfmask_0003.rmap    1.3 K bytes  (99 / 135 files) (258.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,215 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_photom_0028.rmap    5.5 K bytes  (100 / 135 files) (259.8 K / 335.8 K bytes)
+2021-04-10 04:25:25,236 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_mask_0015.rmap      893 bytes  (101 / 135 files) (265.3 K / 335.8 K bytes)
+2021-04-10 04:25:25,258 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_linearity_0013.rmap    1.9 K bytes  (102 / 135 files) (266.2 K / 335.8 K bytes)
+2021-04-10 04:25:25,281 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_ipc_0005.rmap      721 bytes  (103 / 135 files) (268.2 K / 335.8 K bytes)
+2021-04-10 04:25:25,301 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_gain_0007.rmap      893 bytes  (104 / 135 files) (268.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,323 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_fringe_0014.rmap    2.1 K bytes  (105 / 135 files) (269.8 K / 335.8 K bytes)
+2021-04-10 04:25:25,344 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_flat_0046.rmap   19.1 K bytes  (106 / 135 files) (271.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,365 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_filteroffset_0020.rmap    1.1 K bytes  (107 / 135 files) (290.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,386 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_extract1d_0011.rmap    1.1 K bytes  (108 / 135 files) (292.1 K / 335.8 K bytes)
+2021-04-10 04:25:25,408 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_drizpars_0002.rmap      511 bytes  (109 / 135 files) (293.1 K / 335.8 K bytes)
+2021-04-10 04:25:25,431 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_distortion_0031.rmap    1.9 K bytes  (110 / 135 files) (293.7 K / 335.8 K bytes)
+2021-04-10 04:25:25,450 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_dark_0020.rmap    3.5 K bytes  (111 / 135 files) (295.5 K / 335.8 K bytes)
+2021-04-10 04:25:25,468 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_cubepar_0006.rmap      686 bytes  (112 / 135 files) (299.0 K / 335.8 K bytes)
+2021-04-10 04:25:25,488 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_area_0011.rmap      755 bytes  (113 / 135 files) (299.7 K / 335.8 K bytes)
+2021-04-10 04:25:25,507 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_apcorr_0004.rmap    4.3 K bytes  (114 / 135 files) (300.4 K / 335.8 K bytes)
+2021-04-10 04:25:25,527 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_abvegaoffset_0002.rmap    1.3 K bytes  (115 / 135 files) (304.7 K / 335.8 K bytes)
+2021-04-10 04:25:25,546 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_miri_0204.imap    2.2 K bytes  (116 / 135 files) (306.0 K / 335.8 K bytes)
+2021-04-10 04:25:25,566 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_trappars_0004.rmap      903 bytes  (117 / 135 files) (308.2 K / 335.8 K bytes)
+2021-04-10 04:25:25,585 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_trapdensity_0004.rmap      930 bytes  (118 / 135 files) (309.1 K / 335.8 K bytes)
+2021-04-10 04:25:25,605 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_superbias_0015.rmap    3.8 K bytes  (119 / 135 files) (310.0 K / 335.8 K bytes)
+2021-04-10 04:25:25,626 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_saturation_0009.rmap      779 bytes  (120 / 135 files) (313.8 K / 335.8 K bytes)
+2021-04-10 04:25:25,650 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_readnoise_0011.rmap    1.3 K bytes  (121 / 135 files) (314.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,671 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_photom_0011.rmap    1.0 K bytes  (122 / 135 files) (315.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,694 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_persat_0004.rmap      884 bytes  (123 / 135 files) (316.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,713 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_mask_0018.rmap    1.2 K bytes  (124 / 135 files) (317.8 K / 335.8 K bytes)
+2021-04-10 04:25:25,733 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_linearity_0013.rmap      925 bytes  (125 / 135 files) (319.0 K / 335.8 K bytes)
+2021-04-10 04:25:25,753 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_ipc_0003.rmap      614 bytes  (126 / 135 files) (319.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,772 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_gain_0010.rmap      890 bytes  (127 / 135 files) (320.5 K / 335.8 K bytes)
+2021-04-10 04:25:25,791 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_flat_0009.rmap    1.1 K bytes  (128 / 135 files) (321.4 K / 335.8 K bytes)
+2021-04-10 04:25:25,810 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_distortion_0007.rmap    1.1 K bytes  (129 / 135 files) (322.5 K / 335.8 K bytes)
+2021-04-10 04:25:25,831 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_dark_0011.rmap    3.3 K bytes  (130 / 135 files) (323.6 K / 335.8 K bytes)
+2021-04-10 04:25:25,852 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_area_0009.rmap    1.0 K bytes  (131 / 135 files) (326.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,871 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_apcorr_0002.rmap    4.1 K bytes  (132 / 135 files) (327.9 K / 335.8 K bytes)
+2021-04-10 04:25:25,891 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_abvegaoffset_0002.rmap    1.3 K bytes  (133 / 135 files) (332.0 K / 335.8 K bytes)
+2021-04-10 04:25:25,910 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_fgs_0082.imap    1.9 K bytes  (134 / 135 files) (333.3 K / 335.8 K bytes)
+2021-04-10 04:25:25,929 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/mappings/jwst/jwst_0619.pmap      615 bytes  (135 / 135 files) (335.2 K / 335.8 K bytes)
+2021-04-10 04:25:26,168 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf    1.7 K bytes  (1 / 3 files) (0 / 33.3 K bytes)
+2021-04-10 04:25:26,208 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_apcorr_0005.fits   23.0 K bytes  (2 / 3 files) (1.7 K / 33.3 K bytes)
+2021-04-10 04:25:26,243 - CRDS - INFO -  Fetching  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_drizpars_0001.fits    8.6 K bytes  (3 / 3 files) (24.7 K / 33.3 K bytes)
+2021-04-10 04:25:26,269 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf&#39;.
+2021-04-10 04:25:26,271 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_apcorr_0005.fits&#39;.
+2021-04-10 04:25:26,271 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_drizpars_0001.fits&#39;.
+2021-04-10 04:25:26,272 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
+2021-04-10 04:25:27,328 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
+2021-04-10 04:25:27,330 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}
+2021-04-10 04:25:27,651 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 107 sources in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits.
+2021-04-10 04:25:27,953 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 105 sources in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:28,252 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 107 sources in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits.
+2021-04-10 04:25:28,551 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 105 sources in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:28,836 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 92 sources in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:29,138 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 92 sources in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:29,428 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 89 sources in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:29,714 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 89 sources in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits.
+2021-04-10 04:25:29,718 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:29,719 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 6.
+2021-04-10 04:25:29,719 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
+2021-04-10 04:25:29,744 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39;:
+2021-04-10 04:25:29,744 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal
+2021-04-10 04:25:29,765 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
+2021-04-10 04:25:29,766 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,787 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39;:
+2021-04-10 04:25:29,787 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal
+2021-04-10 04:25:29,808 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
+2021-04-10 04:25:29,808 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,849 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
+2021-04-10 04:25:29,850 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,850 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,891 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39;:
+2021-04-10 04:25:29,891 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,891 - stpipe.Image3Pipeline.tweakreg - INFO -      starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal
+2021-04-10 04:25:29,892 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:29,892 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2021-04-10 04:25:29,892 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2021-04-10 04:25:29.892524
+2021-04-10 04:25:29,893 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.7.1
+2021-04-10 04:25:29,893 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2021-04-10 04:25:30,054 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; as reference image
+2021-04-10 04:25:30,058 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
+2021-04-10 04:25:30,147 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
+2021-04-10 04:25:30,148 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2021-04-10 04:25:30,149 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.002616, 0.000327 with significance of 22.88 and 261 matches.
+2021-04-10 04:25:30,151 - stpipe.Image3Pipeline.tweakreg - INFO - Found 104 matches for &#39;GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
+2021-04-10 04:25:30,151 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2021-04-10 04:25:30,154 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal:
+2021-04-10 04:25:30,154 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 2.21519e-05  YSH: -2.61292e-05    PROPER ROT: 0.000263681    
+2021-04-10 04:25:30,155 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.000263681  SKEW: 0.000271493    ROT_X: 0.000127935  ROT_Y: 0.000399428
+2021-04-10 04:25:30,155 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 1  SCALE_X: 1.00001  SCALE_Y: 1
+2021-04-10 04:25:30,155 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:30,155 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00120963   FIT MAE: 0.000845105
+2021-04-10 04:25:30,156 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 102 objects.
+2021-04-10 04:25:30,188 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39; to the reference catalog.
+2021-04-10 04:25:30,281 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
+2021-04-10 04:25:30,281 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2021-04-10 04:25:30,282 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.004122, -0.07769 with significance of 16.84 and 239 matches.
+2021-04-10 04:25:30,283 - stpipe.Image3Pipeline.tweakreg - INFO - Found 103 matches for &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal&#39;...
+2021-04-10 04:25:30,284 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2021-04-10 04:25:30,285 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal:
+2021-04-10 04:25:30,286 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.0148375  YSH: 0.0332348    PROPER ROT: 0.0086123    
+2021-04-10 04:25:30,286 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.0086123  SKEW: -0.00400414    ROT_X: 0.0106144  ROT_Y: 0.00661022
+2021-04-10 04:25:30,286 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.999037  SCALE_X: 0.998302  SCALE_Y: 0.999773
+2021-04-10 04:25:30,286 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:30,287 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.319394   FIT MAE: 0.199609
+2021-04-10 04:25:30,287 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 103 objects.
+2021-04-10 04:25:30,320 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
+2021-04-10 04:25:30,413 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
+2021-04-10 04:25:30,413 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2021-04-10 04:25:30,414 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of -0.004479, -0.06403 with significance of 16.5 and 235 matches.
+2021-04-10 04:25:30,415 - stpipe.Image3Pipeline.tweakreg - INFO - Found 103 matches for &#39;GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
+2021-04-10 04:25:30,416 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2021-04-10 04:25:30,418 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal:
+2021-04-10 04:25:30,418 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.015163  YSH: 0.0211069    PROPER ROT: 0.00464944    
+2021-04-10 04:25:30,418 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.00464944  SKEW: 0.00350628    ROT_X: 0.00289629  ROT_Y: 0.00640258
+2021-04-10 04:25:30,419 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.998993  SCALE_X: 0.998306  SCALE_Y: 0.999681
+2021-04-10 04:25:30,419 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:30,419 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.331953   FIT MAE: 0.206074
+2021-04-10 04:25:30,419 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 103 objects.
+2021-04-10 04:25:30,618 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
+2021-04-10 04:25:30,702 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
+2021-04-10 04:25:30,703 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2021-04-10 04:25:30,704 - stpipe.Image3Pipeline.tweakreg - INFO - Found peak in the 2D histogram lies at the edge of the histogram. Try increasing &#39;searchrad&#39; for improved results.
+2021-04-10 04:25:30,704 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 1 with significance of 17.73 and 406 matches.
+2021-04-10 04:25:30,705 - stpipe.Image3Pipeline.tweakreg - INFO - Found 64 matches for &#39;GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
+2021-04-10 04:25:30,706 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2021-04-10 04:25:30,707 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal:
+2021-04-10 04:25:30,708 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 0.0268896  YSH: -0.73293    PROPER ROT: 0.0682397    
+2021-04-10 04:25:30,708 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: 0.0682397  SKEW: -0.197233    ROT_X: 0.166856  ROT_Y: -0.0303768
+2021-04-10 04:25:30,708 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.998175  SCALE_X: 0.996148  SCALE_Y: 1.00021
+2021-04-10 04:25:30,709 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:30,709 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.475774   FIT MAE: 0.392832
+2021-04-10 04:25:30,709 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 64 objects.
+2021-04-10 04:25:30,774 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39; to the reference catalog.
+2021-04-10 04:25:30,858 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39; catalog with sources from the reference &#39;starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal&#39; catalog.
+2021-04-10 04:25:30,859 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2021-04-10 04:25:30,860 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0.01661, -0.02249 with significance of 21.56 and 410 matches.
+2021-04-10 04:25:30,861 - stpipe.Image3Pipeline.tweakreg - INFO - Found 88 matches for &#39;GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal&#39;...
+2021-04-10 04:25:30,862 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2021-04-10 04:25:30,863 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal:
+2021-04-10 04:25:30,864 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.0320895  YSH: 0.04614    PROPER ROT: -0.0135637    
+2021-04-10 04:25:30,864 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.0135637  SKEW: 0.0510582    ROT_X: -0.0390928  ROT_Y: 0.0119654
+2021-04-10 04:25:30,864 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.999116  SCALE_X: 0.999021  SCALE_Y: 0.999211
+2021-04-10 04:25:30,865 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2021-04-10 04:25:30,865 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.31811   FIT MAE: 0.204258
+2021-04-10 04:25:30,865 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 88 objects.
+2021-04-10 04:25:30,930 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2021-04-10 04:25:30,930 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2021-04-10 04:25:30.930401
+2021-04-10 04:25:30,931 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:01.037877
+2021-04-10 04:25:30,931 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2021-04-10 04:25:31,088 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
+2021-04-10 04:25:31,208 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
+2021-04-10 04:25:31,210 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-04-10 04:25:31,263 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:31,263 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-04-10 04:25:31.262995
+2021-04-10 04:25:31,263 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:31,264 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
+2021-04-10 04:25:31,264 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
+2021-04-10 04:25:31,264 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
+2021-04-10 04:25:31,265 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:31,265 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-04-10 04:25:37,720 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 0.0218283
+2021-04-10 04:25:37,722 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.024467
+2021-04-10 04:25:37,723 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 0.00529277
+2021-04-10 04:25:37,723 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.0120402
+2021-04-10 04:25:37,723 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=1. Sky background of component images:
+2021-04-10 04:25:37,724 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.00705707
+2021-04-10 04:25:37,724 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0.00705707
+2021-04-10 04:25:37,724 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=2. Sky background of component images:
+2021-04-10 04:25:37,724 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0
+2021-04-10 04:25:37,725 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 0
+2021-04-10 04:25:37,725 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:37,725 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2021-04-10 04:25:37,879 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:37,880 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 10.720815592806472 [not converted]
+2021-04-10 04:25:37,880 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:37,880 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
+2021-04-10 04:25:37,881 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 10.7426 (old=0.0218283, delta=10.7208)
+2021-04-10 04:25:37,881 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7453 (old=0.024467, delta=10.7208)
+2021-04-10 04:25:37,881 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__cal.fits. Sky background: 10.7261 (old=0.00529277, delta=10.7208)
+2021-04-10 04:25:37,882 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7329 (old=0.0120402, delta=10.7208)
+2021-04-10 04:25:37,882 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=1. Sky background of component images:
+2021-04-10 04:25:37,883 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7279 (old=0.00705707, delta=10.7208)
+2021-04-10 04:25:37,883 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7279 (old=0.00705707, delta=10.7208)
+2021-04-10 04:25:37,883 - stpipe.Image3Pipeline.skymatch - INFO -    *  Group ID=2. Sky background of component images:
+2021-04-10 04:25:37,883 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7208 (old=0, delta=10.7208)
+2021-04-10 04:25:37,884 - stpipe.Image3Pipeline.skymatch - INFO -       - Image ID=starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__cal.fits. Sky background: 10.7208 (old=0, delta=10.7208)
+2021-04-10 04:25:37,884 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:37,885 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-04-10 04:25:37.884279
+2021-04-10 04:25:37,885 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:06.621284
+2021-04-10 04:25:37,885 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-10 04:25:37,892 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
+2021-04-10 04:25:38,013 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
+2021-04-10 04:25:38,015 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;crf&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-04-10 04:25:38,017 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 8 inputs
+2021-04-10 04:25:38,946 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:40,395 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:41,827 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:43,286 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:44,704 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:46,080 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:47,501 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:48,907 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:25:49,981 - stpipe.Image3Pipeline.outlier_detection - INFO - Generating median from 6 images
+2021-04-10 04:25:50,433 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
   r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
 
-2021-04-02 19:35:45,270 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
-2021-04-02 19:35:45,943 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:46,900 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:47,893 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:49,029 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:49,993 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:51,242 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:52,157 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:53,046 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
-2021-04-02 19:35:53,323 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/outlier_detection/outlier_detection.py:424: RuntimeWarning: overflow encountered in square
+2021-04-10 04:25:50,472 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
+2021-04-10 04:25:51,106 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:52,052 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:53,018 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:53,969 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:54,973 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:56,064 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:56,955 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:57,836 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (1024, 1032) &lt;-- (1148, 1109)
+2021-04-10 04:25:58,120 - stpipe.Image3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/outlier_detection/outlier_detection.py:424: RuntimeWarning: overflow encountered in square
   ta = np.sqrt(np.abs(blot_data) + err_data ** 2)
 
-2021-04-02 19:35:54,779 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__a3001_crf.fits
-2021-04-02 19:35:54,896 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,010 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__a3001_crf.fits
-2021-04-02 19:35:55,127 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,241 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,358 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,473 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,600 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
-2021-04-02 19:35:55,600 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-04-02 19:35:55,763 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2021-04-02 19:35:55,765 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-04-02 19:35:55,775 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_drizpars_0001.fits
-2021-04-02 19:35:55,899 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for image3_combined.fits
-2021-04-02 19:35:56,931 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:58,126 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:35:59,307 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:00,493 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:01,669 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:02,853 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:04,140 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:05,311 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
-2021-04-02 19:36:05,703 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-04-10 04:25:59,598 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp1_b75__a3001_crf.fits
+2021-04-10 04:25:59,714 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq1_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:25:59,828 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp1_b75__a3001_crf.fits
+2021-04-10 04:25:59,942 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq2_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:26:00,057 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:26:00,176 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq3_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:26:00,292 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:26:00,411 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in starfield_50star4ptdither_seq4_MIRIMAGE_F1130Wexp2_b75__a3001_crf.fits
+2021-04-10 04:26:00,411 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-04-10 04:26:00,574 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2021-04-10 04:26:00,576 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-04-10 04:26:00,586 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_drizpars_0001.fits
+2021-04-10 04:26:00,712 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for image3_combined.fits
+2021-04-10 04:26:01,740 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:02,912 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:04,107 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:05,288 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:06,455 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:07,715 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:08,899 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:10,049 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1148, 1109)
+2021-04-10 04:26:10,435 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-04-02 19:36:05,706 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.021478097 -0.020508227 0.024564705 0.014664395 359.990557348 0.017648744 359.987470739 -0.017523878
-2021-04-02 19:36:06,183 - stpipe.Image3Pipeline.resample - INFO - Saved model in image3_combined_i2d.fits
-2021-04-02 19:36:06,183 - stpipe.Image3Pipeline.resample - INFO - Step resample done
-2021-04-02 19:36:06,270 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1148, 1109) from image3_combined_i2d.fits&gt;,).
-2021-04-02 19:36:06,272 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
-2021-04-02 19:36:06,285 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_apcorr_0005.fits
-2021-04-02 19:36:06,292 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2d76hkk_/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf
-2021-04-02 19:36:06,292 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
-2021-04-02 19:36:06,293 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
-2021-04-02 19:36:06,293 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F1130W
-2021-04-02 19:36:06,293 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
-2021-04-02 19:36:06,319 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 5.49349
-2021-04-02 19:36:06,792 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 624 sources
-2021-04-02 19:36:06,810 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/source_catalog/source_catalog.py:645: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
+2021-04-10 04:26:10,437 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.021478097 -0.020508227 0.024564705 0.014664395 359.990557348 0.017648744 359.987470739 -0.017523878
+2021-04-10 04:26:10,909 - stpipe.Image3Pipeline.resample - INFO - Saved model in image3_combined_i2d.fits
+2021-04-10 04:26:10,909 - stpipe.Image3Pipeline.resample - INFO - Step resample done
+2021-04-10 04:26:10,995 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1148, 1109) from image3_combined_i2d.fits&gt;,).
+2021-04-10 04:26:10,996 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2021-04-10 04:26:11,009 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_apcorr_0005.fits
+2021-04-10 04:26:11,016 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpat0h02oi/references/jwst/miri/jwst_miri_abvegaoffset_0001.asdf
+2021-04-10 04:26:11,017 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
+2021-04-10 04:26:11,017 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
+2021-04-10 04:26:11,017 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F1130W
+2021-04-10 04:26:11,018 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
+2021-04-10 04:26:11,044 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 5.49349
+2021-04-10 04:26:11,514 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 624 sources
+2021-04-10 04:26:11,550 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/source_catalog/source_catalog.py:645: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   source_props = source_properties(self.model.data.astype(float),
 
-2021-04-02 19:36:06,898 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1894: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
+2021-04-10 04:26:11,647 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1894: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   sources_props.append(SourceProperties(
 
-2021-04-02 19:36:06,968 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1902: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
+2021-04-10 04:26:11,718 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1902: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   return LegacySourceCatalog(sources_props, wcs=wcs)
 
-2021-04-02 19:36:11,717 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: image3_combined_cat.ecsv
-2021-04-02 19:36:11,762 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in image3_combined_segm.fits
-2021-04-02 19:36:11,763 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: image3_combined_segm.fits
-2021-04-02 19:36:11,764 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
-2021-04-02 19:36:11,766 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
+2021-04-10 04:26:16,450 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: image3_combined_cat.ecsv
+2021-04-10 04:26:16,493 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in image3_combined_segm.fits
+2021-04-10 04:26:16,494 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: image3_combined_segm.fits
+2021-04-10 04:26:16,495 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
+2021-04-10 04:26:16,497 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
 </pre>
 </div>
 </div>
@@ -15004,7 +15004,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-02 19:36:11,771 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-10 04:26:16,502 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -15056,10 +15056,10 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-02 19:36:12,011 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-10 04:26:16,635 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
-2021-04-02 19:36:12,064 - stpipe - WARNING - &lt;ipython-input-1-20f4175e2dd2&gt;:15: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+2021-04-10 04:26:16,659 - stpipe - WARNING - &lt;ipython-input-1-20f4175e2dd2&gt;:15: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
   plt.imshow(im_i2d.data,origin=&#39;lower&#39;,norm=norm,vmin=-12, vmax=100)
 
 </pre>
@@ -15075,7 +15075,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.colorbar.Colorbar at 0x7f6b0f9b5a90&gt;</pre>
+<pre>&lt;matplotlib.colorbar.Colorbar at 0x7fb089662850&gt;</pre>
 </div>
 
 </div>
@@ -15184,7 +15184,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-02 19:36:12,485 - stpipe - WARNING - &lt;ipython-input-1-cce6411f04eb&gt;:15: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+<pre>2021-04-10 04:26:17,078 - stpipe - WARNING - &lt;ipython-input-1-cce6411f04eb&gt;:15: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
   plt.imshow(im_i2d.data,origin=&#39;lower&#39;,norm=norm,vmin=-12, vmax=100)
 
 </pre>
@@ -15200,7 +15200,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7f6b0ebaff70&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fb089a4d640&gt;</pre>
 </div>
 
 </div>
