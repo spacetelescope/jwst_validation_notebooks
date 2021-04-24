@@ -14263,7 +14263,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
-<h1 id="Testing-source_catalog-step-with-MIRI-simulated-data">Testing source_catalog step with MIRI simulated data<a class="anchor-link" href="#Testing-source_catalog-step-with-MIRI-simulated-data">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: FGS, MIRI, NIRCam, NIRISS, NIRSpec</p>
+<h1 id="JWST-Pipeline-Validation-Notebook:-source_catalog-with-MIRI">JWST Pipeline Validation Notebook: source_catalog with MIRI<a class="anchor-link" href="#JWST-Pipeline-Validation-Notebook:-source_catalog-with-MIRI">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: MIRI, NIRCam</p>
 <p>Tested on MIRI Simulated data</p>
 <h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left"> 
 
@@ -14375,7 +14375,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:06,167 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
+<pre>2021-04-23 22:48:49,988 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/detection/findstars.py:33: AstropyDeprecationWarning: _StarFinderKernel was moved to the photutils.detection._utils module. Please update your import statement.
   warnings.warn(f&#39;{name} was moved to the {deprecated[name]} module. &#39;
 
 </pre>
@@ -14418,7 +14418,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;TemporaryDirectory &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpcz1ra4wg&#39;&gt;
+<pre>&lt;TemporaryDirectory &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpf8cc40fc&#39;&gt;
 </pre>
 </div>
 </div>
@@ -14654,89 +14654,89 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:07,335 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
-2021-04-23 00:46:07,336 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
-2021-04-23 00:46:07,337 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
-2021-04-23 00:46:07,338 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
-2021-04-23 00:46:07,339 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
-2021-04-23 00:46:07,341 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
-2021-04-23 00:46:07,479 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-04-23 00:46:07,483 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-04-23 00:46:07,490 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
-2021-04-23 00:46:07,720 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_area_0004.fits&#39;.
-2021-04-23 00:46:07,722 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,722 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,722 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,723 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,723 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0028.asdf&#39;.
-2021-04-23 00:46:07,725 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits&#39;.
-2021-04-23 00:46:07,726 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,727 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_filteroffset_0005.asdf&#39;.
-2021-04-23 00:46:07,728 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_flat_0561.fits&#39;.
-2021-04-23 00:46:07,729 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,729 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,730 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,730 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,731 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,731 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,731 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,732 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits&#39;.
-2021-04-23 00:46:07,733 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,733 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,734 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,734 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,735 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
-2021-04-23 00:46:07,735 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
-2021-04-23 00:46:07,769 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-04-23 00:46:07,770 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
-2021-04-23 00:46:07,879 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-04-23 00:46:07,881 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-04-23 00:46:08,058 - stpipe.Image2Pipeline.assign_wcs - INFO - Created a MIRI mir_image pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0028.asdf&#39;, &#39;filteroffset&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_filteroffset_0005.asdf&#39;, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: None, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-04-23 00:46:08,112 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
-2021-04-23 00:46:08,113 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
-2021-04-23 00:46:08,113 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
-2021-04-23 00:46:08,145 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/astropy/modeling/fitting.py:780: AstropyUserWarning: The fit may be poorly conditioned
+<pre>2021-04-23 22:48:51,154 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2021-04-23 22:48:51,155 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2021-04-23 22:48:51,157 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2021-04-23 22:48:51,158 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2021-04-23 22:48:51,159 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2021-04-23 22:48:51,160 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2021-04-23 22:48:51,230 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-23 22:48:51,234 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-04-23 22:48:51,241 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2021-04-23 22:48:51,455 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_area_0004.fits&#39;.
+2021-04-23 22:48:51,456 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,457 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,457 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,457 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,458 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0028.asdf&#39;.
+2021-04-23 22:48:51,459 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits&#39;.
+2021-04-23 22:48:51,461 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,461 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_filteroffset_0005.asdf&#39;.
+2021-04-23 22:48:51,462 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_flat_0561.fits&#39;.
+2021-04-23 22:48:51,463 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,464 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,464 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,464 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,465 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,465 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,465 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,466 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits&#39;.
+2021-04-23 22:48:51,467 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,467 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,468 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,468 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,468 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2021-04-23 22:48:51,469 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2021-04-23 22:48:51,502 - stpipe.Image2Pipeline - INFO - Processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-23 22:48:51,503 - stpipe.Image2Pipeline - INFO - Working on input &lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt; ...
+2021-04-23 22:48:51,640 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-23 22:48:51,642 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-04-23 22:48:51,813 - stpipe.Image2Pipeline.assign_wcs - INFO - Created a MIRI mir_image pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0028.asdf&#39;, &#39;filteroffset&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_filteroffset_0005.asdf&#39;, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: None, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2021-04-23 22:48:51,866 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
+2021-04-23 22:48:51,866 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  0.020095696 -0.018350761 0.022563162 0.012836741 359.991504284 0.015409528 359.988697069 -0.015791872
+2021-04-23 22:48:51,867 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
+2021-04-23 22:48:51,898 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/astropy/modeling/fitting.py:780: AstropyUserWarning: The fit may be poorly conditioned
 
   warnings.warn(&#34;The fit may be poorly conditioned\n&#34;,
 
-2021-04-23 00:46:08,195 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-04-23 00:46:08,292 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-04-23 00:46:08,294 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-04-23 00:46:08,725 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
-2021-04-23 00:46:08,728 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
-2021-04-23 00:46:08,728 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
-2021-04-23 00:46:08,734 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
-2021-04-23 00:46:08,818 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
+2021-04-23 22:48:51,945 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-04-23 22:48:52,095 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-23 22:48:52,096 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-04-23 22:48:52,489 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_PARTIAL_DATA does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-23 22:48:52,490 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_LOW_QUAL does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-23 22:48:52,490 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword CDP_UNRELIABLE_ERROR does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-23 22:48:52,499 - stpipe.Image2Pipeline.flat_field - WARNING - Keyword DIFF_PATTERN does not correspond to an existing DQ mnemonic, so will be ignored
+2021-04-23 22:48:52,596 - stpipe.Image2Pipeline.flat_field - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/flatfield/flat_field.py:208: RuntimeWarning: invalid value encountered in multiply
   science.var_flat = science.data**2 / flat_data_squared * flat_err**2
 
-2021-04-23 00:46:08,831 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-04-23 00:46:08,936 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-04-23 00:46:08,937 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-04-23 00:46:08,960 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits
-2021-04-23 00:46:08,961 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_miri_area_0004.fits
-2021-04-23 00:46:09,014 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
-2021-04-23 00:46:09,015 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
-2021-04-23 00:46:09,015 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
-2021-04-23 00:46:09,016 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
-2021-04-23 00:46:09,041 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-04-23 00:46:09,042 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
-2021-04-23 00:46:09,043 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.12701
-2021-04-23 00:46:09,050 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-04-23 00:46:09,148 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
-2021-04-23 00:46:09,149 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-04-23 00:46:09,171 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits
-2021-04-23 00:46:09,974 - stpipe.Image2Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
-2021-04-23 00:46:10,393 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-04-23 22:48:52,609 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-04-23 22:48:52,719 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-23 22:48:52,720 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-04-23 22:48:52,743 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_miri_photom_0073.fits
+2021-04-23 22:48:52,744 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_miri_area_0004.fits
+2021-04-23 22:48:52,802 - stpipe.Image2Pipeline.photom - INFO - Using instrument: MIRI
+2021-04-23 22:48:52,802 - stpipe.Image2Pipeline.photom - INFO -  detector: MIRIMAGE
+2021-04-23 22:48:52,803 - stpipe.Image2Pipeline.photom - INFO -  exp_type: MIR_IMAGE
+2021-04-23 22:48:52,803 - stpipe.Image2Pipeline.photom - INFO -  filter: F560W
+2021-04-23 22:48:52,828 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-04-23 22:48:52,829 - stpipe.Image2Pipeline.photom - INFO -  subarray: FULL
+2021-04-23 22:48:52,830 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 1.12701
+2021-04-23 22:48:52,838 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-04-23 22:48:52,926 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(1024, 1032) from det_image_seq1_MIRIMAGE_F560Wexp1_rate.fits&gt;,).
+2021-04-23 22:48:52,928 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-04-23 22:48:52,949 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits
+2021-04-23 22:48:53,713 - stpipe.Image2Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
+2021-04-23 22:48:54,130 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-04-23 00:46:10,395 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
-2021-04-23 00:46:10,458 - stpipe.Image2Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
-2021-04-23 00:46:10,459 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-04-23 00:46:10,459 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
-2021-04-23 00:46:10,460 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
-2021-04-23 00:46:10,582 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-04-23 00:46:10,582 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
+2021-04-23 22:48:54,132 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
+2021-04-23 22:48:54,194 - stpipe.Image2Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
+2021-04-23 22:48:54,195 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-04-23 22:48:54,195 - stpipe.Image2Pipeline - INFO - Finished processing product det_image_seq1_MIRIMAGE_F560Wexp1_rate
+2021-04-23 22:48:54,196 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2021-04-23 22:48:54,317 - stpipe.Image2Pipeline - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-04-23 22:48:54,318 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -14790,7 +14790,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:10,589 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-23 22:48:54,325 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -14859,86 +14859,86 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:10,671 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-23 22:48:54,406 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
-2021-04-23 00:46:10,677 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
-2021-04-23 00:46:10,678 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
-2021-04-23 00:46:10,680 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
-2021-04-23 00:46:10,681 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
-2021-04-23 00:46:10,682 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2021-04-23 00:46:10,684 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
-2021-04-23 00:46:10,685 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
-2021-04-23 00:46:10,822 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;resampled_image.json&#39;,).
-2021-04-23 00:46:10,828 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
-2021-04-23 00:46:10,912 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
-2021-04-23 00:46:10,917 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_abvegaoffset_0001.asdf&#39;.
-2021-04-23 00:46:10,919 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_apcorr_0005.fits&#39;.
-2021-04-23 00:46:10,920 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits&#39;.
-2021-04-23 00:46:10,921 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
-2021-04-23 00:46:11,135 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
-2021-04-23 00:46:11,137 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2021-04-23 00:46:11,152 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,152 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-04-23 00:46:11.152156
-2021-04-23 00:46:11,153 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,153 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
-2021-04-23 00:46:11,153 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
-2021-04-23 00:46:11,154 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
-2021-04-23 00:46:11,154 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,155 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
-2021-04-23 00:46:11,155 - stpipe.Image3Pipeline.skymatch - WARNING -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits: Unable to compute sky value
-2021-04-23 00:46:11,155 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0
-2021-04-23 00:46:11,156 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,156 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2021-04-23 00:46:11,177 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,178 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.9927777464450137 [not converted]
-2021-04-23 00:46:11,178 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,178 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
-2021-04-23 00:46:11,178 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0.992778 (old=0, delta=0.992778)
-2021-04-23 00:46:11,179 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,179 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-04-23 00:46:11.179217
-2021-04-23 00:46:11,179 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.027061
-2021-04-23 00:46:11,180 - stpipe.Image3Pipeline.skymatch - INFO -  
-2021-04-23 00:46:11,181 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
-2021-04-23 00:46:11,316 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2021-04-23 00:46:11,318 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-04-23 00:46:11,330 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits
-2021-04-23 00:46:11,410 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpcz1ra4wg/det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
-2021-04-23 00:46:12,583 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
-2021-04-23 00:46:13,030 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-04-23 22:48:54,412 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
+2021-04-23 22:48:54,413 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
+2021-04-23 22:48:54,415 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
+2021-04-23 22:48:54,417 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
+2021-04-23 22:48:54,418 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2021-04-23 22:48:54,419 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
+2021-04-23 22:48:54,421 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
+2021-04-23 22:48:54,559 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;resampled_image.json&#39;,).
+2021-04-23 22:48:54,566 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.5, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 1000, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: False, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: False}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;4.0 3.0&#39;, &#39;scale&#39;: &#39;0.5 0.4&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
+2021-04-23 22:48:54,650 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
+2021-04-23 22:48:54,654 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_abvegaoffset_0001.asdf&#39;.
+2021-04-23 22:48:54,656 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_apcorr_0005.fits&#39;.
+2021-04-23 22:48:54,657 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits&#39;.
+2021-04-23 22:48:54,658 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
+2021-04-23 22:48:54,833 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
+2021-04-23 22:48:54,834 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2021-04-23 22:48:54,848 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,848 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2021-04-23 22:48:54.848147
+2021-04-23 22:48:54,849 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,849 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
+2021-04-23 22:48:54,850 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
+2021-04-23 22:48:54,850 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
+2021-04-23 22:48:54,850 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,851 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
+2021-04-23 22:48:54,851 - stpipe.Image3Pipeline.skymatch - WARNING -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits: Unable to compute sky value
+2021-04-23 22:48:54,852 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0
+2021-04-23 22:48:54,852 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,852 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2021-04-23 22:48:54,873 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,873 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.9927777464450137 [not converted]
+2021-04-23 22:48:54,874 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,874 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
+2021-04-23 22:48:54,875 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits. Sky background: 0.992778 (old=0, delta=0.992778)
+2021-04-23 22:48:54,875 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,875 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2021-04-23 22:48:54.875370
+2021-04-23 22:48:54,876 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:00.027223
+2021-04-23 22:48:54,876 - stpipe.Image3Pipeline.skymatch - INFO -  
+2021-04-23 22:48:54,877 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
+2021-04-23 22:48:54,965 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2021-04-23 22:48:54,967 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-04-23 22:48:54,978 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_miri_drizpars_0001.fits
+2021-04-23 22:48:55,054 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpf8cc40fc/det_image_seq1_MIRIMAGE_F560Wexp1_cal.fits
+2021-04-23 22:48:56,192 - stpipe.Image3Pipeline.resample - INFO - Drizzling (1024, 1032) --&gt; (1023, 1023)
+2021-04-23 22:48:56,631 - stpipe.Image3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-04-23 00:46:13,034 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
-2021-04-23 00:46:13,358 - stpipe.Image3Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
-2021-04-23 00:46:13,359 - stpipe.Image3Pipeline.resample - INFO - Step resample done
-2021-04-23 00:46:13,494 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1023, 1023) from det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits&gt;,).
-2021-04-23 00:46:13,495 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
-2021-04-23 00:46:13,510 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0005.fits
-2021-04-23 00:46:13,518 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_miri_abvegaoffset_0001.asdf
-2021-04-23 00:46:13,518 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
-2021-04-23 00:46:13,519 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
-2021-04-23 00:46:13,519 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F560W
-2021-04-23 00:46:13,520 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
-2021-04-23 00:46:13,546 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.76066
-2021-04-23 00:46:13,984 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 1614 sources
-2021-04-23 00:46:13,989 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/source_catalog/source_catalog.py:645: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
+2021-04-23 22:48:56,633 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  0.020043795 -0.018546616 0.022794010 0.012792736 359.991423993 0.015545643 359.988673777 -0.015793709
+2021-04-23 22:48:56,958 - stpipe.Image3Pipeline.resample - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits
+2021-04-23 22:48:56,959 - stpipe.Image3Pipeline.resample - INFO - Step resample done
+2021-04-23 22:48:57,067 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(1023, 1023) from det_image_seq1_MIRIMAGE_F560Wexp1_i2d.fits&gt;,).
+2021-04-23 22:48:57,068 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2021-04-23 22:48:57,083 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_miri_apcorr_0005.fits
+2021-04-23 22:48:57,091 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_miri_abvegaoffset_0001.asdf
+2021-04-23 22:48:57,091 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: MIRI
+2021-04-23 22:48:57,092 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: MIRIMAGE
+2021-04-23 22:48:57,092 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F560W
+2021-04-23 22:48:57,093 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
+2021-04-23 22:48:57,119 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.76066
+2021-04-23 22:48:57,554 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 1614 sources
+2021-04-23 22:48:57,558 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/source_catalog/source_catalog.py:645: AstropyDeprecationWarning: The source_properties function is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   source_props = source_properties(self.model.data.astype(float),
 
-2021-04-23 00:46:14,050 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1894: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
+2021-04-23 22:48:57,618 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1894: AstropyDeprecationWarning: The SourceProperties class is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   sources_props.append(SourceProperties(
 
-2021-04-23 00:46:14,248 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1902: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
+2021-04-23 22:48:57,818 - stpipe.Image3Pipeline.source_catalog - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/photutils/segmentation/properties.py:1902: AstropyDeprecationWarning: The LegacySourceCatalog class is deprecated and may be removed in a future version.
         Use `~photutils.segmentation.SourceCatalog` instead.
   return LegacySourceCatalog(sources_props, wcs=wcs)
 
-2021-04-23 00:46:26,794 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: det_image_seq1_MIRIMAGE_F560Wexp1_cat.ecsv
-2021-04-23 00:46:26,847 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_segm.fits
-2021-04-23 00:46:26,848 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: det_image_seq1_MIRIMAGE_F560Wexp1_segm.fits
-2021-04-23 00:46:26,855 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
-2021-04-23 00:46:26,856 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
+2021-04-23 22:49:09,830 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: det_image_seq1_MIRIMAGE_F560Wexp1_cat.ecsv
+2021-04-23 22:49:09,879 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in det_image_seq1_MIRIMAGE_F560Wexp1_segm.fits
+2021-04-23 22:49:09,879 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: det_image_seq1_MIRIMAGE_F560Wexp1_segm.fits
+2021-04-23 22:49:09,886 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
+2021-04-23 22:49:09,887 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
 </pre>
 </div>
 </div>
@@ -14981,7 +14981,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:26,861 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-23 22:49:09,892 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -15106,7 +15106,7 @@ Length = 1614 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:27,153 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+<pre>2021-04-23 22:49:10,179 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
   and should_run_async(code)
 
 </pre>
@@ -15122,7 +15122,7 @@ Length = 1614 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7f681ba91a00&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x7f1676055dc0&gt;</pre>
 </div>
 
 </div>
@@ -15201,10 +15201,10 @@ Length = 1614 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-04-23 00:46:27,827 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:1: RuntimeWarning: invalid value encountered in log10
+<pre>2021-04-23 22:49:10,832 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:1: RuntimeWarning: invalid value encountered in log10
   xaxis= -2.5*np.log10(data[&#39;aper30_flux&#39;]/data[&#39;aper50_flux&#39;])
 
-2021-04-23 00:46:27,828 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:2: RuntimeWarning: invalid value encountered in log10
+2021-04-23 22:49:10,833 - stpipe - WARNING - &lt;ipython-input-1-99e49db0de2d&gt;:2: RuntimeWarning: invalid value encountered in log10
   yaxis= -2.5*np.log10(data[&#39;aper50_flux&#39;]/data[&#39;aper70_flux&#39;])
 
 </pre>
