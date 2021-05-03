@@ -109,9 +109,9 @@ Make sure to follow the template outlined in
 [our repository](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb).
 More information about storing test data is included below.
 
-Before your notebook will be accepted, you must test it in the proper environment 
+Before your notebook will be accepted, you must test it in the proper environment
 described in the [Executing Validation Notebooks Locally](https://github.com/spacetelescope/jwst_validation_notebooks#executing-validation-notebooks-locally)
-section above. This will help ensure a smoother delivery of new tests. 
+section above. This will help ensure a smoother delivery of new tests.
 
 This repository operates using the standard
 [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
@@ -229,9 +229,9 @@ you can try:
 
 ```
 # open file into correct format and write to local disk for processing
-hdu = fits.open(file)
-hdu.info()
-hdu.writeto(filename)
+with fits.open(file) as hdu:
+  hdu.info()
+  hdu.writeto(filename)
 ```
 or use a ```jwst datamodel```:
 
