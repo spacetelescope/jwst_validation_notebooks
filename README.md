@@ -238,9 +238,9 @@ you can try:
 
 ```
 # open file into correct format and write to local disk for processing
-hdu = fits.open(file)
-hdu.info()
-hdu.writeto(filename)
+with fits.open(file) as hdu:
+  hdu.info()
+  hdu.writeto(filename)
 ```
 or use a ```jwst datamodel```:
 
