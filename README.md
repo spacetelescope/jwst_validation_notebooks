@@ -109,9 +109,9 @@ Make sure to follow the template outlined in
 [our repository](https://github.com/spacetelescope/jwst_validation_notebooks/blob/master/jwst_validation_notebooks/templates/jwst_validation_notebook_template.ipynb).
 More information about storing test data is included below.
 
-Before your notebook will be accepted, you must test it in the proper environment 
+Before your notebook will be accepted, you must test it in the proper environment
 described in the [Executing Validation Notebooks Locally](https://github.com/spacetelescope/jwst_validation_notebooks#executing-validation-notebooks-locally)
-section above. This will help ensure a smoother delivery of new tests. 
+section above. This will help ensure a smoother delivery of new tests.
 
 This repository operates using the standard
 [fork and pull request github](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
@@ -211,27 +211,36 @@ Artifactory should be used for data that is for internal use only.
 
 Artifactory is only accessible to internal users on the STScI network. If you would like
 to contribute a test notebook that uses externally available data, this test data should
-be stored in a Box folder instead. The final workflow using Box is still in discussion,
-but for now you can use a Box folder with the correct permissions set up:
+be stored in our Box folder (`jwst_validation_notebooks`) instead.
+
+1. Create a [Jira "Task" Issue in the JWST Simulations Jira project][jira_task] requesting
+   to have your data added to the Box folder. Assign the ticket to Misty Cracraft
+   ([@cracraft](https://github.com/cracraft)) or Alicia Canipe
+   ([@aliciacanipe](https://github.com/aliciacanipe)), and provide more information about
+   the data: simulation information, data location, and pipeline step(s). Once your data
+   has been added to Box, Misty Cracraft ([@cracraft](https://github.com/cracraft))
+   or Alicia Canipe ([@aliciacanipe](https://github.com/aliciacanipe)) will resolve the
+   issue and notify you that your data is ready to be used (the Box link to the data will
+   be provided by the person who notified you that your data was ingested successfully).
+2. Then, in your validation notebook, you will use the following command to import your
+   file from Box (we are using an example file link, you will substitute yours):
 
 ```
 from astropy.utils.data import download_file
 
-main_box_url ="https://data.science.stsci.edu/redirect/JWST/TSO/pipeline_testing_miri_ima_tso/"
-filename = 'pipetest_miri_imtso_FULL_10g10i_F770W.fits'
-file = download_file(main_box_url+filename)
+your_file_box_url ="https://stsci.box.com/shared/static/tpks98b3voqg7r13jt8i6el3yfg9dqoc.fits"
+file = download_file(your_file_box_url)
 ```
 
-The STScI Style Guide explains [how to obtain static Box links](https://github.com/spacetelescope/style-guides/blob/master/guides/where-to-put-your-data.md#obtaining-static-box-links).
 Box assigns a default alphanumerical string as the filename, so you may want to update the
 filename before processing, or verify that the format is correct. Depending on the data,
 you can try:
 
 ```
 # open file into correct format and write to local disk for processing
-hdu = fits.open(file)
-hdu.info()
-hdu.writeto(filename)
+with fits.open(file) as hdu:
+  hdu.info()
+  hdu.writeto(filename)
 ```
 or use a ```jwst datamodel```:
 
