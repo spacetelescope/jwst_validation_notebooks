@@ -14402,7 +14402,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpecc_foa0
+<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpykfiwtmq
 </pre>
 </div>
 </div>
@@ -14440,7 +14440,7 @@ a.anchor-link {
 <span class="c1"># Choose CRDS cache location</span>
 <span class="n">use_local_crds_cache</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">crds_cache_tempdir</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">crds_cache_notebook_dir</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">crds_cache_notebook_dir</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">crds_cache_home</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">crds_cache_custom_dir</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">crds_cache_dir_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -14531,27 +14531,66 @@ a.anchor-link {
                                     <span class="s1">&#39;jump_miri_test&#39;</span><span class="p">,</span>
                                     <span class="s1">&#39;miri_sat_55k.fits&#39;</span><span class="p">)</span>
 </pre></div>
-<h3 id="Data-for-external-use:-Box-method">Data for external use: Box method<a class="anchor-link" href="#Data-for-external-use:-Box-method">&#182;</a></h3><p>Artifactory is only accessible to internal users on the STScI network. If you would like to contribute a test notebook that uses externally available data, this test data should be stored in a Box folder instead. The final workflow using Box is still in discussion, but for now you can use a Box folder with the correct permissions set up:</p>
+<h3 id="Data-for-external-use:-Box-method">Data for external use: Box method<a class="anchor-link" href="#Data-for-external-use:-Box-method">&#182;</a></h3><p>Artifactory is only accessible to internal users on the STScI network. If you would like to contribute a test notebook that uses externally available data, this test data should be stored in a Box folder instead. The final workflow for using Box is still in discussion, but for now there is a function below that will allow you to download files from Box.</p>
+<p>The function takes a list of tuples in the form (box_url, file_name) where box_url is the URL of a Box file to download, and file_name is the name that you want to use to refer to that file once it has been downloaded (a sample list is provided after the function definition). This is required because files downloaded from Box have their file extensions removed, and Box does not easily support meaningful file URLs or downloaded file names.</p>
+<p>If you have set up individual Box files for download, their URL will probably be in the form <code>https://stsci.box.com/shared/static/URL</code> where <code>URL</code> is specific to each individual file. In this case, you can provide your box_url either as a full link or as just the part that comes after <code>/static/</code>, for example:</p>
+<div class="highlight"><pre><span></span><span class="n">file_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abcd.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;efgh101.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;ijk339c0fg.fits&#39;</span><span class="p">]</span>
+<span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;some_test_file.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;some_other_test_file.fits&#39;</span><span class="p">,</span> <span class="s1">&#39;yet_another_file.fits&#39;</span><span class="p">]</span>
+
+<span class="n">box_download_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">url</span><span class="p">,</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span><span class="p">,</span><span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">file_urls</span><span class="p">,</span><span class="n">file_names</span><span class="p">)]</span>
+</pre></div>
+<p>will work, but so too will</p>
+<div class="highlight"><pre><span></span><span class="n">main_box_url</span> <span class="o">=</span> <span class="s1">&#39;https://stsci.box.com/shared/static/&#39;</span>
+
+<span class="n">box_download_list</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">main_box_url</span><span class="p">,</span> <span class="n">url</span><span class="p">),</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span><span class="p">,</span><span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">file_urls</span><span class="p">,</span> <span class="n">file_names</span><span class="p">)]</span>
+</pre></div>
+<p>If instead you have set up a shared box directory with the appropriate permissions, you will probably need to provide the full URL for each file (because the directory URL will not be in the form above), for example:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
 
 <span class="n">main_box_url</span> <span class="o">=</span><span class="s2">&quot;https://data.science.stsci.edu/redirect/JWST/TSO/pipeline_testing_miri_ima_tso/&quot;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;pipetest_miri_imtso_FULL_10g10i_F770W.fits&#39;</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">mainurl</span><span class="o">+</span><span class="n">filename</span><span class="p">)</span>
-</pre></div>
-<p>Box assigns a default alpha-numerical string as the filename, so you may want to update the filename before processing, or verify that the format is correct. Depending on the data, you can try:</p>
-<div class="highlight"><pre><span></span><span class="c1"># open file into correct format and write to local disk for processing</span>
-<span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="n">hdu</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-<span class="n">hdu</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</pre></div>
-<p>or use a <code>jwst datamodel</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jwst.datamodels</span> <span class="kn">import</span> <span class="n">RampModel</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">RampModel</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="n">box_download_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">main_box_url</span><span class="o">+</span><span class="n">filename</span><span class="p">,</span> <span class="n">filename</span><span class="p">)]</span>
 </pre></div>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">move</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">splitext</span>
+
+<span class="k">def</span> <span class="nf">get_box_files</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">box_url</span><span class="p">,</span><span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;https&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">box_url</span><span class="p">:</span>
+            <span class="n">box_url</span> <span class="o">=</span> <span class="s1">&#39;https://stsci.box.com/shared/static/&#39;</span> <span class="o">+</span> <span class="n">box_url</span>
+        <span class="n">downloaded_file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">box_url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">splitext</span><span class="p">(</span><span class="n">box_url</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">file_name</span> <span class="o">+=</span> <span class="n">ext</span>
+        <span class="n">move</span><span class="p">(</span><span class="n">downloaded_file</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+
+<span class="n">box_download_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">#  First item is Box URL.                   Second item is desired file name</span>
+<span class="c1">#    (&quot;kzef4nvyzzpfy4x4o108x344qg5epaf0.fits&quot;, &quot;test_for_thingy_asn.fits&quot;),</span>
+    <span class="c1">#  First item *can* be full URL path                                           If second item doesn&#39;t have an</span>
+    <span class="c1">#                                                                              extension, it will be given the </span>
+    <span class="c1">#                                                                              same extension as the Box URL</span>
+<span class="c1">#    (&quot;https://stsci.box.com/shared/static/kzef4nvyzzpfy4x4o108x344qg5epaf0.fits&quot;, &quot;test_for_another_thingy_asn&quot;)</span>
+<span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
