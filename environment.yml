@@ -50,7 +50,6 @@ dependencies:
     - stsci.image>=2.3.3
     - tweakwcs>=0.7.0
     - matplotlib
-    - jupyter
     - ci-watson
     - junit-xml
     - nbformat
@@ -60,15 +59,16 @@ dependencies:
     - pytest
     - pytest-xdist
     - pytest-html
-    # These repositories have no tags or releases yet, so none are chosen.
+    - pysiaf
+    - stsci.imagestats
+    # These repositories are not on pip
     - git+https://github.com/STScI-MIRI/miricoord
     - git+https://github.com/STScI-MIRI/miri3d
     - git+https://github.com/york-stsci/nbpages
-    # This repository has tags, but selecting them doesn't seem to work.
-    - git+https://github.com/spacetelescope/pysiaf
-    - git+https://github.com/spacetelescope/stsci.imagestats@1.6.2
+    # These repositories we want to be certain of having a common version across
+    # test environments.
     - git+https://github.com/spacetelescope/nirspec_pipe_testing_tool@1.1.16
-    - git+https://github.com/spacetelescope/jwst@1.1.0
+    - git+https://github.com/spacetelescope/jwst@1.2.3
 
 variables:
   TEST_BIGDATA: "https://bytesalad.stsci.edu/artifactory"
