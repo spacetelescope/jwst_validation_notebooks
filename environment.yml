@@ -59,8 +59,10 @@ dependencies:
     - pytest
     - pytest-xdist
     - pytest-html
-    - pysiaf
     - stsci.imagestats
+    # pysiaf is not on pip, but fails to install *from* pip because of a metadata version
+    # mismatch
+    - git+https://github.com/spacetelescope/pysiaf
     # These repositories are not on pip
     - git+https://github.com/STScI-MIRI/miricoord
     - git+https://github.com/STScI-MIRI/miri3d
