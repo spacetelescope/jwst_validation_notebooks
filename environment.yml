@@ -40,15 +40,16 @@ dependencies:
     - ci-watson
     - psutil
     - gwcs
-    - pysiaf
     - photutils
     - asdf
     - crds
     - pytest
-    
+
     # JWST version 1.3.1 imports stdatamodels.ndmodel. This no longer exists in 0.3.0
     - stdatamodels>=0.2.0,<0.3.0
-
+    # pysiaf is not on pip, but fails to install *from* pip because of a metadata version
+    # mismatch
+    - git+https://github.com/spacetelescope/pysiaf
     # This repository is not uniquely on pip (i.e. there are several nbpages, and we want
     # a particular one of them).
     - git+https://github.com/york-stsci/nbpages
@@ -56,7 +57,7 @@ dependencies:
     - git+https://github.com/STScI-MIRI/miricoord
     - git+https://github.com/STScI-MIRI/miri3d
     - git+https://github.com/spacetelescope/nirspec_pipe_testing_tool
-    
+
     # This repository has a specified version because the goal of this project is to test
     # a specified version of the pipeline, and produce output webpages.
     - jwst==1.3.1
