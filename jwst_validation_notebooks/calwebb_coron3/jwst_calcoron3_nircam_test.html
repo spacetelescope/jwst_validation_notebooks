@@ -14183,248 +14183,248 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-08-27 12:01:37,883 - stpipe.Coron3Pipeline - INFO - Coron3Pipeline instance created.
-2021-08-27 12:01:37,885 - stpipe.Coron3Pipeline.stack_refs - INFO - StackRefsStep instance created.
-2021-08-27 12:01:37,886 - stpipe.Coron3Pipeline.align_refs - INFO - AlignRefsStep instance created.
-2021-08-27 12:01:37,887 - stpipe.Coron3Pipeline.klip - INFO - KlipStep instance created.
-2021-08-27 12:01:37,889 - stpipe.Coron3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2021-08-27 12:01:37,890 - stpipe.Coron3Pipeline.resample - INFO - ResampleStep instance created.
-2021-08-27 12:01:38,076 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline running with args (&#39;coro_test.asn&#39;,).
-2021-08-27 12:01:38,080 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;stack_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;align_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}, &#39;klip&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-08-27 12:01:38,081 - stpipe.Coron3Pipeline - INFO - Starting calwebb_coron3 ...
-2021-08-27 12:01:38,549 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd1_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:38,931 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:38,934 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,099 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd2_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,102 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,103 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,263 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd3_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,266 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,267 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,423 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd4_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,426 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,427 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,584 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd5_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,587 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,588 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,743 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd6_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,746 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,748 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:39,903 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd7_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:39,905 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:39,907 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:40,063 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd8_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:40,066 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:40,067 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:40,230 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd9_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:40,232 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:40,234 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:40,443 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_target_roll1_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
-2021-08-27 12:01:40,446 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-08-27 12:01:40,447 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
-2021-08-27 12:01:42,112 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd1_calints.fits&gt;,).
-2021-08-27 12:01:42,114 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:42,122 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:42,148 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+<pre>2021-09-22 21:20:45,671 - stpipe.Coron3Pipeline - INFO - Coron3Pipeline instance created.
+2021-09-22 21:20:45,675 - stpipe.Coron3Pipeline.stack_refs - INFO - StackRefsStep instance created.
+2021-09-22 21:20:45,677 - stpipe.Coron3Pipeline.align_refs - INFO - AlignRefsStep instance created.
+2021-09-22 21:20:45,679 - stpipe.Coron3Pipeline.klip - INFO - KlipStep instance created.
+2021-09-22 21:20:45,681 - stpipe.Coron3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2021-09-22 21:20:45,683 - stpipe.Coron3Pipeline.resample - INFO - ResampleStep instance created.
+2021-09-22 21:20:45,796 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline running with args (&#39;coro_test.asn&#39;,).
+2021-09-22 21:20:45,801 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;stack_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;align_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}, &#39;klip&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-09-22 21:20:45,802 - stpipe.Coron3Pipeline - INFO - Starting calwebb_coron3 ...
+2021-09-22 21:20:46,280 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd1_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:46,989 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:46,992 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:47,166 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd2_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:47,169 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:47,171 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:47,337 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd3_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:47,341 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:47,342 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:47,508 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd4_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:47,511 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:47,513 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:47,682 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd5_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:47,685 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:47,687 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:47,857 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd6_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:47,861 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:47,863 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:48,022 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd7_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:48,026 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:48,028 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:48,193 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd8_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:48,196 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:48,198 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:48,365 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_sgd9_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:48,368 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:48,370 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:48,612 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;lib_ss20_target_roll1_calints.fits&#39; reftypes = [&#39;drizpars&#39;, &#39;psfmask&#39;]
+2021-09-22 21:20:48,615 - stpipe.Coron3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-09-22 21:20:48,617 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits&#39;.
+2021-09-22 21:20:50,218 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd1_calints.fits&gt;,).
+2021-09-22 21:20:50,221 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:50,232 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:50,268 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:42,233 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:42,545 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd1_c1001_crfints.fits
-2021-08-27 12:01:42,545 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:42,652 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd2_calints.fits&gt;,).
-2021-08-27 12:01:42,653 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:42,662 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:42,682 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:50,362 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:50,687 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd1_c1001_crfints.fits
+2021-09-22 21:20:50,688 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:50,792 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd2_calints.fits&gt;,).
+2021-09-22 21:20:50,795 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:50,805 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:50,826 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:42,762 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:43,059 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd2_c1001_crfints.fits
-2021-08-27 12:01:43,059 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:43,165 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd3_calints.fits&gt;,).
-2021-08-27 12:01:43,168 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:43,175 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:43,195 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:50,913 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:51,226 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd2_c1001_crfints.fits
+2021-09-22 21:20:51,228 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:51,345 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd3_calints.fits&gt;,).
+2021-09-22 21:20:51,347 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:51,356 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:51,377 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:43,273 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:43,566 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd3_c1001_crfints.fits
-2021-08-27 12:01:43,567 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:43,674 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd4_calints.fits&gt;,).
-2021-08-27 12:01:43,676 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:43,684 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:43,705 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:51,455 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:51,758 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd3_c1001_crfints.fits
+2021-09-22 21:20:51,759 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:51,865 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd4_calints.fits&gt;,).
+2021-09-22 21:20:51,868 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:51,876 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:51,897 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:43,784 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:44,076 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd4_c1001_crfints.fits
-2021-08-27 12:01:44,077 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:44,183 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd5_calints.fits&gt;,).
-2021-08-27 12:01:44,185 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:44,193 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:44,212 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:51,975 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:52,278 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd4_c1001_crfints.fits
+2021-09-22 21:20:52,280 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:52,384 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd5_calints.fits&gt;,).
+2021-09-22 21:20:52,386 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:52,394 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:52,416 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:44,291 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:44,586 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd5_c1001_crfints.fits
-2021-08-27 12:01:44,587 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:44,692 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd6_calints.fits&gt;,).
-2021-08-27 12:01:44,694 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:44,702 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:44,725 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:52,494 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:52,796 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd5_c1001_crfints.fits
+2021-09-22 21:20:52,797 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:52,907 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd6_calints.fits&gt;,).
+2021-09-22 21:20:52,909 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:52,918 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:52,946 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:44,813 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:45,130 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd6_c1001_crfints.fits
-2021-08-27 12:01:45,131 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:45,239 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd7_calints.fits&gt;,).
-2021-08-27 12:01:45,241 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:45,250 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:45,270 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:53,031 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:53,342 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd6_c1001_crfints.fits
+2021-09-22 21:20:53,343 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:53,458 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd7_calints.fits&gt;,).
+2021-09-22 21:20:53,460 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:53,468 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:53,490 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:45,349 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:45,649 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd7_c1001_crfints.fits
-2021-08-27 12:01:45,649 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:45,757 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd8_calints.fits&gt;,).
-2021-08-27 12:01:45,759 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:45,767 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:45,787 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:53,568 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:53,870 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd7_c1001_crfints.fits
+2021-09-22 21:20:53,872 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:53,978 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd8_calints.fits&gt;,).
+2021-09-22 21:20:53,980 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:53,989 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:54,011 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:45,866 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:46,161 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd8_c1001_crfints.fits
-2021-08-27 12:01:46,162 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:46,268 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd9_calints.fits&gt;,).
-2021-08-27 12:01:46,270 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:46,278 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
-2021-08-27 12:01:46,297 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:54,088 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:54,391 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd8_c1001_crfints.fits
+2021-09-22 21:20:54,392 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:54,499 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(2, 640, 640) from lib_ss20_sgd9_calints.fits&gt;,).
+2021-09-22 21:20:54,501 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:54,509 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 2 inputs
+2021-09-22 21:20:54,531 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:46,375 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
-2021-08-27 12:01:46,665 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd9_c1001_crfints.fits
-2021-08-27 12:01:46,665 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:46,769 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs running with args (&lt;ModelContainer&gt;,).
-2021-08-27 12:01:46,770 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-08-27 12:01:46,797 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 1 to output stack
-2021-08-27 12:01:46,802 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 2 to output stack
-2021-08-27 12:01:46,807 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 3 to output stack
-2021-08-27 12:01:46,811 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 4 to output stack
-2021-08-27 12:01:46,816 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 5 to output stack
-2021-08-27 12:01:46,821 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 6 to output stack
-2021-08-27 12:01:46,826 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 7 to output stack
-2021-08-27 12:01:46,830 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 8 to output stack
-2021-08-27 12:01:46,835 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 9 to output stack
-2021-08-27 12:01:46,881 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs done
-2021-08-27 12:01:47,008 - stpipe.Coron3Pipeline - INFO - Saved model in coro_test_psfstack.fits
-2021-08-27 12:01:47,342 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_calints.fits&gt;,).
-2021-08-27 12:01:47,344 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:01:47,354 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 10 inputs
-2021-08-27 12:01:47,376 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
+2021-09-22 21:20:54,610 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 2 images
+2021-09-22 21:20:54,916 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_sgd9_c1001_crfints.fits
+2021-09-22 21:20:54,919 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:55,047 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs running with args (&lt;ModelContainer&gt;,).
+2021-09-22 21:20:55,049 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-09-22 21:20:55,097 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 1 to output stack
+2021-09-22 21:20:55,108 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 2 to output stack
+2021-09-22 21:20:55,120 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 3 to output stack
+2021-09-22 21:20:55,133 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 4 to output stack
+2021-09-22 21:20:55,142 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 5 to output stack
+2021-09-22 21:20:55,150 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 6 to output stack
+2021-09-22 21:20:55,159 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 7 to output stack
+2021-09-22 21:20:55,167 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 8 to output stack
+2021-09-22 21:20:55,176 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 9 to output stack
+2021-09-22 21:20:55,248 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs done
+2021-09-22 21:20:55,399 - stpipe.Coron3Pipeline - INFO - Saved model in coro_test_psfstack.fits
+2021-09-22 21:20:55,712 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_calints.fits&gt;,).
+2021-09-22 21:20:55,715 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:20:55,724 - stpipe.Coron3Pipeline.outlier_detection - INFO - Performing outlier detection with 10 inputs
+2021-09-22 21:20:55,745 - stpipe.Coron3Pipeline.outlier_detection - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/resample/resample_utils.py:156: RuntimeWarning: var_rnoise array not available.  Setting drizzle weight map to 1
   warnings.warn(&#34;var_rnoise array not available.  Setting drizzle weight map to 1&#34;,
 
-2021-08-27 12:01:47,738 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 10 images
-2021-08-27 12:01:48,749 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_target_roll1_c1001_crfints.fits
-2021-08-27 12:01:48,750 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2021-08-27 12:01:48,932 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_c1001_crfints.fits&gt;, &lt;CubeModel(18, 640, 640) from coro_test_psfstack.fits&gt;).
-2021-08-27 12:01:48,934 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}
-2021-08-27 12:01:48,971 - stpipe.Coron3Pipeline.align_refs - INFO - Using PSFMASK reference file /grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits
-2021-08-27 12:01:49,136 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3440: RuntimeWarning: Mean of empty slice.
+2021-09-22 21:20:56,075 - stpipe.Coron3Pipeline.outlier_detection - INFO - Generating median from 10 images
+2021-09-22 21:20:57,129 - stpipe.Coron3Pipeline.outlier_detection - INFO - Saved model in lib_ss20_target_roll1_c1001_crfints.fits
+2021-09-22 21:20:57,131 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2021-09-22 21:20:57,269 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_c1001_crfints.fits&gt;, &lt;CubeModel(18, 640, 640) from coro_test_psfstack.fits&gt;).
+2021-09-22 21:20:57,271 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}
+2021-09-22 21:20:57,292 - stpipe.Coron3Pipeline.align_refs - INFO - Using PSFMASK reference file /grp/crds/cache/references/jwst/jwst_nircam_psfmask_0049.fits
+2021-09-22 21:20:57,372 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3440: RuntimeWarning: Mean of empty slice.
   return _methods._mean(a, axis=axis, dtype=dtype,
 
-2021-08-27 12:01:49,138 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in true_divide
+2021-09-22 21:20:57,374 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in true_divide
   ret = ret.dtype.type(ret / rcount)
 
-2021-08-27 12:01:49,138 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,146 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,153 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,161 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,169 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,176 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,184 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,192 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,199 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,206 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,214 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,221 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,228 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,235 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,242 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,250 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,257 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,265 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,271 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,279 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,285 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,292 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,299 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,306 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,313 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,320 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,327 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:01:49,334 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2021-08-27 12:05:46,355 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs done
-2021-08-27 12:05:47,477 - stpipe.Coron3Pipeline - INFO - Saved model in lib_ss20_target_roll1_c1001_psfalign.fits
-2021-08-27 12:05:47,607 - stpipe.Coron3Pipeline.klip - INFO - Step klip running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_c1001_crfints.fits&gt;, &lt;QuadModel(10, 18, 640, 640) from lib_ss20_target_roll1_c1001_psfalign.fits&gt;).
-2021-08-27 12:05:47,608 - stpipe.Coron3Pipeline.klip - INFO - Step klip parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}
-2021-08-27 12:05:47,615 - stpipe.Coron3Pipeline.klip - INFO - KL transform truncation = 50
-2021-08-27 12:05:54,524 - stpipe.Coron3Pipeline.klip - INFO - Step klip done
-2021-08-27 12:05:54,756 - stpipe.Coron3Pipeline - INFO - Saved model in lib_ss20_target_roll1_c1001_psfsub.fits
-2021-08-27 12:05:55,243 - stpipe.Coron3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2021-08-27 12:05:55,245 - stpipe.Coron3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
-2021-08-27 12:05:55,262 - stpipe.Coron3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
-2021-08-27 12:05:55,424 - stpipe.Coron3Pipeline.resample - INFO - Resampling science data
-2021-08-27 12:05:55,721 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:56,239 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:56,802 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:57,332 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:57,894 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:58,434 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:59,042 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:05:59,574 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:00,112 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:00,691 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:00,979 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_rnoise
-2021-08-27 12:06:01,351 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:01,863 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:02,422 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:02,941 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:03,477 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:04,016 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:04,556 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:05,073 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:05,580 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:06,128 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:06,511 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_poisson
-2021-08-27 12:06:06,810 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:07,307 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:07,814 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:08,323 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:08,827 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:09,403 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:09,914 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:10,448 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:10,960 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:11,503 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:11,906 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_flat
-2021-08-27 12:06:12,187 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:12,702 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:13,230 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:13,824 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:14,424 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:14,943 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:15,467 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:15,983 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:16,488 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:16,990 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
-2021-08-27 12:06:17,338 - stpipe.Coron3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.8/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-09-22 21:20:57,375 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,383 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,391 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,399 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,409 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,419 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,430 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,439 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,447 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,455 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,464 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,472 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,480 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,489 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,496 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,505 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,513 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,521 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,529 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,537 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,546 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,554 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,562 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,570 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,578 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,586 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,595 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:20:57,602 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2021-09-22 21:24:36,506 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs done
+2021-09-22 21:24:38,039 - stpipe.Coron3Pipeline - INFO - Saved model in lib_ss20_target_roll1_c1001_psfalign.fits
+2021-09-22 21:24:38,261 - stpipe.Coron3Pipeline.klip - INFO - Step klip running with args (&lt;CubeModel(10, 640, 640) from lib_ss20_target_roll1_c1001_crfints.fits&gt;, &lt;QuadModel(10, 18, 640, 640) from lib_ss20_target_roll1_c1001_psfalign.fits&gt;).
+2021-09-22 21:24:38,263 - stpipe.Coron3Pipeline.klip - INFO - Step klip parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}
+2021-09-22 21:24:38,272 - stpipe.Coron3Pipeline.klip - INFO - KL transform truncation = 50
+2021-09-22 21:24:42,736 - stpipe.Coron3Pipeline.klip - INFO - Step klip done
+2021-09-22 21:24:42,916 - stpipe.Coron3Pipeline - INFO - Saved model in lib_ss20_target_roll1_c1001_psfsub.fits
+2021-09-22 21:24:43,425 - stpipe.Coron3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2021-09-22 21:24:43,427 - stpipe.Coron3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
+2021-09-22 21:24:43,450 - stpipe.Coron3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
+2021-09-22 21:24:43,622 - stpipe.Coron3Pipeline.resample - INFO - Resampling science data
+2021-09-22 21:24:43,875 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:44,402 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:44,930 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:45,458 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:45,992 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:46,520 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:47,050 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:47,578 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:48,105 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:48,633 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:48,934 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_rnoise
+2021-09-22 21:24:49,167 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:49,698 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:50,245 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:50,777 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:51,327 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:51,889 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:52,428 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:52,972 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:53,504 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:54,035 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:54,337 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_poisson
+2021-09-22 21:24:54,566 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:55,095 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:55,623 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:56,173 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:56,709 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:57,241 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:57,775 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:58,304 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:58,833 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:59,360 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:24:59,663 - stpipe.Coron3Pipeline.resample - INFO - Resampling var_flat
+2021-09-22 21:24:59,895 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:00,433 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:00,975 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:01,506 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:02,038 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:02,571 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:03,102 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:03,630 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:04,164 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:04,696 - stpipe.Coron3Pipeline.resample - INFO - Drizzling (640, 640) --&gt; (756, 753)
+2021-09-22 21:25:05,012 - stpipe.Coron3Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-08-27 12:06:17,341 - stpipe.Coron3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  346.825736745 21.254563694 346.825708926 21.260995901 346.818843479 21.260969972 346.818871598 21.254537767
-2021-08-27 12:06:17,344 - stpipe.Coron3Pipeline.resample - INFO - Step resample done
-2021-08-27 12:06:18,533 - stpipe.Coron3Pipeline - INFO - Saved model in coro_test_i2d.fits
-2021-08-27 12:06:18,534 - stpipe.Coron3Pipeline - INFO - ...ending calwebb_coron3
-2021-08-27 12:06:18,535 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline done
+2021-09-22 21:25:05,015 - stpipe.Coron3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  346.825736745 21.254563694 346.825708926 21.260995901 346.818843479 21.260969972 346.818871598 21.254537767
+2021-09-22 21:25:05,019 - stpipe.Coron3Pipeline.resample - INFO - Step resample done
+2021-09-22 21:25:06,156 - stpipe.Coron3Pipeline - INFO - Saved model in coro_test_i2d.fits
+2021-09-22 21:25:06,157 - stpipe.Coron3Pipeline - INFO - ...ending calwebb_coron3
+2021-09-22 21:25:06,159 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline done
 </pre>
 </div>
 </div>
