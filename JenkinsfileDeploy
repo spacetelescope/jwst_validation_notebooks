@@ -62,10 +62,8 @@ pipeline {
                     git push deploy ${deploy_branch}
                     cd ${env.WORKSPACE}
                     chmod ug=rwx index.html
-                    chmod ug=rwx report*.xml
                     find . -name "*.html" | xargs chmod ug=rwx
                     rsync -vH index.html ${env.WEBPAGE_DIR}
-                    rsync -v report*.xml ${env.WEBPAGE_DIR}reports
                     find . -name "*.html" -print >html_files
                     rsync -vHR --files-from=html_files . ${env.WEBPAGE_DIR}
                     """)
