@@ -14702,7 +14702,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Filename: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/astropy-download-2134295-2arogjui
+<pre>Filename: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/astropy-download-128071-u0oy8fx0
 No.    Name      Ver    Type      Cards   Dimensions   Format
   0  PRIMARY       1 PrimaryHDU     116   ()      
   1  SCI           1 ImageHDU        51   (72, 416, 100, 10)   float32   
@@ -14793,15 +14793,15 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-10-01 18:07:13,811 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_2134295/1539562950.py:8: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+<pre>2021-10-04 21:40:01,537 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_128071/1539562950.py:8: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   ap_rows = np.int(ap_corners[1][2]-ap_corners[1][1])
 
-2021-10-01 18:07:13,813 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_2134295/1539562950.py:9: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-04 21:40:01,538 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_128071/1539562950.py:9: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   ap_cols = np.int(ap_corners[0][1]-ap_corners[0][0])
 
-2021-10-01 18:07:13,814 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_2134295/1539562950.py:24: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-04 21:40:01,539 - stpipe - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/ipykernel_128071/1539562950.py:24: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   assert np.shape(hdu[&#39;REFOUT&#39;])[3] == np.int(ap_cols/4), &#34;Dimensions of REFOUT extension are incompatible with the SIAF&#34;
 
@@ -14963,189 +14963,189 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-10-01 18:07:14,937 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
-2021-10-01 18:07:14,940 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
-2021-10-01 18:07:14,941 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
-2021-10-01 18:07:14,943 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
-2021-10-01 18:07:14,944 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
-2021-10-01 18:07:14,946 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
-2021-10-01 18:07:14,947 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
-2021-10-01 18:07:14,949 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
-2021-10-01 18:07:14,950 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
-2021-10-01 18:07:14,952 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
-2021-10-01 18:07:14,953 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
-2021-10-01 18:07:14,954 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
-2021-10-01 18:07:14,956 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
-2021-10-01 18:07:14,957 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
-2021-10-01 18:07:14,959 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
-2021-10-01 18:07:14,960 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
-2021-10-01 18:07:14,962 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
-2021-10-01 18:07:17,051 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_miri_pars-detector1pipeline_0002.asdf
-2021-10-01 18:07:17,126 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
-2021-10-01 18:07:17,128 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
-2021-10-01 18:07:17,129 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
-2021-10-01 18:07:17,130 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
-2021-10-01 18:07:17,131 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
-2021-10-01 18:07:17,132 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
-2021-10-01 18:07:17,134 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
-2021-10-01 18:07:17,135 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
-2021-10-01 18:07:17,136 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
-2021-10-01 18:07:17,137 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
-2021-10-01 18:07:17,138 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
-2021-10-01 18:07:17,140 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
-2021-10-01 18:07:17,141 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
-2021-10-01 18:07:17,142 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
-2021-10-01 18:07:17,143 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
-2021-10-01 18:07:17,145 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
-2021-10-01 18:07:17,146 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
-2021-10-01 18:07:17,299 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:17,308 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: True, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
-2021-10-01 18:07:17,330 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;astropy-download-2134295-2arogjui&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;saturation&#39;, &#39;superbias&#39;]
-2021-10-01 18:07:17,531 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_dark_0048.fits&#39;.
-2021-10-01 18:07:17,610 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits&#39;.
-2021-10-01 18:07:17,685 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits&#39;.
-2021-10-01 18:07:17,735 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits&#39;.
-2021-10-01 18:07:17,775 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits&#39;.
-2021-10-01 18:07:17,813 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;N/A&#39;.
-2021-10-01 18:07:17,815 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_reset_0043.fits&#39;.
-2021-10-01 18:07:17,878 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_saturation_0026.fits&#39;.
-2021-10-01 18:07:17,940 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;N/A&#39;.
-2021-10-01 18:07:17,942 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
-2021-10-01 18:07:18,087 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:18,089 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:18,341 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES=1 is a power of 2; correction not needed
-2021-10-01 18:07:18,342 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
-2021-10-01 18:07:18,343 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
-2021-10-01 18:07:18,463 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:18,465 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:18,513 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2021-10-01 18:07:18,863 - stpipe.Detector1Pipeline.dq_init - INFO - Extracting mask subarray to match science data
-2021-10-01 18:07:18,873 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
-2021-10-01 18:07:19,005 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:19,007 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:19,030 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_miri_saturation_0026.fits
-2021-10-01 18:07:19,263 - stpipe.Detector1Pipeline.saturation - INFO - Extracting reference file subarray to match science data
-2021-10-01 18:07:19,515 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 saturated pixels
-2021-10-01 18:07:19,527 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
-2021-10-01 18:07:19,531 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
-2021-10-01 18:07:19,667 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:19,669 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:19,670 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
-2021-10-01 18:07:19,671 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
-2021-10-01 18:07:19,781 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:19,783 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:19,784 - stpipe.Detector1Pipeline.firstframe - INFO - Step skipped.
-2021-10-01 18:07:19,785 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe done
-2021-10-01 18:07:19,889 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:19,890 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:19,891 - stpipe.Detector1Pipeline.lastframe - INFO - Step skipped.
-2021-10-01 18:07:19,893 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe done
-2021-10-01 18:07:19,995 - stpipe.Detector1Pipeline.reset - INFO - Step reset running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:19,996 - stpipe.Detector1Pipeline.reset - INFO - Step reset parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:20,041 - stpipe.Detector1Pipeline.reset - INFO - Using RESET reference file /grp/crds/cache/references/jwst/jwst_miri_reset_0043.fits
-2021-10-01 18:07:20,117 - stpipe.Detector1Pipeline.reset - WARNING - Keyword RESET_LARGE does not correspond to an existing DQ mnemonic, so will be ignored
-2021-10-01 18:07:20,310 - stpipe.Detector1Pipeline.reset - INFO - Step reset done
-2021-10-01 18:07:20,432 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:20,434 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:07:20,471 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits
-2021-10-01 18:07:20,704 - stpipe.Detector1Pipeline.linearity - INFO - Extracting linearity subarray to match science data
-2021-10-01 18:07:21,010 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
-2021-10-01 18:07:21,132 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:21,134 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-01 18:07:21,135 - stpipe.Detector1Pipeline.rscd - INFO - Step skipped.
-2021-10-01 18:07:21,136 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd done
-2021-10-01 18:07:21,242 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:21,244 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}
-2021-10-01 18:07:21,298 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_miri_dark_0048.fits
-2021-10-01 18:07:21,632 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=10, ngroups=100, nframes=1, groupgap=0
-2021-10-01 18:07:21,634 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=2, ngroups=1000, nframes=1, groupgap=0
-2021-10-01 18:07:21,898 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
-2021-10-01 18:07:22,027 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:22,029 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
-2021-10-01 18:07:22,037 - stpipe.Detector1Pipeline.refpix - INFO - use_side_ref_pixels = True
-2021-10-01 18:07:22,038 - stpipe.Detector1Pipeline.refpix - INFO - odd_even_columns = True
-2021-10-01 18:07:22,038 - stpipe.Detector1Pipeline.refpix - INFO - side_smoothing_length = 11
-2021-10-01 18:07:22,039 - stpipe.Detector1Pipeline.refpix - INFO - side_gain = 1.000000
-2021-10-01 18:07:22,039 - stpipe.Detector1Pipeline.refpix - INFO - odd_even_rows = True
-2021-10-01 18:07:22,169 - stpipe.Detector1Pipeline.refpix - WARNING - Refpix correction skipped for MIRI subarrays
-2021-10-01 18:07:22,171 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
-2021-10-01 18:07:22,294 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui&gt;,).
-2021-10-01 18:07:22,295 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}
-2021-10-01 18:07:22,304 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
-2021-10-01 18:07:22,327 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
-2021-10-01 18:07:22,417 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits
-2021-10-01 18:07:22,521 - stpipe.Detector1Pipeline.jump - INFO - Using 1 core for jump detection 
-2021-10-01 18:07:22,643 - stpipe.Detector1Pipeline.jump - INFO - Extracting gain subarray to match science data
-2021-10-01 18:07:22,748 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
-2021-10-01 18:07:22,997 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
-2021-10-01 18:07:23,129 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4166 pixels with at least one CR and at least four groups
-2021-10-01 18:07:23,130 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:23,131 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:23,333 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 2:
-2021-10-01 18:07:23,466 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4287 pixels with at least one CR and at least four groups
-2021-10-01 18:07:23,468 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:23,468 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:23,683 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 3:
-2021-10-01 18:07:23,807 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4333 pixels with at least one CR and at least four groups
-2021-10-01 18:07:23,809 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:23,809 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:24,024 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 4:
-2021-10-01 18:07:24,145 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4248 pixels with at least one CR and at least four groups
-2021-10-01 18:07:24,146 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:24,147 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:24,364 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 5:
-2021-10-01 18:07:24,485 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4267 pixels with at least one CR and at least four groups
-2021-10-01 18:07:24,486 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:24,487 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:24,707 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 6:
-2021-10-01 18:07:24,829 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4309 pixels with at least one CR and at least four groups
-2021-10-01 18:07:24,830 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:24,831 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:25,039 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 7:
-2021-10-01 18:07:25,161 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4266 pixels with at least one CR and at least four groups
-2021-10-01 18:07:25,163 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:25,164 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:25,376 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 8:
-2021-10-01 18:07:25,498 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4286 pixels with at least one CR and at least four groups
-2021-10-01 18:07:25,499 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:25,499 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:25,723 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 9:
-2021-10-01 18:07:25,856 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4270 pixels with at least one CR and at least four groups
-2021-10-01 18:07:25,857 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:25,858 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:26,066 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 10:
-2021-10-01 18:07:26,187 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4285 pixels with at least one CR and at least four groups
-2021-10-01 18:07:26,188 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
-2021-10-01 18:07:26,189 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
-2021-10-01 18:07:26,413 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 3.66318 sec
-2021-10-01 18:07:26,416 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 4.112071
-2021-10-01 18:07:26,419 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
-2021-10-01 18:07:26,681 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-2134295-2arogjui_ramp.fits
-2021-10-01 18:07:26,821 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-2134295-2arogjui_ramp.fits&gt;,).
-2021-10-01 18:07:26,823 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;maximum_cores&#39;: &#39;none&#39;}
-2021-10-01 18:07:26,864 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits
-2021-10-01 18:07:26,944 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
-2021-10-01 18:07:26,980 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
-2021-10-01 18:07:26,981 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
-2021-10-01 18:07:26,982 - stpipe.Detector1Pipeline.ramp_fit - INFO - Extracting gain subarray to match science data
-2021-10-01 18:07:26,983 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of leading groups that are flagged as DO_NOT_USE: 0
-2021-10-01 18:08:38,145 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 100
-2021-10-01 18:08:38,148 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 10
-2021-10-01 18:08:38,210 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
-2021-10-01 18:08:38,365 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(416, 72) from astropy-download-2134295-2arogjui_ramp.fits&gt;,).
-2021-10-01 18:08:38,366 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:08:38,461 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2021-10-01 18:08:38,462 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2021-10-01 18:08:38,465 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2021-10-01 18:08:38,561 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(10, 416, 72) from astropy-download-2134295-2arogjui_ramp.fits&gt;,).
-2021-10-01 18:08:38,563 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-01 18:08:38,626 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2021-10-01 18:08:38,626 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2021-10-01 18:08:38,629 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2021-10-01 18:08:38,686 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-2134295-2arogjui_rateints.fits
-2021-10-01 18:08:38,688 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
-2021-10-01 18:08:38,731 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-2134295-2arogjui_rate.fits
-2021-10-01 18:08:38,732 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
+<pre>2021-10-04 21:40:02,683 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2021-10-04 21:40:02,684 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2021-10-04 21:40:02,686 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2021-10-04 21:40:02,687 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2021-10-04 21:40:02,688 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2021-10-04 21:40:02,690 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2021-10-04 21:40:02,691 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2021-10-04 21:40:02,693 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2021-10-04 21:40:02,695 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2021-10-04 21:40:02,697 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2021-10-04 21:40:02,699 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2021-10-04 21:40:02,701 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2021-10-04 21:40:02,706 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2021-10-04 21:40:02,708 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2021-10-04 21:40:02,710 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2021-10-04 21:40:02,712 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2021-10-04 21:40:02,714 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+2021-10-04 21:40:03,283 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_miri_pars-detector1pipeline_0002.asdf
+2021-10-04 21:40:03,328 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2021-10-04 21:40:03,329 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2021-10-04 21:40:03,331 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2021-10-04 21:40:03,332 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2021-10-04 21:40:03,333 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2021-10-04 21:40:03,334 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2021-10-04 21:40:03,336 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2021-10-04 21:40:03,337 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2021-10-04 21:40:03,338 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2021-10-04 21:40:03,339 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2021-10-04 21:40:03,340 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2021-10-04 21:40:03,342 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2021-10-04 21:40:03,343 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2021-10-04 21:40:03,344 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2021-10-04 21:40:03,346 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2021-10-04 21:40:03,347 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2021-10-04 21:40:03,348 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+2021-10-04 21:40:03,459 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:03,469 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: True, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
+2021-10-04 21:40:03,479 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;astropy-download-128071-u0oy8fx0&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;saturation&#39;, &#39;superbias&#39;]
+2021-10-04 21:40:03,492 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_dark_0048.fits&#39;.
+2021-10-04 21:40:03,494 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits&#39;.
+2021-10-04 21:40:03,496 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits&#39;.
+2021-10-04 21:40:03,498 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits&#39;.
+2021-10-04 21:40:03,500 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits&#39;.
+2021-10-04 21:40:03,502 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;N/A&#39;.
+2021-10-04 21:40:03,503 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_reset_0043.fits&#39;.
+2021-10-04 21:40:03,505 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_saturation_0026.fits&#39;.
+2021-10-04 21:40:03,507 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;N/A&#39;.
+2021-10-04 21:40:03,508 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+2021-10-04 21:40:03,629 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:03,631 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:03,939 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES=1 is a power of 2; correction not needed
+2021-10-04 21:40:03,942 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
+2021-10-04 21:40:03,944 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
+2021-10-04 21:40:04,065 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:04,067 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:04,087 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2021-10-04 21:40:04,452 - stpipe.Detector1Pipeline.dq_init - INFO - Extracting mask subarray to match science data
+2021-10-04 21:40:04,461 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
+2021-10-04 21:40:04,599 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:04,601 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:04,620 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_miri_saturation_0026.fits
+2021-10-04 21:40:04,883 - stpipe.Detector1Pipeline.saturation - INFO - Extracting reference file subarray to match science data
+2021-10-04 21:40:05,142 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 saturated pixels
+2021-10-04 21:40:05,154 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
+2021-10-04 21:40:05,158 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
+2021-10-04 21:40:05,293 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:05,295 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:05,296 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
+2021-10-04 21:40:05,298 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
+2021-10-04 21:40:05,399 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:05,400 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:05,401 - stpipe.Detector1Pipeline.firstframe - INFO - Step skipped.
+2021-10-04 21:40:05,403 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe done
+2021-10-04 21:40:05,494 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:05,496 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:05,497 - stpipe.Detector1Pipeline.lastframe - INFO - Step skipped.
+2021-10-04 21:40:05,498 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe done
+2021-10-04 21:40:05,591 - stpipe.Detector1Pipeline.reset - INFO - Step reset running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:05,593 - stpipe.Detector1Pipeline.reset - INFO - Step reset parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:05,613 - stpipe.Detector1Pipeline.reset - INFO - Using RESET reference file /grp/crds/cache/references/jwst/jwst_miri_reset_0043.fits
+2021-10-04 21:40:07,681 - stpipe.Detector1Pipeline.reset - WARNING - Keyword RESET_LARGE does not correspond to an existing DQ mnemonic, so will be ignored
+2021-10-04 21:40:07,954 - stpipe.Detector1Pipeline.reset - INFO - Step reset done
+2021-10-04 21:40:08,089 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:08,091 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:40:08,111 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits
+2021-10-04 21:40:08,394 - stpipe.Detector1Pipeline.linearity - INFO - Extracting linearity subarray to match science data
+2021-10-04 21:40:08,715 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
+2021-10-04 21:40:08,855 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:08,857 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2021-10-04 21:40:08,858 - stpipe.Detector1Pipeline.rscd - INFO - Step skipped.
+2021-10-04 21:40:08,859 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd done
+2021-10-04 21:40:08,960 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:08,962 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}
+2021-10-04 21:40:08,983 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_miri_dark_0048.fits
+2021-10-04 21:40:18,997 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=10, ngroups=100, nframes=1, groupgap=0
+2021-10-04 21:40:18,999 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=2, ngroups=1000, nframes=1, groupgap=0
+2021-10-04 21:40:19,371 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
+2021-10-04 21:40:19,545 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:19,547 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
+2021-10-04 21:40:19,556 - stpipe.Detector1Pipeline.refpix - INFO - use_side_ref_pixels = True
+2021-10-04 21:40:19,557 - stpipe.Detector1Pipeline.refpix - INFO - odd_even_columns = True
+2021-10-04 21:40:19,557 - stpipe.Detector1Pipeline.refpix - INFO - side_smoothing_length = 11
+2021-10-04 21:40:19,558 - stpipe.Detector1Pipeline.refpix - INFO - side_gain = 1.000000
+2021-10-04 21:40:19,559 - stpipe.Detector1Pipeline.refpix - INFO - odd_even_rows = True
+2021-10-04 21:40:19,773 - stpipe.Detector1Pipeline.refpix - WARNING - Refpix correction skipped for MIRI subarrays
+2021-10-04 21:40:19,774 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
+2021-10-04 21:40:19,907 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0&gt;,).
+2021-10-04 21:40:19,909 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}
+2021-10-04 21:40:19,918 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
+2021-10-04 21:40:19,931 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
+2021-10-04 21:40:19,962 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits
+2021-10-04 21:40:19,999 - stpipe.Detector1Pipeline.jump - INFO - Using 1 core for jump detection 
+2021-10-04 21:40:20,169 - stpipe.Detector1Pipeline.jump - INFO - Extracting gain subarray to match science data
+2021-10-04 21:40:20,275 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
+2021-10-04 21:40:20,530 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
+2021-10-04 21:40:20,678 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4166 pixels with at least one CR and at least four groups
+2021-10-04 21:40:20,679 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:20,680 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:20,888 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 2:
+2021-10-04 21:40:21,041 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4287 pixels with at least one CR and at least four groups
+2021-10-04 21:40:21,042 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:21,043 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:21,267 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 3:
+2021-10-04 21:40:21,399 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4333 pixels with at least one CR and at least four groups
+2021-10-04 21:40:21,400 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:21,401 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:21,620 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 4:
+2021-10-04 21:40:21,750 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4248 pixels with at least one CR and at least four groups
+2021-10-04 21:40:21,751 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:21,752 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:21,968 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 5:
+2021-10-04 21:40:22,111 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4267 pixels with at least one CR and at least four groups
+2021-10-04 21:40:22,113 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:22,114 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:22,330 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 6:
+2021-10-04 21:40:22,463 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4309 pixels with at least one CR and at least four groups
+2021-10-04 21:40:22,464 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:22,465 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:22,688 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 7:
+2021-10-04 21:40:22,813 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4266 pixels with at least one CR and at least four groups
+2021-10-04 21:40:22,814 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:22,815 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:23,043 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 8:
+2021-10-04 21:40:23,174 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4286 pixels with at least one CR and at least four groups
+2021-10-04 21:40:23,175 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:23,176 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:23,396 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 9:
+2021-10-04 21:40:23,525 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4270 pixels with at least one CR and at least four groups
+2021-10-04 21:40:23,527 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:23,528 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:23,747 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 10:
+2021-10-04 21:40:23,872 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 4285 pixels with at least one CR and at least four groups
+2021-10-04 21:40:23,874 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and three groups
+2021-10-04 21:40:23,874 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier Two-point found 0 pixels with at least one CR and two groups
+2021-10-04 21:40:24,112 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 3.83623 sec
+2021-10-04 21:40:24,117 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 4.198799
+2021-10-04 21:40:24,121 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
+2021-10-04 21:40:24,375 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-128071-u0oy8fx0_ramp.fits
+2021-10-04 21:40:24,528 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(10, 100, 416, 72) from astropy-download-128071-u0oy8fx0_ramp.fits&gt;,).
+2021-10-04 21:40:24,530 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;maximum_cores&#39;: &#39;none&#39;}
+2021-10-04 21:40:24,563 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_miri_readnoise_0070.fits
+2021-10-04 21:40:24,578 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
+2021-10-04 21:40:24,594 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
+2021-10-04 21:40:24,595 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
+2021-10-04 21:40:24,596 - stpipe.Detector1Pipeline.ramp_fit - INFO - Extracting gain subarray to match science data
+2021-10-04 21:40:24,598 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of leading groups that are flagged as DO_NOT_USE: 0
+2021-10-04 21:41:36,131 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 100
+2021-10-04 21:41:36,134 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 10
+2021-10-04 21:41:36,225 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
+2021-10-04 21:41:36,382 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(416, 72) from astropy-download-128071-u0oy8fx0_ramp.fits&gt;,).
+2021-10-04 21:41:36,384 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:41:36,423 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2021-10-04 21:41:36,424 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2021-10-04 21:41:36,426 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2021-10-04 21:41:36,520 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(10, 416, 72) from astropy-download-128071-u0oy8fx0_ramp.fits&gt;,).
+2021-10-04 21:41:36,521 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2021-10-04 21:41:36,554 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2021-10-04 21:41:36,554 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2021-10-04 21:41:36,557 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2021-10-04 21:41:36,613 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-128071-u0oy8fx0_rateints.fits
+2021-10-04 21:41:36,614 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
+2021-10-04 21:41:36,657 - stpipe.Detector1Pipeline - INFO - Saved model in astropy-download-128071-u0oy8fx0_rate.fits
+2021-10-04 21:41:36,658 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
 </pre>
 </div>
 </div>
@@ -15206,8 +15206,8 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;astropy-download-2134295-2arogjui_rate.fits&#39;]
-[&#39;astropy-download-2134295-2arogjui_rateints.fits&#39;]
+<pre>[&#39;astropy-download-128071-u0oy8fx0_rate.fits&#39;]
+[&#39;astropy-download-128071-u0oy8fx0_rateints.fits&#39;]
 </pre>
 </div>
 </div>
@@ -15395,7 +15395,7 @@ Max DN/s of the median of the rateints.fits slope images: 241.66192626953125 DN/
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x7fb31aae5f70&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7f0d3c5d3520&gt;</pre>
 </div>
 
 </div>
