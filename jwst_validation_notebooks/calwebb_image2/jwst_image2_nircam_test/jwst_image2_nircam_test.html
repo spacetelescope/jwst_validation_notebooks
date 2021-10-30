@@ -14654,7 +14654,7 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8xwhbii1
+<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpxgpih1xq
 </pre>
 </div>
 </div>
@@ -14858,7 +14858,7 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.3.1
+<pre>1.3.2
 </pre>
 </div>
 </div>
@@ -15110,187 +15110,187 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-10-04 21:49:31,494 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
-2021-10-04 21:49:31,496 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
-2021-10-04 21:49:31,499 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
-2021-10-04 21:49:31,500 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
-2021-10-04 21:49:31,502 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
-2021-10-04 21:49:31,503 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
-2021-10-04 21:49:31,673 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&#39;level2_lw_asn.json&#39;,).
-2021-10-04 21:49:31,678 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_combined_background&#39;: False, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2021-10-04 21:49:32,008 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;jw98765001001_01101_00001_nrcb5_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
-2021-10-04 21:49:32,385 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits&#39;.
-2021-10-04 21:49:32,389 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,390 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,391 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,392 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,392 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_distortion_0096.asdf&#39;.
-2021-10-04 21:49:32,394 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2021-10-04 21:49:32,396 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,397 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_filteroffset_0001.asdf&#39;.
-2021-10-04 21:49:32,399 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_flat_0339.fits&#39;.
-2021-10-04 21:49:32,401 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,402 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,403 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,403 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,404 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,404 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,405 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,405 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits&#39;.
-2021-10-04 21:49:32,407 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,408 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,409 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,409 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,410 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
-2021-10-04 21:49:32,411 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
-2021-10-04 21:49:32,423 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00001_nrcb5
-2021-10-04 21:49:32,423 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00001_nrcb5_rate.fits ...
-2021-10-04 21:49:32,537 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_rate.fits&gt;,).
-2021-10-04 21:49:32,541 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-04 21:49:33,023 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.015613916 11.983982600 12.015181985 12.020176925 11.978915493 12.020098805 11.978486069 11.984168244
-2021-10-04 21:49:33,024 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.015613916 11.983982600 12.015181985 12.020176925 11.978915493 12.020098805 11.978486069 11.984168244
-2021-10-04 21:49:33,025 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
-2021-10-04 21:49:33,260 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00001_nrcb5_assign_wcs.fits
-2021-10-04 21:49:33,261 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-10-04 21:49:33,358 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_assign_wcs.fits&gt;,).
-2021-10-04 21:49:33,360 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-10-04 21:49:37,558 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00001_nrcb5_flat_field.fits
-2021-10-04 21:49:37,560 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-10-04 21:49:37,677 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_flat_field.fits&gt;,).
-2021-10-04 21:49:37,679 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-10-04 21:49:37,705 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
-2021-10-04 21:49:37,706 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
-2021-10-04 21:49:37,791 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
-2021-10-04 21:49:37,792 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
-2021-10-04 21:49:37,793 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
-2021-10-04 21:49:37,794 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
-2021-10-04 21:49:37,795 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
-2021-10-04 21:49:38,791 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-10-04 21:49:38,794 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
-2021-10-04 21:49:39,011 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00001_nrcb5_photom.fits
-2021-10-04 21:49:39,012 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-10-04 21:49:39,106 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_photom.fits&gt;,).
-2021-10-04 21:49:39,108 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2021-10-04 21:49:39,132 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
-2021-10-04 21:49:39,245 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
-2021-10-04 21:49:43,639 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:49:46,479 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
-2021-10-04 21:49:50,819 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:49:53,625 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
-2021-10-04 21:49:58,014 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:00,853 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
-2021-10-04 21:50:05,153 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:07,987 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+<pre>2021-10-29 21:27:56,530 - stpipe.Image2Pipeline - INFO - Image2Pipeline instance created.
+2021-10-29 21:27:56,532 - stpipe.Image2Pipeline.bkg_subtract - INFO - BackgroundStep instance created.
+2021-10-29 21:27:56,535 - stpipe.Image2Pipeline.assign_wcs - INFO - AssignWcsStep instance created.
+2021-10-29 21:27:56,537 - stpipe.Image2Pipeline.flat_field - INFO - FlatFieldStep instance created.
+2021-10-29 21:27:56,538 - stpipe.Image2Pipeline.photom - INFO - PhotomStep instance created.
+2021-10-29 21:27:56,540 - stpipe.Image2Pipeline.resample - INFO - ResampleStep instance created.
+2021-10-29 21:27:56,701 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline running with args (&#39;level2_lw_asn.json&#39;,).
+2021-10-29 21:27:56,707 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_bsub&#39;: False, &#39;steps&#39;: {&#39;bkg_subtract&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_combined_background&#39;: False, &#39;sigma&#39;: 3.0, &#39;maxiters&#39;: None}, &#39;assign_wcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}, &#39;flat_field&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}, &#39;photom&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2021-10-29 21:27:57,036 - stpipe.Image2Pipeline - INFO - Prefetching reference files for dataset: &#39;jw98765001001_01101_00001_nrcb5_rate.fits&#39; reftypes = [&#39;area&#39;, &#39;camera&#39;, &#39;collimator&#39;, &#39;dflat&#39;, &#39;disperser&#39;, &#39;distortion&#39;, &#39;drizpars&#39;, &#39;fflat&#39;, &#39;filteroffset&#39;, &#39;flat&#39;, &#39;fore&#39;, &#39;fpa&#39;, &#39;ifufore&#39;, &#39;ifupost&#39;, &#39;ifuslicer&#39;, &#39;msa&#39;, &#39;ote&#39;, &#39;photom&#39;, &#39;regions&#39;, &#39;sflat&#39;, &#39;specwcs&#39;, &#39;wavelengthrange&#39;, &#39;wfssbkg&#39;]
+2021-10-29 21:27:57,558 - stpipe.Image2Pipeline - INFO - Prefetch for AREA reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits&#39;.
+2021-10-29 21:27:57,563 - stpipe.Image2Pipeline - INFO - Prefetch for CAMERA reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,565 - stpipe.Image2Pipeline - INFO - Prefetch for COLLIMATOR reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,566 - stpipe.Image2Pipeline - INFO - Prefetch for DFLAT reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,566 - stpipe.Image2Pipeline - INFO - Prefetch for DISPERSER reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,567 - stpipe.Image2Pipeline - INFO - Prefetch for DISTORTION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_distortion_0096.asdf&#39;.
+2021-10-29 21:27:57,571 - stpipe.Image2Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2021-10-29 21:27:57,574 - stpipe.Image2Pipeline - INFO - Prefetch for FFLAT reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,575 - stpipe.Image2Pipeline - INFO - Prefetch for FILTEROFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_filteroffset_0001.asdf&#39;.
+2021-10-29 21:27:57,578 - stpipe.Image2Pipeline - INFO - Prefetch for FLAT reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_flat_0339.fits&#39;.
+2021-10-29 21:27:57,581 - stpipe.Image2Pipeline - INFO - Prefetch for FORE reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,582 - stpipe.Image2Pipeline - INFO - Prefetch for FPA reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,582 - stpipe.Image2Pipeline - INFO - Prefetch for IFUFORE reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,584 - stpipe.Image2Pipeline - INFO - Prefetch for IFUPOST reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,585 - stpipe.Image2Pipeline - INFO - Prefetch for IFUSLICER reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,585 - stpipe.Image2Pipeline - INFO - Prefetch for MSA reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,586 - stpipe.Image2Pipeline - INFO - Prefetch for OTE reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,587 - stpipe.Image2Pipeline - INFO - Prefetch for PHOTOM reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits&#39;.
+2021-10-29 21:27:57,590 - stpipe.Image2Pipeline - INFO - Prefetch for REGIONS reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,592 - stpipe.Image2Pipeline - INFO - Prefetch for SFLAT reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,593 - stpipe.Image2Pipeline - INFO - Prefetch for SPECWCS reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,594 - stpipe.Image2Pipeline - INFO - Prefetch for WAVELENGTHRANGE reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,595 - stpipe.Image2Pipeline - INFO - Prefetch for WFSSBKG reference file is &#39;N/A&#39;.
+2021-10-29 21:27:57,596 - stpipe.Image2Pipeline - INFO - Starting calwebb_image2 ...
+2021-10-29 21:27:57,612 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00001_nrcb5
+2021-10-29 21:27:57,613 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00001_nrcb5_rate.fits ...
+2021-10-29 21:27:57,812 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_rate.fits&gt;,).
+2021-10-29 21:27:57,814 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-10-29 21:27:58,210 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.015613916 11.983982600 12.015181985 12.020176925 11.978915493 12.020098805 11.978486069 11.984168244
+2021-10-29 21:27:58,212 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.015613916 11.983982600 12.015181985 12.020176925 11.978915493 12.020098805 11.978486069 11.984168244
+2021-10-29 21:27:58,213 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
+2021-10-29 21:27:58,450 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00001_nrcb5_assign_wcs.fits
+2021-10-29 21:27:58,451 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-10-29 21:27:58,638 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_assign_wcs.fits&gt;,).
+2021-10-29 21:27:58,640 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-10-29 21:28:03,154 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00001_nrcb5_flat_field.fits
+2021-10-29 21:28:03,156 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-10-29 21:28:03,343 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_flat_field.fits&gt;,).
+2021-10-29 21:28:03,345 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-10-29 21:28:03,374 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
+2021-10-29 21:28:03,375 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
+2021-10-29 21:28:03,487 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
+2021-10-29 21:28:03,489 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
+2021-10-29 21:28:03,490 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
+2021-10-29 21:28:03,490 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
+2021-10-29 21:28:03,491 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
+2021-10-29 21:28:05,326 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-10-29 21:28:05,330 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
+2021-10-29 21:28:05,635 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00001_nrcb5_photom.fits
+2021-10-29 21:28:05,637 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-10-29 21:28:05,766 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00001_nrcb5_photom.fits&gt;,).
+2021-10-29 21:28:05,768 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2021-10-29 21:28:05,794 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
+2021-10-29 21:28:05,936 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
+2021-10-29 21:28:10,592 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:13,484 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
+2021-10-29 21:28:18,181 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:21,049 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
+2021-10-29 21:28:25,674 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:28,532 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
+2021-10-29 21:28:33,075 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:35,998 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-10-04 21:50:07,990 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.015621565 11.983999577 12.015625846 12.020187931 11.978500947 12.020189687 11.978501651 11.984001332
-2021-10-04 21:50:08,180 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00001_nrcb5_i2d.fits
-2021-10-04 21:50:08,181 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-10-04 21:50:08,182 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00001_nrcb5
-2021-10-04 21:50:08,184 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00002_nrcb5
-2021-10-04 21:50:08,184 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00002_nrcb5_rate.fits ...
-2021-10-04 21:50:08,340 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_rate.fits&gt;,).
-2021-10-04 21:50:08,342 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_wcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-04 21:50:08,649 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-29 21:28:36,002 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.015621565 11.983999577 12.015625846 12.020187931 11.978500947 12.020189687 11.978501651 11.984001332
+2021-10-29 21:28:36,217 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00001_nrcb5_i2d.fits
+2021-10-29 21:28:36,219 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-10-29 21:28:36,220 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00001_nrcb5
+2021-10-29 21:28:36,222 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00002_nrcb5
+2021-10-29 21:28:36,223 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00002_nrcb5_rate.fits ...
+2021-10-29 21:28:36,456 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_rate.fits&gt;,).
+2021-10-29 21:28:36,459 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_wcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-10-29 21:28:36,817 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-10-04 21:50:08,654 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.015556309 11.982315929 12.015124381 12.018510254 11.978858115 12.018432134 11.978428692 11.982501573
-2021-10-04 21:50:08,654 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.015556309 11.982315929 12.015124381 12.018510254 11.978858115 12.018432134 11.978428692 11.982501573
-2021-10-04 21:50:08,655 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
-2021-10-04 21:50:08,865 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00002_nrcb5_assign_wcs.fits
-2021-10-04 21:50:08,866 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-10-04 21:50:08,970 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_assign_wcs.fits&gt;,).
-2021-10-04 21:50:08,972 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;flat_field&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-10-04 21:50:09,501 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00002_nrcb5_flat_field.fits
-2021-10-04 21:50:09,503 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-10-04 21:50:09,596 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_flat_field.fits&gt;,).
-2021-10-04 21:50:09,597 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;photom&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-10-04 21:50:09,623 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
-2021-10-04 21:50:09,624 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
-2021-10-04 21:50:09,721 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
-2021-10-04 21:50:09,722 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
-2021-10-04 21:50:09,722 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
-2021-10-04 21:50:09,723 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
-2021-10-04 21:50:09,724 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
-2021-10-04 21:50:09,770 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-10-04 21:50:09,772 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
-2021-10-04 21:50:09,972 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00002_nrcb5_photom.fits
-2021-10-04 21:50:09,973 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-10-04 21:50:10,077 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_photom.fits&gt;,).
-2021-10-04 21:50:10,079 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
-2021-10-04 21:50:10,103 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
-2021-10-04 21:50:10,226 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
-2021-10-04 21:50:14,524 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:17,308 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
-2021-10-04 21:50:21,633 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:24,453 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
-2021-10-04 21:50:28,774 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:31,584 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
-2021-10-04 21:50:35,863 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:38,682 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-29 21:28:36,822 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.015556309 11.982315929 12.015124381 12.018510254 11.978858115 12.018432134 11.978428692 11.982501573
+2021-10-29 21:28:36,823 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.015556309 11.982315929 12.015124381 12.018510254 11.978858115 12.018432134 11.978428692 11.982501573
+2021-10-29 21:28:36,823 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
+2021-10-29 21:28:37,034 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00002_nrcb5_assign_wcs.fits
+2021-10-29 21:28:37,035 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-10-29 21:28:37,165 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_assign_wcs.fits&gt;,).
+2021-10-29 21:28:37,167 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;flat_field&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-10-29 21:28:37,743 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00002_nrcb5_flat_field.fits
+2021-10-29 21:28:37,744 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-10-29 21:28:37,861 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_flat_field.fits&gt;,).
+2021-10-29 21:28:37,863 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;photom&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-10-29 21:28:37,896 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
+2021-10-29 21:28:37,897 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
+2021-10-29 21:28:38,036 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
+2021-10-29 21:28:38,038 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
+2021-10-29 21:28:38,038 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
+2021-10-29 21:28:38,039 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
+2021-10-29 21:28:38,039 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
+2021-10-29 21:28:38,116 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-10-29 21:28:38,119 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
+2021-10-29 21:28:38,322 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00002_nrcb5_photom.fits
+2021-10-29 21:28:38,323 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-10-29 21:28:38,457 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00002_nrcb5_photom.fits&gt;,).
+2021-10-29 21:28:38,459 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
+2021-10-29 21:28:38,485 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
+2021-10-29 21:28:38,619 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
+2021-10-29 21:28:43,053 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:45,886 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
+2021-10-29 21:28:50,292 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:28:53,106 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
+2021-10-29 21:28:57,518 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:00,359 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
+2021-10-29 21:29:04,744 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:07,575 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-10-04 21:50:38,684 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.015563959 11.982332905 12.015568240 12.018521260 11.978443571 12.018523016 11.978444274 11.982334661
-2021-10-04 21:50:38,870 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00002_nrcb5_i2d.fits
-2021-10-04 21:50:38,871 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-10-04 21:50:38,872 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00002_nrcb5
-2021-10-04 21:50:38,873 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00003_nrcb5
-2021-10-04 21:50:38,874 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00003_nrcb5_rate.fits ...
-2021-10-04 21:50:39,025 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_rate.fits&gt;,).
-2021-10-04 21:50:39,027 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_wcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-04 21:50:39,357 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-29 21:29:07,578 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.015563959 11.982332905 12.015568240 12.018521260 11.978443571 12.018523016 11.978444274 11.982334661
+2021-10-29 21:29:07,774 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00002_nrcb5_i2d.fits
+2021-10-29 21:29:07,775 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-10-29 21:29:07,775 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00002_nrcb5
+2021-10-29 21:29:07,777 - stpipe.Image2Pipeline - INFO - Processing product jw98765001001_01101_00003_nrcb5
+2021-10-29 21:29:07,778 - stpipe.Image2Pipeline - INFO - Working on input jw98765001001_01101_00003_nrcb5_rate.fits ...
+2021-10-29 21:29:07,960 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_rate.fits&gt;,).
+2021-10-29 21:29:07,962 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_wcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2021-10-29 21:29:08,293 - stpipe.Image2Pipeline.assign_wcs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-10-04 21:50:39,362 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.017260207 11.982259681 12.016828279 12.018454006 11.980562020 12.018375887 11.980132597 11.982445325
-2021-10-04 21:50:39,363 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.017260207 11.982259681 12.016828279 12.018454006 11.980562020 12.018375887 11.980132597 11.982445325
-2021-10-04 21:50:39,363 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
-2021-10-04 21:50:39,564 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00003_nrcb5_assign_wcs.fits
-2021-10-04 21:50:39,565 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
-2021-10-04 21:50:39,672 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_assign_wcs.fits&gt;,).
-2021-10-04 21:50:39,674 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;flat_field&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
-2021-10-04 21:50:40,197 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00003_nrcb5_flat_field.fits
-2021-10-04 21:50:40,198 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
-2021-10-04 21:50:40,291 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_flat_field.fits&gt;,).
-2021-10-04 21:50:40,293 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;photom&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
-2021-10-04 21:50:40,319 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
-2021-10-04 21:50:40,319 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
-2021-10-04 21:50:40,415 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
-2021-10-04 21:50:40,416 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
-2021-10-04 21:50:40,417 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
-2021-10-04 21:50:40,417 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
-2021-10-04 21:50:40,418 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
-2021-10-04 21:50:40,462 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
-2021-10-04 21:50:40,464 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
-2021-10-04 21:50:40,667 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00003_nrcb5_photom.fits
-2021-10-04 21:50:40,668 - stpipe.Image2Pipeline.photom - INFO - Step photom done
-2021-10-04 21:50:40,767 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_photom.fits&gt;,).
-2021-10-04 21:50:40,769 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
-2021-10-04 21:50:40,794 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
-2021-10-04 21:50:40,903 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
-2021-10-04 21:50:45,141 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:47,927 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
-2021-10-04 21:50:52,172 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:50:54,993 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
-2021-10-04 21:50:59,250 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:51:02,036 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
-2021-10-04 21:51:06,271 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
-2021-10-04 21:51:09,080 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+2021-10-29 21:29:08,297 - stpipe.Image2Pipeline.assign_wcs - INFO - Update S_REGION to POLYGON ICRS  12.017260207 11.982259681 12.016828279 12.018454006 11.980562020 12.018375887 11.980132597 11.982445325
+2021-10-29 21:29:08,298 - stpipe.Image2Pipeline.assign_wcs - INFO - assign_wcs updated S_REGION to POLYGON ICRS  12.017260207 11.982259681 12.016828279 12.018454006 11.980562020 12.018375887 11.980132597 11.982445325
+2021-10-29 21:29:08,299 - stpipe.Image2Pipeline.assign_wcs - INFO - COMPLETED assign_wcs
+2021-10-29 21:29:08,504 - stpipe.Image2Pipeline.assign_wcs - INFO - Saved model in jw98765001001_01101_00003_nrcb5_assign_wcs.fits
+2021-10-29 21:29:08,505 - stpipe.Image2Pipeline.assign_wcs - INFO - Step assign_wcs done
+2021-10-29 21:29:08,622 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_assign_wcs.fits&gt;,).
+2021-10-29 21:29:08,624 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;flat_field&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_interpolated_flat&#39;: False, &#39;user_supplied_flat&#39;: None, &#39;inverse&#39;: False}
+2021-10-29 21:29:09,172 - stpipe.Image2Pipeline.flat_field - INFO - Saved model in jw98765001001_01101_00003_nrcb5_flat_field.fits
+2021-10-29 21:29:09,173 - stpipe.Image2Pipeline.flat_field - INFO - Step flat_field done
+2021-10-29 21:29:09,280 - stpipe.Image2Pipeline.photom - INFO - Step photom running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_flat_field.fits&gt;,).
+2021-10-29 21:29:09,281 - stpipe.Image2Pipeline.photom - INFO - Step photom parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;photom&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;inverse&#39;: False, &#39;source_type&#39;: None}
+2021-10-29 21:29:09,314 - stpipe.Image2Pipeline.photom - INFO - Using photom reference file: /grp/crds/cache/references/jwst/jwst_nircam_photom_0095.fits
+2021-10-29 21:29:09,315 - stpipe.Image2Pipeline.photom - INFO - Using area reference file: /grp/crds/cache/references/jwst/jwst_nircam_area_0026.fits
+2021-10-29 21:29:09,413 - stpipe.Image2Pipeline.photom - INFO - Using instrument: NIRCAM
+2021-10-29 21:29:09,414 - stpipe.Image2Pipeline.photom - INFO -  detector: NRCBLONG
+2021-10-29 21:29:09,414 - stpipe.Image2Pipeline.photom - INFO -  exp_type: NRC_IMAGE
+2021-10-29 21:29:09,415 - stpipe.Image2Pipeline.photom - INFO -  filter: F444W
+2021-10-29 21:29:09,415 - stpipe.Image2Pipeline.photom - INFO -  pupil: CLEAR
+2021-10-29 21:29:09,463 - stpipe.Image2Pipeline.photom - INFO - Pixel area map copied to output.
+2021-10-29 21:29:09,465 - stpipe.Image2Pipeline.photom - INFO - PHOTMJSR value: 0.389988
+2021-10-29 21:29:09,668 - stpipe.Image2Pipeline.photom - INFO - Saved model in jw98765001001_01101_00003_nrcb5_photom.fits
+2021-10-29 21:29:09,669 - stpipe.Image2Pipeline.photom - INFO - Step photom done
+2021-10-29 21:29:09,782 - stpipe.Image2Pipeline.resample - INFO - Step resample running with args (&lt;ImageModel(2048, 2048) from jw98765001001_01101_00003_nrcb5_photom.fits&gt;,).
+2021-10-29 21:29:09,783 - stpipe.Image2Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
+2021-10-29 21:29:09,809 - stpipe.Image2Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
+2021-10-29 21:29:09,920 - stpipe.Image2Pipeline.resample - INFO - Resampling science data
+2021-10-29 21:29:14,374 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:17,192 - stpipe.Image2Pipeline.resample - INFO - Resampling var_rnoise
+2021-10-29 21:29:21,670 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:24,511 - stpipe.Image2Pipeline.resample - INFO - Resampling var_poisson
+2021-10-29 21:29:28,972 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:31,762 - stpipe.Image2Pipeline.resample - INFO - Resampling var_flat
+2021-10-29 21:29:36,179 - stpipe.Image2Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2067, 2074)
+2021-10-29 21:29:39,021 - stpipe.Image2Pipeline.resample - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/utils.py:72: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   indx = np.asarray(np.floor(np.asarray(value) + 0.5), dtype=np.int)
 
-2021-10-04 21:51:09,083 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.017267856 11.982276657 12.017272137 12.018465012 11.980147476 12.018466768 11.980148179 11.982278413
-2021-10-04 21:51:09,273 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00003_nrcb5_i2d.fits
-2021-10-04 21:51:09,274 - stpipe.Image2Pipeline.resample - INFO - Step resample done
-2021-10-04 21:51:09,274 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00003_nrcb5
-2021-10-04 21:51:09,276 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
-2021-10-04 21:51:09,476 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00001_nrcb5_cal.fits
-2021-10-04 21:51:09,670 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00002_nrcb5_cal.fits
-2021-10-04 21:51:09,853 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00003_nrcb5_cal.fits
-2021-10-04 21:51:09,854 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
+2021-10-29 21:29:39,024 - stpipe.Image2Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.017267856 11.982276657 12.017272137 12.018465012 11.980147476 12.018466768 11.980148179 11.982278413
+2021-10-29 21:29:39,209 - stpipe.Image2Pipeline.resample - INFO - Saved model in jw98765001001_01101_00003_nrcb5_i2d.fits
+2021-10-29 21:29:39,210 - stpipe.Image2Pipeline.resample - INFO - Step resample done
+2021-10-29 21:29:39,210 - stpipe.Image2Pipeline - INFO - Finished processing product jw98765001001_01101_00003_nrcb5
+2021-10-29 21:29:39,212 - stpipe.Image2Pipeline - INFO - ... ending calwebb_image2
+2021-10-29 21:29:39,424 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00001_nrcb5_cal.fits
+2021-10-29 21:29:39,622 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00002_nrcb5_cal.fits
+2021-10-29 21:29:39,809 - stpipe.Image2Pipeline - INFO - Saved model in jw98765001001_01101_00003_nrcb5_cal.fits
+2021-10-29 21:29:39,810 - stpipe.Image2Pipeline - INFO - Step Image2Pipeline done
 </pre>
 </div>
 </div>
@@ -15848,7 +15848,7 @@ Display the calibrated slope image and the distortion-free output file</p>
 │ └─<span class="ansi-bold">version</span> (str): 2.8.1
 ├─<span class="ansi-bold">history</span> (dict)
 │ └─<span class="ansi-bold">extensions</span> (list) ...
-├─<span class="ansi-bold">_fits_hash</span> (str): 6be9420e67defc84086e10c86a9d4eca95d601a5f01141c999d354937d654bd0
+├─<span class="ansi-bold">_fits_hash</span> (str): bd3219b1854805aba3c7f9cff9cbab0091137bd686a1d8ad3b1177307560a21f
 ├─<span class="ansi-bold">data</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 ├─<span class="ansi-bold">dq</span> (NDArrayType): shape=(2048, 2048), dtype=uint32
 ├─<span class="ansi-bold">err</span> (NDArrayType): shape=(2048, 2048), dtype=float32
@@ -15859,7 +15859,7 @@ Display the calibrated slope image and the distortion-free output file</p>
 │ ├─<span class="ansi-bold">bunit_err</span> (str): DN/s
 │ ├─<span class="ansi-bold">cal_step</span> (dict) ...
 │ ├─<span class="ansi-bold">calibration_software_revision</span> (str): RELEASE
-│ ├─<span class="ansi-bold">calibration_software_version</span> (str): 1.3.1
+│ ├─<span class="ansi-bold">calibration_software_version</span> (str): 1.3.2
 │ └─20 not shown
 ├─<span class="ansi-bold">var_poisson</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 └─<span class="ansi-bold">var_rnoise</span> (NDArrayType): shape=(2048, 2048), dtype=float32
