@@ -19,7 +19,7 @@ nb_help = "Directory to search for notebook HTML files. Default is {}".format(nb
 verbose_help = "Print diagnostic information while running."
 zip_help = "Should the central storage archive be zipped. Default is {}".format(do_zip)
 
-parser = argparse.ArgumentParser(description=description)
+parser = argparse.ArgumentParser(description="")
 parser.add_argument('-i', '--input', dest='nb_dir', help=nb_help,
                     default=nb_dir)
 parser.add_argument('-o', '--output', dest='out_dir', help=out_help,
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     if os.path.exists(archive_dir):
         shutil.rmtree(archive_dir)
-    os.path.makedirs(archive_dir)
+    os.makedirs(archive_dir)
 
     for path in Path(nb_dir).rglob('*.html'):
         if verbose:
@@ -52,14 +52,21 @@ if __name__ == "__main__":
         archive_path = os.path.join(archive_dir, rel_path)
         if verbose:
             print("\tCopying to {}".format(archive_path))
+        if not os.path.exists(os.path.split(archive_path)[0]):
+            os.makedirs(os.path.split(archive_path)[0])
         shutil.copy(path, archive_path)
         central_path = os.path.join(out_dir, rel_path)
         if verbose:
             print("\tCopying to {}".format(central_path))
+        if not os.path.exists(os.path.split(central_path)[0]):
+            os.makedirs(os.path.split(central_path)[0])
         shutil.copy(path, central_path)
     if os.path.isfile("index.html"):
         shutil.copy("index.html", os.path.join(archive_dir, "index.html"))
         shutil.copy("index.html", os.path.join(out_dir, "index.html"))
     
     if do_zip:
+        if verbose:
+            print("Creating zipped archive")
         shutil.make_archive(date_dir, 'zip', archive_dir)
+        shutil.copy(date_dir+".zip", os.path.join(out_base, date_dir+".zip"))
