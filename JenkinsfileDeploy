@@ -44,8 +44,6 @@ pipeline {
           if(env.JOB_NAME.toLowerCase().contains('pr')) {
             echo "Pull Request, Not deploying..."
           } else {
-            echo "Creating webpage archive on central storage"
-            sh("./with_env -n ${env_name} python archive.py")
             echo "Deploying to Github Pages"
             sh("git clone -b ${deploy_branch} --single-branch git@github.com:spacetelescope/jwst_validation_notebooks.git notebooks_clone")
             dir('./notebooks_clone'){
@@ -70,6 +68,12 @@ pipeline {
                     rsync -vHR --files-from=html_files . ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
+            echo "Jenkins User:"
+            sh("whoami")
+            echo "Jenkins Groups:"
+            sh("groups")
+            echo "Creating webpage archive on central storage"
+            sh("./with_env -n ${env_name} python archive.py")
             }
           }
         } // end of script
