@@ -19,6 +19,7 @@
 name: jwst_validation_notebooks
 
 channels:
+  - default
   - conda-forge
   - astropy
   - http://ssb.stsci.edu/astroconda
@@ -30,12 +31,12 @@ dependencies:
   - Cython
   - jupyter
   - nb_conda
+  - astropy==5.0
 
   - pip:
     - numpy
     - scipy
     - matplotlib
-    - astropy==5
     - ipython
     - ci-watson
     - psutil
