@@ -72,13 +72,9 @@ pipeline {
                     rsync -vHR --files-from=html_files . ${env.WEBPAGE_DIR}
                     """)
               deleteDir()
-            echo "Jenkins User:"
-            sh("whoami")
-            echo "Jenkins Groups:"
-            sh("groups")
-            echo "Creating webpage archive on central storage"
-            sh("./with_env -n ${env_name} python archive.py")
-            }
+            } // end of stuff happening in notebooks_clone
+          echo "Creating webpage archive on central storage"
+          sh("./with_env -n ${env_name} python archive.py")
           }
         } // end of script
       } // end of deploy steps
