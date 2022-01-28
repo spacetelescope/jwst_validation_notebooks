@@ -14454,25 +14454,79 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Misc */
 a.anchor-link {
-   display: none;
+  display: none;
 }
+
 .highlight  {
-    margin: 0.4em;
+  margin: 0.4em;
 }
 
 /* Input area styling */
 .jp-InputArea {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .jp-InputArea-editor {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.CodeMirror pre {
+  margin: 0;
+  padding: 0;
+}
+
+/* Using table instead of flexbox so that we can use break-inside property */
+/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
+
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  min-width: calc(
+    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
+  );
+}
+
+.jp-OutputArea-child {
+  display: table;
+  width: 100%;
+}
+
+.jp-OutputPrompt {
+  display: table-cell;
+  vertical-align: top;
+  min-width: var(--jp-cell-prompt-width);
+}
+
+body[data-format='mobile'] .jp-OutputPrompt {
+  display: table-row;
+}
+
+.jp-OutputArea-output {
+  display: table-cell;
+  width: 100%;
+}
+
+body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
+  display: table-row;
+}
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  width: 100%;
 }
 
 @media print {
-  body {
-    margin: 0;
+  .jp-Collapser {
+    display: none;
+  }
+
+  .jp-Cell-inputWrapper,
+  .jp-Cell-outputWrapper {
+    display: block;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid-page;
   }
 }
 </style>
@@ -14516,7 +14570,11 @@ a.anchor-link {
 <link rel="stylesheet" href="../../pages.css"></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
 <h1 id="JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">JWST Pipeline Validation Testing Notebook: Calwebb_Detector1, RSCD step<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: MIRI</p>
@@ -14529,7 +14587,13 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="intro_ID"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This test is designed to test the RSCD step in the calwebb_detector1 pipeline. This step only applies to MIRI. The Reset Switch Charge Decay (RSCD) step corrects for a set of ramp effects that affect all ingrations after the first by simply flagging the first N groups as DO_NOT_USE. The number of groups to flag is read from the reference file based on readout mode and subarray. For more information on the pipeline step visit the links below.</p>
@@ -14550,8 +14614,12 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14568,8 +14636,57 @@ a.anchor-link {
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>CRDS cache location: /grp/crds/cache
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="imports_ID"></a></p>
 <h1 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h1><p>The following packages will need to be imported for the scripts to work.</p>
@@ -14586,10 +14703,14 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14614,8 +14735,10 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get raw python docstring to see documentation for this step</span>
@@ -14638,6 +14761,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14645,7 +14770,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -14662,17 +14787,25 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="pipeline_ID"></a></p>
 <h3 id="Run-Pipeline-Steps">Run Pipeline Steps<a class="anchor-link" href="#Run-Pipeline-Steps">&#182;</a></h3><p>For this test, run each file through dq_init and the rscd steps only. The output for the test is the output of the rscd step. We are testing that the specified number of frames for each file is flagged properly.</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Put in tests for FULL frame fast, FULL frame slow, subarray and FASTGRPAVG (should skip FASTGRPAVG) </span>
@@ -14752,6 +14885,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14775,63 +14910,63 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-10-30 15:25:40,038 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-10-30 15:25:40,104 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:40,106 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-30 15:25:40,126 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2021-10-30 15:25:40,549 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-10-30 15:25:40,560 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-10-30 15:25:40,630 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:40,632 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpc66pfd18/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-30 15:25:40,652 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-10-30 15:25:41,208 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-10-30 15:25:41,209 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-10-30 15:25:41,667 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-10-30 15:25:41,772 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:41,774 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-30 15:25:41,793 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2021-10-30 15:25:42,471 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-10-30 15:25:42,482 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-10-30 15:25:42,583 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:42,585 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpc66pfd18/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-30 15:25:42,603 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-10-30 15:25:43,688 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-10-30 15:25:43,689 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-10-30 15:25:43,891 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-10-30 15:25:44,054 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2021-10-30 15:25:44,056 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-30 15:25:44,075 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2021-10-30 15:25:44,358 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
-2021-10-30 15:25:44,367 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-10-30 15:25:44,378 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-10-30 15:25:44,514 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2021-10-30 15:25:44,517 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpc66pfd18/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-30 15:25:44,536 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-10-30 15:25:44,904 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
-2021-10-30 15:25:44,905 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-10-30 15:25:45,390 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-10-30 15:25:45,542 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:45,544 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-30 15:25:45,564 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2021-10-30 15:25:46,227 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-10-30 15:25:46,238 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-10-30 15:25:46,321 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2021-10-30 15:25:46,323 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpc66pfd18/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-30 15:25:46,342 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
-2021-10-30 15:25:46,388 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
-2021-10-30 15:25:46,764 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2021-10-30 15:25:46,765 - stpipe.RscdStep - INFO - Step RscdStep done
-2021-10-30 15:25:47,680 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2021-10-30 15:25:47,828 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2021-10-30 15:25:47,830 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2021-10-30 15:25:47,853 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0029.fits
-2021-10-30 15:25:48,899 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2021-10-30 15:25:48,910 - stpipe.RscdStep - INFO - RscdStep instance created.
-2021-10-30 15:25:48,978 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2021-10-30 15:25:48,980 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpc66pfd18/jw04193001001_01101_00001_MIRIFULONG&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2021-10-30 15:25:49,001 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0011.fits
-2021-10-30 15:25:50,452 - stpipe.RscdStep - INFO - Saved model in jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
-2021-10-30 15:25:50,453 - stpipe.RscdStep - INFO - Step RscdStep done
+<pre>2022-01-28 12:46:58,735 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-01-28 12:46:58,802 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:46:58,804 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 12:46:58,826 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2022-01-28 12:46:59,131 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-01-28 12:46:59,144 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-01-28 12:46:59,213 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:46:59,215 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp290ry4au/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-01-28 12:46:59,238 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2022-01-28 12:46:59,730 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-01-28 12:46:59,732 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-01-28 12:47:00,109 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-01-28 12:47:00,192 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:47:00,194 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 12:47:00,215 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2022-01-28 12:47:00,675 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-01-28 12:47:00,688 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-01-28 12:47:00,761 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:47:00,763 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp290ry4au/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-01-28 12:47:00,784 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2022-01-28 12:47:01,699 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-01-28 12:47:01,700 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-01-28 12:47:01,876 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-01-28 12:47:01,955 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2022-01-28 12:47:01,956 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 12:47:01,977 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2022-01-28 12:47:02,215 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
+2022-01-28 12:47:02,230 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-01-28 12:47:02,242 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-01-28 12:47:02,317 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2022-01-28 12:47:02,318 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp290ry4au/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-01-28 12:47:02,339 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2022-01-28 12:47:02,661 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
+2022-01-28 12:47:02,662 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-01-28 12:47:03,145 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-01-28 12:47:03,223 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:47:03,224 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 12:47:03,246 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2022-01-28 12:47:03,702 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-01-28 12:47:03,715 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-01-28 12:47:03,789 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-01-28 12:47:03,790 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp290ry4au/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-01-28 12:47:03,812 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0010.fits
+2022-01-28 12:47:03,860 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
+2022-01-28 12:47:04,348 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-01-28 12:47:04,349 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-01-28 12:47:05,035 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-01-28 12:47:05,203 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
+2022-01-28 12:47:05,205 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 12:47:05,239 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0029.fits
+2022-01-28 12:47:05,987 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-01-28 12:47:06,003 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-01-28 12:47:06,176 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
+2022-01-28 12:47:06,178 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp290ry4au/jw04193001001_01101_00001_MIRIFULONG&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-01-28 12:47:06,205 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0011.fits
+2022-01-28 12:47:07,494 - stpipe.RscdStep - INFO - Saved model in jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
+2022-01-28 12:47:07,495 - stpipe.RscdStep - INFO - Step RscdStep done
 </pre>
 </div>
 </div>
@@ -14853,7 +14988,11 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="flagging_ID"></a></p>
 <h3 id="Check-flagged-frames">Check flagged frames<a class="anchor-link" href="#Check-flagged-frames">&#182;</a></h3><p>Check that the frames at the beginning of each integration after the first are flagged properly.</p>
@@ -14862,10 +15001,14 @@ All subarrays are set to skip 4 frames. (These are the values currently set in t
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># FAST mode should mark 4 frames as &#39;DO_NOT&quot;USE&#39;, SLOW mode marks 2 frames, and step should skip FASTGRPAVG.</span>
@@ -14939,6 +15082,8 @@ All subarrays are set to skip 4 frames. (These are the values currently set in t
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14999,7 +15144,11 @@ All files processed. If no Assertion Errors printed, all tests passed.
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="results_ID"></a></p>
 <h3 id="Results:-Pass/Fail-criteria">Results: Pass/Fail criteria<a class="anchor-link" href="#Results:-Pass/Fail-criteria">&#182;</a></h3><p>As long as there are no Assertion Errors, and the number shown along with the subarray and Readout pattern matches the number of frames flagged at the start of the integration for all integrations after the first, then the test passes.</p>
@@ -15012,12 +15161,20 @@ All files processed. If no Assertion Errors printed, all tests passed.
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="about_ID"></a></p>
 <h2 id="About-this-Notebook">About this Notebook<a class="anchor-link" href="#About-this-Notebook">&#182;</a></h2><p><strong>Author:</strong> Misty Cracraft, Senior Staff Scientist, MIRI Branch
 <br><strong>Updated On:</strong> 08/03/2020</p>
 
+</div>
+</div>
 </div>
 </div>
 </body>

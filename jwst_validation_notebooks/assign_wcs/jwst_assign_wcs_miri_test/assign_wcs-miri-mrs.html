@@ -14454,25 +14454,79 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Misc */
 a.anchor-link {
-   display: none;
+  display: none;
 }
+
 .highlight  {
-    margin: 0.4em;
+  margin: 0.4em;
 }
 
 /* Input area styling */
 .jp-InputArea {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .jp-InputArea-editor {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.CodeMirror pre {
+  margin: 0;
+  padding: 0;
+}
+
+/* Using table instead of flexbox so that we can use break-inside property */
+/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
+
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  min-width: calc(
+    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
+  );
+}
+
+.jp-OutputArea-child {
+  display: table;
+  width: 100%;
+}
+
+.jp-OutputPrompt {
+  display: table-cell;
+  vertical-align: top;
+  min-width: var(--jp-cell-prompt-width);
+}
+
+body[data-format='mobile'] .jp-OutputPrompt {
+  display: table-row;
+}
+
+.jp-OutputArea-output {
+  display: table-cell;
+  width: 100%;
+}
+
+body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
+  display: table-row;
+}
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  width: 100%;
 }
 
 @media print {
-  body {
-    margin: 0;
+  .jp-Collapser {
+    display: none;
+  }
+
+  .jp-Cell-inputWrapper,
+  .jp-Cell-outputWrapper {
+    display: block;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid-page;
   }
 }
 </style>
@@ -14516,20 +14570,36 @@ a.anchor-link {
 <link rel="stylesheet" href="../../pages.css"></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
 <h1 id="JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">JWST Pipeline Validation Testing Notebook: MIRI MRS Spec2: Assign_wcs()<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: FGS, MIRI, NIRCam, NIRISS, NIRSpec</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
 <div class="toc"><ul class="toc-item"><li><span><a href="#JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS" data-toc-modified-id="JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>JWST Pipeline Validation Testing Notebook: MIRI MRS</a></span><ul class="toc-item"><li><span><a href="#Spec2:-Assign_wcs()" data-toc-modified-id="Spec2:-Assign_wcs()-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Spec2: Assign_wcs()</a></span><ul class="toc-item"><li><span><a href="#Table-of-Contents" data-toc-modified-id="Table-of-Contents-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Table of Contents</a></span></li></ul></li></ul></li><li><span><a href="#Imports" data-toc-modified-id="Imports-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Imports</a></span></li><li><span><a href="#Introduction" data-toc-modified-id="Introduction-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Introduction</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Calibration-WG-Requested-Algorithm:" data-toc-modified-id="Calibration-WG-Requested-Algorithm:-3.0.1"><span class="toc-item-num">3.0.1&nbsp;&nbsp;</span>Calibration WG Requested Algorithm:</a></span></li></ul></li></ul></li><li><span><a href="#Loading-Data" data-toc-modified-id="Loading-Data-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Loading Data</a></span></li><li><span><a href="#Run-JWST-Pipeline---AssignWCS" data-toc-modified-id="Run-JWST-Pipeline---AssignWCS-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Run JWST Pipeline - AssignWCS</a></span><ul class="toc-item"><li><span><a href="#Output-checks-and-tests" data-toc-modified-id="Output-checks-and-tests-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Output checks and tests</a></span></li><li><span><a href="#About-this-Notebook" data-toc-modified-id="About-this-Notebook-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>About this Notebook</a></span></li></ul></li></ul></div>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="imports_ID"></a></p>
 <h1 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h1><p>List the library imports and why they are relevant to this notebook.</p>
@@ -14546,10 +14616,59 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>CRDS cache location: /grp/crds/cache
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
@@ -14576,8 +14695,10 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">use_tempdir</span> <span class="o">=</span> <span class="kc">True</span>
@@ -14613,6 +14734,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14624,7 +14747,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz
+<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353
 </pre>
 </div>
 </div>
@@ -14634,7 +14757,11 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="intro_ID"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>In this notebook we will test the assign_wcs step of Spec2Pipeline() for <strong>MRS</strong> observations.</p>
@@ -14645,17 +14772,27 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="data_ID"></a></p>
 <h1 id="Loading-Data">Loading Data<a class="anchor-link" href="#Loading-Data">&#182;</a></h1><p>We are using simulated MRS observations, generated with MIRISim v2.3.0 (as of Dec 2020). <strong><em>(Needs updating)</em></strong></p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mock12A</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
@@ -14703,15 +14840,23 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Collect configuration files locally if they aren't yet there.</p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if not os.path.exists(&#39;../cfg_files/&#39;):</span>
@@ -14725,17 +14870,25 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="pipeline_ID"></a></p>
 <h1 id="Run-JWST-Pipeline---AssignWCS">Run JWST Pipeline - AssignWCS<a class="anchor-link" href="#Run-JWST-Pipeline---AssignWCS">&#182;</a></h1><p>For this test we do not need to run the data through the Detector1() pipeline (in fact, this data will fail in Detector1). We begin by running the data through AssignWCS in spec2 using the 'assign_wcs.cfg' file. The AssignWcs step should not change anything in the science data or error extension. It attaches the WCS information to the data, so that a location in detector pixels can be reconstructed to an RA, dec, wavelength in spatial and spectral space.</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">awcs_out</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14751,6 +14904,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14762,72 +14917,54 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2021-10-29 15:35:52,255 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:35:52,471 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock12A-0.fits&#39;,).
-2021-10-29 15:35:52,473 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:35:59,379 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:01,650 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:01,743 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
-2021-10-29 15:36:01,745 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:02,751 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
-2021-10-29 15:36:02,752 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-10-29 15:36:03,857 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:36:04,102 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock12B-0.fits&#39;,).
-2021-10-29 15:36:04,106 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:36:09,849 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:12,049 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:12,138 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
-2021-10-29 15:36:12,140 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:12,872 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
-2021-10-29 15:36:12,873 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-10-29 15:36:14,067 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:36:14,322 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock12C-0.fits&#39;,).
-2021-10-29 15:36:14,325 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:36:21,229 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:23,528 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:23,621 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
-2021-10-29 15:36:23,622 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:24,308 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
-2021-10-29 15:36:24,310 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-10-29 15:36:25,396 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:36:25,712 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock34A-0.fits&#39;,).
-2021-10-29 15:36:25,716 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:36:31,441 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:33,528 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:33,624 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
-2021-10-29 15:36:33,625 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:34,197 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
-2021-10-29 15:36:34,198 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-10-29 15:36:34,925 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:36:35,381 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock34B-0.fits&#39;,).
-2021-10-29 15:36:35,383 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:36:41,966 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:43,548 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:43,631 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
-2021-10-29 15:36:43,633 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:44,203 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
-2021-10-29 15:36:44,204 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2021-10-29 15:36:45,955 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2021-10-29 15:36:46,875 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpm3aakllz/mock34C-0.fits&#39;,).
-2021-10-29 15:36:46,877 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2021-10-29 15:36:52,295 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2021-10-29 15:36:53,928 - stpipe.AssignWcsStep - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/gwcs/geometry.py:203: RuntimeWarning: invalid value encountered in remainder
-  lon = np.mod(lon, 360.0 * u.deg if nquant else 360.0)
-
-2021-10-29 15:36:54,009 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
-2021-10-29 15:36:54,011 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2021-10-29 15:36:54,571 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
-2021-10-29 15:36:54,572 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+<pre>2022-01-27 14:08:58,485 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:08:58,595 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock12A-0.fits&#39;,).
+2022-01-27 14:08:58,598 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:02,108 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:04,397 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
+2022-01-27 14:09:04,401 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:05,223 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
+2022-01-27 14:09:05,225 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-01-27 14:09:06,539 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:09:06,729 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock12B-0.fits&#39;,).
+2022-01-27 14:09:06,732 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:10,397 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:12,605 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
+2022-01-27 14:09:12,608 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:13,441 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
+2022-01-27 14:09:13,442 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-01-27 14:09:14,676 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:09:14,935 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock12C-0.fits&#39;,).
+2022-01-27 14:09:14,937 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:18,507 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:20,799 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
+2022-01-27 14:09:20,802 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:21,615 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
+2022-01-27 14:09:21,616 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-01-27 14:09:22,732 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:09:23,050 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock34A-0.fits&#39;,).
+2022-01-27 14:09:23,052 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:25,788 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:27,785 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
+2022-01-27 14:09:27,787 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:28,441 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
+2022-01-27 14:09:28,442 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-01-27 14:09:29,201 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:09:29,659 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock34B-0.fits&#39;,).
+2022-01-27 14:09:29,660 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:32,452 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:34,025 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
+2022-01-27 14:09:34,027 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:35,210 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
+2022-01-27 14:09:35,211 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-01-27 14:09:35,950 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-01-27 14:09:36,381 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmptuc8q353/mock34C-0.fits&#39;,).
+2022-01-27 14:09:36,383 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-01-27 14:09:39,250 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-01-27 14:09:40,831 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
+2022-01-27 14:09:40,833 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-01-27 14:09:41,491 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
+2022-01-27 14:09:41,492 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -14837,7 +14974,11 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="residual_ID"></a></p>
 <h2 id="Output-checks-and-tests">Output checks and tests<a class="anchor-link" href="#Output-checks-and-tests">&#182;</a></h2><p>We can use the output model to run the following checks:</p>
@@ -14848,10 +14989,14 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do a numeric check between input and output</span>
@@ -14867,15 +15012,23 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Load the set of test coordinates from <code>miricoord</code>. Then calculate the wavelength of these coordinates from the assign_wcs output models, and verify that they are close. If all the <code>assert</code> tests pass, this test is successful and complete.</p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">verify_coords</span><span class="p">(</span><span class="n">imgnum</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ref_data</span><span class="p">):</span>
@@ -14919,8 +15072,10 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mrd</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">mrs_ref_data</span>
@@ -14962,6 +15117,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -15054,7 +15211,11 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="about_ID"></a></p>
 <h2 id="About-this-Notebook">About this Notebook<a class="anchor-link" href="#About-this-Notebook">&#182;</a></h2><p><strong>Author:</strong> Mike Engesser, Science Support Analyst, MIRI branch 
@@ -15063,14 +15224,24 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="#title_ID">Top of Page</a>
 <img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15085,6 +15256,8 @@ a.anchor-link {
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">

@@ -14454,25 +14454,79 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Misc */
 a.anchor-link {
-   display: none;
+  display: none;
 }
+
 .highlight  {
-    margin: 0.4em;
+  margin: 0.4em;
 }
 
 /* Input area styling */
 .jp-InputArea {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .jp-InputArea-editor {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.CodeMirror pre {
+  margin: 0;
+  padding: 0;
+}
+
+/* Using table instead of flexbox so that we can use break-inside property */
+/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
+
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  min-width: calc(
+    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
+  );
+}
+
+.jp-OutputArea-child {
+  display: table;
+  width: 100%;
+}
+
+.jp-OutputPrompt {
+  display: table-cell;
+  vertical-align: top;
+  min-width: var(--jp-cell-prompt-width);
+}
+
+body[data-format='mobile'] .jp-OutputPrompt {
+  display: table-row;
+}
+
+.jp-OutputArea-output {
+  display: table-cell;
+  width: 100%;
+}
+
+body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
+  display: table-row;
+}
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  width: 100%;
 }
 
 @media print {
-  body {
-    margin: 0;
+  .jp-Collapser {
+    display: none;
+  }
+
+  .jp-Cell-inputWrapper,
+  .jp-Cell-outputWrapper {
+    display: block;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid-page;
   }
 }
 </style>
@@ -14516,7 +14570,11 @@ a.anchor-link {
 <link rel="stylesheet" href="../../pages.css"></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
 <h1 id="JWST-calwebb_image3,-calwebb_spec3,-calwebb_coron3,-calwebb_tso3,-outlier_detection-unit-tests">JWST calwebb_image3, calwebb_spec3, calwebb_coron3, calwebb_tso3, outlier_detection unit tests<a class="anchor-link" href="#JWST-calwebb_image3,-calwebb_spec3,-calwebb_coron3,-calwebb_tso3,-outlier_detection-unit-tests">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: NIRCam, NIRSpec, NIRISS, MIRI, FGS</p>
@@ -14536,7 +14594,13 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="intro"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This is the validation notebook that displays the unit tests for the Outlier Detection step in calwebb_image3, calwebb_spec3, calwebb_coron3, and calwebb_tso3. This notebook runs and displays the unit tests that are performed as a part of the normal software continuous integration process. For more information on the pipeline visit the links below.</p>
@@ -14550,7 +14614,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="unit"></a></p>
 <h1 id="JWST-Unit-Tests">JWST Unit Tests<a class="anchor-link" href="#JWST-Unit-Tests">&#182;</a></h1><p>JWST unit tests are located in the "tests" folder for each pipeline step within the <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">GitHub repository</a>, e.g., <code>jwst/outlier_detection/tests</code>.</p>
@@ -14561,7 +14631,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="terms"></a></p>
 <h1 id="Defining-Terms">Defining Terms<a class="anchor-link" href="#Defining-Terms">&#182;</a></h1><p>These are terms or acronymns used in this notebook that may not be known a general audience.</p>
@@ -14575,7 +14651,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="description"></a></p>
 <h1 id="Test-Description">Test Description<a class="anchor-link" href="#Test-Description">&#182;</a></h1><p>Unit testing is a software testing method by which individual units of source code are tested to determine whether they are working sufficiently well. Unit tests do not require a separate data file; the test creates the necessary test data and parameters as a part of the test code.</p>
@@ -14583,7 +14665,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="data_descr"></a></p>
 <h1 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">&#182;</a></h1><p>Data used for unit tests is created on the fly within the test itself, and is typically an array in the expected format of JWST data with added metadata needed to run through the pipeline.</p>
@@ -14591,7 +14679,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="imports"></a></p>
 <h1 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h1><ul>
@@ -14603,10 +14697,59 @@ a.anchor-link {
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>CRDS cache location: /grp/crds/cache
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
@@ -14623,15 +14766,23 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="functions"></a></p>
 <h1 id="Convenience-Functions">Convenience Functions<a class="anchor-link" href="#Convenience-Functions">&#182;</a></h1><p>Here we define any convenience functions to help with running the unit tests.</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -14645,17 +14796,25 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="testing"></a></p>
 <h1 id="Perform-Tests">Perform Tests<a class="anchor-link" href="#Perform-Tests">&#182;</a></h1><p>Below we run the unit tests for the Outlier Detection step.</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
@@ -14680,6 +14839,8 @@ a.anchor-link {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14693,15 +14854,30 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Testing JWST Pipeline 1.3.2
 <span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
+platform linux -- Python 3.9.9, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.9.7&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.41.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;6.2.5&#39;, &#39;py&#39;: &#39;1.10.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;asdf&#39;: &#39;2.8.1&#39;, &#39;metadata&#39;: &#39;1.11.0&#39;, &#39;jwst&#39;: &#39;1.3.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;ci-watson&#39;: &#39;0.5&#39;}, &#39;BUILD_NUMBER&#39;: &#39;96&#39;, &#39;BUILD_ID&#39;: &#39;96&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/96/&#39;, &#39;NODE_NAME&#39;: &#39;jwcalibdev.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-96&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;14&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;da3cb86e0051f081d152c53f9fdffa7b85fd9e91&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
-rootdir: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
-plugins: asdf-2.8.1, metadata-1.11.0, jwst-1.3.2, html-3.1.1, ci-watson-0.5
+metadata: {&#39;Python&#39;: &#39;3.9.9&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.49.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;6.2.5&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;asdf&#39;: &#39;2.8.3&#39;, &#39;metadata&#39;: &#39;1.11.0&#39;, &#39;jwst&#39;: &#39;1.3.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;ci-watson&#39;: &#39;0.5&#39;}, &#39;BUILD_NUMBER&#39;: &#39;99&#39;, &#39;BUILD_ID&#39;: &#39;99&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/99/&#39;, &#39;NODE_NAME&#39;: &#39;jwcalibdev.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-99&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;14&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2&#39;, &#39;GIT_COMMIT&#39;: &#39;7bf421586f1c0c2311c7381410af8eb7331cfa75&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
+rootdir: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2
+plugins: asdf-2.8.3, metadata-1.11.0, jwst-1.3.2, html-3.1.1, ci-watson-0.5
 collected 0 items                                                              
 
-- generated html file: file:///data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpjkbh63_n/regtest_report.html -
-<span class="ansi-yellow-fg">============================ </span><span class="ansi-yellow-fg">no tests ran</span><span class="ansi-yellow-fg"> in 0.01s</span><span class="ansi-yellow-fg"> =============================</span>
+<span class="ansi-yellow-fg">=============================== warnings summary ===============================</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/version.py:26
+  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/version.py:26: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    for j, piece in enumerate(LooseVersion(version).version[:3]):
+
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
+  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    return LooseVersion(have_version) &gt;= LooseVersion(version)
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated html file: file:///data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp4bwvqn9a/regtest_report.html -
+<span class="ansi-yellow-fg">============================= </span><span class="ansi-yellow-intense-fg ansi-bold">7 warnings</span><span class="ansi-yellow-fg"> in 0.01s</span><span class="ansi-yellow-fg"> ==============================</span>
 </pre>
 </div>
 </div>
@@ -14712,8 +14888,10 @@ collected 0 items
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html_report</span><span class="p">)</span>
@@ -14725,6 +14903,8 @@ collected 0 items
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
@@ -14732,7 +14912,7 @@ collected 0 items
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -15168,21 +15348,21 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>regtest_report.html</h1>
-    <p>Report generated on 30-Oct-2021 at 15:07:09 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 28-Jan-2022 at 12:29:29 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>BUILD_ID</td>
-        <td>96</td></tr>
+        <td>99</td></tr>
       <tr>
         <td>BUILD_NUMBER</td>
-        <td>96</td></tr>
+        <td>99</td></tr>
       <tr>
         <td>BUILD_TAG</td>
-        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-96</td></tr>
+        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-99</td></tr>
       <tr>
         <td>BUILD_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/96/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/96/</a></td></tr>
+        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/99/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/99/</a></td></tr>
       <tr>
         <td>EXECUTOR_NUMBER</td>
         <td>14</td></tr>
@@ -15191,7 +15371,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>origin/master</td></tr>
       <tr>
         <td>GIT_COMMIT</td>
-        <td>da3cb86e0051f081d152c53f9fdffa7b85fd9e91</td></tr>
+        <td>7bf421586f1c0c2311c7381410af8eb7331cfa75</td></tr>
       <tr>
         <td>GIT_URL</td>
         <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
@@ -15206,19 +15386,19 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>jwcalibdev.stsci.edu</td></tr>
       <tr>
         <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "py": "1.10.0", "pytest": "6.2.5"}</td></tr>
+        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "6.2.5"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Linux-3.10.0-1160.41.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
+        <td>Linux-3.10.0-1160.49.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"asdf": "2.8.1", "ci-watson": "0.5", "html": "3.1.1", "jwst": "1.3.2", "metadata": "1.11.0"}</td></tr>
+        <td>{"asdf": "2.8.3", "ci-watson": "0.5", "html": "3.1.1", "jwst": "1.3.2", "metadata": "1.11.0"}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.9.7</td></tr>
+        <td>3.9.9</td></tr>
       <tr>
         <td>WORKSPACE</td>
-        <td>/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
+        <td>/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2</td></tr></table>
     <h2>Summary</h2>
     <p>0 tests ran in 0.01 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
@@ -15241,7 +15421,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="about"></a></p>
 <h2 id="About-This-Notebook">About This Notebook<a class="anchor-link" href="#About-This-Notebook">&#182;</a></h2><p><strong>Author:</strong> Alicia Canipe, Staff Scientist, NIRCam
@@ -15249,11 +15433,19 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="#title_ID">Top of Page</a>
 <img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/></p>
 
+</div>
+</div>
 </div>
 </div>
 </body>
