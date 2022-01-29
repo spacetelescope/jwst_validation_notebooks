@@ -15145,222 +15145,222 @@ The exposure level products are re-created to provide the highest quality produc
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-27 19:02:14,266 - stpipe.Coron3Pipeline - INFO - Coron3Pipeline instance created.
-2022-01-27 19:02:14,269 - stpipe.Coron3Pipeline.stack_refs - INFO - StackRefsStep instance created.
-2022-01-27 19:02:14,272 - stpipe.Coron3Pipeline.align_refs - INFO - AlignRefsStep instance created.
-2022-01-27 19:02:14,274 - stpipe.Coron3Pipeline.klip - INFO - KlipStep instance created.
-2022-01-27 19:02:14,277 - stpipe.Coron3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2022-01-27 19:02:14,279 - stpipe.Coron3Pipeline.resample - INFO - ResampleStep instance created.
-2022-01-27 19:02:14,422 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline running with args (&#39;jwst_calcoron3_miri_test.yml&#39;,).
-2022-01-27 19:02:14,427 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp5yawjz0s&#39;, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;stack_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;align_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}, &#39;klip&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
-2022-01-27 19:02:14,428 - stpipe.Coron3Pipeline - INFO - Starting calwebb_coron3 ...
-202201271902:DEBUG:jwst.associations.association_io.load:Error unserializing: &#34;Expecting property name enclosed in double quotes: line 12 column 11 (char 316)&#34;
-2022-01-27 19:02:16,532 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_8.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:17,574 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:17,812 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_7.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:17,814 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:18,045 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_6.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:18,048 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:18,279 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_5.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:18,282 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:18,518 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_4.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:18,522 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:18,754 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_3.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:18,758 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:19,171 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_2.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:19,174 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:19,415 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_1.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:19,418 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:19,644 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_0.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:19,647 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:19,872 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_targ.fits&#39; reftypes = [&#39;psfmask&#39;]
-2022-01-27 19:02:19,875 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
-2022-01-27 19:02:22,267 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_8.fits&gt;,).
-2022-01-27 19:02:22,269 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:22,281 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:22,281 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:22,284 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:22,450 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_7.fits&gt;,).
-2022-01-27 19:02:22,452 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:22,463 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:22,464 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:22,467 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:22,634 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_6.fits&gt;,).
-2022-01-27 19:02:22,636 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:22,647 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:22,648 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:22,651 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:22,819 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_5.fits&gt;,).
-2022-01-27 19:02:22,821 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:22,831 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:22,833 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:22,836 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,004 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_4.fits&gt;,).
-2022-01-27 19:02:23,007 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:23,018 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:23,019 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:23,022 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,190 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_3.fits&gt;,).
-2022-01-27 19:02:23,192 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:23,203 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:23,204 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:23,207 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,370 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_2.fits&gt;,).
-2022-01-27 19:02:23,372 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:23,383 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:23,384 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:23,387 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,544 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_1.fits&gt;,).
-2022-01-27 19:02:23,546 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:23,557 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:23,558 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:23,571 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,720 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_0.fits&gt;,).
-2022-01-27 19:02:23,723 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:23,733 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:23,734 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:23,737 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:23,959 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:02:23,962 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-01-27 19:02:23,972 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 1 to output stack
-2022-01-27 19:02:23,974 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 2 to output stack
-2022-01-27 19:02:23,976 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 3 to output stack
-2022-01-27 19:02:23,980 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 4 to output stack
-2022-01-27 19:02:23,982 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 5 to output stack
-2022-01-27 19:02:23,984 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 6 to output stack
-2022-01-27 19:02:23,986 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 7 to output stack
-2022-01-27 19:02:23,988 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 8 to output stack
-2022-01-27 19:02:23,990 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 9 to output stack
-2022-01-27 19:02:24,020 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs done
-2022-01-27 19:02:24,089 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp5yawjz0s/jw10005-miri-mask1065_psfstack.fits
-2022-01-27 19:02:24,473 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;,).
-2022-01-27 19:02:24,475 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:24,486 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
-2022-01-27 19:02:24,487 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
-2022-01-27 19:02:24,490 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:02:24,604 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;, &lt;CubeModel(9, 224, 288) from jw10005-miri-mask1065_psfstack.fits&gt;).
-2022-01-27 19:02:24,606 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}
-2022-01-27 19:02:24,629 - stpipe.Coron3Pipeline.align_refs - INFO - Using PSFMASK reference file /grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits
-2022-01-27 19:02:24,682 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3474: RuntimeWarning: Mean of empty slice.
+<pre>2022-01-28 21:02:14,625 - stpipe.Coron3Pipeline - INFO - Coron3Pipeline instance created.
+2022-01-28 21:02:14,627 - stpipe.Coron3Pipeline.stack_refs - INFO - StackRefsStep instance created.
+2022-01-28 21:02:14,630 - stpipe.Coron3Pipeline.align_refs - INFO - AlignRefsStep instance created.
+2022-01-28 21:02:14,632 - stpipe.Coron3Pipeline.klip - INFO - KlipStep instance created.
+2022-01-28 21:02:14,634 - stpipe.Coron3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2022-01-28 21:02:14,637 - stpipe.Coron3Pipeline.resample - INFO - ResampleStep instance created.
+2022-01-28 21:02:14,732 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline running with args (&#39;jwst_calcoron3_miri_test.yml&#39;,).
+2022-01-28 21:02:14,737 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpx30_a7go&#39;, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;stack_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;align_refs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}, &#39;klip&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}}}
+2022-01-28 21:02:14,738 - stpipe.Coron3Pipeline - INFO - Starting calwebb_coron3 ...
+202201282102:DEBUG:jwst.associations.association_io.load:Error unserializing: &#34;Expecting property name enclosed in double quotes: line 12 column 11 (char 316)&#34;
+2022-01-28 21:02:15,797 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_8.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:17,122 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:17,426 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_7.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:17,432 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:17,703 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_6.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:17,706 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:17,943 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_5.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:17,946 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:18,197 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_4.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:18,200 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:18,455 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_3.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:18,457 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:18,695 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_2.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:18,698 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:19,114 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_1.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:19,117 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:19,360 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_ref_0.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:19,363 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:19,605 - stpipe.Coron3Pipeline - INFO - Prefetching reference files for dataset: &#39;new_targ.fits&#39; reftypes = [&#39;psfmask&#39;]
+2022-01-28 21:02:19,608 - stpipe.Coron3Pipeline - INFO - Prefetch for PSFMASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits&#39;.
+2022-01-28 21:02:21,859 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_8.fits&gt;,).
+2022-01-28 21:02:21,862 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:21,872 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:21,872 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:21,875 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:21,978 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_7.fits&gt;,).
+2022-01-28 21:02:21,981 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:21,991 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:21,992 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:21,995 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,099 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_6.fits&gt;,).
+2022-01-28 21:02:22,101 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,111 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,112 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,115 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,217 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_5.fits&gt;,).
+2022-01-28 21:02:22,218 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,228 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,229 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,231 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,370 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_4.fits&gt;,).
+2022-01-28 21:02:22,373 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,382 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,383 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,386 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,481 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_3.fits&gt;,).
+2022-01-28 21:02:22,483 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,492 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,493 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,496 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,590 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_2.fits&gt;,).
+2022-01-28 21:02:22,592 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,601 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,602 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,605 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,700 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_1.fits&gt;,).
+2022-01-28 21:02:22,702 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,711 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,712 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,714 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,809 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_ref_0.fits&gt;,).
+2022-01-28 21:02:22,811 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:22,820 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:22,821 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:22,823 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:22,920 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:02:22,922 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-01-28 21:02:22,930 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 1 to output stack
+2022-01-28 21:02:22,934 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 2 to output stack
+2022-01-28 21:02:22,938 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 3 to output stack
+2022-01-28 21:02:22,941 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 4 to output stack
+2022-01-28 21:02:22,942 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 5 to output stack
+2022-01-28 21:02:22,943 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 6 to output stack
+2022-01-28 21:02:22,945 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 7 to output stack
+2022-01-28 21:02:22,946 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 8 to output stack
+2022-01-28 21:02:22,947 - stpipe.Coron3Pipeline.stack_refs - INFO -  Adding psf member 9 to output stack
+2022-01-28 21:02:22,974 - stpipe.Coron3Pipeline.stack_refs - INFO - Step stack_refs done
+2022-01-28 21:02:23,038 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpx30_a7go/jw10005-miri-mask1065_psfstack.fits
+2022-01-28 21:02:23,524 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;,).
+2022-01-28 21:02:23,527 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;c1001_crfints&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:23,538 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Input only contains 1 integration
+2022-01-28 21:02:23,539 - stpipe.Coron3Pipeline.outlier_detection - WARNING - Outlier detection step will be skipped
+2022-01-28 21:02:23,542 - stpipe.Coron3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:02:23,801 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;, &lt;CubeModel(9, 224, 288) from jw10005-miri-mask1065_psfstack.fits&gt;).
+2022-01-28 21:02:23,803 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;median_box_length&#39;: 3, &#39;bad_bits&#39;: &#39;DO_NOT_USE&#39;}
+2022-01-28 21:02:23,862 - stpipe.Coron3Pipeline.align_refs - INFO - Using PSFMASK reference file /grp/crds/cache/references/jwst/jwst_miri_psfmask_0006.fits
+2022-01-28 21:02:23,988 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3474: RuntimeWarning: Mean of empty slice.
   return _methods._mean(a, axis=axis, dtype=dtype,
 
-2022-01-27 19:02:24,683 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in true_divide
+2022-01-28 21:02:23,990 - stpipe.Coron3Pipeline.align_refs - WARNING - /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in true_divide
   ret = ret.dtype.type(ret / rcount)
 
-2022-01-27 19:02:24,684 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,689 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,690 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,691 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,692 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,693 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,694 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,695 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,695 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,696 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,709 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,713 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,714 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,715 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,715 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,716 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,717 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,718 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,719 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,719 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,732 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,736 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,737 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,737 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,738 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,739 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,740 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,740 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,741 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,743 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,753 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,757 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,758 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,759 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,760 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,761 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,761 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,762 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,763 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,763 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,775 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,778 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,779 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,781 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,782 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,782 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,783 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,783 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,785 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,785 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,796 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,799 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,800 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,801 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,802 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,803 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,804 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,805 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,805 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,806 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,817 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,820 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,821 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,822 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,822 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,823 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,824 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,825 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,825 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,826 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,835 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,839 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,840 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,840 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,841 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,842 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,843 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,844 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,845 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,846 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,856 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,860 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,861 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,862 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,863 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,863 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,864 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,865 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,866 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,866 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,879 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,882 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,883 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,884 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,885 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,885 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,886 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,887 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,888 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:24,888 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
-2022-01-27 19:02:26,315 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs done
-2022-01-27 19:02:26,382 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp5yawjz0s/new_targ_c1001_psfalign.fits
-2022-01-27 19:02:26,504 - stpipe.Coron3Pipeline.klip - INFO - Step klip running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;, &lt;QuadModel(1, 9, 224, 288) from new_targ_c1001_psfalign.fits&gt;).
-2022-01-27 19:02:26,506 - stpipe.Coron3Pipeline.klip - INFO - Step klip parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}
-2022-01-27 19:02:26,516 - stpipe.Coron3Pipeline.klip - INFO - KL transform truncation = 50
-2022-01-27 19:02:26,711 - stpipe.Coron3Pipeline.klip - INFO - Step klip done
-2022-01-27 19:02:26,841 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp5yawjz0s/new_targ_c1001_psfsub.fits
-2022-01-27 19:02:27,025 - stpipe.Coron3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:02:27,027 - stpipe.Coron3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:02:27,028 - stpipe.Coron3Pipeline.resample - INFO - Step skipped.
-2022-01-27 19:02:27,030 - stpipe.Coron3Pipeline.resample - INFO - Step resample done
-2022-01-27 19:02:27,152 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmp5yawjz0s/jw10005-miri-mask1065_i2d.fits
-2022-01-27 19:02:27,153 - stpipe.Coron3Pipeline - INFO - ...ending calwebb_coron3
-2022-01-27 19:02:27,154 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline done
+2022-01-28 21:02:23,990 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,994 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,995 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,996 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,997 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,998 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:23,999 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,001 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,003 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,005 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,019 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,023 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,023 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,025 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,026 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,027 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,028 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,029 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,030 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,031 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,042 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,045 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,046 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,047 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,047 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,048 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,048 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,049 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,050 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,050 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,061 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,065 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,065 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,066 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,067 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,067 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,068 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,069 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,070 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,071 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,082 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,086 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,086 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,087 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,088 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,089 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,089 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,090 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,091 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,091 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,102 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,106 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,106 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,107 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,108 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,109 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,109 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,110 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,110 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,111 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,119 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,122 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,123 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,124 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,125 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,125 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,126 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,127 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,128 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,129 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,140 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,144 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,144 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,145 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,146 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,147 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,147 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,148 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,149 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,149 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,162 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,165 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,166 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,167 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,168 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,168 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,169 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,170 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,170 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,171 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,182 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,186 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,187 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,188 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,188 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,189 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,189 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,190 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,191 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:24,192 - stpipe.Coron3Pipeline.align_refs - WARNING - Median filter returned NaN setting value to 0.
+2022-01-28 21:02:25,713 - stpipe.Coron3Pipeline.align_refs - INFO - Step align_refs done
+2022-01-28 21:02:25,794 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpx30_a7go/new_targ_c1001_psfalign.fits
+2022-01-28 21:02:26,097 - stpipe.Coron3Pipeline.klip - INFO - Step klip running with args (&lt;CubeModel(1, 224, 288) from new_targ.fits&gt;, &lt;QuadModel(1, 9, 224, 288) from new_targ_c1001_psfalign.fits&gt;).
+2022-01-28 21:02:26,099 - stpipe.Coron3Pipeline.klip - INFO - Step klip parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;truncate&#39;: 50}
+2022-01-28 21:02:26,111 - stpipe.Coron3Pipeline.klip - INFO - KL transform truncation = 50
+2022-01-28 21:02:26,301 - stpipe.Coron3Pipeline.klip - INFO - Step klip done
+2022-01-28 21:02:26,473 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpx30_a7go/new_targ_c1001_psfsub.fits
+2022-01-28 21:02:26,689 - stpipe.Coron3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:02:26,691 - stpipe.Coron3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:02:26,692 - stpipe.Coron3Pipeline.resample - INFO - Step skipped.
+2022-01-28 21:02:26,694 - stpipe.Coron3Pipeline.resample - INFO - Step resample done
+2022-01-28 21:02:26,814 - stpipe.Coron3Pipeline - INFO - Saved model in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpx30_a7go/jw10005-miri-mask1065_i2d.fits
+2022-01-28 21:02:26,815 - stpipe.Coron3Pipeline - INFO - ...ending calwebb_coron3
+2022-01-28 21:02:26,816 - stpipe.Coron3Pipeline - INFO - Step Coron3Pipeline done
 </pre>
 </div>
 </div>

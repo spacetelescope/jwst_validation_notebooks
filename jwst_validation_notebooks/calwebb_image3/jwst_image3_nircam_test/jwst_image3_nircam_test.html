@@ -14760,7 +14760,7 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope@2/tmp/tmpzhgmo62r
+<pre>Running in /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpvp5acx0s
 </pre>
 </div>
 </div>
@@ -15680,163 +15680,163 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-27 19:36:54,185 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
-2022-01-27 19:36:54,187 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
-2022-01-27 19:36:54,189 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
-2022-01-27 19:36:54,190 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
-2022-01-27 19:36:54,192 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
-2022-01-27 19:36:54,193 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
-2022-01-27 19:36:54,195 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
-2022-01-27 19:36:54,355 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;./level3_lw_asn.json&#39;,).
-2022-01-27 19:36:54,361 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: &#39;./&#39;, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 20, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: True, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: True}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
-2022-01-27 19:36:55,149 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;jw98765001001_01101_00001_nrcb5_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
-2022-01-27 19:36:55,697 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf&#39;.
-2022-01-27 19:36:55,700 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits&#39;.
-2022-01-27 19:36:55,703 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
-2022-01-27 19:36:55,706 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
-2022-01-27 19:36:56,127 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:36:56,130 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 20, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: True, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: True}
-2022-01-27 19:36:59,200 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00001_nrcb5_cal.fits.
-2022-01-27 19:37:02,448 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00002_nrcb5_cal.fits.
-2022-01-27 19:37:05,784 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00003_nrcb5_cal.fits.
-2022-01-27 19:37:05,840 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2022-01-27 19:37:05,841 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 3.
-2022-01-27 19:37:05,842 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
-2022-01-27 19:37:05,864 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00001_nrcb5_cal&#39;:
-2022-01-27 19:37:05,865 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00001_nrcb5_cal
-2022-01-27 19:37:05,886 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00002_nrcb5_cal&#39;:
-2022-01-27 19:37:05,886 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00002_nrcb5_cal
-2022-01-27 19:37:05,907 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00003_nrcb5_cal&#39;:
-2022-01-27 19:37:05,908 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00003_nrcb5_cal
-2022-01-27 19:37:05,908 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2022-01-27 19:37:05,908 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2022-01-27 19:37:05,909 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-01-27 19:37:05.908663
-2022-01-27 19:37:05,909 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.7.3
-2022-01-27 19:37:05,909 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2022-01-27 19:37:06,057 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: jw98765001001_01101_00001_nrcb5_cal&#39; as reference image
-2022-01-27 19:37:06,061 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39; to the reference catalog.
-2022-01-27 19:37:06,210 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;jw98765001001_01101_00002_nrcb5_cal&#39; catalog with sources from the reference &#39;jw98765001001_01101_00001_nrcb5_cal&#39; catalog.
-2022-01-27 19:37:06,211 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2022-01-27 19:37:06,212 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 0 with significance of 19 and 21 matches.
-2022-01-27 19:37:06,213 - stpipe.Image3Pipeline.tweakreg - INFO - Found 19 matches for &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39;...
-2022-01-27 19:37:06,214 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2022-01-27 19:37:06,217 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: jw98765001001_01101_00002_nrcb5_cal:
-2022-01-27 19:37:06,217 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 0.00237299  YSH: 0.000284486    PROPER ROT: -0.00203833    
-2022-01-27 19:37:06,218 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.00203833  SKEW: -0.00628721    ROT_X: 0.00110528  ROT_Y: -0.00518194
-2022-01-27 19:37:06,218 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.99998  SCALE_X: 1.00001  SCALE_Y: 0.999948
-2022-01-27 19:37:06,219 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2022-01-27 19:37:06,219 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00624414   FIT MAE: 0.00515024
-2022-01-27 19:37:06,220 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 19 objects.
-2022-01-27 19:37:06,267 - stpipe.Image3Pipeline.tweakreg - INFO - Added 1 unmatched sources from &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39; to the reference catalog.
-2022-01-27 19:37:06,296 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39; to the reference catalog.
-2022-01-27 19:37:06,442 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;jw98765001001_01101_00003_nrcb5_cal&#39; catalog with sources from the reference &#39;jw98765001001_01101_00002_nrcb5_cal&#39; catalog.
-2022-01-27 19:37:06,443 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
-2022-01-27 19:37:06,445 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 0 with significance of 19 and 21 matches.
-2022-01-27 19:37:06,446 - stpipe.Image3Pipeline.tweakreg - INFO - Found 19 matches for &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39;...
-2022-01-27 19:37:06,447 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
-2022-01-27 19:37:06,449 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: jw98765001001_01101_00003_nrcb5_cal:
-2022-01-27 19:37:06,450 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000345941  YSH: -0.000146019    PROPER ROT: -0.00096564    
-2022-01-27 19:37:06,450 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.00096564  SKEW: -0.00279674    ROT_X: 0.000432731  ROT_Y: -0.00236401
-2022-01-27 19:37:06,451 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 1  SCALE_X: 1.00002  SCALE_Y: 0.999986
-2022-01-27 19:37:06,452 - stpipe.Image3Pipeline.tweakreg - INFO - 
-2022-01-27 19:37:06,452 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00487879   FIT MAE: 0.00408797
-2022-01-27 19:37:06,453 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 19 objects.
-2022-01-27 19:37:06,500 - stpipe.Image3Pipeline.tweakreg - INFO - Added 1 unmatched sources from &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39; to the reference catalog.
-2022-01-27 19:37:06,500 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2022-01-27 19:37:06,501 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-01-27 19:37:06.500850
-2022-01-27 19:37:06,502 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.592187
-2022-01-27 19:37:06,502 - stpipe.Image3Pipeline.tweakreg - INFO -  
-2022-01-27 19:37:06,672 - stpipe.Image3Pipeline.tweakreg - WARNING - Not enough GAIA sources for a fit: 3
-2022-01-27 19:37:06,673 - stpipe.Image3Pipeline.tweakreg - WARNING - Skipping alignment to GAIADR2 astrometric catalog!
-2022-01-27 19:37:06,674 - stpipe.Image3Pipeline.tweakreg - WARNING - 
-2022-01-27 19:37:07,376 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00001_nrcb5_tweakreg.fits
-2022-01-27 19:37:08,011 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00002_nrcb5_tweakreg.fits
-2022-01-27 19:37:09,051 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00003_nrcb5_tweakreg.fits
-2022-01-27 19:37:09,052 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
-2022-01-27 19:37:09,155 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:37:09,157 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
-2022-01-27 19:37:09,210 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:09,211 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2022-01-27 19:37:09.210355
-2022-01-27 19:37:09,212 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:09,212 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
-2022-01-27 19:37:09,213 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
-2022-01-27 19:37:09,213 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
-2022-01-27 19:37:09,214 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:09,215 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
-2022-01-27 19:37:11,108 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00001_nrcb5_tweakreg.fits. Sky background: 0.00897768
-2022-01-27 19:37:11,110 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00002_nrcb5_tweakreg.fits. Sky background: 0.000380797
-2022-01-27 19:37:11,110 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00003_nrcb5_tweakreg.fits. Sky background: 0
-2022-01-27 19:37:11,111 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:11,111 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
-2022-01-27 19:37:11,471 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:11,472 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.2703646668195906 [not converted]
-2022-01-27 19:37:11,473 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:11,474 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
-2022-01-27 19:37:11,475 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00001_nrcb5_tweakreg.fits. Sky background: 0.279342 (old=0.00897768, delta=0.270365)
-2022-01-27 19:37:11,476 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00002_nrcb5_tweakreg.fits. Sky background: 0.270745 (old=0.000380797, delta=0.270365)
-2022-01-27 19:37:11,477 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00003_nrcb5_tweakreg.fits. Sky background: 0.270365 (old=0, delta=0.270365)
-2022-01-27 19:37:11,479 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:11,480 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2022-01-27 19:37:11.479578
-2022-01-27 19:37:11,481 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:02.269223
-2022-01-27 19:37:11,482 - stpipe.Image3Pipeline.skymatch - INFO -  
-2022-01-27 19:37:12,186 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_0_skymatch.fits
-2022-01-27 19:37:12,912 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_1_skymatch.fits
-2022-01-27 19:37:13,542 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_2_skymatch.fits
-2022-01-27 19:37:13,543 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
-2022-01-27 19:37:13,766 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:37:13,768 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;crf&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;.&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
-2022-01-27 19:37:13,774 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 3 inputs
-2022-01-27 19:37:17,339 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:37:23,470 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:37:29,676 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:37:33,045 - stpipe.Image3Pipeline.outlier_detection - INFO - Generating median from 3 images
-2022-01-27 19:37:34,047 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
-2022-01-27 19:37:37,486 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
-2022-01-27 19:37:42,405 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
-2022-01-27 19:37:47,297 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
-2022-01-27 19:37:50,256 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_0_a3001_crf.fits
-2022-01-27 19:37:50,803 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_1_a3001_crf.fits
-2022-01-27 19:37:51,378 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_2_a3001_crf.fits
-2022-01-27 19:37:51,379 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
-2022-01-27 19:37:51,662 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
-2022-01-27 19:37:51,664 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
-2022-01-27 19:37:51,681 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
-2022-01-27 19:37:51,823 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for l3_lw_results
-2022-01-27 19:37:52,514 - stpipe.Image3Pipeline.resample - INFO - Resampling science data
-2022-01-27 19:37:55,332 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:00,701 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:06,077 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:07,973 - stpipe.Image3Pipeline.resample - INFO - Resampling var_rnoise
-2022-01-27 19:38:10,791 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:16,234 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:21,620 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:23,510 - stpipe.Image3Pipeline.resample - INFO - Resampling var_poisson
-2022-01-27 19:38:26,324 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:31,722 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:37,170 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:39,055 - stpipe.Image3Pipeline.resample - INFO - Resampling var_flat
-2022-01-27 19:38:41,876 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:47,273 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:52,670 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
-2022-01-27 19:38:54,617 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.017002611 11.982008299 12.017007214 12.019912405 11.978181842 12.019914242 11.978182698 11.982010135
-2022-01-27 19:38:55,111 - stpipe.Image3Pipeline.resample - INFO - Saved model in ./l3_lw_results_i2d.fits
-2022-01-27 19:38:55,112 - stpipe.Image3Pipeline.resample - INFO - Step resample done
-2022-01-27 19:38:55,248 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(2166, 2170) from l3_lw_results_i2d.fits&gt;,).
-2022-01-27 19:38:55,250 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
-2022-01-27 19:38:55,276 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-01-27 19:38:55,294 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-01-27 19:38:55,295 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: NIRCAM
-2022-01-27 19:38:55,296 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: NRCBLONG
-2022-01-27 19:38:55,297 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F444W
-2022-01-27 19:38:55,297 - stpipe.Image3Pipeline.source_catalog - INFO - Pupil: CLEAR
-2022-01-27 19:38:55,298 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
-2022-01-27 19:38:55,399 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.24181
-2022-01-27 19:38:57,238 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 340 sources
-2022-01-27 19:38:58,083 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: ./l3_lw_results_cat.ecsv
-2022-01-27 19:38:58,209 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in ./l3_lw_results_segm.fits
-2022-01-27 19:38:58,210 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: l3_lw_results_segm.fits
-2022-01-27 19:38:58,212 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
-2022-01-27 19:38:58,213 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
+<pre>2022-01-28 21:35:25,638 - stpipe.Image3Pipeline - INFO - Image3Pipeline instance created.
+2022-01-28 21:35:25,641 - stpipe.Image3Pipeline.assign_mtwcs - INFO - AssignMTWcsStep instance created.
+2022-01-28 21:35:25,643 - stpipe.Image3Pipeline.tweakreg - INFO - TweakRegStep instance created.
+2022-01-28 21:35:25,645 - stpipe.Image3Pipeline.skymatch - INFO - SkyMatchStep instance created.
+2022-01-28 21:35:25,647 - stpipe.Image3Pipeline.outlier_detection - INFO - OutlierDetectionStep instance created.
+2022-01-28 21:35:25,649 - stpipe.Image3Pipeline.resample - INFO - ResampleStep instance created.
+2022-01-28 21:35:25,651 - stpipe.Image3Pipeline.source_catalog - INFO - SourceCatalogStep instance created.
+2022-01-28 21:35:25,756 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline running with args (&#39;./level3_lw_asn.json&#39;,).
+2022-01-28 21:35:25,762 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: &#39;./&#39;, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;steps&#39;: {&#39;assign_mtwcs&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;assign_mtwcs&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;tweakreg&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 20, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: True, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: True}, &#39;skymatch&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}, &#39;outlier_detection&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}, &#39;resample&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}, &#39;source_catalog&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}}}
+2022-01-28 21:35:26,573 - stpipe.Image3Pipeline - INFO - Prefetching reference files for dataset: &#39;jw98765001001_01101_00001_nrcb5_cal.fits&#39; reftypes = [&#39;abvegaoffset&#39;, &#39;apcorr&#39;, &#39;drizpars&#39;]
+2022-01-28 21:35:26,984 - stpipe.Image3Pipeline - INFO - Prefetch for ABVEGAOFFSET reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf&#39;.
+2022-01-28 21:35:26,987 - stpipe.Image3Pipeline - INFO - Prefetch for APCORR reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits&#39;.
+2022-01-28 21:35:26,989 - stpipe.Image3Pipeline - INFO - Prefetch for DRIZPARS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits&#39;.
+2022-01-28 21:35:26,992 - stpipe.Image3Pipeline - INFO - Starting calwebb_image3 ...
+2022-01-28 21:35:27,358 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:35:27,360 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: True, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;save_catalogs&#39;: False, &#39;catalog_format&#39;: &#39;ecsv&#39;, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;brightest&#39;: 20, &#39;peakmax&#39;: None, &#39;enforce_user_order&#39;: False, &#39;expand_refcat&#39;: False, &#39;minobj&#39;: 15, &#39;searchrad&#39;: 1.0, &#39;use2dhist&#39;: True, &#39;separation&#39;: 0.5, &#39;tolerance&#39;: 1.0, &#39;xoffset&#39;: 0.0, &#39;yoffset&#39;: 0.0, &#39;fitgeometry&#39;: &#39;general&#39;, &#39;nclip&#39;: 3, &#39;sigma&#39;: 3.0, &#39;align_to_gaia&#39;: True, &#39;gaia_catalog&#39;: &#39;GAIADR2&#39;, &#39;min_gaia&#39;: 5, &#39;save_gaia_catalog&#39;: True}
+2022-01-28 21:35:30,488 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00001_nrcb5_cal.fits.
+2022-01-28 21:35:33,826 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00002_nrcb5_cal.fits.
+2022-01-28 21:35:37,171 - stpipe.Image3Pipeline.tweakreg - INFO - Detected 20 sources in jw98765001001_01101_00003_nrcb5_cal.fits.
+2022-01-28 21:35:37,228 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2022-01-28 21:35:37,229 - stpipe.Image3Pipeline.tweakreg - INFO - Number of image groups to be aligned: 3.
+2022-01-28 21:35:37,230 - stpipe.Image3Pipeline.tweakreg - INFO - Image groups:
+2022-01-28 21:35:37,254 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00001_nrcb5_cal&#39;:
+2022-01-28 21:35:37,256 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00001_nrcb5_cal
+2022-01-28 21:35:37,278 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00002_nrcb5_cal&#39;:
+2022-01-28 21:35:37,279 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00002_nrcb5_cal
+2022-01-28 21:35:37,302 - stpipe.Image3Pipeline.tweakreg - INFO - * Images in GROUP &#39;jw98765001001_01101_00003_nrcb5_cal&#39;:
+2022-01-28 21:35:37,303 - stpipe.Image3Pipeline.tweakreg - INFO -      jw98765001001_01101_00003_nrcb5_cal
+2022-01-28 21:35:37,304 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2022-01-28 21:35:37,305 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2022-01-28 21:35:37,306 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-01-28 21:35:37.305281
+2022-01-28 21:35:37,307 - stpipe.Image3Pipeline.tweakreg - INFO -       Version 0.7.3
+2022-01-28 21:35:37,307 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2022-01-28 21:35:37,461 - stpipe.Image3Pipeline.tweakreg - INFO - Selected image &#39;GROUP ID: jw98765001001_01101_00001_nrcb5_cal&#39; as reference image
+2022-01-28 21:35:37,467 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39; to the reference catalog.
+2022-01-28 21:35:37,612 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;jw98765001001_01101_00002_nrcb5_cal&#39; catalog with sources from the reference &#39;jw98765001001_01101_00001_nrcb5_cal&#39; catalog.
+2022-01-28 21:35:37,614 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2022-01-28 21:35:37,616 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 0 with significance of 19 and 21 matches.
+2022-01-28 21:35:37,618 - stpipe.Image3Pipeline.tweakreg - INFO - Found 19 matches for &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39;...
+2022-01-28 21:35:37,619 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2022-01-28 21:35:37,621 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: jw98765001001_01101_00002_nrcb5_cal:
+2022-01-28 21:35:37,622 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: 0.00237299  YSH: 0.000284486    PROPER ROT: -0.00203833    
+2022-01-28 21:35:37,623 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.00203833  SKEW: -0.00628721    ROT_X: 0.00110528  ROT_Y: -0.00518194
+2022-01-28 21:35:37,624 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 0.99998  SCALE_X: 1.00001  SCALE_Y: 0.999948
+2022-01-28 21:35:37,624 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2022-01-28 21:35:37,625 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00624414   FIT MAE: 0.00515024
+2022-01-28 21:35:37,625 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 19 objects.
+2022-01-28 21:35:37,673 - stpipe.Image3Pipeline.tweakreg - INFO - Added 1 unmatched sources from &#39;GROUP ID: jw98765001001_01101_00002_nrcb5_cal&#39; to the reference catalog.
+2022-01-28 21:35:37,704 - stpipe.Image3Pipeline.tweakreg - INFO - Aligning image catalog &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39; to the reference catalog.
+2022-01-28 21:35:37,849 - stpipe.Image3Pipeline.tweakreg - INFO - Matching sources from &#39;jw98765001001_01101_00003_nrcb5_cal&#39; catalog with sources from the reference &#39;jw98765001001_01101_00002_nrcb5_cal&#39; catalog.
+2022-01-28 21:35:37,850 - stpipe.Image3Pipeline.tweakreg - INFO - Computing initial guess for X and Y shifts...
+2022-01-28 21:35:37,852 - stpipe.Image3Pipeline.tweakreg - INFO - Found initial X and Y shifts of 0, 0 with significance of 19 and 21 matches.
+2022-01-28 21:35:37,854 - stpipe.Image3Pipeline.tweakreg - INFO - Found 19 matches for &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39;...
+2022-01-28 21:35:37,855 - stpipe.Image3Pipeline.tweakreg - INFO - Performing &#39;general&#39; fit
+2022-01-28 21:35:37,857 - stpipe.Image3Pipeline.tweakreg - INFO - Computed &#39;general&#39; fit for GROUP ID: jw98765001001_01101_00003_nrcb5_cal:
+2022-01-28 21:35:37,858 - stpipe.Image3Pipeline.tweakreg - INFO - XSH: -0.000345941  YSH: -0.000146019    PROPER ROT: -0.00096564    
+2022-01-28 21:35:37,859 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;ROT&gt;: -0.00096564  SKEW: -0.00279674    ROT_X: 0.000432731  ROT_Y: -0.00236401
+2022-01-28 21:35:37,860 - stpipe.Image3Pipeline.tweakreg - INFO - &lt;SCALE&gt;: 1  SCALE_X: 1.00002  SCALE_Y: 0.999986
+2022-01-28 21:35:37,861 - stpipe.Image3Pipeline.tweakreg - INFO - 
+2022-01-28 21:35:37,861 - stpipe.Image3Pipeline.tweakreg - INFO - FIT RMSE: 0.00487879   FIT MAE: 0.00408797
+2022-01-28 21:35:37,862 - stpipe.Image3Pipeline.tweakreg - INFO - Final solution based on 19 objects.
+2022-01-28 21:35:37,911 - stpipe.Image3Pipeline.tweakreg - INFO - Added 1 unmatched sources from &#39;GROUP ID: jw98765001001_01101_00003_nrcb5_cal&#39; to the reference catalog.
+2022-01-28 21:35:37,913 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2022-01-28 21:35:37,913 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-01-28 21:35:37.913134
+2022-01-28 21:35:37,914 - stpipe.Image3Pipeline.tweakreg - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.607853
+2022-01-28 21:35:37,915 - stpipe.Image3Pipeline.tweakreg - INFO -  
+2022-01-28 21:35:38,109 - stpipe.Image3Pipeline.tweakreg - WARNING - Not enough GAIA sources for a fit: 3
+2022-01-28 21:35:38,111 - stpipe.Image3Pipeline.tweakreg - WARNING - Skipping alignment to GAIADR2 astrometric catalog!
+2022-01-28 21:35:38,111 - stpipe.Image3Pipeline.tweakreg - WARNING - 
+2022-01-28 21:35:38,843 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00001_nrcb5_tweakreg.fits
+2022-01-28 21:35:39,470 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00002_nrcb5_tweakreg.fits
+2022-01-28 21:35:40,526 - stpipe.Image3Pipeline.tweakreg - INFO - Saved model in ./jw98765001001_01101_00003_nrcb5_tweakreg.fits
+2022-01-28 21:35:40,528 - stpipe.Image3Pipeline.tweakreg - INFO - Step tweakreg done
+2022-01-28 21:35:40,647 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:35:40,650 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;skymethod&#39;: &#39;global+match&#39;, &#39;match_down&#39;: True, &#39;subtract&#39;: False, &#39;stepsize&#39;: None, &#39;skystat&#39;: &#39;mode&#39;, &#39;dqbits&#39;: &#39;0&#39;, &#39;lower&#39;: None, &#39;upper&#39;: None, &#39;nclip&#39;: 5, &#39;lsigma&#39;: 4.0, &#39;usigma&#39;: 4.0, &#39;binwidth&#39;: 0.1}
+2022-01-28 21:35:40,703 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:40,704 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() started on 2022-01-28 21:35:40.703676
+2022-01-28 21:35:40,705 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:40,706 - stpipe.Image3Pipeline.skymatch - INFO - Sky computation method: &#39;global+match&#39;
+2022-01-28 21:35:40,707 - stpipe.Image3Pipeline.skymatch - INFO - Sky matching direction: DOWN
+2022-01-28 21:35:40,707 - stpipe.Image3Pipeline.skymatch - INFO - Sky subtraction from image data: OFF
+2022-01-28 21:35:40,708 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:40,709 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing differences in sky values in overlapping regions.
+2022-01-28 21:35:42,640 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00001_nrcb5_tweakreg.fits. Sky background: 0.00897768
+2022-01-28 21:35:42,641 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00002_nrcb5_tweakreg.fits. Sky background: 0.000380797
+2022-01-28 21:35:42,642 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00003_nrcb5_tweakreg.fits. Sky background: 0
+2022-01-28 21:35:42,643 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:42,644 - stpipe.Image3Pipeline.skymatch - INFO - ----  Computing &#34;global&#34; sky - smallest sky value across *all* input images.
+2022-01-28 21:35:43,015 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:43,017 - stpipe.Image3Pipeline.skymatch - INFO -    &#34;Global&#34; sky value correction: 0.2703646668195906 [not converted]
+2022-01-28 21:35:43,017 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:43,018 - stpipe.Image3Pipeline.skymatch - INFO - ----  Final (match+global) sky for:
+2022-01-28 21:35:43,019 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00001_nrcb5_tweakreg.fits. Sky background: 0.279342 (old=0.00897768, delta=0.270365)
+2022-01-28 21:35:43,019 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00002_nrcb5_tweakreg.fits. Sky background: 0.270745 (old=0.000380797, delta=0.270365)
+2022-01-28 21:35:43,020 - stpipe.Image3Pipeline.skymatch - INFO -    *  Image ID=jw98765001001_01101_00003_nrcb5_tweakreg.fits. Sky background: 0.270365 (old=0, delta=0.270365)
+2022-01-28 21:35:43,021 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:43,022 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() ended on 2022-01-28 21:35:43.021496
+2022-01-28 21:35:43,022 - stpipe.Image3Pipeline.skymatch - INFO - ***** jwst.skymatch.skymatch.match() TOTAL RUN TIME: 0:00:02.317820
+2022-01-28 21:35:43,023 - stpipe.Image3Pipeline.skymatch - INFO -  
+2022-01-28 21:35:43,749 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_0_skymatch.fits
+2022-01-28 21:35:44,470 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_1_skymatch.fits
+2022-01-28 21:35:45,108 - stpipe.Image3Pipeline.skymatch - INFO - Saved model in ./l3_lw_results_2_skymatch.fits
+2022-01-28 21:35:45,109 - stpipe.Image3Pipeline.skymatch - INFO - Step skymatch done
+2022-01-28 21:35:45,305 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:35:45,307 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;crf&#39;, &#39;search_output_file&#39;: False, &#39;input_dir&#39;: &#39;.&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;nlow&#39;: 0, &#39;nhigh&#39;: 0, &#39;maskpt&#39;: 0.7, &#39;grow&#39;: 1, &#39;snr&#39;: &#39;5.0 4.0&#39;, &#39;scale&#39;: &#39;1.2 0.7&#39;, &#39;backg&#39;: 0.0, &#39;save_intermediate_results&#39;: False, &#39;resample_data&#39;: True, &#39;good_bits&#39;: &#39;~DO_NOT_USE&#39;, &#39;scale_detection&#39;: False, &#39;allowed_memory&#39;: None}
+2022-01-28 21:35:45,313 - stpipe.Image3Pipeline.outlier_detection - INFO - Performing outlier detection on 3 inputs
+2022-01-28 21:35:48,792 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:35:54,980 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:01,177 - stpipe.Image3Pipeline.outlier_detection - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:04,682 - stpipe.Image3Pipeline.outlier_detection - INFO - Generating median from 3 images
+2022-01-28 21:36:05,707 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting median...
+2022-01-28 21:36:09,199 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
+2022-01-28 21:36:14,153 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
+2022-01-28 21:36:19,057 - stpipe.Image3Pipeline.outlier_detection - INFO - Blotting (2048, 2048) &lt;-- (2166, 2170)
+2022-01-28 21:36:22,028 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_0_a3001_crf.fits
+2022-01-28 21:36:22,644 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_1_a3001_crf.fits
+2022-01-28 21:36:23,216 - stpipe.Image3Pipeline.outlier_detection - INFO - Saved model in ./l3_lw_results_2_a3001_crf.fits
+2022-01-28 21:36:23,217 - stpipe.Image3Pipeline.outlier_detection - INFO - Step outlier_detection done
+2022-01-28 21:36:23,517 - stpipe.Image3Pipeline.resample - INFO - Step resample running with args (&lt;ModelContainer&gt;,).
+2022-01-28 21:36:23,519 - stpipe.Image3Pipeline.resample - INFO - Step resample parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;i2d&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;pixfrac&#39;: 1.0, &#39;kernel&#39;: &#39;square&#39;, &#39;fillval&#39;: &#39;INDEF&#39;, &#39;weight_type&#39;: &#39;ivm&#39;, &#39;pixel_scale_ratio&#39;: 1.0, &#39;single&#39;: False, &#39;blendheaders&#39;: True, &#39;allowed_memory&#39;: None}
+2022-01-28 21:36:23,537 - stpipe.Image3Pipeline.resample - INFO - Drizpars reference file: /grp/crds/cache/references/jwst/jwst_nircam_drizpars_0001.fits
+2022-01-28 21:36:23,688 - stpipe.Image3Pipeline.resample - INFO - Blending metadata for l3_lw_results
+2022-01-28 21:36:24,383 - stpipe.Image3Pipeline.resample - INFO - Resampling science data
+2022-01-28 21:36:27,299 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:32,745 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:38,247 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:40,169 - stpipe.Image3Pipeline.resample - INFO - Resampling var_rnoise
+2022-01-28 21:36:43,036 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:48,518 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:53,910 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:36:55,811 - stpipe.Image3Pipeline.resample - INFO - Resampling var_poisson
+2022-01-28 21:36:58,634 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:04,069 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:09,508 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:11,399 - stpipe.Image3Pipeline.resample - INFO - Resampling var_flat
+2022-01-28 21:37:14,250 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:19,700 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:25,140 - stpipe.Image3Pipeline.resample - INFO - Drizzling (2048, 2048) --&gt; (2166, 2170)
+2022-01-28 21:37:27,070 - stpipe.Image3Pipeline.resample - INFO - Update S_REGION to POLYGON ICRS  12.017002611 11.982008299 12.017007214 12.019912405 11.978181842 12.019914242 11.978182698 11.982010135
+2022-01-28 21:37:27,587 - stpipe.Image3Pipeline.resample - INFO - Saved model in ./l3_lw_results_i2d.fits
+2022-01-28 21:37:27,588 - stpipe.Image3Pipeline.resample - INFO - Step resample done
+2022-01-28 21:37:27,744 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog running with args (&lt;ImageModel(2166, 2170) from l3_lw_results_i2d.fits&gt;,).
+2022-01-28 21:37:27,746 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;.&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-01-28 21:37:27,769 - stpipe.Image3Pipeline.source_catalog - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
+2022-01-28 21:37:27,781 - stpipe.Image3Pipeline.source_catalog - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
+2022-01-28 21:37:27,782 - stpipe.Image3Pipeline.source_catalog - INFO - Instrument: NIRCAM
+2022-01-28 21:37:27,783 - stpipe.Image3Pipeline.source_catalog - INFO - Detector: NRCBLONG
+2022-01-28 21:37:27,784 - stpipe.Image3Pipeline.source_catalog - INFO - Filter: F444W
+2022-01-28 21:37:27,784 - stpipe.Image3Pipeline.source_catalog - INFO - Pupil: CLEAR
+2022-01-28 21:37:27,785 - stpipe.Image3Pipeline.source_catalog - INFO - Subarray: FULL
+2022-01-28 21:37:27,856 - stpipe.Image3Pipeline.source_catalog - INFO - AB to Vega magnitude offset 3.24181
+2022-01-28 21:37:29,733 - stpipe.Image3Pipeline.source_catalog - INFO - Detected 340 sources
+2022-01-28 21:37:30,636 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote source catalog: ./l3_lw_results_cat.ecsv
+2022-01-28 21:37:30,768 - stpipe.Image3Pipeline.source_catalog - INFO - Saved model in ./l3_lw_results_segm.fits
+2022-01-28 21:37:30,770 - stpipe.Image3Pipeline.source_catalog - INFO - Wrote segmentation map: l3_lw_results_segm.fits
+2022-01-28 21:37:30,771 - stpipe.Image3Pipeline.source_catalog - INFO - Step source_catalog done
+2022-01-28 21:37:30,773 - stpipe.Image3Pipeline - INFO - Step Image3Pipeline done
 </pre>
 </div>
 </div>
@@ -16010,7 +16010,7 @@ Input/Outputs of this stage refer to the main data products for the pipeline pro
 │ └─<span class="ansi-bold">version</span> (str): 2.8.3
 ├─<span class="ansi-bold">history</span> (dict)
 │ └─<span class="ansi-bold">extensions</span> (list) ...
-├─<span class="ansi-bold">_fits_hash</span> (str): fd8266069c5c103c7d7bc42f51dbab0fa28abac3808f4ed0019b2ea7bbb3687b
+├─<span class="ansi-bold">_fits_hash</span> (str): 50d43b59430f312c699d8f6fda0eb8ecf774b0f329438acec81a00a8e10c4385
 ├─<span class="ansi-bold">con</span> (ndarray): shape=(2166, 2170), dtype=int32
 ├─<span class="ansi-bold">data</span> (ndarray): shape=(2166, 2170), dtype=float32
 ├─<span class="ansi-bold">err</span> (ndarray): shape=(2166, 2170), dtype=float32
@@ -16215,7 +16215,7 @@ jp-needs-light-background
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div><i>QTable length=340</i>
-<table id="table140627585537792" class="table-striped table-bordered table-condensed">
+<table id="table139780252225696" class="table-striped table-bordered table-condensed">
 <thead><tr><th>label</th><th>xcentroid</th><th>ycentroid</th><th>sky_centroid</th><th>aper_bkg_flux</th><th>aper_bkg_flux_err</th><th>aper30_flux</th><th>aper30_flux_err</th><th>aper50_flux</th><th>aper50_flux_err</th><th>aper70_flux</th><th>aper70_flux_err</th><th>aper_total_flux</th><th>aper_total_flux_err</th><th>aper30_abmag</th><th>aper30_abmag_err</th><th>aper50_abmag</th><th>aper50_abmag_err</th><th>aper70_abmag</th><th>aper70_abmag_err</th><th>aper_total_abmag</th><th>aper_total_abmag_err</th><th>aper30_vegamag</th><th>aper30_vegamag_err</th><th>aper50_vegamag</th><th>aper50_vegamag_err</th><th>aper70_vegamag</th><th>aper70_vegamag_err</th><th>aper_total_vegamag</th><th>aper_total_vegamag_err</th><th>CI_50_30</th><th>CI_70_50</th><th>CI_70_30</th><th>is_extended</th><th>sharpness</th><th>roundness</th><th>nn_label</th><th>nn_dist</th><th>isophotal_flux</th><th>isophotal_flux_err</th><th>isophotal_abmag</th><th>isophotal_abmag_err</th><th>isophotal_vegamag</th><th>isophotal_vegamag_err</th><th>isophotal_area</th><th>semimajor_sigma</th><th>semiminor_sigma</th><th>ellipticity</th><th>orientation</th><th>sky_orientation</th><th>sky_bbox_ll</th><th>sky_bbox_ul</th><th>sky_bbox_lr</th><th>sky_bbox_ur</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg,deg</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>pix</th><th>Jy</th><th>Jy</th><th></th><th></th><th></th><th></th><th>pix2</th><th>pix</th><th>pix</th><th></th><th>deg</th><th>deg</th><th>deg,deg</th><th>deg,deg</th><th>deg,deg</th><th>deg,deg</th></tr></thead>
 <thead><tr><th>int64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>bool</th><th>float64</th><th>float32</th><th>int64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
@@ -17092,7 +17092,7 @@ Background subtracted: False
 │ └─<span class="ansi-bold">version</span> (str): 2.8.3
 ├─<span class="ansi-bold">history</span> (dict)
 │ └─<span class="ansi-bold">extensions</span> (list) ...
-├─<span class="ansi-bold">_fits_hash</span> (str): c9f6823a6e4061c05ece6d410560931531b140a90c957fc7941f364e1f9d1afc
+├─<span class="ansi-bold">_fits_hash</span> (str): 61203a3af966be010ed2a0e20eea994c79cc9cacf800768fdc22398e66d8638b
 ├─<span class="ansi-bold">area</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 ├─<span class="ansi-bold">data</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 ├─<span class="ansi-bold">dq</span> (NDArrayType): shape=(2048, 2048), dtype=uint32
@@ -17371,7 +17371,7 @@ None
 │ └─<span class="ansi-bold">version</span> (str): 2.8.3
 ├─<span class="ansi-bold">history</span> (dict)
 │ └─<span class="ansi-bold">extensions</span> (list) ...
-├─<span class="ansi-bold">_fits_hash</span> (str): eb340d378f9864fac140eb289c2248350fb07230738b02ea12e19afd369c00c7
+├─<span class="ansi-bold">_fits_hash</span> (str): 32bd36115305b441917e8078266db822a1eaa1eaf1c8c104bb41295fde952b2a
 ├─<span class="ansi-bold">area</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 ├─<span class="ansi-bold">data</span> (NDArrayType): shape=(2048, 2048), dtype=float32
 ├─<span class="ansi-bold">dq</span> (NDArrayType): shape=(2048, 2048), dtype=uint32
@@ -17853,7 +17853,7 @@ After: 1311767
 │ └─<span class="ansi-bold">version</span> (str): 2.8.3
 ├─<span class="ansi-bold">history</span> (dict)
 │ └─<span class="ansi-bold">extensions</span> (list) ...
-├─<span class="ansi-bold">_fits_hash</span> (str): fd8266069c5c103c7d7bc42f51dbab0fa28abac3808f4ed0019b2ea7bbb3687b
+├─<span class="ansi-bold">_fits_hash</span> (str): 50d43b59430f312c699d8f6fda0eb8ecf774b0f329438acec81a00a8e10c4385
 ├─<span class="ansi-bold">con</span> (ndarray): shape=(2166, 2170), dtype=int32
 ├─<span class="ansi-bold">data</span> (ndarray): shape=(2166, 2170), dtype=float32
 ├─<span class="ansi-bold">err</span> (ndarray): shape=(2166, 2170), dtype=float32
@@ -18116,22 +18116,22 @@ jp-needs-light-background
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-01-27 19:39:01,621 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
-2022-01-27 19:39:01,733 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&#39;l3_lw_results_i2d.fits&#39;,).
-2022-01-27 19:39:01,735 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
-2022-01-27 19:39:02,170 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-01-27 19:39:02,390 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-01-27 19:39:02,392 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
-2022-01-27 19:39:02,392 - stpipe.SourceCatalogStep - INFO - Detector: NRCBLONG
-2022-01-27 19:39:02,393 - stpipe.SourceCatalogStep - INFO - Filter: F444W
-2022-01-27 19:39:02,394 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
-2022-01-27 19:39:02,394 - stpipe.SourceCatalogStep - INFO - Subarray: FULL
-2022-01-27 19:39:02,446 - stpipe.SourceCatalogStep - INFO - AB to Vega magnitude offset 3.24181
-2022-01-27 19:39:04,364 - stpipe.SourceCatalogStep - INFO - Detected 340 sources
-2022-01-27 19:39:05,235 - stpipe.SourceCatalogStep - INFO - Wrote source catalog: l3_lw_results_cat.ecsv
-2022-01-27 19:39:05,374 - stpipe.SourceCatalogStep - INFO - Saved model in l3_lw_results_segm.fits
-2022-01-27 19:39:05,376 - stpipe.SourceCatalogStep - INFO - Wrote segmentation map: l3_lw_results_segm.fits
-2022-01-27 19:39:05,378 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
+<pre>2022-01-28 21:37:34,255 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-01-28 21:37:34,385 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&#39;l3_lw_results_i2d.fits&#39;,).
+2022-01-28 21:37:34,387 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 100, &#39;kernel_fwhm&#39;: 2.302, &#39;snr_threshold&#39;: 10.0, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-01-28 21:37:34,831 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
+2022-01-28 21:37:35,053 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
+2022-01-28 21:37:35,054 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
+2022-01-28 21:37:35,055 - stpipe.SourceCatalogStep - INFO - Detector: NRCBLONG
+2022-01-28 21:37:35,056 - stpipe.SourceCatalogStep - INFO - Filter: F444W
+2022-01-28 21:37:35,056 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
+2022-01-28 21:37:35,057 - stpipe.SourceCatalogStep - INFO - Subarray: FULL
+2022-01-28 21:37:35,107 - stpipe.SourceCatalogStep - INFO - AB to Vega magnitude offset 3.24181
+2022-01-28 21:37:37,038 - stpipe.SourceCatalogStep - INFO - Detected 340 sources
+2022-01-28 21:37:37,912 - stpipe.SourceCatalogStep - INFO - Wrote source catalog: l3_lw_results_cat.ecsv
+2022-01-28 21:37:38,043 - stpipe.SourceCatalogStep - INFO - Saved model in l3_lw_results_segm.fits
+2022-01-28 21:37:38,045 - stpipe.SourceCatalogStep - INFO - Wrote segmentation map: l3_lw_results_segm.fits
+2022-01-28 21:37:38,047 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
 </pre>
 </div>
 </div>
@@ -18183,7 +18183,7 @@ jp-needs-light-background
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div><i>QTable length=340</i>
-<table id="table140627515834320" class="table-striped table-bordered table-condensed">
+<table id="table139778542853760" class="table-striped table-bordered table-condensed">
 <thead><tr><th>label</th><th>xcentroid</th><th>ycentroid</th><th>sky_centroid</th><th>aper_bkg_flux</th><th>aper_bkg_flux_err</th><th>aper30_flux</th><th>aper30_flux_err</th><th>aper50_flux</th><th>aper50_flux_err</th><th>aper70_flux</th><th>aper70_flux_err</th><th>aper_total_flux</th><th>aper_total_flux_err</th><th>aper30_abmag</th><th>aper30_abmag_err</th><th>aper50_abmag</th><th>aper50_abmag_err</th><th>aper70_abmag</th><th>aper70_abmag_err</th><th>aper_total_abmag</th><th>aper_total_abmag_err</th><th>aper30_vegamag</th><th>aper30_vegamag_err</th><th>aper50_vegamag</th><th>aper50_vegamag_err</th><th>aper70_vegamag</th><th>aper70_vegamag_err</th><th>aper_total_vegamag</th><th>aper_total_vegamag_err</th><th>CI_50_30</th><th>CI_70_50</th><th>CI_70_30</th><th>is_extended</th><th>sharpness</th><th>roundness</th><th>nn_label</th><th>nn_dist</th><th>isophotal_flux</th><th>isophotal_flux_err</th><th>isophotal_abmag</th><th>isophotal_abmag_err</th><th>isophotal_vegamag</th><th>isophotal_vegamag_err</th><th>isophotal_area</th><th>semimajor_sigma</th><th>semiminor_sigma</th><th>ellipticity</th><th>orientation</th><th>sky_orientation</th><th>sky_bbox_ll</th><th>sky_bbox_ul</th><th>sky_bbox_lr</th><th>sky_bbox_ur</th></tr></thead>
 <thead><tr><th></th><th></th><th></th><th>deg,deg</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th>Jy</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>pix</th><th>Jy</th><th>Jy</th><th></th><th></th><th></th><th></th><th>pix2</th><th>pix</th><th>pix</th><th></th><th>deg</th><th>deg</th><th>deg,deg</th><th>deg,deg</th><th>deg,deg</th><th>deg,deg</th></tr></thead>
 <thead><tr><th>int64</th><th>float64</th><th>float64</th><th>object</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>bool</th><th>float64</th><th>float32</th><th>int64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>object</th><th>object</th><th>object</th><th>object</th></tr></thead>
