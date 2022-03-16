@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print("Starting at {}".format(time.ctime()))
 
     try:
-        converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=36000)
+        converted = run_parsed(args.nb_path, output_type='HTML', args=args, timeout=72000)
     except Exception as e:
         print("ERROR: {}".format(e))
         print("args={}".format(args))
