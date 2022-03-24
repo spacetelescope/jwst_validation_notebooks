@@ -14454,6 +14454,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14520,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14852,32 +14858,41 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Testing JWST Pipeline 1.3.2
+<pre>Testing JWST Pipeline 1.4.3
 <span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.9.9, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
+platform linux -- Python 3.9.10, pytest-7.1.1, pluggy-1.0.0 -- /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.9.9&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.49.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;6.2.5&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;asdf&#39;: &#39;2.8.3&#39;, &#39;metadata&#39;: &#39;1.11.0&#39;, &#39;jwst&#39;: &#39;1.3.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;ci-watson&#39;: &#39;0.5&#39;}, &#39;BUILD_NUMBER&#39;: &#39;100&#39;, &#39;BUILD_ID&#39;: &#39;100&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/100/&#39;, &#39;NODE_NAME&#39;: &#39;jwcalibdev.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-100&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;18&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;904bd04dc6d740ccb300e309d1247490b5a321f5&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
-rootdir: /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
-plugins: asdf-2.8.3, metadata-1.11.0, jwst-1.3.2, html-3.1.1, ci-watson-0.5
-collected 0 items                                                              
+rootdir: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
+plugins: asdf-2.11.0, html-3.1.1, ci-watson-0.6.1, jwst-1.4.3
+collected 18 items                                                             
+
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_flag_cr <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [  5%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_no_outliers <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 11%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 16%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_square_source_no_outliers <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 22%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NRC_IMAGE] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 27%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[MIR_IMAGE] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 33%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NRS_IMAGE] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 38%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NIS_IMAGE] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 44%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[FGS_IMAGE] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 50%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NIS_SOSS-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 55%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_LRS-SLITLESS-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 61%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_TSGRISM-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 66%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRS_BRIGHTOBJ-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 72%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_TSIMAGE-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 77%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_IMAGE-True] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 83%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_CORON-False] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 88%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_LYOT-False] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [ 94%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_4QPM-False] <span class="ansi-green-fg">PASSED</span><span class="ansi-yellow-fg"> [100%]</span>
 
 <span class="ansi-yellow-fg">=============================== warnings summary ===============================</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/version.py:26
-  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/version.py:26: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
-    for j, piece in enumerate(LooseVersion(version).version[:3]):
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py:3
+  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py:3: DeprecationWarning: Please use `gaussian_filter` from the `scipy.ndimage` namespace, the `scipy.ndimage.filters` namespace is deprecated.
+    from scipy.ndimage.filters import gaussian_filter
 
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160
-  /data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/introspection.py:160: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
-    return LooseVersion(have_version) &gt;= LooseVersion(version)
-
--- Docs: https://docs.pytest.org/en/stable/warnings.html
-- generated html file: file:///data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp5orqe00m/regtest_report.html -
-<span class="ansi-yellow-fg">============================= </span><span class="ansi-yellow-intense-fg ansi-bold">7 warnings</span><span class="ansi-yellow-fg"> in 0.01s</span><span class="ansi-yellow-fg"> ==============================</span>
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated html file: file:///internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpkvd66k8x/regtest_report.html -
+<span class="ansi-yellow-fg">======================== </span><span class="ansi-green-fg">18 passed</span>, <span class="ansi-yellow-intense-fg ansi-bold">1 warning</span><span class="ansi-yellow-fg"> in 9.84s</span><span class="ansi-yellow-fg"> =========================</span>
 </pre>
 </div>
 </div>
@@ -15348,60 +15363,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>regtest_report.html</h1>
-    <p>Report generated on 29-Jan-2022 at 15:13:17 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
-    <h2>Environment</h2>
-    <table id="environment">
-      <tr>
-        <td>BUILD_ID</td>
-        <td>100</td></tr>
-      <tr>
-        <td>BUILD_NUMBER</td>
-        <td>100</td></tr>
-      <tr>
-        <td>BUILD_TAG</td>
-        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-100</td></tr>
-      <tr>
-        <td>BUILD_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/100/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/100/</a></td></tr>
-      <tr>
-        <td>EXECUTOR_NUMBER</td>
-        <td>18</td></tr>
-      <tr>
-        <td>GIT_BRANCH</td>
-        <td>origin/master</td></tr>
-      <tr>
-        <td>GIT_COMMIT</td>
-        <td>904bd04dc6d740ccb300e309d1247490b5a321f5</td></tr>
-      <tr>
-        <td>GIT_URL</td>
-        <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
-      <tr>
-        <td>JENKINS_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/" target="_blank">https://plwishmaster.stsci.edu:8081/</a></td></tr>
-      <tr>
-        <td>JOB_NAME</td>
-        <td>Notebooks/jwst_validation_notebooks_spacetelescope</td></tr>
-      <tr>
-        <td>NODE_NAME</td>
-        <td>jwcalibdev.stsci.edu</td></tr>
-      <tr>
-        <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "6.2.5"}</td></tr>
-      <tr>
-        <td>Platform</td>
-        <td>Linux-3.10.0-1160.49.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
-      <tr>
-        <td>Plugins</td>
-        <td>{"asdf": "2.8.3", "ci-watson": "0.5", "html": "3.1.1", "jwst": "1.3.2", "metadata": "1.11.0"}</td></tr>
-      <tr>
-        <td>Python</td>
-        <td>3.9.9</td></tr>
-      <tr>
-        <td>WORKSPACE</td>
-        <td>/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
+    <p>Report generated on 24-Mar-2022 at 13:37:55 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.01 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>18 tests ran in 9.84 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">18 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -15411,7 +15376,1377 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th>
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead></table></body></html>
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_flag_cr</td>
+          <td class="col-duration">0.89</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:47,554 - stpipe - INFO - New pixels flagged as outliers: 4 (1.00%)
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    stpipe:outlier_detection.py:400 Adding background level 3 to blotted image
+DEBUG    stpipe:outlier_detection.py:400 Adding background level 3 to blotted image
+INFO     stpipe:outlier_detection.py:450 New pixels flagged as outliers: 4 (1.00%)
+INFO     stpipe:outlier_detection.py:450 New pixels flagged as outliers: 4 (1.00%)<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_no_outliers</td>
+          <td class="col-duration">0.65</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:47,801 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:47,871 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:47,872 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:47,878 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:47,977 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,011 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,045 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,079 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:48,084 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:48,119 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:48,156 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:48,193 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:48,194 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:48,196 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:48,197 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:48,198 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:48,208 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step</td>
+          <td class="col-duration">1.18</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:48,355 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:48,441 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:48,442 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: True, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: True, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:48,447 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:48,547 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,581 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,616 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:48,616 - stpipe.OutlierDetectionStep - INFO - Writing out resampled exposures...
+2022-03-24 13:37:48,678 - stpipe.OutlierDetectionStep - INFO - Writing out resampled exposures...
+2022-03-24 13:37:48,738 - stpipe.OutlierDetectionStep - INFO - Writing out resampled exposures...
+2022-03-24 13:37:48,832 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:48,834 - stpipe.OutlierDetectionStep - INFO - Writing out MEDIAN image to: foo1_median.fits
+2022-03-24 13:37:48,892 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:48,928 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:48,965 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:49,002 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:49,003 - stpipe.OutlierDetectionStep - INFO - Writing out BLOT images...
+2022-03-24 13:37:49,187 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:49,189 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:49,190 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:49,192 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:49,264 - stpipe.OutlierDetectionStep - INFO - Saved model in foo1_outlierdetectionstep.fits
+2022-03-24 13:37:49,334 - stpipe.OutlierDetectionStep - INFO - Saved model in foo2_outlierdetectionstep.fits
+2022-03-24 13:37:49,398 - stpipe.OutlierDetectionStep - INFO - Saved model in foo3_outlierdetectionstep.fits
+2022-03-24 13:37:49,398 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: True, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: True, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:194 Writing out resampled exposures...
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:221 Writing out MEDIAN image to: foo1_median.fits
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:221 Writing out MEDIAN image to: foo1_median.fits
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:231 Writing out BLOT images...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:231 Writing out BLOT images...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:947 Saved model in foo1_outlierdetectionstep.fits
+INFO     stpipe.OutlierDetectionStep:step.py:947 Saved model in foo2_outlierdetectionstep.fits
+INFO     stpipe.OutlierDetectionStep:step.py:947 Saved model in foo3_outlierdetectionstep.fits
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_square_source_no_outliers</td>
+          <td class="col-duration">0.74</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:49,733 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:49,810 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:49,811 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:49,816 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:49,914 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:49,947 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:49,981 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:50,015 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:50,019 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:50,055 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,091 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,129 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,130 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:50,131 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:50,132 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:50,134 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:50,141 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NRC_IMAGE]</td>
+          <td class="col-duration">0.58</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:50,287 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:50,380 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:50,382 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:50,387 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:50,489 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:50,524 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:50,559 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:50,595 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:50,600 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:50,637 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,674 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,713 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:50,714 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:50,715 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:50,717 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:50,718 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:50,725 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[MIR_IMAGE]</td>
+          <td class="col-duration">0.61</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:50,874 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:50,993 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:50,994 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:50,999 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:51,101 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,137 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,172 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,208 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:51,213 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:51,252 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,291 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,329 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,330 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:51,331 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:51,333 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:51,334 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:51,342 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NRS_IMAGE]</td>
+          <td class="col-duration">0.58</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:51,489 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:51,587 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:51,589 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:51,594 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:51,695 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,731 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,766 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:51,801 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:51,806 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:51,843 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,881 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,918 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:51,919 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:51,921 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:51,922 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:51,923 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:51,931 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[NIS_IMAGE]</td>
+          <td class="col-duration">0.59</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:52,078 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:52,177 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:52,178 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:52,184 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:52,291 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,327 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,363 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,398 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:52,404 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:52,440 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:52,479 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:52,519 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:52,520 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:52,522 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:52,523 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:52,524 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:52,532 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_dither[FGS_IMAGE]</td>
+          <td class="col-duration">0.59</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:52,682 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:52,781 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:52,782 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:52,788 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:52,890 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,925 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,962 - stpipe.OutlierDetectionStep - INFO - Drizzling (20, 20) --&gt; (20, 20)
+2022-03-24 13:37:52,996 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:53,001 - stpipe.OutlierDetectionStep - INFO - Blotting median...
+2022-03-24 13:37:53,038 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:53,075 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:53,113 - stpipe.OutlierDetectionStep - INFO - Blotting (20, 20) &lt;-- (20, 20)
+2022-03-24 13:37:53,114 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:53,115 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:53,116 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,117 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,125 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample.py:91 Output mosaic size: [20, 20]
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:368 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:369 Input Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:gwcs_drizzle.py:370 Output Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+INFO     stpipe.OutlierDetectionStep:gwcs_drizzle.py:373 Drizzling (20, 20) --&gt; (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 9.75
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:312 Blotting median...
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:resample_utils.py:103 Bounding box from data shape: ((-0.5, 19.5), (-0.5, 19.5))
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:505 Pixmap shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:506 Sci shape: (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:509 Blotting (20, 20) &lt;-- (20, 20)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NIS_SOSS-True]</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:53,270 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:53,371 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:53,372 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:53,377 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:53,413 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:53,418 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:53,419 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:53,420 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,422 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,429 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_LRS-SLITLESS-True]</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:53,585 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:53,699 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:53,701 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:53,706 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:53,743 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:53,747 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:53,749 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:53,750 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,751 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:53,758 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_TSGRISM-True]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:53,903 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:53,996 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:53,998 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:54,003 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:54,040 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:54,044 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:54,046 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:54,047 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,048 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,055 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRS_BRIGHTOBJ-True]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:54,200 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:54,294 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:54,295 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:54,300 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:54,338 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:54,342 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:54,344 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:54,345 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,346 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,354 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_TSIMAGE-True]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:54,499 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:54,594 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:54,595 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:54,600 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:54,637 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:54,642 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:54,643 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:54,644 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,645 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,653 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_IMAGE-True]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:54,797 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:54,892 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:54,893 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:54,898 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:54,936 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:54,941 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:54,943 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:54,944 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,945 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:54,953 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[NRC_CORON-False]</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:55,101 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:55,197 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:55,199 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:55,204 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:55,241 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:55,245 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:55,247 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:55,248 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,249 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,257 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_LYOT-False]</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:55,402 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:55,498 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:55,499 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:55,505 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:55,547 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:55,552 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:55,553 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:55,555 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,556 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,563 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/outlier_detection/tests/test_outlier_detection.py::test_outlier_step_image_weak_CR_nodither[MIR_4QPM-False]</td>
+          <td class="col-duration">0.29</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-03-24 13:37:55,709 - stpipe.OutlierDetectionStep - INFO - OutlierDetectionStep instance created.
+2022-03-24 13:37:55,802 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+2022-03-24 13:37:55,804 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+2022-03-24 13:37:55,809 - stpipe.OutlierDetectionStep - INFO - Performing outlier detection on 3 inputs
+2022-03-24 13:37:55,847 - stpipe.OutlierDetectionStep - INFO - Generating median from 3 images
+2022-03-24 13:37:55,852 - stpipe.OutlierDetectionStep - INFO - Flagging outliers
+2022-03-24 13:37:55,854 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 1 (0.25%)
+2022-03-24 13:37:55,855 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,856 - stpipe.OutlierDetectionStep - INFO - New pixels flagged as outliers: 0 (0.00%)
+2022-03-24 13:37:55,864 - stpipe.OutlierDetectionStep - INFO - Step OutlierDetectionStep done
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.OutlierDetectionStep:step.py:330 OutlierDetectionStep instance created.
+INFO     stpipe.OutlierDetectionStep:step.py:390 Step OutlierDetectionStep running with args (&lt;ModelContainer&gt;,).
+INFO     stpipe.OutlierDetectionStep:step.py:394 Step OutlierDetectionStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: None, &#x27;search_output_file&#x27;: False, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;weight_type&#x27;: &#x27;ivm&#x27;, &#x27;pixfrac&#x27;: 1.0, &#x27;kernel&#x27;: &#x27;square&#x27;, &#x27;fillval&#x27;: &#x27;INDEF&#x27;, &#x27;nlow&#x27;: 0, &#x27;nhigh&#x27;: 0, &#x27;maskpt&#x27;: 0.7, &#x27;grow&#x27;: 1, &#x27;snr&#x27;: &#x27;5.0 4.0&#x27;, &#x27;scale&#x27;: &#x27;1.2 0.7&#x27;, &#x27;backg&#x27;: 0.0, &#x27;save_intermediate_results&#x27;: False, &#x27;resample_data&#x27;: True, &#x27;good_bits&#x27;: &#x27;~DO_NOT_USE&#x27;, &#x27;scale_detection&#x27;: False, &#x27;allowed_memory&#x27;: None}
+INFO     stpipe.OutlierDetectionStep:outlier_detection_step.py:190 Performing outlier detection on 3 inputs
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection_step.py:152 Using OutlierDetection class for outlier_detection
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:176 Defined output product suffix as: _outlier_i2d.fits
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:283 Percentage of pixels with low weight: 0.0
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:295 Generating median from 3 images
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:353 Flagging outliers
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 1 (0.25%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+DEBUG    stpipe.OutlierDetectionStep:outlier_detection.py:400 Adding background level 1.5 to blotted image
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:outlier_detection.py:450 New pixels flagged as outliers: 0 (0.00%)
+INFO     stpipe.OutlierDetectionStep:step.py:493 Step OutlierDetectionStep done<br/></div></td></tr></tbody></table></body></html>
 </div>
 
 </div>
