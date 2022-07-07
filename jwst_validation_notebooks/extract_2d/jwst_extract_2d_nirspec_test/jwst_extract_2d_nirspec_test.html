@@ -14731,41 +14731,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 18&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">extract_2d</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">extract_2d_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> Extract2dStep
-<span class="ansi-green-intense-fg ansi-bold">     14</span> <span style="color: rgb(95,135,135)"># The latest version of NPTT is installed in the requirements text file at:</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> <span style="color: rgb(95,135,135)"># /jwst_validation_notebooks/environment.yml</span>
-<span class="ansi-green-intense-fg ansi-bold">     16</span> 
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span style="color: rgb(95,135,135)"># import NPTT</span>
-<span class="ansi-green-fg">---&gt; 18</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">nirspec_pipe_testing_tool</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">nptt</span>
-<span class="ansi-green-intense-fg ansi-bold">     20</span> <span style="color: rgb(95,135,135)"># To get data from Artifactory</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ci_watson</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">artifactory_helpers</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> get_bigdata
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/nirspec_pipe_testing_tool/__init__.py:8</span>, in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> DistributionNotFound:
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     __version__ <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-fg">----&gt; 8</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> utils
-<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> calwebb_spec2_pytests
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/nirspec_pipe_testing_tool/utils/__init__.py:15</span>, in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> prepare_data2run
-<span class="ansi-green-intense-fg ansi-bold">     14</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> read_hdr
-<span class="ansi-green-fg">---&gt; 15</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> run_cal_detector1
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> run_PTT
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">.</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> run_PTT_with_multiprocess
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/nirspec_pipe_testing_tool/utils/run_cal_detector1.py:18</span>, in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">superbias</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">superbias_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> SuperBiasStep
-<span class="ansi-green-intense-fg ansi-bold">     17</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">refpix</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">refpix_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> RefPixStep
-<span class="ansi-green-fg">---&gt; 18</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">rscd</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">rscd_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> RSCD_Step
-<span class="ansi-green-intense-fg ansi-bold">     19</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">lastframe</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">lastframe_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> LastFrameStep
-<span class="ansi-green-intense-fg ansi-bold">     20</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">jwst</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">linearity</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">linearity_step</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> LinearityStep
-
-<span class="ansi-red-fg">ImportError</span>: cannot import name &#39;RSCD_Step&#39; from &#39;jwst.rscd.rscd_step&#39; (/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/rscd/rscd_step.py)</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>**WARNING**: LOCAL JWST PRD VERSION PRDOPSSOC-051 DOESN&#39;T MATCH THE CURRENT ONLINE VERSION PRDOPSSOC-055
+Please consider updating pysiaf, e.g. pip install --upgrade pysiaf or conda update pysiaf
+</pre>
 </div>
 </div>
 
@@ -14773,12 +14742,12 @@ File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print the versions used for the pipeline and NPTT</span>
@@ -14793,6 +14762,30 @@ File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Using jwst pipeline version:  1.5.3
+Using NPTT version:  2.0.0
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14873,7 +14866,7 @@ The input file is defined in the variable <code>input_file</code> (see section <
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">testing_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fs_prism_clear&#39;</span><span class="p">:{</span>
@@ -14933,7 +14926,7 @@ The input file is defined in the variable <code>input_file</code> (see section <
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define function to pull data from Artifactory</span>
@@ -14971,12 +14964,12 @@ The input file is defined in the variable <code>input_file</code> (see section <
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set common NPTT switches for NPTT and run the test for both detectors in each data set</span>
@@ -15070,6 +15063,569 @@ The input file is defined in the variable <code>input_file</code> (see section <
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Testing files for detector:  nrs1
+Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923/fs_prism_nrs1_uncal.fits
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/validate.py:38: ValidationWarning: While validating meta.instrument.fixed_slit the following error occurred:
+&#39;FULL&#39; is not one of [&#39;S200A1&#39;, &#39;S200A2&#39;, &#39;S200B1&#39;, &#39;S400A1&#39;, &#39;S1600A1&#39;, &#39;NONE&#39;]
+
+Failed validating &#39;enum&#39; in schema:
+    OrderedDict([(&#39;title&#39;, &#39;Name of fixed slit aperture used&#39;),
+                 (&#39;type&#39;, &#39;string&#39;),
+                 (&#39;enum&#39;,
+                  [&#39;S200A1&#39;,
+                   &#39;S200A2&#39;,
+                   &#39;S200B1&#39;,
+                   &#39;S400A1&#39;,
+                   &#39;S1600A1&#39;,
+                   &#39;NONE&#39;]),
+                 (&#39;fits_keyword&#39;, &#39;FXD_SLIT&#39;),
+                 (&#39;blend_table&#39;, True)])
+
+On instance:
+    &#39;FULL&#39;
+  warnings.warn(errmsg, ValidationWarning)
+2022-07-06 15:16:38,448 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_nirspec_pars-detector1pipeline_0004.asdf
+2022-07-06 15:16:38,492 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2022-07-06 15:16:38,494 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2022-07-06 15:16:38,496 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2022-07-06 15:16:38,497 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2022-07-06 15:16:38,499 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2022-07-06 15:16:38,500 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2022-07-06 15:16:38,501 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2022-07-06 15:16:38,502 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2022-07-06 15:16:38,504 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2022-07-06 15:16:38,506 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2022-07-06 15:16:38,508 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2022-07-06 15:16:38,509 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2022-07-06 15:16:38,510 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2022-07-06 15:16:38,511 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2022-07-06 15:16:38,513 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2022-07-06 15:16:38,514 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2022-07-06 15:16:38,515 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+2022-07-06 15:16:38,709 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923/fs_prism_nrs1_uncal.fits&#39;,).
+2022-07-06 15:16:38,719 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
+2022-07-06 15:16:38,910 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;fs_prism_nrs1_uncal.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;saturation&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
+2022-07-06 15:16:38,997 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits&#39;.
+2022-07-06 15:16:39,000 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits&#39;.
+2022-07-06 15:16:39,002 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits&#39;.
+2022-07-06 15:16:39,005 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits&#39;.
+2022-07-06 15:16:39,008 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
+2022-07-06 15:16:39,009 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits&#39;.
+2022-07-06 15:16:39,011 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits&#39;.
+2022-07-06 15:16:39,013 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;N/A&#39;.
+2022-07-06 15:16:39,014 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;N/A&#39;.
+2022-07-06 15:16:39,015 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits&#39;.
+2022-07-06 15:16:39,019 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits&#39;.
+2022-07-06 15:16:39,021 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
+2022-07-06 15:16:39,022 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
+2022-07-06 15:16:39,023 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+2022-07-06 15:16:39,461 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:39,463 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:16:39,608 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES and FRMDIVSR are equal; correction not needed
+2022-07-06 15:16:39,609 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
+2022-07-06 15:16:39,613 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
+2022-07-06 15:16:39,773 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:39,776 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:16:39,811 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits
+2022-07-06 15:16:40,270 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
+2022-07-06 15:16:40,433 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:40,435 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;, &#39;n_pix_grow_sat&#39;: 1}
+2022-07-06 15:16:40,459 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits
+2022-07-06 15:16:42,133 - stpipe.Detector1Pipeline.saturation - INFO - Detected 49730 saturated pixels
+2022-07-06 15:16:42,168 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
+2022-07-06 15:16:42,196 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
+2022-07-06 15:16:42,368 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:42,370 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:16:42,371 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
+2022-07-06 15:16:42,374 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
+2022-07-06 15:16:42,517 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:42,519 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:16:42,544 - stpipe.Detector1Pipeline.superbias - INFO - Using SUPERBIAS reference file /grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/validate.py:38: ValidationWarning: While validating meta.exposure.readpatt the following error occurred:
+&#39;ALLIRS2&#39; is not one of [&#39;ACQ1&#39;, &#39;ACQ2&#39;, &#39;BRIGHT1&#39;, &#39;BRIGHT2&#39;, &#39;DEEP2&#39;, &#39;DEEP8&#39;, &#39;FAST&#39;, &#39;FASTGRPAVG&#39;, &#39;FASTGRPAVG8&#39;, &#39;FASTGRPAVG16&#39;, &#39;FASTGRPAVG32&#39;, &#39;FASTGRPAVG64&#39;, &#39;FASTR1&#39;, &#39;FASTR100&#39;, &#39;FGS&#39;, &#39;FGS60&#39;, &#39;FGS8370&#39;, &#39;FGS840&#39;, &#39;FGSRAPID&#39;, &#39;FINEGUIDE&#39;, &#39;ID&#39;, &#39;MEDIUM2&#39;, &#39;MEDIUM8&#39;, &#39;NIS&#39;, &#39;NISRAPID&#39;, &#39;NRS&#39;, &#39;NRSIRS2&#39;, &#39;NRSN16R4&#39;, &#39;NRSN32R8&#39;, &#39;NRSN8R2&#39;, &#39;NRSRAPID&#39;, &#39;NRSIRS2RAPID&#39;, &#39;NRSRAPIDD1&#39;, &#39;NRSRAPIDD2&#39;, &#39;NRSRAPIDD6&#39;, &#39;NRSSLOW&#39;, &#39;RAPID&#39;, &#39;SHALLOW2&#39;, &#39;SHALLOW4&#39;, &#39;SLOW&#39;, &#39;SLOWR1&#39;, &#39;TRACK&#39;, &#39;ANY&#39;, &#39;N/A&#39;]
+
+Failed validating &#39;enum&#39; in schema:
+    OrderedDict([(&#39;title&#39;, &#39;Readout pattern&#39;),
+                 (&#39;type&#39;, &#39;string&#39;),
+                 (&#39;enum&#39;,
+                  [&#39;ACQ1&#39;,
+                   &#39;ACQ2&#39;,
+                   &#39;BRIGHT1&#39;,
+                   &#39;BRIGHT2&#39;,
+                   &#39;DEEP2&#39;,
+                   &#39;DEEP8&#39;,
+                   &#39;FAST&#39;,
+                   &#39;FASTGRPAVG&#39;,
+                   &#39;FASTGRPAVG8&#39;,
+                   &#39;FASTGRPAVG16&#39;,
+                   &#39;FASTGRPAVG32&#39;,
+                   &#39;FASTGRPAVG64&#39;,
+                   &#39;FASTR1&#39;,
+                   &#39;FASTR100&#39;,
+                   &#39;FGS&#39;,
+                   &#39;FGS60&#39;,
+                   &#39;FGS8370&#39;,
+                   &#39;FGS840&#39;,
+                   &#39;FGSRAPID&#39;,
+                   &#39;FINEGUIDE&#39;,
+                   &#39;ID&#39;,
+                   &#39;MEDIUM2&#39;,
+                   &#39;MEDIUM8&#39;,
+                   &#39;NIS&#39;,
+                   &#39;NISRAPID&#39;,
+                   &#39;NRS&#39;,
+                   &#39;NRSIRS2&#39;,
+                   &#39;NRSN16R4&#39;,
+                   &#39;NRSN32R8&#39;,
+                   &#39;NRSN8R2&#39;,
+                   &#39;NRSRAPID&#39;,
+                   &#39;NRSIRS2RAPID&#39;,
+                   &#39;NRSRAPIDD1&#39;,
+                   &#39;NRSRAPIDD2&#39;,
+                   &#39;NRSRAPIDD6&#39;,
+                   &#39;NRSSLOW&#39;,
+                   &#39;RAPID&#39;,
+                   &#39;SHALLOW2&#39;,
+                   &#39;SHALLOW4&#39;,
+                   &#39;SLOW&#39;,
+                   &#39;SLOWR1&#39;,
+                   &#39;TRACK&#39;,
+                   &#39;ANY&#39;,
+                   &#39;N/A&#39;]),
+                 (&#39;fits_ke ...
+  warnings.warn(errmsg, ValidationWarning)
+2022-07-06 15:16:45,664 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias done
+2022-07-06 15:16:45,831 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:16:45,833 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
+2022-07-06 15:16:45,859 - stpipe.Detector1Pipeline.refpix - INFO - Using refpix reference file: /grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits
+2022-07-06 15:16:48,283 - stpipe.Detector1Pipeline.refpix - INFO - Working on integration 1
+2022-07-06 15:17:02,006 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
+2022-07-06 15:17:02,302 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:17:02,305 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:17:02,335 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits
+2022-07-06 15:17:05,590 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
+2022-07-06 15:17:05,775 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:17:05,777 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;, &#39;dark_output&#39;: None}
+2022-07-06 15:17:05,868 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits
+2022-07-06 15:17:40,637 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=1, ngroups=4, nframes=1, groupgap=0
+2022-07-06 15:17:40,639 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=1, ngroups=65, nframes=1, groupgap=0
+2022-07-06 15:17:41,279 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
+2022-07-06 15:17:41,471 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:17:41,473 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}
+2022-07-06 15:17:41,501 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
+2022-07-06 15:17:41,535 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
+2022-07-06 15:17:42,558 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
+2022-07-06 15:17:42,951 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
+2022-07-06 15:17:43,000 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stcal/jump/twopoint_difference.py:128: RuntimeWarning: All-NaN slice encountered
+  max_ratio = np.nanmax(ratio, axis=0)
+2022-07-06 15:17:44,552 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from five groups.
+2022-07-06 15:17:44,554 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 6026 pixels with at least one CR from four groups.
+2022-07-06 15:17:44,555 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 110 pixels with at least one CR from three groups.
+2022-07-06 15:17:45,152 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 2.19955 sec
+2022-07-06 15:17:45,156 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 3.654840
+2022-07-06 15:17:45,162 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
+2022-07-06 15:17:45,291 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:17:45,292 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
+2022-07-06 15:17:45,372 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
+2022-07-06 15:17:45,373 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
+2022-07-06 15:17:45,484 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
+2022-07-06 15:17:45,485 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stcal/ramp_fitting/ols_fit.py:1195: RuntimeWarning: invalid value encountered in multiply
+  var_p4[num_int, :, :, :] *= (segs_4[num_int, :, :, :] &gt; 0)
+2022-07-06 15:17:59,829 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 4
+2022-07-06 15:17:59,831 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 1
+2022-07-06 15:18:00,021 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
+2022-07-06 15:18:00,158 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:18:00,160 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:18:00,229 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-07-06 15:18:00,230 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-07-06 15:18:00,235 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-07-06 15:18:00,348 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(1, 2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:18:00,350 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923&#39;}
+2022-07-06 15:18:00,421 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-07-06 15:18:00,422 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-07-06 15:18:00,427 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-07-06 15:18:00,428 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
+2022-07-06 15:18:00,428 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_0914.pmap
+2022-07-06 15:18:00,429 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
+2022-07-06 15:18:00,438 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-07-06 15:18:00,549 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:18:00,551 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-07-06 15:18:00,736 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-07-06 15:18:00,737 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-07-06 15:18:00,738 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-07-06 15:18:00,739 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-07-06 15:18:01,129 - stpipe.AssignWcsStep - INFO - Removing slit S200B1 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-07-06 15:18:01,130 - stpipe.AssignWcsStep - INFO - Slits projected on detector NRS1: [&#39;S200A1&#39;, &#39;S200A2&#39;, &#39;S400A1&#39;, &#39;S1600A1&#39;]
+2022-07-06 15:18:01,130 - stpipe.AssignWcsStep - INFO - Computing WCS for 4 open slitlets
+2022-07-06 15:18:01,168 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-07-06 15:18:01,169 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-07-06 15:18:01,169 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-07-06 15:18:01,171 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-07-06 15:18:01,191 - stpipe.AssignWcsStep - INFO - SPORDER= 0, wrange=[6e-07, 5.3e-06]
+2022-07-06 15:18:01,354 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 1
+2022-07-06 15:18:01,355 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 2
+2022-07-06 15:18:01,356 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 3
+2022-07-06 15:18:01,356 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 4
+2022-07-06 15:18:01,357 - stpipe.AssignWcsStep - INFO - There are 4 open slits in quadrant 5
+2022-07-06 15:18:01,548 - stpipe.AssignWcsStep - INFO - Created a NIRSPEC nrs_fixedslit pipeline with references {&#39;distortion&#39;: None, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_camera_0004.asdf&#39;, &#39;collimator&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_collimator_0004.asdf&#39;, &#39;disperser&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_disperser_0034.asdf&#39;, &#39;fore&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fore_0028.asdf&#39;, &#39;fpa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fpa_0005.asdf&#39;, &#39;msa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_msa_0005.asdf&#39;, &#39;ote&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_ote_0005.asdf&#39;, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-07-06 15:18:01,913 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-07-06 15:18:01,928 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0914.pmap
+2022-07-06 15:18:01,929 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-07-06 15:18:01,939 - stpipe.Extract2dStep - INFO - Extract2dStep instance created.
+2022-07-06 15:18:02,065 - stpipe.Extract2dStep - INFO - Step Extract2dStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-07-06 15:18:02,067 - stpipe.Extract2dStep - INFO - Step Extract2dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_name&#39;: None, &#39;extract_orders&#39;: None, &#39;grism_objects&#39;: None, &#39;tsgrism_extract_height&#39;: None, &#39;wfss_extract_half_height&#39;: 5, &#39;wfss_mmag_extract&#39;: None, &#39;wfss_nbright&#39;: 1000}
+2022-07-06 15:18:02,083 - stpipe.Extract2dStep - INFO - EXP_TYPE is NRS_FIXEDSLIT
+2022-07-06 15:18:02,278 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A1
+2022-07-06 15:18:02,279 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1083 1518
+2022-07-06 15:18:02,279 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1057 1096
+2022-07-06 15:18:02,467 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-07-06 15:18:02,478 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
+2022-07-06 15:18:02,480 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
+2022-07-06 15:18:02,654 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A2
+2022-07-06 15:18:02,655 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 892 1328
+2022-07-06 15:18:02,656 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1021 1060
+2022-07-06 15:18:02,840 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-07-06 15:18:02,852 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
+2022-07-06 15:18:02,853 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
+2022-07-06 15:18:03,182 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S400A1
+2022-07-06 15:18:03,183 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1025 1460
+2022-07-06 15:18:03,184 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 980 1024
+2022-07-06 15:18:03,384 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-07-06 15:18:03,394 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
+2022-07-06 15:18:03,395 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
+2022-07-06 15:18:03,569 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S1600A1
+2022-07-06 15:18:03,570 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1056 1488
+2022-07-06 15:18:03,571 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 960 982
+2022-07-06 15:18:03,761 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-07-06 15:18:03,776 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
+2022-07-06 15:18:03,779 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
+2022-07-06 15:18:03,993 - stpipe.Extract2dStep - INFO - Results used CRDS context: jwst_0914.pmap
+2022-07-06 15:18:03,994 - stpipe.Extract2dStep - INFO - Step Extract2dStep done
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Running test for FS...
+Information from the &#39;truth&#39; (or comparison) file 
+Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923/fs_prism_nrs1_extract_2d_truth.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     277   ()      
+  1  SCI           1 ImageHDU        56   (435, 40)   float32   
+  2  DQ            1 ImageHDU        11   (435, 40)   int32 (rescales to uint32)   
+  3  ERR           1 ImageHDU        10   (435, 40)   float32   
+  4  WAVELENGTH    1 ImageHDU         9   (435, 40)   float32   
+  5  VAR_POISSON    1 ImageHDU         9   (435, 40)   float32   
+  6  VAR_RNOISE    1 ImageHDU         9   (435, 40)   float32   
+  7  SCI           2 ImageHDU        56   (436, 40)   float32   
+  8  DQ            2 ImageHDU        11   (436, 40)   int32 (rescales to uint32)   
+  9  ERR           2 ImageHDU        10   (436, 40)   float32   
+ 10  WAVELENGTH    2 ImageHDU         9   (436, 40)   float32   
+ 11  VAR_POISSON    2 ImageHDU         9   (436, 40)   float32   
+ 12  VAR_RNOISE    2 ImageHDU         9   (436, 40)   float32   
+ 13  SCI           3 ImageHDU        56   (435, 45)   float32   
+ 14  DQ            3 ImageHDU        11   (435, 45)   int32 (rescales to uint32)   
+ 15  ERR           3 ImageHDU        10   (435, 45)   float32   
+ 16  WAVELENGTH    3 ImageHDU         9   (435, 45)   float32   
+ 17  VAR_POISSON    3 ImageHDU         9   (435, 45)   float32   
+ 18  VAR_RNOISE    3 ImageHDU         9   (435, 45)   float32   
+ 19  SCI           4 ImageHDU        56   (432, 23)   float32   
+ 20  DQ            4 ImageHDU        11   (432, 23)   int32 (rescales to uint32)   
+ 21  ERR           4 ImageHDU        10   (432, 23)   float32   
+ 22  WAVELENGTH    4 ImageHDU         9   (432, 23)   float32   
+ 23  VAR_POISSON    4 ImageHDU         9   (432, 23)   float32   
+ 24  VAR_RNOISE    4 ImageHDU         9   (432, 23)   float32   
+ 25  ASDF          1 BinTableHDU     11   1R x 1C   [283821B]   
+None
+from assign_wcs file  --&gt;     Detector: NRS1   Grating: PRISM   Filter: CLEAR   Lamp: LINE4
+
+Working with slit: S200A1
+    Truth slit size =  [435, 40]
+ Pipeline slit size =  435 39
+Corners for slit S200A1:  [x0, y0, x1, y1]
+   Truth corners: [1084, 1057, 1519, 1097]
+    Pipeline corners: [1084, 1058, 1519, 1097]
+* Test PASSED: All corners match within the threshold.
+
+Working with slit: S200A2
+    Truth slit size =  [436, 40]
+ Pipeline slit size =  436 39
+Corners for slit S200A2:  [x0, y0, x1, y1]
+   Truth corners: [893, 1021, 1329, 1061]
+    Pipeline corners: [893, 1022, 1329, 1061]
+* Test PASSED: All corners match within the threshold.
+
+Working with slit: S400A1
+    Truth slit size =  [435, 45]
+ Pipeline slit size =  435 44
+Corners for slit S400A1:  [x0, y0, x1, y1]
+   Truth corners: [1026, 980, 1461, 1025]
+    Pipeline corners: [1026, 981, 1461, 1025]
+* Test PASSED: All corners match within the threshold.
+
+Working with slit: S1600A1
+    Truth slit size =  [432, 23]
+ Pipeline slit size =  432 22
+Corners for slit S1600A1:  [x0, y0, x1, y1]
+   Truth corners: [1057, 960, 1489, 983]
+    Pipeline corners: [1057, 961, 1489, 983]
+* Test PASSED: All corners match within the threshold.
+
+Summary of test results: 
+ OrderedDict([(&#39;S200A1&#39;, True), (&#39;S200A2&#39;, True), (&#39;S400A1&#39;, True), (&#39;S1600A1&#39;, True)])
+
+ *** Final result for extract_2d test will be reported as PASSED *** 
+
+All slits PASSED extract_2d test.
+Did assign_wcs validation test passed?  True 
+
+
+Closing file:  popenfile(path=&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923/fs_prism_nrs1_extract_2d_truth.fits&#39;, fd=56, position=1981440, mode=&#39;r&#39;, flags=557056)
+Testing files for detector:  nrs2
+Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmppzwjp923/fs_prism_nrs2_uncal.fits
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/validate.py:38: ValidationWarning: While validating meta.instrument.fixed_slit the following error occurred:
+&#39;FULL&#39; is not one of [&#39;S200A1&#39;, &#39;S200A2&#39;, &#39;S200B1&#39;, &#39;S400A1&#39;, &#39;S1600A1&#39;, &#39;NONE&#39;]
+
+Failed validating &#39;enum&#39; in schema:
+    OrderedDict([(&#39;title&#39;, &#39;Name of fixed slit aperture used&#39;),
+                 (&#39;type&#39;, &#39;string&#39;),
+                 (&#39;enum&#39;,
+                  [&#39;S200A1&#39;,
+                   &#39;S200A2&#39;,
+                   &#39;S200B1&#39;,
+                   &#39;S400A1&#39;,
+                   &#39;S1600A1&#39;,
+                   &#39;NONE&#39;]),
+                 (&#39;fits_keyword&#39;, &#39;FXD_SLIT&#39;),
+                 (&#39;blend_table&#39;, True)])
+
+On instance:
+    &#39;FULL&#39;
+  warnings.warn(errmsg, ValidationWarning)
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OSError</span>                                   Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 16&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     29</span>     skip_file <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>
+<span class="ansi-green-intense-fg ansi-bold">     31</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> skip_file:       
+<span class="ansi-green-intense-fg ansi-bold">     32</span>     <span style="color: rgb(95,135,135)"># Run the stage 1 pipeline </span>
+<span class="ansi-green-fg">---&gt; 33</span>     rate_object <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">Detector1Pipeline</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">call</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">uncal_file</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span>     <span style="color: rgb(95,135,135)"># Make sure the MSA shutter configuration file is set up correctly</span>
+<span class="ansi-green-intense-fg ansi-bold">     35</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> msa_shutter_config <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stpipe/step.py:591</span>, in <span class="ansi-cyan-fg">Step.call</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    589</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(args) <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>:
+<span class="ansi-green-intense-fg ansi-bold">    590</span>     filename <span style="color: rgb(98,98,98)">=</span> args[<span style="color: rgb(98,98,98)">0</span>]
+<span class="ansi-green-fg">--&gt; 591</span> config, config_file <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">build_config</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filename</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    593</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">class</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> config:
+<span class="ansi-green-intense-fg ansi-bold">    594</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> config[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">class</span><span style="color: rgb(175,0,0)">&#39;</span>]
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stpipe/step.py:1310</span>, in <span class="ansi-cyan-fg">Step.build_config</span><span class="ansi-blue-fg">(cls, input, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1308</span> log_cls <span style="color: rgb(98,98,98)">=</span> log<span style="color: rgb(98,98,98)">.</span>getLogger(logger_name)
+<span class="ansi-green-intense-fg ansi-bold">   1309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">input</span>:
+<span class="ansi-green-fg">-&gt; 1310</span>     config <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_config_from_reference</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1311</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">   1312</span>     log_cls<span style="color: rgb(98,98,98)">.</span>info(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">No filename given, cannot retrieve config from CRDS</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stpipe/pipeline.py:168</span>, in <span class="ansi-cyan-fg">Pipeline.get_config_from_reference</span><span class="ansi-blue-fg">(cls, dataset, disable)</span>
+<span class="ansi-green-intense-fg ansi-bold">    165</span> logger<span style="color: rgb(98,98,98)">.</span>debug(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Retrieving all substep parameters from CRDS</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">    166</span> <span style="color: rgb(95,135,135)">#</span>
+<span class="ansi-green-intense-fg ansi-bold">    167</span> <span style="color: rgb(95,135,135)"># Iterate over the steps in the pipeline</span>
+<span class="ansi-green-fg">--&gt; 168</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_datamodels_open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">dataset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">asn_n_members</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> model:
+<span class="ansi-green-intense-fg ansi-bold">    169</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(model, Sequence):
+<span class="ansi-green-intense-fg ansi-bold">    170</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> contained_model <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> model:
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/stpipe/core.py:28</span>, in <span class="ansi-cyan-fg">JwstStep._datamodels_open</span><span class="ansi-blue-fg">(cls, init, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     26</span> <span style="color: rgb(175,0,255)">@classmethod</span>
+<span class="ansi-green-intense-fg ansi-bold">     27</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_datamodels_open</span>(<span style="color: rgb(0,135,0)">cls</span>, init, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs):
+<span class="ansi-green-fg">---&gt; 28</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">datamodels</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/datamodels/util.py:217</span>, in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(init, guess, memmap, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    214</span>     log<span style="color: rgb(98,98,98)">.</span>debug(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Opening as </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>new_class<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">    216</span> <span style="color: rgb(95,135,135)"># Actually open the model</span>
+<span class="ansi-green-fg">--&gt; 217</span> model <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">new_class</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    219</span> <span style="color: rgb(95,135,135)"># Close the hdulist if we opened it</span>
+<span class="ansi-green-intense-fg ansi-bold">    220</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> file_to_close <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span style="color: rgb(95,135,135)"># TODO: We need a better solution than messing with DataModel</span>
+<span class="ansi-green-intense-fg ansi-bold">    222</span>     <span style="color: rgb(95,135,135)"># internals.</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/model_base.py:226</span>, in <span class="ansi-cyan-fg">DataModel.__init__</span><span class="ansi-blue-fg">(self, init, schema, memmap, pass_invalid_values, strict_validation, validate_on_assignment, cast_fits_arrays, validate_arrays, ignore_missing_extensions, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    223</span>     asdffile <span style="color: rgb(98,98,98)">=</span> init
+<span class="ansi-green-intense-fg ansi-bold">    225</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, fits<span style="color: rgb(98,98,98)">.</span>HDUList):
+<span class="ansi-green-fg">--&gt; 226</span>     asdffile <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">fits_support</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">from_fits</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_ctx</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    227</span> <span class="ansi-yellow-bg">                                      </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    229</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, (<span style="color: rgb(0,135,0)">str</span>, <span style="color: rgb(0,135,0)">bytes</span>, PurePath)):
+<span class="ansi-green-intense-fg ansi-bold">    230</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, PurePath):
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/fits_support.py:628</span>, in <span class="ansi-cyan-fg">from_fits</span><span class="ansi-blue-fg">(hdulist, schema, context, skip_fits_update, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    623</span> <span style="color: rgb(95,135,135)"># Determine whether skipping the FITS loading can be done.</span>
+<span class="ansi-green-intense-fg ansi-bold">    624</span> skip_fits_update <span style="color: rgb(98,98,98)">=</span> _verify_skip_fits_update(
+<span class="ansi-green-intense-fg ansi-bold">    625</span>     skip_fits_update, hdulist, ff, context
+<span class="ansi-green-intense-fg ansi-bold">    626</span> )
+<span class="ansi-green-fg">--&gt; 628</span> known_keywords, known_datas <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_load_from_schema</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    629</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">hdulist</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ff</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tree</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skip_fits_update</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">skip_fits_update</span>
+<span class="ansi-green-intense-fg ansi-bold">    630</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    631</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> skip_fits_update:
+<span class="ansi-green-intense-fg ansi-bold">    632</span>     _load_extra_fits(hdulist, known_keywords, known_datas, ff<span style="color: rgb(98,98,98)">.</span>tree)
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/fits_support.py:548</span>, in <span class="ansi-cyan-fg">_load_from_schema</span><span class="ansi-blue-fg">(hdulist, schema, tree, context, skip_fits_update)</span>
+<span class="ansi-green-intense-fg ansi-bold">    542</span>                 recurse(schema[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">items</span><span style="color: rgb(175,0,0)">&#39;</span>],
+<span class="ansi-green-intense-fg ansi-bold">    543</span>                         path <span style="color: rgb(98,98,98)">+</span> [i],
+<span class="ansi-green-intense-fg ansi-bold">    544</span>                         combiner,
+<span class="ansi-green-intense-fg ansi-bold">    545</span>                         {<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">hdu_index</span><span style="color: rgb(175,0,0)">&#39;</span>: i})
+<span class="ansi-green-intense-fg ansi-bold">    546</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
+<span class="ansi-green-fg">--&gt; 548</span> <span class="ansi-yellow-bg">mschema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">walk_schema</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">callback</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    549</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> known_keywords, known_datas
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/schema.py:149</span>, in <span class="ansi-cyan-fg">walk_schema</span><span class="ansi-blue-fg">(schema, callback, ctx)</span>
+<span class="ansi-green-intense-fg ansi-bold">    147</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> ctx <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    148</span>     ctx <span style="color: rgb(98,98,98)">=</span> {}
+<span class="ansi-green-fg">--&gt; 149</span> <span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/schema.py:137</span>, in <span class="ansi-cyan-fg">walk_schema.&lt;locals&gt;.recurse</span><span class="ansi-blue-fg">(schema, path, combiner, ctx)</span>
+<span class="ansi-green-intense-fg ansi-bold">    135</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">type</span><span style="color: rgb(175,0,0)">&#39;</span>) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">object</span><span style="color: rgb(175,0,0)">&#39;</span>:
+<span class="ansi-green-intense-fg ansi-bold">    136</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> key, val <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">properties</span><span style="color: rgb(175,0,0)">&#39;</span>, {})<span style="color: rgb(98,98,98)">.</span>items():
+<span class="ansi-green-fg">--&gt; 137</span>         <span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">val</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">path</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">key</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">combiner</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    139</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">type</span><span style="color: rgb(175,0,0)">&#39;</span>) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">array</span><span style="color: rgb(175,0,0)">&#39;</span>:
+<span class="ansi-green-intense-fg ansi-bold">    140</span>     items <span style="color: rgb(98,98,98)">=</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">items</span><span style="color: rgb(175,0,0)">&#39;</span>, {})
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/schema.py:124</span>, in <span class="ansi-cyan-fg">walk_schema.&lt;locals&gt;.recurse</span><span class="ansi-blue-fg">(schema, path, combiner, ctx)</span>
+<span class="ansi-green-intense-fg ansi-bold">    123</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">recurse</span>(schema, path, combiner, ctx):
+<span class="ansi-green-fg">--&gt; 124</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-yellow-bg">callback</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">path</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">combiner</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">)</span>:
+<span class="ansi-green-intense-fg ansi-bold">    125</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span>
+<span class="ansi-green-intense-fg ansi-bold">    127</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> c <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> [<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">allOf</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">not</span><span style="color: rgb(175,0,0)">&#39;</span>]:
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/fits_support.py:526</span>, in <span class="ansi-cyan-fg">_load_from_schema.&lt;locals&gt;.callback</span><span class="ansi-blue-fg">(schema, path, combiner, ctx, recurse)</span>
+<span class="ansi-green-intense-fg ansi-bold">    522</span>             properties<span style="color: rgb(98,98,98)">.</span>put_value(path, result, tree)
+<span class="ansi-green-intense-fg ansi-bold">    524</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">fits_hdu</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> (
+<span class="ansi-green-intense-fg ansi-bold">    525</span>         <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">max_ndim</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">ndim</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">datatype</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema):
+<span class="ansi-green-fg">--&gt; 526</span>     result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_fits_array_loader</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    527</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">hdulist</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">hdu_index</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">known_datas</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    529</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> result <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> context<span style="color: rgb(98,98,98)">.</span>_validate_on_assignment:
+<span class="ansi-green-intense-fg ansi-bold">    530</span>         validate<span style="color: rgb(98,98,98)">.</span>value_change(path, result, schema, context)
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/fits_support.py:478</span>, in <span class="ansi-cyan-fg">_fits_array_loader</span><span class="ansi-blue-fg">(hdulist, schema, hdu_index, known_datas, context)</span>
+<span class="ansi-green-intense-fg ansi-bold">    475</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    477</span> known_datas<span style="color: rgb(98,98,98)">.</span>add(hdu)
+<span class="ansi-green-fg">--&gt; 478</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">from_fits_hdu</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">hdu</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_cast_fits_arrays</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stdatamodels/fits_support.py:657</span>, in <span class="ansi-cyan-fg">from_fits_hdu</span><span class="ansi-blue-fg">(hdu, schema, cast_arrays)</span>
+<span class="ansi-green-intense-fg ansi-bold">    653</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">from_fits_hdu</span>(hdu, schema, cast_arrays<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">True</span>):
+<span class="ansi-green-intense-fg ansi-bold">    654</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    655</span> <span style="color: rgb(175,0,0)">    Read the data from a fits hdu into a numpy ndarray</span>
+<span class="ansi-green-intense-fg ansi-bold">    656</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
+<span class="ansi-green-fg">--&gt; 657</span>     data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">hdu</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">data</span>
+<span class="ansi-green-intense-fg ansi-bold">    659</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> cast_arrays:
+<span class="ansi-green-intense-fg ansi-bold">    660</span>         <span style="color: rgb(95,135,135)"># Save the column listeners for possible restoration</span>
+<span class="ansi-green-intense-fg ansi-bold">    661</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">hasattr</span>(data, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">_coldefs</span><span style="color: rgb(175,0,0)">&#39;</span>):
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/astropy/utils/decorators.py:777</span>, in <span class="ansi-cyan-fg">lazyproperty.__get__</span><span class="ansi-blue-fg">(self, obj, owner)</span>
+<span class="ansi-green-intense-fg ansi-bold">    775</span>         val <span style="color: rgb(98,98,98)">=</span> obj_dict<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_key, _NotFound)
+<span class="ansi-green-intense-fg ansi-bold">    776</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> val <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> _NotFound:
+<span class="ansi-green-fg">--&gt; 777</span>             val <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">fget</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">obj</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    778</span>             obj_dict[<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_key] <span style="color: rgb(98,98,98)">=</span> val
+<span class="ansi-green-intense-fg ansi-bold">    779</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> val
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/astropy/io/fits/hdu/image.py:235</span>, in <span class="ansi-cyan-fg">_ImageBaseHDU.data</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    232</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_axes) <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">1</span>:
+<span class="ansi-green-intense-fg ansi-bold">    233</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span>
+<span class="ansi-green-fg">--&gt; 235</span> data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_scaled_image_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_data_offset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    236</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_update_header_scale_info(data<span style="color: rgb(98,98,98)">.</span>dtype)
+<span class="ansi-green-intense-fg ansi-bold">    238</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> data
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/astropy/io/fits/hdu/image.py:779</span>, in <span class="ansi-cyan-fg">_ImageBaseHDU._get_scaled_image_data</span><span class="ansi-blue-fg">(self, offset, shape)</span>
+<span class="ansi-green-intense-fg ansi-bold">    771</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    772</span> <span style="color: rgb(175,0,0)">Internal function for reading image data from a file and apply scale</span>
+<span class="ansi-green-intense-fg ansi-bold">    773</span> <span style="color: rgb(175,0,0)">factors to it.  Normally this is used for the entire image, but it</span>
+<span class="ansi-green-intense-fg ansi-bold">    774</span> <span style="color: rgb(175,0,0)">supports alternate offset/shape for Section support.</span>
+<span class="ansi-green-intense-fg ansi-bold">    775</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    777</span> code <span style="color: rgb(98,98,98)">=</span> BITPIX2DTYPE[<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bitpix]
+<span class="ansi-green-fg">--&gt; 779</span> raw_data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_raw_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    780</span> raw_data<span style="color: rgb(98,98,98)">.</span>dtype <span style="color: rgb(98,98,98)">=</span> raw_data<span style="color: rgb(98,98,98)">.</span>dtype<span style="color: rgb(98,98,98)">.</span>newbyteorder(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt;</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">    782</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_do_not_scale_image_data <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> (
+<span class="ansi-green-intense-fg ansi-bold">    783</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bzero <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">0</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bscale <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span>
+<span class="ansi-green-intense-fg ansi-bold">    784</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_blank <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
+<span class="ansi-green-intense-fg ansi-bold">    785</span>     <span style="color: rgb(95,135,135)"># No further conversion of the data is necessary</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/astropy/io/fits/hdu/base.py:522</span>, in <span class="ansi-cyan-fg">_BaseHDU._get_raw_data</span><span class="ansi-blue-fg">(self, shape, code, offset)</span>
+<span class="ansi-green-intense-fg ansi-bold">    519</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> np<span style="color: rgb(98,98,98)">.</span>ndarray(shape, dtype<span style="color: rgb(98,98,98)">=</span>code, buffer<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_buffer,
+<span class="ansi-green-intense-fg ansi-bold">    520</span>                       offset<span style="color: rgb(98,98,98)">=</span>offset)
+<span class="ansi-green-intense-fg ansi-bold">    521</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_file:
+<span class="ansi-green-fg">--&gt; 522</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_file</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">readarray</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">dtype</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    523</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">    524</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/astropy/io/fits/file.py:280</span>, in <span class="ansi-cyan-fg">_File.readarray</span><span class="ansi-blue-fg">(self, size, offset, dtype, shape)</span>
+<span class="ansi-green-intense-fg ansi-bold">    276</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> actualsize <span style="color: rgb(98,98,98)">&lt;</span> size:
+<span class="ansi-green-intense-fg ansi-bold">    277</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">size </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> is too many bytes for a </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> array of </span><span style="color: rgb(175,0,0)">&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">    278</span>                          <span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(98,98,98)">.</span>format(size, shape, dtype))
+<span class="ansi-green-fg">--&gt; 280</span> filepos <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_file</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tell</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    282</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-intense-fg ansi-bold">    283</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>memmap:
+
+<span class="ansi-red-fg">OSError</span>: [Errno 9] Bad file descriptor</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">

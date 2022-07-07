@@ -14685,7 +14685,7 @@ TSO: Time Series Observation</code></pre>
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14707,6 +14707,30 @@ TSO: Time Series Observation</code></pre>
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>**WARNING**: LOCAL JWST PRD VERSION PRDOPSSOC-051 DOESN&#39;T MATCH THE CURRENT ONLINE VERSION PRDOPSSOC-055
+Please consider updating pysiaf, e.g. pip install --upgrade pysiaf or conda update pysiaf
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14827,7 +14851,7 @@ TSO: Time Series Observation</code></pre>
 <span class="c1"># This section to download data from remote box directory and run local</span>
 <span class="n">mainurl</span> <span class="o">=</span><span class="s2">&quot;https://data.science.stsci.edu/redirect/JWST/TSO/pipeline_testing_miri_ima_tso/&quot;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;pipetest_miri_imtso_FULL_10g10i_F770W.fits&#39;</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">mainurl</span><span class="o">+</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">mainurl</span><span class="o">+</span><span class="n">filename</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 
 <span class="c1"># open file into correct format and write to local disk for processing</span>
 <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
@@ -14873,7 +14897,7 @@ TSO: Time Series Observation</code></pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/astropy-download-3046113-ithxlr5j
+<pre>Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/astropy-download-544733-_qgq7pof
 No.    Name      Ver    Type      Cards   Dimensions   Format
   0  PRIMARY       1 PrimaryHDU     108   ()      
   1  SCI           1 ImageHDU        47   (1032, 1024, 10, 10)   float32   
@@ -15023,23 +15047,23 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-06-20 14:55:37,600 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
-2022-06-20 14:55:37,602 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
-2022-06-20 14:55:37,604 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
-2022-06-20 14:55:37,606 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
-2022-06-20 14:55:37,607 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
-2022-06-20 14:55:37,610 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
-2022-06-20 14:55:37,612 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
-2022-06-20 14:55:37,614 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
-2022-06-20 14:55:37,618 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
-2022-06-20 14:55:37,620 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
-2022-06-20 14:55:37,622 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
-2022-06-20 14:55:37,624 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
-2022-06-20 14:55:37,626 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
-2022-06-20 14:55:37,628 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
-2022-06-20 14:55:37,630 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
-2022-06-20 14:55:37,631 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
-2022-06-20 14:55:37,633 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+<pre>2022-07-06 09:38:16,213 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2022-07-06 09:38:16,215 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2022-07-06 09:38:16,216 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2022-07-06 09:38:16,218 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2022-07-06 09:38:16,219 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2022-07-06 09:38:16,220 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2022-07-06 09:38:16,222 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2022-07-06 09:38:16,223 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2022-07-06 09:38:16,224 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2022-07-06 09:38:16,226 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2022-07-06 09:38:16,227 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2022-07-06 09:38:16,229 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2022-07-06 09:38:16,230 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2022-07-06 09:38:16,231 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2022-07-06 09:38:16,232 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2022-07-06 09:38:16,234 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2022-07-06 09:38:16,235 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
 </pre>
 </div>
 </div>
@@ -15066,152 +15090,152 @@ pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-06-20 14:55:37,946 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
-2022-06-20 14:55:37,957 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 8.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
-2022-06-20 14:55:37,970 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;pipetest_miri_imtso_FULL_10g10i_F770W.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
-2022-06-20 14:55:38,281 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_dark_0058.fits&#39;.
-2022-06-20 14:55:38,283 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits&#39;.
-2022-06-20 14:55:38,285 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits&#39;.
-2022-06-20 14:55:38,287 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits&#39;.
-2022-06-20 14:55:38,289 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
-2022-06-20 14:55:38,289 - stpipe.Detector1Pipeline - INFO - Override for READNOISE reference file is &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/jwst_mirisim_readnoise.fits&#39;.
-2022-06-20 14:55:38,291 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_reset_0047.fits&#39;.
-2022-06-20 14:55:38,293 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits&#39;.
-2022-06-20 14:55:38,295 - stpipe.Detector1Pipeline - INFO - Override for SATURATION reference file is &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/miri_sat_55k.fits&#39;.
-2022-06-20 14:55:38,296 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;N/A&#39;.
-2022-06-20 14:55:38,296 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
-2022-06-20 14:55:38,298 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
-2022-06-20 14:55:38,299 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
-2022-06-20 14:55:38,468 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
-2022-06-20 14:55:38,469 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:38,981 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES=1 is a power of 2; correction not needed
-2022-06-20 14:55:38,982 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
-2022-06-20 14:55:38,985 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
-2022-06-20 14:55:39,133 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
-2022-06-20 14:55:39,135 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:39,159 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2022-06-20 14:55:39,773 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
-2022-06-20 14:55:39,930 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
-2022-06-20 14:55:39,931 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}
-2022-06-20 14:55:39,942 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/miri_sat_55k.fits
-2022-06-20 14:55:44,256 - stpipe.Detector1Pipeline.saturation - INFO - Detected 300 saturated pixels
-2022-06-20 14:55:44,325 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
-2022-06-20 14:55:44,955 - stpipe.Detector1Pipeline.saturation - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits
-2022-06-20 14:55:44,956 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
-2022-06-20 14:55:45,108 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:45,110 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:45,111 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
-2022-06-20 14:55:45,113 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
-2022-06-20 14:55:45,255 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:45,257 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:45,258 - stpipe.Detector1Pipeline.firstframe - INFO - Step skipped.
-2022-06-20 14:55:45,260 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe done
-2022-06-20 14:55:45,392 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:45,394 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:45,394 - stpipe.Detector1Pipeline.lastframe - INFO - Step skipped.
-2022-06-20 14:55:45,397 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe done
-2022-06-20 14:55:45,533 - stpipe.Detector1Pipeline.reset - INFO - Step reset running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:45,535 - stpipe.Detector1Pipeline.reset - INFO - Step reset parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:45,561 - stpipe.Detector1Pipeline.reset - INFO - Using RESET reference file /grp/crds/cache/references/jwst/jwst_miri_reset_0047.fits
-2022-06-20 14:55:47,076 - stpipe.Detector1Pipeline.reset - INFO - Step reset done
-2022-06-20 14:55:47,230 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:47,232 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:55:47,258 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits
-2022-06-20 14:55:48,925 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
-2022-06-20 14:55:49,083 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:49,085 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-06-20 14:55:49,109 - stpipe.Detector1Pipeline.rscd - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
-2022-06-20 14:55:49,604 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd done
-2022-06-20 14:55:49,765 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:55:49,767 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}
-2022-06-20 14:55:49,791 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_miri_dark_0058.fits
-2022-06-20 14:55:58,445 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=10, ngroups=10, nframes=1, groupgap=0
-2022-06-20 14:55:58,447 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=2, ngroups=200, nframes=1, groupgap=0
-2022-06-20 14:56:00,269 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
-2022-06-20 14:56:00,444 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:56:00,446 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
-2022-06-20 14:56:00,447 - stpipe.Detector1Pipeline.refpix - INFO - Step skipped.
-2022-06-20 14:56:00,450 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
-2022-06-20 14:56:00,604 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
-2022-06-20 14:56:00,607 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 8.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}
-2022-06-20 14:56:00,619 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 8 sigma
-2022-06-20 14:56:00,634 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
-2022-06-20 14:56:00,661 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/jwst_mirisim_readnoise.fits
-2022-06-20 14:56:01,616 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
-2022-06-20 14:56:01,847 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
-2022-06-20 14:56:02,696 - stpipe.Detector1Pipeline.jump - WARNING - /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stcal/jump/twopoint_difference.py:128: RuntimeWarning: All-NaN slice encountered
+<pre>2022-07-06 09:38:16,491 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
+2022-07-06 09:38:16,501 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 8.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
+2022-07-06 09:38:16,513 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;pipetest_miri_imtso_FULL_10g10i_F770W.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
+2022-07-06 09:38:16,809 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_dark_0058.fits&#39;.
+2022-07-06 09:38:16,812 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits&#39;.
+2022-07-06 09:38:16,814 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits&#39;.
+2022-07-06 09:38:16,816 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits&#39;.
+2022-07-06 09:38:16,818 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
+2022-07-06 09:38:16,819 - stpipe.Detector1Pipeline - INFO - Override for READNOISE reference file is &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/jwst_mirisim_readnoise.fits&#39;.
+2022-07-06 09:38:16,820 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_reset_0047.fits&#39;.
+2022-07-06 09:38:16,822 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;/grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits&#39;.
+2022-07-06 09:38:16,824 - stpipe.Detector1Pipeline - INFO - Override for SATURATION reference file is &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/miri_sat_55k.fits&#39;.
+2022-07-06 09:38:16,825 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;N/A&#39;.
+2022-07-06 09:38:16,825 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
+2022-07-06 09:38:16,826 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
+2022-07-06 09:38:16,827 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+2022-07-06 09:38:16,966 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
+2022-07-06 09:38:16,968 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:17,445 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES=1 is a power of 2; correction not needed
+2022-07-06 09:38:17,446 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
+2022-07-06 09:38:17,449 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
+2022-07-06 09:38:17,574 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
+2022-07-06 09:38:17,576 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:17,598 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
+2022-07-06 09:38:18,204 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
+2022-07-06 09:38:18,331 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W.fits&gt;,).
+2022-07-06 09:38:18,332 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}
+2022-07-06 09:38:18,343 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/miri_sat_55k.fits
+2022-07-06 09:38:22,698 - stpipe.Detector1Pipeline.saturation - INFO - Detected 300 saturated pixels
+2022-07-06 09:38:22,767 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
+2022-07-06 09:38:23,264 - stpipe.Detector1Pipeline.saturation - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits
+2022-07-06 09:38:23,265 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
+2022-07-06 09:38:23,409 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:23,410 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:23,411 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
+2022-07-06 09:38:23,414 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
+2022-07-06 09:38:23,531 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:23,533 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:23,534 - stpipe.Detector1Pipeline.firstframe - INFO - Step skipped.
+2022-07-06 09:38:23,536 - stpipe.Detector1Pipeline.firstframe - INFO - Step firstframe done
+2022-07-06 09:38:23,653 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:23,655 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:23,656 - stpipe.Detector1Pipeline.lastframe - INFO - Step skipped.
+2022-07-06 09:38:23,658 - stpipe.Detector1Pipeline.lastframe - INFO - Step lastframe done
+2022-07-06 09:38:23,775 - stpipe.Detector1Pipeline.reset - INFO - Step reset running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:23,778 - stpipe.Detector1Pipeline.reset - INFO - Step reset parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:23,803 - stpipe.Detector1Pipeline.reset - INFO - Using RESET reference file /grp/crds/cache/references/jwst/jwst_miri_reset_0047.fits
+2022-07-06 09:38:25,265 - stpipe.Detector1Pipeline.reset - INFO - Step reset done
+2022-07-06 09:38:25,390 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:25,392 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:38:25,417 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_miri_linearity_0024.fits
+2022-07-06 09:38:26,994 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
+2022-07-06 09:38:27,118 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:27,119 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-07-06 09:38:27,142 - stpipe.Detector1Pipeline.rscd - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
+2022-07-06 09:38:27,665 - stpipe.Detector1Pipeline.rscd - INFO - Step rscd done
+2022-07-06 09:38:27,794 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:27,796 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}
+2022-07-06 09:38:27,820 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_miri_dark_0058.fits
+2022-07-06 09:38:41,739 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=10, ngroups=10, nframes=1, groupgap=0
+2022-07-06 09:38:41,741 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=2, ngroups=200, nframes=1, groupgap=0
+2022-07-06 09:38:43,412 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
+2022-07-06 09:38:43,561 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:43,562 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
+2022-07-06 09:38:43,563 - stpipe.Detector1Pipeline.refpix - INFO - Step skipped.
+2022-07-06 09:38:43,565 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
+2022-07-06 09:38:43,695 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_saturation.fits&gt;,).
+2022-07-06 09:38:43,697 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 8.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0}
+2022-07-06 09:38:43,709 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 8 sigma
+2022-07-06 09:38:43,724 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
+2022-07-06 09:38:43,750 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/jwst_mirisim_readnoise.fits
+2022-07-06 09:38:44,612 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
+2022-07-06 09:38:44,839 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
+2022-07-06 09:38:45,705 - stpipe.Detector1Pipeline.jump - WARNING - /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/stcal/jump/twopoint_difference.py:128: RuntimeWarning: All-NaN slice encountered
   max_ratio = np.nanmax(ratio, axis=0)
 
-2022-06-20 14:56:02,731 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 10534 pixels with at least one CR from five groups.
-2022-06-20 14:56:02,732 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:02,733 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:04,964 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 2:
-2022-06-20 14:56:05,936 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3590 pixels with at least one CR from five groups.
-2022-06-20 14:56:05,938 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:05,939 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:06,660 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 3:
-2022-06-20 14:56:07,615 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3692 pixels with at least one CR from five groups.
-2022-06-20 14:56:07,616 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:07,617 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:08,369 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 4:
-2022-06-20 14:56:09,330 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3696 pixels with at least one CR from five groups.
-2022-06-20 14:56:09,332 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:09,333 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:10,105 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 5:
-2022-06-20 14:56:11,059 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3693 pixels with at least one CR from five groups.
-2022-06-20 14:56:11,061 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:11,062 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:11,814 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 6:
-2022-06-20 14:56:12,765 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3552 pixels with at least one CR from five groups.
-2022-06-20 14:56:12,767 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:12,768 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:13,493 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 7:
-2022-06-20 14:56:14,447 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3641 pixels with at least one CR from five groups.
-2022-06-20 14:56:14,448 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:14,449 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:15,200 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 8:
-2022-06-20 14:56:16,158 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3687 pixels with at least one CR from five groups.
-2022-06-20 14:56:16,160 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:16,161 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:16,912 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 9:
-2022-06-20 14:56:17,865 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3579 pixels with at least one CR from five groups.
-2022-06-20 14:56:17,867 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:17,868 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:18,599 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 10:
-2022-06-20 14:56:19,554 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3532 pixels with at least one CR from five groups.
-2022-06-20 14:56:19,556 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
-2022-06-20 14:56:19,557 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
-2022-06-20 14:56:20,278 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 18.6606 sec
-2022-06-20 14:56:20,287 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 19.668627
-2022-06-20 14:56:20,827 - stpipe.Detector1Pipeline.jump - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_jump.fits
-2022-06-20 14:56:20,829 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
-2022-06-20 14:56:20,981 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_jump.fits&gt;,).
-2022-06-20 14:56:20,984 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
-2022-06-20 14:56:21,010 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpt5dvc5qd/jwst_mirisim_readnoise.fits
-2022-06-20 14:56:21,011 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
-2022-06-20 14:56:21,063 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
-2022-06-20 14:56:21,064 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
-2022-06-20 14:56:21,677 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of leading groups that are flagged as DO_NOT_USE: 0
-2022-06-20 14:57:56,602 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 10
-2022-06-20 14:57:56,605 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 10
-2022-06-20 14:57:56,783 - stpipe.Detector1Pipeline.ramp_fit - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_0_ramp_fit.fits
-2022-06-20 14:57:57,025 - stpipe.Detector1Pipeline.ramp_fit - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_1_ramp_fit.fits
-2022-06-20 14:57:57,027 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
-2022-06-20 14:57:57,187 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_0_ramp_fit.fits&gt;,).
-2022-06-20 14:57:57,190 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:57:57,236 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2022-06-20 14:57:57,238 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2022-06-20 14:57:57,243 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2022-06-20 14:57:57,379 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_1_ramp_fit.fits&gt;,).
-2022-06-20 14:57:57,381 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-06-20 14:57:57,426 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2022-06-20 14:57:57,427 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2022-06-20 14:57:57,432 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2022-06-20 14:57:57,671 - stpipe.Detector1Pipeline - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_rateints.fits
-2022-06-20 14:57:57,672 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
-2022-06-20 14:57:57,673 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_0874.pmap
-2022-06-20 14:57:57,739 - stpipe.Detector1Pipeline - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_rate.fits
-2022-06-20 14:57:57,740 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
+2022-07-06 09:38:45,745 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 10534 pixels with at least one CR from five groups.
+2022-07-06 09:38:45,747 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:45,748 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:47,619 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 2:
+2022-07-06 09:38:48,596 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3590 pixels with at least one CR from five groups.
+2022-07-06 09:38:48,597 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:48,598 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:49,276 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 3:
+2022-07-06 09:38:50,236 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3692 pixels with at least one CR from five groups.
+2022-07-06 09:38:50,238 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:50,239 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:50,936 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 4:
+2022-07-06 09:38:51,909 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3696 pixels with at least one CR from five groups.
+2022-07-06 09:38:51,911 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:51,911 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:52,613 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 5:
+2022-07-06 09:38:53,571 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3693 pixels with at least one CR from five groups.
+2022-07-06 09:38:53,573 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:53,574 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:54,281 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 6:
+2022-07-06 09:38:55,259 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3552 pixels with at least one CR from five groups.
+2022-07-06 09:38:55,261 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:55,262 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:55,948 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 7:
+2022-07-06 09:38:56,920 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3641 pixels with at least one CR from five groups.
+2022-07-06 09:38:56,922 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:56,923 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:57,626 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 8:
+2022-07-06 09:38:58,597 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3687 pixels with at least one CR from five groups.
+2022-07-06 09:38:58,598 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:38:58,600 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:38:59,322 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 9:
+2022-07-06 09:39:00,351 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3579 pixels with at least one CR from five groups.
+2022-07-06 09:39:00,353 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:39:00,354 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:39:01,053 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 10:
+2022-07-06 09:39:02,070 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 3532 pixels with at least one CR from five groups.
+2022-07-06 09:39:02,071 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from four groups.
+2022-07-06 09:39:02,072 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from three groups.
+2022-07-06 09:39:03,071 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 18.4568 sec
+2022-07-06 09:39:03,074 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 19.365849
+2022-07-06 09:39:03,611 - stpipe.Detector1Pipeline.jump - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_jump.fits
+2022-07-06 09:39:03,612 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
+2022-07-06 09:39:03,753 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(10, 10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_jump.fits&gt;,).
+2022-07-06 09:39:03,756 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso.fits&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
+2022-07-06 09:39:03,779 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp8dfgl36a/jwst_mirisim_readnoise.fits
+2022-07-06 09:39:03,780 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_miri_gain_0008.fits
+2022-07-06 09:39:03,832 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
+2022-07-06 09:39:03,833 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
+2022-07-06 09:39:04,513 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of leading groups that are flagged as DO_NOT_USE: 0
+2022-07-06 09:40:39,081 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 10
+2022-07-06 09:40:39,085 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 10
+2022-07-06 09:40:39,268 - stpipe.Detector1Pipeline.ramp_fit - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_0_ramp_fit.fits
+2022-07-06 09:40:39,508 - stpipe.Detector1Pipeline.ramp_fit - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_1_ramp_fit.fits
+2022-07-06 09:40:39,509 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
+2022-07-06 09:40:39,660 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_0_ramp_fit.fits&gt;,).
+2022-07-06 09:40:39,662 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:40:39,713 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-07-06 09:40:39,714 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-07-06 09:40:39,719 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-07-06 09:40:39,834 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(10, 1024, 1032) from pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_1_ramp_fit.fits&gt;,).
+2022-07-06 09:40:39,836 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-07-06 09:40:39,879 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-07-06 09:40:39,880 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-07-06 09:40:39,885 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-07-06 09:40:40,128 - stpipe.Detector1Pipeline - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_rateints.fits
+2022-07-06 09:40:40,129 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
+2022-07-06 09:40:40,131 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_0913.pmap
+2022-07-06 09:40:40,197 - stpipe.Detector1Pipeline - INFO - Saved model in pipetest_miri_imtso_FULL_10g10i_F770W_b75_tso_rate.fits
+2022-07-06 09:40:40,198 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
 </pre>
 </div>
 </div>
