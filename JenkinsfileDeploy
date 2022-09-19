@@ -28,7 +28,7 @@ pipeline {
         sh("chmod +x with_env")
         sh("conda create -n ${env_name} --file https://ssb.stsci.edu/releases/jwstdp/${PIPELINE_VERSION}/conda_python_stable-deps.txt")
         sh("./with_env -n ${env_name} pip install -r https://ssb.stsci.edu/releases/jwstdp/${PIPELINE_VERSION}/reqs_stable-deps.txt")
-        sh("conda env update --name ${env_name} --file notebook_supplement.yml --prune")
+        sh("conda env update --name ${env_name} --file notebook_supplement.yml --prune --verbose")
       }
     }
 
