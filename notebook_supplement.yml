@@ -1,0 +1,35 @@
+# This file describes a conda environment that will update the JWST pipeline environment
+# with the additional files needed to run the JWST validation notebooks. These include:
+#
+#   - instrument-specific test modules
+#   - jupyter notebooks
+#   - ipython
+#   - ipykernel
+
+channels:
+  - default
+  - conda-forge
+  - astropy
+
+dependencies:
+  # Base dependencies
+  - Cython
+  - jupyter
+  - nb_conda
+  - git
+
+  - pip:
+    - ipython
+    - ci-watson
+    - pytest
+
+    # pysiaf is not on pip, but fails to install *from* pip because of a metadata version
+    # mismatch
+    - git+https://github.com/spacetelescope/pysiaf
+    # This repository is not uniquely on pip (i.e. there are several nbpages, and we want
+    # a particular one of them).
+    - git+https://github.com/york-stsci/nbpages
+    # These packages are imported from github because they are not available on pip
+    - git+https://github.com/STScI-MIRI/miricoord
+    - git+https://github.com/STScI-MIRI/miri3d
+    - git+https://github.com/spacetelescope/nirspec_pipe_testing_tool@2.0.0
