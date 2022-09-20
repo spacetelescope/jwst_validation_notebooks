@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14464,10 +14465,6 @@ a.anchor-link {
   display: none;
 }
 
-.highlight  {
-  margin: 0.4em;
-}
-
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14477,9 +14474,26 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror pre {
+.CodeMirror.cm-s-jupyter .highlight pre {
+/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
+  padding: var(--jp-code-padding) 4px;
   margin: 0;
-  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+}
+
+.jp-OutputArea-output pre {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+.jp-RenderedText pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14583,7 +14597,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
-<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">JWST Pipeline Validation Testing Notebook: MIRI MRS Spec2: Assign_wcs()<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: FGS, MIRI, NIRCam, NIRISS, NIRSpec</p>
+<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">JWST Pipeline Validation Testing Notebook: MIRI MRS Spec2: Assign_wcs()<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-Spec2:-Assign_wcs()">&#182;</a></h1><p><span style="color:red"> <strong>Instruments Affected</strong></span>: FGS, MIRI, NIRCam, NIRISS, NIRSpec</p>
 
 </div>
 </div>
@@ -14595,8 +14609,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS" data-toc-modified-id="JWST-Pipeline-Validation-Testing-Notebook:-MIRI-MRS-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>JWST Pipeline Validation Testing Notebook: MIRI MRS</a></span><ul class="toc-item"><li><span><a href="#Spec2:-Assign_wcs()" data-toc-modified-id="Spec2:-Assign_wcs()-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Spec2: Assign_wcs()</a></span><ul class="toc-item"><li><span><a href="#Table-of-Contents" data-toc-modified-id="Table-of-Contents-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Table of Contents</a></span></li></ul></li></ul></li><li><span><a href="#Imports" data-toc-modified-id="Imports-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Imports</a></span></li><li><span><a href="#Introduction" data-toc-modified-id="Introduction-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Introduction</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Calibration-WG-Requested-Algorithm:" data-toc-modified-id="Calibration-WG-Requested-Algorithm:-3.0.1"><span class="toc-item-num">3.0.1&nbsp;&nbsp;</span>Calibration WG Requested Algorithm:</a></span></li></ul></li></ul></li><li><span><a href="#Loading-Data" data-toc-modified-id="Loading-Data-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Loading Data</a></span></li><li><span><a href="#Run-JWST-Pipeline---AssignWCS" data-toc-modified-id="Run-JWST-Pipeline---AssignWCS-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Run JWST Pipeline - AssignWCS</a></span><ul class="toc-item"><li><span><a href="#Output-checks-and-tests" data-toc-modified-id="Output-checks-and-tests-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Output checks and tests</a></span></li><li><span><a href="#About-this-Notebook" data-toc-modified-id="About-this-Notebook-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>About this Notebook</a></span></li></ul></li></ul></div>
+
 </div>
 </div>
 </div>
@@ -14633,13 +14648,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14652,15 +14669,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /grp/crds/cache
+<pre>CRDS cache location: /tmp/crds_cache
 </pre>
 </div>
 </div>
@@ -14693,6 +14708,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14717,10 +14734,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="k">if</span> <span class="n">use_tempdir</span><span class="p">:</span>
     <span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 
-    <span class="c1"># If you have files that are in the notebook&#39;s directory, but that the notebook will need to use while</span>
+    <span class="c1"># If you have files that are in the notebook's directory, but that the notebook will need to use while</span>
     <span class="c1"># running, copy them into the temporary directory here.</span>
     <span class="c1">#</span>
-    <span class="c1"># files = [&#39;name_of_file&#39;]</span>
+    <span class="c1"># files = ['name_of_file']</span>
     <span class="c1"># for file_name in files:</span>
     <span class="c1">#     shutil.copy(file_name, os.path.join(data_dir.name, file_name))</span>
 
@@ -14731,8 +14748,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="c1"># For info, print out where the script is running</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Running in </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14745,15 +14764,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp
+<pre>Running in /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3
 </pre>
 </div>
 </div>
@@ -14771,9 +14788,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="intro_ID"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>In this notebook we will test the assign_wcs step of Spec2Pipeline() for <strong>MRS</strong> observations.</p>
-<p>Step description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/assign_wcs/index.html#assign-wcs-step">https://jwst-pipeline.readthedocs.io/en/latest/jwst/assign_wcs/index.html#assign-wcs-step</a></p>
-<p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/assign_wcs">https://github.com/spacetelescope/jwst/tree/master/jwst/assign_wcs</a></p>
-<h3 id="Calibration-WG-Requested-Algorithm:">Calibration WG Requested Algorithm:<a class="anchor-link" href="#Calibration-WG-Requested-Algorithm:">&#182;</a></h3><p><a href="https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Spectral+GWCS+Information">https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Spectral+GWCS+Information</a></p>
+<p>Step description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/assign_wcs/index.html#assign-wcs-step</p>
+<p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/assign_wcs</p>
+<h3 id="Calibration-WG-Requested-Algorithm:">Calibration WG Requested Algorithm:<a class="anchor-link" href="#Calibration-WG-Requested-Algorithm:">&#182;</a></h3><p>https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Spectral+GWCS+Information</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
@@ -14787,7 +14804,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="data_ID"></a></p>
-<h1 id="Loading-Data">Loading Data<a class="anchor-link" href="#Loading-Data">&#182;</a></h1><p>We are using simulated MRS observations, generated with MIRISim v2.3.0 (as of Dec 2020). <strong><em>(Needs updating)</em></strong></p>
+<h1 id="Loading-Data">Loading Data<a class="anchor-link" href="#Loading-Data">&#182;</a></h1><p>We are using simulated MRS observations, generated with MIRISim v2.3.0 (as of Dec 2020). *<strong>(Needs updating)</strong>*</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
@@ -14801,44 +14818,46 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mock12A</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock12A-0.fits&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mock12A</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock12A-0.fits'</span><span class="p">)</span>
 
-<span class="n">mock12B</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock12B-0.fits&#39;</span><span class="p">)</span>
+<span class="n">mock12B</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock12B-0.fits'</span><span class="p">)</span>
 
-<span class="n">mock12C</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock12C-0.fits&#39;</span><span class="p">)</span>
+<span class="n">mock12C</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock12C-0.fits'</span><span class="p">)</span>
 
-<span class="n">mock34A</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock34A-0.fits&#39;</span><span class="p">)</span>
+<span class="n">mock34A</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock34A-0.fits'</span><span class="p">)</span>
 
-<span class="n">mock34B</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock34B-0.fits&#39;</span><span class="p">)</span>
+<span class="n">mock34B</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock34B-0.fits'</span><span class="p">)</span>
 
-<span class="n">mock34C</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;assign_wcs_miri_test&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;mock34C-0.fits&#39;</span><span class="p">)</span>
+<span class="n">mock34C</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                 <span class="s1">'validation_data'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs'</span><span class="p">,</span>
+                 <span class="s1">'assign_wcs_miri_test'</span><span class="p">,</span>
+                 <span class="s1">'mock34C-0.fits'</span><span class="p">)</span>
 
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">mock12A</span><span class="p">,</span> <span class="n">mock12B</span><span class="p">,</span> <span class="n">mock12C</span><span class="p">,</span> <span class="n">mock34A</span><span class="p">,</span> <span class="n">mock34B</span><span class="p">,</span> <span class="n">mock34C</span><span class="p">]</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14865,10 +14884,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if not os.path.exists(&#39;../cfg_files/&#39;):</span>
-<span class="c1">#     os.mkdir(&#39;../cfg_files/&#39;)</span>
-<span class="c1">#     cfgs = collect_pipeline_cfgs.collect_pipeline_cfgs(dst=&#39;../cfg_files/&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if not os.path.exists('../cfg_files/'):</span>
+<span class="c1">#     os.mkdir('../cfg_files/')</span>
+<span class="c1">#     cfgs = collect_pipeline_cfgs.collect_pipeline_cfgs(dst='../cfg_files/')</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14903,6 +14924,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">awcs</span> <span class="o">=</span> <span class="n">AssignWcsStep</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">awcs_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">awcs</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14915,68 +14938,85 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-07-05 12:30:47,387 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:30:47,602 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock12A-0.fits&#39;,).
-2022-07-05 12:30:47,604 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:30:53,557 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:30:56,897 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
-2022-07-05 12:30:56,900 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:30:56,917 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:30:58,053 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
-2022-07-05 12:30:58,054 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-07-05 12:30:59,978 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:31:00,451 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock12B-0.fits&#39;,).
-2022-07-05 12:31:00,453 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:31:06,535 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:31:08,829 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
-2022-07-05 12:31:08,831 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:31:08,845 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:31:09,769 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
-2022-07-05 12:31:09,770 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-07-05 12:31:10,996 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:31:11,262 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock12C-0.fits&#39;,).
-2022-07-05 12:31:11,264 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:31:17,103 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:31:19,534 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
-2022-07-05 12:31:19,537 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:31:19,551 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:31:20,474 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
-2022-07-05 12:31:20,475 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-07-05 12:31:21,631 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:31:21,956 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock34A-0.fits&#39;,).
-2022-07-05 12:31:21,958 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:31:26,341 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:31:28,055 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
-2022-07-05 12:31:28,057 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:31:28,072 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:31:29,273 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
-2022-07-05 12:31:29,274 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-07-05 12:31:30,060 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:31:30,467 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock34B-0.fits&#39;,).
-2022-07-05 12:31:30,469 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:31:34,887 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:31:36,497 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
-2022-07-05 12:31:36,499 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:31:36,513 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:31:37,218 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
-2022-07-05 12:31:37,219 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-07-05 12:31:38,498 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-07-05 12:31:38,927 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpza94gujp/mock34C-0.fits&#39;,).
-2022-07-05 12:31:38,930 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-07-05 12:31:43,437 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-07-05 12:31:45,089 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
-2022-07-05 12:31:45,091 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-07-05 12:31:45,105 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0913.pmap
-2022-07-05 12:31:45,855 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
-2022-07-05 12:31:45,856 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+<pre>2022-09-19 15:29:25,712 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:29:25,881 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock12A-0.fits&#39;,).
+2022-09-19 15:29:25,882 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:29:27,159 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0031.asdf  131.0 K bytes  (1 / 1 files) (0 / 131.0 K bytes)
+2022-09-19 15:29:27,207 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0024.asdf   42.1 K bytes  (1 / 1 files) (0 / 42.1 K bytes)
+2022-09-19 15:29:27,239 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0027.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:29:27,609 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf    2.4 K bytes  (1 / 1 files) (0 / 2.4 K bytes)
+2022-09-19 15:29:30,374 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0031.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0024.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0027.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:29:33,381 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999131306 -0.000874755 45.000333171 -0.000874755 45.000333171 0.000376675 44.999131306 0.000376675
+2022-09-19 15:29:33,384 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:29:33,399 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:29:34,418 - stpipe.AssignWcsStep - INFO - Saved model in mock12A-0_assignwcsstep.fits
+2022-09-19 15:29:34,419 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-09-19 15:29:36,325 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:29:36,719 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock12B-0.fits&#39;,).
+2022-09-19 15:29:36,721 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:29:38,222 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0030.asdf  131.0 K bytes  (1 / 1 files) (0 / 131.0 K bytes)
+2022-09-19 15:29:38,274 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0021.asdf   42.1 K bytes  (1 / 1 files) (0 / 42.1 K bytes)
+2022-09-19 15:29:38,304 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0026.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:29:42,068 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0030.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0021.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0026.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:29:45,044 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999101544 -0.000949495 45.000304844 -0.000949495 45.000304844 0.000303129 44.999101544 0.000303129
+2022-09-19 15:29:45,047 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:29:45,065 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:29:46,122 - stpipe.AssignWcsStep - INFO - Saved model in mock12B-0_assignwcsstep.fits
+2022-09-19 15:29:46,123 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-09-19 15:29:47,771 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:29:48,315 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock12C-0.fits&#39;,).
+2022-09-19 15:29:48,317 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:29:49,347 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0029.asdf  131.1 K bytes  (1 / 1 files) (0 / 131.1 K bytes)
+2022-09-19 15:29:49,393 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0022.asdf   42.1 K bytes  (1 / 1 files) (0 / 42.1 K bytes)
+2022-09-19 15:29:49,429 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0028.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:29:53,359 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0029.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0022.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0028.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:29:56,463 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.999164360 -0.000924033 45.000355488 -0.000924033 45.000355488 0.000384691 44.999164360 0.000384691
+2022-09-19 15:29:56,465 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:29:56,480 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:29:57,535 - stpipe.AssignWcsStep - INFO - Saved model in mock12C-0_assignwcsstep.fits
+2022-09-19 15:29:57,536 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-09-19 15:29:59,119 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:29:59,799 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock34A-0.fits&#39;,).
+2022-09-19 15:29:59,801 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:30:00,641 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0034.asdf   98.3 K bytes  (1 / 1 files) (0 / 98.3 K bytes)
+2022-09-19 15:30:00,696 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0020.asdf   31.4 K bytes  (1 / 1 files) (0 / 31.4 K bytes)
+2022-09-19 15:30:00,732 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0029.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:30:03,654 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0034.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0020.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0029.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:30:05,583 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998662127 -0.001359338 45.000884626 -0.001359338 45.000884626 0.000685800 44.998662127 0.000685800
+2022-09-19 15:30:05,586 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:30:05,603 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:30:07,227 - stpipe.AssignWcsStep - INFO - Saved model in mock34A-0_assignwcsstep.fits
+2022-09-19 15:30:07,228 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-09-19 15:30:08,081 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:30:08,743 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock34B-0.fits&#39;,).
+2022-09-19 15:30:08,745 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:30:09,534 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0033.asdf   98.4 K bytes  (1 / 1 files) (0 / 98.4 K bytes)
+2022-09-19 15:30:09,583 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0023.asdf   31.4 K bytes  (1 / 1 files) (0 / 31.4 K bytes)
+2022-09-19 15:30:09,620 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0030.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:30:12,702 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0033.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0023.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0030.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:30:14,637 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998722179 -0.001346279 45.000872017 -0.001346279 45.000872017 0.000701693 44.998722179 0.000701693
+2022-09-19 15:30:14,640 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:30:14,655 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:30:15,474 - stpipe.AssignWcsStep - INFO - Saved model in mock34B-0_assignwcsstep.fits
+2022-09-19 15:30:15,476 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-09-19 15:30:17,218 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-09-19 15:30:18,054 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpop1eqff3/mock34C-0.fits&#39;,).
+2022-09-19 15:30:18,056 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: True, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-09-19 15:30:18,875 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0032.asdf   98.3 K bytes  (1 / 1 files) (0 / 98.3 K bytes)
+2022-09-19 15:30:18,921 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0019.asdf   31.4 K bytes  (1 / 1 files) (0 / 31.4 K bytes)
+2022-09-19 15:30:18,957 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0025.asdf   76.1 M bytes  (1 / 1 files) (0 / 76.1 M bytes)
+2022-09-19 15:30:22,219 - stpipe.AssignWcsStep - INFO - Created a MIRI mir_mrs pipeline with references {&#39;distortion&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_distortion_0032.asdf&#39;, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_specwcs_0019.asdf&#39;, &#39;regions&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_regions_0025.asdf&#39;, &#39;wavelengthrange&#39;: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_wavelengthrange_0005.asdf&#39;, &#39;camera&#39;: None, &#39;collimator&#39;: None, &#39;disperser&#39;: None, &#39;fore&#39;: None, &#39;fpa&#39;: None, &#39;msa&#39;: None, &#39;ote&#39;: None, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-09-19 15:30:23,984 - stpipe.AssignWcsStep - INFO - Update S_REGION to POLYGON ICRS  44.998721627 -0.001305713 45.000866457 -0.001305713 45.000866457 0.000719789 44.998721627 0.000719789
+2022-09-19 15:30:23,987 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-09-19 15:30:24,002 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 15:30:24,808 - stpipe.AssignWcsStep - INFO - Saved model in mock34C-0_assignwcsstep.fits
+2022-09-19 15:30:24,809 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
 </pre>
 </div>
 </div>
@@ -14996,7 +15036,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <h2 id="Output-checks-and-tests">Output checks and tests<a class="anchor-link" href="#Output-checks-and-tests">&#182;</a></h2><p>We can use the output model to run the following checks:</p>
 <ul>
 <li>the SCI extension is unchanged from the step input (accept default tolerances for the np.allclose() function)</li>
-<li>we use the wcs information assigned in the step to check the RA, dec, wavelength assignment at some reference locations. </li>
+<li>we use the wcs information assigned in the step to check the RA, dec, wavelength assignment at some reference locations.</li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -15015,8 +15055,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="k">for</span> <span class="p">(</span><span class="n">aa</span><span class="p">,</span> <span class="n">dd</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">awcs_out</span><span class="p">,</span> <span class="n">files</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">dd</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">aa</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">equal_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;Step input and output don&#39;t match for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">aa</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">equal_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s2">"Step input and output don't match for </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -15044,13 +15086,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">verify_coords</span><span class="p">(</span><span class="n">imgnum</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">ref_data</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Uses predefined test cooridnates to check WCS output.&quot;&quot;&quot;</span>
+    <span class="sd">"""Uses predefined test cooridnates to check WCS output."""</span>
     
-    <span class="n">xt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
-    <span class="n">yt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
-    <span class="n">v2t</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">&#39;v2&#39;</span><span class="p">]</span>
-    <span class="n">v3t</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">&#39;v3&#39;</span><span class="p">]</span>
-    <span class="n">lamt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">&#39;lam&#39;</span><span class="p">]</span>
+    <span class="n">xt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">'x'</span><span class="p">]</span>
+    <span class="n">yt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">'y'</span><span class="p">]</span>
+    <span class="n">v2t</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">'v2'</span><span class="p">]</span>
+    <span class="n">v3t</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">'v3'</span><span class="p">]</span>
+    <span class="n">lamt</span> <span class="o">=</span> <span class="n">ref_data</span><span class="p">[</span><span class="n">ch</span><span class="p">][</span><span class="s1">'lam'</span><span class="p">]</span>
     
     <span class="n">lamtest1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">lamtest2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -15060,22 +15102,24 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">v3test1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">lt1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;**** TEST SET </span><span class="si">{}</span><span class="s1">****&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; x       y     lam_truth  lamtest1   v2truth   v3truth  v2test   v3test&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'**** TEST SET </span><span class="si">{}</span><span class="s1">****'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">' x       y     lam_truth  lamtest1   v2truth   v3truth  v2test   v3test'</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">values</span> <span class="o">=</span> <span class="n">mrst</span><span class="o">.</span><span class="n">xytoabl</span><span class="p">(</span><span class="n">xt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">yt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ch</span><span class="p">)</span>
-        <span class="n">atest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">btest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lt1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;beta&#39;</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;lam&#39;</span><span class="p">]</span>
+        <span class="n">atest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">btest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lt1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s1">'alpha'</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s1">'beta'</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="s1">'lam'</span><span class="p">]</span>
         <span class="n">v2test1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v3test1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mrst</span><span class="o">.</span><span class="n">abtov2v3</span><span class="p">(</span><span class="n">atest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">btest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ch</span><span class="p">)</span>
         <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">lamtest1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">awcs_out</span><span class="p">[</span><span class="n">imgnum</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">wcs</span><span class="p">(</span><span class="n">xt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">yt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">  </span><span class="si">{1}</span><span class="s1">   </span><span class="si">{2:.5f}</span><span class="s1">    </span><span class="si">{3:.5f}</span><span class="s1">    </span><span class="si">{4:.5f}</span><span class="s1">   </span><span class="si">{5:.5f}</span><span class="s1">   </span><span class="si">{6:.5f}</span><span class="s1">   </span><span class="si">{7:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">{0}</span><span class="s1">  </span><span class="si">{1}</span><span class="s1">   </span><span class="si">{2:.5f}</span><span class="s1">    </span><span class="si">{3:.5f}</span><span class="s1">    </span><span class="si">{4:.5f}</span><span class="s1">   </span><span class="si">{5:.5f}</span><span class="s1">   </span><span class="si">{6:.5f}</span><span class="s1">   </span><span class="si">{7:.5f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">xt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">yt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lamt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lamtest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v2t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v3t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v2test1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v3test1</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 
         <span class="n">assert_allclose</span><span class="p">(</span><span class="n">lamt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lamtest1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">atol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
         <span class="n">assert_allclose</span><span class="p">(</span><span class="n">v2t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v2test1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">atol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
         <span class="n">assert_allclose</span><span class="p">(</span><span class="n">v3t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v3test1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">atol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
         
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -15091,37 +15135,39 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mrd</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">mrs_ref_data</span>
-<span class="n">chan</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;0&#39;</span><span class="p">:</span><span class="s1">&#39;1A&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;1&#39;</span><span class="p">:</span><span class="s1">&#39;1B&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;2&#39;</span><span class="p">:</span><span class="s1">&#39;1C&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;3&#39;</span><span class="p">:</span><span class="s1">&#39;2A&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;4&#39;</span><span class="p">:</span><span class="s1">&#39;2B&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;5&#39;</span><span class="p">:</span><span class="s1">&#39;2C&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;6&#39;</span><span class="p">:</span><span class="s1">&#39;3A&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;7&#39;</span><span class="p">:</span><span class="s1">&#39;3B&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;8&#39;</span><span class="p">:</span><span class="s1">&#39;3C&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;9&#39;</span><span class="p">:</span><span class="s1">&#39;4A&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;10&#39;</span><span class="p">:</span><span class="s1">&#39;4B&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;11&#39;</span><span class="p">:</span><span class="s1">&#39;4C&#39;</span><span class="p">}</span>
+<span class="n">chan</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'0'</span><span class="p">:</span><span class="s1">'1A'</span><span class="p">,</span>
+        <span class="s1">'1'</span><span class="p">:</span><span class="s1">'1B'</span><span class="p">,</span>
+        <span class="s1">'2'</span><span class="p">:</span><span class="s1">'1C'</span><span class="p">,</span>
+        <span class="s1">'3'</span><span class="p">:</span><span class="s1">'2A'</span><span class="p">,</span>
+        <span class="s1">'4'</span><span class="p">:</span><span class="s1">'2B'</span><span class="p">,</span>
+        <span class="s1">'5'</span><span class="p">:</span><span class="s1">'2C'</span><span class="p">,</span>
+        <span class="s1">'6'</span><span class="p">:</span><span class="s1">'3A'</span><span class="p">,</span>
+        <span class="s1">'7'</span><span class="p">:</span><span class="s1">'3B'</span><span class="p">,</span>
+        <span class="s1">'8'</span><span class="p">:</span><span class="s1">'3C'</span><span class="p">,</span>
+        <span class="s1">'9'</span><span class="p">:</span><span class="s1">'4A'</span><span class="p">,</span>
+        <span class="s1">'10'</span><span class="p">:</span><span class="s1">'4B'</span><span class="p">,</span>
+        <span class="s1">'11'</span><span class="p">:</span><span class="s1">'4C'</span><span class="p">}</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
     <span class="n">ch</span> <span class="o">=</span> <span class="n">chan</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
     
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'A'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;B&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'B'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;C&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'C'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'A'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;B&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'B'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">&#39;C&#39;</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="ow">and</span> <span class="s1">'C'</span> <span class="ow">in</span> <span class="n">ch</span><span class="p">:</span>
         <span class="n">imgnum</span> <span class="o">=</span> <span class="mi">5</span>
         
     <span class="n">verify_coords</span><span class="p">(</span><span class="n">imgnum</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">mrd</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -15134,9 +15180,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -15144,13 +15188,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>**** TEST SET 1A****
  x       y     lam_truth  lamtest1   v2truth   v3truth  v2test   v3test
-76.0  512.0   5.34855    5.34855    -503.57285   -318.57499   -503.24579   -318.85914
+76.0  512.0   5.34855    5.34855    -503.57285   -318.57499   -503.29746   -318.83188
 </pre>
 </div>
 </div>
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -15159,12 +15201,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 15&gt;</span><span class="ansi-blue-fg">()</span>
+Cell <span class="ansi-green-fg">In [9], line 31</span>
 <span class="ansi-green-intense-fg ansi-bold">     28</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> i <span style="color: rgb(98,98,98)">&gt;</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">6</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">C</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> ch:
 <span class="ansi-green-intense-fg ansi-bold">     29</span>     imgnum <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">5</span>
 <span class="ansi-green-fg">---&gt; 31</span> <span class="ansi-yellow-bg">verify_coords</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">imgnum</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ch</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">mrd</span><span class="ansi-yellow-bg">)</span>
 
-Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">verify_coords</span><span class="ansi-blue-fg">(imgnum, ch, ref_data)</span>
+Cell <span class="ansi-green-fg">In [8], line 29</span>, in <span class="ansi-cyan-fg">verify_coords</span><span class="ansi-blue-fg">(imgnum, ch, ref_data)</span>
 <span class="ansi-green-intense-fg ansi-bold">     25</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{0}</span><span style="color: rgb(175,0,0)">  </span><span class="ansi-bold" style="color: rgb(175,95,135)">{1}</span><span style="color: rgb(175,0,0)">   </span><span class="ansi-bold" style="color: rgb(175,95,135)">{2:.5f}</span><span style="color: rgb(175,0,0)">    </span><span class="ansi-bold" style="color: rgb(175,95,135)">{3:.5f}</span><span style="color: rgb(175,0,0)">    </span><span class="ansi-bold" style="color: rgb(175,95,135)">{4:.5f}</span><span style="color: rgb(175,0,0)">   </span><span class="ansi-bold" style="color: rgb(175,95,135)">{5:.5f}</span><span style="color: rgb(175,0,0)">   </span><span class="ansi-bold" style="color: rgb(175,95,135)">{6:.5f}</span><span style="color: rgb(175,0,0)">   </span><span class="ansi-bold" style="color: rgb(175,95,135)">{7:.5f}</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(98,98,98)">.</span>format(
 <span class="ansi-green-intense-fg ansi-bold">     26</span>         xt[i], yt[i], lamt[i], lamtest1[i], v2t[i], v3t[i], v2test1[i], v3test1[i]))
 <span class="ansi-green-intense-fg ansi-bold">     28</span>     assert_allclose(lamt[i], lamtest1[i], atol<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0.05</span>)
@@ -15174,7 +15216,7 @@ Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">v
 
     <span class="ansi-red-fg">[... skipping hidden 1 frame]</span>
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/numpy/testing/_private/utils.py:844</span>, in <span class="ansi-cyan-fg">assert_array_compare</span><span class="ansi-blue-fg">(comparison, x, y, err_msg, verbose, header, precision, equal_nan, equal_inf)</span>
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/numpy/testing/_private/utils.py:844</span>, in <span class="ansi-cyan-fg">assert_array_compare</span><span class="ansi-blue-fg">(comparison, x, y, err_msg, verbose, header, precision, equal_nan, equal_inf)</span>
 <span class="ansi-green-intense-fg ansi-bold">    840</span>         err_msg <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">&#39;</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(98,98,98)">.</span>join(remarks)
 <span class="ansi-green-intense-fg ansi-bold">    841</span>         msg <span style="color: rgb(98,98,98)">=</span> build_err_msg([ox, oy], err_msg,
 <span class="ansi-green-intense-fg ansi-bold">    842</span>                             verbose<span style="color: rgb(98,98,98)">=</span>verbose, header<span style="color: rgb(98,98,98)">=</span>header,
@@ -15187,10 +15229,10 @@ File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib
 Not equal to tolerance rtol=1e-07, atol=0.05
 
 Mismatched elements: 1 / 1 (100%)
-Max absolute difference: 0.32705766
-Max relative difference: 0.0006499
+Max absolute difference: 0.27539018
+Max relative difference: 0.00054717
  x: array(-503.572852)
- y: array(-503.245795)</pre>
+ y: array(-503.297462)</pre>
 </div>
 </div>
 
@@ -15220,8 +15262,8 @@ Max relative difference: 0.0006499
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="#title_ID">Top of Page</a>
-<img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/></p>
+<p><a href="#title_ID">Top of Page</a></p>
+<img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/>
 
 </div>
 </div>
@@ -15236,6 +15278,8 @@ Max relative difference: 0.0006499
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -15252,6 +15296,8 @@ Max relative difference: 0.0006499
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
+</body></html>
+
 
      </div>
 </div>

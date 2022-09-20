@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14464,10 +14465,6 @@ a.anchor-link {
   display: none;
 }
 
-.highlight  {
-  margin: 0.4em;
-}
-
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14477,9 +14474,26 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror pre {
+.CodeMirror.cm-s-jupyter .highlight pre {
+/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
+  padding: var(--jp-code-padding) 4px;
   margin: 0;
-  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+}
+
+.jp-OutputArea-output pre {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+.jp-RenderedText pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14583,21 +14597,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
-<h1 id="JWST-calwebb_image3,-source_catalog-unit-tests">JWST calwebb_image3, source_catalog unit tests<a class="anchor-link" href="#JWST-calwebb_image3,-source_catalog-unit-tests">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: NIRCam, NIRISS, MIRI, FGS</p>
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left"> 
-
-<br> [Introduction](#intro)
-<br> [JWST Unit Tests](#unit)
-<br> [Defining Terms](#terms)
-<br> [Test Description](#description)
-<br> [Data Description](#data_descr)
-<br> [Imports](#imports)
-<br> [Convenience Functions](#functions)
-<br> [Perform Tests](#testing) 
-<br> [About This Notebook](#about)
-<br>    
-
+<h1 id="JWST-calwebb_image3,-source_catalog-unit-tests">JWST calwebb_image3, source_catalog unit tests<a class="anchor-link" href="#JWST-calwebb_image3,-source_catalog-unit-tests">&#182;</a></h1><p><span style="color:red"> <strong>Instruments Affected</strong></span>: NIRCam, NIRISS, MIRI, FGS</p>
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left">
+<p><br> <a href="#intro">Introduction</a>
+<br> <a href="#unit">JWST Unit Tests</a>
+<br> <a href="#terms">Defining Terms</a>
+<br> <a href="#description">Test Description</a>
+<br> <a href="#data_descr">Data Description</a>
+<br> <a href="#imports">Imports</a>
+<br> <a href="#functions">Convenience Functions</a>
+<br> <a href="#testing">Perform Tests</a> 
+<br> <a href="#about">About This Notebook</a></p>
+<br>
 </div>
+
 </div>
 </div>
 </div>
@@ -14611,9 +14624,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p><a id="intro"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This is the validation notebook that displays the unit tests for the Source Catalog step in calwebb_image3. This notebook runs and displays the unit tests that are performed as a part of the normal software continuous integration process. For more information on the pipeline visit the links below.</p>
 <ul>
-<li><p>Pipeline description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html</a></p>
+<li><p>Pipeline description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html</p>
 </li>
-<li><p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">https://github.com/spacetelescope/jwst/tree/master/jwst/</a></p>
+<li><p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/</p>
 </li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
@@ -14629,9 +14642,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="unit"></a></p>
-<h1 id="JWST-Unit-Tests">JWST Unit Tests<a class="anchor-link" href="#JWST-Unit-Tests">&#182;</a></h1><p>JWST unit tests are located in the "tests" folder for each pipeline step within the <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">GitHub repository</a>, e.g., <code>jwst/source_catalog/tests</code>.</p>
+<h1 id="JWST-Unit-Tests">JWST Unit Tests<a class="anchor-link" href="#JWST-Unit-Tests">&#182;</a></h1><p>JWST unit tests are located in the &quot;tests&quot; folder for each pipeline step within the <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">GitHub repository</a>, e.g., <code>jwst/source_catalog/tests</code>.</p>
 <ul>
-<li>Unit test README: <a href="https://github.com/spacetelescope/jwst#unit-tests">https://github.com/spacetelescope/jwst#unit-tests</a></li>
+<li>Unit test README: https://github.com/spacetelescope/jwst#unit-tests</li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14714,13 +14727,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14733,15 +14748,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /grp/crds/cache
+<pre>CRDS cache location: /tmp/crds_cache
 </pre>
 </div>
 </div>
@@ -14765,6 +14778,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14795,6 +14810,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14823,21 +14840,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
 
 <span class="n">jwst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
-<span class="n">source</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;source_catalog&#39;</span><span class="p">)</span>
-<span class="n">associations</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;associations&#39;</span><span class="p">)</span>
-<span class="n">datamodels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;datamodels&#39;</span><span class="p">)</span>
-<span class="n">stpipe</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;stpipe&#39;</span><span class="p">)</span>
-<span class="n">regtest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;regtest&#39;</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'source_catalog'</span><span class="p">)</span>
+<span class="n">associations</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'associations'</span><span class="p">)</span>
+<span class="n">datamodels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'datamodels'</span><span class="p">)</span>
+<span class="n">stpipe</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'stpipe'</span><span class="p">)</span>
+<span class="n">regtest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'regtest'</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
-    <span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">&#39;regtest_report.html&#39;</span><span class="p">)</span>
+    <span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">'regtest_report.html'</span><span class="p">)</span>
     <span class="o">!</span>pytest <span class="o">{</span>source<span class="o">}</span> -v --ignore<span class="o">={</span>associations<span class="o">}</span> --ignore<span class="o">={</span>datamodels<span class="o">}</span> --ignore<span class="o">={</span>stpipe<span class="o">}</span> --ignore<span class="o">={</span>regtest<span class="o">}</span> --html<span class="o">={</span>outdir<span class="o">}</span> --self-contained-html
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">&quot;regtest_report.html&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">report_file</span><span class="p">:</span>
-        <span class="n">html_report</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">"regtest_report.html"</span><span class="p">))</span> <span class="k">as</span> <span class="n">report_file</span><span class="p">:</span>
+        <span class="n">html_report</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14850,30 +14869,230 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Testing JWST Pipeline 1.5.3
+<pre>Testing JWST Pipeline 1.7.2
 <span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.10.5, pytest-7.1.2, pluggy-1.0.0 -- /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
+platform linux -- Python 3.9.13, pytest-7.1.3, pluggy-1.0.0 -- /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.10.5&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.66.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.2&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;metadata&#39;: &#39;2.0.1&#39;, &#39;asdf&#39;: &#39;2.12.0&#39;, &#39;html&#39;: &#39;3.1.1&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.5.3&#39;}, &#39;BUILD_NUMBER&#39;: &#39;113&#39;, &#39;BUILD_ID&#39;: &#39;113&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/113/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-113&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;21&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;70ffb42f71ade1656f96080e6fe2147d145aff21&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
+metadata: {&#39;Python&#39;: &#39;3.9.13&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.71.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.3&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;requests-mock&#39;: &#39;1.10.0&#39;, &#39;asdf&#39;: &#39;2.13.0&#39;, &#39;openfiles&#39;: &#39;0.5.0&#39;, &#39;forked&#39;: &#39;1.4.0&#39;, &#39;doctestplus&#39;: &#39;0.12.0&#39;, &#39;cov&#39;: &#39;3.0.0&#39;, &#39;xdist&#39;: &#39;2.5.0&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.7.2&#39;, &#39;metadata&#39;: &#39;2.0.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;}, &#39;BUILD_NUMBER&#39;: &#39;121&#39;, &#39;BUILD_ID&#39;: &#39;121&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/121/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-121&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;4&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;d946b62f03606ce9f4c43add5bc49bb73e005ac8&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
 rootdir: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
-plugins: metadata-2.0.1, asdf-2.12.0, html-3.1.1, ci-watson-0.6.1, jwst-1.5.3
+plugins: requests-mock-1.10.0, asdf-2.13.0, openfiles-0.5.0, forked-1.4.0, doctestplus-0.12.0, cov-3.0.0, xdist-2.5.0, ci-watson-0.6.1, jwst-1.7.2, metadata-2.0.2, html-3.1.1
 collected 4 items                                                              
 
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5-2] <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 25%]</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[1000-1] <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 50%]</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5000-0] <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [ 75%]</span>
-../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_model_without_apcorr_data <span class="ansi-green-fg">PASSED</span><span class="ansi-green-fg"> [100%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5-2] <span class="ansi-red-fg">FAILED</span><span class="ansi-red-fg"> [ 25%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[1000-1] <span class="ansi-red-fg">FAILED</span><span class="ansi-red-fg"> [ 50%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5000-0] <span class="ansi-red-fg">FAILED</span><span class="ansi-red-fg"> [ 75%]</span>
+../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_model_without_apcorr_data <span class="ansi-red-fg">FAILED</span><span class="ansi-red-fg"> [100%]</span>
 
-- generated html file: file:///internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp70ci2ly5/regtest_report.html -
-<span class="ansi-green-fg">============================== </span><span class="ansi-green-intense-fg ansi-bold">4 passed</span><span class="ansi-green-fg"> in 2.88s</span><span class="ansi-green-fg"> ===============================</span>
+=================================== FAILURES ===================================
+<span class="ansi-red-intense-fg ansi-bold">___________________________ test_source_catalog[5-2] ___________________________</span>
+
+nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 5, nsources = 2
+
+    <span class="ansi-white-fg">@pytest</span>.mark.parametrize(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">npixels, nsources</span><span class="ansi-yellow-fg">&#39;</span>, ((<span class="ansi-blue-intense-fg">5</span>, <span class="ansi-blue-intense-fg">2</span>), (<span class="ansi-blue-intense-fg">1000</span>, <span class="ansi-blue-intense-fg">1</span>), (<span class="ansi-blue-intense-fg">5000</span>, <span class="ansi-blue-intense-fg">0</span>)))
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">test_source_catalog</span>(nircam_model, npixels, nsources):
+    
+        step = SourceCatalogStep(snr_threshold=<span class="ansi-blue-intense-fg">0.5</span>, npixels=npixels,
+                                 bkg_boxsize=<span class="ansi-blue-intense-fg">50</span>, kernel_fwhm=<span class="ansi-blue-intense-fg">2.0</span>,
+                                 save_results=<span class="ansi-blue-intense-fg">False</span>)
+&gt;       cat = step.run(nircam_model)
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py</span>:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:483: in run
+    step_result = <span class="ansi-cyan-intense-fg">self</span>.process(*args)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:64: in process
+    reffile_paths = <span class="ansi-cyan-intense-fg">self</span>._get_reffile_paths(model)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:51: in _get_reffile_paths
+    filepath = <span class="ansi-cyan-intense-fg">self</span>.get_reference_file(model, reffile_type)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:800: in get_reference_file
+    <span class="ansi-blue-intense-fg">return</span> crds_client.check_reference_open(reference_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+refpath = &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">check_reference_open</span>(refpath):
+        <span class="ansi-yellow-fg">&#34;&#34;&#34;Verify that `refpath` exists and is readable for the current user.</span>
+    
+    <span class="ansi-yellow-fg">    Ignore reference path values of &#34;N/A&#34; or &#34;&#34; for checking.</span>
+    <span class="ansi-yellow-fg">    &#34;&#34;&#34;</span>
+        <span class="ansi-blue-intense-fg">if</span> refpath != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">N/A</span><span class="ansi-yellow-fg">&#34;</span> <span class="ansi-magenta-intense-fg">and</span> refpath.strip() != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">&#34;</span>:
+            <span class="ansi-blue-intense-fg">if</span> s3_utils.is_s3_uri(refpath):
+                <span class="ansi-blue-intense-fg">if</span> <span class="ansi-magenta-intense-fg">not</span> s3_utils.object_exists(refpath):
+                    <span class="ansi-blue-intense-fg">raise</span> <span class="ansi-cyan-intense-fg">RuntimeError</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">S3 object does not exist: </span><span class="ansi-yellow-fg">&#34;</span> + refpath)
+            <span class="ansi-blue-intense-fg">else</span>:
+&gt;               <span class="ansi-blue-intense-fg">with</span> <span class="ansi-cyan-intense-fg">open</span>(refpath, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">rb</span><span class="ansi-yellow-fg">&#34;</span>):
+<span class="ansi-red-intense-fg ansi-bold">E               FileNotFoundError: [Errno 2] No such file or directory: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;</span>
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py</span>:85: FileNotFoundError
+----------------------------- Captured stderr call -----------------------------
+2022-09-19 20:49:38,335 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,399 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,400 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-09-19 20:49:38,633 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,633 - CRDS - ERROR -  Failure downloading file &#39;jwst_nircam_apcorr_0004.fits&#39; : Error fetching data for &#39;jwst_nircam_apcorr_0004.fits&#39; at CRDS server &#39;https://jwst-crds.stsci.edu&#39; with mode &#39;http&#39; : [Errno 28] No space left on device: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+------------------------------ Captured log call -------------------------------
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 5, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+<span class="ansi-red-intense-fg ansi-bold">_________________________ test_source_catalog[1000-1] __________________________</span>
+
+nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 1000, nsources = 1
+
+    <span class="ansi-white-fg">@pytest</span>.mark.parametrize(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">npixels, nsources</span><span class="ansi-yellow-fg">&#39;</span>, ((<span class="ansi-blue-intense-fg">5</span>, <span class="ansi-blue-intense-fg">2</span>), (<span class="ansi-blue-intense-fg">1000</span>, <span class="ansi-blue-intense-fg">1</span>), (<span class="ansi-blue-intense-fg">5000</span>, <span class="ansi-blue-intense-fg">0</span>)))
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">test_source_catalog</span>(nircam_model, npixels, nsources):
+    
+        step = SourceCatalogStep(snr_threshold=<span class="ansi-blue-intense-fg">0.5</span>, npixels=npixels,
+                                 bkg_boxsize=<span class="ansi-blue-intense-fg">50</span>, kernel_fwhm=<span class="ansi-blue-intense-fg">2.0</span>,
+                                 save_results=<span class="ansi-blue-intense-fg">False</span>)
+&gt;       cat = step.run(nircam_model)
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py</span>:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:483: in run
+    step_result = <span class="ansi-cyan-intense-fg">self</span>.process(*args)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:64: in process
+    reffile_paths = <span class="ansi-cyan-intense-fg">self</span>._get_reffile_paths(model)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:51: in _get_reffile_paths
+    filepath = <span class="ansi-cyan-intense-fg">self</span>.get_reference_file(model, reffile_type)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:800: in get_reference_file
+    <span class="ansi-blue-intense-fg">return</span> crds_client.check_reference_open(reference_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+refpath = &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">check_reference_open</span>(refpath):
+        <span class="ansi-yellow-fg">&#34;&#34;&#34;Verify that `refpath` exists and is readable for the current user.</span>
+    
+    <span class="ansi-yellow-fg">    Ignore reference path values of &#34;N/A&#34; or &#34;&#34; for checking.</span>
+    <span class="ansi-yellow-fg">    &#34;&#34;&#34;</span>
+        <span class="ansi-blue-intense-fg">if</span> refpath != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">N/A</span><span class="ansi-yellow-fg">&#34;</span> <span class="ansi-magenta-intense-fg">and</span> refpath.strip() != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">&#34;</span>:
+            <span class="ansi-blue-intense-fg">if</span> s3_utils.is_s3_uri(refpath):
+                <span class="ansi-blue-intense-fg">if</span> <span class="ansi-magenta-intense-fg">not</span> s3_utils.object_exists(refpath):
+                    <span class="ansi-blue-intense-fg">raise</span> <span class="ansi-cyan-intense-fg">RuntimeError</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">S3 object does not exist: </span><span class="ansi-yellow-fg">&#34;</span> + refpath)
+            <span class="ansi-blue-intense-fg">else</span>:
+&gt;               <span class="ansi-blue-intense-fg">with</span> <span class="ansi-cyan-intense-fg">open</span>(refpath, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">rb</span><span class="ansi-yellow-fg">&#34;</span>):
+<span class="ansi-red-intense-fg ansi-bold">E               FileNotFoundError: [Errno 2] No such file or directory: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;</span>
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py</span>:85: FileNotFoundError
+----------------------------- Captured stderr call -----------------------------
+2022-09-19 20:49:38,724 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,792 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,793 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 1000, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-09-19 20:49:38,806 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,807 - CRDS - ERROR -  Failure downloading file &#39;jwst_nircam_apcorr_0004.fits&#39; : Error fetching data for &#39;jwst_nircam_apcorr_0004.fits&#39; at CRDS server &#39;https://jwst-crds.stsci.edu&#39; with mode &#39;http&#39; : [Errno 28] No space left on device: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+------------------------------ Captured log call -------------------------------
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 1000, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+<span class="ansi-red-intense-fg ansi-bold">_________________________ test_source_catalog[5000-0] __________________________</span>
+
+nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 5000, nsources = 0
+
+    <span class="ansi-white-fg">@pytest</span>.mark.parametrize(<span class="ansi-yellow-fg">&#39;</span><span class="ansi-yellow-fg">npixels, nsources</span><span class="ansi-yellow-fg">&#39;</span>, ((<span class="ansi-blue-intense-fg">5</span>, <span class="ansi-blue-intense-fg">2</span>), (<span class="ansi-blue-intense-fg">1000</span>, <span class="ansi-blue-intense-fg">1</span>), (<span class="ansi-blue-intense-fg">5000</span>, <span class="ansi-blue-intense-fg">0</span>)))
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">test_source_catalog</span>(nircam_model, npixels, nsources):
+    
+        step = SourceCatalogStep(snr_threshold=<span class="ansi-blue-intense-fg">0.5</span>, npixels=npixels,
+                                 bkg_boxsize=<span class="ansi-blue-intense-fg">50</span>, kernel_fwhm=<span class="ansi-blue-intense-fg">2.0</span>,
+                                 save_results=<span class="ansi-blue-intense-fg">False</span>)
+&gt;       cat = step.run(nircam_model)
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py</span>:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:483: in run
+    step_result = <span class="ansi-cyan-intense-fg">self</span>.process(*args)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:64: in process
+    reffile_paths = <span class="ansi-cyan-intense-fg">self</span>._get_reffile_paths(model)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:51: in _get_reffile_paths
+    filepath = <span class="ansi-cyan-intense-fg">self</span>.get_reference_file(model, reffile_type)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:800: in get_reference_file
+    <span class="ansi-blue-intense-fg">return</span> crds_client.check_reference_open(reference_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+refpath = &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">check_reference_open</span>(refpath):
+        <span class="ansi-yellow-fg">&#34;&#34;&#34;Verify that `refpath` exists and is readable for the current user.</span>
+    
+    <span class="ansi-yellow-fg">    Ignore reference path values of &#34;N/A&#34; or &#34;&#34; for checking.</span>
+    <span class="ansi-yellow-fg">    &#34;&#34;&#34;</span>
+        <span class="ansi-blue-intense-fg">if</span> refpath != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">N/A</span><span class="ansi-yellow-fg">&#34;</span> <span class="ansi-magenta-intense-fg">and</span> refpath.strip() != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">&#34;</span>:
+            <span class="ansi-blue-intense-fg">if</span> s3_utils.is_s3_uri(refpath):
+                <span class="ansi-blue-intense-fg">if</span> <span class="ansi-magenta-intense-fg">not</span> s3_utils.object_exists(refpath):
+                    <span class="ansi-blue-intense-fg">raise</span> <span class="ansi-cyan-intense-fg">RuntimeError</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">S3 object does not exist: </span><span class="ansi-yellow-fg">&#34;</span> + refpath)
+            <span class="ansi-blue-intense-fg">else</span>:
+&gt;               <span class="ansi-blue-intense-fg">with</span> <span class="ansi-cyan-intense-fg">open</span>(refpath, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">rb</span><span class="ansi-yellow-fg">&#34;</span>):
+<span class="ansi-red-intense-fg ansi-bold">E               FileNotFoundError: [Errno 2] No such file or directory: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;</span>
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py</span>:85: FileNotFoundError
+----------------------------- Captured stderr call -----------------------------
+2022-09-19 20:49:38,866 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,933 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,934 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 5000, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-09-19 20:49:38,946 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,947 - CRDS - ERROR -  Failure downloading file &#39;jwst_nircam_apcorr_0004.fits&#39; : Error fetching data for &#39;jwst_nircam_apcorr_0004.fits&#39; at CRDS server &#39;https://jwst-crds.stsci.edu&#39; with mode &#39;http&#39; : [Errno 28] No space left on device: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+------------------------------ Captured log call -------------------------------
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 50, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 0.5, &#39;npixels&#39;: 5000, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+<span class="ansi-red-intense-fg ansi-bold">________________________ test_model_without_apcorr_data ________________________</span>
+
+nircam_model_without_apcorr = &lt;ImageModel(101, 101)&gt;
+
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">test_model_without_apcorr_data</span>(nircam_model_without_apcorr):
+        step = SourceCatalogStep(save_results=<span class="ansi-blue-intense-fg">False</span>)
+&gt;       cat = step.run(nircam_model_without_apcorr)
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py</span>:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:483: in run
+    step_result = <span class="ansi-cyan-intense-fg">self</span>.process(*args)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:64: in process
+    reffile_paths = <span class="ansi-cyan-intense-fg">self</span>._get_reffile_paths(model)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py</span>:51: in _get_reffile_paths
+    filepath = <span class="ansi-cyan-intense-fg">self</span>.get_reference_file(model, reffile_type)
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py</span>:800: in get_reference_file
+    <span class="ansi-blue-intense-fg">return</span> crds_client.check_reference_open(reference_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+refpath = &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+
+    <span class="ansi-blue-intense-fg">def</span> <span class="ansi-green-intense-fg">check_reference_open</span>(refpath):
+        <span class="ansi-yellow-fg">&#34;&#34;&#34;Verify that `refpath` exists and is readable for the current user.</span>
+    
+    <span class="ansi-yellow-fg">    Ignore reference path values of &#34;N/A&#34; or &#34;&#34; for checking.</span>
+    <span class="ansi-yellow-fg">    &#34;&#34;&#34;</span>
+        <span class="ansi-blue-intense-fg">if</span> refpath != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">N/A</span><span class="ansi-yellow-fg">&#34;</span> <span class="ansi-magenta-intense-fg">and</span> refpath.strip() != <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">&#34;</span>:
+            <span class="ansi-blue-intense-fg">if</span> s3_utils.is_s3_uri(refpath):
+                <span class="ansi-blue-intense-fg">if</span> <span class="ansi-magenta-intense-fg">not</span> s3_utils.object_exists(refpath):
+                    <span class="ansi-blue-intense-fg">raise</span> <span class="ansi-cyan-intense-fg">RuntimeError</span>(<span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">S3 object does not exist: </span><span class="ansi-yellow-fg">&#34;</span> + refpath)
+            <span class="ansi-blue-intense-fg">else</span>:
+&gt;               <span class="ansi-blue-intense-fg">with</span> <span class="ansi-cyan-intense-fg">open</span>(refpath, <span class="ansi-yellow-fg">&#34;</span><span class="ansi-yellow-fg">rb</span><span class="ansi-yellow-fg">&#34;</span>):
+<span class="ansi-red-intense-fg ansi-bold">E               FileNotFoundError: [Errno 2] No such file or directory: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;</span>
+
+<span class="ansi-red-intense-fg ansi-bold">../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py</span>:85: FileNotFoundError
+----------------------------- Captured stderr call -----------------------------
+2022-09-19 20:49:39,005 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:39,072 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:39,073 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 1000, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 25, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+2022-09-19 20:49:39,087 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:39,088 - CRDS - ERROR -  Failure downloading file &#39;jwst_nircam_apcorr_0004.fits&#39; : Error fetching data for &#39;jwst_nircam_apcorr_0004.fits&#39; at CRDS server &#39;https://jwst-crds.stsci.edu&#39; with mode &#39;http&#39; : [Errno 28] No space left on device: &#39;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#39;
+------------------------------ Captured log call -------------------------------
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+<span class="ansi-green-fg">INFO    </span> stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;cat&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;bkg_boxsize&#39;: 1000, &#39;kernel_fwhm&#39;: 2.0, &#39;snr_threshold&#39;: 3.0, &#39;npixels&#39;: 25, &#39;deblend&#39;: False, &#39;aperture_ee1&#39;: 30, &#39;aperture_ee2&#39;: 50, &#39;aperture_ee3&#39;: 70, &#39;ci1_star_threshold&#39;: 2.0, &#39;ci2_star_threshold&#39;: 1.8}
+- generated html file: file:///internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpzj5i65sx/regtest_report.html -
+=========================== short test summary info ============================
+FAILED ../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5-2]
+FAILED ../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[1000-1]
+FAILED ../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5000-0]
+FAILED ../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_model_without_apcorr_data
+<span class="ansi-red-fg">============================== </span><span class="ansi-red-intense-fg ansi-bold">4 failed</span><span class="ansi-red-fg"> in 2.14s</span><span class="ansi-red-fg"> ===============================</span>
 </pre>
 </div>
 </div>
@@ -14892,6 +15111,8 @@ collected 4 items
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html_report</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14904,9 +15125,7 @@ collected 4 items
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
@@ -15344,30 +15563,30 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>regtest_report.html</h1>
-    <p>Report generated on 07-Jul-2022 at 07:53:38 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 19-Sep-2022 at 20:49:39 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>BUILD_ID</td>
-        <td>113</td></tr>
+        <td>121</td></tr>
       <tr>
         <td>BUILD_NUMBER</td>
-        <td>113</td></tr>
+        <td>121</td></tr>
       <tr>
         <td>BUILD_TAG</td>
-        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-113</td></tr>
+        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-121</td></tr>
       <tr>
         <td>BUILD_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/113/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/113/</a></td></tr>
+        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/121/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/121/</a></td></tr>
       <tr>
         <td>EXECUTOR_NUMBER</td>
-        <td>21</td></tr>
+        <td>4</td></tr>
       <tr>
         <td>GIT_BRANCH</td>
         <td>origin/master</td></tr>
       <tr>
         <td>GIT_COMMIT</td>
-        <td>70ffb42f71ade1656f96080e6fe2147d145aff21</td></tr>
+        <td>d946b62f03606ce9f4c43add5bc49bb73e005ac8</td></tr>
       <tr>
         <td>GIT_URL</td>
         <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
@@ -15382,22 +15601,22 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>pljwvalnb.stsci.edu</td></tr>
       <tr>
         <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.2"}</td></tr>
+        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.3"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Linux-3.10.0-1160.66.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
+        <td>Linux-3.10.0-1160.71.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"asdf": "2.12.0", "ci-watson": "0.6.1", "html": "3.1.1", "jwst": "1.5.3", "metadata": "2.0.1"}</td></tr>
+        <td>{"asdf": "2.13.0", "ci-watson": "0.6.1", "cov": "3.0.0", "doctestplus": "0.12.0", "forked": "1.4.0", "html": "3.1.1", "jwst": "1.7.2", "metadata": "2.0.2", "openfiles": "0.5.0", "requests-mock": "1.10.0", "xdist": "2.5.0"}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.10.5</td></tr>
+        <td>3.9.13</td></tr>
       <tr>
         <td>WORKSPACE</td>
         <td>/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 2.88 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>4 tests ran in 2.09 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">4 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -15408,163 +15627,70 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5-2]</td>
-          <td class="col-duration">1.63</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5-2]</td>
+          <td class="col-duration">1.25</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-07-07 07:53:36,618 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
-2022-07-07 07:53:36,667 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-2022-07-07 07:53:36,668 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-2022-07-07 07:53:36,943 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-07-07 07:53:36,954 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-07-07 07:53:36,955 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
-2022-07-07 07:53:36,955 - stpipe.SourceCatalogStep - INFO - Detector: NRCALONG
-2022-07-07 07:53:36,955 - stpipe.SourceCatalogStep - INFO - Filter: F444W
-2022-07-07 07:53:36,955 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
-2022-07-07 07:53:36,990 - stpipe.SourceCatalogStep - WARNING - model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-2022-07-07 07:53:37,025 - stpipe.SourceCatalogStep - INFO - AB to Vega magnitude offset 3.24181
-2022-07-07 07:53:37,040 - stpipe.SourceCatalogStep - INFO - Detected 2 sources
-2022-07-07 07:53:37,320 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:330 SourceCatalogStep instance created.
-INFO     stpipe.SourceCatalogStep:step.py:390 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-INFO     stpipe.SourceCatalogStep:step.py:394 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-INFO     stpipe.SourceCatalogStep:detection.py:236 Detected 2 sources
-INFO     stpipe.SourceCatalogStep:detection.py:236 Detected 2 sources
-INFO     stpipe.SourceCatalogStep:step.py:493 Step SourceCatalogStep done<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 5, nsources = 2<br/><br/>    @pytest.mark.parametrize(&#x27;npixels, nsources&#x27;, ((5, 2), (1000, 1), (5000, 0)))<br/>    def test_source_catalog(nircam_model, npixels, nsources):<br/>    <br/>        step = SourceCatalogStep(snr_threshold=0.5, npixels=npixels,<br/>                                 bkg_boxsize=50, kernel_fwhm=2.0,<br/>                                 save_results=False)<br/>&gt;       cat = step.run(nircam_model)<br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py:112: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:483: in run<br/>    step_result = self.process(*args)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:64: in process<br/>    reffile_paths = self._get_reffile_paths(model)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:51: in _get_reffile_paths<br/>    filepath = self.get_reference_file(model, reffile_type)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:800: in get_reference_file<br/>    return crds_client.check_reference_open(reference_name)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>refpath = &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;<br/><br/>    def check_reference_open(refpath):<br/>        &quot;&quot;&quot;Verify that `refpath` exists and is readable for the current user.<br/>    <br/>        Ignore reference path values of &quot;N/A&quot; or &quot;&quot; for checking.<br/>        &quot;&quot;&quot;<br/>        if refpath != &quot;N/A&quot; and refpath.strip() != &quot;&quot;:<br/>            if s3_utils.is_s3_uri(refpath):<br/>                if not s3_utils.object_exists(refpath):<br/>                    raise RuntimeError(&quot;S3 object does not exist: &quot; + refpath)<br/>            else:<br/>&gt;               with open(refpath, &quot;rb&quot;):<br/><span class="error">E               FileNotFoundError: [Errno 2] No such file or directory: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;</span><br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py:85: FileNotFoundError<br/> ------------------------------Captured stderr call------------------------------ <br/>2022-09-19 20:49:38,335 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,399 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,400 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
+2022-09-19 20:49:38,633 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,633 - CRDS - ERROR -  Failure downloading file &#x27;jwst_nircam_apcorr_0004.fits&#x27; : Error fetching data for &#x27;jwst_nircam_apcorr_0004.fits&#x27; at CRDS server &#x27;https://jwst-crds.stsci.edu&#x27; with mode &#x27;http&#x27; : [Errno 28] No space left on device: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+INFO     stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+INFO     stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[1000-1]</td>
-          <td class="col-duration">0.36</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[1000-1]</td>
+          <td class="col-duration">0.12</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-07-07 07:53:37,366 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
-2022-07-07 07:53:37,531 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-2022-07-07 07:53:37,533 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 1000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-2022-07-07 07:53:37,548 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-07-07 07:53:37,561 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-07-07 07:53:37,562 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
-2022-07-07 07:53:37,562 - stpipe.SourceCatalogStep - INFO - Detector: NRCALONG
-2022-07-07 07:53:37,562 - stpipe.SourceCatalogStep - INFO - Filter: F444W
-2022-07-07 07:53:37,562 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
-2022-07-07 07:53:37,596 - stpipe.SourceCatalogStep - WARNING - model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-2022-07-07 07:53:37,630 - stpipe.SourceCatalogStep - INFO - AB to Vega magnitude offset 3.24181
-2022-07-07 07:53:37,646 - stpipe.SourceCatalogStep - INFO - Detected 1 sources
-2022-07-07 07:53:37,681 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:330 SourceCatalogStep instance created.
-INFO     stpipe.SourceCatalogStep:step.py:390 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-INFO     stpipe.SourceCatalogStep:step.py:394 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 1000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-INFO     stpipe.SourceCatalogStep:detection.py:236 Detected 1 sources
-INFO     stpipe.SourceCatalogStep:detection.py:236 Detected 1 sources
-INFO     stpipe.SourceCatalogStep:step.py:493 Step SourceCatalogStep done<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 1000, nsources = 1<br/><br/>    @pytest.mark.parametrize(&#x27;npixels, nsources&#x27;, ((5, 2), (1000, 1), (5000, 0)))<br/>    def test_source_catalog(nircam_model, npixels, nsources):<br/>    <br/>        step = SourceCatalogStep(snr_threshold=0.5, npixels=npixels,<br/>                                 bkg_boxsize=50, kernel_fwhm=2.0,<br/>                                 save_results=False)<br/>&gt;       cat = step.run(nircam_model)<br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py:112: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:483: in run<br/>    step_result = self.process(*args)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:64: in process<br/>    reffile_paths = self._get_reffile_paths(model)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:51: in _get_reffile_paths<br/>    filepath = self.get_reference_file(model, reffile_type)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:800: in get_reference_file<br/>    return crds_client.check_reference_open(reference_name)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>refpath = &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;<br/><br/>    def check_reference_open(refpath):<br/>        &quot;&quot;&quot;Verify that `refpath` exists and is readable for the current user.<br/>    <br/>        Ignore reference path values of &quot;N/A&quot; or &quot;&quot; for checking.<br/>        &quot;&quot;&quot;<br/>        if refpath != &quot;N/A&quot; and refpath.strip() != &quot;&quot;:<br/>            if s3_utils.is_s3_uri(refpath):<br/>                if not s3_utils.object_exists(refpath):<br/>                    raise RuntimeError(&quot;S3 object does not exist: &quot; + refpath)<br/>            else:<br/>&gt;               with open(refpath, &quot;rb&quot;):<br/><span class="error">E               FileNotFoundError: [Errno 2] No such file or directory: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;</span><br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py:85: FileNotFoundError<br/> ------------------------------Captured stderr call------------------------------ <br/>2022-09-19 20:49:38,724 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,792 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,793 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 1000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
+2022-09-19 20:49:38,806 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,807 - CRDS - ERROR -  Failure downloading file &#x27;jwst_nircam_apcorr_0004.fits&#x27; : Error fetching data for &#x27;jwst_nircam_apcorr_0004.fits&#x27; at CRDS server &#x27;https://jwst-crds.stsci.edu&#x27; with mode &#x27;http&#x27; : [Errno 28] No space left on device: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+INFO     stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+INFO     stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 1000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5000-0]</td>
-          <td class="col-duration">0.29</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_source_catalog[5000-0]</td>
+          <td class="col-duration">0.12</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-07-07 07:53:37,727 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
-2022-07-07 07:53:37,884 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-2022-07-07 07:53:37,885 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-2022-07-07 07:53:37,900 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-07-07 07:53:37,908 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-07-07 07:53:37,908 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
-2022-07-07 07:53:37,908 - stpipe.SourceCatalogStep - INFO - Detector: NRCALONG
-2022-07-07 07:53:37,908 - stpipe.SourceCatalogStep - INFO - Filter: F444W
-2022-07-07 07:53:37,909 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
-2022-07-07 07:53:37,935 - stpipe.SourceCatalogStep - WARNING - model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-2022-07-07 07:53:37,964 - stpipe.SourceCatalogStep - INFO - AB to Vega magnitude offset 3.24181
-2022-07-07 07:53:37,977 - stpipe.SourceCatalogStep - WARNING - No sources were found. Source catalog will not be created.
-2022-07-07 07:53:37,978 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:330 SourceCatalogStep instance created.
-INFO     stpipe.SourceCatalogStep:step.py:390 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-INFO     stpipe.SourceCatalogStep:step.py:394 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F444W
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-WARNING  stpipe.SourceCatalogStep:reference_data.py:171 model.meta.resample.pixel_scale_ratio was not found. Assuming the native detector pixel scale (i.e., pixel_scale_ratio = 1)
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-INFO     stpipe.SourceCatalogStep:reference_data.py:233 AB to Vega magnitude offset 3.24181
-WARNING  stpipe.SourceCatalogStep:detection.py:222 No sources were found. Source catalog will not be created.
-WARNING  stpipe.SourceCatalogStep:detection.py:222 No sources were found. Source catalog will not be created.
-INFO     stpipe.SourceCatalogStep:step.py:493 Step SourceCatalogStep done<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">nircam_model = &lt;ImageModel(101, 101)&gt;, npixels = 5000, nsources = 0<br/><br/>    @pytest.mark.parametrize(&#x27;npixels, nsources&#x27;, ((5, 2), (1000, 1), (5000, 0)))<br/>    def test_source_catalog(nircam_model, npixels, nsources):<br/>    <br/>        step = SourceCatalogStep(snr_threshold=0.5, npixels=npixels,<br/>                                 bkg_boxsize=50, kernel_fwhm=2.0,<br/>                                 save_results=False)<br/>&gt;       cat = step.run(nircam_model)<br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py:112: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:483: in run<br/>    step_result = self.process(*args)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:64: in process<br/>    reffile_paths = self._get_reffile_paths(model)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:51: in _get_reffile_paths<br/>    filepath = self.get_reference_file(model, reffile_type)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:800: in get_reference_file<br/>    return crds_client.check_reference_open(reference_name)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>refpath = &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;<br/><br/>    def check_reference_open(refpath):<br/>        &quot;&quot;&quot;Verify that `refpath` exists and is readable for the current user.<br/>    <br/>        Ignore reference path values of &quot;N/A&quot; or &quot;&quot; for checking.<br/>        &quot;&quot;&quot;<br/>        if refpath != &quot;N/A&quot; and refpath.strip() != &quot;&quot;:<br/>            if s3_utils.is_s3_uri(refpath):<br/>                if not s3_utils.object_exists(refpath):<br/>                    raise RuntimeError(&quot;S3 object does not exist: &quot; + refpath)<br/>            else:<br/>&gt;               with open(refpath, &quot;rb&quot;):<br/><span class="error">E               FileNotFoundError: [Errno 2] No such file or directory: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;</span><br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py:85: FileNotFoundError<br/> ------------------------------Captured stderr call------------------------------ <br/>2022-09-19 20:49:38,866 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:38,933 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:38,934 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
+2022-09-19 20:49:38,946 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:38,947 - CRDS - ERROR -  Failure downloading file &#x27;jwst_nircam_apcorr_0004.fits&#x27; : Error fetching data for &#x27;jwst_nircam_apcorr_0004.fits&#x27; at CRDS server &#x27;https://jwst-crds.stsci.edu&#x27; with mode &#x27;http&#x27; : [Errno 28] No space left on device: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+INFO     stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+INFO     stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 50, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 0.5, &#x27;npixels&#x27;: 5000, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.10/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_model_without_apcorr_data</td>
-          <td class="col-duration">0.22</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py::test_model_without_apcorr_data</td>
+          <td class="col-duration">0.12</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-07-07 07:53:38,020 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
-2022-07-07 07:53:38,152 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-2022-07-07 07:53:38,154 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 100, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 3.0, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-2022-07-07 07:53:38,169 - stpipe.SourceCatalogStep - INFO - Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-2022-07-07 07:53:38,177 - stpipe.SourceCatalogStep - INFO - Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-2022-07-07 07:53:38,178 - stpipe.SourceCatalogStep - INFO - Instrument: NIRCAM
-2022-07-07 07:53:38,178 - stpipe.SourceCatalogStep - INFO - Detector: NRCALONG
-2022-07-07 07:53:38,178 - stpipe.SourceCatalogStep - INFO - Filter: F2550WR
-2022-07-07 07:53:38,178 - stpipe.SourceCatalogStep - INFO - Pupil: CLEAR
-2022-07-07 07:53:38,202 - stpipe.SourceCatalogStep - WARNING - APCORR reference file data is missing for {&#x27;filter&#x27;: &#x27;F2550WR&#x27;, &#x27;pupil&#x27;: &#x27;CLEAR&#x27;}. Source catalog will not be created.
-2022-07-07 07:53:38,202 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep done
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:330 SourceCatalogStep instance created.
-INFO     stpipe.SourceCatalogStep:step.py:390 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
-INFO     stpipe.SourceCatalogStep:step.py:394 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 100, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 3.0, &#x27;npixels&#x27;: 5, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using APCORR reference file: /grp/crds/cache/references/jwst/jwst_nircam_apcorr_0004.fits
-INFO     stpipe.SourceCatalogStep:source_catalog_step.py:52 Using ABVEGAOFFSET reference file: /grp/crds/cache/references/jwst/jwst_nircam_abvegaoffset_0001.asdf
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:63 Instrument: NIRCAM
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:65 Detector: NRCALONG
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F2550WR
-INFO     stpipe.SourceCatalogStep:reference_data.py:67 Filter: F2550WR
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-INFO     stpipe.SourceCatalogStep:reference_data.py:69 Pupil: CLEAR
-WARNING  stpipe.SourceCatalogStep:source_catalog_step.py:75 APCORR reference file data is missing for {&#x27;filter&#x27;: &#x27;F2550WR&#x27;, &#x27;pupil&#x27;: &#x27;CLEAR&#x27;}. Source catalog will not be created.
-INFO     stpipe.SourceCatalogStep:step.py:493 Step SourceCatalogStep done<br/></div></td></tr></tbody></table></body></html>
+            <div class="log">nircam_model_without_apcorr = &lt;ImageModel(101, 101)&gt;<br/><br/>    def test_model_without_apcorr_data(nircam_model_without_apcorr):<br/>        step = SourceCatalogStep(save_results=False)<br/>&gt;       cat = step.run(nircam_model_without_apcorr)<br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/tests/test_source_catalog.py:123: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:483: in run<br/>    step_result = self.process(*args)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:64: in process<br/>    reffile_paths = self._get_reffile_paths(model)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/source_catalog/source_catalog_step.py:51: in _get_reffile_paths<br/>    filepath = self.get_reference_file(model, reffile_type)<br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:800: in get_reference_file<br/>    return crds_client.check_reference_open(reference_name)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>refpath = &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;<br/><br/>    def check_reference_open(refpath):<br/>        &quot;&quot;&quot;Verify that `refpath` exists and is readable for the current user.<br/>    <br/>        Ignore reference path values of &quot;N/A&quot; or &quot;&quot; for checking.<br/>        &quot;&quot;&quot;<br/>        if refpath != &quot;N/A&quot; and refpath.strip() != &quot;&quot;:<br/>            if s3_utils.is_s3_uri(refpath):<br/>                if not s3_utils.object_exists(refpath):<br/>                    raise RuntimeError(&quot;S3 object does not exist: &quot; + refpath)<br/>            else:<br/>&gt;               with open(refpath, &quot;rb&quot;):<br/><span class="error">E               FileNotFoundError: [Errno 2] No such file or directory: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;</span><br/><br/>../../../miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py:85: FileNotFoundError<br/> ------------------------------Captured stderr call------------------------------ <br/>2022-09-19 20:49:39,005 - stpipe.SourceCatalogStep - INFO - SourceCatalogStep instance created.
+2022-09-19 20:49:39,072 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+2022-09-19 20:49:39,073 - stpipe.SourceCatalogStep - INFO - Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 1000, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 3.0, &#x27;npixels&#x27;: 25, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}
+2022-09-19 20:49:39,087 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits   20.2 K bytes  (1 / 1 files) (0 / 20.2 K bytes)
+2022-09-19 20:49:39,088 - CRDS - ERROR -  Failure downloading file &#x27;jwst_nircam_apcorr_0004.fits&#x27; : Error fetching data for &#x27;jwst_nircam_apcorr_0004.fits&#x27; at CRDS server &#x27;https://jwst-crds.stsci.edu&#x27; with mode &#x27;http&#x27; : [Errno 28] No space left on device: &#x27;/tmp/crds_cache/references/jwst/nircam/jwst_nircam_apcorr_0004.fits&#x27;
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.SourceCatalogStep:step.py:366 SourceCatalogStep instance created.
+INFO     stpipe.SourceCatalogStep:step.py:430 Step SourceCatalogStep running with args (&lt;ImageModel(101, 101)&gt;,).
+INFO     stpipe.SourceCatalogStep:step.py:434 Step SourceCatalogStep parameters are: {&#x27;pre_hooks&#x27;: [], &#x27;post_hooks&#x27;: [], &#x27;output_file&#x27;: None, &#x27;output_dir&#x27;: None, &#x27;output_ext&#x27;: &#x27;.fits&#x27;, &#x27;output_use_model&#x27;: False, &#x27;output_use_index&#x27;: True, &#x27;save_results&#x27;: False, &#x27;skip&#x27;: False, &#x27;suffix&#x27;: &#x27;cat&#x27;, &#x27;search_output_file&#x27;: True, &#x27;input_dir&#x27;: &#x27;&#x27;, &#x27;bkg_boxsize&#x27;: 1000, &#x27;kernel_fwhm&#x27;: 2.0, &#x27;snr_threshold&#x27;: 3.0, &#x27;npixels&#x27;: 25, &#x27;deblend&#x27;: False, &#x27;aperture_ee1&#x27;: 30, &#x27;aperture_ee2&#x27;: 50, &#x27;aperture_ee3&#x27;: 70, &#x27;ci1_star_threshold&#x27;: 2.0, &#x27;ci2_star_threshold&#x27;: 1.8}<br/></div></td></tr></tbody></table></body></html>
 </div>
 
 </div>
@@ -15594,8 +15720,8 @@ INFO     stpipe.SourceCatalogStep:step.py:493 Step SourceCatalogStep done<br/></
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="#title_ID">Top of Page</a>
-<img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/></p>
+<p><a href="#title_ID">Top of Page</a></p>
+<img style="float: right;" src="./stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="stsci_pri_combo_mark_horizonal_white_bkgd" width="200px"/>
 
 </div>
 </div>

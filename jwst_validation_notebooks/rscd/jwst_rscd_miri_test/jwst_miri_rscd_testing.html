@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14464,10 +14465,6 @@ a.anchor-link {
   display: none;
 }
 
-.highlight  {
-  margin: 0.4em;
-}
-
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14477,9 +14474,26 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror pre {
+.CodeMirror.cm-s-jupyter .highlight pre {
+/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
+  padding: var(--jp-code-padding) 4px;
   margin: 0;
-  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+}
+
+.jp-OutputArea-output pre {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+.jp-RenderedText pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14583,14 +14597,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
-<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">JWST Pipeline Validation Testing Notebook: Calwebb_Detector1, RSCD step<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">&#182;</a></h1><p><span style="color:red"> **Instruments Affected**</span>: MIRI</p>
+<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">JWST Pipeline Validation Testing Notebook: Calwebb_Detector1, RSCD step<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-Calwebb_Detector1,-RSCD-step">&#182;</a></h1><p><span style="color:red"> <strong>Instruments Affected</strong></span>: MIRI</p>
 <p>Tested on MIRI Simulated data</p>
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left"> 
-
-<br>  [Introduction](#intro_ID) <br> [Imports](#imports_ID) <br> [Run Pipeline Steps](#pipeline_ID) <br> [Check Flagged Frames](#flagging_ID) <br> [Results](#results_ID) <br> [About This Notebook](#about_ID) <br>
-
-
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left">
+<p><br>  <a href="#intro_ID">Introduction</a> <br> <a href="#imports_ID">Imports</a> <br> <a href="#pipeline_ID">Run Pipeline Steps</a> <br> <a href="#flagging_ID">Check Flagged Frames</a> <br> <a href="#results_ID">Results</a> <br> <a href="#about_ID">About This Notebook</a> <br></p>
 </div>
+
 </div>
 </div>
 </div>
@@ -14603,10 +14615,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="intro_ID"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This test is designed to test the RSCD step in the calwebb_detector1 pipeline. This step only applies to MIRI. The Reset Switch Charge Decay (RSCD) step corrects for a set of ramp effects that affect all ingrations after the first by simply flagging the first N groups as DO_NOT_USE. The number of groups to flag is read from the reference file based on readout mode and subarray. For more information on the pipeline step visit the links below.</p>
-<p>Step description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/rscd/description.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/rscd/description.html</a></p>
-<p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/rscd">https://github.com/spacetelescope/jwst/tree/master/jwst/rscd</a></p>
-<p>Most of the data for this test were created with the MIRI Data Simulator, and the documentation for that code can be found here: <a href="http://miri.ster.kuleuven.be/bin/view/Public/MIRISim_Public">http://miri.ster.kuleuven.be/bin/view/Public/MIRISim_Public</a>. This test can also be run on properly formatted ground test data.</p>
-<h3 id="Calibration-WG-Requested-Algorithm:">Calibration WG Requested Algorithm:<a class="anchor-link" href="#Calibration-WG-Requested-Algorithm:">&#182;</a></h3><p>A short description and link to the page: <a href="https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Reset+Switch+Charge+Decay+Correction">https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Reset+Switch+Charge+Decay+Correction</a></p>
+<p>Step description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/rscd/description.html</p>
+<p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/rscd</p>
+<p>Most of the data for this test were created with the MIRI Data Simulator, and the documentation for that code can be found here: http://miri.ster.kuleuven.be/bin/view/Public/MIRISim_Public. This test can also be run on properly formatted ground test data.</p>
+<h3 id="Calibration-WG-Requested-Algorithm:">Calibration WG Requested Algorithm:<a class="anchor-link" href="#Calibration-WG-Requested-Algorithm:">&#182;</a></h3><p>A short description and link to the page: https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Reset+Switch+Charge+Decay+Correction</p>
 <h3 id="Defining-Terms">Defining Terms<a class="anchor-link" href="#Defining-Terms">&#182;</a></h3><p>Definition of terms or acronymns.</p>
 <p>JWST: James Webb Space Telescope</p>
 <p>MIRI: Mid-Infrared Instrument</p>
@@ -14615,7 +14627,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <h3 id="Description-of-test">Description of test<a class="anchor-link" href="#Description-of-test">&#182;</a></h3><p>This test is performed by reading in data of various types (subarray, readpattern, etc.) and running them through the rscd step to see whether the correct number of frames are flagged (read from the reference file).</p>
 <h3 id="Create-the-data-for-testing">Create the data for testing<a class="anchor-link" href="#Create-the-data-for-testing">&#182;</a></h3><p>The set of data used in this particular test were created with the MIRI Data Simulator (MIRISim). Referring to the MIRISim link, you can see how to set up and run the simulator to re-create the input files if you wish. The data was run with a scene.ini file that specified what the scene should look like, with coordinates for the stars given in units of arcsecond offsets from the center of the field of view. The scene.ini file as well as the setup files simuation.ini and simulator.ini are needed to run the simulation.</p>
 <p>Once in the mirisim conda environment, the simulation is run with the command line:</p>
-<blockquote><p>mirisim simulation.ini</p>
+<blockquote>
+<p>mirisim simulation.ini</p>
 </blockquote>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14636,6 +14649,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14651,13 +14666,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14670,15 +14687,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /grp/crds/cache
+<pre>CRDS cache location: /tmp/crds_cache
 </pre>
 </div>
 </div>
@@ -14703,7 +14718,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>jwst.pipeline to run the pipeline step/module</li>
 <li>jwst.associations to create association table</li>
 <li>numpy for calculations</li>
-<li>inspect and Markdown to get documentation for step being tested  </li>
+<li>inspect and Markdown to get documentation for step being tested</li>
 <li>photutils for star finding and aperture photometry</li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
@@ -14720,7 +14735,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_SERVER_URL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://jwst-crds.stsci.edu&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_SERVER_URL'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'https://jwst-crds.stsci.edu'</span>
 <span class="kn">import</span> <span class="nn">crds</span>
 
 <span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
@@ -14733,6 +14748,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14748,18 +14765,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get raw python docstring to see documentation for this step</span>
-<span class="n">raw</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getdoc</span><span class="p">(</span><span class="n">RscdStep</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getdoc</span><span class="p">(</span><span class="n">RscdStep</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">''</span>
 
 <span class="c1"># To convert to markdown, you need convert line breaks from \n to &lt;br /&gt;</span>
-<span class="n">markdown_text</span> <span class="o">=</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="n">markdown_text</span> <span class="o">=</span> <span class="s2">"&lt;br /&gt;"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
 
 <span class="c1"># Here you can format markdown as an output using the Markdown method.</span>
-<span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">Markdown</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2"># rscd_step</span>
 <span class="s2">---</span>
 <span class="si">{}</span><span class="s2"></span>
-<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">))</span>
+<span class="s2">"""</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">))</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14772,16 +14791,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
+
 <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown">
-<h1 id="rscd_step">rscd_step<a class="anchor-link" href="#rscd_step">&#182;</a></h1><hr>
+<h1 id="rscd_step">rscd_step<a class="anchor-link" href="#rscd_step">&#182;</a></h1><hr />
 <p>RscdStep: Performs an RSCD correction to MIRI data.<br />Baseline version flags the first N groups as 'DO_NOT_USE' in<br />the 2nd and later integrations in a copy of the input<br />science data model.<br />Enhanced version is not ready nor enabled.</p>
 
 </div>
@@ -14818,62 +14836,62 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="c1"># read in input files</span>
 
-<span class="n">file1</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&#39;</span><span class="p">)</span>
+<span class="n">file1</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                    <span class="s1">'validation_data'</span><span class="p">,</span>
+                    <span class="s1">'rscd'</span><span class="p">,</span>
+                    <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                    <span class="s1">'starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits'</span><span class="p">)</span>
 
-<span class="n">file2</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&#39;</span><span class="p">)</span>
+<span class="n">file2</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                    <span class="s1">'validation_data'</span><span class="p">,</span>
+                    <span class="s1">'rscd'</span><span class="p">,</span>
+                    <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                    <span class="s1">'starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits'</span><span class="p">)</span>
 
-<span class="n">file3</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&#39;</span><span class="p">)</span>
+<span class="n">file3</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                    <span class="s1">'validation_data'</span><span class="p">,</span>
+                    <span class="s1">'rscd'</span><span class="p">,</span>
+                    <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                    <span class="s1">'det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits'</span><span class="p">)</span>
 
-<span class="n">file4</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&#39;</span><span class="p">)</span>
+<span class="n">file4</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                    <span class="s1">'validation_data'</span><span class="p">,</span>
+                    <span class="s1">'rscd'</span><span class="p">,</span>
+                    <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                    <span class="s1">'starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits'</span><span class="p">)</span>
 
-<span class="n">file5</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                    <span class="s1">&#39;jw04193001001_01101_00001_MIRIFULONG_uncal.fits&#39;</span><span class="p">)</span>
+<span class="n">file5</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                    <span class="s1">'validation_data'</span><span class="p">,</span>
+                    <span class="s1">'rscd'</span><span class="p">,</span>
+                    <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                    <span class="s1">'jw04193001001_01101_00001_MIRIFULONG_uncal.fits'</span><span class="p">)</span>
 
-<span class="n">filelist</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">&#39;jwst_validation_notebooks&#39;</span><span class="p">,</span>
-                       <span class="s1">&#39;validation_data&#39;</span><span class="p">,</span>
-                       <span class="s1">&#39;rscd&#39;</span><span class="p">,</span>
-                       <span class="s1">&#39;rscd_miri_test&#39;</span><span class="p">,</span> 
-                       <span class="s1">&#39;rscd_testfiles.txt&#39;</span><span class="p">)</span>
+<span class="n">filelist</span> <span class="o">=</span> <span class="n">get_bigdata</span><span class="p">(</span><span class="s1">'jwst_validation_notebooks'</span><span class="p">,</span>
+                       <span class="s1">'validation_data'</span><span class="p">,</span>
+                       <span class="s1">'rscd'</span><span class="p">,</span>
+                       <span class="s1">'rscd_miri_test'</span><span class="p">,</span> 
+                       <span class="s1">'rscd_testfiles.txt'</span><span class="p">)</span>
 
-<span class="n">rscdoutfiles</span> <span class="o">=</span> <span class="s1">&#39;rscd_processed_files.txt&#39;</span>
+<span class="n">rscdoutfiles</span> <span class="o">=</span> <span class="s1">'rscd_processed_files.txt'</span>
 
 <span class="c1"># read in list of input files</span>
-<span class="n">imlist1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filelist</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># avoid the &#39;b at the start of a line</span>
+<span class="n">imlist1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filelist</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># avoid the 'b at the start of a line</span>
 
 <span class="c1"># open output file for ramp fit file names</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">rscdoutfiles</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">rscdoutfiles</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are &#39;</span><span class="p">,</span> <span class="n">imlist1</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s1">&#39; images.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'There are '</span><span class="p">,</span> <span class="n">imlist1</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s1">' images.'</span><span class="p">)</span>
 
 <span class="c1"># loop over list of files</span>
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">imlist1</span><span class="p">:</span>
        
     <span class="c1"># set up output file name</span>
-    <span class="k">if</span> <span class="s1">&#39;uncal&#39;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">base</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_uncal&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">'uncal'</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_uncal'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>    
-        <span class="n">base</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
     <span class="c1"># write out name of output files to text file for later use</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base</span><span class="o">+</span><span class="s1">&#39;_rscdstep.fits&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">base</span><span class="o">+</span><span class="s1">'_rscdstep.fits'</span><span class="o">+</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
     
     <span class="c1"># check that header has needed keywords set</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">RampModel</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
@@ -14882,8 +14900,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All files processed.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'All files processed.'</span><span class="p">)</span>
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
@@ -14896,9 +14916,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14908,94 +14926,124 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </pre>
 </div>
 </div>
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>2022-07-07 08:09:37,042 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2022-07-07 08:09:37,121 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:37,123 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-07-07 08:09:37,149 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2022-07-07 08:09:37,451 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:37,453 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2022-07-07 08:09:37,468 - stpipe.RscdStep - INFO - RscdStep instance created.
-2022-07-07 08:09:37,547 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:37,551 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp56ubin_p/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-07-07 08:09:37,575 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
-2022-07-07 08:09:37,788 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:38,138 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2022-07-07 08:09:38,139 - stpipe.RscdStep - INFO - Step RscdStep done
-2022-07-07 08:09:38,585 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2022-07-07 08:09:38,736 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:38,738 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-07-07 08:09:38,762 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2022-07-07 08:09:39,290 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:39,291 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2022-07-07 08:09:39,304 - stpipe.RscdStep - INFO - RscdStep instance created.
-2022-07-07 08:09:39,493 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:39,495 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp56ubin_p/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-07-07 08:09:39,519 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
-2022-07-07 08:09:39,970 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:40,569 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2022-07-07 08:09:40,570 - stpipe.RscdStep - INFO - Step RscdStep done
-2022-07-07 08:09:40,781 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2022-07-07 08:09:40,960 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2022-07-07 08:09:40,962 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-07-07 08:09:40,986 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2022-07-07 08:09:41,279 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
-2022-07-07 08:09:41,296 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:41,297 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2022-07-07 08:09:41,311 - stpipe.RscdStep - INFO - RscdStep instance created.
-2022-07-07 08:09:41,472 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
-2022-07-07 08:09:41,475 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp56ubin_p/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-07-07 08:09:41,503 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
-2022-07-07 08:09:41,689 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:41,908 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
-2022-07-07 08:09:41,909 - stpipe.RscdStep - INFO - Step RscdStep done
-2022-07-07 08:09:42,430 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2022-07-07 08:09:42,609 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:42,611 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-07-07 08:09:42,637 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0028.fits
-2022-07-07 08:09:43,175 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:43,176 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2022-07-07 08:09:43,191 - stpipe.RscdStep - INFO - RscdStep instance created.
-2022-07-07 08:09:43,354 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
-2022-07-07 08:09:43,356 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp56ubin_p/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-07-07 08:09:43,381 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0014.fits
-2022-07-07 08:09:43,431 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
-2022-07-07 08:09:43,437 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:43,931 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-2022-07-07 08:09:43,932 - stpipe.RscdStep - INFO - Step RscdStep done
-2022-07-07 08:09:44,687 - stpipe.DQInitStep - INFO - DQInitStep instance created.
-2022-07-07 08:09:44,843 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2022-07-07 08:09:44,846 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
-2022-07-07 08:09:44,872 - stpipe.DQInitStep - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_miri_mask_0029.fits
-2022-07-07 08:09:45,647 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:45,649 - stpipe.DQInitStep - INFO - Step DQInitStep done
-2022-07-07 08:09:45,663 - stpipe.RscdStep - INFO - RscdStep instance created.
-2022-07-07 08:09:45,825 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
-2022-07-07 08:09:45,827 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp56ubin_p/jw04193001001_01101_00001_MIRIFULONG&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
-2022-07-07 08:09:45,854 - stpipe.RscdStep - INFO - Using RSCD reference file /grp/crds/cache/references/jwst/jwst_miri_rscd_0015.fits
-2022-07-07 08:09:46,492 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0914.pmap
-2022-07-07 08:09:47,172 - stpipe.RscdStep - INFO - Saved model in jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
-2022-07-07 08:09:47,173 - stpipe.RscdStep - INFO - Step RscdStep done
+<pre>2022-09-19 20:59:52,946 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-09-19 20:59:53,036 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:53,038 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-09-19 20:59:53,061 - stpipe.DQInitStep - INFO - Using MASK reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0028.fits
+2022-09-19 20:59:53,381 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:53,382 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-09-19 20:59:53,395 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-09-19 20:59:53,488 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(3, 10, 1024, 1032) from starfield_slow_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:53,490 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmph0tfkt7h/starfield_slow_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-09-19 20:59:53,511 - stpipe.RscdStep - INFO - Using RSCD reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_rscd_0014.fits
+2022-09-19 20:59:53,713 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:53,978 - stpipe.RscdStep - INFO - Saved model in starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-09-19 20:59:53,979 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-09-19 20:59:54,339 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-09-19 20:59:54,439 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:54,441 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-09-19 20:59:54,462 - stpipe.DQInitStep - INFO - Using MASK reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0028.fits
+2022-09-19 20:59:54,936 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:54,937 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-09-19 20:59:54,950 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-09-19 20:59:55,045 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:55,047 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmph0tfkt7h/starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-09-19 20:59:55,069 - stpipe.RscdStep - INFO - Using RSCD reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_rscd_0014.fits
+2022-09-19 20:59:55,445 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:56,026 - stpipe.RscdStep - INFO - Saved model in starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-09-19 20:59:56,027 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-09-19 20:59:56,208 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-09-19 20:59:56,304 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2022-09-19 20:59:56,305 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-09-19 20:59:56,327 - stpipe.DQInitStep - INFO - Using MASK reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0028.fits
+2022-09-19 20:59:56,572 - stpipe.DQInitStep - INFO - Extracting mask subarray to match science data
+2022-09-19 20:59:56,590 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:56,590 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-09-19 20:59:56,604 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-09-19 20:59:56,703 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 512, 512) from det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky.fits&gt;,).
+2022-09-19 20:59:56,704 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmph0tfkt7h/det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-09-19 20:59:56,727 - stpipe.RscdStep - INFO - Using RSCD reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_rscd_0014.fits
+2022-09-19 20:59:56,877 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:57,051 - stpipe.RscdStep - INFO - Saved model in det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
+2022-09-19 20:59:57,052 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-09-19 20:59:57,482 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-09-19 20:59:57,586 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:57,587 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-09-19 20:59:57,611 - stpipe.DQInitStep - INFO - Using MASK reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0028.fits
+2022-09-19 20:59:58,091 - stpipe.DQInitStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:58,091 - stpipe.DQInitStep - INFO - Step DQInitStep done
+2022-09-19 20:59:58,104 - stpipe.RscdStep - INFO - RscdStep instance created.
+2022-09-19 20:59:58,201 - stpipe.RscdStep - INFO - Step RscdStep running with args (&lt;RampModel(2, 35, 1024, 1032) from starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1.fits&gt;,).
+2022-09-19 20:59:58,203 - stpipe.RscdStep - INFO - Step RscdStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmph0tfkt7h/starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1&#39;, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}
+2022-09-19 20:59:58,225 - stpipe.RscdStep - INFO - Using RSCD reference file /tmp/crds_cache/references/jwst/miri/jwst_miri_rscd_0014.fits
+2022-09-19 20:59:58,274 - stpipe.RscdStep - WARNING - READPATT, SUBARRAY combination not found in ref file: RSCD correction will be skipped
+2022-09-19 20:59:58,280 - stpipe.RscdStep - INFO - Results used CRDS context: jwst_0977.pmap
+2022-09-19 20:59:58,633 - stpipe.RscdStep - INFO - Saved model in starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
+2022-09-19 20:59:58,634 - stpipe.RscdStep - INFO - Step RscdStep done
+2022-09-19 20:59:59,236 - stpipe.DQInitStep - INFO - DQInitStep instance created.
+2022-09-19 20:59:59,330 - stpipe.DQInitStep - INFO - Step DQInitStep running with args (&lt;RampModel(5, 20, 1024, 1032) from jw04193001001_01101_00001_MIRIFULONG_uncal.fits&gt;,).
+2022-09-19 20:59:59,332 - stpipe.DQInitStep - INFO - Step DQInitStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}
+2022-09-19 20:59:59,367 - CRDS - INFO -  Fetching  /tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0029.fits    4.3 M bytes  (1 / 1 files) (0 / 4.3 M bytes)
+2022-09-19 20:59:59,368 - CRDS - ERROR -  Failure downloading file &#39;jwst_miri_mask_0029.fits&#39; : Error fetching data for &#39;jwst_miri_mask_0029.fits&#39; at CRDS server &#39;https://jwst-crds.stsci.edu&#39; with mode &#39;http&#39; : [Errno 28] No space left on device: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0029.fits&#39;
 </pre>
 </div>
 </div>
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>All files processed.
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [5], line 64</span>
+<span class="ansi-green-intense-fg ansi-bold">     62</span>     <span style="color: rgb(95,135,135)"># check that header has needed keywords set</span>
+<span class="ansi-green-intense-fg ansi-bold">     63</span>     model <span style="color: rgb(98,98,98)">=</span> RampModel(file)
+<span class="ansi-green-fg">---&gt; 64</span>     preim <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">DQInitStep</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">call</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     65</span>     postim <span style="color: rgb(98,98,98)">=</span> RscdStep<span style="color: rgb(98,98,98)">.</span>call(preim, output_file<span style="color: rgb(98,98,98)">=</span>base)
+<span class="ansi-green-intense-fg ansi-bold">     67</span> f<span style="color: rgb(98,98,98)">.</span>close()
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:662</span>, in <span class="ansi-cyan-fg">Step.call</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    658</span> name <span style="color: rgb(98,98,98)">=</span> config<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
+<span class="ansi-green-intense-fg ansi-bold">    659</span> instance <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">cls</span><span style="color: rgb(98,98,98)">.</span>from_config_section(config,
+<span class="ansi-green-intense-fg ansi-bold">    660</span>     name<span style="color: rgb(98,98,98)">=</span>name, config_file<span style="color: rgb(98,98,98)">=</span>config_file, param_args<span style="color: rgb(98,98,98)">=</span>kwargs)
+<span class="ansi-green-fg">--&gt; 662</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">instance</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">run</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:483</span>, in <span class="ansi-cyan-fg">Step.run</span><span class="ansi-blue-fg">(self, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    481</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>prefetch(<span style="color: rgb(98,98,98)">*</span>args)
+<span class="ansi-green-intense-fg ansi-bold">    482</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">--&gt; 483</span>     step_result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">process</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    484</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> e:
+<span class="ansi-green-intense-fg ansi-bold">    485</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">process() takes exactly</span><span style="color: rgb(175,0,0)">&#34;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">str</span>(e):
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/dq_init/dq_init_step.py:64</span>, in <span class="ansi-cyan-fg">DQInitStep.process</span><span class="ansi-blue-fg">(self, input)</span>
+<span class="ansi-green-intense-fg ansi-bold">     61</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span>
+<span class="ansi-green-intense-fg ansi-bold">     63</span> <span style="color: rgb(95,135,135)"># Retrieve the mask reference file name</span>
+<span class="ansi-green-fg">---&gt; 64</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>mask_filename <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_reference_file</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">input_model</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">mask</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     65</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>log<span style="color: rgb(98,98,98)">.</span>info(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Using MASK reference file </span><span class="ansi-bold" style="color: rgb(175,95,135)">%s</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>mask_filename)
+<span class="ansi-green-intense-fg ansi-bold">     67</span> <span style="color: rgb(95,135,135)"># Check for a valid reference file</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:800</span>, in <span class="ansi-cyan-fg">Step.get_reference_file</span><span class="ansi-blue-fg">(self, input_file, reference_file_type)</span>
+<span class="ansi-green-intense-fg ansi-bold">    797</span>         hdr_name <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">N/A</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    798</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reference_files_used<span style="color: rgb(98,98,98)">.</span>append(
+<span class="ansi-green-intense-fg ansi-bold">    799</span>         (reference_file_type, hdr_name))
+<span class="ansi-green-fg">--&gt; 800</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">crds_client</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">check_reference_open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">reference_name</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/crds_client.py:85</span>, in <span class="ansi-cyan-fg">check_reference_open</span><span class="ansi-blue-fg">(refpath)</span>
+<span class="ansi-green-intense-fg ansi-bold">     83</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">RuntimeError</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">S3 object does not exist: </span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> refpath)
+<span class="ansi-green-intense-fg ansi-bold">     84</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg">---&gt; 85</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">refpath</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">rb</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>:
+<span class="ansi-green-intense-fg ansi-bold">     86</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">pass</span>
+<span class="ansi-green-intense-fg ansi-bold">     87</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> refpath
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/tmp/crds_cache/references/jwst/miri/jwst_miri_mask_0029.fits&#39;</pre>
 </div>
 </div>
 
@@ -15012,26 +15060,26 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="flagging_ID"></a></p>
 <h3 id="Check-flagged-frames">Check flagged frames<a class="anchor-link" href="#Check-flagged-frames">&#182;</a></h3><p>Check that the frames at the beginning of each integration after the first are flagged properly.</p>
-<p>FAST mode should mark 4 frames as 'DO_NOT"USE', SLOW mode marks 2 frames, and step should skip FASTGRPAVG.
+<p>FAST mode should mark 4 frames as 'DO_NOT&quot;USE', SLOW mode marks 2 frames, and step should skip FASTGRPAVG.
 All subarrays are set to skip 4 frames. (These are the values currently set in the reference files as of 8/2020.)</p>
 <p><a href="#title_ID">Top of Page</a></p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># FAST mode should mark 4 frames as &#39;DO_NOT&quot;USE&#39;, SLOW mode marks 2 frames, and step should skip FASTGRPAVG.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># FAST mode should mark 4 frames as 'DO_NOT"USE', SLOW mode marks 2 frames, and step should skip FASTGRPAVG.</span>
 <span class="c1"># All subarrays are set to skip 4 frames.</span>
 
 <span class="c1"># read in list of input files</span>
-<span class="n">imlist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">rscdoutfiles</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># avoid the &#39;b at the start of a line</span>
+<span class="n">imlist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">rscdoutfiles</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># avoid the 'b at the start of a line</span>
 
 <span class="c1"># loop over list of files</span>
 <span class="k">for</span> <span class="n">rscdfile</span> <span class="ow">in</span> <span class="n">imlist2</span><span class="p">:</span>
@@ -15048,115 +15096,55 @@ All subarrays are set to skip 4 frames. (These are the values currently set in t
     
     <span class="c1"># Get reference file used in step</span>
     <span class="n">rscdreffile</span> <span class="o">=</span> <span class="n">rscdmodel</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">ref_file</span><span class="o">.</span><span class="n">rscd</span><span class="o">.</span><span class="n">name</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RSCD reference file&#39;</span><span class="p">,</span> <span class="n">rscdreffile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'RSCD reference file'</span><span class="p">,</span> <span class="n">rscdreffile</span><span class="p">)</span>
     
     <span class="c1"># parse linfile name to discard crds://</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="n">rscdreffile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">rscdreffile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
     
     <span class="c1"># read in reference file</span>
     <span class="c1"># find location of file</span>
     <span class="n">basename</span> <span class="o">=</span> <span class="n">crds</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">pop_crds_uri</span><span class="p">(</span><span class="n">rscdreffile</span><span class="p">)</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="n">crds</span><span class="o">.</span><span class="n">locate_file</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="s2">&quot;jwst&quot;</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">crds</span><span class="o">.</span><span class="n">locate_file</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="s2">"jwst"</span><span class="p">)</span>
  
     <span class="c1"># open reference file</span>
     <span class="n">reffile</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-    <span class="n">reftable</span> <span class="o">=</span> <span class="n">reffile</span><span class="p">[</span><span class="s1">&#39;RSCD_GROUP_SKIP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">reftable</span> <span class="o">=</span> <span class="n">reffile</span><span class="p">[</span><span class="s1">'RSCD_GROUP_SKIP'</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
     <span class="n">refhead</span> <span class="o">=</span> <span class="n">reffile</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
     
     <span class="c1"># read in table value for number to skip from reference file</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">reftable</span><span class="p">[</span><span class="s1">&#39;READPATT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">readpatt</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">reftable</span><span class="p">[</span><span class="s1">&#39;SUBARRAY&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FULL&#39;</span><span class="p">))</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">((</span><span class="n">reftable</span><span class="p">[</span><span class="s1">'READPATT'</span><span class="p">]</span> <span class="o">==</span> <span class="n">readpatt</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">reftable</span><span class="p">[</span><span class="s1">'SUBARRAY'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'FULL'</span><span class="p">))</span>
     <span class="n">row</span><span class="o">=</span><span class="n">reftable</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-    <span class="n">numskiparray</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;group_skip&#39;</span><span class="p">]</span>
+    <span class="n">numskiparray</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">'group_skip'</span><span class="p">]</span>
     
     <span class="k">if</span> <span class="n">numskiparray</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">numskip</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;group_skip&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+        <span class="n">numskip</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">'group_skip'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
     <span class="k">else</span><span class="p">:</span>
         <span class="n">numskip</span> <span class="o">=</span> <span class="mi">0</span>
         
-    <span class="c1"># For all integrations after the first, flag numskip frames at the start of the ramp as &#39;DO_NOT_USE&#39;</span>
+    <span class="c1"># For all integrations after the first, flag numskip frames at the start of the ramp as 'DO_NOT_USE'</span>
     <span class="n">nint</span> <span class="o">=</span> <span class="n">rscdmodel</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">nints</span>
  
     <span class="c1"># Use assert statement to check that all integrations greater than the first and in cases where </span>
     <span class="c1"># the number of frames to skip is not 0, check that all groups are properly flagged.</span>
     <span class="k">for</span> <span class="nb">int</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nint</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">int</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">numskip</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">groupdq</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">numskip</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">]</span> <span class="o">==</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;DO_NOT_USE&#39;</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">groupdq</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">numskip</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">]</span> <span class="o">==</span> <span class="n">dqflags</span><span class="o">.</span><span class="n">group</span><span class="p">[</span><span class="s1">'DO_NOT_USE'</span><span class="p">])</span>
     
     <span class="c1"># output print to screen to see output of tests</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Science file tested: &#39;</span><span class="p">,</span><span class="n">rscdfile</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Subarray: &#39;</span><span class="p">,</span> <span class="n">science_subarray</span><span class="p">,</span> <span class="s1">&#39; Readout pattern: &#39;</span><span class="p">,</span> <span class="n">readpatt</span><span class="p">,</span> <span class="s1">&#39; Number of frames to flag: &#39;</span><span class="p">,</span> <span class="n">numskip</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data quality flags for each frame in each integration&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Science file tested: '</span><span class="p">,</span><span class="n">rscdfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Subarray: '</span><span class="p">,</span> <span class="n">science_subarray</span><span class="p">,</span> <span class="s1">' Readout pattern: '</span><span class="p">,</span> <span class="n">readpatt</span><span class="p">,</span> <span class="s1">' Number of frames to flag: '</span><span class="p">,</span> <span class="n">numskip</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Data quality flags for each frame in each integration'</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">groupdq</span><span class="p">[:,:,</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">])</span>
     <span class="nb">print</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All files processed. If no Assertion Errors printed, all tests passed.&#39;</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'All files processed. If no Assertion Errors printed, all tests passed.'</span><span class="p">)</span>    
 </pre></div>
+</body></html>
+
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>RSCD reference file crds://jwst_miri_rscd_0014.fits
-Science file tested:  starfield_slow_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-Subarray:  FULL  Readout pattern:  SLOW  Number of frames to flag:  2
-Data quality flags for each frame in each integration
-[[0 0 0 0 0 0 0 0 0 0]
- [1 1 0 0 0 0 0 0 0 0]
- [1 1 0 0 0 0 0 0 0 0]]
-
-RSCD reference file crds://jwst_miri_rscd_0014.fits
-Science file tested:  starfield_fast_4ptdither_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-Subarray:  FULL  Readout pattern:  FAST  Number of frames to flag:  4
-Data quality flags for each frame in each integration
-[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
-
-RSCD reference file crds://jwst_miri_rscd_0014.fits
-Science file tested:  det_image_seq1_MIRIMAGE_F1130Wexp1_brightsky_rscdstep.fits
-Subarray:  BRIGHTSKY  Readout pattern:  FAST  Number of frames to flag:  4
-Data quality flags for each frame in each integration
-[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
-
-RSCD reference file crds://jwst_miri_rscd_0014.fits
-Science file tested:  starfield_fastgrpavg_seq1_MIRIMAGE_F1130Wexp1_rscdstep.fits
-Subarray:  FULL  Readout pattern:  FASTGRPAVG  Number of frames to flag:  0
-Data quality flags for each frame in each integration
-[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
-
-RSCD reference file crds://jwst_miri_rscd_0015.fits
-Science file tested:  jw04193001001_01101_00001_MIRIFULONG_rscdstep.fits
-Subarray:  FULL  Readout pattern:  FAST  Number of frames to flag:  4
-Data quality flags for each frame in each integration
-[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
- [1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
-
-All files processed. If no Assertion Errors printed, all tests passed.
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
