@@ -32,9 +32,7 @@ new notebook, you can use the following setup:
 
 1. Clone the validation notebooks repository: `git clone https://github.com/spacetelescope/jwst_validation_notebooks.git`
 2. Open a terminal window into the newly created directory
-3. Create the Validation Notebooks conda environment: `conda env create -f environment.yml`
-4. Activate the environment: `conda activate jwst_validation_notebooks`
-5. Set up ipykernel for Jupyter: `python -m ipykernel install --user --name=jwst_validation_notebooks`
+3. Create the Validation Notebooks conda environment: `source setup_environment.sh`
 
 You should now be able to run the notebooks with jupyter (type `jupyter notebook`), or
 test the creation and running of the test suite by typing `python convert.py`.
@@ -149,9 +147,9 @@ you are ready to submit the notebook in a pull request, please change it to True
 
 The Jenkins instance is running on a virtual machine inside STScI, so it works best with
 its CRDS cache set to "/grp/crds/cache", but especially when working over the VPN this
-location may not work best for you. This cell in the template notebook allows for multiple
-options as to where to put the CRDS cache directory, so please include it. Again, when
-submitting the notebook, please set `use_local_crds_cache` to False.
+location may not work best for you. In order to use a local CRDS cache, set the 
+`CRDS_CACHE_TYPE` environment variable to "local" (e.g. `export CRDS_CACHE_TYPE=.local`).
+This will tell CRDS to cache files in the directory `${HOME}/crds/cache`
 
 ### New Test Data ###
 
