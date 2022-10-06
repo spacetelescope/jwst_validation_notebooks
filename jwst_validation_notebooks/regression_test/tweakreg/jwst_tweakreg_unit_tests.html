@@ -14624,9 +14624,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p><a id="intro"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This is the validation notebook that displays the unit tests for the Tweakreg step in calwebb_image3. This notebook runs and displays the unit tests that are performed as a part of the normal software continuous integration process. For more information on the pipeline visit the links below.</p>
 <ul>
-<li><p>Pipeline description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/tweakreg/index.html</p>
+<li><p>Pipeline description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/tweakreg/index.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/tweakreg/index.html</a></p>
 </li>
-<li><p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/</p>
+<li><p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">https://github.com/spacetelescope/jwst/tree/master/jwst/</a></p>
 </li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
@@ -14644,7 +14644,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p><a id="unit"></a></p>
 <h1 id="JWST-Unit-Tests">JWST Unit Tests<a class="anchor-link" href="#JWST-Unit-Tests">&#182;</a></h1><p>JWST unit tests are located in the &quot;tests&quot; folder for each pipeline step within the <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">GitHub repository</a>, e.g., <code>jwst/tweakreg/tests</code>.</p>
 <ul>
-<li>Unit test README: https://github.com/spacetelescope/jwst#unit-tests</li>
+<li>Unit test README: <a href="https://github.com/spacetelescope/jwst#unit-tests">https://github.com/spacetelescope/jwst#unit-tests</a></li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14727,15 +14727,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14754,7 +14752,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /tmp/crds_cache
+<pre>CRDS cache location: /grp/crds/cache
 </pre>
 </div>
 </div>
@@ -14778,8 +14776,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14810,8 +14806,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14840,23 +14834,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing JWST Pipeline </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
 
 <span class="n">jwst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">jwst</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
-<span class="n">tweakreg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'tweakreg'</span><span class="p">)</span>
-<span class="n">associations</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'associations'</span><span class="p">)</span>
-<span class="n">datamodels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'datamodels'</span><span class="p">)</span>
-<span class="n">stpipe</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'stpipe'</span><span class="p">)</span>
-<span class="n">regtest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">'regtest'</span><span class="p">)</span>
+<span class="n">tweakreg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;tweakreg&#39;</span><span class="p">)</span>
+<span class="n">associations</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;associations&#39;</span><span class="p">)</span>
+<span class="n">datamodels</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;datamodels&#39;</span><span class="p">)</span>
+<span class="n">stpipe</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;stpipe&#39;</span><span class="p">)</span>
+<span class="n">regtest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jwst_dir</span><span class="p">,</span> <span class="s1">&#39;regtest&#39;</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
-    <span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">'regtest_report.html'</span><span class="p">)</span>
+    <span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s1">&#39;regtest_report.html&#39;</span><span class="p">)</span>
     <span class="o">!</span>pytest <span class="o">{</span>tweakreg<span class="o">}</span> -v --ignore<span class="o">={</span>associations<span class="o">}</span> --ignore<span class="o">={</span>datamodels<span class="o">}</span> --ignore<span class="o">={</span>stpipe<span class="o">}</span> --ignore<span class="o">={</span>regtest<span class="o">}</span> --html<span class="o">={</span>outdir<span class="o">}</span> --self-contained-html
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">"regtest_report.html"</span><span class="p">))</span> <span class="k">as</span> <span class="n">report_file</span><span class="p">:</span>
-        <span class="n">html_report</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">&quot;regtest_report.html&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">report_file</span><span class="p">:</span>
+        <span class="n">html_report</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14879,7 +14871,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="ansi-bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.9.13, pytest-7.1.3, pluggy-1.0.0 -- /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.9.13&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.71.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.3&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;requests-mock&#39;: &#39;1.10.0&#39;, &#39;asdf&#39;: &#39;2.13.0&#39;, &#39;openfiles&#39;: &#39;0.5.0&#39;, &#39;forked&#39;: &#39;1.4.0&#39;, &#39;doctestplus&#39;: &#39;0.12.0&#39;, &#39;cov&#39;: &#39;3.0.0&#39;, &#39;xdist&#39;: &#39;2.5.0&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.7.2&#39;, &#39;metadata&#39;: &#39;2.0.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;}, &#39;BUILD_NUMBER&#39;: &#39;123&#39;, &#39;BUILD_ID&#39;: &#39;123&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/123/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-123&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;29&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;a9e81ed2f1a3f26967771bf1fcd133b68709871e&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
+metadata: {&#39;Python&#39;: &#39;3.9.13&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.3&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;requests-mock&#39;: &#39;1.10.0&#39;, &#39;asdf&#39;: &#39;2.13.0&#39;, &#39;openfiles&#39;: &#39;0.5.0&#39;, &#39;forked&#39;: &#39;1.4.0&#39;, &#39;doctestplus&#39;: &#39;0.12.0&#39;, &#39;cov&#39;: &#39;3.0.0&#39;, &#39;xdist&#39;: &#39;2.5.0&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.7.2&#39;, &#39;metadata&#39;: &#39;2.0.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;}, &#39;BUILD_NUMBER&#39;: &#39;124&#39;, &#39;BUILD_ID&#39;: &#39;124&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-124&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;19&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;bde8f02589041fbfae28bb9206e1fbb30578e7dc&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
 rootdir: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope
 plugins: requests-mock-1.10.0, asdf-2.13.0, openfiles-0.5.0, forked-1.4.0, doctestplus-0.12.0, cov-3.0.0, xdist-2.5.0, ci-watson-0.6.1, jwst-1.7.2, metadata-2.0.2, html-3.1.1
 collected 7 items                                                              
@@ -14900,8 +14892,8 @@ miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweak
     warnings.warn(&#34;The fit may be poorly conditioned\n&#34;,
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-- generated html file: file:///internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpydv2b4ti/regtest_report.html -
-<span class="ansi-yellow-fg">======================== </span><span class="ansi-green-fg">7 passed</span>, <span class="ansi-yellow-intense-fg ansi-bold">2 warnings</span><span class="ansi-yellow-fg"> in 7.75s</span><span class="ansi-yellow-fg"> =========================</span>
+- generated html file: file:///internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp30nxdddf/regtest_report.html -
+<span class="ansi-yellow-fg">======================== </span><span class="ansi-green-fg">7 passed</span>, <span class="ansi-yellow-intense-fg ansi-bold">2 warnings</span><span class="ansi-yellow-fg"> in 7.72s</span><span class="ansi-yellow-fg"> =========================</span>
 </pre>
 </div>
 </div>
@@ -14920,8 +14912,6 @@ miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweak
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">html_report</span><span class="p">)</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -15372,30 +15362,30 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>regtest_report.html</h1>
-    <p>Report generated on 20-Sep-2022 at 13:27:50 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 06-Oct-2022 at 05:23:18 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>BUILD_ID</td>
-        <td>123</td></tr>
+        <td>124</td></tr>
       <tr>
         <td>BUILD_NUMBER</td>
-        <td>123</td></tr>
+        <td>124</td></tr>
       <tr>
         <td>BUILD_TAG</td>
-        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-123</td></tr>
+        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-124</td></tr>
       <tr>
         <td>BUILD_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/123/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/123/</a></td></tr>
+        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/</a></td></tr>
       <tr>
         <td>EXECUTOR_NUMBER</td>
-        <td>29</td></tr>
+        <td>19</td></tr>
       <tr>
         <td>GIT_BRANCH</td>
         <td>origin/master</td></tr>
       <tr>
         <td>GIT_COMMIT</td>
-        <td>a9e81ed2f1a3f26967771bf1fcd133b68709871e</td></tr>
+        <td>bde8f02589041fbfae28bb9206e1fbb30578e7dc</td></tr>
       <tr>
         <td>GIT_URL</td>
         <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
@@ -15413,7 +15403,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.3"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Linux-3.10.0-1160.71.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
+        <td>Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
       <tr>
         <td>Plugins</td>
         <td>{"asdf": "2.13.0", "ci-watson": "0.6.1", "cov": "3.0.0", "doctestplus": "0.12.0", "forked": "1.4.0", "html": "3.1.1", "jwst": "1.7.2", "metadata": "2.0.2", "openfiles": "0.5.0", "requests-mock": "1.10.0", "xdist": "2.5.0"}</td></tr>
@@ -15424,7 +15414,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>WORKSPACE</td>
         <td>/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
     <h2>Summary</h2>
-    <p>7 tests ran in 7.75 seconds. </p>
+    <p>7 tests ran in 7.72 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">7 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -15440,7 +15430,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_radius</td>
-          <td class="col-duration">0.91</td>
+          <td class="col-duration">0.85</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -15449,7 +15439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_get_catalog</td>
-          <td class="col-duration">0.64</td>
+          <td class="col-duration">0.63</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -15458,7 +15448,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_amutils.py::test_create_catalog</td>
-          <td class="col-duration">2.98</td>
+          <td class="col-duration">2.94</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -15467,32 +15457,32 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_multichip_jwst.py::test_multichip_jwst_alignment</td>
-          <td class="col-duration">0.86</td>
+          <td class="col-duration">0.90</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-09-20 13:27:48,522 - stpipe - INFO -  
-2022-09-20 13:27:48,523 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:48.522655
-2022-09-20 13:27:48,523 - stpipe - INFO -       Version 0.8.0
-2022-09-20 13:27:48,523 - stpipe - INFO -  
-2022-09-20 13:27:48,694 - stpipe - INFO - Aligning image catalog &#x27;GROUP ID: 1&#x27; to the reference catalog.
-2022-09-20 13:27:48,722 - stpipe - INFO - Found 2000 matches for &#x27;GROUP ID: 1&#x27;...
-2022-09-20 13:27:48,722 - stpipe - INFO - Performing &#x27;general&#x27; fit
-2022-09-20 13:27:48,726 - stpipe - INFO - Computed &#x27;general&#x27; fit for GROUP ID: 1:
-2022-09-20 13:27:48,726 - stpipe - INFO - XSH: 248.328  YSH: -442.699    PROPER ROT: -0.00108548    
-2022-09-20 13:27:48,726 - stpipe - INFO - &lt;ROT&gt;: -0.00108548  SKEW: 5.45605e-07    ROT_X: -0.00108575  ROT_Y: -0.00108521
-2022-09-20 13:27:48,726 - stpipe - INFO - &lt;SCALE&gt;: 1.0025  SCALE_X: 1.0025  SCALE_Y: 1.0025
-2022-09-20 13:27:48,726 - stpipe - INFO - 
-2022-09-20 13:27:48,726 - stpipe - INFO - FIT RMSE: 3.33857e-05   FIT MAE: 2.89892e-05
-2022-09-20 13:27:48,726 - stpipe - INFO - Final solution based on 2000 objects.
-2022-09-20 13:27:48,787 - stpipe - INFO -  
-2022-09-20 13:27:48,787 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:48.787447
-2022-09-20 13:27:48,787 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.264792
-2022-09-20 13:27:48,787 - stpipe - INFO -  
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-10-06 05:23:16,765 - stpipe - INFO -  
+2022-10-06 05:23:16,766 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:16.764507
+2022-10-06 05:23:16,766 - stpipe - INFO -       Version 0.8.0
+2022-10-06 05:23:16,766 - stpipe - INFO -  
+2022-10-06 05:23:16,947 - stpipe - INFO - Aligning image catalog &#x27;GROUP ID: 1&#x27; to the reference catalog.
+2022-10-06 05:23:16,975 - stpipe - INFO - Found 2000 matches for &#x27;GROUP ID: 1&#x27;...
+2022-10-06 05:23:16,976 - stpipe - INFO - Performing &#x27;general&#x27; fit
+2022-10-06 05:23:16,980 - stpipe - INFO - Computed &#x27;general&#x27; fit for GROUP ID: 1:
+2022-10-06 05:23:16,980 - stpipe - INFO - XSH: 248.328  YSH: -442.699    PROPER ROT: -0.00108548    
+2022-10-06 05:23:16,980 - stpipe - INFO - &lt;ROT&gt;: -0.00108548  SKEW: 5.45605e-07    ROT_X: -0.00108575  ROT_Y: -0.00108521
+2022-10-06 05:23:16,980 - stpipe - INFO - &lt;SCALE&gt;: 1.0025  SCALE_X: 1.0025  SCALE_Y: 1.0025
+2022-10-06 05:23:16,980 - stpipe - INFO - 
+2022-10-06 05:23:16,980 - stpipe - INFO - FIT RMSE: 3.33857e-05   FIT MAE: 2.89892e-05
+2022-10-06 05:23:16,980 - stpipe - INFO - Final solution based on 2000 objects.
+2022-10-06 05:23:17,042 - stpipe - INFO -  
+2022-10-06 05:23:17,042 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:17.042168
+2022-10-06 05:23:17,042 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.277661
+2022-10-06 05:23:17,042 - stpipe - INFO -  
 <br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe:imalign.py:509  
 INFO     stpipe:imalign.py:509  
-INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:48.522655
-INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:48.522655
+INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:16.764507
+INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:16.764507
 INFO     stpipe:imalign.py:512       Version 0.8.0
 INFO     stpipe:imalign.py:512       Version 0.8.0
 INFO     stpipe:imalign.py:513  
@@ -15521,54 +15511,54 @@ INFO     stpipe:wcsimage.py:1054 Final solution based on 2000 objects.
 INFO     stpipe:wcsimage.py:1054 Final solution based on 2000 objects.
 INFO     stpipe:imalign.py:685  
 INFO     stpipe:imalign.py:685  
-INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:48.787447
-INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:48.787447
-INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.264792
-INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.264792
+INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:17.042168
+INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:17.042168
+INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.277661
+INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.277661
 INFO     stpipe:imalign.py:690  
 INFO     stpipe:imalign.py:690<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_multichip_jwst.py::test_multichip_alignment_step</td>
-          <td class="col-duration">1.74</td>
+          <td class="col-duration">1.81</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-09-20 13:27:49,740 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
-2022-09-20 13:27:49,746 - stpipe.TweakRegStep - INFO - Detected 2000 sources in refcat.
-2022-09-20 13:27:49,756 - stpipe.TweakRegStep - INFO - Detected 1000 sources in ext1.
-2022-09-20 13:27:49,766 - stpipe.TweakRegStep - INFO - Detected 1000 sources in ext4.
-2022-09-20 13:27:49,777 - stpipe.TweakRegStep - INFO - 
-2022-09-20 13:27:49,777 - stpipe.TweakRegStep - INFO - Number of image groups to be aligned: 2.
-2022-09-20 13:27:49,777 - stpipe.TweakRegStep - INFO - Image groups:
-2022-09-20 13:27:49,788 - stpipe.TweakRegStep - INFO - * Images in GROUP &#x27;refcat&#x27;:
-2022-09-20 13:27:49,788 - stpipe.TweakRegStep - INFO -      refcat
-2022-09-20 13:27:49,894 - stpipe.TweakRegStep - INFO - * Images in GROUP &#x27;ext&#x27;:
-2022-09-20 13:27:49,894 - stpipe.TweakRegStep - INFO -      ext1
-2022-09-20 13:27:49,894 - stpipe.TweakRegStep - INFO -      ext4
-2022-09-20 13:27:49,894 - stpipe.TweakRegStep - INFO - 
-2022-09-20 13:27:49,894 - stpipe - INFO -  
-2022-09-20 13:27:49,894 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:49.894492
-2022-09-20 13:27:49,894 - stpipe - INFO -       Version 0.8.0
-2022-09-20 13:27:49,894 - stpipe - INFO -  
-2022-09-20 13:27:50,145 - stpipe - INFO - Selected image &#x27;GROUP ID: refcat&#x27; as reference image
-2022-09-20 13:27:50,158 - stpipe - INFO - Aligning image catalog &#x27;GROUP ID: ext&#x27; to the reference catalog.
-2022-09-20 13:27:50,238 - stpipe - INFO - Found 2000 matches for &#x27;GROUP ID: ext&#x27;...
-2022-09-20 13:27:50,239 - stpipe - INFO - Performing &#x27;general&#x27; fit
-2022-09-20 13:27:50,242 - stpipe - INFO - Computed &#x27;general&#x27; fit for GROUP ID: ext:
-2022-09-20 13:27:50,242 - stpipe - INFO - XSH: 248.328  YSH: -442.699    PROPER ROT: -0.00108548    
-2022-09-20 13:27:50,243 - stpipe - INFO - &lt;ROT&gt;: -0.00108548  SKEW: 5.45605e-07    ROT_X: -0.00108575  ROT_Y: -0.00108521
-2022-09-20 13:27:50,243 - stpipe - INFO - &lt;SCALE&gt;: 1.0025  SCALE_X: 1.0025  SCALE_Y: 1.0025
-2022-09-20 13:27:50,243 - stpipe - INFO - 
-2022-09-20 13:27:50,243 - stpipe - INFO - FIT RMSE: 3.33856e-05   FIT MAE: 2.89892e-05
-2022-09-20 13:27:50,243 - stpipe - INFO - Final solution based on 2000 objects.
-2022-09-20 13:27:50,303 - stpipe - INFO -  
-2022-09-20 13:27:50,303 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:50.303227
-2022-09-20 13:27:50,303 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.408735
-2022-09-20 13:27:50,303 - stpipe - INFO -  
-2022-09-20 13:27:50,542 - stpipe.TweakRegStep - WARNING - Failed to update &#x27;meta.wcsinfo&#x27; with FITS SIP approximation. Reported error is:
-2022-09-20 13:27:50,542 - stpipe.TweakRegStep - WARNING - &quot;Failed to achieve required error tolerance&quot;
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-10-06 05:23:18,080 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
+2022-10-06 05:23:18,087 - stpipe.TweakRegStep - INFO - Detected 2000 sources in refcat.
+2022-10-06 05:23:18,097 - stpipe.TweakRegStep - INFO - Detected 1000 sources in ext1.
+2022-10-06 05:23:18,106 - stpipe.TweakRegStep - INFO - Detected 1000 sources in ext4.
+2022-10-06 05:23:18,117 - stpipe.TweakRegStep - INFO - 
+2022-10-06 05:23:18,117 - stpipe.TweakRegStep - INFO - Number of image groups to be aligned: 2.
+2022-10-06 05:23:18,117 - stpipe.TweakRegStep - INFO - Image groups:
+2022-10-06 05:23:18,128 - stpipe.TweakRegStep - INFO - * Images in GROUP &#x27;refcat&#x27;:
+2022-10-06 05:23:18,128 - stpipe.TweakRegStep - INFO -      refcat
+2022-10-06 05:23:18,234 - stpipe.TweakRegStep - INFO - * Images in GROUP &#x27;ext&#x27;:
+2022-10-06 05:23:18,235 - stpipe.TweakRegStep - INFO -      ext1
+2022-10-06 05:23:18,235 - stpipe.TweakRegStep - INFO -      ext4
+2022-10-06 05:23:18,235 - stpipe.TweakRegStep - INFO - 
+2022-10-06 05:23:18,235 - stpipe - INFO -  
+2022-10-06 05:23:18,235 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:18.235194
+2022-10-06 05:23:18,235 - stpipe - INFO -       Version 0.8.0
+2022-10-06 05:23:18,235 - stpipe - INFO -  
+2022-10-06 05:23:18,481 - stpipe - INFO - Selected image &#x27;GROUP ID: refcat&#x27; as reference image
+2022-10-06 05:23:18,492 - stpipe - INFO - Aligning image catalog &#x27;GROUP ID: ext&#x27; to the reference catalog.
+2022-10-06 05:23:18,571 - stpipe - INFO - Found 2000 matches for &#x27;GROUP ID: ext&#x27;...
+2022-10-06 05:23:18,572 - stpipe - INFO - Performing &#x27;general&#x27; fit
+2022-10-06 05:23:18,575 - stpipe - INFO - Computed &#x27;general&#x27; fit for GROUP ID: ext:
+2022-10-06 05:23:18,576 - stpipe - INFO - XSH: 248.328  YSH: -442.699    PROPER ROT: -0.00108548    
+2022-10-06 05:23:18,576 - stpipe - INFO - &lt;ROT&gt;: -0.00108548  SKEW: 5.45605e-07    ROT_X: -0.00108575  ROT_Y: -0.00108521
+2022-10-06 05:23:18,576 - stpipe - INFO - &lt;SCALE&gt;: 1.0025  SCALE_X: 1.0025  SCALE_Y: 1.0025
+2022-10-06 05:23:18,576 - stpipe - INFO - 
+2022-10-06 05:23:18,576 - stpipe - INFO - FIT RMSE: 3.33856e-05   FIT MAE: 2.89892e-05
+2022-10-06 05:23:18,576 - stpipe - INFO - Final solution based on 2000 objects.
+2022-10-06 05:23:18,638 - stpipe - INFO -  
+2022-10-06 05:23:18,638 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:18.638151
+2022-10-06 05:23:18,638 - stpipe - INFO - ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.402957
+2022-10-06 05:23:18,638 - stpipe - INFO -  
+2022-10-06 05:23:18,866 - stpipe.TweakRegStep - WARNING - Failed to update &#x27;meta.wcsinfo&#x27; with FITS SIP approximation. Reported error is:
+2022-10-06 05:23:18,866 - stpipe.TweakRegStep - WARNING - &quot;Failed to achieve required error tolerance&quot;
 <br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.TweakRegStep:step.py:366 TweakRegStep instance created.
 INFO     stpipe.TweakRegStep:tweakreg_step.py:140 Detected 2000 sources in refcat.
 INFO     stpipe.TweakRegStep:tweakreg_step.py:140 Detected 1000 sources in ext1.
@@ -15584,8 +15574,8 @@ INFO     stpipe.TweakRegStep:tweakreg_step.py:207      ext4
 INFO     stpipe.TweakRegStep:tweakreg_step.py:210 
 INFO     stpipe:imalign.py:509  
 INFO     stpipe:imalign.py:509  
-INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:49.894492
-INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-09-20 13:27:49.894492
+INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:18.235194
+INFO     stpipe:imalign.py:510 ***** tweakwcs.imalign.align_wcs() started on 2022-10-06 05:23:18.235194
 INFO     stpipe:imalign.py:512       Version 0.8.0
 INFO     stpipe:imalign.py:512       Version 0.8.0
 INFO     stpipe:imalign.py:513  
@@ -15614,10 +15604,10 @@ INFO     stpipe:wcsimage.py:1054 Final solution based on 2000 objects.
 INFO     stpipe:wcsimage.py:1054 Final solution based on 2000 objects.
 INFO     stpipe:imalign.py:685  
 INFO     stpipe:imalign.py:685  
-INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:50.303227
-INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-09-20 13:27:50.303227
-INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.408735
-INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.408735
+INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:18.638151
+INFO     stpipe:imalign.py:686 ***** tweakwcs.imalign.align_wcs() ended on 2022-10-06 05:23:18.638151
+INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.402957
+INFO     stpipe:imalign.py:688 ***** tweakwcs.imalign.align_wcs() TOTAL RUN TIME: 0:00:00.402957
 INFO     stpipe:imalign.py:690  
 INFO     stpipe:imalign.py:690  
 WARNING  stpipe.TweakRegStep:tweakreg_step.py:399 Failed to update &#x27;meta.wcsinfo&#x27; with FITS SIP approximation. Reported error is:
@@ -15630,17 +15620,17 @@ WARNING  stpipe.TweakRegStep:tweakreg_step.py:399 &quot;Failed to achieve requir
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-09-20 13:27:50,591 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-10-06 05:23:18,914 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
 <br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.TweakRegStep:step.py:366 TweakRegStep instance created.<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/tweakreg/tests/test_tweakreg.py::test_is_wcs_correction_small[0.0030555555555555557-False]</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-09-20 13:27:50,634 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
+            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>2022-10-06 05:23:18,955 - stpipe.TweakRegStep - INFO - TweakRegStep instance created.
 <br/> -------------------------------Captured log call-------------------------------- <br/>INFO     stpipe.TweakRegStep:step.py:366 TweakRegStep instance created.<br/></div></td></tr></tbody></table></body></html>
 </div>
 

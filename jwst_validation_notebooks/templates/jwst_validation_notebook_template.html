@@ -14629,10 +14629,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p>This is the validation notebook for the source catalog step. This step creates a final catalog of source photometry and morphologies. Here we are testing the step for accuracy of the catalog. For more information on the pipeline step visit the links below.</p>
 </blockquote>
 <blockquote>
-<p>Step description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html</p>
+<p>Step description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/source_catalog/index.html</a></p>
 </blockquote>
 <blockquote>
-<p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/source_catalog</p>
+<p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/source_catalog">https://github.com/spacetelescope/jwst/tree/master/jwst/source_catalog</a></p>
 </blockquote>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14650,7 +14650,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <h1 id="JWST-CalWG-Algorithm">JWST CalWG Algorithm<a class="anchor-link" href="#JWST-CalWG-Algorithm">&#182;</a></h1><p>Provide a short description of the implemented algorithm, and/or link to the Confluence page.</p>
 <p>For example:</p>
 <blockquote>
-<p>https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Point+Source+Catalog</p>
+<p><a href="https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Point+Source+Catalog">https://outerspace.stsci.edu/display/JWSTCC/Vanilla+Point+Source+Catalog</a></p>
 </blockquote>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14752,10 +14752,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="k">if</span> <span class="n">use_tempdir</span><span class="p">:</span>
     <span class="n">data_dir</span> <span class="o">=</span> <span class="n">TemporaryDirectory</span><span class="p">()</span>
 
-    <span class="c1"># If you have files that are in the notebook's directory, but that the notebook will need to use while</span>
+    <span class="c1"># If you have files that are in the notebook&#39;s directory, but that the notebook will need to use while</span>
     <span class="c1"># running, copy them into the temporary directory here.</span>
     <span class="c1">#</span>
-    <span class="c1"># files = ['name_of_file']</span>
+    <span class="c1"># files = [&#39;name_of_file&#39;]</span>
     <span class="c1"># for file_name in files:</span>
     <span class="c1">#     shutil.copy(file_name, os.path.join(data_dir.name, file_name))</span>
 
@@ -14766,10 +14766,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="c1"># For info, print out where the script is running</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Running in </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14788,7 +14786,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Running in /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp2v1k70l7
+<pre>Running in /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpzoob6b3a
 </pre>
 </div>
 </div>
@@ -14806,15 +14804,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14833,7 +14829,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /tmp/crds_cache
+<pre>CRDS cache location: /grp/crds/cache
 </pre>
 </div>
 </div>
@@ -14879,8 +14875,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="c1"># from jwst.module import PipelineStep</span>
 <span class="c1"># import matplotlib.pyplot as plt</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14964,25 +14958,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="k">def</span> <span class="nf">get_box_files</span><span class="p">(</span><span class="n">file_list</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">box_url</span><span class="p">,</span><span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s1">'https'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">box_url</span><span class="p">:</span>
-            <span class="n">box_url</span> <span class="o">=</span> <span class="s1">'https://stsci.box.com/shared/static/'</span> <span class="o">+</span> <span class="n">box_url</span>
+        <span class="k">if</span> <span class="s1">&#39;https&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">box_url</span><span class="p">:</span>
+            <span class="n">box_url</span> <span class="o">=</span> <span class="s1">&#39;https://stsci.box.com/shared/static/&#39;</span> <span class="o">+</span> <span class="n">box_url</span>
         <span class="n">downloaded_file</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">box_url</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
             <span class="n">ext</span> <span class="o">=</span> <span class="n">splitext</span><span class="p">(</span><span class="n">box_url</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
             <span class="n">file_name</span> <span class="o">+=</span> <span class="n">ext</span>
         <span class="n">move</span><span class="p">(</span><span class="n">downloaded_file</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
 
 <span class="n">box_download_list</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1">#  First item is Box URL.                   Second item is desired file name</span>
-<span class="c1">#    ("kzef4nvyzzpfy4x4o108x344qg5epaf0.fits", "test_for_thingy_asn.fits"),</span>
-    <span class="c1">#  First item *can* be full URL path                                           If second item doesn't have an</span>
+<span class="c1">#    (&quot;kzef4nvyzzpfy4x4o108x344qg5epaf0.fits&quot;, &quot;test_for_thingy_asn.fits&quot;),</span>
+    <span class="c1">#  First item *can* be full URL path                                           If second item doesn&#39;t have an</span>
     <span class="c1">#                                                                              extension, it will be given the </span>
     <span class="c1">#                                                                              same extension as the Box URL</span>
-<span class="c1">#    ("https://stsci.box.com/shared/static/kzef4nvyzzpfy4x4o108x344qg5epaf0.fits", "test_for_another_thingy_asn")</span>
+<span class="c1">#    (&quot;https://stsci.box.com/shared/static/kzef4nvyzzpfy4x4o108x344qg5epaf0.fits&quot;, &quot;test_for_another_thingy_asn&quot;)</span>
 <span class="p">]</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -15075,10 +15067,8 @@ message, but it probably won't be very useful.</li>
         <span class="k">if</span> <span class="n">failure_message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">failure_message</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Assertion </span><span class="si">{}</span><span class="s2"> failed."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_condition</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assertion </span><span class="si">{}</span><span class="s2"> failed.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_condition</span><span class="p">))</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>

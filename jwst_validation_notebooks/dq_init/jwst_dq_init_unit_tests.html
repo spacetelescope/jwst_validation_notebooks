@@ -14624,9 +14624,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p><a id="intro"></a></p>
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This is the validation notebook that displays the unit tests for the DQ Initialization step in calwebb_detector1. This notebook runs and displays the unit tests that are performed as a part of the normal software continuous integration process. For more information on the pipeline visit the links below.</p>
 <ul>
-<li><p>Pipeline description: https://jwst-pipeline.readthedocs.io/en/latest/jwst/dq_init/index.html</p>
+<li><p>Pipeline description: <a href="https://jwst-pipeline.readthedocs.io/en/latest/jwst/dq_init/index.html">https://jwst-pipeline.readthedocs.io/en/latest/jwst/dq_init/index.html</a></p>
 </li>
-<li><p>Pipeline code: https://github.com/spacetelescope/jwst/tree/master/jwst/</p>
+<li><p>Pipeline code: <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">https://github.com/spacetelescope/jwst/tree/master/jwst/</a></p>
 </li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
@@ -14644,7 +14644,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p><a id="unit"></a></p>
 <h1 id="JWST-Unit-Tests">JWST Unit Tests<a class="anchor-link" href="#JWST-Unit-Tests">&#182;</a></h1><p>JWST unit tests are located in the &quot;tests&quot; folder for each pipeline step within the <a href="https://github.com/spacetelescope/jwst/tree/master/jwst/">GitHub repository</a>, e.g., <code>jwst/dq_init/tests</code>.</p>
 <ul>
-<li>Unit test README: https://github.com/spacetelescope/jwst#unit-tests</li>
+<li>Unit test README: <a href="https://github.com/spacetelescope/jwst#unit-tests">https://github.com/spacetelescope/jwst#unit-tests</a></li>
 </ul>
 <p><a href="#title_ID">Top of Page</a></p>
 
@@ -14727,15 +14727,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="s1">'CRDS_CACHE_TYPE'</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'local'</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'crds'</span><span class="p">,</span> <span class="s1">'cache'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_CACHE_TYPE'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'CRDS cache location: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CRDS_PATH'</span><span class="p">]))</span>
+<span class="k">if</span> <span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;crds&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_CACHE_TYPE&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CRDS cache location: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CRDS_PATH&#39;</span><span class="p">]))</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14754,7 +14752,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CRDS cache location: /tmp/crds_cache
+<pre>CRDS cache location: /grp/crds/cache
 </pre>
 </div>
 </div>
@@ -14776,8 +14774,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span> <span class="nn">jwst</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14807,12 +14803,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_report</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="sd">'''Convenience function to display pytest report.'''</span>
+    <span class="sd">&#39;&#39;&#39;Convenience function to display pytest report.&#39;&#39;&#39;</span>
     
     <span class="k">return</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">fname</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14843,10 +14837,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
     <span class="o">!</span>pytest jwst/dq_init -v --ignore<span class="o">=</span>jwst/associations --ignore<span class="o">=</span>jwst/datamodels --ignore<span class="o">=</span>jwst/stpipe --ignore<span class="o">=</span>jwst/regtest --html<span class="o">=</span>tmpdir/unit_report.html --self-contained-html
-    <span class="n">report</span> <span class="o">=</span> <span class="n">display_report</span><span class="p">(</span><span class="s1">'tmpdir/unit_report.html'</span><span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">display_report</span><span class="p">(</span><span class="s1">&#39;tmpdir/unit_report.html&#39;</span><span class="p">)</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
@@ -14868,7 +14860,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <pre><span class="ansi-bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.9.13, pytest-7.1.3, pluggy-1.0.0 -- /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/bin/python
 cachedir: .pytest_cache
-metadata: {&#39;Python&#39;: &#39;3.9.13&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.71.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.3&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;requests-mock&#39;: &#39;1.10.0&#39;, &#39;asdf&#39;: &#39;2.13.0&#39;, &#39;openfiles&#39;: &#39;0.5.0&#39;, &#39;forked&#39;: &#39;1.4.0&#39;, &#39;doctestplus&#39;: &#39;0.12.0&#39;, &#39;cov&#39;: &#39;3.0.0&#39;, &#39;xdist&#39;: &#39;2.5.0&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.7.2&#39;, &#39;metadata&#39;: &#39;2.0.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;}, &#39;BUILD_NUMBER&#39;: &#39;123&#39;, &#39;BUILD_ID&#39;: &#39;123&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/123/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-123&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;29&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;a9e81ed2f1a3f26967771bf1fcd133b68709871e&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
+metadata: {&#39;Python&#39;: &#39;3.9.13&#39;, &#39;Platform&#39;: &#39;Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17&#39;, &#39;Packages&#39;: {&#39;pytest&#39;: &#39;7.1.3&#39;, &#39;py&#39;: &#39;1.11.0&#39;, &#39;pluggy&#39;: &#39;1.0.0&#39;}, &#39;Plugins&#39;: {&#39;requests-mock&#39;: &#39;1.10.0&#39;, &#39;asdf&#39;: &#39;2.13.0&#39;, &#39;openfiles&#39;: &#39;0.5.0&#39;, &#39;forked&#39;: &#39;1.4.0&#39;, &#39;doctestplus&#39;: &#39;0.12.0&#39;, &#39;cov&#39;: &#39;3.0.0&#39;, &#39;xdist&#39;: &#39;2.5.0&#39;, &#39;ci-watson&#39;: &#39;0.6.1&#39;, &#39;jwst&#39;: &#39;1.7.2&#39;, &#39;metadata&#39;: &#39;2.0.2&#39;, &#39;html&#39;: &#39;3.1.1&#39;}, &#39;BUILD_NUMBER&#39;: &#39;124&#39;, &#39;BUILD_ID&#39;: &#39;124&#39;, &#39;BUILD_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/&#39;, &#39;NODE_NAME&#39;: &#39;pljwvalnb.stsci.edu&#39;, &#39;JOB_NAME&#39;: &#39;Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;BUILD_TAG&#39;: &#39;jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-124&#39;, &#39;EXECUTOR_NUMBER&#39;: &#39;19&#39;, &#39;JENKINS_URL&#39;: &#39;https://plwishmaster.stsci.edu:8081/&#39;, &#39;WORKSPACE&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope&#39;, &#39;GIT_COMMIT&#39;: &#39;bde8f02589041fbfae28bb9206e1fbb30578e7dc&#39;, &#39;GIT_URL&#39;: &#39;https://github.com/spacetelescope/jwst_validation_notebooks&#39;, &#39;GIT_BRANCH&#39;: &#39;origin/master&#39;}
 rootdir: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/jwst_validation_notebooks/dq_init
 plugins: requests-mock-1.10.0, asdf-2.13.0, openfiles-0.5.0, forked-1.4.0, doctestplus-0.12.0, cov-3.0.0, xdist-2.5.0, ci-watson-0.6.1, jwst-1.7.2, metadata-2.0.2, html-3.1.1
 collected 0 items                                                              
@@ -14895,8 +14887,6 @@ collected 0 items
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">report</span>
 </pre></div>
-</body></html>
-
 
      </div>
 </div>
