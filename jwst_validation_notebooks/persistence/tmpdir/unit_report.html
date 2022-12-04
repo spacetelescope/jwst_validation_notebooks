@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>Test Report</title>
+    <title>unit_report.html</title>
     <style>body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -256,9 +256,19 @@ function hideExtras(colresultElem) {
 }
 
 function showFilters() {
+    let visibleString = getQueryParameter('visible') || 'all';
+    visibleString = visibleString.toLowerCase();
+    const checkedItems = visibleString.split(',');
+
     const filterItems = document.getElementsByClassName('filter');
-    for (let i = 0; i < filterItems.length; i++)
+    for (let i = 0; i < filterItems.length; i++) {
         filterItems[i].hidden = false;
+
+        if (visibleString != 'all') {
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
+        }
+    }
 }
 
 function addCollapse() {
@@ -429,30 +439,30 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>unit_report.html</h1>
-    <p>Report generated on 06-Oct-2022 at 03:22:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 04-Dec-2022 at 02:47:41 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>BUILD_ID</td>
-        <td>124</td></tr>
+        <td>126</td></tr>
       <tr>
         <td>BUILD_NUMBER</td>
-        <td>124</td></tr>
+        <td>126</td></tr>
       <tr>
         <td>BUILD_TAG</td>
-        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-124</td></tr>
+        <td>jenkins-Notebooks-jwst_validation_notebooks_spacetelescope-126</td></tr>
       <tr>
         <td>BUILD_URL</td>
-        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/124/</a></td></tr>
+        <td><a href="https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/126/" target="_blank">https://plwishmaster.stsci.edu:8081/job/Notebooks/job/jwst_validation_notebooks_spacetelescope/126/</a></td></tr>
       <tr>
         <td>EXECUTOR_NUMBER</td>
-        <td>19</td></tr>
+        <td>28</td></tr>
       <tr>
         <td>GIT_BRANCH</td>
         <td>origin/master</td></tr>
       <tr>
         <td>GIT_COMMIT</td>
-        <td>bde8f02589041fbfae28bb9206e1fbb30578e7dc</td></tr>
+        <td>f0c18233cd0fcb3e941bff4e8793c6fbaf3467e2</td></tr>
       <tr>
         <td>GIT_URL</td>
         <td><a href="https://github.com/spacetelescope/jwst_validation_notebooks" target="_blank">https://github.com/spacetelescope/jwst_validation_notebooks</a></td></tr>
@@ -467,13 +477,13 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>pljwvalnb.stsci.edu</td></tr>
       <tr>
         <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.3"}</td></tr>
+        <td>{"pluggy": "1.0.0", "pytest": "7.2.0"}</td></tr>
       <tr>
         <td>Platform</td>
         <td>Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"asdf": "2.13.0", "ci-watson": "0.6.1", "cov": "3.0.0", "doctestplus": "0.12.0", "forked": "1.4.0", "html": "3.1.1", "jwst": "1.7.2", "metadata": "2.0.2", "openfiles": "0.5.0", "requests-mock": "1.10.0", "xdist": "2.5.0"}</td></tr>
+        <td>{"anyio": "3.6.2", "asdf": "2.13.0", "ci-watson": "0.6.1", "cov": "4.0.0", "doctestplus": "0.12.1", "forked": "1.4.0", "html": "3.2.0", "jwst": "1.8.2", "metadata": "2.0.4", "openfiles": "0.5.0", "requests-mock": "1.10.0", "xdist": "2.5.0"}</td></tr>
       <tr>
         <td>Python</td>
         <td>3.9.13</td></tr>
@@ -481,7 +491,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>WORKSPACE</td>
         <td>/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.01 seconds. </p>
+    <p>0 tests ran in 0.02 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">

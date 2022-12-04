@@ -14539,6 +14539,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   display: none;
 }
 
+@page {
+    margin: 0.5in; /* Margin for each printed piece of paper */
+}
+
 @media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
@@ -14597,7 +14601,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="title_ID"></a></p>
-<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-spec2,-extract_2d-step">JWST Pipeline Validation Testing Notebook: spec2, extract_2d step<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-spec2,-extract_2d-step">&#182;</a></h1><p><span style="color:red"> <strong>Instruments Affected</strong></span>: NIRSpec</p>
+<h1 id="JWST-Pipeline-Validation-Testing-Notebook:-spec2,-extract_2d-step-for-fs-prism">JWST Pipeline Validation Testing Notebook: spec2, extract_2d step for fs prism<a class="anchor-link" href="#JWST-Pipeline-Validation-Testing-Notebook:-spec2,-extract_2d-step-for-fs-prism">&#182;</a></h1><p><span style="color:red"> <strong>Instruments Affected</strong></span>: NIRSpec</p>
 <p>Tested on CV3 data</p>
 <h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><div style="text-align: left">
 <p><br> <a href="#imports_ID">Imports</a> <br> <a href="#intro_ID">Introduction</a> <br> <a href="#data_ID">Testing Data Set</a> <br> <a href="#pipeline_ID">Run the JWST pipeline and assign_wcs validation tests</a>: <a href="#FULLFRAME">FS Full-Frame test</a>, <a href="#ALLSLITS">FS ALLSLITS test</a>, <a href="#MOS">MOS test</a> <br> <a href="#about_ID">About This Notebook</a><br> <a href="#results">Results</a> <br></p>
@@ -14763,7 +14767,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Using jwst pipeline version:  1.7.2
+<pre>Using jwst pipeline version:  1.8.2
 Using NPTT version:  2.0.1
 </pre>
 </div>
@@ -15007,7 +15011,7 @@ The input file is defined in the variable <code>input_file</code> (see section <
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Testing files for detector:  nrs1
-Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84/fs_prism_nrs1_uncal.fits
+Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs1_uncal.fits
 </pre>
 </div>
 </div>
@@ -15036,63 +15040,63 @@ Failed validating &#39;enum&#39; in schema:
 On instance:
     &#39;FULL&#39;
   warnings.warn(errmsg, ValidationWarning)
-2022-10-05 09:39:25,785 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_nirspec_pars-detector1pipeline_0004.asdf
-2022-10-05 09:39:25,808 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
-2022-10-05 09:39:25,810 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
-2022-10-05 09:39:25,811 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
-2022-10-05 09:39:25,812 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
-2022-10-05 09:39:25,813 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
-2022-10-05 09:39:25,814 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
-2022-10-05 09:39:25,815 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
-2022-10-05 09:39:25,816 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
-2022-10-05 09:39:25,817 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
-2022-10-05 09:39:25,818 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
-2022-10-05 09:39:25,819 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
-2022-10-05 09:39:25,820 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
-2022-10-05 09:39:25,821 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
-2022-10-05 09:39:25,822 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
-2022-10-05 09:39:25,823 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
-2022-10-05 09:39:25,825 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
-2022-10-05 09:39:25,827 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
-2022-10-05 09:39:25,983 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84/fs_prism_nrs1_uncal.fits&#39;,).
-2022-10-05 09:39:25,992 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
-2022-10-05 09:39:26,179 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;fs_prism_nrs1_uncal.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;saturation&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
-2022-10-05 09:39:26,193 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits&#39;.
-2022-10-05 09:39:26,194 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits&#39;.
-2022-10-05 09:39:26,195 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits&#39;.
-2022-10-05 09:39:26,197 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits&#39;.
-2022-10-05 09:39:26,198 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
-2022-10-05 09:39:26,198 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits&#39;.
-2022-10-05 09:39:26,200 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits&#39;.
-2022-10-05 09:39:26,201 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;N/A&#39;.
-2022-10-05 09:39:26,201 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;N/A&#39;.
-2022-10-05 09:39:26,201 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits&#39;.
-2022-10-05 09:39:26,203 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits&#39;.
-2022-10-05 09:39:26,204 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
-2022-10-05 09:39:26,204 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
-2022-10-05 09:39:26,205 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
-2022-10-05 09:39:26,601 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:26,603 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:39:26,740 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES and FRMDIVSR are equal; correction not needed
-2022-10-05 09:39:26,741 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
-2022-10-05 09:39:26,744 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
-2022-10-05 09:39:26,881 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:26,883 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:39:26,905 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits
-2022-10-05 09:39:27,728 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
-2022-10-05 09:39:27,867 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:27,868 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;, &#39;n_pix_grow_sat&#39;: 1}
-2022-10-05 09:39:27,891 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits
-2022-10-05 09:39:28,881 - stpipe.Detector1Pipeline.saturation - INFO - Detected 49730 saturated pixels
-2022-10-05 09:39:28,914 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
-2022-10-05 09:39:28,939 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
-2022-10-05 09:39:29,082 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:29,084 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:39:29,085 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
-2022-10-05 09:39:29,088 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
-2022-10-05 09:39:29,230 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:29,232 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:39:29,256 - stpipe.Detector1Pipeline.superbias - INFO - Using SUPERBIAS reference file /grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits
+2022-12-03 08:34:11,753 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_nirspec_pars-detector1pipeline_0004.asdf
+2022-12-03 08:34:11,777 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2022-12-03 08:34:11,778 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2022-12-03 08:34:11,779 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2022-12-03 08:34:11,780 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2022-12-03 08:34:11,781 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2022-12-03 08:34:11,782 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2022-12-03 08:34:11,784 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2022-12-03 08:34:11,785 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2022-12-03 08:34:11,786 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2022-12-03 08:34:11,787 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2022-12-03 08:34:11,788 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2022-12-03 08:34:11,789 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2022-12-03 08:34:11,790 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2022-12-03 08:34:11,791 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2022-12-03 08:34:11,793 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2022-12-03 08:34:11,794 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2022-12-03 08:34:11,795 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+2022-12-03 08:34:12,019 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs1_uncal.fits&#39;,).
+2022-12-03 08:34:12,030 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0, &#39;min_sat_area&#39;: 1.0, &#39;min_jump_area&#39;: 5.0, &#39;expand_factor&#39;: 2.0, &#39;use_ellipses&#39;: False, &#39;sat_required_snowball&#39;: True, &#39;expand_large_events&#39;: False}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
+2022-12-03 08:34:12,222 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;fs_prism_nrs1_uncal.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;saturation&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
+2022-12-03 08:34:12,231 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits&#39;.
+2022-12-03 08:34:12,232 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits&#39;.
+2022-12-03 08:34:12,234 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits&#39;.
+2022-12-03 08:34:12,235 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits&#39;.
+2022-12-03 08:34:12,237 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
+2022-12-03 08:34:12,238 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits&#39;.
+2022-12-03 08:34:12,239 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits&#39;.
+2022-12-03 08:34:12,240 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;N/A&#39;.
+2022-12-03 08:34:12,241 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;N/A&#39;.
+2022-12-03 08:34:12,241 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits&#39;.
+2022-12-03 08:34:12,243 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits&#39;.
+2022-12-03 08:34:12,244 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
+2022-12-03 08:34:12,245 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
+2022-12-03 08:34:12,245 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+2022-12-03 08:34:12,662 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:12,664 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:12,810 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES and FRMDIVSR are equal; correction not needed
+2022-12-03 08:34:12,811 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
+2022-12-03 08:34:12,814 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
+2022-12-03 08:34:12,961 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:12,962 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:12,985 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_nirspec_mask_0010.fits
+2022-12-03 08:34:13,352 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
+2022-12-03 08:34:13,491 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:13,493 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;n_pix_grow_sat&#39;: 1}
+2022-12-03 08:34:13,515 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_nirspec_saturation_0020.fits
+2022-12-03 08:34:14,495 - stpipe.Detector1Pipeline.saturation - INFO - Detected 49730 saturated pixels
+2022-12-03 08:34:14,526 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
+2022-12-03 08:34:14,550 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
+2022-12-03 08:34:14,692 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:14,694 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:14,694 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
+2022-12-03 08:34:14,697 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
+2022-12-03 08:34:14,823 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:14,824 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:14,847 - stpipe.Detector1Pipeline.superbias - INFO - Using SUPERBIAS reference file /grp/crds/cache/references/jwst/jwst_nirspec_superbias_0113.fits
 /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/validate.py:38: ValidationWarning: While validating meta.exposure.readpatt the following error occurred:
 &#39;ALLIRS2&#39; is not one of [&#39;ACQ1&#39;, &#39;ACQ2&#39;, &#39;BRIGHT1&#39;, &#39;BRIGHT2&#39;, &#39;DEEP2&#39;, &#39;DEEP8&#39;, &#39;FAST&#39;, &#39;FASTGRPAVG&#39;, &#39;FASTGRPAVG8&#39;, &#39;FASTGRPAVG16&#39;, &#39;FASTGRPAVG32&#39;, &#39;FASTGRPAVG64&#39;, &#39;FASTR1&#39;, &#39;FASTR100&#39;, &#39;FGS&#39;, &#39;FGS60&#39;, &#39;FGS8370&#39;, &#39;FGS840&#39;, &#39;FGSRAPID&#39;, &#39;FINEGUIDE&#39;, &#39;ID&#39;, &#39;MEDIUM2&#39;, &#39;MEDIUM8&#39;, &#39;NIS&#39;, &#39;NISRAPID&#39;, &#39;NRS&#39;, &#39;NRSIRS2&#39;, &#39;NRSN16R4&#39;, &#39;NRSN32R8&#39;, &#39;NRSN8R2&#39;, &#39;NRSRAPID&#39;, &#39;NRSIRS2RAPID&#39;, &#39;NRSRAPIDD1&#39;, &#39;NRSRAPIDD2&#39;, &#39;NRSRAPIDD6&#39;, &#39;NRSSLOW&#39;, &#39;RAPID&#39;, &#39;SHALLOW2&#39;, &#39;SHALLOW4&#39;, &#39;SLOW&#39;, &#39;SLOWR1&#39;, &#39;TRACK&#39;, &#39;ANY&#39;, &#39;N/A&#39;]
 
@@ -15146,115 +15150,119 @@ Failed validating &#39;enum&#39; in schema:
                    &#39;N/A&#39;]),
                  (&#39;fits_ke ...
   warnings.warn(errmsg, ValidationWarning)
-2022-10-05 09:39:29,929 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias done
-2022-10-05 09:39:30,068 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:30,070 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
-2022-10-05 09:39:30,094 - stpipe.Detector1Pipeline.refpix - INFO - Using refpix reference file: /grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits
-2022-10-05 09:39:32,189 - stpipe.Detector1Pipeline.refpix - INFO - Working on integration 1
-2022-10-05 09:39:52,414 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
-2022-10-05 09:39:52,846 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:52,848 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:39:52,877 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits
-2022-10-05 09:39:54,325 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
-2022-10-05 09:39:54,558 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:39:54,560 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;, &#39;dark_output&#39;: None}
-2022-10-05 09:39:54,676 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits
-2022-10-05 09:40:04,972 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=1, ngroups=4, nframes=1, groupgap=0
-2022-10-05 09:40:04,973 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=1, ngroups=65, nframes=1, groupgap=0
-2022-10-05 09:40:05,746 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
-2022-10-05 09:40:06,000 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:06,002 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0}
-2022-10-05 09:40:06,047 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
-2022-10-05 09:40:06,093 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
-2022-10-05 09:40:06,222 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
-2022-10-05 09:40:06,597 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
-2022-10-05 09:40:06,659 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
+2022-12-03 08:34:15,228 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias done
+2022-12-03 08:34:15,383 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:15,384 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
+2022-12-03 08:34:15,408 - stpipe.Detector1Pipeline.refpix - INFO - Using refpix reference file: /grp/crds/cache/references/jwst/jwst_nirspec_refpix_0022.fits
+2022-12-03 08:34:15,821 - stpipe.Detector1Pipeline.refpix - INFO - Working on integration 1
+2022-12-03 08:34:28,771 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
+2022-12-03 08:34:29,053 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:29,055 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:29,083 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_nirspec_linearity_0018.fits
+2022-12-03 08:34:29,764 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
+2022-12-03 08:34:29,905 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:29,907 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;dark_output&#39;: None}
+2022-12-03 08:34:29,986 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_nirspec_dark_0086.fits
+2022-12-03 08:34:32,906 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=1, ngroups=4, nframes=1, groupgap=0
+2022-12-03 08:34:32,908 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=1, ngroups=65, nframes=1, groupgap=0
+2022-12-03 08:34:33,471 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
+2022-12-03 08:34:33,667 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:33,670 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0, &#39;min_sat_area&#39;: 1.0, &#39;min_jump_area&#39;: 5.0, &#39;expand_factor&#39;: 2.0, &#39;use_ellipses&#39;: False, &#39;sat_required_snowball&#39;: True, &#39;expand_large_events&#39;: False}
+2022-12-03 08:34:33,699 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
+2022-12-03 08:34:33,733 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
+2022-12-03 08:34:33,832 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
+2022-12-03 08:34:34,102 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
+2022-12-03 08:34:34,144 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
 /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/twopoint_difference.py:154: RuntimeWarning: All-NaN slice encountered
   max_ratio = np.nanmax(ratio, axis=0)
-2022-10-05 09:40:08,583 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from five or more groups.
-2022-10-05 09:40:08,584 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 6026 pixels with at least one CR from four groups.
-2022-10-05 09:40:08,585 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 110 pixels with at least one CR from three groups.
-2022-10-05 09:40:09,211 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 2.6126 sec
-2022-10-05 09:40:09,216 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 3.169332
-2022-10-05 09:40:09,222 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
-2022-10-05 09:40:09,458 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:09,460 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
-2022-10-05 09:40:09,561 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
-2022-10-05 09:40:09,562 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
-2022-10-05 09:40:09,694 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
-2022-10-05 09:40:09,695 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
+2022-12-03 08:34:35,543 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from five or more groups.
+2022-12-03 08:34:36,154 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 2.05053 sec
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:302: RuntimeWarning: invalid value encountered in divide
+  data /= gain_2d
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:303: RuntimeWarning: invalid value encountered in divide
+  err /= gain_2d
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:304: RuntimeWarning: invalid value encountered in divide
+  readnoise_2d /= gain_2d
+2022-12-03 08:34:36,203 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 2.503476
+2022-12-03 08:34:36,208 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
+2022-12-03 08:34:36,321 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:36,323 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
+2022-12-03 08:34:36,399 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0018.fits
+2022-12-03 08:34:36,400 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0019.fits
+2022-12-03 08:34:36,510 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
+2022-12-03 08:34:36,511 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
 /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/ramp_fitting/ols_fit.py:1089: RuntimeWarning: invalid value encountered in multiply
   var_p4[num_int, :, :, :] *= (segs_4[num_int, :, :, :] &gt; 0)
-2022-10-05 09:40:27,507 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 4
-2022-10-05 09:40:27,508 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 1
-2022-10-05 09:40:27,763 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
-2022-10-05 09:40:28,042 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:28,044 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:40:28,128 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2022-10-05 09:40:28,129 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2022-10-05 09:40:28,134 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2022-10-05 09:40:28,389 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(1, 2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:28,391 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84&#39;}
-2022-10-05 09:40:28,475 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
-2022-10-05 09:40:28,476 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
-2022-10-05 09:40:28,480 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
-2022-10-05 09:40:28,481 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
-2022-10-05 09:40:28,482 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_0988.pmap
-2022-10-05 09:40:28,482 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
-2022-10-05 09:40:28,492 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
-2022-10-05 09:40:28,729 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:28,731 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.25, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.25, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 32, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
-2022-10-05 09:40:28,926 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
-2022-10-05 09:40:28,927 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
-2022-10-05 09:40:28,927 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
-2022-10-05 09:40:28,929 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
-2022-10-05 09:40:29,337 - stpipe.AssignWcsStep - INFO - Removing slit S200B1 from the list of open slits because the WCS bounding_box is completely outside the detector.
-2022-10-05 09:40:29,339 - stpipe.AssignWcsStep - INFO - Slits projected on detector NRS1: [&#39;S200A1&#39;, &#39;S200A2&#39;, &#39;S400A1&#39;, &#39;S1600A1&#39;]
-2022-10-05 09:40:29,339 - stpipe.AssignWcsStep - INFO - Computing WCS for 4 open slitlets
-2022-10-05 09:40:29,381 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
-2022-10-05 09:40:29,382 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
-2022-10-05 09:40:29,383 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
-2022-10-05 09:40:29,385 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
-2022-10-05 09:40:29,401 - stpipe.AssignWcsStep - INFO - SPORDER= 0, wrange=[6e-07, 5.3e-06]
-2022-10-05 09:40:29,565 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 1
-2022-10-05 09:40:29,566 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 2
-2022-10-05 09:40:29,566 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 3
-2022-10-05 09:40:29,567 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 4
-2022-10-05 09:40:29,567 - stpipe.AssignWcsStep - INFO - There are 4 open slits in quadrant 5
-2022-10-05 09:40:29,769 - stpipe.AssignWcsStep - INFO - Created a NIRSPEC nrs_fixedslit pipeline with references {&#39;distortion&#39;: None, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_camera_0004.asdf&#39;, &#39;collimator&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_collimator_0004.asdf&#39;, &#39;disperser&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_disperser_0034.asdf&#39;, &#39;fore&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fore_0028.asdf&#39;, &#39;fpa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fpa_0005.asdf&#39;, &#39;msa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_msa_0005.asdf&#39;, &#39;ote&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_ote_0005.asdf&#39;, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
-2022-10-05 09:40:30,295 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
-2022-10-05 09:40:30,309 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_0988.pmap
-2022-10-05 09:40:30,309 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
-2022-10-05 09:40:30,319 - stpipe.Extract2dStep - INFO - Extract2dStep instance created.
-2022-10-05 09:40:30,442 - stpipe.Extract2dStep - INFO - Step Extract2dStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
-2022-10-05 09:40:30,443 - stpipe.Extract2dStep - INFO - Step Extract2dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_name&#39;: None, &#39;extract_orders&#39;: None, &#39;grism_objects&#39;: None, &#39;tsgrism_extract_height&#39;: None, &#39;wfss_extract_half_height&#39;: 5, &#39;wfss_mmag_extract&#39;: None, &#39;wfss_nbright&#39;: 1000}
-2022-10-05 09:40:30,459 - stpipe.Extract2dStep - INFO - EXP_TYPE is NRS_FIXEDSLIT
-2022-10-05 09:40:30,647 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A1
-2022-10-05 09:40:30,648 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1083 1518
-2022-10-05 09:40:30,649 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1057 1096
-2022-10-05 09:40:30,868 - stpipe.Extract2dStep - INFO - set slit_attributes completed
-2022-10-05 09:40:30,877 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
-2022-10-05 09:40:30,878 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
-2022-10-05 09:40:31,048 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A2
-2022-10-05 09:40:31,049 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 892 1328
-2022-10-05 09:40:31,049 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1021 1060
-2022-10-05 09:40:31,281 - stpipe.Extract2dStep - INFO - set slit_attributes completed
-2022-10-05 09:40:31,291 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
-2022-10-05 09:40:31,292 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
-2022-10-05 09:40:31,617 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S400A1
-2022-10-05 09:40:31,618 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1025 1460
-2022-10-05 09:40:31,618 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 980 1024
-2022-10-05 09:40:31,806 - stpipe.Extract2dStep - INFO - set slit_attributes completed
-2022-10-05 09:40:31,814 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
-2022-10-05 09:40:31,815 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
-2022-10-05 09:40:31,982 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S1600A1
-2022-10-05 09:40:31,983 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1056 1488
-2022-10-05 09:40:31,983 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 960 982
-2022-10-05 09:40:32,171 - stpipe.Extract2dStep - INFO - set slit_attributes completed
-2022-10-05 09:40:32,181 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
-2022-10-05 09:40:32,182 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
-2022-10-05 09:40:32,395 - stpipe.Extract2dStep - INFO - Results used CRDS context: jwst_0988.pmap
-2022-10-05 09:40:32,396 - stpipe.Extract2dStep - INFO - Step Extract2dStep done
+2022-12-03 08:34:50,051 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 4
+2022-12-03 08:34:50,052 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 1
+2022-12-03 08:34:50,235 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
+2022-12-03 08:34:50,371 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:50,373 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:50,443 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-12-03 08:34:50,444 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-12-03 08:34:50,449 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-12-03 08:34:50,550 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(1, 2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:50,552 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:50,622 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-12-03 08:34:50,623 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-12-03 08:34:50,628 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-12-03 08:34:50,629 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
+2022-12-03 08:34:50,629 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:34:50,630 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
+2022-12-03 08:34:50,639 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-12-03 08:34:50,741 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:50,743 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.1, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.1, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 12, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-12-03 08:34:50,934 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-12-03 08:34:50,935 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-12-03 08:34:50,936 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-12-03 08:34:50,937 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-12-03 08:34:51,315 - stpipe.AssignWcsStep - INFO - Removing slit S200B1 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-12-03 08:34:51,317 - stpipe.AssignWcsStep - INFO - Slits projected on detector NRS1: [&#39;S200A1&#39;, &#39;S200A2&#39;, &#39;S400A1&#39;, &#39;S1600A1&#39;]
+2022-12-03 08:34:51,318 - stpipe.AssignWcsStep - INFO - Computing WCS for 4 open slitlets
+2022-12-03 08:34:51,355 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-12-03 08:34:51,356 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-12-03 08:34:51,357 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-12-03 08:34:51,358 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-12-03 08:34:51,372 - stpipe.AssignWcsStep - INFO - SPORDER= 0, wrange=[6e-07, 5.3e-06]
+2022-12-03 08:34:51,522 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 1
+2022-12-03 08:34:51,523 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 2
+2022-12-03 08:34:51,524 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 3
+2022-12-03 08:34:51,524 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 4
+2022-12-03 08:34:51,525 - stpipe.AssignWcsStep - INFO - There are 4 open slits in quadrant 5
+2022-12-03 08:34:51,721 - stpipe.AssignWcsStep - INFO - Created a NIRSPEC nrs_fixedslit pipeline with references {&#39;distortion&#39;: None, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_camera_0004.asdf&#39;, &#39;collimator&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_collimator_0004.asdf&#39;, &#39;disperser&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_disperser_0034.asdf&#39;, &#39;fore&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fore_0028.asdf&#39;, &#39;fpa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fpa_0005.asdf&#39;, &#39;msa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_msa_0005.asdf&#39;, &#39;ote&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_ote_0005.asdf&#39;, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-12-03 08:34:51,948 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-12-03 08:34:51,965 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:34:51,966 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-12-03 08:34:51,980 - stpipe.Extract2dStep - INFO - Extract2dStep instance created.
+2022-12-03 08:34:52,308 - stpipe.Extract2dStep - INFO - Step Extract2dStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs1_uncal.fits&gt;,).
+2022-12-03 08:34:52,311 - stpipe.Extract2dStep - INFO - Step Extract2dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_name&#39;: None, &#39;extract_orders&#39;: None, &#39;grism_objects&#39;: None, &#39;tsgrism_extract_height&#39;: None, &#39;wfss_extract_half_height&#39;: 5, &#39;wfss_mmag_extract&#39;: None, &#39;wfss_nbright&#39;: 1000}
+2022-12-03 08:34:52,347 - stpipe.Extract2dStep - INFO - EXP_TYPE is NRS_FIXEDSLIT
+2022-12-03 08:34:52,806 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A1
+2022-12-03 08:34:52,806 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1083 1518
+2022-12-03 08:34:52,807 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1057 1096
+2022-12-03 08:34:52,998 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-12-03 08:34:53,007 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
+2022-12-03 08:34:53,008 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.191685737 -45.682908511 156.190837415 -45.682092120 156.190771015 -45.682126390 156.191619323 -45.682942792
+2022-12-03 08:34:53,177 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200A2
+2022-12-03 08:34:53,178 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 892 1328
+2022-12-03 08:34:53,178 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 1021 1060
+2022-12-03 08:34:53,362 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-12-03 08:34:53,370 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
+2022-12-03 08:34:53,371 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.184519149 -45.685298792 156.183675453 -45.684484578 156.183609578 -45.684518640 156.184453260 -45.685332865
+2022-12-03 08:34:53,541 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S400A1
+2022-12-03 08:34:53,542 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1025 1460
+2022-12-03 08:34:53,542 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 980 1024
+2022-12-03 08:34:53,892 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-12-03 08:34:53,901 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
+2022-12-03 08:34:53,902 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187759056 -45.682331806 156.186793281 -45.681401531 156.186663358 -45.681468621 156.187629101 -45.682398919
+2022-12-03 08:34:54,075 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S1600A1
+2022-12-03 08:34:54,076 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 1056 1488
+2022-12-03 08:34:54,076 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 960 982
+2022-12-03 08:34:54,258 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-12-03 08:34:54,266 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
+2022-12-03 08:34:54,268 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.187720636 -45.680802803 156.187307671 -45.680405209 156.186792650 -45.680671077 156.187205560 -45.681068709
+2022-12-03 08:34:54,453 - stpipe.Extract2dStep - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:34:54,454 - stpipe.Extract2dStep - INFO - Step Extract2dStep done
 </pre>
 </div>
 </div>
@@ -15266,7 +15274,7 @@ Failed validating &#39;enum&#39; in schema:
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Running test for FS...
 Information from the &#39;truth&#39; (or comparison) file 
-Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84/fs_prism_nrs1_extract_2d_truth.fits
+Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs1_extract_2d_truth.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
   0  PRIMARY       1 PrimaryHDU     277   ()      
   1  SCI           1 ImageHDU        56   (435, 40)   float32   
@@ -15338,9 +15346,8 @@ All slits PASSED extract_2d test.
 Did extract_2d  fs_prism_clear  validation test passed?  True 
 
 
-Closing file:  popenfile(path=&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84/fs_prism_nrs1_extract_2d_truth.fits&#39;, fd=55, position=1981440, mode=&#39;r&#39;, flags=557056)
+Closing file:  popenfile(path=&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs1_extract_2d_truth.fits&#39;, fd=55, position=1981440, mode=&#39;r&#39;, flags=557056)
 Testing files for detector:  nrs2
-Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmpamu6zn84/fs_prism_nrs2_uncal.fits
 </pre>
 </div>
 </div>
@@ -15369,6 +15376,17 @@ Failed validating &#39;enum&#39; in schema:
 On instance:
     &#39;FULL&#39;
   warnings.warn(errmsg, ValidationWarning)
+2022-12-03 08:34:56,449 - stpipe - INFO - PARS-DETECTOR1PIPELINE parameters found: /grp/crds/cache/references/jwst/jwst_nirspec_pars-detector1pipeline_0004.asdf
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Working with uncal_file:  /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs2_uncal.fits
 </pre>
 </div>
 </div>
@@ -15378,168 +15396,269 @@ On instance:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">OSError</span>                                   Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In [7], line 35</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span> result <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">skipped</span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">     33</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> skip_file:       
-<span class="ansi-green-intense-fg ansi-bold">     34</span>     <span style="color: rgb(95,135,135)"># Run the stage 1 pipeline </span>
-<span class="ansi-green-fg">---&gt; 35</span>     rate_object <span style="color: rgb(98,98,98)">=</span> Detector1Pipeline<span style="color: rgb(98,98,98)">.</span>call(uncal_file)
-<span class="ansi-green-intense-fg ansi-bold">     36</span>     <span style="color: rgb(95,135,135)"># Make sure the MSA shutter configuration file is set up correctly</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> msa_shutter_config <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<pre>2022-12-03 08:34:56,466 - stpipe.Detector1Pipeline - INFO - Detector1Pipeline instance created.
+2022-12-03 08:34:56,468 - stpipe.Detector1Pipeline.group_scale - INFO - GroupScaleStep instance created.
+2022-12-03 08:34:56,468 - stpipe.Detector1Pipeline.dq_init - INFO - DQInitStep instance created.
+2022-12-03 08:34:56,469 - stpipe.Detector1Pipeline.saturation - INFO - SaturationStep instance created.
+2022-12-03 08:34:56,471 - stpipe.Detector1Pipeline.ipc - INFO - IPCStep instance created.
+2022-12-03 08:34:56,472 - stpipe.Detector1Pipeline.superbias - INFO - SuperBiasStep instance created.
+2022-12-03 08:34:56,473 - stpipe.Detector1Pipeline.refpix - INFO - RefPixStep instance created.
+2022-12-03 08:34:56,474 - stpipe.Detector1Pipeline.rscd - INFO - RscdStep instance created.
+2022-12-03 08:34:56,475 - stpipe.Detector1Pipeline.firstframe - INFO - FirstFrameStep instance created.
+2022-12-03 08:34:56,476 - stpipe.Detector1Pipeline.lastframe - INFO - LastFrameStep instance created.
+2022-12-03 08:34:56,477 - stpipe.Detector1Pipeline.linearity - INFO - LinearityStep instance created.
+2022-12-03 08:34:56,478 - stpipe.Detector1Pipeline.dark_current - INFO - DarkCurrentStep instance created.
+2022-12-03 08:34:56,479 - stpipe.Detector1Pipeline.reset - INFO - ResetStep instance created.
+2022-12-03 08:34:56,481 - stpipe.Detector1Pipeline.persistence - INFO - PersistenceStep instance created.
+2022-12-03 08:34:56,482 - stpipe.Detector1Pipeline.jump - INFO - JumpStep instance created.
+2022-12-03 08:34:56,484 - stpipe.Detector1Pipeline.ramp_fit - INFO - RampFitStep instance created.
+2022-12-03 08:34:56,485 - stpipe.Detector1Pipeline.gain_scale - INFO - GainScaleStep instance created.
+Exception ignored in: &lt;function DataModel.__del__ at 0x7f6d0a4073a0&gt;
+Traceback (most recent call last):
+  File &#34;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/model_base.py&#34;, line 349, in __del__
+    self.close()
+  File &#34;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/model_base.py&#34;, line 371, in close
+    file_reference.decrement()
+  File &#34;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/model_base.py&#34;, line 1126, in decrement
+    self._file.close()
+  File &#34;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/hdu/hdulist.py&#34;, line 979, in close
+    self._file.close()
+  File &#34;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/file.py&#34;, line 398, in close
+    self._file.close()
+OSError: [Errno 9] Bad file descriptor
+2022-12-03 08:34:56,643 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline running with args (&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs2_uncal.fits&#39;,).
+2022-12-03 08:34:56,653 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;save_calibrated_ramp&#39;: False, &#39;steps&#39;: {&#39;group_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dq_init&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;saturation&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;n_pix_grow_sat&#39;: 1}, &#39;ipc&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;superbias&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;refpix&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}, &#39;rscd&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;type&#39;: &#39;baseline&#39;}, &#39;firstframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;lastframe&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;linearity&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;dark_current&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;dark_output&#39;: None}, &#39;reset&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}, &#39;persistence&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;input_trapsfilled&#39;: &#39;&#39;, &#39;flag_pers_cutoff&#39;: 40.0, &#39;save_persistence&#39;: False, &#39;save_trapsfilled&#39;: True}, &#39;jump&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0, &#39;min_sat_area&#39;: 1.0, &#39;min_jump_area&#39;: 5.0, &#39;expand_factor&#39;: 2.0, &#39;use_ellipses&#39;: False, &#39;sat_required_snowball&#39;: True, &#39;expand_large_events&#39;: False}, &#39;ramp_fit&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}, &#39;gain_scale&#39;: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;}}}
+2022-12-03 08:34:56,821 - stpipe.Detector1Pipeline - INFO - Prefetching reference files for dataset: &#39;fs_prism_nrs2_uncal.fits&#39; reftypes = [&#39;dark&#39;, &#39;gain&#39;, &#39;linearity&#39;, &#39;mask&#39;, &#39;persat&#39;, &#39;readnoise&#39;, &#39;refpix&#39;, &#39;reset&#39;, &#39;rscd&#39;, &#39;saturation&#39;, &#39;superbias&#39;, &#39;trapdensity&#39;, &#39;trappars&#39;]
+2022-12-03 08:34:56,829 - stpipe.Detector1Pipeline - INFO - Prefetch for DARK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_dark_0087.fits&#39;.
+2022-12-03 08:34:56,831 - stpipe.Detector1Pipeline - INFO - Prefetch for GAIN reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_gain_0018.fits&#39;.
+2022-12-03 08:34:56,833 - stpipe.Detector1Pipeline - INFO - Prefetch for LINEARITY reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_linearity_0021.fits&#39;.
+2022-12-03 08:34:56,834 - stpipe.Detector1Pipeline - INFO - Prefetch for MASK reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_mask_0011.fits&#39;.
+2022-12-03 08:34:56,836 - stpipe.Detector1Pipeline - INFO - Prefetch for PERSAT reference file is &#39;N/A&#39;.
+2022-12-03 08:34:56,836 - stpipe.Detector1Pipeline - INFO - Prefetch for READNOISE reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0017.fits&#39;.
+2022-12-03 08:34:56,838 - stpipe.Detector1Pipeline - INFO - Prefetch for REFPIX reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_refpix_0020.fits&#39;.
+2022-12-03 08:34:56,839 - stpipe.Detector1Pipeline - INFO - Prefetch for RESET reference file is &#39;N/A&#39;.
+2022-12-03 08:34:56,840 - stpipe.Detector1Pipeline - INFO - Prefetch for RSCD reference file is &#39;N/A&#39;.
+2022-12-03 08:34:56,840 - stpipe.Detector1Pipeline - INFO - Prefetch for SATURATION reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_saturation_0021.fits&#39;.
+2022-12-03 08:34:56,842 - stpipe.Detector1Pipeline - INFO - Prefetch for SUPERBIAS reference file is &#39;/grp/crds/cache/references/jwst/jwst_nirspec_superbias_0114.fits&#39;.
+2022-12-03 08:34:56,843 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPDENSITY reference file is &#39;N/A&#39;.
+2022-12-03 08:34:56,844 - stpipe.Detector1Pipeline - INFO - Prefetch for TRAPPARS reference file is &#39;N/A&#39;.
+2022-12-03 08:34:56,844 - stpipe.Detector1Pipeline - INFO - Starting calwebb_detector1 ...
+2022-12-03 08:34:57,212 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:34:57,214 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:57,329 - stpipe.Detector1Pipeline.group_scale - INFO - NFRAMES and FRMDIVSR are equal; correction not needed
+2022-12-03 08:34:57,330 - stpipe.Detector1Pipeline.group_scale - INFO - Step will be skipped
+2022-12-03 08:34:57,332 - stpipe.Detector1Pipeline.group_scale - INFO - Step group_scale done
+2022-12-03 08:34:57,469 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:34:57,471 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:57,504 - stpipe.Detector1Pipeline.dq_init - INFO - Using MASK reference file /grp/crds/cache/references/jwst/jwst_nirspec_mask_0011.fits
+2022-12-03 08:34:57,797 - stpipe.Detector1Pipeline.dq_init - INFO - Step dq_init done
+2022-12-03 08:34:57,933 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:34:57,935 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;n_pix_grow_sat&#39;: 1}
+2022-12-03 08:34:57,957 - stpipe.Detector1Pipeline.saturation - INFO - Using SATURATION reference file /grp/crds/cache/references/jwst/jwst_nirspec_saturation_0021.fits
+2022-12-03 08:34:59,013 - stpipe.Detector1Pipeline.saturation - INFO - Detected 40672 saturated pixels
+2022-12-03 08:34:59,047 - stpipe.Detector1Pipeline.saturation - INFO - Detected 0 A/D floor pixels
+2022-12-03 08:34:59,082 - stpipe.Detector1Pipeline.saturation - INFO - Step saturation done
+2022-12-03 08:34:59,385 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:34:59,387 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: True, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:59,388 - stpipe.Detector1Pipeline.ipc - INFO - Step skipped.
+2022-12-03 08:34:59,391 - stpipe.Detector1Pipeline.ipc - INFO - Step ipc done
+2022-12-03 08:34:59,612 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:34:59,614 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:34:59,638 - stpipe.Detector1Pipeline.superbias - INFO - Using SUPERBIAS reference file /grp/crds/cache/references/jwst/jwst_nirspec_superbias_0114.fits
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/validate.py:38: ValidationWarning: While validating meta.exposure.readpatt the following error occurred:
+&#39;ALLIRS2&#39; is not one of [&#39;ACQ1&#39;, &#39;ACQ2&#39;, &#39;BRIGHT1&#39;, &#39;BRIGHT2&#39;, &#39;DEEP2&#39;, &#39;DEEP8&#39;, &#39;FAST&#39;, &#39;FASTGRPAVG&#39;, &#39;FASTGRPAVG8&#39;, &#39;FASTGRPAVG16&#39;, &#39;FASTGRPAVG32&#39;, &#39;FASTGRPAVG64&#39;, &#39;FASTR1&#39;, &#39;FASTR100&#39;, &#39;FGS&#39;, &#39;FGS60&#39;, &#39;FGS8370&#39;, &#39;FGS840&#39;, &#39;FGSRAPID&#39;, &#39;FINEGUIDE&#39;, &#39;ID&#39;, &#39;MEDIUM2&#39;, &#39;MEDIUM8&#39;, &#39;NIS&#39;, &#39;NISRAPID&#39;, &#39;NRS&#39;, &#39;NRSIRS2&#39;, &#39;NRSN16R4&#39;, &#39;NRSN32R8&#39;, &#39;NRSN8R2&#39;, &#39;NRSRAPID&#39;, &#39;NRSIRS2RAPID&#39;, &#39;NRSRAPIDD1&#39;, &#39;NRSRAPIDD2&#39;, &#39;NRSRAPIDD6&#39;, &#39;NRSSLOW&#39;, &#39;RAPID&#39;, &#39;SHALLOW2&#39;, &#39;SHALLOW4&#39;, &#39;SLOW&#39;, &#39;SLOWR1&#39;, &#39;TRACK&#39;, &#39;ANY&#39;, &#39;N/A&#39;]
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:644</span>, in <span class="ansi-cyan-fg">Step.call</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    642</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(args) <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>:
-<span class="ansi-green-intense-fg ansi-bold">    643</span>     filename <span style="color: rgb(98,98,98)">=</span> args[<span style="color: rgb(98,98,98)">0</span>]
-<span class="ansi-green-fg">--&gt; 644</span> config, config_file <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">build_config</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filename</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    646</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">class</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> config:
-<span class="ansi-green-intense-fg ansi-bold">    647</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> config[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">class</span><span style="color: rgb(175,0,0)">&#39;</span>]
+Failed validating &#39;enum&#39; in schema:
+    OrderedDict([(&#39;title&#39;, &#39;Readout pattern&#39;),
+                 (&#39;type&#39;, &#39;string&#39;),
+                 (&#39;enum&#39;,
+                  [&#39;ACQ1&#39;,
+                   &#39;ACQ2&#39;,
+                   &#39;BRIGHT1&#39;,
+                   &#39;BRIGHT2&#39;,
+                   &#39;DEEP2&#39;,
+                   &#39;DEEP8&#39;,
+                   &#39;FAST&#39;,
+                   &#39;FASTGRPAVG&#39;,
+                   &#39;FASTGRPAVG8&#39;,
+                   &#39;FASTGRPAVG16&#39;,
+                   &#39;FASTGRPAVG32&#39;,
+                   &#39;FASTGRPAVG64&#39;,
+                   &#39;FASTR1&#39;,
+                   &#39;FASTR100&#39;,
+                   &#39;FGS&#39;,
+                   &#39;FGS60&#39;,
+                   &#39;FGS8370&#39;,
+                   &#39;FGS840&#39;,
+                   &#39;FGSRAPID&#39;,
+                   &#39;FINEGUIDE&#39;,
+                   &#39;ID&#39;,
+                   &#39;MEDIUM2&#39;,
+                   &#39;MEDIUM8&#39;,
+                   &#39;NIS&#39;,
+                   &#39;NISRAPID&#39;,
+                   &#39;NRS&#39;,
+                   &#39;NRSIRS2&#39;,
+                   &#39;NRSN16R4&#39;,
+                   &#39;NRSN32R8&#39;,
+                   &#39;NRSN8R2&#39;,
+                   &#39;NRSRAPID&#39;,
+                   &#39;NRSIRS2RAPID&#39;,
+                   &#39;NRSRAPIDD1&#39;,
+                   &#39;NRSRAPIDD2&#39;,
+                   &#39;NRSRAPIDD6&#39;,
+                   &#39;NRSSLOW&#39;,
+                   &#39;RAPID&#39;,
+                   &#39;SHALLOW2&#39;,
+                   &#39;SHALLOW4&#39;,
+                   &#39;SLOW&#39;,
+                   &#39;SLOWR1&#39;,
+                   &#39;TRACK&#39;,
+                   &#39;ANY&#39;,
+                   &#39;N/A&#39;]),
+                 (&#39;fits_ke ...
+  warnings.warn(errmsg, ValidationWarning)
+2022-12-03 08:34:59,958 - stpipe.Detector1Pipeline.superbias - INFO - Step superbias done
+2022-12-03 08:35:00,096 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:00,098 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;odd_even_columns&#39;: True, &#39;use_side_ref_pixels&#39;: True, &#39;side_smoothing_length&#39;: 11, &#39;side_gain&#39;: 1.0, &#39;odd_even_rows&#39;: True}
+2022-12-03 08:35:00,121 - stpipe.Detector1Pipeline.refpix - INFO - Using refpix reference file: /grp/crds/cache/references/jwst/jwst_nirspec_refpix_0020.fits
+2022-12-03 08:35:00,508 - stpipe.Detector1Pipeline.refpix - INFO - Working on integration 1
+2022-12-03 08:35:13,575 - stpipe.Detector1Pipeline.refpix - INFO - Step refpix done
+2022-12-03 08:35:13,837 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:13,838 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:35:13,862 - stpipe.Detector1Pipeline.linearity - INFO - Using Linearity reference file /grp/crds/cache/references/jwst/jwst_nirspec_linearity_0021.fits
+2022-12-03 08:35:14,519 - stpipe.Detector1Pipeline.linearity - INFO - Step linearity done
+2022-12-03 08:35:14,660 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:14,662 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;dark_output&#39;: None}
+2022-12-03 08:35:14,727 - stpipe.Detector1Pipeline.dark_current - INFO - Using DARK reference file /grp/crds/cache/references/jwst/jwst_nirspec_dark_0087.fits
+2022-12-03 08:35:17,487 - stpipe.Detector1Pipeline.dark_current - INFO - Science data nints=1, ngroups=4, nframes=1, groupgap=0
+2022-12-03 08:35:17,488 - stpipe.Detector1Pipeline.dark_current - INFO - Dark data nints=1, ngroups=65, nframes=1, groupgap=0
+2022-12-03 08:35:17,982 - stpipe.Detector1Pipeline.dark_current - INFO - Step dark_current done
+2022-12-03 08:35:18,148 - stpipe.Detector1Pipeline.jump - INFO - Step jump running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:18,151 - stpipe.Detector1Pipeline.jump - INFO - Step jump parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;rejection_threshold&#39;: 4.0, &#39;three_group_rejection_threshold&#39;: 6.0, &#39;four_group_rejection_threshold&#39;: 5.0, &#39;maximum_cores&#39;: &#39;none&#39;, &#39;flag_4_neighbors&#39;: True, &#39;max_jump_to_flag_neighbors&#39;: 1000.0, &#39;min_jump_to_flag_neighbors&#39;: 10.0, &#39;after_jump_flag_dn1&#39;: 0.0, &#39;after_jump_flag_time1&#39;: 0.0, &#39;after_jump_flag_dn2&#39;: 0.0, &#39;after_jump_flag_time2&#39;: 0.0, &#39;min_sat_area&#39;: 1.0, &#39;min_jump_area&#39;: 5.0, &#39;expand_factor&#39;: 2.0, &#39;use_ellipses&#39;: False, &#39;sat_required_snowball&#39;: True, &#39;expand_large_events&#39;: False}
+2022-12-03 08:35:18,182 - stpipe.Detector1Pipeline.jump - INFO - CR rejection threshold = 4 sigma
+2022-12-03 08:35:18,215 - stpipe.Detector1Pipeline.jump - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0018.fits
+2022-12-03 08:35:18,312 - stpipe.Detector1Pipeline.jump - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0017.fits
+2022-12-03 08:35:18,580 - stpipe.Detector1Pipeline.jump - INFO - Executing two-point difference method
+2022-12-03 08:35:18,622 - stpipe.Detector1Pipeline.jump - INFO - Working on integration 1:
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/twopoint_difference.py:154: RuntimeWarning: All-NaN slice encountered
+  max_ratio = np.nanmax(ratio, axis=0)
+2022-12-03 08:35:20,019 - stpipe.Detector1Pipeline.jump - INFO - From highest outlier, two-point found 0 pixels with at least one CR from five or more groups.
+2022-12-03 08:35:20,392 - stpipe.Detector1Pipeline.jump - INFO - Total elapsed time = 1.81107 sec
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:302: RuntimeWarning: invalid value encountered in divide
+  data /= gain_2d
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:303: RuntimeWarning: invalid value encountered in divide
+  err /= gain_2d
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/jump/jump.py:304: RuntimeWarning: invalid value encountered in divide
+  readnoise_2d /= gain_2d
+2022-12-03 08:35:20,438 - stpipe.Detector1Pipeline.jump - INFO - The execution time in seconds: 2.255986
+2022-12-03 08:35:20,444 - stpipe.Detector1Pipeline.jump - INFO - Step jump done
+2022-12-03 08:35:20,578 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit running with args (&lt;RampModel(1, 4, 3200, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:20,580 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;, &#39;int_name&#39;: &#39;&#39;, &#39;save_opt&#39;: False, &#39;opt_name&#39;: &#39;&#39;, &#39;suppress_one_group&#39;: True, &#39;maximum_cores&#39;: &#39;none&#39;}
+2022-12-03 08:35:20,656 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using READNOISE reference file: /grp/crds/cache/references/jwst/jwst_nirspec_readnoise_0017.fits
+2022-12-03 08:35:20,656 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using GAIN reference file: /grp/crds/cache/references/jwst/jwst_nirspec_gain_0018.fits
+2022-12-03 08:35:20,767 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using algorithm = ols
+2022-12-03 08:35:20,767 - stpipe.Detector1Pipeline.ramp_fit - INFO - Using weighting = optimal
+/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stcal/ramp_fitting/ols_fit.py:1089: RuntimeWarning: invalid value encountered in multiply
+  var_p4[num_int, :, :, :] *= (segs_4[num_int, :, :, :] &gt; 0)
+2022-12-03 08:35:33,962 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of groups per integration: 4
+2022-12-03 08:35:33,963 - stpipe.Detector1Pipeline.ramp_fit - INFO - Number of integrations: 1
+2022-12-03 08:35:34,146 - stpipe.Detector1Pipeline.ramp_fit - INFO - Step ramp_fit done
+2022-12-03 08:35:34,290 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:34,291 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scale&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:35:34,368 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-12-03 08:35:34,369 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-12-03 08:35:34,373 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-12-03 08:35:34,517 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale running with args (&lt;CubeModel(1, 2048, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:34,519 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: &#39;gain_scaleints&#39;, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn&#39;}
+2022-12-03 08:35:34,590 - stpipe.Detector1Pipeline.gain_scale - INFO - GAINFACT not found in gain reference file
+2022-12-03 08:35:34,590 - stpipe.Detector1Pipeline.gain_scale - INFO - Step will be skipped
+2022-12-03 08:35:34,595 - stpipe.Detector1Pipeline.gain_scale - INFO - Step gain_scale done
+2022-12-03 08:35:34,595 - stpipe.Detector1Pipeline - INFO - ... ending calwebb_detector1
+2022-12-03 08:35:34,596 - stpipe.Detector1Pipeline - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:35:34,596 - stpipe.Detector1Pipeline - INFO - Step Detector1Pipeline done
+2022-12-03 08:35:34,605 - stpipe.AssignWcsStep - INFO - AssignWcsStep instance created.
+2022-12-03 08:35:34,743 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:34,745 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;sip_approx&#39;: True, &#39;sip_max_pix_error&#39;: 0.1, &#39;sip_degree&#39;: None, &#39;sip_max_inv_pix_error&#39;: 0.1, &#39;sip_inv_degree&#39;: None, &#39;sip_npoints&#39;: 12, &#39;slit_y_low&#39;: -0.55, &#39;slit_y_high&#39;: 0.55}
+2022-12-03 08:35:34,916 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-12-03 08:35:34,917 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-12-03 08:35:34,917 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-12-03 08:35:34,919 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-12-03 08:35:35,125 - stpipe.AssignWcsStep - INFO - Removing slit S200A1 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-12-03 08:35:35,163 - stpipe.AssignWcsStep - INFO - Removing slit S200A2 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-12-03 08:35:35,200 - stpipe.AssignWcsStep - INFO - Removing slit S400A1 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-12-03 08:35:35,237 - stpipe.AssignWcsStep - INFO - Removing slit S1600A1 from the list of open slits because the WCS bounding_box is completely outside the detector.
+2022-12-03 08:35:35,274 - stpipe.AssignWcsStep - INFO - Slits projected on detector NRS2: [&#39;S200B1&#39;]
+2022-12-03 08:35:35,275 - stpipe.AssignWcsStep - INFO - Computing WCS for 1 open slitlets
+2022-12-03 08:35:35,312 - stpipe.AssignWcsStep - INFO - gwa_ytilt is 0.0332140289247036 deg
+2022-12-03 08:35:35,314 - stpipe.AssignWcsStep - INFO - gwa_xtilt is 0.3367482721805573 deg
+2022-12-03 08:35:35,315 - stpipe.AssignWcsStep - INFO - theta_y correction: -1.0907214098475986e-05 deg
+2022-12-03 08:35:35,316 - stpipe.AssignWcsStep - INFO - theta_x correction: 0.0 deg
+2022-12-03 08:35:35,330 - stpipe.AssignWcsStep - INFO - SPORDER= 0, wrange=[6e-07, 5.3e-06]
+2022-12-03 08:35:35,479 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 1
+2022-12-03 08:35:35,480 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 2
+2022-12-03 08:35:35,480 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 3
+2022-12-03 08:35:35,481 - stpipe.AssignWcsStep - INFO - There are 0 open slits in quadrant 4
+2022-12-03 08:35:35,481 - stpipe.AssignWcsStep - INFO - There are 1 open slits in quadrant 5
+2022-12-03 08:35:35,634 - stpipe.AssignWcsStep - INFO - Created a NIRSPEC nrs_fixedslit pipeline with references {&#39;distortion&#39;: None, &#39;filteroffset&#39;: None, &#39;specwcs&#39;: None, &#39;regions&#39;: None, &#39;wavelengthrange&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_wavelengthrange_0004.asdf&#39;, &#39;camera&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_camera_0004.asdf&#39;, &#39;collimator&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_collimator_0004.asdf&#39;, &#39;disperser&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_disperser_0034.asdf&#39;, &#39;fore&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fore_0028.asdf&#39;, &#39;fpa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_fpa_0005.asdf&#39;, &#39;msa&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_msa_0005.asdf&#39;, &#39;ote&#39;: &#39;/grp/crds/cache/references/jwst/jwst_nirspec_ote_0005.asdf&#39;, &#39;ifupost&#39;: None, &#39;ifufore&#39;: None, &#39;ifuslicer&#39;: None}
+2022-12-03 08:35:35,798 - stpipe.AssignWcsStep - INFO - COMPLETED assign_wcs
+2022-12-03 08:35:35,812 - stpipe.AssignWcsStep - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:35:35,813 - stpipe.AssignWcsStep - INFO - Step AssignWcsStep done
+2022-12-03 08:35:35,822 - stpipe.Extract2dStep - INFO - Extract2dStep instance created.
+2022-12-03 08:35:35,979 - stpipe.Extract2dStep - INFO - Step Extract2dStep running with args (&lt;ImageModel(2048, 2048) from fs_prism_nrs2_uncal.fits&gt;,).
+2022-12-03 08:35:35,981 - stpipe.Extract2dStep - INFO - Step Extract2dStep parameters are: {&#39;pre_hooks&#39;: [], &#39;post_hooks&#39;: [], &#39;output_file&#39;: None, &#39;output_dir&#39;: None, &#39;output_ext&#39;: &#39;.fits&#39;, &#39;output_use_model&#39;: False, &#39;output_use_index&#39;: True, &#39;save_results&#39;: False, &#39;skip&#39;: False, &#39;suffix&#39;: None, &#39;search_output_file&#39;: True, &#39;input_dir&#39;: &#39;&#39;, &#39;slit_name&#39;: None, &#39;extract_orders&#39;: None, &#39;grism_objects&#39;: None, &#39;tsgrism_extract_height&#39;: None, &#39;wfss_extract_half_height&#39;: 5, &#39;wfss_mmag_extract&#39;: None, &#39;wfss_nbright&#39;: 1000}
+2022-12-03 08:35:35,997 - stpipe.Extract2dStep - INFO - EXP_TYPE is NRS_FIXEDSLIT
+2022-12-03 08:35:36,147 - stpipe.Extract2dStep - INFO - Name of subarray extracted: S200B1
+2022-12-03 08:35:36,148 - stpipe.Extract2dStep - INFO - Subarray x-extents are: 440 864
+2022-12-03 08:35:36,149 - stpipe.Extract2dStep - INFO - Subarray y-extents are: 919 962
+2022-12-03 08:35:36,337 - stpipe.Extract2dStep - INFO - set slit_attributes completed
+2022-12-03 08:35:36,346 - stpipe.Extract2dStep - INFO - Update S_REGION to POLYGON ICRS  156.238745821 -45.653926065 156.237887188 -45.653118339 156.237822146 -45.653151380 156.238680762 -45.653959111
+2022-12-03 08:35:36,348 - stpipe.Extract2dStep - INFO - Updated S_REGION to POLYGON ICRS  156.238745821 -45.653926065 156.237887188 -45.653118339 156.237822146 -45.653151380 156.238680762 -45.653959111
+2022-12-03 08:35:36,401 - stpipe.Extract2dStep - INFO - Results used CRDS context: jwst_1019.pmap
+2022-12-03 08:35:36,402 - stpipe.Extract2dStep - INFO - Step Extract2dStep done
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/step.py:1379</span>, in <span class="ansi-cyan-fg">Step.build_config</span><span class="ansi-blue-fg">(cls, input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1377</span> log_cls <span style="color: rgb(98,98,98)">=</span> log<span style="color: rgb(98,98,98)">.</span>getLogger(logger_name)
-<span class="ansi-green-intense-fg ansi-bold">   1378</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">input</span>:
-<span class="ansi-green-fg">-&gt; 1379</span>     config <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_config_from_reference</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1380</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">   1381</span>     log_cls<span style="color: rgb(98,98,98)">.</span>info(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">No filename given, cannot retrieve config from CRDS</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stpipe/pipeline.py:185</span>, in <span class="ansi-cyan-fg">Pipeline.get_config_from_reference</span><span class="ansi-blue-fg">(cls, dataset, disable, crds_observatory)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span> logger<span style="color: rgb(98,98,98)">.</span>debug(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Retrieving all substep parameters from CRDS</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">    183</span> <span style="color: rgb(95,135,135)">#</span>
-<span class="ansi-green-intense-fg ansi-bold">    184</span> <span style="color: rgb(95,135,135)"># Iterate over the steps in the pipeline</span>
-<span class="ansi-green-fg">--&gt; 185</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_datamodels_open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">dataset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">asn_n_members</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> model:
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(model, Sequence):
-<span class="ansi-green-intense-fg ansi-bold">    187</span>         crds_parameters <span style="color: rgb(98,98,98)">=</span> model<span style="color: rgb(98,98,98)">.</span>_models[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">.</span>get_crds_parameters()
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Running test for FS...
+Information from the &#39;truth&#39; (or comparison) file 
+Filename: /internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs2_extract_2d_truth.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     277   ()      
+  1  SCI           1 ImageHDU        56   (424, 44)   float32   
+  2  DQ            1 ImageHDU        11   (424, 44)   int32 (rescales to uint32)   
+  3  ERR           1 ImageHDU        10   (424, 44)   float32   
+  4  WAVELENGTH    1 ImageHDU         9   (424, 44)   float32   
+  5  VAR_POISSON    1 ImageHDU         9   (424, 44)   float32   
+  6  VAR_RNOISE    1 ImageHDU         9   (424, 44)   float32   
+  7  ASDF          1 BinTableHDU     11   1R x 1C   [102285B]   
+None
+from extract_2d file/model  --&gt;     Detector: NRS2   Grating: PRISM   Filter: CLEAR   Lamp: LINE4   Exp_Type: NRS_FIXEDSLIT
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/stpipe/core.py:28</span>, in <span class="ansi-cyan-fg">JwstStep._datamodels_open</span><span class="ansi-blue-fg">(cls, init, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span> <span style="color: rgb(175,0,255)">@classmethod</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_datamodels_open</span>(<span style="color: rgb(0,135,0)">cls</span>, init, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs):
-<span class="ansi-green-fg">---&gt; 28</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">datamodels</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+Working with slit: S200B1
+    Truth slit size =  [424, 44]
+ Pipeline slit size =  424 43
+Corners for slit S200B1:  [x0, y0, x1, y1]
+   Truth corners: [441, 919, 865, 963]
+    Pipeline corners: [441, 920, 865, 963]
+* Test PASSED: All corners match within the threshold.
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/jwst/datamodels/util.py:217</span>, in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(init, guess, memmap, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    214</span>     log<span style="color: rgb(98,98,98)">.</span>debug(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Opening as </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>new_class<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">    216</span> <span style="color: rgb(95,135,135)"># Actually open the model</span>
-<span class="ansi-green-fg">--&gt; 217</span> model <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">new_class</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    219</span> <span style="color: rgb(95,135,135)"># Close the hdulist if we opened it</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> file_to_close <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span style="color: rgb(95,135,135)"># TODO: We need a better solution than messing with DataModel</span>
-<span class="ansi-green-intense-fg ansi-bold">    222</span>     <span style="color: rgb(95,135,135)"># internals.</span>
+Summary of test results: 
+ OrderedDict([(&#39;S200B1&#39;, True)])
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/model_base.py:226</span>, in <span class="ansi-cyan-fg">DataModel.__init__</span><span class="ansi-blue-fg">(self, init, schema, memmap, pass_invalid_values, strict_validation, validate_on_assignment, cast_fits_arrays, validate_arrays, ignore_missing_extensions, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span>     asdffile <span style="color: rgb(98,98,98)">=</span> init
-<span class="ansi-green-intense-fg ansi-bold">    225</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, fits<span style="color: rgb(98,98,98)">.</span>HDUList):
-<span class="ansi-green-fg">--&gt; 226</span>     asdffile <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">fits_support</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">from_fits</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_ctx</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    227</span> <span class="ansi-yellow-bg">                                      </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    229</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, (<span style="color: rgb(0,135,0)">str</span>, <span style="color: rgb(0,135,0)">bytes</span>, PurePath)):
-<span class="ansi-green-intense-fg ansi-bold">    230</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(init, PurePath):
+ *** Final result for extract_2d test will be reported as PASSED *** 
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/fits_support.py:628</span>, in <span class="ansi-cyan-fg">from_fits</span><span class="ansi-blue-fg">(hdulist, schema, context, skip_fits_update, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    623</span> <span style="color: rgb(95,135,135)"># Determine whether skipping the FITS loading can be done.</span>
-<span class="ansi-green-intense-fg ansi-bold">    624</span> skip_fits_update <span style="color: rgb(98,98,98)">=</span> _verify_skip_fits_update(
-<span class="ansi-green-intense-fg ansi-bold">    625</span>     skip_fits_update, hdulist, ff, context
-<span class="ansi-green-intense-fg ansi-bold">    626</span> )
-<span class="ansi-green-fg">--&gt; 628</span> known_keywords, known_datas <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_load_from_schema</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    629</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">hdulist</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ff</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tree</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">skip_fits_update</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">skip_fits_update</span>
-<span class="ansi-green-intense-fg ansi-bold">    630</span> <span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    631</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> skip_fits_update:
-<span class="ansi-green-intense-fg ansi-bold">    632</span>     _load_extra_fits(hdulist, known_keywords, known_datas, ff<span style="color: rgb(98,98,98)">.</span>tree)
+All slits PASSED extract_2d test.
+Did extract_2d  fs_prism_clear  validation test passed?  True 
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/fits_support.py:548</span>, in <span class="ansi-cyan-fg">_load_from_schema</span><span class="ansi-blue-fg">(hdulist, schema, tree, context, skip_fits_update)</span>
-<span class="ansi-green-intense-fg ansi-bold">    542</span>                 recurse(schema[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">items</span><span style="color: rgb(175,0,0)">&#39;</span>],
-<span class="ansi-green-intense-fg ansi-bold">    543</span>                         path <span style="color: rgb(98,98,98)">+</span> [i],
-<span class="ansi-green-intense-fg ansi-bold">    544</span>                         combiner,
-<span class="ansi-green-intense-fg ansi-bold">    545</span>                         {<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">hdu_index</span><span style="color: rgb(175,0,0)">&#39;</span>: i})
-<span class="ansi-green-intense-fg ansi-bold">    546</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
-<span class="ansi-green-fg">--&gt; 548</span> <span class="ansi-yellow-bg">mschema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">walk_schema</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">callback</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    549</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> known_keywords, known_datas
 
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/schema.py:149</span>, in <span class="ansi-cyan-fg">walk_schema</span><span class="ansi-blue-fg">(schema, callback, ctx)</span>
-<span class="ansi-green-intense-fg ansi-bold">    147</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> ctx <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-intense-fg ansi-bold">    148</span>     ctx <span style="color: rgb(98,98,98)">=</span> {}
-<span class="ansi-green-fg">--&gt; 149</span> <span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">None</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/schema.py:137</span>, in <span class="ansi-cyan-fg">walk_schema.&lt;locals&gt;.recurse</span><span class="ansi-blue-fg">(schema, path, combiner, ctx)</span>
-<span class="ansi-green-intense-fg ansi-bold">    135</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">type</span><span style="color: rgb(175,0,0)">&#39;</span>) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">object</span><span style="color: rgb(175,0,0)">&#39;</span>:
-<span class="ansi-green-intense-fg ansi-bold">    136</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> key, val <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">properties</span><span style="color: rgb(175,0,0)">&#39;</span>, {})<span style="color: rgb(98,98,98)">.</span>items():
-<span class="ansi-green-fg">--&gt; 137</span>         <span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">val</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">path</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">key</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">combiner</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    139</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">type</span><span style="color: rgb(175,0,0)">&#39;</span>) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">array</span><span style="color: rgb(175,0,0)">&#39;</span>:
-<span class="ansi-green-intense-fg ansi-bold">    140</span>     items <span style="color: rgb(98,98,98)">=</span> schema<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">items</span><span style="color: rgb(175,0,0)">&#39;</span>, {})
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/schema.py:124</span>, in <span class="ansi-cyan-fg">walk_schema.&lt;locals&gt;.recurse</span><span class="ansi-blue-fg">(schema, path, combiner, ctx)</span>
-<span class="ansi-green-intense-fg ansi-bold">    123</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">recurse</span>(schema, path, combiner, ctx):
-<span class="ansi-green-fg">--&gt; 124</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-yellow-bg">callback</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">path</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">combiner</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">recurse</span><span class="ansi-yellow-bg">)</span>:
-<span class="ansi-green-intense-fg ansi-bold">    125</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span>
-<span class="ansi-green-intense-fg ansi-bold">    127</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> c <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> [<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">allOf</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">not</span><span style="color: rgb(175,0,0)">&#39;</span>]:
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/fits_support.py:526</span>, in <span class="ansi-cyan-fg">_load_from_schema.&lt;locals&gt;.callback</span><span class="ansi-blue-fg">(schema, path, combiner, ctx, recurse)</span>
-<span class="ansi-green-intense-fg ansi-bold">    522</span>             properties<span style="color: rgb(98,98,98)">.</span>put_value(path, result, tree)
-<span class="ansi-green-intense-fg ansi-bold">    524</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">fits_hdu</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> (
-<span class="ansi-green-intense-fg ansi-bold">    525</span>         <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">max_ndim</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">ndim</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">datatype</span><span style="color: rgb(175,0,0)">&#39;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> schema):
-<span class="ansi-green-fg">--&gt; 526</span>     result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_fits_array_loader</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    527</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">hdulist</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ctx</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">hdu_index</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">known_datas</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    529</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> result <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> context<span style="color: rgb(98,98,98)">.</span>_validate_on_assignment:
-<span class="ansi-green-intense-fg ansi-bold">    530</span>         validate<span style="color: rgb(98,98,98)">.</span>value_change(path, result, schema, context)
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/fits_support.py:478</span>, in <span class="ansi-cyan-fg">_fits_array_loader</span><span class="ansi-blue-fg">(hdulist, schema, hdu_index, known_datas, context)</span>
-<span class="ansi-green-intense-fg ansi-bold">    475</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
-<span class="ansi-green-intense-fg ansi-bold">    477</span> known_datas<span style="color: rgb(98,98,98)">.</span>add(hdu)
-<span class="ansi-green-fg">--&gt; 478</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">from_fits_hdu</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">hdu</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">context</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_cast_fits_arrays</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/stdatamodels/fits_support.py:657</span>, in <span class="ansi-cyan-fg">from_fits_hdu</span><span class="ansi-blue-fg">(hdu, schema, cast_arrays)</span>
-<span class="ansi-green-intense-fg ansi-bold">    653</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">from_fits_hdu</span>(hdu, schema, cast_arrays<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">True</span>):
-<span class="ansi-green-intense-fg ansi-bold">    654</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    655</span> <span style="color: rgb(175,0,0)">    Read the data from a fits hdu into a numpy ndarray</span>
-<span class="ansi-green-intense-fg ansi-bold">    656</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 657</span>     data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">hdu</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">data</span>
-<span class="ansi-green-intense-fg ansi-bold">    659</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> cast_arrays:
-<span class="ansi-green-intense-fg ansi-bold">    660</span>         <span style="color: rgb(95,135,135)"># Save the column listeners for possible restoration</span>
-<span class="ansi-green-intense-fg ansi-bold">    661</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">hasattr</span>(data, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">_coldefs</span><span style="color: rgb(175,0,0)">&#39;</span>):
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/utils/decorators.py:777</span>, in <span class="ansi-cyan-fg">lazyproperty.__get__</span><span class="ansi-blue-fg">(self, obj, owner)</span>
-<span class="ansi-green-intense-fg ansi-bold">    775</span>         val <span style="color: rgb(98,98,98)">=</span> obj_dict<span style="color: rgb(98,98,98)">.</span>get(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_key, _NotFound)
-<span class="ansi-green-intense-fg ansi-bold">    776</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> val <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> _NotFound:
-<span class="ansi-green-fg">--&gt; 777</span>             val <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">fget</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">obj</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    778</span>             obj_dict[<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_key] <span style="color: rgb(98,98,98)">=</span> val
-<span class="ansi-green-intense-fg ansi-bold">    779</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> val
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/hdu/image.py:235</span>, in <span class="ansi-cyan-fg">_ImageBaseHDU.data</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    232</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_axes) <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">1</span>:
-<span class="ansi-green-intense-fg ansi-bold">    233</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span>
-<span class="ansi-green-fg">--&gt; 235</span> data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_scaled_image_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_data_offset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_update_header_scale_info(data<span style="color: rgb(98,98,98)">.</span>dtype)
-<span class="ansi-green-intense-fg ansi-bold">    238</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> data
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/hdu/image.py:779</span>, in <span class="ansi-cyan-fg">_ImageBaseHDU._get_scaled_image_data</span><span class="ansi-blue-fg">(self, offset, shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">    771</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    772</span> <span style="color: rgb(175,0,0)">Internal function for reading image data from a file and apply scale</span>
-<span class="ansi-green-intense-fg ansi-bold">    773</span> <span style="color: rgb(175,0,0)">factors to it.  Normally this is used for the entire image, but it</span>
-<span class="ansi-green-intense-fg ansi-bold">    774</span> <span style="color: rgb(175,0,0)">supports alternate offset/shape for Section support.</span>
-<span class="ansi-green-intense-fg ansi-bold">    775</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    777</span> code <span style="color: rgb(98,98,98)">=</span> BITPIX2DTYPE[<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bitpix]
-<span class="ansi-green-fg">--&gt; 779</span> raw_data <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_raw_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    780</span> raw_data<span style="color: rgb(98,98,98)">.</span>dtype <span style="color: rgb(98,98,98)">=</span> raw_data<span style="color: rgb(98,98,98)">.</span>dtype<span style="color: rgb(98,98,98)">.</span>newbyteorder(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt;</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">    782</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_do_not_scale_image_data <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> (
-<span class="ansi-green-intense-fg ansi-bold">    783</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bzero <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">0</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_orig_bscale <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span>
-<span class="ansi-green-intense-fg ansi-bold">    784</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_blank <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
-<span class="ansi-green-intense-fg ansi-bold">    785</span>     <span style="color: rgb(95,135,135)"># No further conversion of the data is necessary</span>
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/hdu/base.py:522</span>, in <span class="ansi-cyan-fg">_BaseHDU._get_raw_data</span><span class="ansi-blue-fg">(self, shape, code, offset)</span>
-<span class="ansi-green-intense-fg ansi-bold">    519</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> np<span style="color: rgb(98,98,98)">.</span>ndarray(shape, dtype<span style="color: rgb(98,98,98)">=</span>code, buffer<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_buffer,
-<span class="ansi-green-intense-fg ansi-bold">    520</span>                       offset<span style="color: rgb(98,98,98)">=</span>offset)
-<span class="ansi-green-intense-fg ansi-bold">    521</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_file:
-<span class="ansi-green-fg">--&gt; 522</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_file</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">readarray</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">offset</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">dtype</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">shape</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    523</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    524</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
-
-File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib/python3.9/site-packages/astropy/io/fits/file.py:280</span>, in <span class="ansi-cyan-fg">_File.readarray</span><span class="ansi-blue-fg">(self, size, offset, dtype, shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">    276</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> actualsize <span style="color: rgb(98,98,98)">&lt;</span> size:
-<span class="ansi-green-intense-fg ansi-bold">    277</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">size </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> is too many bytes for a </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> array of </span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span>                          <span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(98,98,98)">.</span>format(size, shape, dtype))
-<span class="ansi-green-fg">--&gt; 280</span> filepos <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_file</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tell</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    282</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-intense-fg ansi-bold">    283</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>memmap:
-
-<span class="ansi-red-fg">OSError</span>: [Errno 9] Bad file descriptor</pre>
+Closing file:  popenfile(path=&#39;/internal/data1/jenkins/workspace/Notebooks/jwst_validation_notebooks_spacetelescope/tmp/tmp7fzbrisn/fs_prism_nrs2_extract_2d_truth.fits&#39;, fd=55, position=599040, mode=&#39;r&#39;, flags=557056)
+</pre>
 </div>
 </div>
 
@@ -15547,12 +15666,12 @@ File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Quickly see if the test passed </span>
@@ -15570,6 +15689,29 @@ File <span class="ansi-green-fg">~/miniconda3/envs/jwst_validation_notebooks/lib
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>These are the final results of the tests: 
+fs_prism_nrs1_uncal.fits                   PASSED  
+fs_prism_nrs2_uncal.fits                   PASSED  
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
