@@ -1,0 +1,94 @@
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Python.gitlab-ci.yml
+
+# Official language image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/python/tags/
+image: continuumio/miniconda3:latest
+
+stages:
+  - scheduled-build
+  - notebook-execution
+
+notebook-execution:
+  stage: notebook-execution
+  rules: 
+  #- if: $CI_MERGE_REQUEST_ID #only run on merge request
+    - changes: 
+        - jwst_validation_notebooks/**/* 
+  script:
+    # Install required packages
+    - apt-get update -yqq
+    - apt-get install -yqq build-essential gcc
+    - export PIP_CACHE_DIR="/opt/cache/pip"
+    - conda init bash
+    - source ~/.bashrc
+    - conda env create -f environment.yml
+    - conda activate jwst_validation_notebooks
+    - export PYDEVD_DISABLE_FILE_VALIDATION=1 
+    
+    # Execute each changed Jupyter notebook and collect failures
+    - |
+     set -e
+      failed_notebooks=()
+      for notebook_file in $(git diff --name-only HEAD~1 HEAD | grep ".ipynb"); do
+        jupyter nbconvert --execute --to ipynb --inplace "$notebook_file" || failed_notebooks+=("$notebook_file")
+      done
+      if [ ${#failed_notebooks[@]} -ne 0 ]; then
+        echo "The following notebooks failed to execute:"
+        for notebook_file in "${failed_notebooks[@]}"; do
+          echo "- $notebook_file"
+        done
+        exit 1
+      else
+        echo "All notebooks executed successfully!"
+      fi
+    
+    # Run Bandit security checks
+    # - bandit $notebook_file
+  allow_failure: true
+      
+## Execute all notebooks on schedule
+scheduled-build:
+  stage: scheduled-build
+  only:
+    - schedules
+  script:
+  
+  - apt-get update -yqq
+  - apt-get install -yqq build-essential gcc
+  - export PIP_CACHE_DIR="/opt/cache/pip"
+  - conda init bash
+  - source ~/.bashrc
+  - conda env create -f environment.yml
+  - conda activate jwst_validation_notebooks
+  - export PYDEVD_DISABLE_FILE_VALIDATION=1 
+
+  - pip install nbconvert
+  #- pip install ghp-import
+  #- pip install jupyter-book
+  #- pip install myst-nb
+  
+  ## Execute all notebooks in the repo on schedule
+  - |
+    set -e
+    failed_notebooks=()
+    for notebook_file in $(find jwst_validation_notebooks -name "*.ipynb"); do
+      jupyter nbconvert --to html --execute "$notebook_file" || failed_notebooks+=("$notebook_file")
+    if [ ${#failed_notebooks[@]} -ne 0 ]; then
+      echo "The following notebooks failed to execute:"
+      for notebook_file in "${failed_notebooks[@]}"; do
+        echo "- $notebook_file"
+      done
+      exit 1
+    else
+     echo "All notebooks executed successfully!"
+    fi
+
+  allow_failure: true
+#tests:
+#  stage: test
+#  script:
+#    - export PYDEVD_DISABLE_FILE_VALIDATION=1 
+#    - jupyter-book build .
