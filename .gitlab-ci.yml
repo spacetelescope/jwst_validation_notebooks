@@ -10,6 +10,8 @@ image: continuumio/miniconda3:latest
 stages:
   - scheduled-build
   - notebook-execution
+  - html-build
+  - html-deploy
 
 notebook-execution:
   stage: notebook-execution
@@ -87,8 +89,35 @@ scheduled-build:
     fi
 
   allow_failure: true
-#tests:
-#  stage: test
-#  script:
-#    - export PYDEVD_DISABLE_FILE_VALIDATION=1 
-#    - jupyter-book build .
+  
+jupyter-build:
+  stage: html-build
+  #image: python:slim
+  script:
+    - apt-get update -yqq
+    - apt-get install -yqq build-essential gcc
+    - export PIP_CACHE_DIR="/opt/cache/pip"
+    - conda init bash
+    - source ~/.bashrc
+    - conda env create -f environment.yml
+    - conda activate jwst_validation_notebooks
+    - export PYDEVD_DISABLE_FILE_VALIDATION=1 
+    - pip install -U jupyter-book
+    - jupyter-book clean .
+    - jupyter-book build .
+  artifacts:
+    paths:
+      - _build/
+  allow_failure: true
+  
+pages:
+  stage: html-deploy
+  image: busybox:latest
+  script:
+    - mv _build/html public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
