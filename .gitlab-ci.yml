@@ -112,13 +112,14 @@ jupyter-build:
   allow_failure: true
   
 pages:
-  stage: html-deploy
-  image: busybox:latest
+stage: html-deploy
+image: ruby:2.7
   script:
-    - mv _build/html public
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d public
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+ 
 
