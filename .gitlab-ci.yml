@@ -35,6 +35,7 @@ notebook-execution:
      set -e
       failed_notebooks=()
       for notebook_file in $(git diff --name-only HEAD~1 HEAD | grep ".ipynb"); do
+        jupyter nbconvert --to ipynb --inplace --ClearMetadataPreprocessor.enabled=True "$notebook_file"
         jupyter nbconvert --execute --to ipynb --inplace "$notebook_file" || failed_notebooks+=("$notebook_file")
       done
       if [ ${#failed_notebooks[@]} -ne 0 ]; then
