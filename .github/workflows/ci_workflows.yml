@@ -8,6 +8,14 @@ on:
   push:
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   # Github Actions supports ubuntu, windows, and macos virtual environments:
   # https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners
@@ -44,18 +52,25 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        environment-name: roman-data-workshop-env
+        environment-file: 00_install/environment.yml
+        cache-environment: true
+        cache-downloads: true
+        init-shell: bash
     - name: Set up environment
-      uses: conda-incubator/setup-miniconda@v2
+      uses: mamba-org/setup-micromamba@v1
       with:
-        activate-environment: jwst_validation_notebooks
+        environment-name: jwst_validation_notebooks
         environment-file: environment.yml
-        python-version: ${{ matrix.python }}
-        auto-activate-base: false
+        create-args: >-
+          python=${{ matrix.python }}
+        cache-environment: true
+        cache-downloads: true
+        init-shell: bash
     - name: Test with nbpages
-      shell: bash -l {0}
       run: |
         cd jwst_validation_notebooks
         python -m "nbpages.check_nbs"
